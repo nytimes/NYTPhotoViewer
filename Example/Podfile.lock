@@ -1,14 +1,14 @@
 PODS:
-  - ios-photo-viewer (0.1.0)
+  - NYTPhotoViewer (0.1.0)
 
 DEPENDENCIES:
-  - ios-photo-viewer (from `../`)
+  - NYTPhotoViewer (from `../`)
 
 EXTERNAL SOURCES:
-  ios-photo-viewer:
+  NYTPhotoViewer:
     :path: ../
 
 SPEC CHECKSUMS:
-  ios-photo-viewer: 55ffb6693b75a6a62edc85cf025a6fbfcec3a623
+  NYTPhotoViewer: 49d76a0ef49e90987e0179befb523b9ab52680a8
 
 COCOAPODS: 0.35.0

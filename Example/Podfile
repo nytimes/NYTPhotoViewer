@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ios-photo-viewer', :exclusive => true do
-  pod "ios-photo-viewer", :path => "../"
+  pod "NYTPhotoViewer", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
-  pod "ios-photo-viewer", :path => "../"
+  pod "NYTPhotoViewer", :path => "../"
 
   
 end

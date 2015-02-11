@@ -6,9 +6,9 @@
 // project.
 
 
-// ios-photo-viewer
-#define COCOAPODS_POD_AVAILABLE_ios_photo_viewer
-#define COCOAPODS_VERSION_MAJOR_ios_photo_viewer 0
-#define COCOAPODS_VERSION_MINOR_ios_photo_viewer 1
-#define COCOAPODS_VERSION_PATCH_ios_photo_viewer 0
+// NYTPhotoViewer
+#define COCOAPODS_POD_AVAILABLE_NYTPhotoViewer
+#define COCOAPODS_VERSION_MAJOR_NYTPhotoViewer 0
+#define COCOAPODS_VERSION_MINOR_NYTPhotoViewer 1
+#define COCOAPODS_VERSION_PATCH_NYTPhotoViewer 0
 
