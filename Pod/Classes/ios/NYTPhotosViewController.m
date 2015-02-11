@@ -30,8 +30,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
+    self.pageViewController.view.backgroundColor = [UIColor clearColor];
     
-    self.pageViewController.view.backgroundColor = self.view.backgroundColor;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
