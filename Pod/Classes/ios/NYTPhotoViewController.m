@@ -25,12 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#warning Remove random BG color
     NSInteger possibilities = 255;
     NSInteger randomInt = arc4random() % possibilities;
     CGFloat randomFloat = (CGFloat)randomInt / (CGFloat)possibilities;
 
     self.view.backgroundColor = [UIColor colorWithRed:randomFloat green:1.0 blue:1.0 alpha:randomFloat];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +49,5 @@
     
     return self;
 }
-
 
 @end
