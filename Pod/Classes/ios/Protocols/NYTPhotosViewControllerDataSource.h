@@ -20,7 +20,7 @@
 - (BOOL)containsPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Subscripting support.
+ *  Subscripting support. For example, dataSource[0] will be a valid way to obtain the photo at index 0.
  *
  *  @param idx The index of the photo.
  *
