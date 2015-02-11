@@ -44,7 +44,7 @@
     return nil;
 }
 
-- (id)objectAtIndexedSubscript:(NSUInteger)idx {
+- (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx {
     return [self photoAtIndex:idx];
 }
 
