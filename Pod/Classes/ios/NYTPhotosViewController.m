@@ -12,9 +12,17 @@
 
 @interface NYTPhotosViewController ()
 
+@property (nonatomic) NYTPhotosDataSource *dataSource;
+
 @end
 
 @implementation NYTPhotosViewController
+
+#pragma mark - UIViewController
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [self initWithPhotos:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +36,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - NYTPhotosViewController
+
+- (instancetype)initWithPhotos:(NSArray *)photos {
+    return [self initWithPhotos:photos initialPhoto:photos.firstObject];
+}
+
+- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id<NYTPhoto>)initialPhoto {
+    self = [super init];
+    
+    if (self) {
+        _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+        //TODO: initialPhoto handling.
+    }
+    
+    return self;
 }
 
 /*
