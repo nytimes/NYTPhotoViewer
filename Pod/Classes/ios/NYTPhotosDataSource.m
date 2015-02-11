@@ -16,9 +16,13 @@
 
 @implementation NYTPhotosDataSource
 
+#pragma mark - NSObject
+
 - (instancetype)init {
     return [self initWithPhotos:nil];
 }
+
+#pragma mark - NYTPhotosDataSource
 
 - (instancetype)initWithPhotos:(NSArray *)photos {
     self = [super init];
