@@ -22,6 +22,11 @@
 
 #pragma mark - UIViewController
 
+- (void)dealloc {
+    self.pageViewController.dataSource = nil;
+    self.pageViewController.delegate = nil;
+}
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhotos:nil];
 }

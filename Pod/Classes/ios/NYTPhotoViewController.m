@@ -22,6 +22,10 @@
 
 #pragma mark - UIViewController
 
+- (void)dealloc {
+    _scalingImageView.delegate = nil;
+}
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhoto:nil];
 }
