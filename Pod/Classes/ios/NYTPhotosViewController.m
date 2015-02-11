@@ -10,9 +10,10 @@
 #import "NYTPhotosViewControllerDataSource.h"
 #import "NYTPhotosDataSource.h"
 
-@interface NYTPhotosViewController ()
+@interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (nonatomic) NYTPhotosDataSource *dataSource;
+@property (nonatomic) UIPageViewController *pageViewController;
 
 @end
 
@@ -27,7 +28,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    self.pageViewController.view.backgroundColor = self.view.backgroundColor;
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    self.pageViewController.view.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,19 +61,34 @@
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         //TODO: initialPhoto handling.
+        
+        [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
     
     return self;
 }
 
-/*
-#pragma mark - Navigation
+- (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(16)}];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.pageViewController.delegate = self;
+    self.pageViewController.dataSource = self;
+    
+    UIViewController *initialPhotoViewController;
+    
+    if ([self.dataSource containsPhoto:initialPhoto]) {
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
+    }
+    else {
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.dataSource[0]];
+    }
+    
+    [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 }
-*/
+
+- (UIViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
+    //TODO actual subclasses for photo VCs
+    return [[UIViewController alloc] initWithNibName:nil bundle:nil];
+}
 
 @end

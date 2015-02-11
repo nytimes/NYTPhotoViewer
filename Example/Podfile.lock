@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NYTPhotoViewer: 49d76a0ef49e90987e0179befb523b9ab52680a8
+  NYTPhotoViewer: 03ce9f7f1f4fef8d7a690b04741f8770ac0125ba
 
 COCOAPODS: 0.35.0

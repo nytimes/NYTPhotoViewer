@@ -10,7 +10,7 @@
 
 @interface NYTPhotosDataSource ()
 
-@property (nonatomic) NSArray *photos;
+@property (nonatomic, copy) NSArray *photos;
 
 @end
 
@@ -34,18 +34,28 @@
     return self;
 }
 
+#pragma mark - NSFastEnumeration
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)length {
+    return [self.photos countByEnumeratingWithState:state objects:buffer count:length];
+}
+
 #pragma mark - NYTPhotosViewControllerDataSource
 
 - (NSUInteger)numberOfPhotos {
     return self.photos.count;
 }
 
-- (id<NYTPhoto>)photoAtIndex:(NSUInteger)photoIndex {
+- (id <NYTPhoto>)photoAtIndex:(NSUInteger)photoIndex {
     if (photoIndex < self.photos.count) {
         return self.photos[photoIndex];
     }
     
     return nil;
+}
+
+- (BOOL)containsPhoto:(id <NYTPhoto>)photo {
+    return [self.photos containsObject:photo];
 }
 
 - (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx {
