@@ -27,9 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NYTPhotosDataSource *dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:nil];
-    id <NYTPhoto> photo = dataSource[0];
-    photo = photo;
     // Do any additional setup after loading the view.
 }
 
