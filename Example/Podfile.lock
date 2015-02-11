@@ -1,0 +1,14 @@
+PODS:
+  - ios-photo-viewer (0.1.0)
+
+DEPENDENCIES:
+  - ios-photo-viewer (from `../`)
+
+EXTERNAL SOURCES:
+  ios-photo-viewer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ios-photo-viewer: 55ffb6693b75a6a62edc85cf025a6fbfcec3a623
+
+COCOAPODS: 0.35.0

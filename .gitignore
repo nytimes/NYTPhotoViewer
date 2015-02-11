@@ -1,0 +1,49 @@
+#Old
+.idea
+dSYM
+
+# Mac OS X
+*.DS_Store
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+# Generated files
+*.o
+*.pyc
+*.hi
+
+#Python modules
+MANIFEST
+dist/
+build/
+
+# Backup files
+*~.nib
+\#*#
+.#*
+
+# automated build files
+*.app
+tmp
+xcodebuild.log
+*.ipa
+*.xcarchive
+ocunit.xml
+*.xccheckout
+*.dSYM
+*.dSYM.zip
+
+*.xcbkptlist
+*.xcsettings
+
+# bootstrap script
+Vendor/bundle/
+.bundle/
+bin/
