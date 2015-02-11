@@ -10,11 +10,13 @@
 
 @protocol NYTPhoto;
 
-@protocol NYTPhotosViewControllerDataSource <NSObject>
+@protocol NYTPhotosViewControllerDataSource <NSFastEnumeration>
 
 @property (nonatomic, readonly) NSUInteger numberOfPhotos;
 
 - (id <NYTPhoto>)photoAtIndex:(NSUInteger)index;
+
+- (BOOL)containsPhoto:(id <NYTPhoto>)photo;
 
 /**
  *  Subscripting support.
