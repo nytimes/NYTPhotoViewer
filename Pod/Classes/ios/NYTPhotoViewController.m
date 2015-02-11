@@ -7,10 +7,14 @@
 //
 
 #import "NYTPhotoViewController.h"
+#import "NYTPhoto.h"
+#import "NYTScalingImageView.h"
 
-@interface NYTPhotoViewController ()
+@interface NYTPhotoViewController () <UIScrollViewDelegate>
 
 @property (nonatomic) id <NYTPhoto> photo;
+
+@property (nonatomic) NYTScalingImageView *scalingImageView;
 
 @end
 
@@ -31,6 +35,15 @@
     CGFloat randomFloat = (CGFloat)randomInt / (CGFloat)possibilities;
 
     self.view.backgroundColor = [UIColor colorWithRed:randomFloat green:1.0 blue:1.0 alpha:randomFloat];
+    
+    self.scalingImageView.frame = self.view.bounds;
+    [self.view addSubview:self.scalingImageView];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    self.scalingImageView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +58,17 @@
     
     if (self) {
         _photo = photo;
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photo.image frame:CGRectZero];
+        _scalingImageView.delegate = self;
     }
     
     return self;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.scalingImageView.internalImageView;
 }
 
 @end

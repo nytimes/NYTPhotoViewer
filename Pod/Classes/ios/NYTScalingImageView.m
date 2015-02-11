@@ -26,6 +26,7 @@
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     [self centerScrollViewContents];
+    [self updateZoomScale];
 }
 
 #pragma mark - NYTScalingImageView
@@ -36,6 +37,7 @@
     if (self) {
         [self setupInternalImageView:image];
         [self setupImageScrollView];
+        [self updateZoomScale];
     }
     
     return self;
@@ -58,6 +60,23 @@
     self.showsHorizontalScrollIndicator = NO;
     self.bouncesZoom = YES;
     self.decelerationRate = UIScrollViewDecelerationRateFast;
+}
+
+- (void)updateZoomScale {
+    if (self.internalImageView.image) {
+        CGRect scrollViewFrame = self.bounds;
+        
+        CGFloat scaleWidth = scrollViewFrame.size.width / self.internalImageView.image.size.width;
+        CGFloat scaleHeight = scrollViewFrame.size.height / self.internalImageView.image.size.height;
+        CGFloat minScale = MIN(scaleWidth, scaleHeight);
+        
+        self.minimumZoomScale = minScale;
+    
+#warning Figure out if 1.0 is always desired.
+        self.maximumZoomScale = 1.0;
+        
+        self.zoomScale = self.minimumZoomScale;
+    }
 }
 
 #pragma mark - Centering
