@@ -54,6 +54,10 @@
     return nil;
 }
 
+- (NSUInteger)indexOfPhoto:(id<NYTPhoto>)photo {
+    return [self.photos indexOfObject:photo];
+}
+
 - (BOOL)containsPhoto:(id <NYTPhoto>)photo {
     return [self.photos containsObject:photo];
 }

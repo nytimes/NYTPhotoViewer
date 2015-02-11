@@ -9,6 +9,7 @@
 #import "NYTPhotosViewController.h"
 #import "NYTPhotosViewControllerDataSource.h"
 #import "NYTPhotosDataSource.h"
+#import "NYTPhotoViewController.h"
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -34,19 +35,12 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
     self.pageViewController.view.frame = self.view.bounds;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - NYTPhotosViewController
@@ -60,7 +54,6 @@
     
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
-        //TODO: initialPhoto handling.
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
@@ -86,9 +79,26 @@
     [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 }
 
-- (UIViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
-    //TODO actual subclasses for photo VCs
-    return [[UIViewController alloc] initWithNibName:nil bundle:nil];
+- (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
+    if (photo) {
+        return [[NYTPhotoViewController alloc] initWithPhoto:photo];
+    }
+    
+    return nil;
 }
+
+#pragma mark - UIPageViewControllerDataSource
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContaining> *)viewController {
+    NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
+    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex - 1]];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContaining> *)viewController {
+    NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
+    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex + 1]];
+}
+
+#pragma mark - UIPageViewControllerDelegate
 
 @end

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSUInteger numberOfPhotos;
 
 - (id <NYTPhoto>)photoAtIndex:(NSUInteger)index;
+- (NSUInteger)indexOfPhoto:(id <NYTPhoto>)photo;
 
 - (BOOL)containsPhoto:(id <NYTPhoto>)photo;
 
