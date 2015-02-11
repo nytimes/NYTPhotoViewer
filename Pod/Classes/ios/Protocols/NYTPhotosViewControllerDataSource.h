@@ -16,4 +16,13 @@
 
 - (id <NYTPhoto>)photoAtIndex:(NSUInteger)index;
 
+/**
+ *  Subscripting support.
+ *
+ *  @param idx The index of the photo.
+ *
+ *  @return The photo at the index, or nil if there is none.
+ */
+- (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx;
+
 @end
