@@ -67,7 +67,7 @@
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
     
-    UIViewController *initialPhotoViewController;
+    NYTPhotoViewController *initialPhotoViewController;
     
     if ([self.dataSource containsPhoto:initialPhoto]) {
         initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
@@ -77,6 +77,15 @@
     }
     
     [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+}
+
+- (void)moveToPhoto:(id<NYTPhoto>)photo {
+    if (![self.dataSource containsPhoto:photo]) {
+        return;
+    }
+    
+    NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
+    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 }
 
 - (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
