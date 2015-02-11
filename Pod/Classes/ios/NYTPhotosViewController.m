@@ -20,12 +20,14 @@
 
 @implementation NYTPhotosViewController
 
-#pragma mark - UIViewController
+#pragma mark - NSObject
 
 - (void)dealloc {
     self.pageViewController.dataSource = nil;
     self.pageViewController.delegate = nil;
 }
+
+#pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhotos:nil];
@@ -84,7 +86,7 @@
     [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 }
 
-- (void)moveToPhoto:(id<NYTPhoto>)photo {
+- (void)moveToPhoto:(id <NYTPhoto>)photo {
     if (![self.dataSource containsPhoto:photo]) {
         return;
     }
