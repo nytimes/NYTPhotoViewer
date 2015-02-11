@@ -42,7 +42,7 @@
 }
 
 - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id<NYTPhoto>)initialPhoto {
-    self = [super init];
+    self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
