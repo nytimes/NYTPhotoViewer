@@ -12,7 +12,7 @@
 #import "NYTPhotoViewController.h"
 
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
-const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.55;
+const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
