@@ -126,7 +126,7 @@
         CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
         
         [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.pageViewController.view.center = self.firstCenterForPanning;
+            self.pageViewController.view.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
         } completion:nil];
     }
 }
