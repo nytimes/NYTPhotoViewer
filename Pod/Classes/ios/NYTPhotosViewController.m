@@ -12,6 +12,7 @@
 #import "NYTPhotoViewController.h"
 
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
+const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.7;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -160,7 +161,7 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
             
             // Maintain the velocity of the pan, while easing out.
             animationDuration = ABS(finalPageViewCenterPoint.y - self.pageViewController.view.center.y) / ABS(velocityY);
-            animationDuration = MIN(animationDuration, 0.7);
+            animationDuration = MIN(animationDuration, NYTPhotosViewControllerPanDismissMaximumDuration);
             
             animationCurve = UIViewAnimationOptionCurveEaseOut;
             finalBackgroundAlpha = 0.0;
