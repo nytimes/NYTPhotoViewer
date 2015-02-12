@@ -11,6 +11,8 @@
 #import "NYTPhotosDataSource.h"
 #import "NYTPhotoViewController.h"
 
+const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
+
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (nonatomic) NYTPhotosDataSource *dataSource;
@@ -119,13 +121,39 @@
     self.pageViewController.view.center = translatedCenterPoint;
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGFloat verticalDelta = self.pageViewController.view.center.y - centerPoint.y;
+        
+        // Return to center case.
         CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
-        
         CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
+        CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
+        CGPoint finalPageViewCenterPoint = centerPoint;
+
+        // Dismissal case.
+        BOOL isDismissing = ABS(verticalDelta) > NYTPhotosViewControllerPanDismissDistance;
+        if (isDismissing) {
+            if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
+                //TODO: check for reference view and do animated transition to that view.
+            }
+            else {
+                BOOL isPositiveDelta = verticalDelta >= 0;
+
+                CGFloat modifier = isPositiveDelta ? 1 : -1;
+                CGFloat finalCenterY = CGRectGetMidY(self.view.bounds) + modifier * CGRectGetHeight(self.view.bounds);
+                finalPageViewCenterPoint = CGPointMake(centerPoint.x, finalCenterY);
+                
+                animationDuration = 0.35;
+                animationCurve = UIViewAnimationOptionCurveEaseIn;
+            }
+        }
         
-        [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.pageViewController.view.center = centerPoint;
-        } completion:nil];
+        [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
+            self.pageViewController.view.center = finalPageViewCenterPoint;
+        } completion:^(BOOL finished) {
+            if (isDismissing) {
+                [self dismissViewControllerAnimated:NO completion:nil];
+            }
+        }];
     }
 }
 
