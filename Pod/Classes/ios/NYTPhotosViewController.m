@@ -137,7 +137,7 @@ const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
         BOOL isDismissing = ABS(verticalDelta) > NYTPhotosViewControllerPanDismissDistance;
         if (isDismissing) {
             if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
-                //TODO: check for reference view and do animated transition to that view.
+                //TODO: check for reference view and do animated dismissal transition to that view.
             }
             else {
                 BOOL isPositiveDelta = verticalDelta >= 0;
