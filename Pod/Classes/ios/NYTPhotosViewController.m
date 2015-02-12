@@ -160,6 +160,8 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
             
             // Maintain the velocity of the pan, while easing out.
             animationDuration = ABS(finalPageViewCenterPoint.y - self.pageViewController.view.center.y) / ABS(velocityY);
+            animationDuration = MIN(animationDuration, 0.7);
+            
             animationCurve = UIViewAnimationOptionCurveEaseOut;
             finalBackgroundAlpha = 0.0;
         }
