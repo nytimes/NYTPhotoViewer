@@ -19,6 +19,7 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
 @property (nonatomic) UIPageViewController *pageViewController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
 @end
 
