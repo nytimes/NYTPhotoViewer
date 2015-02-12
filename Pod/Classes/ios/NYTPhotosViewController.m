@@ -11,7 +11,7 @@
 #import "NYTPhotosDataSource.h"
 #import "NYTPhotoViewController.h"
 
-const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
+const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -134,7 +134,9 @@ const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
         CGPoint finalPageViewCenterPoint = centerPoint;
 
         // Dismissal case.
-        BOOL isDismissing = ABS(verticalDelta) > NYTPhotosViewControllerPanDismissDistance;
+        CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
+        BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
+        
         if (isDismissing) {
             if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
                 //TODO: check for reference view and do animated dismissal transition to that view.
