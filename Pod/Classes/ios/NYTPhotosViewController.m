@@ -137,9 +137,11 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
     
     // Return to center case.
     CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
+    
     CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
     CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
     CGPoint finalPageViewCenterPoint = centerPoint;
+    CGFloat finalBackgroundAlpha = 1.0;
     
     // Dismissal case.
     CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
@@ -156,17 +158,17 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
             CGFloat finalCenterY = CGRectGetMidY(self.view.bounds) + modifier * CGRectGetHeight(self.view.bounds);
             finalPageViewCenterPoint = CGPointMake(centerPoint.x, finalCenterY);
             
-            animationDuration = 0.35;
-            animationCurve = UIViewAnimationOptionCurveEaseIn;
+            // Maintain the velocity of the pan, while easing out.
+            animationDuration = ABS(finalPageViewCenterPoint.y - self.pageViewController.view.center.y) / ABS(velocityY);
+            animationCurve = UIViewAnimationOptionCurveEaseOut;
+            finalBackgroundAlpha = 0.0;
         }
     }
     
     [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
         self.pageViewController.view.center = finalPageViewCenterPoint;
         
-        if (isDismissing) {
-            self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
-        }
+        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
     } completion:^(BOOL finished) {
         if (isDismissing) {
             [self dismissViewControllerAnimated:NO completion:nil];
