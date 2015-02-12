@@ -18,10 +18,7 @@
 
 @implementation NYTViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
+- (IBAction)showPhotosButtonTapped:(id)sender {
     NSMutableArray *photos = [NSMutableArray array];
     
     for (int i = 0; i < 5; i++) {
@@ -32,17 +29,7 @@
     photosViewController.modalPresentationStyle = UIModalPresentationCustom;
     photosViewController.transitioningDelegate = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self presentViewController:photosViewController animated:YES completion:nil];
-
-    });
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self presentViewController:photosViewController animated:YES completion:nil];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
