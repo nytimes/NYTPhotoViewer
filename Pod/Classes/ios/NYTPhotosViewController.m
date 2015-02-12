@@ -121,9 +121,9 @@
         self.pageViewController.view.center = translatedCenterPoint;
     }
     else if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y * 0.35;
+        CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
         
-        CGFloat animationDuration = (ABS(velocityY) * 0.0002) + 0.2;
+        CGFloat animationDuration = (ABS(velocityY) * 0.0007) + 0.2;
         
         [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.pageViewController.view.center = self.firstCenterForPanning;
