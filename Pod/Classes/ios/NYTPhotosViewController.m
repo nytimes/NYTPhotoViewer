@@ -113,7 +113,7 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
 #pragma mark - Gesture Recognizers
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
-    CGPoint centerPoint = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    CGPoint centerPoint = self.boundsCenterPoint;
     
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
     CGPoint translatedCenterPoint = CGPointMake(centerPoint.x, centerPoint.y + translatedPanGesturePoint.y);
@@ -127,40 +127,46 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:backgroundAlpha];
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        // Return to center case.
-        CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
-        CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
-        CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
-        CGPoint finalPageViewCenterPoint = centerPoint;
-
-        // Dismissal case.
-        CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
-        BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
-        
-        if (isDismissing) {
-            if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
-                //TODO: check for reference view and do animated dismissal transition to that view.
-            }
-            else {
-                BOOL isPositiveDelta = verticalDelta >= 0;
-
-                CGFloat modifier = isPositiveDelta ? 1 : -1;
-                CGFloat finalCenterY = CGRectGetMidY(self.view.bounds) + modifier * CGRectGetHeight(self.view.bounds);
-                finalPageViewCenterPoint = CGPointMake(centerPoint.x, finalCenterY);
-                
-                animationDuration = 0.35;
-                animationCurve = UIViewAnimationOptionCurveEaseIn;
-            }
-        }
-        
-        [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
-            self.pageViewController.view.center = finalPageViewCenterPoint;
-        } completion:^(BOOL finished) {
-            if (isDismissing) {
-                [self dismissViewControllerAnimated:NO completion:nil];
-            }
-        }];
+        [self finishPanWithPanGestureRecognizer:panGestureRecognizer verticalDelta:verticalDelta];
     }
+}
+
+- (void)finishPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer verticalDelta:(CGFloat)verticalDelta {
+    CGPoint centerPoint = self.boundsCenterPoint;
+    
+    // Return to center case.
+    CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
+    CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
+    CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
+    CGPoint finalPageViewCenterPoint = centerPoint;
+    
+    // Dismissal case.
+    CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
+    BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
+    
+    if (isDismissing) {
+        if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
+            //TODO: check for reference view and do animated dismissal transition to that view.
+        }
+        else {
+            BOOL isPositiveDelta = verticalDelta >= 0;
+            
+            CGFloat modifier = isPositiveDelta ? 1 : -1;
+            CGFloat finalCenterY = CGRectGetMidY(self.view.bounds) + modifier * CGRectGetHeight(self.view.bounds);
+            finalPageViewCenterPoint = CGPointMake(centerPoint.x, finalCenterY);
+            
+            animationDuration = 0.35;
+            animationCurve = UIViewAnimationOptionCurveEaseIn;
+        }
+    }
+    
+    [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
+        self.pageViewController.view.center = finalPageViewCenterPoint;
+    } completion:^(BOOL finished) {
+        if (isDismissing) {
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }
+    }];
 }
 
 - (CGFloat)backgroundAlphaForPanningWithVerticalDelta:(CGFloat)verticalDelta {
@@ -168,10 +174,14 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
     CGFloat startingAlpha = 1.0;
     CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
     
-    CGFloat maximumDelta = CGRectGetHeight(self.view.bounds) / 2.0;
+    CGFloat maximumDelta = CGRectGetHeight(self.view.bounds) / 2.0; // Arbitrary value.
     CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
     
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
+}
+
+- (CGPoint)boundsCenterPoint {
+    return CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 }
 
 #pragma mark - UIPageViewControllerDataSource
