@@ -17,7 +17,6 @@
 @property (nonatomic) UIPageViewController *pageViewController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic) CGPoint firstCenterForPanning;
 
 @end
 
@@ -65,7 +64,6 @@
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
-        _firstCenterForPanning = CGPointZero;
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
@@ -110,23 +108,23 @@
     return nil;
 }
 
-- (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
-    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        self.firstCenterForPanning = self.pageViewController.view.center;
-    }
-    else if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
-        CGPoint translatedCenterPoint = CGPointMake(self.firstCenterForPanning.x, self.firstCenterForPanning.y + translatedPanGesturePoint.y);
+#pragma mark - Gesture Recognizers
 
-        self.pageViewController.view.center = translatedCenterPoint;
-    }
-    else if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+- (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint centerPoint = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    
+    CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
+    CGPoint translatedCenterPoint = CGPointMake(centerPoint.x, centerPoint.y + translatedPanGesturePoint.y);
+    
+    self.pageViewController.view.center = translatedCenterPoint;
+    
+    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
         
         CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
         
         [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.pageViewController.view.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+            self.pageViewController.view.center = centerPoint;
         } completion:nil];
     }
 }
