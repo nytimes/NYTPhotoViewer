@@ -163,6 +163,10 @@ const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // di
     
     [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
         self.pageViewController.view.center = finalPageViewCenterPoint;
+        
+        if (isDismissing) {
+            self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+        }
     } completion:^(BOOL finished) {
         if (isDismissing) {
             [self dismissViewControllerAnimated:NO completion:nil];
