@@ -118,11 +118,15 @@ const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
     CGPoint translatedCenterPoint = CGPointMake(centerPoint.x, centerPoint.y + translatedPanGesturePoint.y);
     
+    // Pan the view on pace with the pan gesture.
     self.pageViewController.view.center = translatedCenterPoint;
     
+    CGFloat verticalDelta = self.pageViewController.view.center.y - centerPoint.y;
+    
+    CGFloat backgroundAlpha = [self backgroundAlphaForPanningWithVerticalDelta:verticalDelta];
+    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:backgroundAlpha];
+    
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGFloat verticalDelta = self.pageViewController.view.center.y - centerPoint.y;
-        
         // Return to center case.
         CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
         CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
@@ -155,6 +159,17 @@ const CGFloat NYTPhotosViewControllerPanDismissDistance = 50;
             }
         }];
     }
+}
+
+- (CGFloat)backgroundAlphaForPanningWithVerticalDelta:(CGFloat)verticalDelta {
+    CGFloat finalAlpha = 0.1;
+    CGFloat startingAlpha = 1.0;
+    CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
+    
+    CGFloat maximumDelta = CGRectGetHeight(self.view.bounds) / 2.0;
+    CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
+    
+    return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }
 
 #pragma mark - UIPageViewControllerDataSource
