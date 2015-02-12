@@ -16,6 +16,9 @@
 @property (nonatomic) NYTPhotosDataSource *dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 
+@property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) CGPoint firstCenterForPanning;
+
 @end
 
 @implementation NYTPhotosViewController
@@ -61,6 +64,8 @@
     
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
+        _firstCenterForPanning = CGPointZero;
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
@@ -84,6 +89,8 @@
     }
     
     [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    
+    [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
 }
 
 - (void)moveToPhoto:(id <NYTPhoto>)photo {
@@ -101,6 +108,25 @@
     }
     
     return nil;
+}
+
+- (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+//    CGPoint velocity = [panGestureRecognizer velocityInView:panGestureRecognizer.view];
+//    CGFloat vectorDistance = sqrtf(powf(velocity.x, 2)+powf(velocity.y, 2));
+    
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.firstCenterForPanning = self.pageViewController.view.center;
+    }
+    else if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
+        CGPoint translatedCenterPoint = CGPointMake(self.firstCenterForPanning.x, self.firstCenterForPanning.y + translatedPanGesturePoint.y);
+
+        self.pageViewController.view.center = translatedCenterPoint;
+    }
+}
+
+- (void)startImageDragging:(CGPoint)panGestureLocationInView translationOffset:(UIOffset)translationOffset {
+    
 }
 
 #pragma mark - UIPageViewControllerDataSource
