@@ -111,9 +111,6 @@
 }
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
-//    CGPoint velocity = [panGestureRecognizer velocityInView:panGestureRecognizer.view];
-//    CGFloat vectorDistance = sqrtf(powf(velocity.x, 2)+powf(velocity.y, 2));
-    
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.firstCenterForPanning = self.pageViewController.view.center;
     }
@@ -122,6 +119,15 @@
         CGPoint translatedCenterPoint = CGPointMake(self.firstCenterForPanning.x, self.firstCenterForPanning.y + translatedPanGesturePoint.y);
 
         self.pageViewController.view.center = translatedCenterPoint;
+    }
+    else if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y * 0.35;
+        
+        CGFloat animationDuration = (ABS(velocityY) * 0.0002) + 0.2;
+        
+        [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.pageViewController.view.center = self.firstCenterForPanning;
+        } completion:nil];
     }
 }
 
