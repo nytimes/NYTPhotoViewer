@@ -16,6 +16,7 @@
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
 @property (nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
+@property (nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
 @end
 
@@ -57,21 +58,24 @@
         _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photo.image frame:CGRectZero];
         _scalingImageView.delegate = self;
         
-        [self setupGestureRecognizer];
+        [self setupGestureRecognizers];
     }
     
     return self;
 }
 
-#pragma mark - Gesture Recognizer
+#pragma mark - Gesture Recognizers
 
-- (void)setupGestureRecognizer {
-    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
-    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-    [self.scalingImageView addGestureRecognizer:doubleTapGestureRecognizer];
+- (void)setupGestureRecognizers {
+    self.doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTapWithGestureRecognizer:)];
+    self.doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:self.doubleTapGestureRecognizer];
+    
+    self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPressWithGestureRecognizer:)];
+    [self.view addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
-- (void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer {
+- (void)didDoubleTapWithGestureRecognizer:(UITapGestureRecognizer *)recognizer {
     CGPoint pointInView = [recognizer locationInView:self.scalingImageView.internalImageView];
     
     CGFloat previousZoomScale = self.scalingImageView.zoomScale;
@@ -92,6 +96,14 @@
     CGRect rectToZoomTo = CGRectMake(originX, originY, width, height);
     
     [self.scalingImageView zoomToRect:rectToZoomTo animated:YES];
+}
+
+- (void)didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)recognizer {
+    if ([self.delegate respondsToSelector:@selector(photoViewController:didLongPressWithGestureRecognizer:)]) {
+        if (recognizer.state == UIGestureRecognizerStateBegan) {
+            [self.delegate photoViewController:self didLongPressWithGestureRecognizer:recognizer];
+        }
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
