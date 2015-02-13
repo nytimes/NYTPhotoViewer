@@ -13,12 +13,13 @@
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
 
 @end
 
 @implementation NYTViewController
 
-- (IBAction)showPhotosButtonTapped:(id)sender {
+- (IBAction)imageButtonTapped:(id)sender {
     NSMutableArray *photos = [NSMutableArray array];
     
     for (int i = 0; i < 5; i++) {
@@ -31,7 +32,7 @@
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {
-    return self.imageView;
+    return self.imageButton;
 }
 
 @end
