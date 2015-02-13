@@ -15,6 +15,7 @@
 @interface NYTPhotoViewController : UIViewController <NYTPhotoContaining>
 
 @property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;
+@property (nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
 - (instancetype)initWithPhoto:(id <NYTPhoto>)photo NS_DESIGNATED_INITIALIZER;
 
