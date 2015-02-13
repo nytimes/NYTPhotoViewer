@@ -10,6 +10,8 @@
 #import "NYTPhotosViewControllerDataSource.h"
 #import "NYTPhotosDataSource.h"
 #import "NYTPhotoViewController.h"
+#import "NYTPhotoTransitionAnimator.h"
+#import "NYTScalingImageView.h"
 
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
 const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
@@ -19,8 +21,11 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) NYTPhotosDataSource *dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 
+@property (nonatomic) NYTPhotoTransitionAnimator *transitionAnimator;
+
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 
+@property (nonatomic, readonly) NYTPhotoViewController *currentPhotoViewController;
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
@@ -71,6 +76,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
         
+        _transitionAnimator = [[NYTPhotoTransitionAnimator alloc] init];
+        self.modalPresentationStyle = UIModalPresentationCustom;
+        self.transitioningDelegate = _transitionAnimator;
+        
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
     
@@ -108,7 +117,9 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
     if (photo) {
-        return [[NYTPhotoViewController alloc] initWithPhoto:photo];
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo];
+        photoViewController.delegate = self;
+        return photoViewController;
     }
     
     return nil;
@@ -153,7 +164,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     if (isDismissing) {
         UIView *referenceView = self.referenceViewForCurrentPhoto;
         if (referenceView) {
-            //TODO: check for reference view and do animated dismissal transition to that view.
+            self.transitionAnimator.startingView = referenceView;
+            self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView;
+            
+            [self dismissAnimated:YES];
         }
         else {
             BOOL isPositiveDelta = verticalDelta >= 0;
@@ -205,10 +219,13 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }];
 }
 
+- (NYTPhotoViewController *)currentPhotoViewController {
+    return self.pageViewController.viewControllers.firstObject;
+}
+
 - (UIView *)referenceViewForCurrentPhoto {
     if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
-        UIViewController <NYTPhotoContaining> *photoViewController = self.pageViewController.viewControllers.firstObject;
-        return [self.delegate photosViewController:self referenceViewForPhoto:photoViewController.photo];
+        return [self.delegate photosViewController:self referenceViewForPhoto:self.currentPhotoViewController.photo];
     }
     
     return nil;
