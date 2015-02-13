@@ -74,11 +74,13 @@
 - (void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer {
     CGPoint pointInView = [recognizer locationInView:self.scalingImageView.internalImageView];
     
-    CGFloat newZoomScale = self.scalingImageView.zoomScale * 1.5;
+    CGFloat previousZoomScale = self.scalingImageView.zoomScale;
+    
+    CGFloat newZoomScale = previousZoomScale * 1.5;
     newZoomScale = MIN(newZoomScale, self.scalingImageView.maximumZoomScale);
     
     //If we've reached the maximum zoom scale, through double tapping, zoom back out.
-    if (newZoomScale == self.scalingImageView.maximumZoomScale) {
+    if (previousZoomScale == self.scalingImageView.maximumZoomScale) {
         newZoomScale = self.scalingImageView.minimumZoomScale;
     }
     
