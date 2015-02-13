@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -26,18 +27,31 @@
                                     <action selector="showPhotosButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VrX-A8-lQe"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImage" translatesAutoresizingMaskIntoConstraints="NO" id="OKi-4Q-Awj">
+                                <rect key="frame" x="40" y="365" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OKi-4Q-Awj" secondAttribute="bottom" constant="75" id="DlK-kf-FaB"/>
+                            <constraint firstItem="OKi-4Q-Awj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="Rek-rj-hGJ"/>
+                            <constraint firstItem="OKi-4Q-Awj" firstAttribute="top" secondItem="Pbm-kx-KoL" secondAttribute="bottom" constant="66" id="YTS-FU-y48"/>
                             <constraint firstAttribute="centerY" secondItem="Pbm-kx-KoL" secondAttribute="centerY" id="aht-vz-mCl"/>
                             <constraint firstAttribute="centerX" secondItem="Pbm-kx-KoL" secondAttribute="centerX" id="d7g-ax-8gh"/>
+                            <constraint firstItem="OKi-4Q-Awj" firstAttribute="centerX" secondItem="Pbm-kx-KoL" secondAttribute="centerX" id="uJi-Mb-XWl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="OKi-4Q-Awj" id="e61-7q-8Jm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="testImage" width="769" height="612"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

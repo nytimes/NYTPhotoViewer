@@ -55,6 +55,12 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    
+    
+    
+    self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
+    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -206,7 +212,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (void)dismissAnimated:(BOOL)animated {
     self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
-    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView;
+    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];

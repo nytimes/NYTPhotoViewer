@@ -31,7 +31,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3;
+    return 10.0;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -40,20 +40,53 @@
     UIView *fromView;
     UIView *toView;
     
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }
-    else {
+//    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+//        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+//        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+//    }
+//    else {
         fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view;
         toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
-    }
+    //}
     
     toView.frame = containerView.bounds;
     
     if (![toView isDescendantOfView:containerView]) {
         [containerView addSubview:toView];
     }
+    
+    UIView *endingViewOriginalSuperview = self.endingView.superview;
+    CGPoint endingViewOriginalCenterInAnimationSuperview = self.endingView.center;
+    CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:self.endingView.center toView:containerView];
+
+    CGAffineTransform endingViewOriginalTransform = self.endingView.transform;
+    
+    
+    
+    if (self.startingView && self.endingView) {
+        CGPoint translatedInitialEndingCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
+        CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(self.endingView.frame);
+        
+        //self.endingView.autoresizingMask = UIViewAutoresizingNone;
+        
+        
+        self.endingView.transform = CGAffineTransformScale(self.endingView.transform, endingViewInitialTransform, endingViewInitialTransform);
+        self.endingView.center = translatedInitialEndingCenter;
+
+        [transitionContext.containerView addSubview:self.endingView];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
     UIView *viewToFade = toView;
     CGFloat beginningAlpha = 0.0;
@@ -71,7 +104,14 @@
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         viewToFade.alpha = endingAlpha;
+        
+        self.endingView.transform = endingViewOriginalTransform;
+        self.endingView.center = endingViewOriginalCenterInAnimationContainer;
+        
     } completion:^(BOOL finished) {
+        [endingViewOriginalSuperview addSubview:self.endingView];
+        self.endingView.center = endingViewOriginalCenterInAnimationSuperview;
+        
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];
 }

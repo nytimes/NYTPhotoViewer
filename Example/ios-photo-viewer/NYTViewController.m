@@ -10,7 +10,8 @@
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
-@interface NYTViewController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface NYTViewController () <NYTPhotosViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -24,7 +25,12 @@
     }
     
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+    photosViewController.delegate = self;
     [self presentViewController:photosViewController animated:YES completion:nil];
+}
+
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {
+    return self.imageView;
 }
 
 @end
