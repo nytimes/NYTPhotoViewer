@@ -164,9 +164,6 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     if (isDismissing) {
         UIView *referenceView = self.referenceViewForCurrentPhoto;
         if (referenceView) {
-            self.transitionAnimator.startingView = referenceView;
-            self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView;
-            
             [self dismissAnimated:YES];
         }
         else {
@@ -208,6 +205,9 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)dismissAnimated:(BOOL)animated {
+    self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
+    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView;
+    
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
