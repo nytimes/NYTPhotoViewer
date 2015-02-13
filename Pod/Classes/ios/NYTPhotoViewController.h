@@ -24,6 +24,5 @@
 @protocol NYTPhotoViewControllerDelegate <NSObject>
 
 - (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
-- (void)photoViewController:(NYTPhotoViewController *)photoViewController isPanningWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 @end
