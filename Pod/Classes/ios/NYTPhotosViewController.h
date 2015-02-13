@@ -46,7 +46,7 @@
 
 @optional
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didLongPressPhoto:(id <NYTPhoto>)photo;
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didLongPressPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
 - (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController;
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;

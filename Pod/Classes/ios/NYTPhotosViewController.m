@@ -14,7 +14,7 @@
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
 const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
-@interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
 @property (nonatomic) NYTPhotosDataSource *dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
@@ -192,6 +192,14 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (CGPoint)boundsCenterPoint {
     return CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+}
+
+#pragma mark - NYTPhotoViewControllerDelegate
+
+- (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didLongPressPhoto:withGestureRecognizer:)]) {
+        [self.delegate photosViewController:self didLongPressPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource

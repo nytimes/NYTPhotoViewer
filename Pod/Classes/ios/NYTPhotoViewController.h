@@ -23,6 +23,7 @@
 
 @protocol NYTPhotoViewControllerDelegate <NSObject>
 
+@optional
 - (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
 @end
