@@ -75,9 +75,7 @@
     CGPoint pointInView = [recognizer locationInView:self.scalingImageView.internalImageView];
     
     CGFloat previousZoomScale = self.scalingImageView.zoomScale;
-    
-    CGFloat newZoomScale = previousZoomScale * 1.5;
-    newZoomScale = MIN(newZoomScale, self.scalingImageView.maximumZoomScale);
+    CGFloat newZoomScale = MIN(previousZoomScale * 1.5, self.scalingImageView.maximumZoomScale);
     
     //If we've reached the maximum zoom scale, through double tapping, zoom back out.
     if (previousZoomScale == self.scalingImageView.maximumZoomScale) {
