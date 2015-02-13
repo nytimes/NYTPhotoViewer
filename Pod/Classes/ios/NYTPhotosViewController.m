@@ -20,6 +20,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) UIPageViewController *pageViewController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+
+@property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
 @end
@@ -149,7 +151,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
     
     if (isDismissing) {
-        if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
+        UIView *referenceView = self.referenceViewForCurrentPhoto;
+        if (referenceView) {
             //TODO: check for reference view and do animated dismissal transition to that view.
         }
         else {
@@ -174,7 +177,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
     } completion:^(BOOL finished) {
         if (isDismissing) {
-            [self dismissViewControllerAnimated:NO completion:nil];
+            [self dismissAnimated:NO];
         }
     }];
 }
@@ -188,6 +191,27 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
     
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
+}
+
+- (void)dismissAnimated:(BOOL)animated {
+    if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
+        [self.delegate photosViewControllerWillDismiss:self];
+    }
+    
+    [self dismissViewControllerAnimated:animated completion:^{
+        if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+            [self.delegate photosViewControllerDidDismiss:self];
+        }
+    }];
+}
+
+- (UIView *)referenceViewForCurrentPhoto {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
+        UIViewController <NYTPhotoContaining> *photoViewController = self.pageViewController.viewControllers.firstObject;
+        return [self.delegate photosViewController:self referenceViewForPhoto:photoViewController.photo];
+    }
+    
+    return nil;
 }
 
 - (CGPoint)boundsCenterPoint {
