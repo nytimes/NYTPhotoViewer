@@ -8,6 +8,8 @@
 
 #import "NYTPhotoTransitionAnimator.h"
 
+const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
+
 @interface NYTPhotoTransitionAnimator ()
 
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
@@ -41,7 +43,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3;
+    return 0.5;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -106,17 +108,21 @@
     
     viewToFade.alpha = beginningAlpha;
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+    // Fade animation
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] * NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio animations:^{
         viewToFade.alpha = endingAlpha;
-        
+    } completion:^(BOOL finished) {
+    }];
+    
+    // Zoom animation
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:0.0 options:0 animations:^{
         self.endingView.transform = endingViewOriginalTransform;
         self.endingView.center = endingViewOriginalCenterInAnimationContainer;
-        
     } completion:^(BOOL finished) {
         [endingViewOriginalSuperview addSubview:self.endingView];
         self.endingView.center = endingViewOriginalCenterInAnimationSuperview;
-        
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+
     }];
 }
 
