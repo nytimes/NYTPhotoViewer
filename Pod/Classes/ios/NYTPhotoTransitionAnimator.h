@@ -12,5 +12,6 @@
 
 @property (nonatomic) UIView *startingView;
 @property (nonatomic) UIView *endingView;
+@property (nonatomic) CGPoint endingViewCenter;
 
 @end

@@ -11,6 +11,7 @@
 #import "NYTExamplePhoto.h"
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

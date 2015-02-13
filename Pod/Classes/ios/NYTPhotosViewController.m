@@ -61,6 +61,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     
     self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
     self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+    self.transitionAnimator.endingViewCenter = CGPointMake(CGRectGetMidX(self.currentPhotoViewController.scalingImageView.bounds), CGRectGetMidY(self.currentPhotoViewController.scalingImageView.bounds));
 }
 
 - (void)viewWillLayoutSubviews {
@@ -169,7 +170,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     
     if (isDismissing) {
         UIView *referenceView = self.referenceViewForCurrentPhoto;
-        if (referenceView) {
+#warning Remove NO once dismissal is working.
+        if (NO && referenceView) {
             [self dismissAnimated:YES];
         }
         else {
@@ -217,6 +219,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
+    
+#warning Remove once dismissal transition is fixed
+    self.transitionAnimator.startingView = nil;
+    self.transitionAnimator.endingView = nil;
     
     [self dismissViewControllerAnimated:animated completion:^{
         if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {

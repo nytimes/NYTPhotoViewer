@@ -16,6 +16,16 @@
 
 @implementation NYTPhotoTransitionAnimator
 
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _endingViewCenter = CGPointZero;
+    }
+    
+    return self;
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -31,7 +41,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 10.0;
+    return 0.3;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -40,14 +50,14 @@
     UIView *fromView;
     UIView *toView;
     
-//    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-//        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-//        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-//    }
-//    else {
+    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    }
+    else {
         fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view;
         toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
-    //}
+    }
     
     toView.frame = containerView.bounds;
     
@@ -57,18 +67,21 @@
     
     UIView *endingViewOriginalSuperview = self.endingView.superview;
     CGPoint endingViewOriginalCenterInAnimationSuperview = self.endingView.center;
-    CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:self.endingView.center toView:containerView];
-
+    
+    
+    CGPoint endingViewCenter = self.endingViewCenter;
+    
+    if (CGPointEqualToPoint(self.endingViewCenter, CGPointZero)) {
+        endingViewCenter = self.endingView.center;
+    }
+    
+    
+    CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
     CGAffineTransform endingViewOriginalTransform = self.endingView.transform;
-    
-    
     
     if (self.startingView && self.endingView) {
         CGPoint translatedInitialEndingCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
         CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(self.endingView.frame);
-        
-        //self.endingView.autoresizingMask = UIViewAutoresizingNone;
-        
         
         self.endingView.transform = CGAffineTransformScale(self.endingView.transform, endingViewInitialTransform, endingViewInitialTransform);
         self.endingView.center = translatedInitialEndingCenter;
@@ -78,15 +91,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-
     
     UIView *viewToFade = toView;
     CGFloat beginningAlpha = 0.0;

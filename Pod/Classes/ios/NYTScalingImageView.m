@@ -79,6 +79,10 @@
     }
 }
 
+- (void)scrollViewDidZoom:(__unused UIScrollView *)scrollView {
+    [self centerScrollViewContents];
+}
+
 #pragma mark - Centering
 
 #define floor __tg_floor //This is to address the Clang bug discussed here http://stackoverflow.com/questions/23333287/tgmath-h-doesnt-work-if-modules-are-enabled
