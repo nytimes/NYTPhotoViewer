@@ -49,6 +49,9 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIView *containerView = [transitionContext containerView];
     
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
     UIView *fromView;
     UIView *toView;
     
@@ -57,11 +60,11 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     }
     else {
-        fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view;
-        toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
+        fromView = fromViewController.view;
+        toView = toViewController.view;
     }
     
-    toView.frame = containerView.bounds;
+    toView.frame = [transitionContext finalFrameForViewController:[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]];
     
     if (![toView isDescendantOfView:containerView]) {
         [containerView addSubview:toView];
