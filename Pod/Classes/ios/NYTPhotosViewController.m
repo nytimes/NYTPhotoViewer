@@ -67,6 +67,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     self.pageViewController.view.frame = self.view.bounds;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark - NYTPhotosViewController
 
 - (instancetype)initWithPhotos:(NSArray *)photos {
@@ -83,6 +87,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         _transitionAnimator = [[NYTPhotoTransitionAnimator alloc] init];
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = _transitionAnimator;
+        self.modalPresentationCapturesStatusBarAppearance = YES;
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
