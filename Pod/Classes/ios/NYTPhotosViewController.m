@@ -56,9 +56,6 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-    
-    
-    
     self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
     self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
     self.transitionAnimator.endingViewCenter = CGPointMake(CGRectGetMidX(self.currentPhotoViewController.scalingImageView.bounds), CGRectGetMidY(self.currentPhotoViewController.scalingImageView.bounds));
