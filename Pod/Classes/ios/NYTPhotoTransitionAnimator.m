@@ -67,31 +67,30 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         [containerView addSubview:toView];
     }
     
-    UIView *endingViewOriginalSuperview = self.endingView.superview;
-    CGPoint endingViewOriginalCenterInAnimationSuperview = self.endingView.center;
-    
     
     CGPoint endingViewCenter = self.endingViewCenter;
     
-    if (CGPointEqualToPoint(self.endingViewCenter, CGPointZero)) {
+    if (CGPointEqualToPoint(endingViewCenter, CGPointZero)) {
         endingViewCenter = self.endingView.center;
     }
     
-    
     CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
-    CGAffineTransform endingViewOriginalTransform = self.endingView.transform;
+    
+    // Create a brand new view witht he same contents just for the purposes of animating it,
+    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     
     if (self.startingView && self.endingView) {
         CGPoint translatedInitialEndingCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
-        CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(self.endingView.frame);
+        CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(endingViewForAnimation.frame);
         
-        self.endingView.transform = CGAffineTransformScale(self.endingView.transform, endingViewInitialTransform, endingViewInitialTransform);
-        self.endingView.center = translatedInitialEndingCenter;
+        endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
+        endingViewForAnimation.center = translatedInitialEndingCenter;
 
-        [transitionContext.containerView addSubview:self.endingView];
+        [transitionContext.containerView addSubview:endingViewForAnimation];
     }
     
-    
+    // Hide the original ending view until the completion of the animation.
+    self.endingView.hidden = YES;
     
     
     UIView *viewToFade = toView;
@@ -115,15 +114,33 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     }];
     
     // Zoom animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:0.0 options:0 animations:^{
-        self.endingView.transform = endingViewOriginalTransform;
-        self.endingView.center = endingViewOriginalCenterInAnimationContainer;
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        endingViewForAnimation.transform = self.endingView.transform;
+        endingViewForAnimation.center = endingViewOriginalCenterInAnimationContainer;
     } completion:^(BOOL finished) {
-        [endingViewOriginalSuperview addSubview:self.endingView];
-        self.endingView.center = endingViewOriginalCenterInAnimationSuperview;
-        [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+        [endingViewForAnimation removeFromSuperview];
+        self.endingView.hidden = NO;
 
+        [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];
+}
+
+#pragma mark - Convenience
+
++ (UIView *)newAnimationViewFromView:(UIView *)view {
+    if (!view) {
+        return nil;
+    }
+    
+    UIView *animationView = [[UIView alloc] initWithFrame:view.frame];
+    animationView.layer.contents = view.layer.contents;
+    animationView.layer.bounds = view.layer.bounds;
+    animationView.layer.cornerRadius = view.layer.cornerRadius;
+    animationView.layer.masksToBounds = view.layer.masksToBounds;
+    animationView.contentMode = view.contentMode;
+    animationView.transform = view.transform;
+    
+    return animationView;
 }
 
 @end

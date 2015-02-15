@@ -18,28 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-D9-PMx">
-                                <rect key="frame" x="87" y="230" width="147" height="108"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-LE-XPk" userLabel="ImageButton">
+                                <rect key="frame" x="85" y="228" width="150" height="112"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="uDP-D9-PMx" secondAttribute="height" multiplier="49:36" id="Suc-xg-Mom"/>
-                                    <constraint firstAttribute="width" constant="147" id="jxx-s5-5pl"/>
+                                    <constraint firstAttribute="width" secondItem="zGH-LE-XPk" secondAttribute="height" multiplier="206:153" id="3NK-Qh-qg7"/>
+                                    <constraint firstAttribute="width" constant="150" id="sED-Db-UzQ"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="testImage">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="imageButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ho9-46-iUF"/>
+                                    <action selector="imageButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DVA-k5-E3X"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="uDP-D9-PMx" secondAttribute="centerY" id="KLU-em-AX5"/>
-                            <constraint firstAttribute="centerX" secondItem="uDP-D9-PMx" secondAttribute="centerX" id="glA-1M-aKp"/>
+                            <constraint firstAttribute="centerY" secondItem="zGH-LE-XPk" secondAttribute="centerY" id="Gws-wi-Uf9"/>
+                            <constraint firstAttribute="centerX" secondItem="zGH-LE-XPk" secondAttribute="centerX" id="gGk-yX-uv3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageButton" destination="uDP-D9-PMx" id="erF-pM-Uer"/>
+                        <outlet property="imageButton" destination="zGH-LE-XPk" id="aS8-Yc-Noq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
