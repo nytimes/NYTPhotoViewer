@@ -76,7 +76,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     
     CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
     
-    // Create a brand new view witht he same contents just for the purposes of animating it,
+    // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
     UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     
     if (self.startingView && self.endingView) {
