@@ -173,7 +173,12 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
     if (photo) {
-        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo];
+        UIView *activityView;
+        if ([self.delegate respondsToSelector:@selector(photosViewController:activityViewForPhoto:)]) {
+            activityView = [self.delegate photosViewController:self activityViewForPhoto:photo];
+        }
+        
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo activityView:activityView];
         photoViewController.delegate = self;
         return photoViewController;
     }
