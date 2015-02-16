@@ -37,7 +37,7 @@
  */
 - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto NS_DESIGNATED_INITIALIZER;
 
-- (void)moveToPhoto:(id <NYTPhoto>)photo;
+- (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated;
 - (void)updateImage:(UIImage *)image forPhoto:(id <NYTPhoto>)photo;
 
 @end

@@ -142,13 +142,13 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
 }
 
-- (void)moveToPhoto:(id <NYTPhoto>)photo {
+- (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
     if (![self.dataSource containsPhoto:photo]) {
         return;
     }
     
     NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
-    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:NULL];
 }
 
 - (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
