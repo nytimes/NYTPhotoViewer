@@ -35,8 +35,8 @@
     
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
     photosViewController.delegate = self;
-
     [self presentViewController:photosViewController animated:YES completion:nil];
+    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
@@ -44,6 +44,8 @@
         }
     });
 }
+
+#pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {
     return self.imageButton;
@@ -58,6 +60,10 @@
     }
     
     return nil;
+}
+
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo {
+    NSLog(@"Did Display Photo: %@", photo);
 }
 
 @end
