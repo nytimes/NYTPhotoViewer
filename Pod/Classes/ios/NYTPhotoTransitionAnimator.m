@@ -18,81 +18,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
 @implementation NYTPhotoTransitionAnimator
 
-#pragma mark - UIViewControllerTransitioningDelegate
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    self.dismissing = NO;
-    return self;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    self.dismissing = YES;
-    return self;
-}
-
-#pragma mark - UIViewControllerAnimatedTransitioning
-
-- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.5;
-}
-
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *containerView = [transitionContext containerView];
-    
-    // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
-    UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
-    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
-
-    CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
-    CGFloat startingViewEndingTransform = 1.0 / endingViewInitialTransform;
-    
-    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
-    CGPoint endingViewFinishedCenterInAnimationContainer = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
-    
-    startingViewForAnimation.center = translatedStartingViewCenter;
-    
-    endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
-    endingViewForAnimation.center = translatedStartingViewCenter;
-    endingViewForAnimation.alpha = 0.0;
-    
-    [transitionContext.containerView addSubview:startingViewForAnimation];
-    [transitionContext.containerView addSubview:endingViewForAnimation];
-    
-    // Background fade animation.
-    [self performFadeAnimationWithTransitionContext:transitionContext];
-    
-    // Hide the original ending view and starting view until the completion of the animation.
-    self.endingView.hidden = YES;
-    self.startingView.hidden = YES;
-    
-    // Ending view / starting view replacement animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.1 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        endingViewForAnimation.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.05 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            startingViewForAnimation.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            [startingViewForAnimation removeFromSuperview];
-        }];
-    }];
-    
-    // Zoom animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.85 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        endingViewForAnimation.transform = self.endingView.transform;
-        endingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
-        
-        startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewEndingTransform, startingViewEndingTransform);
-        startingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
-    } completion:^(BOOL finished) {
-        [endingViewForAnimation removeFromSuperview];
-        self.endingView.hidden = NO;
-        self.startingView.hidden = NO;
-
-        [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
-    }];
-}
-
-#pragma mark - Animation
+#pragma mark - NYTPhotoTransitionAnimator
 
 - (void)performFadeAnimationWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIView *containerView = transitionContext.containerView;
@@ -176,6 +102,80 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     animationView.transform = view.transform;
     
     return animationView;
+}
+
+#pragma mark - UIViewControllerAnimatedTransitioning
+
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
+    return 0.5;
+}
+
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    UIView *containerView = [transitionContext containerView];
+    
+    // Background fade animation.
+    [self performFadeAnimationWithTransitionContext:transitionContext];
+    
+    // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
+    UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
+    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
+
+    CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(endingViewForAnimation.frame);
+    CGFloat startingViewEndingTransform = 1.0 / endingViewInitialTransform;
+    
+    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
+    CGPoint endingViewFinishedCenterInAnimationContainer = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
+    
+    startingViewForAnimation.center = translatedStartingViewCenter;
+    
+    endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
+    endingViewForAnimation.center = translatedStartingViewCenter;
+    endingViewForAnimation.alpha = 0.0;
+    
+    [transitionContext.containerView addSubview:startingViewForAnimation];
+    [transitionContext.containerView addSubview:endingViewForAnimation];
+    
+    // Hide the original ending view and starting view until the completion of the animation.
+    self.endingView.hidden = YES;
+    self.startingView.hidden = YES;
+    
+    // Ending view / starting view replacement animation
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.1 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        endingViewForAnimation.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.05 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            startingViewForAnimation.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            [startingViewForAnimation removeFromSuperview];
+        }];
+    }];
+    
+    // Zoom animation
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.85 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        endingViewForAnimation.transform = self.endingView.transform;
+        endingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
+        
+        startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewEndingTransform, startingViewEndingTransform);
+        startingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
+    } completion:^(BOOL finished) {
+        [endingViewForAnimation removeFromSuperview];
+        self.endingView.hidden = NO;
+        self.startingView.hidden = NO;
+
+        [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+    }];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    self.dismissing = NO;
+    return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    self.dismissing = YES;
+    return self;
 }
 
 @end
