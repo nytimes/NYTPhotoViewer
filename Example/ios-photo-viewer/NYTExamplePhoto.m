@@ -18,8 +18,4 @@
 @synthesize captionCredit = _captionCredit;
 @synthesize identifier = _identifier;
 
-- (UIImage *)image {
-    return [UIImage imageNamed:@"testImage"];
-}
-
 @end

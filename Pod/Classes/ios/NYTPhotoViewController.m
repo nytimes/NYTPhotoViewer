@@ -15,6 +15,7 @@
 @property (nonatomic) id <NYTPhoto> photo;
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
+@property (nonatomic) UIView *activityView;
 @property (nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @property (nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
@@ -39,17 +40,27 @@
         
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
+    
+    [self.view addSubview:self.activityView];
+    [self.activityView sizeToFit];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
     self.scalingImageView.frame = self.view.bounds;
+    
+    [self.activityView sizeToFit];
+    self.activityView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 }
 
 #pragma mark - NYTPhotoViewController
 
 - (instancetype)initWithPhoto:(id <NYTPhoto>)photo {
+    return [self initWithPhoto:photo activityView:nil];
+}
+
+- (instancetype)initWithPhoto:(id<NYTPhoto>)photo activityView:(UIView *)activityView {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
@@ -58,10 +69,32 @@
         _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photo.image frame:CGRectZero];
         _scalingImageView.delegate = self;
         
+        if (!photo.image) {
+            [self setupActivityView:activityView];
+        }
+        
         [self setupGestureRecognizers];
     }
     
     return self;
+}
+
+- (void)setupActivityView:(UIView *)activityView {
+    _activityView = activityView;
+    if (!activityView) {
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        [activityIndicator startAnimating];
+        _activityView = activityIndicator;
+    }
+}
+
+- (void)updateImage:(UIImage *)image {
+    [self.scalingImageView updateImage:image];
+    
+    if (image) {
+        [self.activityView removeFromSuperview];
+        self.activityView = nil;
+    }
 }
 
 #pragma mark - Gesture Recognizers

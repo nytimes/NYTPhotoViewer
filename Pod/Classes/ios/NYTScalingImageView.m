@@ -35,7 +35,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self setupInternalImageView:image];
+        [self setupInternalImageViewWithImage:image];
         [self setupImageScrollView];
         [self updateZoomScale];
     }
@@ -45,13 +45,24 @@
 
 #pragma mark - Setup
 
-- (void)setupInternalImageView:(UIImage *)image {
+- (void)setupInternalImageViewWithImage:(UIImage *)image {
     self.internalImageView = [[UIImageView alloc] initWithImage:image];
-    self.internalImageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    [self updateImage:image];
     
     [self addSubview:self.internalImageView];
+}
+
+- (void)updateImage:(UIImage *)image {
+    // Remove any transform currently applied by the scrollview zooming.
+    self.internalImageView.transform = CGAffineTransformIdentity;
+    
+    self.internalImageView.image = image;
+    self.internalImageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     
     self.contentSize = image.size;
+    
+    [self updateZoomScale];
+    [self centerScrollViewContents];
 }
 
 - (void)setupImageScrollView {

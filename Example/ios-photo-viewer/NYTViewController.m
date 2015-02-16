@@ -22,12 +22,27 @@
     NSMutableArray *photos = [NSMutableArray array];
     
     for (int i = 0; i < 5; i++) {
-        [photos addObject:[[NYTExamplePhoto alloc] init]];
+        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
+        
+        photo.image = [UIImage imageNamed:@"testImage"];
+        if (i == 1 || i == 3) {
+            photo.image = nil;
+        }
+        
+        photo.identifier = @(i).stringValue;
+        [photos addObject:photo];
     }
     
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
     photosViewController.delegate = self;
+
     [self presentViewController:photosViewController animated:YES completion:nil];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        for (NYTExamplePhoto *photo in photos) {
+            [photosViewController updateImage:[UIImage imageNamed:@"testImage"] forPhoto:photo];
+        }
+    });
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {

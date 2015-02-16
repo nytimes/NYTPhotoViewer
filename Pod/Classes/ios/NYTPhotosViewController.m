@@ -81,8 +81,11 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self.pageViewController didMoveToParentViewController:self];
     
     self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
-    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
-    self.transitionAnimator.endingViewCenter = CGPointMake(CGRectGetMidX(self.currentPhotoViewController.scalingImageView.bounds), CGRectGetMidY(self.currentPhotoViewController.scalingImageView.bounds));
+    
+    if (self.currentPhotoViewController.photo.image) {
+        self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+        self.transitionAnimator.endingViewCenter = CGPointMake(CGRectGetMidX(self.currentPhotoViewController.scalingImageView.bounds), CGRectGetMidY(self.currentPhotoViewController.scalingImageView.bounds));
+    }
 }
 
 - (void)viewWillLayoutSubviews {
@@ -146,6 +149,26 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     
     NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
     [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+}
+
+- (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
+    photo.image = image;
+    
+    NYTPhotoViewController *photoViewController;
+    
+    for (NYTPhotoViewController *controller in self.pageViewController.viewControllers) {
+        if ([controller.photo.identifier isEqualToString:photo.identifier]) {
+            photoViewController = controller;
+            break;
+        }
+    }
+    
+    [photoViewController updateImage:image];
+    
+    // Reset the cached view controllers in the page view controller.
+    if (self.pageViewController.viewControllers.firstObject) {
+        [self.pageViewController setViewControllers:@[self.pageViewController.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    }
 }
 
 - (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {

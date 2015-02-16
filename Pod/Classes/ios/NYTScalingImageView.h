@@ -20,6 +20,8 @@
  */
 - (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame;
 
+- (void)updateImage:(UIImage *)image;
+
 /** Centers the image inside of the scroll view. Typically used after rotation, or when zooming has finished.
  */
 - (void)centerScrollViewContents;

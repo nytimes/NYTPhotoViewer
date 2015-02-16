@@ -19,9 +19,13 @@
 @property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;
 
 @property (nonatomic, readonly) NYTScalingImageView *scalingImageView;
+@property (nonatomic, readonly) UIView *activityView;
 @property (nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo;
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo activityView:(UIView *)activityView NS_DESIGNATED_INITIALIZER;
+
+- (void)updateImage:(UIImage *)image;
 
 @end
 
