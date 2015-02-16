@@ -165,7 +165,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [photoViewController updateImage:image];
     
     // Reset the cached view controllers in the page view controller.
-    if (self.pageViewController.viewControllers.firstObject) {
+    if (self.pageViewController.viewControllers.firstObject && photoViewController) {
         [self.pageViewController setViewControllers:@[self.pageViewController.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     }
 }
