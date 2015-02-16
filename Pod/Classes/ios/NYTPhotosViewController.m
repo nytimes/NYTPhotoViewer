@@ -137,7 +137,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.dataSource[0]];
     }
     
-    [self.pageViewController setViewControllers:@[initialPhotoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
     
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
 }
@@ -148,7 +148,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }
     
     NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
-    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
+    [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
 }
 
 - (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
@@ -285,6 +285,33 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }];
 }
 
+#pragma mark - Convenience
+
+- (void)setCurrentlyDisplayedViewController:(UIViewController <NYTPhotoContaining> *)viewController animated:(BOOL)animated {
+    if (!viewController) {
+        return;
+    }
+    
+    typeof(self) __weak weakSelf = self;
+    
+    void(^animationCompletion)(BOOL finished) = ^(BOOL finished) {
+        [weakSelf didDisplayPhoto:viewController.photo];
+    };
+    
+    [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:animationCompletion];
+    
+    // The completion block isn't called unless animated is YES, so call it ourselves if animated is NO.
+    if (!animated) {
+        animationCompletion(YES);
+    }
+}
+
+- (void)didDisplayPhoto:(id <NYTPhoto>)photo {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:)]) {
+        [self.delegate photosViewController:self didDisplayPhoto:photo];
+    }
+}
+
 - (NYTPhotoViewController *)currentPhotoViewController {
     return self.pageViewController.viewControllers.firstObject;
 }
@@ -335,5 +362,12 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 #pragma mark - UIPageViewControllerDelegate
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (completed) {
+        UIViewController <NYTPhotoContaining> *photoViewController = pageViewController.viewControllers.firstObject;
+        [self didDisplayPhoto:photoViewController.photo];
+    }
+}
 
 @end
