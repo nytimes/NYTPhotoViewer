@@ -162,7 +162,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     if (view.layer.contents) {
         animationView.layer.contents = view.layer.contents;
         animationView.layer.bounds = view.layer.bounds;
-        animationView.transform = view.transform;
     }
     else {
         animationView = [view snapshotViewAfterScreenUpdates:NO];
@@ -171,6 +170,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     animationView.layer.cornerRadius = view.layer.cornerRadius;
     animationView.layer.masksToBounds = view.layer.masksToBounds;
     animationView.contentMode = view.contentMode;
+    animationView.transform = view.transform;
     
     return animationView;
 }
