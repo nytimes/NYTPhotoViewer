@@ -310,6 +310,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }
 }
 
+- (id <NYTPhoto>)currentlyDisplayedPhoto {
+    return self.currentPhotoViewController.photo;
+}
+
 - (NYTPhotoViewController *)currentPhotoViewController {
     return self.pageViewController.viewControllers.firstObject;
 }

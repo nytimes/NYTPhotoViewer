@@ -15,6 +15,7 @@
 
 @property (nonatomic) UIButton *doneButton;
 @property (nonatomic) UIButton *actionButton;
+@property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 
 @property (nonatomic, weak) id <NYTPhotosViewControllerDelegate> delegate;
 
