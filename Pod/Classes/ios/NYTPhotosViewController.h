@@ -42,6 +42,9 @@
 
 @end
 
+/**
+ *  A protocol of entirely optional methods called for configuration and lifecycle events by an `NYTPhotosViewController` instance.
+ */
 @protocol NYTPhotosViewControllerDelegate <NSObject>
 
 @optional
