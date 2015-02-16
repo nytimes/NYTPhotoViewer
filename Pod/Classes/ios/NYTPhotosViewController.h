@@ -51,17 +51,17 @@
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Called when a photo is long pressed.
+ *  Called immediately before the photos view controller is about to dismiss.
  *
- *  @param photosViewController       The `NYTPhotosViewController` instance that sent the delegate message.
- *  @param photo                      The photo being displayed that was long pressed.
- *  @param longPressGestureRecognizer The gesture recognizer that detected the long press.
- *
- *  @return YES if the long press was handled by the client, NO if the default UIMenuController is desired.
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  */
-- (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
-
 - (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController;
+
+/**
+ *  Called immediately after the photos view controller has dismissed.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ */
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
@@ -85,6 +85,17 @@
  *  @return The view to animate out of or into for the given photo.
  */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
+
+/**
+ *  Called when a photo is long pressed.
+ *
+ *  @param photosViewController       The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                      The photo being displayed that was long pressed.
+ *  @param longPressGestureRecognizer The gesture recognizer that detected the long press.
+ *
+ *  @return YES if the long press was handled by the client, NO if the default UIMenuController is desired.
+ */
+- (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
 /**
  *  Called when the action button is tapped.
