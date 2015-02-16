@@ -217,13 +217,15 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     CGFloat finalBackgroundAlpha = 1.0;
     
     // Dismissal case.
+    UIView *referenceView;
+    
     CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
     BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
     
     if (isDismissing) {
-        UIView *referenceView = self.referenceViewForCurrentPhoto;
-#warning Remove NO once dismissal is working.
-        if (NO && referenceView) {
+        referenceView = self.referenceViewForCurrentPhoto;
+        
+        if (referenceView) {
             [self dismissAnimated:YES];
         }
         else {
@@ -242,15 +244,17 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         }
     }
     
-    [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
-        self.pageViewController.view.center = finalPageViewCenterPoint;
-        
-        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
-    } completion:^(BOOL finished) {
-        if (isDismissing) {
-            [self dismissAnimated:NO];
-        }
-    }];
+    if (!referenceView) {
+        [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
+            self.pageViewController.view.center = finalPageViewCenterPoint;
+            
+            self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
+        } completion:^(BOOL finished) {
+            if (isDismissing) {
+                [self dismissAnimated:NO];
+            }
+        }];
+    }
 }
 
 - (CGFloat)backgroundAlphaForPanningWithVerticalDelta:(CGFloat)verticalDelta {
@@ -265,16 +269,12 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
-    self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+    self.transitionAnimator.startingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+    self.transitionAnimator.endingView = self.referenceViewForCurrentPhoto;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
-    
-#warning Remove once dismissal transition is fixed
-    self.transitionAnimator.startingView = nil;
-    self.transitionAnimator.endingView = nil;
     
     [self dismissViewControllerAnimated:animated completion:^{
         if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {

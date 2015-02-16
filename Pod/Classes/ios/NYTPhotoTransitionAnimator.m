@@ -60,6 +60,10 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         [containerView addSubview:toView];
     }
     
+    if (self.isDismissing) {
+        [containerView bringSubviewToFront:fromView];
+    }
+    
     // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
     UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
     UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
@@ -88,8 +92,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     CGFloat endingAlpha = 1.0;
     
     if (self.isDismissing) {
-        [containerView bringSubviewToFront:fromView];
-        
         viewToFade = fromView;
         beginningAlpha = 1.0;
         endingAlpha = 0.0;
