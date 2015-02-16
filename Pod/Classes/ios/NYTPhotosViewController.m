@@ -19,7 +19,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
-@property (nonatomic) NYTPhotosDataSource *dataSource;
+@property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 
 @property (nonatomic) NYTPhotoTransitionAnimator *transitionAnimator;
