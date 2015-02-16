@@ -12,6 +12,7 @@
 #import "NYTPhotoViewController.h"
 #import "NYTPhotoTransitionAnimator.h"
 #import "NYTScalingImageView.h"
+#import "NYTPhoto.h"
 
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 60.0/667.0; // distance over iPhone 6 height.
 const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
@@ -24,6 +25,9 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) NYTPhotoTransitionAnimator *transitionAnimator;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+
+@property (nonatomic) BOOL clientIsHandlingLongPress;
+@property (nonatomic) BOOL clientDidHandleLongPress;
 
 @property (nonatomic, readonly) NYTPhotoViewController *currentPhotoViewController;
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
@@ -38,6 +42,26 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 - (void)dealloc {
     self.pageViewController.dataSource = nil;
     self.pageViewController.delegate = nil;
+}
+
+#pragma mark - NSObject(UIResponderStandardEditActions)
+
+- (void)copy:(id)sender {
+    [[UIPasteboard generalPasteboard] setImage:self.currentPhotoViewController.photo.image];
+}
+
+#pragma mark - UIResponder
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (!self.clientDidHandleLongPress && !self.clientIsHandlingLongPress && action == @selector(copy:) && self.currentPhotoViewController.photo.image) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 #pragma mark - UIViewController
@@ -252,8 +276,21 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 #pragma mark - NYTPhotoViewControllerDelegate
 
 - (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
-    if ([self.delegate respondsToSelector:@selector(photosViewController:didLongPressPhoto:withGestureRecognizer:)]) {
-        [self.delegate photosViewController:self didLongPressPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
+    BOOL didHandle = NO;
+    if ([self.delegate respondsToSelector:@selector(photosViewController:handleLongPressForPhoto:withGestureRecognizer:)]) {
+        self.clientIsHandlingLongPress = YES;
+        didHandle = [self.delegate photosViewController:self handleLongPressForPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
+        self.clientIsHandlingLongPress = NO;
+    }
+    
+    self.clientDidHandleLongPress = didHandle;
+    
+    if (!self.clientDidHandleLongPress) {
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        CGRect targetRect = CGRectZero;
+        targetRect.origin = [longPressGestureRecognizer locationInView:longPressGestureRecognizer.view];
+        [menuController setTargetRect:targetRect inView:longPressGestureRecognizer.view];
+        [menuController setMenuVisible:YES animated:YES];
     }
 }
 

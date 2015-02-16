@@ -46,7 +46,17 @@
 
 @optional
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didLongPressPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
+
+/**
+ *  Called when a photo is long pressed.
+ *
+ *  @param photosViewController       The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                      The photo being displayed that was long pressed.
+ *  @param longPressGestureRecognizer The gesture recognizer that detected the long press.
+ *
+ *  @return YES if the long press was handled by the client, NO if the default UIMenuController is desired.
+ */
+- (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
 - (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController;
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;
