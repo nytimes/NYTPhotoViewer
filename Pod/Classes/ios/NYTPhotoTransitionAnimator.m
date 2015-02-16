@@ -60,38 +60,24 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         [containerView addSubview:toView];
     }
     
-    
-    CGPoint endingViewCenter = self.endingView.center;
-    
-    // Special case for zoomed scroll views.
-    if ([self.endingView.superview isKindOfClass:[UIScrollView class]]) {
-        UIScrollView *scrollView = (UIScrollView *)self.endingView.superview;
-        
-        endingViewCenter.x += (CGRectGetWidth(scrollView.bounds) - scrollView.contentSize.width) / 2.0 + scrollView.contentOffset.x;
-        endingViewCenter.y += (CGRectGetHeight(scrollView.bounds) - scrollView.contentSize.height) / 2.0 + scrollView.contentOffset.y;
-    }
-    
-    CGPoint endingViewFinishedCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
-    
     // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
-    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
+    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
 
     CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGFloat startingViewEndingTransform = 1.0 / endingViewInitialTransform;
     
-    if (self.startingView && self.endingView) {
-        CGPoint translatedStartingViewCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
-        
-        startingViewForAnimation.center = translatedStartingViewCenter;
-        
-        endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
-        endingViewForAnimation.center = translatedStartingViewCenter;
-        endingViewForAnimation.alpha = 0.0;
-
-        [transitionContext.containerView addSubview:startingViewForAnimation];
-        [transitionContext.containerView addSubview:endingViewForAnimation];
-    }
+    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
+    CGPoint endingViewFinishedCenterInAnimationContainer = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
+    
+    startingViewForAnimation.center = translatedStartingViewCenter;
+    
+    endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
+    endingViewForAnimation.center = translatedStartingViewCenter;
+    endingViewForAnimation.alpha = 0.0;
+    
+    [transitionContext.containerView addSubview:startingViewForAnimation];
+    [transitionContext.containerView addSubview:endingViewForAnimation];
     
     // Hide the original ending view and starting view until the completion of the animation.
     self.endingView.hidden = YES;
@@ -145,6 +131,20 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 }
 
 #pragma mark - Convenience
+
++ (CGPoint)centerPointForView:(UIView *)view translatedToContainerView:(UIView *)containerView {
+    CGPoint centerPoint = view.center;
+    
+    // Special case for zoomed scroll views.
+    if ([view.superview isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)view.superview;
+        
+        centerPoint.x += (CGRectGetWidth(scrollView.bounds) - scrollView.contentSize.width) / 2.0 + scrollView.contentOffset.x;
+        centerPoint.y += (CGRectGetHeight(scrollView.bounds) - scrollView.contentSize.height) / 2.0 + scrollView.contentOffset.y;
+    }
+    
+    return [view.superview convertPoint:centerPoint toView:containerView];
+}
 
 + (UIView *)newAnimationViewFromView:(UIView *)view {
     if (!view) {
