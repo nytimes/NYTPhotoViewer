@@ -26,8 +26,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 
-@property (nonatomic) BOOL clientIsHandlingLongPress;
-@property (nonatomic) BOOL clientDidHandleLongPress;
+@property (nonatomic) BOOL shouldHandleLongPress;
 
 @property (nonatomic, readonly) NYTPhotoViewController *currentPhotoViewController;
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
@@ -57,7 +56,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (!self.clientDidHandleLongPress && !self.clientIsHandlingLongPress && action == @selector(copy:) && self.currentPhotoViewController.photo.image) {
+    if (self.shouldHandleLongPress && action == @selector(copy:) && self.currentPhotoViewController.photo.image) {
         return YES;
     }
     
@@ -331,16 +330,16 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 #pragma mark - NYTPhotoViewControllerDelegate
 
 - (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
-    BOOL didHandle = NO;
+    self.shouldHandleLongPress = NO;
+    
+    BOOL clientDidHandle = NO;
     if ([self.delegate respondsToSelector:@selector(photosViewController:handleLongPressForPhoto:withGestureRecognizer:)]) {
-        self.clientIsHandlingLongPress = YES;
-        didHandle = [self.delegate photosViewController:self handleLongPressForPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
-        self.clientIsHandlingLongPress = NO;
+        clientDidHandle = [self.delegate photosViewController:self handleLongPressForPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
     }
     
-    self.clientDidHandleLongPress = didHandle;
+    self.shouldHandleLongPress = !clientDidHandle;
     
-    if (!self.clientDidHandleLongPress) {
+    if (self.shouldHandleLongPress) {
         UIMenuController *menuController = [UIMenuController sharedMenuController];
         CGRect targetRect = CGRectZero;
         targetRect.origin = [longPressGestureRecognizer locationInView:longPressGestureRecognizer.view];
