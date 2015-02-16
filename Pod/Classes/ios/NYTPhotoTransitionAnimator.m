@@ -18,16 +18,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
 @implementation NYTPhotoTransitionAnimator
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        _endingViewCenter = CGPointZero;
-    }
-    
-    return self;
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -71,10 +61,14 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     }
     
     
-    CGPoint endingViewCenter = self.endingViewCenter;
+    CGPoint endingViewCenter = self.endingView.center;
     
-    if (CGPointEqualToPoint(endingViewCenter, CGPointZero)) {
-        endingViewCenter = self.endingView.center;
+    // Special case for zoomed scroll views.
+    if ([self.endingView.superview isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)self.endingView.superview;
+        
+        endingViewCenter.x += (CGRectGetWidth(scrollView.bounds) - scrollView.contentSize.width) / 2.0 + scrollView.contentOffset.x;
+        endingViewCenter.y += (CGRectGetHeight(scrollView.bounds) - scrollView.contentSize.height) / 2.0 + scrollView.contentOffset.y;
     }
     
     CGPoint endingViewFinishedCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];

@@ -83,7 +83,6 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     
     if (self.currentPhotoViewController.photo.image) {
         self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
-        self.transitionAnimator.endingViewCenter = CGPointMake(CGRectGetMidX(self.currentPhotoViewController.scalingImageView.bounds), CGRectGetMidY(self.currentPhotoViewController.scalingImageView.bounds));
     }
 }
 
