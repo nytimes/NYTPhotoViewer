@@ -63,6 +63,15 @@
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id <NYTPhoto>)photo;
+
+/**
+ *  Returns the view from which to animate for a given object conforming to the NYTPhoto protocol.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo for which the animation will occur.
+ *
+ *  @return The view to animate out of or into for the given photo.
+ */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
