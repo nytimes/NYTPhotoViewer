@@ -39,31 +39,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIView *containerView = [transitionContext containerView];
     
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIView *fromView;
-    UIView *toView;
-    
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }
-    else {
-        fromView = fromViewController.view;
-        toView = toViewController.view;
-    }
-    
-    toView.frame = [transitionContext finalFrameForViewController:[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]];
-    
-    if (![toView isDescendantOfView:containerView]) {
-        [containerView addSubview:toView];
-    }
-    
-    if (self.isDismissing) {
-        [containerView bringSubviewToFront:fromView];
-    }
-    
     // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
     UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
     UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
@@ -83,27 +58,12 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     [transitionContext.containerView addSubview:startingViewForAnimation];
     [transitionContext.containerView addSubview:endingViewForAnimation];
     
+    // Background fade animation.
+    [self performFadeAnimationWithTransitionContext:transitionContext];
+    
     // Hide the original ending view and starting view until the completion of the animation.
     self.endingView.hidden = YES;
     self.startingView.hidden = YES;
-    
-    UIView *viewToFade = toView;
-    CGFloat beginningAlpha = 0.0;
-    CGFloat endingAlpha = 1.0;
-    
-    if (self.isDismissing) {
-        viewToFade = fromView;
-        beginningAlpha = 1.0;
-        endingAlpha = 0.0;
-    }
-    
-    viewToFade.alpha = beginningAlpha;
-    
-    // Fade animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] * NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio animations:^{
-        viewToFade.alpha = endingAlpha;
-    } completion:^(BOOL finished) {
-    }];
     
     // Ending view / starting view replacement animation
     [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.1 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
@@ -130,6 +90,53 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];
+}
+
+#pragma mark - Animation
+
+- (void)performFadeAnimationWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
+    UIView *containerView = transitionContext.containerView;
+    
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    UIView *fromView;
+    UIView *toView;
+    
+    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    }
+    else {
+        fromView = fromViewController.view;
+        toView = toViewController.view;
+    }
+    
+    toView.frame = [transitionContext finalFrameForViewController:toViewController];
+    
+    if (![toView isDescendantOfView:containerView]) {
+        [containerView addSubview:toView];
+    }
+    
+    if (self.isDismissing) {
+        [containerView bringSubviewToFront:fromView];
+    }
+    
+    UIView *viewToFade = toView;
+    CGFloat beginningAlpha = 0.0;
+    CGFloat endingAlpha = 1.0;
+    
+    if (self.isDismissing) {
+        viewToFade = fromView;
+        beginningAlpha = 1.0;
+        endingAlpha = 0.0;
+    }
+    
+    viewToFade.alpha = beginningAlpha;
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] * NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio animations:^{
+        viewToFade.alpha = endingAlpha;
+    } completion:nil];
 }
 
 #pragma mark - Convenience
