@@ -77,24 +77,31 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         endingViewCenter = self.endingView.center;
     }
     
-    CGPoint endingViewOriginalCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
+    CGPoint endingViewFinishedCenterInAnimationContainer = [self.endingView.superview convertPoint:endingViewCenter toView:containerView];
     
     // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
     UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
+    UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
+
+    CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(endingViewForAnimation.frame);
+    CGFloat startingViewEndingTransform = 1.0 / endingViewInitialTransform;
     
     if (self.startingView && self.endingView) {
-        CGPoint translatedInitialEndingCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
-        CGFloat endingViewInitialTransform = CGRectGetHeight(self.startingView.frame) / CGRectGetHeight(endingViewForAnimation.frame);
+        CGPoint translatedStartingViewCenter = [self.startingView.superview convertPoint:self.startingView.center toView:containerView];
+        
+        startingViewForAnimation.center = translatedStartingViewCenter;
         
         endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
-        endingViewForAnimation.center = translatedInitialEndingCenter;
+        endingViewForAnimation.center = translatedStartingViewCenter;
+        endingViewForAnimation.alpha = 0.0;
 
+        [transitionContext.containerView addSubview:startingViewForAnimation];
         [transitionContext.containerView addSubview:endingViewForAnimation];
     }
     
-    // Hide the original ending view until the completion of the animation.
+    // Hide the original ending view and starting view until the completion of the animation.
     self.endingView.hidden = YES;
-    
+    self.startingView.hidden = YES;
     
     UIView *viewToFade = toView;
     CGFloat beginningAlpha = 0.0;
@@ -116,13 +123,27 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     } completion:^(BOOL finished) {
     }];
     
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.2 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        endingViewForAnimation.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.05 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            startingViewForAnimation.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            [startingViewForAnimation removeFromSuperview];
+        }];
+    }];
+    
     // Zoom animation
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
         endingViewForAnimation.transform = self.endingView.transform;
-        endingViewForAnimation.center = endingViewOriginalCenterInAnimationContainer;
+        endingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
+        
+        startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewEndingTransform, startingViewEndingTransform);
+        startingViewForAnimation.center = endingViewFinishedCenterInAnimationContainer;
     } completion:^(BOOL finished) {
         [endingViewForAnimation removeFromSuperview];
         self.endingView.hidden = NO;
+        self.startingView.hidden = NO;
 
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];
@@ -136,12 +157,19 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     }
     
     UIView *animationView = [[UIView alloc] initWithFrame:view.frame];
-    animationView.layer.contents = view.layer.contents;
-    animationView.layer.bounds = view.layer.bounds;
+    
+    if (view.layer.contents) {
+        animationView.layer.contents = view.layer.contents;
+        animationView.layer.bounds = view.layer.bounds;
+        animationView.transform = view.transform;
+    }
+    else {
+        animationView = [view snapshotViewAfterScreenUpdates:NO];
+    }
+    
     animationView.layer.cornerRadius = view.layer.cornerRadius;
     animationView.layer.masksToBounds = view.layer.masksToBounds;
     animationView.contentMode = view.contentMode;
-    animationView.transform = view.transform;
     
     return animationView;
 }
