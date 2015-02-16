@@ -148,7 +148,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }
     
     NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
-    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:NULL];
+    [self.pageViewController setViewControllers:@[photoViewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
 }
 
 - (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
