@@ -79,7 +79,7 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
         [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
             viewToPan.center = finalPageViewCenterPoint;
             
-            fromView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
+            fromView.backgroundColor = [fromView.backgroundColor colorWithAlphaComponent:finalBackgroundAlpha];
         } completion:^(BOOL finished) {
             if (isDismissing) {
                 [self.transitionContext finishInteractiveTransition];
