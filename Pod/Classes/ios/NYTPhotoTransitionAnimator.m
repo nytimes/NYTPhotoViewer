@@ -277,12 +277,12 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
         self.endingView.hidden = NO;
         self.startingView.hidden = NO;
         
-        if (self.interactiveTransitionContext) {
+        if (transitionContext.isInteractive) {
             if (transitionContext.transitionWasCancelled) {
-                [self.interactiveTransitionContext cancelInteractiveTransition];
+                [transitionContext cancelInteractiveTransition];
             }
             else {
-                [self.interactiveTransitionContext finishInteractiveTransition];
+                [transitionContext finishInteractiveTransition];
             }
         }
 
