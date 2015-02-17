@@ -23,7 +23,7 @@
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame;
+- (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Updates the image in the imageView and centers and zooms the new image.
