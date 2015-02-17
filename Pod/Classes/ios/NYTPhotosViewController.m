@@ -82,7 +82,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
     
     if (self.currentPhotoViewController.photo.image) {
-        self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+        self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
 }
 
@@ -269,7 +269,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    self.transitionAnimator.startingView = self.currentPhotoViewController.scalingImageView.internalImageView;
+    self.transitionAnimator.startingView = self.currentPhotoViewController.scalingImageView.imageView;
     self.transitionAnimator.endingView = self.referenceViewForCurrentPhoto;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {

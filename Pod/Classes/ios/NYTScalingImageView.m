@@ -10,6 +10,12 @@
 
 #import "tgmath.h"
 
+@interface NYTScalingImageView ()
+
+@property (nonatomic) UIImageView *imageView;
+
+@end
+
 @implementation NYTScalingImageView
 
 #pragma mark - UIView
@@ -46,18 +52,18 @@
 #pragma mark - Setup
 
 - (void)setupInternalImageViewWithImage:(UIImage *)image {
-    self.internalImageView = [[UIImageView alloc] initWithImage:image];
+    self.imageView = [[UIImageView alloc] initWithImage:image];
     [self updateImage:image];
     
-    [self addSubview:self.internalImageView];
+    [self addSubview:self.imageView];
 }
 
 - (void)updateImage:(UIImage *)image {
     // Remove any transform currently applied by the scrollview zooming.
-    self.internalImageView.transform = CGAffineTransformIdentity;
+    self.imageView.transform = CGAffineTransformIdentity;
     
-    self.internalImageView.image = image;
-    self.internalImageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    self.imageView.image = image;
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     
     self.contentSize = image.size;
     
@@ -74,11 +80,11 @@
 }
 
 - (void)updateZoomScale {
-    if (self.internalImageView.image) {
+    if (self.imageView.image) {
         CGRect scrollViewFrame = self.bounds;
         
-        CGFloat scaleWidth = scrollViewFrame.size.width / self.internalImageView.image.size.width;
-        CGFloat scaleHeight = scrollViewFrame.size.height / self.internalImageView.image.size.height;
+        CGFloat scaleWidth = scrollViewFrame.size.width / self.imageView.image.size.width;
+        CGFloat scaleHeight = scrollViewFrame.size.height / self.imageView.image.size.height;
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;

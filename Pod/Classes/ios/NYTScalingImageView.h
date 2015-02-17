@@ -10,19 +10,30 @@
 
 @interface NYTScalingImageView : UIScrollView
 
-@property (nonatomic) UIImageView *internalImageView;
+/**
+ *  The image view used internally as the contents of the scroll view.
+ */
+@property (nonatomic, readonly) UIImageView *imageView;
 
-/** Initializes a scaling image view with a UIImage. This object is a UIScrollView that contains a UIImageView. This allows for zooming and panning around the image. Additionally it supports double tap to zoom.
- 
- @param UIImage A UIImage object.
- @param CGRect  The frame to initialize the NYTScalingImageView in.
- @return Whatever it returns.
+/**
+ *  Initializes a scaling image view with a UIImage. This object is a UIScrollView that contains a UIImageView. This allows for zooming and panning around the image.
+ *
+ *  @param image A UIImage for zooming and panning.
+ *  @param frame The frame of the view.
+ *
+ *  @return A fully initialized object.
  */
 - (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame;
 
+/**
+ *  Updates the image in the imageView and centers and zooms the new image.
+ *
+ *  @param image The new image to display in the image view.
+ */
 - (void)updateImage:(UIImage *)image;
 
-/** Centers the image inside of the scroll view. Typically used after rotation, or when zooming has finished.
+/**
+ *  Centers the image inside of the scroll view. Typically used after rotation, or when zooming has finished.
  */
 - (void)centerScrollViewContents;
 
