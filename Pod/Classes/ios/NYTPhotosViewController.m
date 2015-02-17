@@ -187,85 +187,12 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 #pragma mark - Gesture Recognizers
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
-    CGPoint centerPoint = self.boundsCenterPoint;
-    
-    CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:self.view];
-    CGPoint translatedCenterPoint = CGPointMake(centerPoint.x, centerPoint.y + translatedPanGesturePoint.y);
-    
-    // Pan the view on pace with the pan gesture.
-    self.pageViewController.view.center = translatedCenterPoint;
-    
-    CGFloat verticalDelta = self.pageViewController.view.center.y - centerPoint.y;
-    
-    CGFloat backgroundAlpha = [self backgroundAlphaForPanningWithVerticalDelta:verticalDelta];
-    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:backgroundAlpha];
-    
-    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        [self finishPanWithPanGestureRecognizer:panGestureRecognizer verticalDelta:verticalDelta];
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self dismissAnimated:YES];
     }
-}
-
-- (void)finishPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer verticalDelta:(CGFloat)verticalDelta {
-    CGPoint centerPoint = self.boundsCenterPoint;
-    
-    // Return to center case.
-    CGFloat velocityY = [panGestureRecognizer velocityInView:self.view].y;
-    
-    CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
-    CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
-    CGPoint finalPageViewCenterPoint = centerPoint;
-    CGFloat finalBackgroundAlpha = 1.0;
-    
-    // Dismissal case.
-    UIView *referenceView;
-    
-    CGFloat dismissDistance = NYTPhotosViewControllerPanDismissDistanceRatio * CGRectGetHeight(self.view.bounds);
-    BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
-    
-    if (isDismissing) {
-        referenceView = self.referenceViewForCurrentPhoto;
-        
-        if (referenceView) {
-            [self dismissAnimated:YES];
-        }
-        else {
-            BOOL isPositiveDelta = verticalDelta >= 0;
-            
-            CGFloat modifier = isPositiveDelta ? 1 : -1;
-            CGFloat finalCenterY = CGRectGetMidY(self.view.bounds) + modifier * CGRectGetHeight(self.view.bounds);
-            finalPageViewCenterPoint = CGPointMake(centerPoint.x, finalCenterY);
-            
-            // Maintain the velocity of the pan, while easing out.
-            animationDuration = ABS(finalPageViewCenterPoint.y - self.pageViewController.view.center.y) / ABS(velocityY);
-            animationDuration = MIN(animationDuration, NYTPhotosViewControllerPanDismissMaximumDuration);
-            
-            animationCurve = UIViewAnimationOptionCurveEaseOut;
-            finalBackgroundAlpha = 0.0;
-        }
+    else {
+        [self.transitionAnimator didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
-    
-    if (!referenceView) {
-        [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
-            self.pageViewController.view.center = finalPageViewCenterPoint;
-            
-            self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
-        } completion:^(BOOL finished) {
-            if (isDismissing) {
-                [self dismissAnimated:NO];
-            }
-        }];
-    }
-}
-
-- (CGFloat)backgroundAlphaForPanningWithVerticalDelta:(CGFloat)verticalDelta {
-    CGFloat finalAlpha = 0.1;
-    CGFloat startingAlpha = 1.0;
-    CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
-    
-    CGFloat maximumDelta = CGRectGetHeight(self.view.bounds) / 2.0; // Arbitrary value.
-    CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
-    
-    return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }
 
 - (void)dismissAnimated:(BOOL)animated {

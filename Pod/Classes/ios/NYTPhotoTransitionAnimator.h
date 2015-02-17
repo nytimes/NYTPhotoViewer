@@ -8,9 +8,11 @@
 
 @import UIKit;
 
-@interface NYTPhotoTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface NYTPhotoTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning>
 
 @property (nonatomic) UIView *startingView;
 @property (nonatomic) UIView *endingView;
+
+- (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 
 @end
