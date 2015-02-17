@@ -17,6 +17,9 @@
 @property (nonatomic) UIBarButtonItem *rightBarButtonItem;
 @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 
+/**
+ *  The object that acts as the delegate of the receiving `NYTPhotosViewController`.
+ */
 @property (nonatomic, weak) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
