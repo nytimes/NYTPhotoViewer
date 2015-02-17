@@ -7,110 +7,35 @@
 //
 
 #import "NYTPhotoTransitionAnimator.h"
+#import "NYTPhotoDismissalInteractionController.h"
 
 const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
-
-const CGFloat NYTPhotoTransitionAnimatorPanDismissDistanceRatio = 100.0/667.0; // distance over iPhone 6 height.
-const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
-
 
 @interface NYTPhotoTransitionAnimator ()
 
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
 @property (nonatomic) id <UIViewControllerContextTransitioning> interactiveTransitionContext;
+@property (nonatomic) NYTPhotoDismissalInteractionController *interactionController;
 
 @end
 
 @implementation NYTPhotoTransitionAnimator
 
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _interactionController = [[NYTPhotoDismissalInteractionController alloc] init];
+    }
+    
+    return self;
+}
+
 #pragma mark - NYTPhotoTransitionAnimator
 
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [self fromViewForTransitionContext:self.interactiveTransitionContext];
-    CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:fromView];
-    CGPoint newCenterPoint = CGPointMake(anchorPoint.x, anchorPoint.y + translatedPanGesturePoint.y);
-    
-    // Pan the view on pace with the pan gesture.
-    viewToPan.center = newCenterPoint;
-    
-    CGFloat verticalDelta = newCenterPoint.y - anchorPoint.y;
-    
-    CGFloat backgroundAlpha = [self backgroundAlphaForPanningWithVerticalDelta:verticalDelta];
-    fromView.backgroundColor = [fromView.backgroundColor colorWithAlphaComponent:backgroundAlpha];
-    
-    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        [self finishPanWithPanGestureRecognizer:panGestureRecognizer verticalDelta:verticalDelta viewToPan:viewToPan anchorPoint:anchorPoint];
-    }
+    [self.interactionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:viewToPan anchorPoint:anchorPoint];
 }
-
-- (void)finishPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer verticalDelta:(CGFloat)verticalDelta viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [self fromViewForTransitionContext:self.interactiveTransitionContext];
-    
-    // Return to center case.
-    CGFloat velocityY = [panGestureRecognizer velocityInView:panGestureRecognizer.view].y;
-    
-    CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
-    CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
-    CGPoint finalPageViewCenterPoint = anchorPoint;
-    CGFloat finalBackgroundAlpha = 1.0;
-    
-    // Dismissal case.
-    UIView *referenceView;
-    
-    CGFloat dismissDistance = NYTPhotoTransitionAnimatorPanDismissDistanceRatio * CGRectGetHeight(fromView.bounds);
-    BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
-    
-    if (isDismissing) {
-        referenceView = self.endingView;
-        
-        if (referenceView) {
-            [self animateTransition:self.interactiveTransitionContext];
-        }
-        else {
-            BOOL isPositiveDelta = verticalDelta >= 0;
-            
-            CGFloat modifier = isPositiveDelta ? 1 : -1;
-            CGFloat finalCenterY = CGRectGetMidY(fromView.bounds) + modifier * CGRectGetHeight(fromView.bounds);
-            finalPageViewCenterPoint = CGPointMake(fromView.center.x, finalCenterY);
-            
-            // Maintain the velocity of the pan, while easing out.
-            animationDuration = ABS(finalPageViewCenterPoint.y - viewToPan.center.y) / ABS(velocityY);
-            animationDuration = MIN(animationDuration, NYTPhotoTransitionAnimatorPanDismissMaximumDuration);
-            
-            animationCurve = UIViewAnimationOptionCurveEaseOut;
-            finalBackgroundAlpha = 0.0;
-        }
-    }
-    
-    if (!referenceView) {
-        [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
-            viewToPan.center = finalPageViewCenterPoint;
-
-            fromView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:finalBackgroundAlpha];
-        } completion:^(BOOL finished) {
-            if (isDismissing) {
-                [self.interactiveTransitionContext finishInteractiveTransition];
-            }
-            else {
-                [self.interactiveTransitionContext cancelInteractiveTransition];
-            }
-            
-            [self.interactiveTransitionContext completeTransition:isDismissing && !self.interactiveTransitionContext.transitionWasCancelled];
-        }];
-    }
-}
-
-- (CGFloat)backgroundAlphaForPanningWithVerticalDelta:(CGFloat)verticalDelta {
-    CGFloat startingAlpha = 1.0;
-    CGFloat finalAlpha = 0.1;
-    CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
-    
-    CGFloat maximumDelta = CGRectGetHeight([self fromViewForTransitionContext:self.interactiveTransitionContext].bounds) / 2.0; // Arbitrary value.
-    CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
-    
-    return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
-}
-
 
 #pragma mark - Fading
 
@@ -290,12 +215,6 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
     }];
 }
 
-#pragma mark - UIViewControllerInteractiveTransitioning
-
-- (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    self.interactiveTransitionContext = transitionContext;
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -310,7 +229,10 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
     self.dismissing = YES;
     
-    return self;
+    self.interactionController.animationController = animator;
+    self.interactionController.canAnimateUsingAnimationController = self.endingView != nil;
+    
+    return self.interactionController;
 }
 
 @end
