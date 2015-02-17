@@ -111,7 +111,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *containerView = [transitionContext containerView];
+    UIView *containerView = transitionContext.containerView;
     
     // Background fade animation.
     [self performFadeAnimationWithTransitionContext:transitionContext];
