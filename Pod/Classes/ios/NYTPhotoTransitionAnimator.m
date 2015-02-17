@@ -36,8 +36,7 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
     CGFloat verticalDelta = newCenterPoint.y - anchorPoint.y;
     
     CGFloat backgroundAlpha = [self backgroundAlphaForPanningWithVerticalDelta:verticalDelta];
-    fromView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:backgroundAlpha];
-#warning make work with actual background color
+    fromView.backgroundColor = [fromView.backgroundColor colorWithAlphaComponent:backgroundAlpha];
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         [self finishPanWithPanGestureRecognizer:panGestureRecognizer verticalDelta:verticalDelta viewToPan:viewToPan anchorPoint:anchorPoint];
