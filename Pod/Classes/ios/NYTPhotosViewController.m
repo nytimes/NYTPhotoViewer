@@ -22,7 +22,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 
-@property (nonatomic) NYTPhotoTransitionController *transitionAnimator;
+@property (nonatomic) NYTPhotoTransitionController *transitionController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 
@@ -79,10 +79,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-    self.transitionAnimator.startingView = self.referenceViewForCurrentPhoto;
+    self.transitionController.startingView = self.referenceViewForCurrentPhoto;
     
     if (self.currentPhotoViewController.photo.image) {
-        self.transitionAnimator.endingView = self.currentPhotoViewController.scalingImageView.imageView;
+        self.transitionController.endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
 }
 
@@ -109,9 +109,9 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
         
-        _transitionAnimator = [[NYTPhotoTransitionController alloc] init];
+        _transitionController = [[NYTPhotoTransitionController alloc] init];
         self.modalPresentationStyle = UIModalPresentationCustom;
-        self.transitioningDelegate = _transitionAnimator;
+        self.transitioningDelegate = _transitionController;
         self.modalPresentationCapturesStatusBarAppearance = YES;
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
@@ -191,13 +191,13 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         [self dismissAnimated:YES];
     }
     else {
-        [self.transitionAnimator didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
+        [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    self.transitionAnimator.startingView = self.currentPhotoViewController.scalingImageView.imageView;
-    self.transitionAnimator.endingView = self.referenceViewForCurrentPhoto;
+    self.transitionController.startingView = self.currentPhotoViewController.scalingImageView.imageView;
+    self.transitionController.endingView = self.referenceViewForCurrentPhoto;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
