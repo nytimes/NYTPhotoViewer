@@ -28,13 +28,15 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     fittingSize.width += NYTPhotoCaptionViewHorizontalMargin * 2.0;
     fittingSize.height += NYTPhotoCaptionViewVerticalMargin * 2.0;
     
-    return size;
+    return fittingSize;
 }
 
 - (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit {
     self = [super initWithFrame:CGRectZero];
     
     if (self) {
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        
         _attributedTitle = attributedTitle;
         _attributedSummary = attributedSummary;
         _attributedCredit = attributedCredit;
@@ -47,18 +49,21 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
 }
 
 - (CGSize)intrinsicContentSize {
-    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.frame), CGFLOAT_MAX)];
+    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.superview.bounds), CGFLOAT_MAX)];
 }
 
 - (void)setupTextLabel {
-    _textLabel = [[UILabel alloc] init];
-    [self addSubview:_textLabel];
+    self.textLabel = [[UILabel alloc] init];
+    self.textLabel.numberOfLines = 0;
+    self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.textLabel];
     
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:NYTPhotoCaptionViewVerticalMargin];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:NYTPhotoCaptionViewHorizontalMargin];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-NYTPhotoCaptionViewVerticalMargin];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-NYTPhotoCaptionViewHorizontalMargin * 2.0];
     NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
 
-    [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
+    [self addConstraints:@[topConstraint, bottomConstraint, widthConstraint, horizontalPositionConstraint]];
 }
 
 - (void)setAttributedTitle:(NSAttributedString *)attributedTitle {
@@ -87,10 +92,16 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     }
     
     if (self.attributedSummary) {
+        if (self.attributedTitle) {
+            [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
+        }
         [attributedLabelText appendAttributedString:self.attributedSummary];
     }
     
     if (self.attributedCredit) {
+        if (self.attributedTitle || self.attributedSummary) {
+            [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
+        }
         [attributedLabelText appendAttributedString:self.attributedCredit];
     }
     
