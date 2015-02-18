@@ -17,16 +17,30 @@
 
 @implementation NYTPhotosOverlayView
 
+#pragma mark - UIView
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.userInteractionEnabled = NO;
         [self setupNavigationBar];
     }
     
     return self;
 }
+
+// Pass the touches down to other views: http://stackoverflow.com/a/8104378
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitView = [super hitTest:point withEvent:event];
+    
+    if (hitView == self) {
+        return nil;
+    }
+
+    return hitView;
+}
+
+#pragma mark - NYTPhotosOverlayView
 
 - (void)setupNavigationBar {
     self.navigationBar = [[UINavigationBar alloc] init];

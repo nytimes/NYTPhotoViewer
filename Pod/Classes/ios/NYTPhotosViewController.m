@@ -153,7 +153,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
     self.overlayView.title = NSLocalizedString(@"1 of 5", nil);
     self.overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
-    
+    self.overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+
     [self.view addSubview:self.overlayView];
     
     [self setOverlayViewHidden:YES animated:NO];
@@ -161,6 +162,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (void)doneButtonTapped:(id)sender {
     [self dismissAnimated:YES];
+}
+
+- (void)actionButtonTapped:(id)sender {
+
 }
 
 - (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
