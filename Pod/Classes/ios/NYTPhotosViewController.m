@@ -161,6 +161,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)doneButtonTapped:(id)sender {
+    self.transitionController.forceDismissNonInteractive = YES;
+    [self setOverlayViewHidden:YES animated:NO];
     [self dismissAnimated:YES];
 }
 

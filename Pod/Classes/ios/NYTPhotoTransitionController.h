@@ -13,6 +13,8 @@
 @property (nonatomic) UIView *startingView;
 @property (nonatomic) UIView *endingView;
 
+@property (nonatomic) BOOL forceDismissNonInteractive;
+
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 
 @end
