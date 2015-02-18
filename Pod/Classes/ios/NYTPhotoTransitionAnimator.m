@@ -14,7 +14,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 @interface NYTPhotoTransitionAnimator ()
 
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
-@property (nonatomic) id <UIViewControllerContextTransitioning> interactiveTransitionContext;
 @property (nonatomic) NYTPhotoDismissalInteractionController *interactionController;
 
 @end
