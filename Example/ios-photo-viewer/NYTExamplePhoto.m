@@ -13,9 +13,9 @@
 
 @synthesize image = _image;
 @synthesize placeholderImage = _placeholderImage;
-@synthesize captionTitle = _captionTitle;
-@synthesize captionSummary = _captionSummary;
-@synthesize captionCredit = _captionCredit;
+@synthesize attributedCaptionTitle = _attributedCaptionTitle;
+@synthesize attributedCaptionSummary = _attributedCaptionSummary;
+@synthesize attributedCaptionCredit = _attributedCaptionCredit;
 @synthesize identifier = _identifier;
 
 @end

@@ -29,6 +29,10 @@
             photo.image = nil;
         }
         
+        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@"title" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+
         photo.identifier = @(i).stringValue;
         [photos addObject:photo];
     }

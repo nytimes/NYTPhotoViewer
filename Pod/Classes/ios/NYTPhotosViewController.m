@@ -14,6 +14,7 @@
 #import "NYTScalingImageView.h"
 #import "NYTPhoto.h"
 #import "NYTPhotosOverlayView.h"
+#import "NYTPhotoCaptionView.h"
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
@@ -171,6 +172,8 @@
     }
     
     self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
+    
+    self.overlayView.captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:self.currentlyDisplayedPhoto.attributedCaptionTitle attributedSummary:self.currentlyDisplayedPhoto.attributedCaptionSummary attributedCredit:self.currentlyDisplayedPhoto.attributedCaptionCredit];
 }
 
 - (void)doneButtonTapped:(id)sender {
