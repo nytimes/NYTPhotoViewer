@@ -66,6 +66,18 @@
     return nil;
 }
 
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id<NYTPhoto>)photo {
+    if ([photo.identifier isEqualToString:@(1).stringValue]) {
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"Custom Caption View";
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor redColor];
+        return label;
+    }
+    
+    return nil;
+}
+
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo {
     NSLog(@"Did Display Photo: %@", photo);
 }

@@ -156,14 +156,14 @@
     self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
     self.overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
     self.overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
-    [self updateOverlayTitle];
+    [self updateOverlayInformation];
     
     [self.view addSubview:self.overlayView];
     
     [self setOverlayViewHidden:YES animated:NO];
 }
 
-- (void)updateOverlayTitle {
+- (void)updateOverlayInformation {
     NSUInteger displayIndex = 1;
     
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
@@ -172,8 +172,17 @@
     }
     
     self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
+    UIView *captionView;
     
-    self.overlayView.captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:self.currentlyDisplayedPhoto.attributedCaptionTitle attributedSummary:self.currentlyDisplayedPhoto.attributedCaptionSummary attributedCredit:self.currentlyDisplayedPhoto.attributedCaptionCredit];
+    if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewForPhoto:)]) {
+        captionView = [self.delegate photosViewController:self captionViewForPhoto:self.currentlyDisplayedPhoto];
+    }
+    
+    if (!captionView) {
+        captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:self.currentlyDisplayedPhoto.attributedCaptionTitle attributedSummary:self.currentlyDisplayedPhoto.attributedCaptionSummary attributedCredit:self.currentlyDisplayedPhoto.attributedCaptionCredit];
+    }
+    
+    self.overlayView.captionView = captionView;
 }
 
 - (void)doneButtonTapped:(id)sender {
@@ -387,7 +396,7 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
-        [self updateOverlayTitle];
+        [self updateOverlayInformation];
         
         UIViewController <NYTPhotoContaining> *photoViewController = pageViewController.viewControllers.firstObject;
         [self didDisplayPhoto:photoViewController.photo];
