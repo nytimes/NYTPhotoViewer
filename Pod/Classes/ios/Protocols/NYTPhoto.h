@@ -13,9 +13,9 @@
 @property (nonatomic) UIImage *image;
 @property (nonatomic) UIImage *placeholderImage;
 
-@property (nonatomic) NSString *captionTitle;
-@property (nonatomic) NSString *captionSummary;
-@property (nonatomic) NSString *captionCredit;
+@property (nonatomic) NSAttributedString *attributedCaptionTitle;
+@property (nonatomic) NSAttributedString *attributedCaptionSummary;
+@property (nonatomic) NSAttributedString *attributedCaptionCredit;
 
 @property (nonatomic) NSString *identifier;
 
