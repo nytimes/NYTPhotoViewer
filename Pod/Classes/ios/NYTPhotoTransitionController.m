@@ -1,24 +1,24 @@
 //
-//  NYTPhotoTransitionAnimator.m
+//  NYTPhotoTransitionController.m
 //  Pods
 //
 //  Created by Brian Capps on 2/13/15.
 //
 //
 
-#import "NYTPhotoTransitionAnimator.h"
+#import "NYTPhotoTransitionController.h"
 #import "NYTPhotoDismissalInteractionController.h"
 
 const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
-@interface NYTPhotoTransitionAnimator ()
+@interface NYTPhotoTransitionController ()
 
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
 @property (nonatomic) NYTPhotoDismissalInteractionController *interactionController;
 
 @end
 
-@implementation NYTPhotoTransitionAnimator
+@implementation NYTPhotoTransitionController
 
 - (instancetype)init {
     self = [super init];

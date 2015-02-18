@@ -10,7 +10,7 @@
 #import "NYTPhotosViewControllerDataSource.h"
 #import "NYTPhotosDataSource.h"
 #import "NYTPhotoViewController.h"
-#import "NYTPhotoTransitionAnimator.h"
+#import "NYTPhotoTransitionController.h"
 #import "NYTScalingImageView.h"
 #import "NYTPhoto.h"
 
@@ -22,7 +22,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 
-@property (nonatomic) NYTPhotoTransitionAnimator *transitionAnimator;
+@property (nonatomic) NYTPhotoTransitionController *transitionAnimator;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 
@@ -109,7 +109,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
         
-        _transitionAnimator = [[NYTPhotoTransitionAnimator alloc] init];
+        _transitionAnimator = [[NYTPhotoTransitionController alloc] init];
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = _transitionAnimator;
         self.modalPresentationCapturesStatusBarAppearance = YES;
