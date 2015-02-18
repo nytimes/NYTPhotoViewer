@@ -153,13 +153,24 @@
 
 - (void)setupOverlayView {
     self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.title = NSLocalizedString(@"1 of 5", nil);
     self.overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
     self.overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
-
+    [self updateOverlayTitle];
+    
     [self.view addSubview:self.overlayView];
     
     [self setOverlayViewHidden:YES animated:NO];
+}
+
+- (void)updateOverlayTitle {
+    NSUInteger displayIndex = 1;
+    
+    NSUInteger photoIndex = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
+    if (photoIndex < self.dataSource.numberOfPhotos) {
+        displayIndex = photoIndex + 1;
+    }
+    
+    self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
 }
 
 - (void)doneButtonTapped:(id)sender {
@@ -373,6 +384,8 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
+        [self updateOverlayTitle];
+        
         UIViewController <NYTPhotoContaining> *photoViewController = pageViewController.viewControllers.firstObject;
         [self didDisplayPhoto:photoViewController.photo];
     }
