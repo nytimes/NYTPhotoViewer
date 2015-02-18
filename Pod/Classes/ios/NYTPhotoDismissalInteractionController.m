@@ -7,9 +7,10 @@
 //
 
 #import "NYTPhotoDismissalInteractionController.h"
+#import "NYTOperatingSystemCompatibilityUtility.h"
 
-const CGFloat NYTPhotoTransitionAnimatorPanDismissDistanceRatio = 100.0/667.0; // distance over iPhone 6 height.
-const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
+const CGFloat NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio = 100.0/667.0; // distance over iPhone 6 height.
+const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 0.45;
 
 @interface NYTPhotoDismissalInteractionController ()
 
@@ -19,8 +20,10 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
 
 @implementation NYTPhotoDismissalInteractionController
 
+#pragma mark - NYTPhotoDismissalInteractionController
+
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [self fromViewForTransitionContext:self.transitionContext];
+    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext];
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:fromView];
     CGPoint newCenterPoint = CGPointMake(anchorPoint.x, anchorPoint.y + translatedPanGesturePoint.y);
     
@@ -38,7 +41,7 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
 }
 
 - (void)finishPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer verticalDelta:(CGFloat)verticalDelta viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [self fromViewForTransitionContext:self.transitionContext];
+    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext];
     
     // Return to center case.
     CGFloat velocityY = [panGestureRecognizer velocityInView:panGestureRecognizer.view].y;
@@ -49,15 +52,15 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
     CGFloat finalBackgroundAlpha = 1.0;
     
     // Offscreen dismissal case.
-    CGFloat dismissDistance = NYTPhotoTransitionAnimatorPanDismissDistanceRatio * CGRectGetHeight(fromView.bounds);
+    CGFloat dismissDistance = NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio * CGRectGetHeight(fromView.bounds);
     BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
     
-    BOOL didAnimateUsingAnimationController = NO;
+    BOOL didAnimateUsingAnimator = NO;
     
     if (isDismissing) {
-        if (self.canAnimateUsingAnimationController) {
+        if (self.canAnimateUsingAnimator) {
             [self.animator animateTransition:self.transitionContext];
-            didAnimateUsingAnimationController = YES;
+            didAnimateUsingAnimator = YES;
         }
         else {
             BOOL isPositiveDelta = verticalDelta >= 0;
@@ -68,14 +71,14 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
             
             // Maintain the velocity of the pan, while easing out.
             animationDuration = ABS(finalPageViewCenterPoint.y - viewToPan.center.y) / ABS(velocityY);
-            animationDuration = MIN(animationDuration, NYTPhotoTransitionAnimatorPanDismissMaximumDuration);
+            animationDuration = MIN(animationDuration, NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration);
             
             animationCurve = UIViewAnimationOptionCurveEaseOut;
             finalBackgroundAlpha = 0.0;
         }
     }
     
-    if (!didAnimateUsingAnimationController) {
+    if (!didAnimateUsingAnimator) {
         [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
             viewToPan.center = finalPageViewCenterPoint;
             
@@ -100,36 +103,10 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
     CGFloat finalAlpha = 0.1;
     CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
     
-    CGFloat maximumDelta = CGRectGetHeight([self fromViewForTransitionContext:self.transitionContext].bounds) / 2.0; // Arbitrary value.
+    CGFloat maximumDelta = CGRectGetHeight([NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext].bounds) / 2.0; // Arbitrary value.
     CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
     
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
-}
-
-- (UIView *)fromViewForTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIView *fromView;
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    }
-    else {
-        fromView = fromViewController.view;
-    }
-    return fromView;
-}
-
-- (UIView *)toViewForTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIView *toView;
-    
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }
-    else {
-        toView = toViewController.view;
-    }
-    return toView;
 }
 
 #pragma mark - UIViewControllerInteractiveTransitioning

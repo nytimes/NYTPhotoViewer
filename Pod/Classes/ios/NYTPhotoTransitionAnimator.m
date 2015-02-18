@@ -7,42 +7,17 @@
 //
 
 #import "NYTPhotoTransitionAnimator.h"
+#import "NYTOperatingSystemCompatibilityUtility.h"
 
 const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
 @implementation NYTPhotoTransitionAnimator
 
-
-- (UIView *)fromViewForTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *fromView;
-    
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    }
-    else {
-        fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view;
-    }
-    return fromView;
-}
-
-- (UIView *)toViewForTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *toView;
-    
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
-        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }
-    else {
-        toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
-    }
-    
-    return toView;
-}
-
 - (void)setupTransitionContainerHierarchyWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    UIView *fromView = [self fromViewForTransitionContext:transitionContext];
-    UIView *toView = [self toViewForTransitionContext:transitionContext];
+    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
+    UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
     
     toView.frame = [transitionContext finalFrameForViewController:toViewController];
     
@@ -58,8 +33,8 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 #pragma mark - Fading
 
 - (void)performFadeAnimationWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *fromView = [self fromViewForTransitionContext:transitionContext];
-    UIView *toView = [self toViewForTransitionContext:transitionContext];
+    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
+    UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
     
     UIView *viewToFade = toView;
     CGFloat beginningAlpha = 0.0;

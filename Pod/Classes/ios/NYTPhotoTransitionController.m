@@ -73,7 +73,7 @@
     self.animator.endingViewForAnimation = [[self.animator class] newAnimationViewFromView:self.endingView];
     
     self.interactionController.animator = animator;
-    self.interactionController.canAnimateUsingAnimationController = self.endingView != nil;
+    self.interactionController.canAnimateUsingAnimator = self.endingView != nil;
     self.interactionController.viewToHideWhenBeginningTransition = self.endingView;
     
     return self.interactionController;

@@ -12,7 +12,7 @@
 
 @property (nonatomic) id <UIViewControllerAnimatedTransitioning> animator;
 @property (nonatomic) UIView *viewToHideWhenBeginningTransition;
-@property (nonatomic) BOOL canAnimateUsingAnimationController;
+@property (nonatomic) BOOL canAnimateUsingAnimator;
 
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 
