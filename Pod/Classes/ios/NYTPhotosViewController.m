@@ -267,7 +267,8 @@
     [self dismissViewControllerAnimated:animated completion:^{
         [self setOverlayViewHidden:NO animated:YES];
         
-        if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+        BOOL isStillOnscreen = self.view.window;// Happens when the dismissal is canceled.
+        if (!isStillOnscreen && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
             [self.delegate photosViewControllerDidDismiss:self];
         }
     }];
