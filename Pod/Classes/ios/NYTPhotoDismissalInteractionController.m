@@ -56,7 +56,7 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
     
     if (isDismissing) {
         if (self.canAnimateUsingAnimationController) {
-            [self.animationController animateTransition:self.transitionContext];
+            [self.animator animateTransition:self.transitionContext];
             didAnimateUsingAnimationController = YES;
         }
         else {

@@ -228,7 +228,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
     self.dismissing = YES;
     
-    self.interactionController.animationController = animator;
+    self.interactionController.animator = animator;
     self.interactionController.canAnimateUsingAnimationController = self.endingView != nil;
     
     return self.interactionController;

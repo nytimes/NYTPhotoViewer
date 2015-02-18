@@ -10,7 +10,7 @@
 
 @interface NYTPhotoDismissalInteractionController : NSObject <UIViewControllerInteractiveTransitioning>
 
-@property (nonatomic) id <UIViewControllerAnimatedTransitioning> animationController;
+@property (nonatomic) id <UIViewControllerAnimatedTransitioning> animator;
 @property (nonatomic) BOOL canAnimateUsingAnimationController;
 
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
