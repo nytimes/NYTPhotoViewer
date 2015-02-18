@@ -264,7 +264,7 @@
         self.overlayView.hidden = NO;
         
         self.overlayView.alpha = hidden ? 1.0 : 0.0;
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.20 animations:^{
             self.overlayView.alpha = hidden ? 0.0 : 1.0;
         } completion:^(BOOL finished) {
             self.overlayView.alpha = 1.0;
