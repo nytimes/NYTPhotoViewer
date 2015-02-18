@@ -35,7 +35,7 @@
  *  The designated initializer that stores the array of objects conforming to the NYTPhoto protocol for display, along with specifying an initial photo for display.
  *
  *  @param photos An array of objects conforming to the NYTPhoto protocol.
- *  @param initialPhoto The photo to display initially. Must be contained within the photos array.
+ *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If nil or not within the `photos` array, the first photo within the `photos` array will be displayed.
  *
  *  @return A fully initialized object.
  */
