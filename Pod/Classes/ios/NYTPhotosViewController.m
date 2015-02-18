@@ -79,17 +79,13 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
+    [self setupOverlayView];
+    
     self.transitionController.startingView = self.referenceViewForCurrentPhoto;
     
     if (self.currentlyDisplayedPhoto.image) {
         self.transitionController.endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
-    
-    self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.title = NSLocalizedString(@"1 of 5", nil);
-    [self.view addSubview:self.overlayView];
-    
-    [self setOverlayViewHidden:YES animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -151,6 +147,20 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
     
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
+}
+
+- (void)setupOverlayView {
+    self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
+    self.overlayView.title = NSLocalizedString(@"1 of 5", nil);
+    self.overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
+    
+    [self.view addSubview:self.overlayView];
+    
+    [self setOverlayViewHidden:YES animated:NO];
+}
+
+- (void)doneButtonTapped:(id)sender {
+    [self dismissAnimated:YES];
 }
 
 - (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {

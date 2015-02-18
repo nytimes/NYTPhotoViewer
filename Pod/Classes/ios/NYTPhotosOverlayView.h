@@ -13,6 +13,9 @@
 @property (nonatomic, readonly) UINavigationBar *navigationBar;
 
 @property (nonatomic) NSString *title;
+@property (nonatomic) UIBarButtonItem *leftBarButtonItem;
+@property (nonatomic) UIBarButtonItem *rightBarButtonItem;
+
 @property (nonatomic) UIView *captionView;
 
 @end

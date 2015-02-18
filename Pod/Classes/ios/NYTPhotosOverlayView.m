@@ -10,7 +10,7 @@
 
 @interface NYTPhotosOverlayView ()
 
-@property (nonatomic) UINavigationItem *titleItem;
+@property (nonatomic) UINavigationItem *navigationItem;
 @property (nonatomic) UINavigationBar *navigationBar;
 
 @end
@@ -40,8 +40,8 @@
     self.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
-    self.titleItem = [[UINavigationItem alloc] initWithTitle:nil];
-    self.navigationBar.items = @[self.titleItem];
+    self.navigationItem = [[UINavigationItem alloc] initWithTitle:nil];
+    self.navigationBar.items = @[self.navigationItem];
     
     [self addSubview:self.navigationBar];
     
@@ -54,12 +54,28 @@
     [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
 }
 
+- (UIBarButtonItem *)leftBarButtonItem {
+    return self.navigationItem.leftBarButtonItem;
+}
+
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
+    [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:NO];
+}
+
+- (UIBarButtonItem *)rightBarButtonItem {
+    return self.navigationItem.rightBarButtonItem;
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
+    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
+}
+
 - (NSString *)title {
-    return self.titleItem.title;
+    return self.navigationItem.title;
 }
 
 - (void)setTitle:(NSString *)title {
-    self.titleItem.title = title;
+    self.navigationItem.title = title;
 }
 
 @end
