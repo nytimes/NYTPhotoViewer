@@ -40,7 +40,7 @@
     self.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
-    self.titleItem = [[UINavigationItem alloc] initWithTitle:@"Test Title"];
+    self.titleItem = [[UINavigationItem alloc] initWithTitle:nil];
     self.navigationBar.items = @[self.titleItem];
     
     [self addSubview:self.navigationBar];

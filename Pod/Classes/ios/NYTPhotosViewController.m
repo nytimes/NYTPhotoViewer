@@ -86,16 +86,16 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }
     
     self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.alpha = 0.0;
+    self.overlayView.title = NSLocalizedString(@"1 of 5", nil);
     [self.view addSubview:self.overlayView];
+    
+    [self setOverlayViewHidden:YES animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:0.3 animations:^{
-        self.overlayView.alpha = 1.0;
-    }];
+    [self setOverlayViewHidden:NO animated:YES];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -186,6 +186,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self setOverlayViewHidden:YES animated:YES];
         [self dismissAnimated:YES];
     }
     else {
@@ -202,6 +203,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     }
     
     [self dismissViewControllerAnimated:animated completion:^{
+        [self setOverlayViewHidden:NO animated:YES];
+        
         if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
             [self.delegate photosViewControllerDidDismiss:self];
         }
@@ -226,6 +229,21 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     // The completion block isn't called unless animated is YES, so call it ourselves if animated is NO.
     if (!animated) {
         animationCompletion(YES);
+    }
+}
+
+- (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
+    CGFloat alpha = hidden ? 0.0 : 1.0;
+    
+     void(^finalAlphaBlock)() = ^{
+        self.overlayView.alpha = alpha;
+     };
+    
+    if (animated) {
+        [UIView animateWithDuration:0.3 animations:finalAlphaBlock];
+    }
+    else {
+        finalAlphaBlock();
     }
 }
 
