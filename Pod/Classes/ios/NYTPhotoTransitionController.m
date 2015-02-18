@@ -32,7 +32,7 @@
     return self;
 }
 
-#pragma mark - NYTPhotoTransitionAnimator
+#pragma mark - NYTPhotoTransitionController
 
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
     [self.interactionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:viewToPan anchorPoint:anchorPoint];

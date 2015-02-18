@@ -13,6 +13,8 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
 
 @implementation NYTPhotoTransitionAnimator
 
+#pragma mark - NYTPhotoTransitionAnimator
+
 - (void)setupTransitionContainerHierarchyWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
