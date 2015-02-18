@@ -1,922 +1,2271 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0E4B0C750DCA56D6EC5C67F0 /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 346C611F69D08DAB8710E2E3 /* NYTPhotosDataSource.h */; };
-		17C8C7CE3613D80EE74454F8 /* NYTPhotoContaining.h in Headers */ = {isa = PBXBuildFile; fileRef = ADECA8867F29D0DC9AC6FD66 /* NYTPhotoContaining.h */; };
-		18352BE3A607FFC92F0B4487 /* Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8E9D76E60BCB311BEA914 /* Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m */; };
-		2FB19CB0B52DBBB8B3F788D6 /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780104A2F79088BBE24E4F7 /* NYTPhotoViewController.m */; };
-		34FE871961D8D1B3C55FCBDB /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9507670EF2D54E69215EB7 /* NYTPhoto.h */; };
-		359F3030212813E705242DA3 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A42C061843649CF6964C71 /* NYTPhotosViewController.h */; };
-		35A2398B16090115996EBC81 /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780104A2F79088BBE24E4F7 /* NYTPhotoViewController.m */; };
-		49EDD551F5B9BBE388330639 /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 12DAC19099C7D584174B3318 /* NYTPhotosViewControllerDataSource.h */; };
-		4AA2D002B016BF12BD70A94D /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D625EB4B909A30605FECB49D /* NYTPhotoDismissalInteractionController.m */; };
-		5B9CBB5D037563A7E85B8BD8 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A42C061843649CF6964C71 /* NYTPhotosViewController.h */; };
-		65216CF8764FE0E0DE16ECBB /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A0357E3DB84C445C8D45A4 /* NYTPhotosViewController.m */; };
-		669D505D870EFC070BDE1E79 /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C668E1A86971263FC9CB16 /* NYTPhotoTransitionController.m */; };
-		69096EDAE2258D09876EAE20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */; };
-		75FE878C7A1FAD10CE3C06D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */; };
-		83AAF58884D17C6C244991C9 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F267E36D1327579548637303 /* Pods-Tests-dummy.m */; };
-		8967C9E091C02DA3542938CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */; };
-		8F29937D01AC7902B2BA0FE6 /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EF8DB272A59763BB9D2AEAF /* NYTScalingImageView.h */; };
-		8FCEF166FDA5792A2EA7BB40 /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 346C611F69D08DAB8710E2E3 /* NYTPhotosDataSource.h */; };
-		90FD9BFE785F0C9F609D420D /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 12DAC19099C7D584174B3318 /* NYTPhotosViewControllerDataSource.h */; };
-		91C290606002B5833146E246 /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EF8DB272A59763BB9D2AEAF /* NYTScalingImageView.h */; };
-		9C9D997ED2F86148314E56DE /* NYTPhotoContaining.h in Headers */ = {isa = PBXBuildFile; fileRef = ADECA8867F29D0DC9AC6FD66 /* NYTPhotoContaining.h */; };
-		9F64A33C40845DFE42EA9B28 /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7AC0465DA7F8DAE17B64C3 /* NYTPhotoViewController.h */; };
-		A3A3874B515851BC38F67E2F /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9507670EF2D54E69215EB7 /* NYTPhoto.h */; };
-		AE33DAC089398E2C802E0E17 /* NYTPhotosViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E73F039E39EEACD87BB533 /* NYTPhotosViewController.storyboard */; };
-		B015DE718090C9DD4D789CA1 /* Pods-ios-photo-viewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 444D6150195BB3DB5854F565 /* Pods-ios-photo-viewer-dummy.m */; };
-		B044273BF1DAA2C463782A83 /* Pods-Tests-NYTPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F8772959EF92782D96429 /* Pods-Tests-NYTPhotoViewer-dummy.m */; };
-		B2C5A0E824FA5E0C8DCA48D9 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B895D276C45AD3AD0BEF95A /* NYTPhotoTransitionController.h */; };
-		B3371E2BA2907F0329BEAC9A /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F85D0C72B3DA2216C61F073C /* NYTPhotosDataSource.m */; };
-		B50DFF42703B8E997FC1BA64 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F85D0C72B3DA2216C61F073C /* NYTPhotosDataSource.m */; };
-		B86DCABC152B14EBD6C1A174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */; };
-		BBD4EC3F170DFE36D624377F /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F0CDEA0A0347A467658C70 /* NYTScalingImageView.m */; };
-		C0EE3B241762FBA4BB5330F5 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B895D276C45AD3AD0BEF95A /* NYTPhotoTransitionController.h */; };
-		CAD94C5EC77364CE0FBC9E9F /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7AC0465DA7F8DAE17B64C3 /* NYTPhotoViewController.h */; };
-		CF050F7DA694F2CABBA1E1BD /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D625EB4B909A30605FECB49D /* NYTPhotoDismissalInteractionController.m */; };
-		E32DD2A04789EDD622565BA5 /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F0CDEA0A0347A467658C70 /* NYTScalingImageView.m */; };
-		ECA718E74D8579A047D6B833 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = AC106D9E5DA3A705DAC6C112 /* NYTPhotoDismissalInteractionController.h */; };
-		FA808BBC3E32DD1EE7119FD2 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = AC106D9E5DA3A705DAC6C112 /* NYTPhotoDismissalInteractionController.h */; };
-		FB75F977336F5950BF1BE72C /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C668E1A86971263FC9CB16 /* NYTPhotoTransitionController.m */; };
-		FE5AF4584023FDD3E89E50CA /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A0357E3DB84C445C8D45A4 /* NYTPhotosViewController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0536C076F6D9336D5C8BF806 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8A729104D9458428E9635160 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CF2CC034C6E1352B3E2379F;
-			remoteInfo = NYTPhotoViewer;
-		};
-		27DB09B733ED08DF70E06F47 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8A729104D9458428E9635160 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CE2F4AC735E9ED3DD97E3EE;
-			remoteInfo = "Pods-ios-photo-viewer-NYTPhotoViewer";
-		};
-		86E067ED329BA3569D49A756 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8A729104D9458428E9635160 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 156E535DF5D7C55DB9678A63;
-			remoteInfo = "Pods-Tests-NYTPhotoViewer";
-		};
-		BD01AD24FE0399EAFDF86288 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8A729104D9458428E9635160 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CF2CC034C6E1352B3E2379F;
-			remoteInfo = NYTPhotoViewer;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		04434246221BEF27FCF18190 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		0B6172475C1F7DF437C180B0 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0C3F8772959EF92782D96429 /* Pods-Tests-NYTPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-NYTPhotoViewer-dummy.m"; sourceTree = "<group>"; };
-		0EF8DB272A59763BB9D2AEAF /* NYTScalingImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTScalingImageView.h; path = Pod/Classes/ios/NYTScalingImageView.h; sourceTree = "<group>"; };
-		12905213C74870BB0A4002BC /* Pods-Tests-NYTPhotoViewer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests-NYTPhotoViewer-Private.xcconfig"; sourceTree = "<group>"; };
-		12DAC19099C7D584174B3318 /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotosViewControllerDataSource.h; path = Pod/Classes/ios/Protocols/NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
-		26BD704358D0DABB80C95DAA /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		320BD883229ED8B106D6B97F /* Pods-ios-photo-viewer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios-photo-viewer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		346C611F69D08DAB8710E2E3 /* NYTPhotosDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotosDataSource.h; path = Pod/Classes/ios/NYTPhotosDataSource.h; sourceTree = "<group>"; };
-		3A9507670EF2D54E69215EB7 /* NYTPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhoto.h; path = Pod/Classes/ios/Protocols/NYTPhoto.h; sourceTree = "<group>"; };
-		3B895D276C45AD3AD0BEF95A /* NYTPhotoTransitionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotoTransitionController.h; path = Pod/Classes/ios/NYTPhotoTransitionController.h; sourceTree = "<group>"; };
-		444D6150195BB3DB5854F565 /* Pods-ios-photo-viewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios-photo-viewer-dummy.m"; sourceTree = "<group>"; };
-		45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		462FC0DB79B24B1E833CB172 /* libPods-ios-photo-viewer-NYTPhotoViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-photo-viewer-NYTPhotoViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50A0357E3DB84C445C8D45A4 /* NYTPhotosViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTPhotosViewController.m; path = Pod/Classes/ios/NYTPhotosViewController.m; sourceTree = "<group>"; };
-		63B2F8FBB1D3BB2CE395AF5D /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		67F0CDEA0A0347A467658C70 /* NYTScalingImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTScalingImageView.m; path = Pod/Classes/ios/NYTScalingImageView.m; sourceTree = "<group>"; };
-		69312370A4838D1591FA5591 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6DAABD4525857857654D94B1 /* Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch"; path = "../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch"; sourceTree = "<group>"; };
-		7780104A2F79088BBE24E4F7 /* NYTPhotoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTPhotoViewController.m; path = Pod/Classes/ios/NYTPhotoViewController.m; sourceTree = "<group>"; };
-		77FE1E2206870B68DFFB225E /* Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig"; path = "../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig"; sourceTree = "<group>"; };
-		78E73F039E39EEACD87BB533 /* NYTPhotosViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = NYTPhotosViewController.storyboard; path = Pod/Assets/NYTPhotosViewController.storyboard; sourceTree = "<group>"; };
-		7F7AC0465DA7F8DAE17B64C3 /* NYTPhotoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotoViewController.h; path = Pod/Classes/ios/NYTPhotoViewController.h; sourceTree = "<group>"; };
-		842DF3CEF939093A4FFC3029 /* Pods-ios-photo-viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-photo-viewer.release.xcconfig"; sourceTree = "<group>"; };
-		860DB1543BBDDDD232FCB7D5 /* Pods-ios-photo-viewer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios-photo-viewer-acknowledgements.plist"; sourceTree = "<group>"; };
-		A4501CB841AA8F577B3A909E /* libPods-Tests-NYTPhotoViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-NYTPhotoViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B18AF3D1E2134FBA747289 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A6C26516D7FBDF26B420CD6E /* libPods-ios-photo-viewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-photo-viewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC106D9E5DA3A705DAC6C112 /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotoDismissalInteractionController.h; path = Pod/Classes/ios/NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
-		ADECA8867F29D0DC9AC6FD66 /* NYTPhotoContaining.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotoContaining.h; path = Pod/Classes/ios/Protocols/NYTPhotoContaining.h; sourceTree = "<group>"; };
-		B91B3C048BCC434C6B2E7142 /* Pods-ios-photo-viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-photo-viewer.debug.xcconfig"; sourceTree = "<group>"; };
-		BED8B1682481781F13EC09E3 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1638043297BBC81C1F2FC63 /* Pods-ios-photo-viewer-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ios-photo-viewer-environment.h"; sourceTree = "<group>"; };
-		C3C84316260B6025DEB79BCA /* Pods-ios-photo-viewer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios-photo-viewer-resources.sh"; sourceTree = "<group>"; };
-		D0FDE6037AC1C00FAAFB3B9E /* Pods-Tests-NYTPhotoViewer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests-NYTPhotoViewer.xcconfig"; sourceTree = "<group>"; };
-		D4C668E1A86971263FC9CB16 /* NYTPhotoTransitionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTPhotoTransitionController.m; path = Pod/Classes/ios/NYTPhotoTransitionController.m; sourceTree = "<group>"; };
-		D625EB4B909A30605FECB49D /* NYTPhotoDismissalInteractionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTPhotoDismissalInteractionController.m; path = Pod/Classes/ios/NYTPhotoDismissalInteractionController.m; sourceTree = "<group>"; };
-		DD430FAF523322F4DACD2F04 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0A42C061843649CF6964C71 /* NYTPhotosViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYTPhotosViewController.h; path = Pod/Classes/ios/NYTPhotosViewController.h; sourceTree = "<group>"; };
-		E2E8E9D76E60BCB311BEA914 /* Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m"; path = "../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m"; sourceTree = "<group>"; };
-		E3C45BBB1A6392EAA3911C47 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
-		E87163CA5A699BF6E837C116 /* Pods-Tests-NYTPhotoViewer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-NYTPhotoViewer-prefix.pch"; sourceTree = "<group>"; };
-		F267E36D1327579548637303 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		F85D0C72B3DA2216C61F073C /* NYTPhotosDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYTPhotosDataSource.m; path = Pod/Classes/ios/NYTPhotosDataSource.m; sourceTree = "<group>"; };
-		FE501970901C0A01753108CF /* Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig"; path = "../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		2954990B381292457F67FCCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B86DCABC152B14EBD6C1A174 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8F01BA72A25FA6C29A1DA5C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8967C9E091C02DA3542938CC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9EE305B681592D9D2C38DBE0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				75FE878C7A1FAD10CE3C06D7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A83C1854794719CD207A4AD5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				69096EDAE2258D09876EAE20 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EE9FBD9B9622A78D62B5F663 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		06B824E34CFC46DE63F6DF52 /* NYTPhotoViewer */ = {
-			isa = PBXGroup;
-			children = (
-				3A9507670EF2D54E69215EB7 /* NYTPhoto.h */,
-				ADECA8867F29D0DC9AC6FD66 /* NYTPhotoContaining.h */,
-				AC106D9E5DA3A705DAC6C112 /* NYTPhotoDismissalInteractionController.h */,
-				D625EB4B909A30605FECB49D /* NYTPhotoDismissalInteractionController.m */,
-				3B895D276C45AD3AD0BEF95A /* NYTPhotoTransitionController.h */,
-				D4C668E1A86971263FC9CB16 /* NYTPhotoTransitionController.m */,
-				7F7AC0465DA7F8DAE17B64C3 /* NYTPhotoViewController.h */,
-				7780104A2F79088BBE24E4F7 /* NYTPhotoViewController.m */,
-				346C611F69D08DAB8710E2E3 /* NYTPhotosDataSource.h */,
-				F85D0C72B3DA2216C61F073C /* NYTPhotosDataSource.m */,
-				E0A42C061843649CF6964C71 /* NYTPhotosViewController.h */,
-				50A0357E3DB84C445C8D45A4 /* NYTPhotosViewController.m */,
-				12DAC19099C7D584174B3318 /* NYTPhotosViewControllerDataSource.h */,
-				0EF8DB272A59763BB9D2AEAF /* NYTScalingImageView.h */,
-				67F0CDEA0A0347A467658C70 /* NYTScalingImageView.m */,
-				D86B419A285BE3E53A3CC2DF /* Resources */,
-				6F49DEF84F56738167D22FD4 /* Support Files */,
-			);
-			name = NYTPhotoViewer;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		158C1E6279CEF0FA601E530C /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				06B824E34CFC46DE63F6DF52 /* NYTPhotoViewer */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		5C0EBFCD7309FFCAD315F538 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B97BAC7538491EF22BBB24E8 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6F49DEF84F56738167D22FD4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0FDE6037AC1C00FAAFB3B9E /* Pods-Tests-NYTPhotoViewer.xcconfig */,
-				12905213C74870BB0A4002BC /* Pods-Tests-NYTPhotoViewer-Private.xcconfig */,
-				0C3F8772959EF92782D96429 /* Pods-Tests-NYTPhotoViewer-dummy.m */,
-				E87163CA5A699BF6E837C116 /* Pods-Tests-NYTPhotoViewer-prefix.pch */,
-				FE501970901C0A01753108CF /* Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig */,
-				77FE1E2206870B68DFFB225E /* Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig */,
-				E2E8E9D76E60BCB311BEA914 /* Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m */,
-				6DAABD4525857857654D94B1 /* Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-Tests-NYTPhotoViewer";
-			sourceTree = "<group>";
-		};
-		701491E6F6B7BBC3EF18B0F4 = {
-			isa = PBXGroup;
-			children = (
-				26BD704358D0DABB80C95DAA /* Podfile */,
-				158C1E6279CEF0FA601E530C /* Development Pods */,
-				5C0EBFCD7309FFCAD315F538 /* Frameworks */,
-				8B5205A97D5B9826DB0B92A4 /* Products */,
-				7315456F7EBFE774E4AA2615 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		72A47AD492CD1C89A602469B /* Pods-ios-photo-viewer */ = {
-			isa = PBXGroup;
-			children = (
-				320BD883229ED8B106D6B97F /* Pods-ios-photo-viewer-acknowledgements.markdown */,
-				860DB1543BBDDDD232FCB7D5 /* Pods-ios-photo-viewer-acknowledgements.plist */,
-				444D6150195BB3DB5854F565 /* Pods-ios-photo-viewer-dummy.m */,
-				C1638043297BBC81C1F2FC63 /* Pods-ios-photo-viewer-environment.h */,
-				C3C84316260B6025DEB79BCA /* Pods-ios-photo-viewer-resources.sh */,
-				B91B3C048BCC434C6B2E7142 /* Pods-ios-photo-viewer.debug.xcconfig */,
-				842DF3CEF939093A4FFC3029 /* Pods-ios-photo-viewer.release.xcconfig */,
-			);
-			name = "Pods-ios-photo-viewer";
-			path = "Target Support Files/Pods-ios-photo-viewer";
-			sourceTree = "<group>";
-		};
-		7315456F7EBFE774E4AA2615 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9E73336C0330EDE0FF5B49AF /* Pods-Tests */,
-				72A47AD492CD1C89A602469B /* Pods-ios-photo-viewer */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		8B5205A97D5B9826DB0B92A4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD430FAF523322F4DACD2F04 /* NYTPhotoViewer.bundle */,
-				BED8B1682481781F13EC09E3 /* libPods-Tests.a */,
-				A4501CB841AA8F577B3A909E /* libPods-Tests-NYTPhotoViewer.a */,
-				A6C26516D7FBDF26B420CD6E /* libPods-ios-photo-viewer.a */,
-				462FC0DB79B24B1E833CB172 /* libPods-ios-photo-viewer-NYTPhotoViewer.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9E73336C0330EDE0FF5B49AF /* Pods-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				69312370A4838D1591FA5591 /* Pods-Tests-acknowledgements.markdown */,
-				0B6172475C1F7DF437C180B0 /* Pods-Tests-acknowledgements.plist */,
-				F267E36D1327579548637303 /* Pods-Tests-dummy.m */,
-				E3C45BBB1A6392EAA3911C47 /* Pods-Tests-environment.h */,
-				63B2F8FBB1D3BB2CE395AF5D /* Pods-Tests-resources.sh */,
-				A4B18AF3D1E2134FBA747289 /* Pods-Tests.debug.xcconfig */,
-				04434246221BEF27FCF18190 /* Pods-Tests.release.xcconfig */,
-			);
-			name = "Pods-Tests";
-			path = "Target Support Files/Pods-Tests";
-			sourceTree = "<group>";
-		};
-		B97BAC7538491EF22BBB24E8 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				45BCBEEC8ADD38D43BDB5EEF /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D86B419A285BE3E53A3CC2DF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				78E73F039E39EEACD87BB533 /* NYTPhotosViewController.storyboard */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		321F33D77770C75C952BA80F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34FE871961D8D1B3C55FCBDB /* NYTPhoto.h in Headers */,
-				9C9D997ED2F86148314E56DE /* NYTPhotoContaining.h in Headers */,
-				FA808BBC3E32DD1EE7119FD2 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				C0EE3B241762FBA4BB5330F5 /* NYTPhotoTransitionController.h in Headers */,
-				9F64A33C40845DFE42EA9B28 /* NYTPhotoViewController.h in Headers */,
-				8FCEF166FDA5792A2EA7BB40 /* NYTPhotosDataSource.h in Headers */,
-				359F3030212813E705242DA3 /* NYTPhotosViewController.h in Headers */,
-				90FD9BFE785F0C9F609D420D /* NYTPhotosViewControllerDataSource.h in Headers */,
-				91C290606002B5833146E246 /* NYTScalingImageView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EA885B3BD3AFDF5AC4E5A47 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A3A3874B515851BC38F67E2F /* NYTPhoto.h in Headers */,
-				17C8C7CE3613D80EE74454F8 /* NYTPhotoContaining.h in Headers */,
-				ECA718E74D8579A047D6B833 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				B2C5A0E824FA5E0C8DCA48D9 /* NYTPhotoTransitionController.h in Headers */,
-				CAD94C5EC77364CE0FBC9E9F /* NYTPhotoViewController.h in Headers */,
-				0E4B0C750DCA56D6EC5C67F0 /* NYTPhotosDataSource.h in Headers */,
-				5B9CBB5D037563A7E85B8BD8 /* NYTPhotosViewController.h in Headers */,
-				49EDD551F5B9BBE388330639 /* NYTPhotosViewControllerDataSource.h in Headers */,
-				8F29937D01AC7902B2BA0FE6 /* NYTScalingImageView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		156E535DF5D7C55DB9678A63 /* Pods-Tests-NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BEC330BBCBA1F848895AA5C /* Build configuration list for PBXNativeTarget "Pods-Tests-NYTPhotoViewer" */;
-			buildPhases = (
-				0CFEA5198A00A244E7106DE0 /* Sources */,
-				2954990B381292457F67FCCB /* Frameworks */,
-				6EA885B3BD3AFDF5AC4E5A47 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				72588534D54AD42399C410F5 /* PBXTargetDependency */,
-			);
-			name = "Pods-Tests-NYTPhotoViewer";
-			productName = "Pods-Tests-NYTPhotoViewer";
-			productReference = A4501CB841AA8F577B3A909E /* libPods-Tests-NYTPhotoViewer.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		2CF2CC034C6E1352B3E2379F /* NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F68E89FA37B098E3A80ECAF7 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */;
-			buildPhases = (
-				6D0F3FC4D3F88619EBD4C0BA /* Sources */,
-				EE9FBD9B9622A78D62B5F663 /* Frameworks */,
-				D28E62155BEF12F071CD97A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NYTPhotoViewer;
-			productName = NYTPhotoViewer;
-			productReference = DD430FAF523322F4DACD2F04 /* NYTPhotoViewer.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		3CE2F4AC735E9ED3DD97E3EE /* Pods-ios-photo-viewer-NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C04E851FA9A23668C9D45AE /* Build configuration list for PBXNativeTarget "Pods-ios-photo-viewer-NYTPhotoViewer" */;
-			buildPhases = (
-				427A58611D614F02E66034F4 /* Sources */,
-				8F01BA72A25FA6C29A1DA5C7 /* Frameworks */,
-				321F33D77770C75C952BA80F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9280C6060AA3BCC43DC958CB /* PBXTargetDependency */,
-			);
-			name = "Pods-ios-photo-viewer-NYTPhotoViewer";
-			productName = "Pods-ios-photo-viewer-NYTPhotoViewer";
-			productReference = 462FC0DB79B24B1E833CB172 /* libPods-ios-photo-viewer-NYTPhotoViewer.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		5F1A88B2DD90749B7DE910C5 /* Pods-Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 577556848DB8FED0CDA2C7E8 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
-			buildPhases = (
-				4F273CB5A431C12AB1E862FE /* Sources */,
-				A83C1854794719CD207A4AD5 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3730C1760883C3B6A5F3E26C /* PBXTargetDependency */,
-			);
-			name = "Pods-Tests";
-			productName = "Pods-Tests";
-			productReference = BED8B1682481781F13EC09E3 /* libPods-Tests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E409D7E783663264706371F3 /* Pods-ios-photo-viewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70C06850ECA44834BE2DA16C /* Build configuration list for PBXNativeTarget "Pods-ios-photo-viewer" */;
-			buildPhases = (
-				673F3D1F2CB81A03CFBA9139 /* Sources */,
-				9EE305B681592D9D2C38DBE0 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1A318714484A1BB32E8A771F /* PBXTargetDependency */,
-			);
-			name = "Pods-ios-photo-viewer";
-			productName = "Pods-ios-photo-viewer";
-			productReference = A6C26516D7FBDF26B420CD6E /* libPods-ios-photo-viewer.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		8A729104D9458428E9635160 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0510;
-			};
-			buildConfigurationList = 5C64947AB683FFA41B39410D /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 701491E6F6B7BBC3EF18B0F4;
-			productRefGroup = 8B5205A97D5B9826DB0B92A4 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				2CF2CC034C6E1352B3E2379F /* NYTPhotoViewer */,
-				5F1A88B2DD90749B7DE910C5 /* Pods-Tests */,
-				156E535DF5D7C55DB9678A63 /* Pods-Tests-NYTPhotoViewer */,
-				E409D7E783663264706371F3 /* Pods-ios-photo-viewer */,
-				3CE2F4AC735E9ED3DD97E3EE /* Pods-ios-photo-viewer-NYTPhotoViewer */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		D28E62155BEF12F071CD97A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE33DAC089398E2C802E0E17 /* NYTPhotosViewController.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		0CFEA5198A00A244E7106DE0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF050F7DA694F2CABBA1E1BD /* NYTPhotoDismissalInteractionController.m in Sources */,
-				FB75F977336F5950BF1BE72C /* NYTPhotoTransitionController.m in Sources */,
-				35A2398B16090115996EBC81 /* NYTPhotoViewController.m in Sources */,
-				B3371E2BA2907F0329BEAC9A /* NYTPhotosDataSource.m in Sources */,
-				65216CF8764FE0E0DE16ECBB /* NYTPhotosViewController.m in Sources */,
-				BBD4EC3F170DFE36D624377F /* NYTScalingImageView.m in Sources */,
-				B044273BF1DAA2C463782A83 /* Pods-Tests-NYTPhotoViewer-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		427A58611D614F02E66034F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AA2D002B016BF12BD70A94D /* NYTPhotoDismissalInteractionController.m in Sources */,
-				669D505D870EFC070BDE1E79 /* NYTPhotoTransitionController.m in Sources */,
-				2FB19CB0B52DBBB8B3F788D6 /* NYTPhotoViewController.m in Sources */,
-				B50DFF42703B8E997FC1BA64 /* NYTPhotosDataSource.m in Sources */,
-				FE5AF4584023FDD3E89E50CA /* NYTPhotosViewController.m in Sources */,
-				E32DD2A04789EDD622565BA5 /* NYTScalingImageView.m in Sources */,
-				18352BE3A607FFC92F0B4487 /* Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F273CB5A431C12AB1E862FE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83AAF58884D17C6C244991C9 /* Pods-Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		673F3D1F2CB81A03CFBA9139 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B015DE718090C9DD4D789CA1 /* Pods-ios-photo-viewer-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D0F3FC4D3F88619EBD4C0BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1A318714484A1BB32E8A771F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ios-photo-viewer-NYTPhotoViewer";
-			target = 3CE2F4AC735E9ED3DD97E3EE /* Pods-ios-photo-viewer-NYTPhotoViewer */;
-			targetProxy = 27DB09B733ED08DF70E06F47 /* PBXContainerItemProxy */;
-		};
-		3730C1760883C3B6A5F3E26C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Tests-NYTPhotoViewer";
-			target = 156E535DF5D7C55DB9678A63 /* Pods-Tests-NYTPhotoViewer */;
-			targetProxy = 86E067ED329BA3569D49A756 /* PBXContainerItemProxy */;
-		};
-		72588534D54AD42399C410F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 2CF2CC034C6E1352B3E2379F /* NYTPhotoViewer */;
-			targetProxy = BD01AD24FE0399EAFDF86288 /* PBXContainerItemProxy */;
-		};
-		9280C6060AA3BCC43DC958CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 2CF2CC034C6E1352B3E2379F /* NYTPhotoViewer */;
-			targetProxy = 0536C076F6D9336D5C8BF806 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		0B5E68A6499712C674CD3CC2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77FE1E2206870B68DFFB225E /* Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3A06FA70D6B200DB9FD9946E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-			};
-			name = Debug;
-		};
-		3D80131AA426276F97FA9AD7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		3EE62E73BB883943E70BC2D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B91B3C048BCC434C6B2E7142 /* Pods-ios-photo-viewer.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4A970F1FBAB7EF5EF9037BA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				STRIP_INSTALLED_PRODUCT = NO;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4F7A7A4F2A9F383C296589C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04434246221BEF27FCF18190 /* Pods-Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		697FE80BF1860A591A1DA254 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4B18AF3D1E2134FBA747289 /* Pods-Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		72C008E4C8072FD8FC316388 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12905213C74870BB0A4002BC /* Pods-Tests-NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NYTPhotoViewer/Pods-Tests-NYTPhotoViewer-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9B067C862BBC5BFC95617613 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 842DF3CEF939093A4FFC3029 /* Pods-ios-photo-viewer.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D0156D3C08B40DFED7C6756B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77FE1E2206870B68DFFB225E /* Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F00EA52A6712D348A73FE04F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		FA2A718AFCEFB45958FDBC6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12905213C74870BB0A4002BC /* Pods-Tests-NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NYTPhotoViewer/Pods-Tests-NYTPhotoViewer-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		577556848DB8FED0CDA2C7E8 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				697FE80BF1860A591A1DA254 /* Debug */,
-				4F7A7A4F2A9F383C296589C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5C64947AB683FFA41B39410D /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A06FA70D6B200DB9FD9946E /* Debug */,
-				4A970F1FBAB7EF5EF9037BA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		70C06850ECA44834BE2DA16C /* Build configuration list for PBXNativeTarget "Pods-ios-photo-viewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3EE62E73BB883943E70BC2D4 /* Debug */,
-				9B067C862BBC5BFC95617613 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BEC330BBCBA1F848895AA5C /* Build configuration list for PBXNativeTarget "Pods-Tests-NYTPhotoViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				72C008E4C8072FD8FC316388 /* Debug */,
-				FA2A718AFCEFB45958FDBC6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9C04E851FA9A23668C9D45AE /* Build configuration list for PBXNativeTarget "Pods-ios-photo-viewer-NYTPhotoViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0156D3C08B40DFED7C6756B /* Debug */,
-				0B5E68A6499712C674CD3CC2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F68E89FA37B098E3A80ECAF7 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F00EA52A6712D348A73FE04F /* Debug */,
-				3D80131AA426276F97FA9AD7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 8A729104D9458428E9635160 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0029D2EB6CC2E61DC7C9F497</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotoDismissalInteractionController.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoDismissalInteractionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01FBC80CA45A77C0848A280A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B52DE8DE3398B9B926E3B961</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>030DB9434A063822712B5965</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>041371BD4387DA74EFA5A74E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>631C5BD906370881921F3D23</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BAA62A3ED387BCA04C3E6065</string>
+				<string>9E4A98A55E94AE772B5C3C2A</string>
+				<string>BEE568B688A65C12012D2526</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>1162D0589777582CAEA87079</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer</string>
+			<key>productName</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer</string>
+			<key>productReference</key>
+			<string>2FD843606451554843A6840E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>04166B9647537756561BFF72</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7D95A2810427CD21302BC267</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>07C8758E79D65A87DB3F11E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9870476DDAA4CE463A52874</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0CA5DFE736220976044AF0CC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0D36BF6A9C21AAD378BD8A16</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Tests-NYTPhotoViewer.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0E7374630D1B7E09E486A845</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotoTransitionController.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoTransitionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0EAA9216B2BC60880805BEF2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>B5433CEA2CB4414EA7768072</string>
+			<key>buildPhases</key>
+			<array>
+				<string>030DB9434A063822712B5965</string>
+				<string>B3B1D50A9288AA2A4D2B5967</string>
+				<string>F3817D63F60FE1945C164FDA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NYTPhotoViewer</string>
+			<key>productName</key>
+			<string>NYTPhotoViewer</string>
+			<key>productReference</key>
+			<string>A1E4DE14BD4F40F30C3BBC10</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>0F0C7CC795ED99655381C85A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1001EA76F1A5EDA61E772755</key>
+		<dict>
+			<key>fileRef</key>
+			<string>83F8ADDF09BA8E8A1D89373E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1162D0589777582CAEA87079</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>NYTPhotoViewer</string>
+			<key>target</key>
+			<string>0EAA9216B2BC60880805BEF2</string>
+			<key>targetProxy</key>
+			<string>EE2A873192E481CBB9FE8E49</string>
+		</dict>
+		<key>148E329943DBB54C5AC427CA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6D34C900FAECA6393E5EE6B1</string>
+				<string>5F67EB5D4B1F63F38A0FEB53</string>
+				<string>0029D2EB6CC2E61DC7C9F497</string>
+				<string>B52DE8DE3398B9B926E3B961</string>
+				<string>71088B19F5089A00AF7EA847</string>
+				<string>D9870476DDAA4CE463A52874</string>
+				<string>EF983988113BBACEEE8C9467</string>
+				<string>0E7374630D1B7E09E486A845</string>
+				<string>A4FDE0F8C81937E6AD11BDE4</string>
+				<string>7F1CE11D53D402D79AB07418</string>
+				<string>D3EE5EFB5C45F1776CCD8B99</string>
+				<string>AFA78FAC7CB0FD9649C7A918</string>
+				<string>367AC45EF436091A0006B234</string>
+				<string>60D7B2070FD93F1BBAA1F478</string>
+				<string>83F8ADDF09BA8E8A1D89373E</string>
+				<string>2F5312940D63449FE51817FF</string>
+				<string>BE42ABC06345F6867C4F7A39</string>
+				<string>D10FC6A639EBF90EF680109E</string>
+				<string>14A1414ADC075156B60544CB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>NYTPhotoViewer</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>14A1414ADC075156B60544CB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0D36BF6A9C21AAD378BD8A16</string>
+				<string>1C656423CE449D600400D09A</string>
+				<string>C3F483FDA4C3FAF2A797FAD4</string>
+				<string>AB0A1E2E4E02350E6A8D9C31</string>
+				<string>1BC6C60B0DD1CBEF6F524929</string>
+				<string>4720EDD0464BACC5ECFEDA69</string>
+				<string>684DDCF07C116D3FCB1A7AC3</string>
+				<string>EC81343A02A456C58F1D7320</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/Pods-Tests-NYTPhotoViewer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1803C5C5C7E143226EB2FB21</key>
+		<dict>
+			<key>fileRef</key>
+			<string>60D7B2070FD93F1BBAA1F478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>196CF30C3D1E7739BD741A2C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer</string>
+			<key>target</key>
+			<string>041371BD4387DA74EFA5A74E</string>
+			<key>targetProxy</key>
+			<string>C09D8262B75C7B8C8621D5A3</string>
+		</dict>
+		<key>1A0D88C031AD99E770C4B37A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EF983988113BBACEEE8C9467</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1B6695352BCC456AD4C12CFF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C26B507CFF37DE34DF5351C9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1BC6C60B0DD1CBEF6F524929</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1C656423CE449D600400D09A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Tests-NYTPhotoViewer-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1CAE266F627DA1006B23A252</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C26B507CFF37DE34DF5351C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1D2C19F215E0FBF6AC200119</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0E7374630D1B7E09E486A845</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>25AD628B9A9B3EFDB6842BDA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>83F8ADDF09BA8E8A1D89373E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26A8632A38328FB672B0991D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B52DE8DE3398B9B926E3B961</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2F5312940D63449FE51817FF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTScalingImageView.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTScalingImageView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2FD843606451554843A6840E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-ios-photo-viewer-NYTPhotoViewer.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>33BEF460E299A0EBF0B56675</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0F0C7CC795ED99655381C85A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>35109D6DFCEC02B5B5D31B0B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>367AC45EF436091A0006B234</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotosViewController.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotosViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>38E8CF99FCD1639ECFF3C377</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>394307274BAD4FB3E42EA69A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1B6695352BCC456AD4C12CFF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3ABF2087D147682D9A6028FA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer-environment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B0E6C633F26846F05AB0B30</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4720EDD0464BACC5ECFEDA69</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3DC708CFDA48059C6A41BDEF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1CAE266F627DA1006B23A252</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3F269E1D682ED713150B5DAA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C26B507CFF37DE34DF5351C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4720EDD0464BACC5ECFEDA69</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>487DD1DF27CF7BF31F07D205</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-Tests-NYTPhotoViewer</string>
+			<key>target</key>
+			<string>975C38608428E36B9D9CFF4E</string>
+			<key>targetProxy</key>
+			<string>6FE97B9011363FF7D4611D12</string>
+		</dict>
+		<key>4907E6A988633FDE879126F0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1C656423CE449D600400D09A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-Tests-NYTPhotoViewer/Pods-Tests-NYTPhotoViewer-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4B0B1C756CF76633CB6656A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D3EE5EFB5C45F1776CCD8B99</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D2822EFB334D00E48652EB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EF983988113BBACEEE8C9467</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4FD8035217B938649E12EB8C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C1F75B68945F3FB21081486F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>505AF838689B28D2F10433F6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2F5312940D63449FE51817FF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>50753FEBFCB6D9CDD7D52222</key>
+		<dict>
+			<key>fileRef</key>
+			<string>367AC45EF436091A0006B234</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>518652FDF0C154A3EA1F47A4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0029D2EB6CC2E61DC7C9F497</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>53CD7EE0D9696055E0B70A61</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-Tests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>54B82E28C92B1FFFD343855F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>53CD7EE0D9696055E0B70A61</string>
+				<string>6B213CEFDD60FD234B0178F6</string>
+				<string>D55ACF90DE08BF80ED8F6163</string>
+				<string>C99D9F9B201A976DC8759B20</string>
+				<string>D0CCA73409783C5A77119A78</string>
+				<string>0CA5DFE736220976044AF0CC</string>
+				<string>83035CBE9AD6FE6AF3B16DDC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-Tests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-Tests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5795A4C59907430B5DC181F3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4720EDD0464BACC5ECFEDA69</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>591FF5C7D494DBB3AAE08385</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>5E143B405B9B6180779FCCFF</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>BF902DBFCEB6DCF7F95AE75C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F91E79FBEF6F4ABE817830D6</string>
+				<string>F92B39B6F5CE05AA44CEBD3E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>196CF30C3D1E7739BD741A2C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer</string>
+			<key>productName</key>
+			<string>Pods-ios-photo-viewer</string>
+			<key>productReference</key>
+			<string>C80092BF9B70DB2DA4595D57</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>5F67EB5D4B1F63F38A0FEB53</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotoContaining.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/Protocols/NYTPhotoContaining.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60983D6B98BCCD9F3E5DEA2E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>60D7B2070FD93F1BBAA1F478</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotosViewController.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotosViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>631C5BD906370881921F3D23</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3B0E6C633F26846F05AB0B30</string>
+				<string>5795A4C59907430B5DC181F3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>63F48B5F4634FE8F4A89F274</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>NYTPhotoViewer</string>
+			<key>target</key>
+			<string>0EAA9216B2BC60880805BEF2</string>
+			<key>targetProxy</key>
+			<string>6B3F27F5286CC60148484BC3</string>
+		</dict>
+		<key>684DDCF07C116D3FCB1A7AC3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>695B7B78109FBDFE4CD9D616</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>6BAFBBDC5AD713B7AF22A550</string>
+				<string>60983D6B98BCCD9F3E5DEA2E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>6B213CEFDD60FD234B0178F6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-Tests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B3F27F5286CC60148484BC3</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>BC42BCB5BFC279BCA4FB3B61</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0EAA9216B2BC60880805BEF2</string>
+			<key>remoteInfo</key>
+			<string>NYTPhotoViewer</string>
+		</dict>
+		<key>6BAFBBDC5AD713B7AF22A550</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>6D34C900FAECA6393E5EE6B1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhoto.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/Protocols/NYTPhoto.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6FE97B9011363FF7D4611D12</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>BC42BCB5BFC279BCA4FB3B61</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>975C38608428E36B9D9CFF4E</string>
+			<key>remoteInfo</key>
+			<string>Pods-Tests-NYTPhotoViewer</string>
+		</dict>
+		<key>71088B19F5089A00AF7EA847</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotoTransitionAnimator.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoTransitionAnimator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>717FDD50C42F694EB6659A62</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>83035CBE9AD6FE6AF3B16DDC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>71BDD85F1FAF326ABE71461E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFA78FAC7CB0FD9649C7A918</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>744B0573D3294032362F2735</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B50ED8C638152EE716142334</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>74EBE27ECC43240141272681</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>54B82E28C92B1FFFD343855F</string>
+				<string>E25AE2B78FC06B31F62E4CCA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>755A9F3B55F53837C1D414BF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2F5312940D63449FE51817FF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>76CBCFBE48E466B437EAE9A8</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C0E42C270043E72768C11C3A</string>
+				<string>717FDD50C42F694EB6659A62</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7D95A2810427CD21302BC267</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F1CE11D53D402D79AB07418</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotoViewController.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814F92BADC6561976400617A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D67D040F429059733A1963B6</string>
+				<string>B4D17531A34CED54F6912CC6</string>
+				<string>DB3FD3C6BE9F6612DC1CA3E4</string>
+				<string>BC1C375F8D89C3DCEC6DE644</string>
+				<string>1A0D88C031AD99E770C4B37A</string>
+				<string>F259061AEA3EA3A7982E6199</string>
+				<string>4B0B1C756CF76633CB6656A0</string>
+				<string>8C8D8CF833080973CBFAA0C7</string>
+				<string>1001EA76F1A5EDA61E772755</string>
+				<string>505AF838689B28D2F10433F6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>83035CBE9AD6FE6AF3B16DDC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83F8ADDF09BA8E8A1D89373E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotosViewControllerDataSource.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/Protocols/NYTPhotosViewControllerDataSource.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>84B082727AFE5E74B23881E4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>26A8632A38328FB672B0991D</string>
+				<string>CC21E306BA772B7A559563CF</string>
+				<string>BF4EB19386214FEA516A98D0</string>
+				<string>8D991701FE3EF81976EF216A</string>
+				<string>E6A00F4B466EE75D3CE9614D</string>
+				<string>A6F0B793D1499237D5D463C7</string>
+				<string>BE7FDBF70C0C59CEE173BA9D</string>
+				<string>FE24E8826B603D9B19A75154</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>870A80EBBBD47489DBA1B722</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D34C900FAECA6393E5EE6B1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>87BE1E63AB268101EF9BBBFE</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Tests-NYTPhotoViewer.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8860A8CFEA8CE9E3353B9610</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C26B507CFF37DE34DF5351C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>88765ECC7BF46396874716A4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>591FF5C7D494DBB3AAE08385</string>
+				<string>A7733166BFE512668E02C23A</string>
+				<string>394307274BAD4FB3E42EA69A</string>
+				<string>DA0DBBD40D93A0E687499D76</string>
+				<string>74EBE27ECC43240141272681</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B9EA2E3D04C1A8B775FA485</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AE512B7F91626503189ABF13</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BA8237D60E70253D34DCDB8</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8C8D8CF833080973CBFAA0C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>367AC45EF436091A0006B234</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8D991701FE3EF81976EF216A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7F1CE11D53D402D79AB07418</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8FF255E4B55901BDC7BE1506</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BE42ABC06345F6867C4F7A39</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>975C38608428E36B9D9CFF4E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A66F8E009D25B25F5F131766</string>
+			<key>buildPhases</key>
+			<array>
+				<string>84B082727AFE5E74B23881E4</string>
+				<string>BFA8174729DE2BFC4A0785E7</string>
+				<string>814F92BADC6561976400617A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>63F48B5F4634FE8F4A89F274</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Tests-NYTPhotoViewer</string>
+			<key>productName</key>
+			<string>Pods-Tests-NYTPhotoViewer</string>
+			<key>productReference</key>
+			<string>87BE1E63AB268101EF9BBBFE</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>9E07339524BDA142ED396E9B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7F1CE11D53D402D79AB07418</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9E4A98A55E94AE772B5C3C2A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3F269E1D682ED713150B5DAA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A1E4DE14BD4F40F30C3BBC10</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>NYTPhotoViewer.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A4FDE0F8C81937E6AD11BDE4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotoViewController.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A66F8E009D25B25F5F131766</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4907E6A988633FDE879126F0</string>
+				<string>B389C3006D7F332553A08DAB</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A6F0B793D1499237D5D463C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>60D7B2070FD93F1BBAA1F478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A7733166BFE512668E02C23A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>148E329943DBB54C5AC427CA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AB0A1E2E4E02350E6A8D9C31</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-Tests-NYTPhotoViewer-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AE512B7F91626503189ABF13</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFA78FAC7CB0FD9649C7A918</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotosDataSource.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotosDataSource.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B00BACD70DA27E014E0215C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>684DDCF07C116D3FCB1A7AC3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B0CA778C2FC12D89C5AA5771</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Tests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B1644728613F36F74757049E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A4FDE0F8C81937E6AD11BDE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B389C3006D7F332553A08DAB</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1C656423CE449D600400D09A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-Tests-NYTPhotoViewer/Pods-Tests-NYTPhotoViewer-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B3B1D50A9288AA2A4D2B5967</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B4D17531A34CED54F6912CC6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5F67EB5D4B1F63F38A0FEB53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B50ED8C638152EE716142334</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NYTPhotosViewController.storyboard</string>
+			<key>path</key>
+			<string>Pod/Assets/NYTPhotosViewController.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B52DE8DE3398B9B926E3B961</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotoDismissalInteractionController.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoDismissalInteractionController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B5433CEA2CB4414EA7768072</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>D5A23E9414AE68DCF8487F0A</string>
+				<string>8BA8237D60E70253D34DCDB8</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>BAA62A3ED387BCA04C3E6065</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>01FBC80CA45A77C0848A280A</string>
+				<string>07C8758E79D65A87DB3F11E9</string>
+				<string>1D2C19F215E0FBF6AC200119</string>
+				<string>9E07339524BDA142ED396E9B</string>
+				<string>71BDD85F1FAF326ABE71461E</string>
+				<string>1803C5C5C7E143226EB2FB21</string>
+				<string>8FF255E4B55901BDC7BE1506</string>
+				<string>B00BACD70DA27E014E0215C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BC1C375F8D89C3DCEC6DE644</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71088B19F5089A00AF7EA847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BC42BCB5BFC279BCA4FB3B61</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>695B7B78109FBDFE4CD9D616</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>88765ECC7BF46396874716A4</string>
+			<key>productRefGroup</key>
+			<string>DA0DBBD40D93A0E687499D76</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>0EAA9216B2BC60880805BEF2</string>
+				<string>D39EA1835DA4DFBA37C221C2</string>
+				<string>975C38608428E36B9D9CFF4E</string>
+				<string>5E143B405B9B6180779FCCFF</string>
+				<string>041371BD4387DA74EFA5A74E</string>
+			</array>
+		</dict>
+		<key>BCBBB1BB0DF71C3BD5AECC64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5F67EB5D4B1F63F38A0FEB53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BE42ABC06345F6867C4F7A39</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTScalingImageView.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTScalingImageView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BE7FDBF70C0C59CEE173BA9D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BE42ABC06345F6867C4F7A39</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BEE568B688A65C12012D2526</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>870A80EBBBD47489DBA1B722</string>
+				<string>BCBBB1BB0DF71C3BD5AECC64</string>
+				<string>518652FDF0C154A3EA1F47A4</string>
+				<string>DEE809431E95D1BA325A35B6</string>
+				<string>4D2822EFB334D00E48652EB2</string>
+				<string>B1644728613F36F74757049E</string>
+				<string>CF4AEB8586CDBE10EF4232DB</string>
+				<string>50753FEBFCB6D9CDD7D52222</string>
+				<string>25AD628B9A9B3EFDB6842BDA</string>
+				<string>755A9F3B55F53837C1D414BF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BF4EB19386214FEA516A98D0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0E7374630D1B7E09E486A845</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BF902DBFCEB6DCF7F95AE75C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>04166B9647537756561BFF72</string>
+				<string>33BEF460E299A0EBF0B56675</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>BFA8174729DE2BFC4A0785E7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8860A8CFEA8CE9E3353B9610</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C09D8262B75C7B8C8621D5A3</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>BC42BCB5BFC279BCA4FB3B61</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>041371BD4387DA74EFA5A74E</string>
+			<key>remoteInfo</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer</string>
+		</dict>
+		<key>C0E42C270043E72768C11C3A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0CA5DFE736220976044AF0CC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C1F75B68945F3FB21081486F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D55ACF90DE08BF80ED8F6163</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C26B507CFF37DE34DF5351C9</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>C3F483FDA4C3FAF2A797FAD4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-Tests-NYTPhotoViewer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C80092BF9B70DB2DA4595D57</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-ios-photo-viewer.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C99D9F9B201A976DC8759B20</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-Tests-environment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CC21E306BA772B7A559563CF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9870476DDAA4CE463A52874</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CF4AEB8586CDBE10EF4232DB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D3EE5EFB5C45F1776CCD8B99</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D0CCA73409783C5A77119A78</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-Tests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D10FC6A639EBF90EF680109E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B50ED8C638152EE716142334</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D39EA1835DA4DFBA37C221C2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>76CBCFBE48E466B437EAE9A8</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4FD8035217B938649E12EB8C</string>
+				<string>3DC708CFDA48059C6A41BDEF</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>487DD1DF27CF7BF31F07D205</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Tests</string>
+			<key>productName</key>
+			<string>Pods-Tests</string>
+			<key>productReference</key>
+			<string>B0CA778C2FC12D89C5AA5771</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>D3EE5EFB5C45F1776CCD8B99</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotosDataSource.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotosDataSource.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D55ACF90DE08BF80ED8F6163</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-Tests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D5A23E9414AE68DCF8487F0A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>D67D040F429059733A1963B6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D34C900FAECA6393E5EE6B1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D9870476DDAA4CE463A52874</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NYTPhotoTransitionAnimator.m</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoTransitionAnimator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA0DBBD40D93A0E687499D76</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A1E4DE14BD4F40F30C3BBC10</string>
+				<string>B0CA778C2FC12D89C5AA5771</string>
+				<string>87BE1E63AB268101EF9BBBFE</string>
+				<string>C80092BF9B70DB2DA4595D57</string>
+				<string>2FD843606451554843A6840E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB3FD3C6BE9F6612DC1CA3E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0029D2EB6CC2E61DC7C9F497</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DE27A9680B789FD8A10FE729</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C26B507CFF37DE34DF5351C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DEE809431E95D1BA325A35B6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71088B19F5089A00AF7EA847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E25AE2B78FC06B31F62E4CCA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E72254CBC5D85E404D6B03DB</string>
+				<string>38E8CF99FCD1639ECFF3C377</string>
+				<string>AE512B7F91626503189ABF13</string>
+				<string>3ABF2087D147682D9A6028FA</string>
+				<string>35109D6DFCEC02B5B5D31B0B</string>
+				<string>7D95A2810427CD21302BC267</string>
+				<string>0F0C7CC795ED99655381C85A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-ios-photo-viewer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6A00F4B466EE75D3CE9614D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFA78FAC7CB0FD9649C7A918</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E72254CBC5D85E404D6B03DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-ios-photo-viewer-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EC81343A02A456C58F1D7320</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch</string>
+			<key>path</key>
+			<string>../Pods-ios-photo-viewer-NYTPhotoViewer/Pods-ios-photo-viewer-NYTPhotoViewer-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EE2A873192E481CBB9FE8E49</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>BC42BCB5BFC279BCA4FB3B61</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0EAA9216B2BC60880805BEF2</string>
+			<key>remoteInfo</key>
+			<string>NYTPhotoViewer</string>
+		</dict>
+		<key>EF983988113BBACEEE8C9467</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NYTPhotoTransitionController.h</string>
+			<key>path</key>
+			<string>Pod/Classes/ios/NYTPhotoTransitionController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F259061AEA3EA3A7982E6199</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A4FDE0F8C81937E6AD11BDE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F3817D63F60FE1945C164FDA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>744B0573D3294032362F2735</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F91E79FBEF6F4ABE817830D6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8B9EA2E3D04C1A8B775FA485</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F92B39B6F5CE05AA44CEBD3E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DE27A9680B789FD8A10FE729</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FE24E8826B603D9B19A75154</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C3F483FDA4C3FAF2A797FAD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>BC42BCB5BFC279BCA4FB3B61</string>
+</dict>
+</plist>

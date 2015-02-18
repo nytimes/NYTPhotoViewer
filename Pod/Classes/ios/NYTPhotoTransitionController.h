@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface NYTPhotoTransitionController : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface NYTPhotoTransitionController : NSObject <UIViewControllerTransitioningDelegate>
 
 @property (nonatomic) UIView *startingView;
 @property (nonatomic) UIView *endingView;
