@@ -46,7 +46,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 #pragma mark - NSObject(UIResponderStandardEditActions)
 
 - (void)copy:(id)sender {
-    [[UIPasteboard generalPasteboard] setImage:self.currentPhotoViewController.photo.image];
+    [[UIPasteboard generalPasteboard] setImage:self.currentlyDisplayedPhoto.image];
 }
 
 #pragma mark - UIResponder
@@ -56,7 +56,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (self.shouldHandleLongPress && action == @selector(copy:) && self.currentPhotoViewController.photo.image) {
+    if (self.shouldHandleLongPress && action == @selector(copy:) && self.currentlyDisplayedPhoto.image) {
         return YES;
     }
     
@@ -81,7 +81,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     
     self.transitionController.startingView = self.referenceViewForCurrentPhoto;
     
-    if (self.currentPhotoViewController.photo.image) {
+    if (self.currentlyDisplayedPhoto.image) {
         self.transitionController.endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
 }
@@ -247,7 +247,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 - (UIView *)referenceViewForCurrentPhoto {
     if ([self.delegate respondsToSelector:@selector(photosViewController:referenceViewForPhoto:)]) {
-        return [self.delegate photosViewController:self referenceViewForPhoto:self.currentPhotoViewController.photo];
+        return [self.delegate photosViewController:self referenceViewForPhoto:self.currentlyDisplayedPhoto];
     }
     
     return nil;
