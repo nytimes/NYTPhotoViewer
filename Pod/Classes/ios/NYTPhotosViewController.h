@@ -13,7 +13,14 @@
 
 @interface NYTPhotosViewController : UIViewController
 
+/**
+ *  The left bar button item overlaying the photo.
+ */
 @property (nonatomic) UIBarButtonItem *leftBarButtonItem;
+
+/**
+ *  The right bar button item overlaying the photo.
+ */
 @property (nonatomic) UIBarButtonItem *rightBarButtonItem;
 @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 

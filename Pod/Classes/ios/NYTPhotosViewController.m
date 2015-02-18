@@ -172,6 +172,22 @@
 #warning Do stuff.
 }
 
+- (UIBarButtonItem *)leftBarButtonItem {
+    return self.overlayView.leftBarButtonItem;
+}
+
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
+    self.overlayView.leftBarButtonItem = leftBarButtonItem;
+}
+
+- (UIBarButtonItem *)rightBarButtonItem {
+    return self.overlayView.rightBarButtonItem;
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
+    self.overlayView.rightBarButtonItem = rightBarButtonItem;
+}
+
 - (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
     if (![self.dataSource containsPhoto:photo]) {
         return;
