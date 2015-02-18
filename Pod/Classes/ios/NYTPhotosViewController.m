@@ -167,7 +167,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)actionButtonTapped:(id)sender {
-
+#warning Do stuff.
 }
 
 - (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
