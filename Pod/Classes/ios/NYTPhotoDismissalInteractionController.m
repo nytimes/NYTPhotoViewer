@@ -88,6 +88,8 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
                 [self.transitionContext cancelInteractiveTransition];
             }
             
+            self.viewToHideWhenBeginningTransition.hidden = NO;
+            
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
         }];
     }
@@ -133,6 +135,8 @@ const CGFloat NYTPhotoTransitionAnimatorPanDismissMaximumDuration = 0.45;
 #pragma mark - UIViewControllerInteractiveTransitioning
 
 - (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    self.viewToHideWhenBeginningTransition.hidden = YES;
+    
     self.transitionContext = transitionContext;
 }
 

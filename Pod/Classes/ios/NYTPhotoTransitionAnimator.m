@@ -34,6 +34,7 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     else {
         toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
     }
+    
     return toView;
 }
 
@@ -131,8 +132,16 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     [self performFadeAnimationWithTransitionContext:transitionContext];
     
     // Create a brand new view with the same contents for the purposes of animating this new view and leaving the old one alone.
-    UIView *startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
-    UIView *endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
+    UIView *startingViewForAnimation = self.startingViewForAnimation;
+    if (!startingViewForAnimation) {
+        startingViewForAnimation = [[self class] newAnimationViewFromView:self.startingView];
+    }
+    
+    UIView *endingViewForAnimation = self.endingViewForAnimation;
+    
+    if (!endingViewForAnimation) {
+        endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
+    }
     
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];

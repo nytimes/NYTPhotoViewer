@@ -69,8 +69,12 @@
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
+    // The interaction controller will be hiding the ending view, so we should get and set a visible version now.
+    self.animator.endingViewForAnimation = [[self.animator class] newAnimationViewFromView:self.endingView];
+    
     self.interactionController.animator = animator;
     self.interactionController.canAnimateUsingAnimationController = self.endingView != nil;
+    self.interactionController.viewToHideWhenBeginningTransition = self.endingView;
     
     return self.interactionController;
 }

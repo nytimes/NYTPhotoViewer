@@ -13,6 +13,11 @@
 @property (nonatomic) UIView *startingView;
 @property (nonatomic) UIView *endingView;
 
+@property (nonatomic) UIView *startingViewForAnimation;
+@property (nonatomic) UIView *endingViewForAnimation;
+
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
+
++ (UIView *)newAnimationViewFromView:(UIView *)view;
 
 @end
