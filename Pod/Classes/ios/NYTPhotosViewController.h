@@ -22,6 +22,10 @@
  *  The right bar button item overlaying the photo.
  */
 @property (nonatomic) UIBarButtonItem *rightBarButtonItem;
+
+/**
+ *  The object conforming to NYTPhoto that is currently being displayed.
+ */
 @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 
 /**
