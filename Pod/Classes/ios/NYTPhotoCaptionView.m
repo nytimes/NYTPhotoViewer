@@ -20,8 +20,20 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
 
 @implementation NYTPhotoCaptionView
 
+#pragma mark - UIView
+
 - (instancetype)initWithFrame:(CGRect)frame {
     return [self initWithAttributedTitle:nil attributedSummary:nil attributedCredit:nil];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.gradientLayer.frame = self.layer.bounds;
+}
+
+- (CGSize)intrinsicContentSize {
+    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.superview.bounds), CGFLOAT_MAX)];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
@@ -31,6 +43,8 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     
     return fittingSize;
 }
+
+#pragma mark - NYTPhotoCaptionView
 
 - (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit {
     self = [super initWithFrame:CGRectZero];
@@ -48,16 +62,6 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     }
     
     return self;
-}
-
-- (CGSize)intrinsicContentSize {
-    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.superview.bounds), CGFLOAT_MAX)];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.gradientLayer.frame = self.layer.bounds;
 }
 
 - (void)setupTextLabel {
