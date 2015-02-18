@@ -23,7 +23,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
+
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) UITapGestureRecognizer *singleTapGestureRecognizer;
+
 @property (nonatomic) NYTPhotosOverlayView *overlayView;
 
 @property (nonatomic) BOOL shouldHandleLongPress;
@@ -117,6 +120,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     if (self) {
         _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
         _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
+        _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
         
         _transitionController = [[NYTPhotoTransitionController alloc] init];
         self.modalPresentationStyle = UIModalPresentationCustom;
@@ -147,6 +151,7 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
     
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
+    [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
 }
 
 - (void)setupOverlayView {
@@ -201,6 +206,10 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 #pragma mark - Gesture Recognizers
 
+- (void)didSingleTapWithGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer {
+    [self setOverlayViewHidden:!self.overlayView.hidden animated:YES];
+}
+
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [self setOverlayViewHidden:YES animated:YES];
@@ -250,17 +259,23 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
-    CGFloat alpha = hidden ? 0.0 : 1.0;
-    
-     void(^finalAlphaBlock)() = ^{
-        self.overlayView.alpha = alpha;
-     };
+    if (hidden == self.overlayView.hidden) {
+        return;
+    }
     
     if (animated) {
-        [UIView animateWithDuration:0.3 animations:finalAlphaBlock];
+        self.overlayView.hidden = NO;
+        
+        self.overlayView.alpha = hidden ? 1.0 : 0.0;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.overlayView.alpha = hidden ? 0.0 : 1.0;
+        } completion:^(BOOL finished) {
+            self.overlayView.alpha = 1.0;
+            self.overlayView.hidden = hidden;
+        }];
     }
     else {
-        finalAlphaBlock();
+        self.overlayView.hidden = hidden;
     }
 }
 
@@ -273,6 +288,8 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
         
         NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo activityView:activityView];
         photoViewController.delegate = self;
+        [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
+        
         return photoViewController;
     }
     
