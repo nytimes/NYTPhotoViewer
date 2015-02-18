@@ -13,6 +13,7 @@
 #import "NYTPhotoTransitionController.h"
 #import "NYTScalingImageView.h"
 #import "NYTPhoto.h"
+#import "NYTPhotosOverlayView.h"
 
 const CGFloat NYTPhotosViewControllerPanDismissDistanceRatio = 100.0/667.0; // distance over iPhone 6 height.
 const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
@@ -21,10 +22,9 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
 
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
-
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
-
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) NYTPhotosOverlayView *overlayView;
 
 @property (nonatomic) BOOL shouldHandleLongPress;
 
@@ -84,12 +84,25 @@ const CGFloat NYTPhotosViewControllerPanDismissMaximumDuration = 0.45;
     if (self.currentlyDisplayedPhoto.image) {
         self.transitionController.endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
+    
+    self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
+    self.overlayView.alpha = 0.0;
+    [self.view addSubview:self.overlayView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.overlayView.alpha = 1.0;
+    }];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
     self.pageViewController.view.frame = self.view.bounds;
+    self.overlayView.frame = self.view.bounds;
 }
 
 - (BOOL)prefersStatusBarHidden {
