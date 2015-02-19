@@ -93,4 +93,12 @@ const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
     NSLog(@"Did Display Photo: %@ identifier: %@", photo, photo.identifier);
 }
 
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
+    NSLog(@"Action Completed With Activity Type: %@", activityType);
+}
+
+- (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController {
+    NSLog(@"Did Dismiss Photo Viewer: %@", photosViewController);
+}
+
 @end
