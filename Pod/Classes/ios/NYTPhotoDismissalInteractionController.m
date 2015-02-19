@@ -89,7 +89,7 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
             }
             else {
                 [self.transitionContext cancelInteractiveTransition];
-                [self fixStatusBarAppearanceBug];
+                [self fixCancellationStatusBarAppearanceBug];
             }
             
             self.viewToHideWhenBeginningTransition.hidden = NO;
@@ -111,7 +111,7 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
 }
 
 #warning Figure out a sanctioned fix for the status bar appearance bug.
-- (void)fixStatusBarAppearanceBug {
+- (void)fixCancellationStatusBarAppearanceBug {
     UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
