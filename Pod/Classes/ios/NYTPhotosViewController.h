@@ -14,6 +14,26 @@
 @interface NYTPhotosViewController : UIViewController
 
 /**
+ *  The pan gesture recognizer used for pannign to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
+ */
+@property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
+
+/**
+ *  The tap gesture recognizer used to hide the overlay, including the caption, left and right bar button items, and title, all at once. Disable to always show the overlay.
+ */
+@property (nonatomic, readonly) UITapGestureRecognizer *singleTapGestureRecognizer;
+
+/**
+ *  The internal page view controller used for swiping horizontally, photo to photo.
+ */
+@property (nonatomic, readonly) UIPageViewController *pageViewController;
+
+/**
+ *  The object conforming to NYTPhoto that is currently being displayed.
+ */
+@property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
+
+/**
  *  The left bar button item overlaying the photo.
  */
 @property (nonatomic) UIBarButtonItem *leftBarButtonItem;
@@ -22,11 +42,6 @@
  *  The right bar button item overlaying the photo.
  */
 @property (nonatomic) UIBarButtonItem *rightBarButtonItem;
-
-/**
- *  The object conforming to NYTPhoto that is currently being displayed.
- */
-@property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 
 /**
  *  The object that acts as the delegate of the `NYTPhotosViewController`.
