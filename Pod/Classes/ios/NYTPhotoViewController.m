@@ -62,7 +62,9 @@
     if (self) {
         _photo = photo;
         
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photo.image frame:CGRectZero];
+        UIImage *photoImage = photo.image ?: photo.placeholderImage;
+        
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
         _scalingImageView.delegate = self;
         
         if (!photo.image) {
