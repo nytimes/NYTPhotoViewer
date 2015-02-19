@@ -115,6 +115,7 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
+    // I'm so sorry.
     NSString *statusBarViewControllerSelectorPart1 = @"_setPresentedSta";
     NSString *statusBarViewControllerSelectorPart2 = @"tusBarViewController:";
     SEL setStatusBarViewControllerSelector = NSSelectorFromString([statusBarViewControllerSelectorPart1 stringByAppendingString:statusBarViewControllerSelectorPart2]);
