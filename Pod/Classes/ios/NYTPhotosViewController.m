@@ -208,10 +208,8 @@
     if (!clientDidHandle && self.currentlyDisplayedPhoto.image) {
         UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.currentlyDisplayedPhoto.image] applicationActivities:nil];
         activityViewController.completionHandler = ^(NSString *activityType, BOOL completed) {
-            if (completed) {
-                if ([self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {
-                    [self.delegate photosViewController:self actionCompletedWithActivityType:activityType];
-                }
+            if (completed && [self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {
+                [self.delegate photosViewController:self actionCompletedWithActivityType:activityType];
             }
         };
         
