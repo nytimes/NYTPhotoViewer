@@ -51,9 +51,6 @@
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
-    self.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    
     self.navigationItem = [[UINavigationItem alloc] initWithTitle:nil];
     self.navigationBar.items = @[self.navigationItem];
     

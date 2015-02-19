@@ -74,6 +74,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
     
@@ -184,8 +185,17 @@
     }
     
     self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
-    UIView *captionView;
     
+    NSDictionary *titleTextAttributes =  @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+    if ([self.delegate respondsToSelector:@selector(photosViewController:overlayTitleTextAttributesForPhoto:)]) {
+        NSDictionary *delegateTitleTextAttributes = [self.delegate photosViewController:self overlayTitleTextAttributesForPhoto:self.currentlyDisplayedPhoto];
+        titleTextAttributes = delegateTitleTextAttributes ?: titleTextAttributes;
+    }
+    
+    self.overlayView.titleTextAttributes = titleTextAttributes;
+    
+    UIView *captionView;
     if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewForPhoto:)]) {
         captionView = [self.delegate photosViewController:self captionViewForPhoto:self.currentlyDisplayedPhoto];
     }

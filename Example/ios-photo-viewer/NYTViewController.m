@@ -94,6 +94,14 @@ const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
     return nil;
 }
 
+- (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id<NYTPhoto>)photo {
+    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+        return @{NSForegroundColorAttributeName: [UIColor grayColor]};
+    }
+    
+    return nil;
+}
+
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo {
     NSLog(@"Did Display Photo: %@ identifier: %@", photo, photo.identifier);
 }
