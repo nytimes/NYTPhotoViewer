@@ -89,11 +89,10 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
             }
             else {
                 [self.transitionContext cancelInteractiveTransition];
+                [self fixStatusBarAppearanceBug];
             }
             
             self.viewToHideWhenBeginningTransition.hidden = NO;
-            
-            [self fixStatusBarAppearanceBug];
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
         }];
