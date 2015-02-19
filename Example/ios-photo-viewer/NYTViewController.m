@@ -28,6 +28,11 @@ const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
     photosViewController.delegate = self;
     [self presentViewController:photosViewController animated:YES completion:nil];
     
+    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:photos];
+}
+
+// This method simulates previously blank photos loading their images after some time.
+- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
