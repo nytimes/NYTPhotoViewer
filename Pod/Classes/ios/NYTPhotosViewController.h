@@ -99,6 +99,14 @@
  */
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;
 
+/**
+ *  Returns a view to display over a photo, full width, locked to the bottom, representing the caption for the photo. Can be any UIView object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object over which to display the caption view.
+ *
+ *  @return A view to display as the caption for the photo. Return `nil` to show a default view generated from the caption properties on the photo object.
+ */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
