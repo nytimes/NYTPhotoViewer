@@ -14,6 +14,11 @@
 @protocol NYTPhoto;
 @protocol NYTPhotoViewControllerDelegate;
 
+/**
+ *  NYTPhotoViewController observes this notification. It expects an id <NYTPhoto> object as the object of the notification.
+ */
+extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
+
 @interface NYTPhotoViewController : UIViewController <NYTPhotoContaining>
 
 @property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;

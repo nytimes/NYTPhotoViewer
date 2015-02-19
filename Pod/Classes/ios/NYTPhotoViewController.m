@@ -10,6 +10,8 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
+NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
+
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
 
 @property (nonatomic) id <NYTPhoto> photo;
@@ -37,6 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
         
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
@@ -83,6 +87,13 @@
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [activityIndicator startAnimating];
         _activityView = activityIndicator;
+    }
+}
+
+- (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
+    id <NYTPhoto> photo = notification.object;
+    if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo.identifier isEqualToString:self.photo.identifier]) {
+        [self updateImage:photo.image];
     }
 }
 

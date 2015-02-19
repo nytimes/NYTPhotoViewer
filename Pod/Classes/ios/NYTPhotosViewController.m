@@ -245,21 +245,7 @@
 - (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
     photo.image = image;
     
-    NYTPhotoViewController *photoViewController;
-    
-    for (NYTPhotoViewController *controller in self.pageViewController.viewControllers) {
-        if ([controller.photo.identifier isEqualToString:photo.identifier]) {
-            photoViewController = controller;
-            break;
-        }
-    }
-    
-    [photoViewController updateImage:image];
-    
-    // Reset the cached view controllers in the page view controller.
-    if (self.pageViewController.viewControllers.firstObject && photoViewController) {
-        [self.pageViewController setViewControllers:@[self.pageViewController.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
 }
 
 #pragma mark - Gesture Recognizers
