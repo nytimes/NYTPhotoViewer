@@ -199,7 +199,24 @@
 }
 
 - (void)actionButtonTapped:(id)sender {
-#warning Do stuff.
+    BOOL clientDidHandle = NO;
+    
+    if ([self.delegate respondsToSelector:@selector(photosViewController:handleActionButtonTappedForPhoto:)]) {
+        clientDidHandle = [self.delegate photosViewController:self handleActionButtonTappedForPhoto:self.currentlyDisplayedPhoto];
+    }
+    
+    if (!clientDidHandle && self.currentlyDisplayedPhoto.image) {
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.currentlyDisplayedPhoto.image] applicationActivities:nil];
+        activityViewController.completionHandler = ^(NSString *activityType, BOOL completed) {
+            if (completed) {
+                if ([self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {
+                    [self.delegate photosViewController:self actionCompletedWithActivityType:activityType];
+                }
+            }
+        };
+        
+        [self presentViewController:activityViewController animated:YES completion:nil];
+    }
 }
 
 - (UIBarButtonItem *)leftBarButtonItem {
