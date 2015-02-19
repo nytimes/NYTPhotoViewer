@@ -93,6 +93,8 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
             
             self.viewToHideWhenBeginningTransition.hidden = NO;
             
+            [self fixStatusBarAppearanceBug];
+            
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
         }];
     }
@@ -109,6 +111,20 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }
 
+#warning Figure out a sanctioned fix for the status bar appearance bug.
+- (void)fixStatusBarAppearanceBug {
+    UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    SEL setStatusBarViewControllerSelector = NSSelectorFromString(@"_setPresentedStatusBarViewController:");
+    if ([toViewController respondsToSelector:setStatusBarViewControllerSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [toViewController performSelector:setStatusBarViewControllerSelector withObject:fromViewController];
+#pragma clang diagnostic pop
+    }
+}
+
 #pragma mark - UIViewControllerInteractiveTransitioning
 
 - (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -116,6 +132,5 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     
     self.transitionContext = transitionContext;
 }
-
 
 @end
