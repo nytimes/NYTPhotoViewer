@@ -96,7 +96,7 @@
  *  Called when a new photo is displayed, either through gestures or programmatically.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
- *  @param photo                the photo object that was just displayed.
+ *  @param photo                The photo object that was just displayed.
  */
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
 
