@@ -60,7 +60,7 @@
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id<NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(1).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
-        loadingLabel.text = @"Loading Image...";
+        loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor whiteColor];
         return loadingLabel;
     }
