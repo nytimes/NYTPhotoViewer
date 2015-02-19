@@ -12,7 +12,6 @@
 
 @property (nonatomic) UIImage *image;
 
-#warning TODO: Placeholder image support.
 @property (nonatomic) UIImage *placeholderImage;
 
 @property (nonatomic) NSAttributedString *attributedCaptionTitle;
