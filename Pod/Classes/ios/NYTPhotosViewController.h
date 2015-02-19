@@ -101,7 +101,7 @@
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Called immediately before the photos view controller is about to dismiss.
+ *  Called immediately before the photos view controller is about to start dismissal. This will be the beginning of the interactive panning to dismiss, if it is enabled and performed.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  */
