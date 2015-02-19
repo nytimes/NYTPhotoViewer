@@ -28,6 +28,7 @@
 @property (nonatomic) NYTPhotosOverlayView *overlayView;
 
 @property (nonatomic) BOOL shouldHandleLongPress;
+@property (nonatomic) BOOL overlayWasHiddenBeforeTransition;
 
 @property (nonatomic, readonly) NYTPhotoViewController *currentPhotoViewController;
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
@@ -92,7 +93,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self setOverlayViewHidden:NO animated:YES];
+    if (!self.overlayWasHiddenBeforeTransition) {
+        [self setOverlayViewHidden:NO animated:YES];
+    }
 }
 
 - (void)viewWillLayoutSubviews {
@@ -104,6 +107,10 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationFade;
 }
 
 #pragma mark - NYTPhotosViewController
@@ -248,6 +255,7 @@
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
         [self setOverlayViewHidden:YES animated:YES];
         [self dismissAnimated:YES];
     }
@@ -265,9 +273,12 @@
     }
     
     [self dismissViewControllerAnimated:animated completion:^{
-        [self setOverlayViewHidden:NO animated:YES];
-        
         BOOL isStillOnscreen = self.view.window;// Happens when the dismissal is canceled.
+        
+        if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
+            [self setOverlayViewHidden:NO animated:YES];
+        }
+        
         if (!isStillOnscreen && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
             [self.delegate photosViewControllerDidDismiss:self];
         }
