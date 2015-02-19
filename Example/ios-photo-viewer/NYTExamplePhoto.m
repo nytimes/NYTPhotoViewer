@@ -8,7 +8,6 @@
 
 #import "NYTExamplePhoto.h"
 
-
 @implementation NYTExamplePhoto
 
 @synthesize image = _image;
