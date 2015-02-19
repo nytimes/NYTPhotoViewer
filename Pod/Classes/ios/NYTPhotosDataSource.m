@@ -62,8 +62,8 @@
     return [self.photos containsObject:photo];
 }
 
-- (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx {
-    return [self photoAtIndex:idx];
+- (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)photoIndex {
+    return [self photoAtIndex:photoIndex];
 }
 
 @end
