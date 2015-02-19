@@ -164,6 +164,13 @@
  *  @return YES if the action button tap was handled by the client, NO if the default UIActivityViewController is desired.
  */
 - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleActionButtonTappedForPhoto:(id <NYTPhoto>)photo;
+
+/**
+ *  Called after the default UIActivityViewController is presented and succesffully completes an action with a specified activity type.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param activityType         The activity type that was successfully shared.
+ */
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType;
 
 @end
