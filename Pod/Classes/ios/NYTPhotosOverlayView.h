@@ -16,9 +16,14 @@
 @property (nonatomic, readonly) UINavigationBar *navigationBar;
 
 /**
- *  The title of the overlay. Centered between the eft adn right bar button items.
+ *  The title of the overlay. Centered between the left and right bar button items.
  */
 @property (nonatomic) NSString *title;
+
+/**
+ *  The attributes of the overlay's title.
+ */
+@property (nonatomic) NSDictionary *titleTextAttributes;
 
 /**
  *  The bar button item appearing at the top left of the overlay.

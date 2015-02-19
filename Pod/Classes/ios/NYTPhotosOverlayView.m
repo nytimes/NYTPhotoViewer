@@ -110,4 +110,12 @@
     self.navigationItem.title = title;
 }
 
+- (NSDictionary *)titleTextAttributes {
+    return self.navigationBar.titleTextAttributes;
+}
+
+- (void)setTitleTextAttributes:(NSDictionary *)titleTextAttributes {
+    self.navigationBar.titleTextAttributes = titleTextAttributes;
+}
+
 @end
