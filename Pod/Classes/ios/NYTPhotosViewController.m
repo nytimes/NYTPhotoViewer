@@ -94,11 +94,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    // Log the first photo display. Others will be logged in the page view controller delegate method.
-    if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:)]) {
-        [self.delegate photosViewController:self didDisplayPhoto:self.currentlyDisplayedPhoto];
-    }
-    
     if (!self.overlayWasHiddenBeforeTransition) {
         [self setOverlayViewHidden:NO animated:YES];
     }
