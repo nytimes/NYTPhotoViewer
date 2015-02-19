@@ -115,7 +115,10 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    SEL setStatusBarViewControllerSelector = NSSelectorFromString(@"_setPresentedStatusBarViewController:");
+    NSString *statusBarViewControllerSelectorPart1 = @"_setPresentedSta";
+    NSString *statusBarViewControllerSelectorPart2 = @"tusBarViewController:";
+    SEL setStatusBarViewControllerSelector = NSSelectorFromString([statusBarViewControllerSelectorPart1 stringByAppendingString:statusBarViewControllerSelectorPart2]);
+    
     if ([toViewController respondsToSelector:setStatusBarViewControllerSelector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
