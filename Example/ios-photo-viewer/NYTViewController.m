@@ -10,6 +10,9 @@
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
+const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
+const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
+
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
@@ -19,36 +22,42 @@
 @implementation NYTViewController
 
 - (IBAction)imageButtonTapped:(id)sender {
-    NSMutableArray *photos = [NSMutableArray array];
-    
-    for (int i = 0; i < 5; i++) {
-        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
-        
-        photo.image = [UIImage imageNamed:@"testImage"];
-        if (i == 1 || i == 3) {
-            photo.image = nil;
-        }
-        
-        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
-        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
-
-        photo.identifier = @(i).stringValue;
-        [photos addObject:photo];
-    }
+    NSArray *photos = [[self class] newTestPhotos];
     
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
     photosViewController.delegate = self;
     [self presentViewController:photosViewController animated:YES completion:nil];
     
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    CGFloat updateImageDelay = 5.0;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
             if (!photo.image) {
                 [photosViewController updateImage:[UIImage imageNamed:@"testImage"] forPhoto:photo];
             }
         }
     });
+}
+
++ (NSArray *)newTestPhotos {
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    for (int i = 0; i < 5; i++) {
+        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
+        
+        photo.image = [UIImage imageNamed:@"testImage"];
+        if (i == NYTViewControllerCustomEverythingPhotoIndex || i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
+            photo.image = nil;
+        }
+        
+        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+        
+        photo.identifier = @(i).stringValue;
+        [photos addObject:photo];
+    }
+    
+    return photos;
 }
 
 #pragma mark - NYTPhotosViewControllerDelegate
@@ -58,7 +67,7 @@
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id<NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(1).stringValue]) {
+    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor whiteColor];
@@ -69,7 +78,7 @@
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id<NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(1).stringValue]) {
+    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
         label.textColor = [UIColor whiteColor];
@@ -81,7 +90,7 @@
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo {
-    NSLog(@"Did Display Photo: %@", photo);
+    NSLog(@"Did Display Photo: %@ identifier: %@", photo, photo.identifier);
 }
 
 @end
