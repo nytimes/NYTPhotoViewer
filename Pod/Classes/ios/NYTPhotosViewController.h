@@ -136,7 +136,7 @@
  *  @param photo                      The photo being displayed that was long pressed.
  *  @param longPressGestureRecognizer The gesture recognizer that detected the long press.
  *
- *  @return YES if the long press was handled by the client, NO if the default UIMenuController is desired.
+ *  @return YES if the long press was handled by the client, NO if the default UIMenuController with a Copy action is desired.
  */
 - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
