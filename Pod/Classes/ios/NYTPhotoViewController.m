@@ -32,7 +32,7 @@
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhoto:nil];
+    return [self initWithPhoto:nil activityView:nil];
 }
 
 - (void)viewDidLoad {
@@ -55,10 +55,6 @@
 }
 
 #pragma mark - NYTPhotoViewController
-
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo {
-    return [self initWithPhoto:photo activityView:nil];
-}
 
 - (instancetype)initWithPhoto:(id<NYTPhoto>)photo activityView:(UIView *)activityView {
     self = [super initWithNibName:nil bundle:nil];

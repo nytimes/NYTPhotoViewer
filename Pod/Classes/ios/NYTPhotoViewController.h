@@ -22,7 +22,6 @@
 @property (nonatomic, readonly) UIView *activityView;
 @property (nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo;
 - (instancetype)initWithPhoto:(id <NYTPhoto>)photo activityView:(UIView *)activityView NS_DESIGNATED_INITIALIZER;
 
 - (void)updateImage:(UIImage *)image;
