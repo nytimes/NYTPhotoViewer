@@ -144,6 +144,14 @@
  */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
 
+/**
+ *  Returns the titleTextAttributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo for which the titleTextAttributes will be set.
+ *
+ *  @return The titleTextAttributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
+ */
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo;
 
 /**
