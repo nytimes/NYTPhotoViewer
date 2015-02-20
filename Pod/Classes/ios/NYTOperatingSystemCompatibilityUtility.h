@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+/**
+ *  A class encompassing a series of stateless methods that require different calls on different oeprating systems.
+ */
 @interface NYTOperatingSystemCompatibilityUtility : NSObject
 
 /**

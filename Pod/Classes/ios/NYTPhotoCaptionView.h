@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+/**
+ *  A view used to display the caption for a photo.
+ */
 @interface NYTPhotoCaptionView : UIView
 
 /**

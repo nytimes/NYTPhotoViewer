@@ -8,6 +8,9 @@
 
 @protocol NYTPhoto;
 
+/**
+ *  A protocol that defines that an object contains a photo propeprty.
+ */
 @protocol NYTPhotoContaining <NSObject>
 
 /**

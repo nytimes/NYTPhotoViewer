@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+/**
+ *  An object that controls an interactive photo dismissal transition.
+ */
 @interface NYTPhotoDismissalInteractionController : NSObject <UIViewControllerInteractiveTransitioning>
 
 /**

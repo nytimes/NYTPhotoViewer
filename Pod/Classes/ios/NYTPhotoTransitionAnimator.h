@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+/**
+ *  An object that controls the animated transition of photo presentation and dismissal.
+ */
 @interface NYTPhotoTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**

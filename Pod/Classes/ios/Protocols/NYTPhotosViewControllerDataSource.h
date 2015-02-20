@@ -10,6 +10,9 @@
 
 @protocol NYTPhoto;
 
+/**
+ *  A protocol defining methods that must exist on a data source for an `NYTPhotosViewController`.
+ */
 @protocol NYTPhotosViewControllerDataSource <NSFastEnumeration>
 
 /**
