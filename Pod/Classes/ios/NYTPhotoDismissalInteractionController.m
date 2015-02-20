@@ -51,7 +51,6 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     CGPoint finalPageViewCenterPoint = anchorPoint;
     CGFloat finalBackgroundAlpha = 1.0;
     
-    // Offscreen dismissal case.
     CGFloat dismissDistance = NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio * CGRectGetHeight(fromView.bounds);
     BOOL isDismissing = ABS(verticalDelta) > dismissDistance;
     
