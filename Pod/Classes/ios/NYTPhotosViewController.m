@@ -17,6 +17,7 @@
 #import "NYTPhotoCaptionView.h"
 
 const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
+const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
@@ -144,7 +145,7 @@ const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 }
 
 - (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(16)}];
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(NYTPhotosViewControllerInterPhotoSpacing)}];
 
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
