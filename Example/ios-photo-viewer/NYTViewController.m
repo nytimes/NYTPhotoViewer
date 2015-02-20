@@ -12,6 +12,7 @@
 
 const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
 const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
+const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
@@ -68,6 +69,10 @@ const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {
+    if ([photo.identifier isEqualToString:@(NYTViewControllerNoReferenceViewPhotoIndex).stringValue]) {
+        return nil;
+    }
+    
     return self.imageButton;
 }
 
