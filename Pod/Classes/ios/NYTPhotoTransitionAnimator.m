@@ -89,10 +89,6 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
         endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     }
     
-    // Hide the original ending view and starting view until the completion of the animation.
-    self.endingView.hidden = YES;
-    self.startingView.hidden = YES;
-    
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
     
@@ -104,6 +100,10 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
     
     [transitionContext.containerView addSubview:startingViewForAnimation];
     [transitionContext.containerView addSubview:endingViewForAnimation];
+    
+    // Hide the original ending view and starting view until the completion of the animation.
+    self.endingView.hidden = YES;
+    self.startingView.hidden = YES;
     
     // Ending view / starting view replacement animation
     [UIView animateWithDuration:[self transitionDuration:transitionContext] * 0.1 delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
