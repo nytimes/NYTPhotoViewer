@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+/**
+ *  A view that overlays an `NYTPhotosViewController`, and houses the left and right abr button items, a title, and a caption view.
+ */
 @interface NYTPhotosOverlayView : UIView
 
 /**
