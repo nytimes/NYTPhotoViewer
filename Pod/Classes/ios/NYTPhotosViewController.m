@@ -16,6 +16,8 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 
+const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
+
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
@@ -335,7 +337,7 @@
         
         self.overlayView.alpha = hidden ? 1.0 : 0.0;
         
-        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionAllowUserInteraction animations:^{
+        [UIView animateWithDuration:NYTPhotosViewControllerOverlayAnimationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionAllowUserInteraction animations:^{
             self.overlayView.alpha = hidden ? 0.0 : 1.0;
         } completion:^(BOOL finished) {
             self.overlayView.alpha = 1.0;
