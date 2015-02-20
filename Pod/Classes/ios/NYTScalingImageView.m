@@ -88,8 +88,6 @@
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;
-    
-#warning Figure out if 1.0 is always desired. Maybe change based on screen size or size class?
         self.maximumZoomScale = 1.0;
         
         self.zoomScale = self.minimumZoomScale;
