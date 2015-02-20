@@ -252,9 +252,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Brian Capps";
 				TargetAttributes = {
-					6003F589195388D20070C39A = {
-						DevelopmentTeam = BGC57N7M47;
-					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
