@@ -10,6 +10,9 @@
 
 @protocol NYTPhotoContaining <NSObject>
 
+/**
+ *  An object conforming to the NYTPhoto protocol.
+ */
 @property (nonatomic, readonly) id <NYTPhoto> photo;
 
 @end
