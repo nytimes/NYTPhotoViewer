@@ -86,9 +86,11 @@
     
     self.transitionController.startingView = self.referenceViewForCurrentPhoto;
     
-    if (self.currentlyDisplayedPhoto.image) {
-        self.transitionController.endingView = self.currentPhotoViewController.scalingImageView.imageView;
+    UIView *endingView;
+    if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage) {
+        endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
+    self.transitionController.endingView = endingView;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -276,7 +278,13 @@
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    self.transitionController.startingView = self.currentPhotoViewController.scalingImageView.imageView;
+    UIView *startingView;
+    if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage) {
+        startingView = self.currentPhotoViewController.scalingImageView.imageView;
+    }
+    
+    self.transitionController.startingView = startingView;
+    
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {

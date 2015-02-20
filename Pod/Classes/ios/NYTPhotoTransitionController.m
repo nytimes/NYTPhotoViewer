@@ -78,7 +78,7 @@
     
     self.interactionController.animator = animator;
     self.interactionController.canAnimateUsingAnimator = self.endingView != nil;
-    self.interactionController.viewToHideWhenBeginningTransition = self.endingView;
+    self.interactionController.viewToHideWhenBeginningTransition = self.startingView ? self.endingView : nil;
     
     return self.interactionController;
 }
