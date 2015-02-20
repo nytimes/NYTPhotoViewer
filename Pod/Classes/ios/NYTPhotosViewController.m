@@ -284,7 +284,7 @@
     }
     
     [self dismissViewControllerAnimated:animated completion:^{
-        BOOL isStillOnscreen = self.view.window;// Happens when the dismissal is canceled.
+        BOOL isStillOnscreen = self.view.window != nil;// Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
             [self setOverlayViewHidden:NO animated:YES];
