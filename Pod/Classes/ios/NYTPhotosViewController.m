@@ -186,7 +186,6 @@ const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
     self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
     
     NSDictionary *titleTextAttributes =  @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    
     if ([self.delegate respondsToSelector:@selector(photosViewController:overlayTitleTextAttributesForPhoto:)]) {
         NSDictionary *delegateTitleTextAttributes = [self.delegate photosViewController:self overlayTitleTextAttributesForPhoto:self.currentlyDisplayedPhoto];
         titleTextAttributes = delegateTitleTextAttributes ?: titleTextAttributes;
