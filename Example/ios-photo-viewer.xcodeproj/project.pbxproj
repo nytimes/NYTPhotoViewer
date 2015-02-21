@@ -212,6 +212,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				B4CAEB715688F67681460AC0 /* Copy Pods Resources */,
+				B534D4031A98DB6B004F6A47 /* Uncrustify */,
 			);
 			buildRules = (
 			);
@@ -328,6 +329,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-photo-viewer/Pods-ios-photo-viewer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B534D4031A98DB6B004F6A47 /* Uncrustify */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Uncrustify;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "scriptPath=ucscript.sh\n\ncurl -o $scriptPath -L https://github.com/nytm/uncrustify/raw/master/Uncrustify-CI/uncrustifyscript.sh\n\nif [ -f $scriptPath ]\nthen\nsh $scriptPath\nfi\n\nrm -f $scriptPath";
 		};
 		E643F1512E1307148DDD93CD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
