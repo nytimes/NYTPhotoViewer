@@ -185,7 +185,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         displayIndex = photoIndex + 1;
     }
     
-    self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
+    self.overlayView.title = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
     
     UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
     NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
