@@ -32,7 +32,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 /**
  *  The internal activity view shown while the image is loading. Set form the initializer.
  */
-@property (nonatomic, readonly) UIView *activityView;
+@property (nonatomic, readonly) UIView *loadingView;
 
 /**
  *  The gesture recognizer used to detect the double tap gesture used for zooming on photos.
@@ -48,18 +48,11 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *  The designated initializer that takes the photo and activity view.
  *
  *  @param photo        The photo object that this view controller manages.
- *  @param activityView The activity view to display while the photo's image loads. Call `updateImage:` with a non-nil image to hide.
+ *  @param loadingView  The view to display while the photo's image loads. Call `updateImage:` with a non-nil image to hide.
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo activityView:(UIView *)activityView NS_DESIGNATED_INITIALIZER;
-
-/**
- *  Updates the image displayed for the photo. If previously showing an activity view, that view is hidden and removed.
- *
- *  @param image The new image to display.
- */
-- (void)updateImage:(UIImage *)image;
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView NS_DESIGNATED_INITIALIZER;
 
 @end
 

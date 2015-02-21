@@ -76,7 +76,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return self.imageButton;
 }
 
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id <NYTPhoto>)photo {
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";

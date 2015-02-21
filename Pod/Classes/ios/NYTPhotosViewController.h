@@ -125,14 +125,14 @@
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Returns a view to display while a photo is loading. Can be any UIView object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo is loaded.
+ *  Returns a view to display while a photo is loading. Can be any UIView object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image is loaded.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object over which to display the activity view.
  *
  *  @return A view to display while the photo is loading. Return `nil` to show a default white UIActivityIndicatorView.
  */
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id <NYTPhoto>)photo;
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
  *  Returns the view from which to animate for a given object conforming to the NYTPhoto protocol.

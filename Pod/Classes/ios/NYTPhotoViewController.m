@@ -17,7 +17,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 @property (nonatomic) id <NYTPhoto> photo;
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
-@property (nonatomic) UIView *activityView;
+@property (nonatomic) UIView *loadingView;
 @property (nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @property (nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
@@ -36,7 +36,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhoto:nil activityView:nil];
+    return [self initWithPhoto:nil loadingView:nil];
 }
 
 - (void)viewDidLoad {
@@ -47,8 +47,8 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
     
-    [self.view addSubview:self.activityView];
-    [self.activityView sizeToFit];
+    [self.view addSubview:self.loadingView];
+    [self.loadingView sizeToFit];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -56,13 +56,13 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     
     self.scalingImageView.frame = self.view.bounds;
     
-    [self.activityView sizeToFit];
-    self.activityView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    [self.loadingView sizeToFit];
+    self.loadingView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 }
 
 #pragma mark - NYTPhotoViewController
 
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo activityView:(UIView *)activityView {
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
@@ -74,7 +74,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
         _scalingImageView.delegate = self;
         
         if (!photo.image) {
-            [self setupActivityView:activityView];
+            [self setupLoadingView:loadingView];
         }
         
         [self setupGestureRecognizers];
@@ -83,12 +83,12 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     return self;
 }
 
-- (void)setupActivityView:(UIView *)activityView {
-    _activityView = activityView;
-    if (!activityView) {
+- (void)setupLoadingView:(UIView *)loadingView {
+    _loadingView = loadingView;
+    if (!loadingView) {
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [activityIndicator startAnimating];
-        _activityView = activityIndicator;
+        _loadingView = activityIndicator;
     }
 }
 
@@ -103,8 +103,8 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     [self.scalingImageView updateImage:image];
     
     if (image) {
-        [self.activityView removeFromSuperview];
-        self.activityView = nil;
+        [self.loadingView removeFromSuperview];
+        self.loadingView = nil;
     }
 }
 

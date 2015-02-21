@@ -353,12 +353,12 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 - (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
     if (photo) {
-        UIView *activityView;
-        if ([self.delegate respondsToSelector:@selector(photosViewController:activityViewForPhoto:)]) {
-            activityView = [self.delegate photosViewController:self activityViewForPhoto:photo];
+        UIView *loadingView;
+        if ([self.delegate respondsToSelector:@selector(photosViewController:loadingViewForPhoto:)]) {
+            loadingView = [self.delegate photosViewController:self loadingViewForPhoto:photo];
         }
         
-        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo activityView:activityView];
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView];
         photoViewController.delegate = self;
         [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
         
