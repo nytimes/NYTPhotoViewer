@@ -48,7 +48,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *  The designated initializer that takes the photo and activity view.
  *
  *  @param photo              The photo object that this view controller manages.
- *  @param loadingView        The view to display while the photo's image loads. Call `updateImage:` with a non-nil image to hide.
+ *  @param loadingView        The view to display while the photo's image loads. This view will be hidden when the image loads.
  *  @param notificationCenter The notification center on which to observe the NYTPhotoViewControllerPhotoImageUpdatedNotification.
  *
  *  @return A fully initialized object.
