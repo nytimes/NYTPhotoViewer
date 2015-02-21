@@ -25,11 +25,6 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 @interface NYTPhotoViewController : UIViewController <NYTPhotoContaining>
 
 /**
- *  The object that acts as the photo view controller's delegate.
- */
-@property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;
-
-/**
  *  The internal scaling image view used to display the photo.
  */
 @property (nonatomic, readonly) NYTScalingImageView *scalingImageView;
@@ -43,6 +38,11 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *  The gesture recognizer used to detect the double tap gesture used for zooming on photos.
  */
 @property (nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
+
+/**
+ *  The object that acts as the photo view controller's delegate.
+ */
+@property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;
 
 /**
  *  The designated initializer that takes the photo and activity view.
