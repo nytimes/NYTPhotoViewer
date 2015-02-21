@@ -209,7 +209,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.transitionController.forceDismissNonInteractive = YES;
+    self.transitionController.forcesNonInteractiveDismissal = YES;
     [self setOverlayViewHidden:YES animated:NO];
     [self dismissAnimated:YES];
 }

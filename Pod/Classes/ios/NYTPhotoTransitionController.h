@@ -26,7 +26,7 @@
 /**
  *  Forces the dismiss to animate, instead of the default behavior of being interactive.
  */
-@property (nonatomic) BOOL forceDismissNonInteractive;
+@property (nonatomic) BOOL forcesNonInteractiveDismissal;
 
 /**
  *  Call when new events are received from a UIPanGestureRecognizer. Internally passes off to interaction controller, which pans the appropriate view, and makes decisions when to finish or cancel the interactive transition back to the anchor point. Intended to be called after a dismissal has started with `dismissViewControllerAnimated:completion`.

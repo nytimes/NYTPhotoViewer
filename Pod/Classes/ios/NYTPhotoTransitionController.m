@@ -69,7 +69,7 @@
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
-    if (self.forceDismissNonInteractive) {
+    if (self.forcesNonInteractiveDismissal) {
         return nil;
     }
     
