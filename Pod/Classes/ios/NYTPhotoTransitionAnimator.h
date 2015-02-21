@@ -21,7 +21,6 @@
 /**
  *  The view from which to end an image zooming transition. This view may be hidden or show in the transition, but will never be removed or changed in its view hierarchy.
  */
-
 @property (nonatomic) UIView *endingView;
 
 /**
