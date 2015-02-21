@@ -40,7 +40,7 @@
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
 
 /**
- *  Convenience method for creating a view for animation from another arbitrary view. Attempts to create an identical view in the most efficient way possible.
+ *  Convenience method for creating a view for animation from another arbitrary view. Attempts to create an identical view in the most efficient way possible. Returns nil if the passed-in view is nil.
  *
  *  @param view The view to create the animation from.
  *
