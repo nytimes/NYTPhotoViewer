@@ -14,7 +14,7 @@
 @interface NYTPhotosViewController : UIViewController
 
 /**
- *  The pan gesture recognizer used for pannign to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
+ *  The pan gesture recognizer used for panning to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
  */
 @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
 

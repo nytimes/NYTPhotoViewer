@@ -19,7 +19,7 @@
 @property (nonatomic) id <UIViewControllerAnimatedTransitioning> animator;
 
 /**
- *  If set, this view will be hidden as soon as the interactive rransition starts, and shown after it ends.
+ *  If set, this view will be hidden as soon as the interactive transition starts, and shown after it ends.
  */
 @property (nonatomic) UIView *viewToHideWhenBeginningTransition;
 
