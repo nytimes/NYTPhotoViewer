@@ -30,8 +30,7 @@ const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
     UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
     UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
     
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    toView.frame = [transitionContext finalFrameForViewController:toViewController];
+    toView.frame = [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
     
     if (![toView isDescendantOfView:transitionContext.containerView]) {
         [transitionContext.containerView addSubview:toView];

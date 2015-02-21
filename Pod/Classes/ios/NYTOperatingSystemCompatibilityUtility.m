@@ -36,4 +36,14 @@
     return toView;
 }
 
++ (CGRect)finalFrameForToViewControllerWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
+    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+        UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        return [transitionContext finalFrameForViewController:toViewController];
+    }
+    
+    // On iOS 7.x, it is necessary to return the container view bounds as the final frame.
+    return transitionContext.containerView.bounds;
+}
+
 @end
