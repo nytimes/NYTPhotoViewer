@@ -9,7 +9,7 @@
 #import "NYTPhotoTransitionAnimator.h"
 #import "NYTOperatingSystemCompatibilityUtility.h"
 
-const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0/9.0;
+const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0 / 9.0;
 const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
 const CGFloat NYTPhotoTransitionAnimatorEndingViewFadeInDurationRatio = 0.1;
 const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;

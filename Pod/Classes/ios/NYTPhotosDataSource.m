@@ -54,7 +54,7 @@
     return nil;
 }
 
-- (NSUInteger)indexOfPhoto:(id<NYTPhoto>)photo {
+- (NSUInteger)indexOfPhoto:(id <NYTPhoto>)photo {
     return [self.photos indexOfObject:photo];
 }
 

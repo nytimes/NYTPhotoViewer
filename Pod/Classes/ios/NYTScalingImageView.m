@@ -105,7 +105,7 @@
 - (void)centerScrollViewContents {
     CGFloat horizontalInset = 0;
     CGFloat verticalInset = 0;
-
+    
     if (self.contentSize.width < CGRectGetWidth(self.bounds)) {
         horizontalInset = (CGRectGetWidth(self.bounds) - self.contentSize.width) * 0.5;
     }

@@ -43,7 +43,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
-        
+    
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
     
@@ -62,7 +62,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 #pragma mark - NYTPhotoViewController
 
-- (instancetype)initWithPhoto:(id<NYTPhoto>)photo activityView:(UIView *)activityView {
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo activityView:(UIView *)activityView {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {

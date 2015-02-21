@@ -9,7 +9,7 @@
 #import "NYTPhotoDismissalInteractionController.h"
 #import "NYTOperatingSystemCompatibilityUtility.h"
 
-const CGFloat NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio = 100.0/667.0; // distance over iPhone 6 height.
+const CGFloat NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio = 100.0 / 667.0; // distance over iPhone 6 height.
 const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 0.45;
 
 @interface NYTPhotoDismissalInteractionController ()
@@ -104,7 +104,7 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
     
     CGFloat maximumDelta = CGRectGetHeight([NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext].bounds) / 2.0; // Arbitrary value.
-    CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta)/maximumDelta, 1.0);
+    CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta) / maximumDelta, 1.0);
     
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }

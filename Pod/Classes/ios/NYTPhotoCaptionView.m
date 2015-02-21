@@ -74,7 +74,7 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-NYTPhotoCaptionViewVerticalMargin];
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-NYTPhotoCaptionViewHorizontalMargin * 2.0];
     NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
-
+    
     [self addConstraints:@[topConstraint, bottomConstraint, widthConstraint, horizontalPositionConstraint]];
 }
 
@@ -114,6 +114,7 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
         if (self.attributedTitle) {
             [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
         }
+        
         [attributedLabelText appendAttributedString:self.attributedSummary];
     }
     
@@ -121,6 +122,7 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
         if (self.attributedTitle || self.attributedSummary) {
             [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
         }
+        
         [attributedLabelText appendAttributedString:self.attributedCredit];
     }
     

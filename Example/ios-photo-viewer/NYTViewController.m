@@ -68,7 +68,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 
 #pragma mark - NYTPhotosViewControllerDelegate
 
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id<NYTPhoto>)photo {
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(NYTViewControllerNoReferenceViewPhotoIndex).stringValue]) {
         return nil;
     }
@@ -76,7 +76,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return self.imageButton;
 }
 
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id<NYTPhoto>)photo {
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController activityViewForPhoto:(id <NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
@@ -87,7 +87,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id<NYTPhoto>)photo {
+- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
@@ -99,7 +99,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
-- (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id<NYTPhoto>)photo {
+- (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
     if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
@@ -107,7 +107,7 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo {
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo {
     NSLog(@"Did Display Photo: %@ identifier: %@", photo, photo.identifier);
 }
 

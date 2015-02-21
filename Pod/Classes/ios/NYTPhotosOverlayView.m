@@ -36,7 +36,7 @@
     if (hitView == self) {
         return nil;
     }
-
+    
     return hitView;
 }
 

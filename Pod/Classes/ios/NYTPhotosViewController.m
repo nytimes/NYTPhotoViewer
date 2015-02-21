@@ -93,6 +93,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage) {
         endingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
+    
     self.transitionController.endingView = endingView;
 }
 
@@ -125,7 +126,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     return [self initWithPhotos:photos initialPhoto:photos.firstObject];
 }
 
-- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id<NYTPhoto>)initialPhoto {
+- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
@@ -146,7 +147,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 - (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(NYTPhotosViewControllerInterPhotoSpacing)}];
-
+    
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
     
@@ -186,7 +187,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     
     self.overlayView.title = [NSString stringWithFormat:NSLocalizedString(@"%i of %i", nil), displayIndex, self.dataSource.numberOfPhotos];
     
-    NSDictionary *titleTextAttributes =  @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     if ([self.delegate respondsToSelector:@selector(photosViewController:overlayTitleTextAttributesForPhoto:)]) {
         NSDictionary *delegateTitleTextAttributes = [self.delegate photosViewController:self overlayTitleTextAttributesForPhoto:self.currentlyDisplayedPhoto];
         titleTextAttributes = delegateTitleTextAttributes ?: titleTextAttributes;
@@ -256,7 +257,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
 }
 
-- (void)updateImage:(UIImage *)image forPhoto:(id<NYTPhoto>)photo {
+- (void)updateImage:(UIImage *)image forPhoto:(id <NYTPhoto>)photo {
     photo.image = image;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
@@ -294,7 +295,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     }
     
     [self dismissViewControllerAnimated:animated completion:^{
-        BOOL isStillOnscreen = self.view.window != nil;// Happens when the dismissal is canceled.
+        BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
             [self setOverlayViewHidden:NO animated:YES];
