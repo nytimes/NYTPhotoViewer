@@ -104,7 +104,7 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
 }
 
 - (void)updateTextLabelAttributedText {
-    NSMutableAttributedString *attributedLabelText = [[NSMutableAttributedString alloc] initWithString:@""];
+    NSMutableAttributedString *attributedLabelText = [[NSMutableAttributedString alloc] init];
     
     if (self.attributedTitle) {
         [attributedLabelText appendAttributedString:self.attributedTitle];
