@@ -25,11 +25,10 @@ const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;
 #pragma mark - NYTPhotoTransitionAnimator
 
 - (void)setupTransitionContainerHierarchyWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
     UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
     UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
     
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     toView.frame = [transitionContext finalFrameForViewController:toViewController];
     
     if (![toView isDescendantOfView:transitionContext.containerView]) {
