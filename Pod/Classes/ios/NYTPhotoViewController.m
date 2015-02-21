@@ -18,6 +18,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
 @property (nonatomic) UIView *loadingView;
+@property (nonatomic) NSNotificationCenter *notificationCenter;
 @property (nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @property (nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
@@ -36,13 +37,13 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhoto:nil loadingView:nil];
+    return [self initWithPhoto:nil loadingView:nil notificationCenter:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
+    [self.notificationCenter addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
     
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
@@ -62,7 +63,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 #pragma mark - NYTPhotoViewController
 
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView {
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
@@ -76,6 +77,8 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
         if (!photo.image) {
             [self setupLoadingView:loadingView];
         }
+        
+        _notificationCenter = notificationCenter;
         
         [self setupGestureRecognizers];
     }

@@ -30,6 +30,8 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 @property (nonatomic) NYTPhotosOverlayView *overlayView;
 
+@property (nonatomic) NSNotificationCenter *notificationCenter;
+
 @property (nonatomic) BOOL shouldHandleLongPress;
 @property (nonatomic) BOOL overlayWasHiddenBeforeTransition;
 
@@ -138,6 +140,8 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = _transitionController;
         self.modalPresentationCapturesStatusBarAppearance = YES;
+        
+        _notificationCenter = [[NSNotificationCenter alloc] init];
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
     }
@@ -261,7 +265,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 - (void)updateImage:(UIImage *)image forPhoto:(id <NYTPhoto>)photo {
     photo.image = image;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
+    [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
 }
 
 #pragma mark - Gesture Recognizers
@@ -358,7 +362,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
             loadingView = [self.delegate photosViewController:self loadingViewForPhoto:photo];
         }
         
-        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView];
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView notificationCenter:self.notificationCenter];
         photoViewController.delegate = self;
         [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
         
