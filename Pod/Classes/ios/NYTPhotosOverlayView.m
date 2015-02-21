@@ -46,7 +46,7 @@
     self.navigationBar = [[UINavigationBar alloc] init];
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
     
-    // Make navigaiton bar background fully transparent.
+    // Make navigation bar background fully transparent.
     self.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
