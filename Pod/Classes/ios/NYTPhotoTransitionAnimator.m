@@ -140,7 +140,7 @@ const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;
 #pragma mark - Convenience
 
 - (BOOL)shouldPerformZoomingAnimation {
-    return self.startingView != nil && self.endingView != nil;
+    return self.startingView && self.endingView;
 }
 
 - (void)completeTransitionWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
