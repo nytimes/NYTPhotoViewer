@@ -13,6 +13,8 @@ const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0 / 9.0;
 const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
 const CGFloat NYTPhotoTransitionAnimatorEndingViewFadeInDurationRatio = 0.1;
 const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;
+const CGFloat NYTPhotoTransitionAnimatorDurationWithZooming = 0.5;
+const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
 
 @interface NYTPhotoTransitionAnimator ()
 
@@ -197,10 +199,10 @@ const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
     if (self.shouldPerformZoomingAnimation) {
-        return 0.5;
+        return NYTPhotoTransitionAnimatorDurationWithZooming;
     }
     
-    return 0.3;
+    return NYTPhotoTransitionAnimatorDurationWithoutZooming;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
