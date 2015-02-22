@@ -317,7 +317,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         return;
     }
     
-    [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:animationCompletion];
+    [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
