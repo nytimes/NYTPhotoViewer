@@ -119,8 +119,11 @@ const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     }
     
     if (self.attributedCredit) {
-        if (self.attributedTitle || self.attributedSummary) {
+        if (self.attributedTitle && !self.attributedSummary) {
             [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
+        }
+        else if (self.attributedSummary.length) {
+            [attributedLabelText appendAttributedString:[[NSAttributedString alloc] initWithString:@" " attributes:nil]];
         }
         
         [attributedLabelText appendAttributedString:self.attributedCredit];

@@ -24,7 +24,7 @@
 @property (nonatomic) NSAttributedString *attributedSummary;
 
 /**
- *  The attributed string used as the credit. The third from the top string in the caption view.
+ *  The attributed string used as the credit. The third from the top string in the caption view. Addeddirectly after the summary, if one exists.
  */
 @property (nonatomic) NSAttributedString *attributedCredit;
 
