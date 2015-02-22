@@ -38,7 +38,8 @@ const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
             if (!photo.image) {
-                [photosViewController updateImage:[UIImage imageNamed:@"testImage"] forPhoto:photo];
+                photo.image = [UIImage imageNamed:@"testImage"];
+                [photosViewController updateImageForPhoto:photo];
             }
         }
     });

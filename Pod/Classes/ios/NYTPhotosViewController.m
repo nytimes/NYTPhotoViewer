@@ -262,9 +262,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
 }
 
-- (void)updateImage:(UIImage *)image forPhoto:(id <NYTPhoto>)photo {
-    photo.image = image;
-    
+- (void)updateImageForPhoto:(id <NYTPhoto>)photo {
     [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
 }
 

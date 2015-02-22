@@ -78,10 +78,9 @@
 /**
  *  Update the image displayed for the given photo object.
  *
- *  @param image The new image to display.
  *  @param photo The photo for which to display the new image.
  */
-- (void)updateImage:(UIImage *)image forPhoto:(id <NYTPhoto>)photo;
+- (void)updateImageForPhoto:(id <NYTPhoto>)photo;
 
 @end
 
