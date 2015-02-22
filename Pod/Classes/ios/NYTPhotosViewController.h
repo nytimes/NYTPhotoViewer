@@ -92,7 +92,7 @@
 @optional
 
 /**
- *  Called when a new photo is displayed, either through gestures or programmatically.
+ *  Called when a new photo is displayed through a swipe gesture.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object that was just displayed.

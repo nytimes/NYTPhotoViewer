@@ -317,18 +317,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         return;
     }
     
-    typeof(self) __weak weakSelf = self;
-    
-    void(^animationCompletion)(BOOL finished) = ^(BOOL finished) {
-        [weakSelf didDisplayPhoto:viewController.photo];
-    };
-    
     [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:animationCompletion];
-    
-    // The completion block isn't called unless animated is YES, so call it ourselves if animated is NO.
-    if (!animated) {
-        animationCompletion(YES);
-    }
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
