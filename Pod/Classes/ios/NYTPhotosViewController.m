@@ -30,6 +30,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 @property (nonatomic) NYTPhotosOverlayView *overlayView;
 
+/// A custom notification center to scope internal notifications to this NYTPhotosViewController instance.
 @property (nonatomic) NSNotificationCenter *notificationCenter;
 
 @property (nonatomic) BOOL shouldHandleLongPress;
