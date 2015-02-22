@@ -1,5 +1,5 @@
 //
-//  NYTPhotoContaining.h
+//  NYTPhotoContainer.h
 //  Pods
 //
 //  Created by Brian Capps on 2/11/15.
@@ -11,7 +11,7 @@
 /**
  *  A protocol that defines that an object contains a photo propeprty.
  */
-@protocol NYTPhotoContaining <NSObject>
+@protocol NYTPhotoContainer <NSObject>
 
 /**
  *  An object conforming to the NYTPhoto protocol.

@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-#import "NYTPhotoContaining.h"
+#import "NYTPhotoContainer.h"
 
 @class NYTScalingImageView;
 
@@ -22,7 +22,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 /**
  *  The view controller controlling the display of a single photo object.
  */
-@interface NYTPhotoViewController : UIViewController <NYTPhotoContaining>
+@interface NYTPhotoViewController : UIViewController <NYTPhotoContainer>
 
 /**
  *  The internal scaling image view used to display the photo.

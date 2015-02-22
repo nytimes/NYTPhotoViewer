@@ -312,7 +312,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 #pragma mark - Convenience
 
-- (void)setCurrentlyDisplayedViewController:(UIViewController <NYTPhotoContaining> *)viewController animated:(BOOL)animated {
+- (void)setCurrentlyDisplayedViewController:(UIViewController <NYTPhotoContainer> *)viewController animated:(BOOL)animated {
     if (!viewController) {
         return;
     }
@@ -419,12 +419,12 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 #pragma mark - UIPageViewControllerDataSource
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContaining> *)viewController {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
     return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex - 1]];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContaining> *)viewController {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
     return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex + 1]];
 }
@@ -435,7 +435,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     if (completed) {
         [self updateOverlayInformation];
         
-        UIViewController <NYTPhotoContaining> *photoViewController = pageViewController.viewControllers.firstObject;
+        UIViewController <NYTPhotoContainer> *photoViewController = pageViewController.viewControllers.firstObject;
         [self didDisplayPhoto:photoViewController.photo];
     }
 }
