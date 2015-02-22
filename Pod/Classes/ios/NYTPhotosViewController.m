@@ -16,6 +16,10 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 
+NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification = @"NYTPhotosViewControllerDidDisplayPhotoNotification";
+NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
+NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
+
 const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
@@ -298,6 +302,8 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         [self.delegate photosViewControllerWillDismiss:self];
     }
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillDismissNotification object:self];
+    
     [self dismissViewControllerAnimated:animated completion:^{
         BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
@@ -305,8 +311,12 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
             [self setOverlayViewHidden:NO animated:YES];
         }
         
-        if (!isStillOnscreen && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
-            [self.delegate photosViewControllerDidDismiss:self];
+        if (!isStillOnscreen) {
+            if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+                [self.delegate photosViewControllerDidDismiss:self];
+            }
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDismissNotification object:self];
         }
     }];
 }
@@ -364,6 +374,8 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:)]) {
         [self.delegate photosViewController:self didDisplayPhoto:photo];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDisplayPhotoNotification object:self];
 }
 
 - (id <NYTPhoto>)currentlyDisplayedPhoto {

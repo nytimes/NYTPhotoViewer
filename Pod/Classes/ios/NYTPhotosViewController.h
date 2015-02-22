@@ -11,6 +11,11 @@
 @protocol NYTPhoto;
 @protocol NYTPhotosViewControllerDelegate;
 
+// All notifications will have the `NYTPhotosViewController` instance set as the object.
+extern NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification;
+extern NSString * const NYTPhotosViewControllerWillDismissNotification;
+extern NSString * const NYTPhotosViewControllerDidDismissNotification;
+
 @interface NYTPhotosViewController : UIViewController
 
 /**
