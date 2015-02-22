@@ -68,12 +68,12 @@
 - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto NS_DESIGNATED_INITIALIZER;
 
 /**
- *  Moves the specific photo to be the currently displayed photo. Can be called before the view controller is displayed.
+ *  Displays the specified photo. Can be called before the view controller is displayed. Calling with a photo not contained within the data source has no effect.
  *
  *  @param photo    The photo to make the currently displayed photo.
  *  @param animated Whether to animate the transition to the new photo.
  */
-- (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated;
+- (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated;
 
 /**
  *  Update the image displayed for the given photo object.

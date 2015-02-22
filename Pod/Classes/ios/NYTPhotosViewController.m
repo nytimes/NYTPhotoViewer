@@ -253,7 +253,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     self.overlayView.rightBarButtonItem = rightBarButtonItem;
 }
 
-- (void)moveToPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
+- (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
     if (![self.dataSource containsPhoto:photo]) {
         return;
     }
