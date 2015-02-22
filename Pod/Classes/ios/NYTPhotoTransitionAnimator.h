@@ -39,6 +39,36 @@
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
 
 /**
+ *  The duration of the animation when zooming is performed.
+ */
+@property (nonatomic) CGFloat animationDurationWithZooming;
+
+/**
+ *  The duration of the animation when only fading and not zooming is performed.
+ */
+@property (nonatomic) CGFloat animationDurationWithoutZooming;
+
+/**
+ *  The ratio (from 0.0 to 1.0) of the total animation duration that the background fade duration takes.
+ */
+@property (nonatomic) CGFloat animationDurationFadeRatio;
+
+/**
+ *  The ratio (from 0.0 to 1.0) of the total animation duration that the ending view fade in duration takes.
+ */
+@property (nonatomic) CGFloat animationDurationEndingViewFadeInRatio;
+
+/**
+ *  The ratio (from 0.0 to 1.0) of the total animation duration that the starting view fade out duration takes after the ending view fade in completes.
+ */
+@property (nonatomic) CGFloat animationDurationStartingViewFadeOutRatio;
+
+/**
+ *  The value passed as the spring damping argument to animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion: fro the zooing animation.
+ */
+@property (nonatomic) CGFloat zoomingAnimationSpringDamping;
+
+/**
  *  Convenience method for creating a view for animation from another arbitrary view. Attempts to create an identical view in the most efficient way possible. Returns nil if the passed-in view is nil.
  *
  *  @param view The view to create the animation from.
