@@ -152,4 +152,20 @@
     XCTAssertNil(photosViewController.rightBarButtonItem);
 }
 
+- (void)testConvenienceInitializerAcceptsNil {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:[[NYTExamplePhoto alloc] init]]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForInitialPhotoParameter {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:[[self class] newTestPhotos] initialPhoto:nil]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForBothParameters {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:nil]);
+}
+
 @end
