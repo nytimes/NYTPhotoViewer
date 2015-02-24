@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "ios-photo-viewer.app"
-               BlueprintName = "ios-photo-viewer"
-               ReferencedContainer = "container:ios-photo-viewer.xcodeproj">
+               BuildableName = "NYTPhotoViewer.app"
+               BlueprintName = "NYTPhotoViewer"
+               ReferencedContainer = "container:NYTPhotoViewer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
-               ReferencedContainer = "container:ios-photo-viewer.xcodeproj">
+               ReferencedContainer = "container:NYTPhotoViewer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "ios-photo-viewer.app"
-            BlueprintName = "ios-photo-viewer"
-            ReferencedContainer = "container:ios-photo-viewer.xcodeproj">
+            BuildableName = "NYTPhotoViewer.app"
+            BlueprintName = "NYTPhotoViewer"
+            ReferencedContainer = "container:NYTPhotoViewer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "ios-photo-viewer.app"
-            BlueprintName = "ios-photo-viewer"
-            ReferencedContainer = "container:ios-photo-viewer.xcodeproj">
+            BuildableName = "NYTPhotoViewer.app"
+            BlueprintName = "NYTPhotoViewer"
+            ReferencedContainer = "container:NYTPhotoViewer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "ios-photo-viewer.app"
-            BlueprintName = "ios-photo-viewer"
-            ReferencedContainer = "container:ios-photo-viewer.xcodeproj">
+            BuildableName = "NYTPhotoViewer.app"
+            BlueprintName = "NYTPhotoViewer"
+            ReferencedContainer = "container:NYTPhotoViewer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
