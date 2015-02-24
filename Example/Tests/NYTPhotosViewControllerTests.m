@@ -130,4 +130,26 @@
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
 }
 
+- (void)testLeftBarButtonItemIsPopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[[self class] newTestPhotos]];
+    XCTAssertNotNil(photosViewController.leftBarButtonItem);
+}
+
+- (void)testLeftBarButtonItemIsNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[[self class] newTestPhotos]];
+    photosViewController.leftBarButtonItem = nil;
+    XCTAssertNil(photosViewController.leftBarButtonItem);
+}
+
+- (void)testRightBarButtonItemIsPopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[[self class] newTestPhotos]];
+    XCTAssertNotNil(photosViewController.rightBarButtonItem);
+}
+
+- (void)testRightBarButtonItemIsNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[[self class] newTestPhotos]];
+    photosViewController.rightBarButtonItem = nil;
+    XCTAssertNil(photosViewController.rightBarButtonItem);
+}
+
 @end
