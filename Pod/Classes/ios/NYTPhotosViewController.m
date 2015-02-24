@@ -92,7 +92,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-    [self setupOverlayView];
+    [self addOverlayView];
     
     self.transitionController.startingView = self.referenceViewForCurrentPhoto;
     
@@ -146,6 +146,10 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         self.transitioningDelegate = _transitionController;
         self.modalPresentationCapturesStatusBarAppearance = YES;
         
+        _overlayView = [[NYTPhotosOverlayView alloc] init];
+        _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
+        _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+        
         _notificationCenter = [[NSNotificationCenter alloc] init];
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
@@ -175,10 +179,7 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
 }
 
-- (void)setupOverlayView {
-    self.overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
-    self.overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+- (void)addOverlayView {
     [self updateOverlayInformation];
     
     [self.view addSubview:self.overlayView];
