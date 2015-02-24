@@ -14,12 +14,12 @@
 @interface NYTPhotoTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
- *  The view from which to start an image zooming transition. This view may be hidden or show in the transition, but will never be removed or changed in its view hierarchy.
+ *  The view from which to start an image zooming transition. This view may be hidden or shown in the transition, but will never be removed or changed in its view hierarchy.
  */
 @property (nonatomic) UIView *startingView;
 
 /**
- *  The view from which to end an image zooming transition. This view may be hidden or show in the transition, but will never be removed or changed in its view hierarchy.
+ *  The view from which to end an image zooming transition. This view may be hidden or shown in the transition, but will never be removed or changed in its view hierarchy.
  */
 @property (nonatomic) UIView *endingView;
 
