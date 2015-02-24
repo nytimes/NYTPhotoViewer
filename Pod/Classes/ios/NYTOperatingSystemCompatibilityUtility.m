@@ -37,13 +37,25 @@
 }
 
 + (CGRect)finalFrameForToViewControllerWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+    if ([self isiOS8OrGreater]) {
         UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         return [transitionContext finalFrameForViewController:toViewController];
     }
     
     // On iOS 7.x, it is necessary to return the container view bounds as the final frame.
     return transitionContext.containerView.bounds;
+}
+
++ (BOOL)isiOS8OrGreater {
+    static BOOL isiOS8OrGreater;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *systemVersionString = [UIDevice currentDevice].systemVersion;
+        isiOS8OrGreater = systemVersionString.floatValue >= 8.0;
+    });
+    
+    return isiOS8OrGreater;
 }
 
 @end
