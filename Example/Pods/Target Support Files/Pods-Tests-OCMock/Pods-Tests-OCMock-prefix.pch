@@ -2,4 +2,4 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "Pods-ios-photo-viewer-environment.h"
+#import "Pods-Tests-environment.h"
