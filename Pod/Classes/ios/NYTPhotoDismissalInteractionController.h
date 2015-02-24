@@ -14,7 +14,7 @@
 @interface NYTPhotoDismissalInteractionController : NSObject <UIViewControllerInteractiveTransitioning>
 
 /**
- *  The animator object associated witht he interactive transition.
+ *  The animator object associated with the interactive transition.
  */
 @property (nonatomic) id <UIViewControllerAnimatedTransitioning> animator;
 
