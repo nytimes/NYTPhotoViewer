@@ -6,5 +6,4 @@ end
 
 target 'Tests', :exclusive => true do
   pod "NYTPhotoViewer", :path => "../"
-  pod 'OCMock', '~> 3.1'
 end

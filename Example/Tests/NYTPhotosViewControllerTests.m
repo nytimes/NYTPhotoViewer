@@ -12,42 +12,11 @@
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
-@interface NYTPhotosViewControllerTests : XCTestCase <NYTPhotosViewControllerDelegate>
+@interface NYTPhotosViewControllerTests : XCTestCase
 
 @end
 
 @implementation NYTPhotosViewControllerTests
-
-/*
- @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
- @property (nonatomic, readonly) UITapGestureRecognizer *singleTapGestureRecognizer;
- @property (nonatomic, readonly) UIPageViewController *pageViewController;
- @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
- @property (nonatomic) UIBarButtonItem *leftBarButtonItem;
- @property (nonatomic) UIBarButtonItem *rightBarButtonItem;
- @property (nonatomic, weak) id <NYTPhotosViewControllerDelegate> delegate;
-
- - (instancetype)initWithPhotos:(NSArray *)photos;
- - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto NS_DESIGNATED_INITIALIZER;
- - (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated;
- - (void)updateImageForPhoto:(id <NYTPhoto>)photo;
-
- @end
-
- @protocol NYTPhotosViewControllerDelegate <NSObject>
-
- @optional
- - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
- - (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController;
- - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;
- - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
- - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo;
- - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
- - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo;
- - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
- - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleActionButtonTappedForPhoto:(id <NYTPhoto>)photo;
- - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType;
- */
 
 - (void)testPanGestureRecognizerExistsAferInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
