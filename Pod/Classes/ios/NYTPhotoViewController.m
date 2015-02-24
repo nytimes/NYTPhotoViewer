@@ -50,6 +50,9 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     
     [self.view addSubview:self.loadingView];
     [self.loadingView sizeToFit];
+    
+    [self.view addGestureRecognizer:self.doubleTapGestureRecognizer];
+    [self.view addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -116,10 +119,8 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)setupGestureRecognizers {
     self.doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTapWithGestureRecognizer:)];
     self.doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:self.doubleTapGestureRecognizer];
     
     self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPressWithGestureRecognizer:)];
-    [self.view addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
 - (void)didDoubleTapWithGestureRecognizer:(UITapGestureRecognizer *)recognizer {
