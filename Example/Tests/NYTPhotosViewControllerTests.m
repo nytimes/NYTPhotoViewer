@@ -108,4 +108,26 @@
     XCTAssertNotNil(photosViewController.pageViewController.view.superview);
 }
 
+- (void)testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization {
+    NSArray *photos = [[self class] newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+    
+    XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
+}
+
+- (void)testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto {
+    NSArray *photos = [[self class] newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
+    
+    XCTAssertEqualObjects(photos.lastObject, photosViewController.currentlyDisplayedPhoto);
+}
+
+- (void)testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall {
+    NSArray *photos = [[self class] newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
+    [photosViewController displayPhoto:photos.firstObject animated:NO];
+    
+    XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
+}
+
 @end
