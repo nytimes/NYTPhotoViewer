@@ -51,8 +51,8 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 #pragma mark - NSObject
 
 - (void)dealloc {
-    self.pageViewController.dataSource = nil;
-    self.pageViewController.delegate = nil;
+    _pageViewController.dataSource = nil;
+    _pageViewController.delegate = nil;
 }
 
 #pragma mark - NSObject(UIResponderStandardEditActions)
