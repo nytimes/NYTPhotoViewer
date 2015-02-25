@@ -49,7 +49,7 @@
 
 /**
  *  Subscripting support. For example, dataSource[0] will be a valid way to obtain the photo at index 0.
- *  NOTE: Indices outside the range of the data source are expected return `nil` and not to crash.
+ *  @note Indices outside the range of the data source are expected to return `nil` and not to crash.
  *
  *  @param photoIndex The index of the photo.
  *
