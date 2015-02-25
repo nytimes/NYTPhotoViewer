@@ -20,8 +20,8 @@ NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification = @"NYTPhoto
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
 NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
 
-const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
-const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
+static const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
+static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
