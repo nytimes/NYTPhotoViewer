@@ -14,17 +14,17 @@
 @interface NYTPhotoTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
- *  The view from which to start an image zooming transition. This view may be hidden or show in the transition, but will never be removed or changed in its view hierarchy.
+ *  The view from which to start an image zooming transition. This view may be hidden or shown in the transition, but will never be removed or changed in its view hierarchy.
  */
 @property (nonatomic) UIView *startingView;
 
 /**
- *  The view from which to end an image zooming transition. This view may be hidden or show in the transition, but will never be removed or changed in its view hierarchy.
+ *  The view from which to end an image zooming transition. This view may be hidden or shown in the transition, but will never be removed or changed in its view hierarchy.
  */
 @property (nonatomic) UIView *endingView;
 
 /**
- *  The view that is used for animating the starting view. If no view is set, the starting view is screenshotted and relevant properties copied to the new view.
+ *  The view that is used for animating the starting view. If no view is set, the starting view is screenshotted and the relevant properties are copied to the new view.
  */
 @property (nonatomic) UIView *startingViewForAnimation;
 
@@ -64,7 +64,7 @@
 @property (nonatomic) CGFloat animationDurationStartingViewFadeOutRatio;
 
 /**
- *  The value passed as the spring damping argument to animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion: fro the zooing animation.
+ *  The value passed as the spring damping argument to `animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:` for the zooing animation.
  */
 @property (nonatomic) CGFloat zoomingAnimationSpringDamping;
 
@@ -73,7 +73,7 @@
  *
  *  @param view The view to create the animation from.
  *
- *  @return A new view identical in apperance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return nil if the passed-in view is nil.
+ *  @return A new view identical in appearance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return nil if the passed-in view is nil.
  */
 + (UIView *)newAnimationViewFromView:(UIView *)view;
 

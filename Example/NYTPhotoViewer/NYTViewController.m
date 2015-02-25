@@ -10,9 +10,9 @@
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
-const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
-const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
-const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
+static const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
+static const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
+static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 

@@ -90,11 +90,11 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 }
 
 - (void)setupLoadingView:(UIView *)loadingView {
-    _loadingView = loadingView;
+    self.loadingView = loadingView;
     if (!loadingView) {
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [activityIndicator startAnimating];
-        _loadingView = activityIndicator;
+        self.loadingView = activityIndicator;
     }
 }
 

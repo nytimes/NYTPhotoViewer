@@ -30,7 +30,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 @property (nonatomic, readonly) NYTScalingImageView *scalingImageView;
 
 /**
- *  The internal activity view shown while the image is loading. Set form the initializer.
+ *  The internal activity view shown while the image is loading. Set from the initializer.
  */
 @property (nonatomic, readonly) UIView *loadingView;
 

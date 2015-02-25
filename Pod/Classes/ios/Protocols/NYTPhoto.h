@@ -16,31 +16,31 @@
 /**
  *  The image to display.
  */
-@property (nonatomic) UIImage *image;
+@property (nonatomic, readonly) UIImage *image;
 
 /**
  *  A placeholder image for display while the image is loading.
  */
-@property (nonatomic) UIImage *placeholderImage;
+@property (nonatomic, readonly) UIImage *placeholderImage;
 
 /**
  *  An attributed string for display as the title of the caption.
  */
-@property (nonatomic) NSAttributedString *attributedCaptionTitle;
+@property (nonatomic, readonly) NSAttributedString *attributedCaptionTitle;
 
 /**
  *  An attributed string for display as the summary of the caption.
  */
-@property (nonatomic) NSAttributedString *attributedCaptionSummary;
+@property (nonatomic, readonly) NSAttributedString *attributedCaptionSummary;
 
 /**
  *  An attributed string for display as the credit of the caption.
  */
-@property (nonatomic) NSAttributedString *attributedCaptionCredit;
+@property (nonatomic, readonly) NSAttributedString *attributedCaptionCredit;
 
 /**
- *  An identifying string to distinguish photos objects and compare equality.
+ *  An identifying string to distinguish photo objects and compare equality.
  */
-@property (nonatomic) NSString *identifier;
+@property (nonatomic, readonly) NSString *identifier;
 
 @end

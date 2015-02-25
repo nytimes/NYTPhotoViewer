@@ -10,11 +10,4 @@
 
 @implementation NYTExamplePhoto
 
-@synthesize image = _image;
-@synthesize placeholderImage = _placeholderImage;
-@synthesize attributedCaptionTitle = _attributedCaptionTitle;
-@synthesize attributedCaptionSummary = _attributedCaptionSummary;
-@synthesize attributedCaptionCredit = _attributedCaptionCredit;
-@synthesize identifier = _identifier;
-
 @end
