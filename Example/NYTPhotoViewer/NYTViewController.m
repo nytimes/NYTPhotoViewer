@@ -59,9 +59,9 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
         photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
         photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+        [photos addObject:photo];
         
         photo.identifier = @(i).stringValue;
-        [photos addObject:photo];
     }
     
     return photos;
@@ -70,7 +70,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(NYTViewControllerNoReferenceViewPhotoIndex).stringValue]) {
+    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerNoReferenceViewPhotoIndex).stringValue]) {
         return nil;
     }
     
@@ -78,7 +78,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor whiteColor];
@@ -89,7 +89,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
         label.textColor = [UIColor whiteColor];
@@ -101,7 +101,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-    if ([photo.identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
     
@@ -109,7 +109,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo {
-    NSLog(@"Did Display Photo: %@ identifier: %@", photo, photo.identifier);
+    NSLog(@"Did Display Photo: %@ identifier: %@", photo, ((NYTExamplePhoto *)photo).identifier);
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
