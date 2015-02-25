@@ -57,7 +57,7 @@ const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 
     BOOL didAnimateUsingAnimator = NO;
     
     if (isDismissing) {
-        if (self.canAnimateUsingAnimator) {
+        if (self.shouldAnimateUsingAnimator) {
             [self.animator animateTransition:self.transitionContext];
             didAnimateUsingAnimator = YES;
         }

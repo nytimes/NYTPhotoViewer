@@ -26,7 +26,7 @@
 /**
  *  A BOOL determining whether, after reaching a certain panning threshold that constitutes a dismissal, the animator object should be used to finish the transition.
  */
-@property (nonatomic) BOOL canAnimateUsingAnimator;
+@property (nonatomic) BOOL shouldAnimateUsingAnimator;
 
 /**
  *  Call when new events are received from a UIPanGestureRecognizer. Pans the appropriate view, and makes decisions when to finish or cancel the interactive transition back to the anchor point. Intended to be called after a dismissal has started with `dismissViewControllerAnimated:completion`.
