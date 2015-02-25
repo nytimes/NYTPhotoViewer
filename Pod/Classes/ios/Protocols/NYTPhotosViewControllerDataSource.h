@@ -21,11 +21,11 @@
 @property (nonatomic, readonly) NSUInteger numberOfPhotos;
 
 /**
- *  Returns the photo object at a sepcified index, or nil if one does not exist at that index.
+ *  Returns the photo object at a specified index, or nil if one does not exist at that index.
  *
  *  @param photoIndex The index of the desired photo.
  *
- *  @return The photo object at a sepcified index, or nil if one does not exist at that index.
+ *  @return The photo object at a specified index, or nil if one does not exist at that index.
  */
 - (id <NYTPhoto>)photoAtIndex:(NSUInteger)photoIndex;
 

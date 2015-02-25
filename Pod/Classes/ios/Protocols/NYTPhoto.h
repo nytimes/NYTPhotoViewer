@@ -39,7 +39,7 @@
 @property (nonatomic, readonly) NSAttributedString *attributedCaptionCredit;
 
 /**
- *  An identifying string to distinguish photos objects and compare equality.
+ *  An identifying string to distinguish photo objects and compare equality.
  */
 @property (nonatomic, readonly) NSString *identifier;
 
