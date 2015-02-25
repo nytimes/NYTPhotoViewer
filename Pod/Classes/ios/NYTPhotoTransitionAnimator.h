@@ -24,7 +24,7 @@
 @property (nonatomic) UIView *endingView;
 
 /**
- *  The view that is used for animating the starting view. If no view is set, the starting view is screenshotted and relevant properties copied to the new view.
+ *  The view that is used for animating the starting view. If no view is set, the starting view is screenshotted and the relevant properties are copied to the new view.
  */
 @property (nonatomic) UIView *startingViewForAnimation;
 
