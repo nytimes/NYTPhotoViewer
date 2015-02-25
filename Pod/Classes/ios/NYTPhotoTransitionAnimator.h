@@ -73,7 +73,7 @@
  *
  *  @param view The view to create the animation from.
  *
- *  @return A new view identical in apperance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return nil if the passed-in view is nil.
+ *  @return A new view identical in appearance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return nil if the passed-in view is nil.
  */
 + (UIView *)newAnimationViewFromView:(UIView *)view;
 

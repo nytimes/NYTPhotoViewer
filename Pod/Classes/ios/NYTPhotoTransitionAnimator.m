@@ -138,10 +138,16 @@ const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     self.startingView.hidden = YES;
     
     // Ending view / starting view replacement animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio
+                          delay:0
+                        options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
         endingViewForAnimation.alpha = 1.0;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio delay:0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio
+                              delay:0
+                            options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
             startingViewForAnimation.alpha = 0.0;
         } completion:^(BOOL finished) {
             [startingViewForAnimation removeFromSuperview];
@@ -152,7 +158,12 @@ const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     CGPoint translatedEndingViewFinalCenter = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
     
     // Zoom animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:self.zoomingAnimationSpringDamping initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext]
+                          delay:0
+         usingSpringWithDamping:self.zoomingAnimationSpringDamping
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
         endingViewForAnimation.transform = self.endingView.transform;
         endingViewForAnimation.center = translatedEndingViewFinalCenter;
         
