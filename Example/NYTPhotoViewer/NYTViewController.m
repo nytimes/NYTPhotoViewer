@@ -56,6 +56,10 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
             photo.image = nil;
         }
         
+        if (i == NYTViewControllerCustomEverythingPhotoIndex) {
+            photo.placeholderImage = [UIImage imageNamed:@"testImagePlaceholder"];
+        }
+        
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
         photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
         photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
@@ -81,7 +85,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
-        loadingLabel.textColor = [UIColor whiteColor];
+        loadingLabel.textColor = [UIColor greenColor];
         return loadingLabel;
     }
     
