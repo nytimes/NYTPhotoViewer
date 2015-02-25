@@ -296,7 +296,6 @@ const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     }
     
     self.transitionController.startingView = startingView;
-    
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
     
     if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
