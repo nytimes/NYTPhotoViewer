@@ -8,7 +8,7 @@
 
 #import "NYTPhotoCaptionView.h"
 
-static const CGFloat NYTPhotoCaptionViewHorizontalMargin = 16.0;
+const CGFloat NYTPhotoCaptionViewHorizontalMargin = 16.0;
 static const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
 
 @interface NYTPhotoCaptionView ()
@@ -30,18 +30,6 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     [super layoutSubviews];
     
     self.gradientLayer.frame = self.layer.bounds;
-}
-
-- (CGSize)intrinsicContentSize {
-    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.superview.bounds), CGFLOAT_MAX)];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    CGSize fittingSize = [self.textLabel sizeThatFits:size];
-    fittingSize.width += NYTPhotoCaptionViewHorizontalMargin * 2.0;
-    fittingSize.height += NYTPhotoCaptionViewVerticalMargin * 2.0;
-    
-    return fittingSize;
 }
 
 #pragma mark - NYTPhotoCaptionView
