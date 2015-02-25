@@ -132,7 +132,7 @@
 - (void)testDisplayPhotoMovesToCorrectPhoto {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
-    NYTExamplePhoto *photoToDisplay =  photos[2];
+    NYTExamplePhoto *photoToDisplay = photos[2];
     
     [photosViewController displayPhoto:photoToDisplay animated:NO];
     XCTAssertEqualObjects(photoToDisplay, photosViewController.currentlyDisplayedPhoto);

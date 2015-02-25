@@ -64,7 +64,7 @@
 @property (nonatomic) CGFloat animationDurationStartingViewFadeOutRatio;
 
 /**
- *  The value passed as the spring damping argument to animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion: fro the zooing animation.
+ *  The value passed as the spring damping argument to `animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:` for the zooing animation.
  */
 @property (nonatomic) CGFloat zoomingAnimationSpringDamping;
 
