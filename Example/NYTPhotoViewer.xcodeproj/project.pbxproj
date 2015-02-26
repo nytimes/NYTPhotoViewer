@@ -27,7 +27,6 @@
 		B5DC9D821A9D04D300F4F81F /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D811A9D04D300F4F81F /* NYTPhotosViewControllerTests.m */; };
 		B5DC9D831A9D062900F4F81F /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
 		B5DC9D841A9D092200F4F81F /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* NYTViewController.m */; };
-		B5DC9D851A9D165300F4F81F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		B5DC9D871A9D326700F4F81F /* NYTPhotoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D861A9D326700F4F81F /* NYTPhotoViewControllerTests.m */; };
 		B5DC9D891A9D35C500F4F81F /* NYTPhotoCaptionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D881A9D35C500F4F81F /* NYTPhotoCaptionViewTests.m */; };
 		B5DC9D8B1A9F6C9800F4F81F /* NYTPhotosOverlayViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D8A1A9F6C9800F4F81F /* NYTPhotosOverlayViewTests.m */; };
@@ -337,7 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
-				B5DC9D851A9D165300F4F81F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
