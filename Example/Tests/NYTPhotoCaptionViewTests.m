@@ -29,16 +29,4 @@
     XCTAssertNoThrow([[NYTPhotoCaptionView alloc] initWithAttributedTitle:[[NSAttributedString alloc] init] attributedSummary:[[NSAttributedString alloc] init] attributedCredit:nil]);
 }
 
-- (void)testDesignatedInitializerSetsProperties {
-    NSAttributedString *title = [[NSAttributedString alloc] init];
-    NSAttributedString *summary = [[NSAttributedString alloc] init];
-    NSAttributedString *credit = [[NSAttributedString alloc] init];
-
-    NYTPhotoCaptionView *captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:title attributedSummary:summary attributedCredit:credit];
-    
-    XCTAssertEqualObjects(title, captionView.attributedTitle);
-    XCTAssertEqualObjects(summary, captionView.attributedSummary);
-    XCTAssertEqualObjects(credit, captionView.attributedCredit);
-}
-
 @end
