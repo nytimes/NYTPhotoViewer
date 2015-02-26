@@ -52,9 +52,29 @@
     XCTAssertNoThrow(OCMVerify([transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]));
 }
 
-//id partialMock = OCMPartialMock([UIDevice currentDevice]);
-//OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS8String));
+- (void)testiOS7FinalFrameContainerViewMethodCalledOniOS7 {
+    id partialMock = OCMPartialMock([UIDevice currentDevice]);
+    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS7String));
 
+    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
+    OCMExpect([transitionContext containerView]);
+    [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
+    
+    XCTAssertNoThrow(OCMVerify([transitionContext containerView]));
+}
+
+- (void)testiOS7FinalFrameForViewControllerViewMethodCalledOniOS8 {
+    id partialMock = OCMPartialMock([UIDevice currentDevice]);
+    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS8String));
+    
+    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
+    OCMExpect([transitionContext finalFrameForViewController:OCMOCK_ANY]);
+    [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
+    
+    XCTAssertNoThrow(OCMVerify([transitionContext finalFrameForViewController:OCMOCK_ANY]));
+}
+
+#pragma mark - Helpers
 
 - (NSString *)iOS7String {
     return @"7.0.0";
