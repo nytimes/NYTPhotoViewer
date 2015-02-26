@@ -147,7 +147,7 @@
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
-    invalidPhoto.image = [self imageNamed:@"testImage"];
+    invalidPhoto.image = [[UIImage alloc] init];
     invalidPhoto.identifier = @"invalid";
     
     [photosViewController updateImageForPhoto:invalidPhoto];
@@ -159,7 +159,7 @@
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
-    photoToUpdate.image = [self imageNamed:@"testImage"];
+    photoToUpdate.image = [[UIImage alloc] init];
     
     [photosViewController updateImageForPhoto:photoToUpdate];
     
@@ -178,12 +178,6 @@
     }
     
     return photos;
-}
-
-- (UIImage *)imageNamed:(NSString *)imageName {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *imagePath = [bundle pathForResource:imageName.stringByDeletingPathExtension ofType:imageName.pathExtension];
-    return [UIImage imageWithContentsOfFile:imagePath];
 }
 
 @end

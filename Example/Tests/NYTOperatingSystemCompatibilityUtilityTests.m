@@ -74,6 +74,14 @@
     XCTAssertNoThrow(OCMVerify([transitionContext finalFrameForViewController:OCMOCK_ANY]));
 }
 
+// Since we're not caching the device's systme verison, wrap it in a performance test to make sure it's not too slow.
+- (void)testFinalFramePerformance {
+    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
+    [self measureBlock:^{
+        [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
+    }];
+}
+
 #pragma mark - Helpers
 
 - (NSString *)iOS7String {
