@@ -17,8 +17,29 @@
 
 @implementation NYTScalingImageViewTests
 
-- (void)testExample {
-    XCTAssertTrue(YES);
+- (void)testInitializationAcceptsNil {
+    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImage:nil frame:CGRectZero]);
+}
+
+- (void)testImageViewExistsAfterInitialization {
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:nil frame:CGRectZero];
+    XCTAssertNotNil(scalingImageView.imageView);
+}
+
+- (void)testInitializationSetsImage {
+    UIImage *image = [[UIImage alloc] init];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image frame:CGRectZero];
+    XCTAssertEqualObjects(image, scalingImageView.imageView.image);
+}
+
+- (void)testUpdateImageUpdatesImage {
+    UIImage *image1 = [[UIImage alloc] init];
+    UIImage *image2 = [[UIImage alloc] init];
+
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image1 frame:CGRectZero];
+    [scalingImageView updateImage:image2];
+    
+    XCTAssertEqual(image2, scalingImageView.imageView.image);
 }
 
 @end
