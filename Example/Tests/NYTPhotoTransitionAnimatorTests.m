@@ -17,16 +17,6 @@
 
 @implementation NYTPhotoTransitionAnimatorTests
 
-- (void)testNewAnimationViewCopiesContents {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *imagePath = [bundle pathForResource:@"testImage".stringByDeletingPathExtension ofType:@"testImage".pathExtension];
-    UIImage *testImage = [UIImage imageWithContentsOfFile:imagePath];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:testImage];
-    UIView *animationView = [NYTPhotoTransitionAnimator newAnimationViewFromView:imageView];
-    XCTAssertEqual(imageView.layer.contents, animationView.layer.contents);
-}
-
 - (void)testNewAnimationViewReturnsNilWhenPassedNil {
     XCTAssertNil([NYTPhotoTransitionAnimator newAnimationViewFromView:nil]);
 }
