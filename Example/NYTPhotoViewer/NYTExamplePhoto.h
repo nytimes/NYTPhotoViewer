@@ -12,7 +12,7 @@
 
 @interface NYTExamplePhoto : NSObject <NYTPhoto>
 
-// Redclare all the properties as readwrite for sample/testing purposes.
+// Redeclare all the properties as readwrite for sample/testing purposes.
 @property (nonatomic) UIImage *image;
 @property (nonatomic) UIImage *placeholderImage;
 @property (nonatomic) NSAttributedString *attributedCaptionTitle;

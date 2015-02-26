@@ -8,10 +8,14 @@
 
 #import "NYTPhotoCaptionView.h"
 
-static const CGFloat NYTPhotoCaptionViewHorizontalMargin = 16.0;
+const CGFloat NYTPhotoCaptionViewHorizontalMargin = 16.0;
 static const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
 
 @interface NYTPhotoCaptionView ()
+
+@property (nonatomic) NSAttributedString *attributedTitle;
+@property (nonatomic) NSAttributedString *attributedSummary;
+@property (nonatomic) NSAttributedString *attributedCredit;
 
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) CAGradientLayer *gradientLayer;
@@ -30,18 +34,6 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     [super layoutSubviews];
     
     self.gradientLayer.frame = self.layer.bounds;
-}
-
-- (CGSize)intrinsicContentSize {
-    return [self sizeThatFits:CGSizeMake(CGRectGetWidth(self.superview.bounds), CGFLOAT_MAX)];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    CGSize fittingSize = [self.textLabel sizeThatFits:size];
-    fittingSize.width += NYTPhotoCaptionViewHorizontalMargin * 2.0;
-    fittingSize.height += NYTPhotoCaptionViewVerticalMargin * 2.0;
-    
-    return fittingSize;
 }
 
 #pragma mark - NYTPhotoCaptionView
@@ -83,24 +75,6 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 10.0;
     self.gradientLayer.frame = self.layer.bounds;
     self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor clearColor].CGColor, (id)[[UIColor blackColor] colorWithAlphaComponent:0.85].CGColor, nil];
     [self.layer insertSublayer:self.gradientLayer atIndex:0];
-}
-
-- (void)setAttributedTitle:(NSAttributedString *)attributedTitle {
-    _attributedTitle = attributedTitle;
-    
-    [self updateTextLabelAttributedText];
-}
-
-- (void)setAttributedSummary:(NSAttributedString *)attributedSummary {
-    _attributedSummary = attributedSummary;
-    
-    [self updateTextLabelAttributedText];
-}
-
-- (void)setAttributedCredit:(NSAttributedString *)attributedCredit {
-    _attributedCredit = attributedCredit;
-    
-    [self updateTextLabelAttributedText];
 }
 
 - (void)updateTextLabelAttributedText {

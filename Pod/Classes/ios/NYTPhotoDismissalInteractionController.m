@@ -11,6 +11,7 @@
 
 static const CGFloat NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio = 100.0 / 667.0; // distance over iPhone 6 height.
 static const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 0.45;
+static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocityAnimationRatio = 0.00007; // Arbitrary value that looked decent.
 
 @interface NYTPhotoDismissalInteractionController ()
 
@@ -46,7 +47,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDura
     // Return to center case.
     CGFloat velocityY = [panGestureRecognizer velocityInView:panGestureRecognizer.view].y;
     
-    CGFloat animationDuration = (ABS(velocityY) * 0.00007) + 0.2;
+    CGFloat animationDuration = (ABS(velocityY) * NYTPhotoDismissalInteractionControllerReturnToCenterVelocityAnimationRatio) + 0.2;
     CGFloat animationCurve = UIViewAnimationOptionCurveEaseOut;
     CGPoint finalPageViewCenterPoint = anchorPoint;
     CGFloat finalBackgroundAlpha = 1.0;
