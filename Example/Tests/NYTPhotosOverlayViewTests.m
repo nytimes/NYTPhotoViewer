@@ -17,15 +17,6 @@
 
 @implementation NYTPhotosOverlayViewTests
 
-/*
-@property (nonatomic, readonly) UINavigationBar *navigationBar;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSDictionary *titleTextAttributes;
-@property (nonatomic) UIBarButtonItem *leftBarButtonItem;
-@property (nonatomic) UIBarButtonItem *rightBarButtonItem;
-@property (nonatomic) UIView *captionView;
- */
-
 - (void)testNavigationBarExistsAfterInitialization {
     NYTPhotosOverlayView *overlayView = [[NYTPhotosOverlayView alloc] init];
     XCTAssertNotNil(overlayView.navigationBar);
