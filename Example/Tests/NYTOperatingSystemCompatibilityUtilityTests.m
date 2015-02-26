@@ -11,6 +11,8 @@
 
 #import <OCMock/OCMock.h>
 #import <NYTPhotoViewer/NYTOperatingSystemCompatibilityUtility.h>
+#import "NYTTestiOS7TransitionContext.h"
+#import "NYTTestiOS8TransitionContext.h"
 
 @interface NYTOperatingSystemCompatibilityUtilityTests : XCTestCase
 
@@ -19,58 +21,44 @@
 @implementation NYTOperatingSystemCompatibilityUtilityTests
 
 - (void)testiOS8ToViewMethodCalledOniOS8 {
-    id partialMock = OCMPartialMock([UIDevice currentDevice]);
-    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS8String));
-    
-    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
-    
+    id transitionContext = OCMPartialMock([[NYTTestiOS8TransitionContext alloc] init]);
     OCMExpect([transitionContext viewForKey:UITransitionContextToViewKey]);
     [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
     
-    XCTAssertNoThrow(OCMVerifyAll(transitionContext));
+    XCTAssertNoThrow(OCMVerify([transitionContext viewForKey:UITransitionContextToViewKey]));
 }
 
 - (void)testiOS8FromViewMethodCalledOniOS8 {
-    id partialMock = OCMPartialMock([UIDevice currentDevice]);
-    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS8String));
-    
-    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
-    
+    id transitionContext = OCMPartialMock([[NYTTestiOS8TransitionContext alloc] init]);
     OCMExpect([transitionContext viewForKey:UITransitionContextFromViewKey]);
     [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
     
-    XCTAssertNoThrow(OCMVerifyAll(transitionContext));
+    XCTAssertNoThrow(OCMVerify([transitionContext viewForKey:UITransitionContextFromViewKey]));
 }
 
-// dispatch_once prevents these tests from working.
-//- (void)testiOS7ToViewControllerMethodCalledOniOS7 {
-//    id partialMock = OCMPartialMock([UIDevice currentDevice]);
-//    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS7String));
-//    
-//    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
-//    
-//    OCMExpect([transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]);
-//    [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
-//    
-//    XCTAssertNoThrow(OCMVerifyAll(transitionContext));
-//}
-//
-//- (void)testiOS7FromViewControllerMethodCalledOniOS7 {
-//    id partialMock = OCMPartialMock([UIDevice currentDevice]);
-//    OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS7String));
-//    
-//    id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
-//    
-//    OCMExpect([transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]);
-//    [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
-//    
-//    XCTAssertNoThrow(OCMVerifyAll(transitionContext));
-//}
-//
-//
-//- (NSString *)iOS7String {
-//    return @"7.0.0";
-//}
+- (void)testiOS7ToViewControllerMethodCalledOniOS7 {
+    id transitionContext = OCMPartialMock([[NYTTestiOS7TransitionContext alloc] init]);
+    OCMExpect([transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]);
+    [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
+    
+    XCTAssertNoThrow(OCMVerify([transitionContext viewControllerForKey:UITransitionContextToViewControllerKey]));
+}
+
+- (void)testiOS7FromViewControllerMethodCalledOniOS7 {
+    id transitionContext = OCMPartialMock([[NYTTestiOS7TransitionContext alloc] init]);
+    OCMExpect([transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]);
+    [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
+    
+    XCTAssertNoThrow(OCMVerify([transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey]));
+}
+
+//id partialMock = OCMPartialMock([UIDevice currentDevice]);
+//OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS8String));
+
+
+- (NSString *)iOS7String {
+    return @"7.0.0";
+}
 
 - (NSString *)iOS8String {
     return @"8.0.0";

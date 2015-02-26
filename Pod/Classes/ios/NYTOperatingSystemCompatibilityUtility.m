@@ -47,15 +47,8 @@
 }
 
 + (BOOL)isiOS8OrGreater {
-    static BOOL isiOS8OrGreater;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSString *systemVersionString = [UIDevice currentDevice].systemVersion;
-        isiOS8OrGreater = systemVersionString.floatValue >= 8.0;
-    });
-    
-    return isiOS8OrGreater;
+    NSString *systemVersionString = [UIDevice currentDevice].systemVersion;
+    return systemVersionString.floatValue >= 8.0;
 }
 
 @end
