@@ -11,7 +11,7 @@
 #import "NYTPhotosViewControllerDataSource.h"
 
 /**
- *  A concrete implementation of the NYTPhotosViewControllerDataSource.
+ *  A concrete implementation of the `NYTPhotosViewControllerDataSource`.
  */
 @interface NYTPhotosDataSource : NSObject <NYTPhotosViewControllerDataSource>
 

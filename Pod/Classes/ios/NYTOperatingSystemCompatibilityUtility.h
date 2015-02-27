@@ -14,7 +14,7 @@
 @interface NYTOperatingSystemCompatibilityUtility : NSObject
 
 /**
- *  Gets the fromView from the transition context, using `viewControllerForKey:` on iOS 7 and `viewForKey:` on iOS 8.
+ *  Gets the "from" view from the transition context, using `viewControllerForKey:` on iOS 7 and `viewForKey:` on iOS 8.
  *
  *  @param transitionContext The transition context from which to get the fromView.
  *
