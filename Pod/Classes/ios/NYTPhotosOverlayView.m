@@ -40,6 +40,17 @@
     return hitView;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    // The navigation bar has a different intrinsic content size upon rotation, so we must update to that new size.
+    // Do it without animation to more closely match the behavior in `UINavigationController`
+    [UIView performWithoutAnimation:^{
+        [self.navigationBar invalidateIntrinsicContentSize];
+        [self.navigationBar layoutIfNeeded];
+    }];
+}
+
 #pragma mark - NYTPhotosOverlayView
 
 - (void)setupNavigationBar {
