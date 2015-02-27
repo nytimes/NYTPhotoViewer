@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) UIImageView *imageView;
 
 /**
- *  Initializes a scaling image view with a UIImage. This object is a UIScrollView that contains a UIImageView. This allows for zooming and panning around the image.
+ *  Initializes a scaling image view with a `UIImage`. This object is a `UIScrollView` that contains a `UIImageView`. This allows for zooming and panning around the image.
  *
- *  @param image A UIImage for zooming and panning.
+ *  @param image A `UIImage` for zooming and panning.
  *  @param frame The frame of the view.
  *
  *  @return A fully initialized object.
@@ -26,7 +26,7 @@
 - (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 /**
- *  Updates the image in the imageView and centers and zooms the new image.
+ *  Updates the image in the image view and centers and zooms the new image.
  *
  *  @param image The new image to display in the image view.
  */

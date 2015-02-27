@@ -29,11 +29,11 @@
 @property (nonatomic) BOOL forcesNonInteractiveDismissal;
 
 /**
- *  Call when new events are received from a UIPanGestureRecognizer. Internally passes off to interaction controller, which pans the appropriate view, and makes decisions when to finish or cancel the interactive transition back to the anchor point. Intended to be called after a dismissal has started with `dismissViewControllerAnimated:completion`.
+ *  Call when new events are received from a `UIPanGestureRecognizer`. Internally passes off to interaction controller, which pans the appropriate view, and makes decisions when to finish or cancel the interactive transition back to the anchor point. Intended to be called after a dismissal has started with `dismissViewControllerAnimated:completion:`.
  *
- *  @param panGestureRecognizer The UIPanGestureRecognizer that caused the pan event.
- *  @param viewToPan            The view to pan using the location from the panGestureRecognizer.
- *  @param anchorPoint          The point at which the pan began and should end if cancelled. Should be in the coordinates of the fromViewController's view on dismissal.
+ *  @param panGestureRecognizer The `UIPanGestureRecognizer` that caused the pan event.
+ *  @param viewToPan            The view to pan using the location from the `panGestureRecognizer`.
+ *  @param anchorPoint          The point at which the pan began and should end if cancelled. Should be in the coordinates of the "from" view controller's view on dismissal.
  */
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 

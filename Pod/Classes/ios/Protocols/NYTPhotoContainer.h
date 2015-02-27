@@ -14,7 +14,7 @@
 @protocol NYTPhotoContainer <NSObject>
 
 /**
- *  An object conforming to the NYTPhoto protocol.
+ *  An object conforming to the `NYTPhoto` protocol.
  */
 @property (nonatomic, readonly) id <NYTPhoto> photo;
 

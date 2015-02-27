@@ -59,7 +59,7 @@
 }
 
 - (void)updateImage:(UIImage *)image {
-    // Remove any transform currently applied by the scrollview zooming.
+    // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
     
     self.imageView.image = image;
@@ -115,7 +115,7 @@
         verticalInset = floor(verticalInset);
     }
     
-    // Use contentInset to center the contents in the scrollview. Reasoning explained here: http://petersteinberger.com/blog/2013/how-to-center-uiscrollview/
+    // Use `contentInset` to center the contents in the scroll view. Reasoning explained here: http://petersteinberger.com/blog/2013/how-to-center-uiscrollview/
     self.contentInset = UIEdgeInsetsMake(verticalInset, horizontalInset, verticalInset, horizontalInset);
 }
 
