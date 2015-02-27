@@ -17,19 +17,20 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
+@property (nonatomic) NSArray *photos;
 
 @end
 
 @implementation NYTViewController
 
 - (IBAction)imageButtonTapped:(id)sender {
-    NSArray *photos = [[self class] newTestPhotos];
+    self.photos = [[self class] newTestPhotos];
     
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos];
     photosViewController.delegate = self;
     [self presentViewController:photosViewController animated:YES completion:nil];
     
-    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:photos];
+    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
 }
 
 // This method simulates previously blank photos loading their images after some time.
@@ -64,8 +65,6 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
         photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
         photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
         [photos addObject:photo];
-        
-        photo.identifier = @(i).stringValue;
     }
     
     return photos;
@@ -74,7 +73,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerNoReferenceViewPhotoIndex).stringValue]) {
+    if ([photo isEqual:self.photos[NYTViewControllerNoReferenceViewPhotoIndex]]) {
         return nil;
     }
     
@@ -82,7 +81,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor greenColor];
@@ -93,7 +92,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
         label.textColor = [UIColor whiteColor];
@@ -105,7 +104,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-    if ([((NYTExamplePhoto *)photo).identifier isEqualToString:@(NYTViewControllerCustomEverythingPhotoIndex).stringValue]) {
+    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
     
@@ -113,7 +112,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo {
-    NSLog(@"Did Display Photo: %@ identifier: %@", photo, ((NYTExamplePhoto *)photo).identifier);
+    NSLog(@"Did Display Photo: %@ identifier: %@", photo, @([self.photos indexOfObject:photo]).stringValue);
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
