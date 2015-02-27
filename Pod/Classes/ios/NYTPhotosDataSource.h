@@ -18,7 +18,7 @@
 /**
  *  The designated initializer that takes and stores an array of photos.
  *
- *  @param photos An array of objects conforming to the NYTPhoto protocol.
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *
  *  @return A fully initialized object.
  */

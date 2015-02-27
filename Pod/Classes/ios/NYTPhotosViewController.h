@@ -34,7 +34,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, readonly) UIPageViewController *pageViewController;
 
 /**
- *  The object conforming to NYTPhoto that is currently being displayed.
+ *  The object conforming to `NYTPhoto` that is currently being displayed.
  */
 @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
 
@@ -54,19 +54,19 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, weak) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
- *  A convenience initializer that calls `initWithPhotos:initialPhoto:`, passing the first photo as the initialPhoto argument.
+ *  A convenience initializer that calls `initWithPhotos:initialPhoto:`, passing the first photo as the `initialPhoto` argument.
  *
- *  @param photos An array of objects conforming to the NYTPhoto protocol.
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *
  *  @return A fully initialized object.
  */
 - (instancetype)initWithPhotos:(NSArray *)photos;
 
 /**
- *  The designated initializer that stores the array of objects conforming to the NYTPhoto protocol for display, along with specifying an initial photo for display.
+ *  The designated initializer that stores the array of objects conforming to the `NYTPhoto` protocol for display, along with specifying an initial photo for display.
  *
- *  @param photos An array of objects conforming to the NYTPhoto protocol.
- *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If nil or not within the `photos` array, the first photo within the `photos` array will be displayed.
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
+ *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If `nil` or not within the `photos` array, the first photo within the `photos` array will be displayed.
  *
  *  @return A fully initialized object.
  */
@@ -119,7 +119,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController;
 
 /**
- *  Returns a view to display over a photo, full width, locked to the bottom, representing the caption for the photo. Can be any UIView object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
+ *  Returns a view to display over a photo, full width, locked to the bottom, representing the caption for the photo. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object over which to display the caption view.
@@ -129,17 +129,17 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Returns a view to display while a photo is loading. Can be any UIView object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image is loaded.
+ *  Returns a view to display while a photo is loading. Can be any `UIView` object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image is loaded.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object over which to display the activity view.
  *
- *  @return A view to display while the photo is loading. Return `nil` to show a default white UIActivityIndicatorView.
+ *  @return A view to display while the photo is loading. Return `nil` to show a default white `UIActivityIndicatorView`.
  */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Returns the view from which to animate for a given object conforming to the NYTPhoto protocol.
+ *  Returns the view from which to animate for a given object conforming to the `NYTPhoto` protocol.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo for which the animation will occur.
@@ -149,12 +149,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Returns the titleTextAttributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
+ *  Returns the title text attributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
- *  @param photo                The photo for which the titleTextAttributes will be set.
+ *  @param photo                The photo for which the `titleTextAttributes` will be set.
  *
- *  @return The titleTextAttributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
+ *  @return The title text attributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
  */
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo;
 
@@ -165,7 +165,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param photo                      The photo being displayed that was long pressed.
  *  @param longPressGestureRecognizer The gesture recognizer that detected the long press.
  *
- *  @return YES if the long press was handled by the client, NO if the default UIMenuController with a Copy action is desired.
+ *  @return `YES` if the long press was handled by the client, `NO` if the default `UIMenuController` with a Copy action is desired.
  */
 - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleLongPressForPhoto:(id <NYTPhoto>)photo withGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
@@ -175,12 +175,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo being displayed when the action button was tapped.
  *
- *  @return YES if the action button tap was handled by the client, NO if the default UIActivityViewController is desired.
+ *  @return `YES` if the action button tap was handled by the client, `NO` if the default `UIActivityViewController` is desired.
  */
 - (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleActionButtonTappedForPhoto:(id <NYTPhoto>)photo;
 
 /**
- *  Called after the default UIActivityViewController is presented and succesffully completes an action with a specified activity type.
+ *  Called after the default `UIActivityViewController` is presented and successfully completes an action with a specified activity type.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param activityType         The activity type that was successfully shared.

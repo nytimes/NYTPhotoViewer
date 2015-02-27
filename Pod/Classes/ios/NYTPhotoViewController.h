@@ -15,7 +15,7 @@
 @protocol NYTPhotoViewControllerDelegate;
 
 /**
- *  NYTPhotoViewController observes this notification. It expects an id <NYTPhoto> object as the object of the notification.
+ *  `NYTPhotoViewController` observes this notification. It expects an `id <NYTPhoto>` object as the object of the notification.
  */
 extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 
@@ -49,7 +49,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *
  *  @param photo              The photo object that this view controller manages.
  *  @param loadingView        The view to display while the photo's image loads. This view will be hidden when the image loads.
- *  @param notificationCenter The notification center on which to observe the NYTPhotoViewControllerPhotoImageUpdatedNotification.
+ *  @param notificationCenter The notification center on which to observe the `NYTPhotoViewControllerPhotoImageUpdatedNotification`.
  *
  *  @return A fully initialized object.
  */

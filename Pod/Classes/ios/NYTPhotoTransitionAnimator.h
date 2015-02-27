@@ -34,7 +34,7 @@
 @property (nonatomic) UIView *endingViewForAnimation;
 
 /**
- *  Whether this transition is a dismissal. If NO, presentation is assumed.
+ *  Whether this transition is a dismissal. If `NO`, presentation is assumed.
  */
 @property (nonatomic, getter=isDismissing) BOOL dismissing;
 
@@ -64,16 +64,16 @@
 @property (nonatomic) CGFloat animationDurationStartingViewFadeOutRatio;
 
 /**
- *  The value passed as the spring damping argument to `animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:` for the zooing animation.
+ *  The value passed as the spring damping argument to `animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:` for the zooming animation.
  */
 @property (nonatomic) CGFloat zoomingAnimationSpringDamping;
 
 /**
- *  Convenience method for creating a view for animation from another arbitrary view. Attempts to create an identical view in the most efficient way possible. Returns nil if the passed-in view is nil.
+ *  Convenience method for creating a view for animation from another arbitrary view. Attempts to create an identical view in the most efficient way possible. Returns `nil` if the passed-in view is `nil`.
  *
- *  @param view The view to create the animation from.
+ *  @param view The view from which to create the animation.
  *
- *  @return A new view identical in appearance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return nil if the passed-in view is nil.
+ *  @return A new view identical in appearance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return `nil` if the passed-in view is `nil`.
  */
 + (UIView *)newAnimationViewFromView:(UIView *)view;
 
