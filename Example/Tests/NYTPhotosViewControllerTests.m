@@ -18,7 +18,7 @@
 
 @implementation NYTPhotosViewControllerTests
 
-- (void)testPanGestureRecognizerExistsAferInitialization {
+- (void)testPanGestureRecognizerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.panGestureRecognizer);
 }
@@ -28,7 +28,7 @@
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
-- (void)testSingleTapGestureRecognizerExistsAferInitialization {
+- (void)testSingleTapGestureRecognizerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer);
 }
@@ -38,7 +38,7 @@
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
-- (void)testPageViewControllerExistsAferInitialization {
+- (void)testPageViewControllerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.pageViewController);
 }
