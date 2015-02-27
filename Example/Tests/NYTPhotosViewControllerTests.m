@@ -48,7 +48,7 @@
     XCTAssertNil(photosViewController.pageViewController.view.superview);
 }
 
-- (void)testPageViewControllerHasAssociatedViewAfterViewLoads {
+- (void)testPageViewControllerHasAssociatedSuperviewAfterViewLoads {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     photosViewController.view = photosViewController.view; // Referencing the view loads it.
     XCTAssertNotNil(photosViewController.pageViewController.view.superview);
