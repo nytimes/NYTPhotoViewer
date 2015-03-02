@@ -18,7 +18,7 @@
 
 @implementation NYTPhotosViewControllerTests
 
-- (void)testPanGestureRecognizerExistsAferInitialization {
+- (void)testPanGestureRecognizerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.panGestureRecognizer);
 }
@@ -28,7 +28,7 @@
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
-- (void)testSingleTapGestureRecognizerExistsAferInitialization {
+- (void)testSingleTapGestureRecognizerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer);
 }
@@ -38,7 +38,7 @@
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
-- (void)testPageViewControllerExistsAferInitialization {
+- (void)testPageViewControllerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.pageViewController);
 }
@@ -48,7 +48,7 @@
     XCTAssertNil(photosViewController.pageViewController.view.superview);
 }
 
-- (void)testPageViewControllerHasAssociatedViewAfterViewLoads {
+- (void)testPageViewControllerHasAssociatedSuperviewAfterViewLoads {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     photosViewController.view = photosViewController.view; // Referencing the view loads it.
     XCTAssertNotNil(photosViewController.pageViewController.view.superview);
@@ -123,7 +123,6 @@
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
-    invalidPhoto.identifier = @"invalid";
     
     [photosViewController displayPhoto:invalidPhoto animated:NO];
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
@@ -148,7 +147,6 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
     invalidPhoto.image = [[UIImage alloc] init];
-    invalidPhoto.identifier = @"invalid";
     
     [photosViewController updateImageForPhoto:invalidPhoto];
     
@@ -173,7 +171,6 @@
     
     for (int i = 0; i < 5; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
-        photo.identifier = @(i).stringValue;
         [photos addObject:photo];
     }
     

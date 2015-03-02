@@ -126,11 +126,9 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)didDoubleTapWithGestureRecognizer:(UITapGestureRecognizer *)recognizer {
     CGPoint pointInView = [recognizer locationInView:self.scalingImageView.imageView];
     
-    CGFloat previousZoomScale = self.scalingImageView.zoomScale;
-    CGFloat newZoomScale = MIN(previousZoomScale * 1.5, self.scalingImageView.maximumZoomScale);
+    CGFloat newZoomScale = self.scalingImageView.maximumZoomScale;
     
-    //If we've reached the maximum zoom scale, zoom back out.
-    if (previousZoomScale == self.scalingImageView.maximumZoomScale) {
+    if (self.scalingImageView.zoomScale >= self.scalingImageView.maximumZoomScale) {
         newZoomScale = self.scalingImageView.minimumZoomScale;
     }
     
