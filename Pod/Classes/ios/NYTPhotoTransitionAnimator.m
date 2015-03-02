@@ -219,14 +219,7 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     }
     
     UIView *animationView = [[UIView alloc] initWithFrame:view.frame];
-    
-    if (view.layer.contents) {
-        animationView.layer.contents = view.layer.contents;
-        animationView.layer.bounds = view.layer.bounds;
-    }
-    else {
-        animationView = [view snapshotViewAfterScreenUpdates:NO];
-    }
+    animationView = [view snapshotViewAfterScreenUpdates:YES];
     
     animationView.layer.cornerRadius = view.layer.cornerRadius;
     animationView.layer.masksToBounds = view.layer.masksToBounds;
