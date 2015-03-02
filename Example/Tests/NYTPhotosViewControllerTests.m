@@ -123,7 +123,6 @@
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
-    invalidPhoto.identifier = @"invalid";
     
     [photosViewController displayPhoto:invalidPhoto animated:NO];
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
@@ -148,7 +147,6 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
     invalidPhoto.image = [self imageNamed:@"testImage"];
-    invalidPhoto.identifier = @"invalid";
     
     [photosViewController updateImageForPhoto:invalidPhoto];
     
@@ -173,7 +171,6 @@
     
     for (int i = 0; i < 5; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
-        photo.identifier = @(i).stringValue;
         [photos addObject:photo];
     }
     
