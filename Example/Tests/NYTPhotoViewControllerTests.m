@@ -51,7 +51,6 @@
 
 - (NYTExamplePhoto *)newTestPhoto {
     NYTExamplePhoto *testPhoto = [[NYTExamplePhoto alloc] init];
-    testPhoto.identifier = @"test";
     return testPhoto;
 }
 
