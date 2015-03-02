@@ -9,6 +9,8 @@
 #import "NYTPhotoTransitionAnimator.h"
 #import "NYTOperatingSystemCompatibilityUtility.h"
 
+#define DegreesToRadians(degrees) (degrees * M_PI / 180)
+
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithZooming = 0.5;
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
 static const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0 / 9.0;
@@ -179,6 +181,23 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
 }
 
 #pragma mark - Convenience
+
+- (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
+    switch (orientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+            return CGAffineTransformMakeRotation(-DegreesToRadians(90));
+            
+        case UIInterfaceOrientationLandscapeRight:
+            return CGAffineTransformMakeRotation(DegreesToRadians(90));
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return CGAffineTransformMakeRotation(DegreesToRadians(180));
+            
+        case UIInterfaceOrientationPortrait:
+        default:
+            return CGAffineTransformMakeRotation(DegreesToRadians(0));
+    }
+}
 
 - (BOOL)shouldPerformZoomingAnimation {
     return self.startingView && self.endingView;
