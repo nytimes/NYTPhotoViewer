@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/ios/Protocols/NYTPhotoContainer.h
