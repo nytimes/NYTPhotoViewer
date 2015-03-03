@@ -40,6 +40,14 @@
  */
 + (CGRect)finalFrameForToViewControllerWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext;
 
+/**
+ *  Fetches and returns a specified image from the pod's resource bundle. Calls `imageNamed:nBundle:compatibleWithTraitCollection` on iOS 8, and retrieves the image file directly on iOS 7.
+ *
+ *  @param imageName The name of the image to fetch.
+ *
+ *  @return A specified image from the pod's resource bundle. `nil` if no such image is found.
+ */
++ (UIImage *)imageNamed:(NSString *)imageName;
 
 /**
  *  Checks for iOS 8.0+. Returns `YES` if the current device is running at least iOS 8.0
