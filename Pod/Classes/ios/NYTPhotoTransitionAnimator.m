@@ -144,7 +144,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     }
 
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
-    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
+    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
+                                                  translatedToContainerView:containerView];
     
     startingViewForAnimation.center = translatedStartingViewCenter;
     
@@ -159,25 +160,29 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     self.endingView.hidden = YES;
     self.startingView.hidden = YES;
     
+    CGFloat fadeInDuration = [self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio;
+    CGFloat fadeOutDuration = [self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio;
+    
     // Ending view / starting view replacement animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio
+    [UIView animateWithDuration:fadeInDuration
                           delay:0
                         options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-        endingViewForAnimation.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio
+                         endingViewForAnimation.alpha = 1.0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:fadeOutDuration
                               delay:0
                             options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
-            startingViewForAnimation.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            [startingViewForAnimation removeFromSuperview];
-        }];
-    }];
+                             startingViewForAnimation.alpha = 0.0;
+                         } completion:^(BOOL finished) {
+                             [startingViewForAnimation removeFromSuperview];
+                         }];
+                     }];
     
     CGFloat startingViewFinalTransform = 1.0 / endingViewInitialTransform;
-    CGPoint translatedEndingViewFinalCenter = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
+    CGPoint translatedEndingViewFinalCenter = [[self class] centerPointForView:self.endingView
+                                                     translatedToContainerView:containerView];
     
     // Zoom animation
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
@@ -186,18 +191,18 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-        endingViewForAnimation.transform = finalEndingViewTransform;
-        endingViewForAnimation.center = translatedEndingViewFinalCenter;
+                         endingViewForAnimation.transform = finalEndingViewTransform;
+                         endingViewForAnimation.center = translatedEndingViewFinalCenter;
+                         startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewFinalTransform, startingViewFinalTransform);
+                         startingViewForAnimation.center = translatedEndingViewFinalCenter;
+                     }
+                     completion:^(BOOL finished) {
+                         [endingViewForAnimation removeFromSuperview];
+                         self.endingView.hidden = NO;
+                         self.startingView.hidden = NO;
         
-        startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewFinalTransform, startingViewFinalTransform);
-        startingViewForAnimation.center = translatedEndingViewFinalCenter;
-    } completion:^(BOOL finished) {
-        [endingViewForAnimation removeFromSuperview];
-        self.endingView.hidden = NO;
-        self.startingView.hidden = NO;
-        
-        [self completeTransitionWithTransitionContext:transitionContext];
-    }];
+                         [self completeTransitionWithTransitionContext:transitionContext];
+                     }];
 }
 
 #pragma mark - Convenience
