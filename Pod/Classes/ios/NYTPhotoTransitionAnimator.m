@@ -260,13 +260,20 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
         return nil;
     }
     
-    UIView *animationView = [[UIView alloc] initWithFrame:view.frame];
-    animationView = [view snapshotViewAfterScreenUpdates:YES];
+    UIView *animationView;
     
-    animationView.layer.cornerRadius = view.layer.cornerRadius;
-    animationView.layer.masksToBounds = view.layer.masksToBounds;
-    animationView.contentMode = view.contentMode;
-    animationView.transform = view.transform;
+    if (view.layer.contents) {
+        animationView = [[UIView alloc] initWithFrame:view.frame];
+        animationView.layer.contents = view.layer.contents;
+        animationView.layer.bounds = view.layer.bounds;
+        animationView.layer.cornerRadius = view.layer.cornerRadius;
+        animationView.layer.masksToBounds = view.layer.masksToBounds;
+        animationView.contentMode = view.contentMode;
+        animationView.transform = view.transform;
+    }
+    else {
+        animationView = [view snapshotViewAfterScreenUpdates:YES];
+    }
     
     return animationView;
 }
