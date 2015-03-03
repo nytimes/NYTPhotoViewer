@@ -129,7 +129,7 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     // in the transitionContext's containerView. For non-portrait orientations on iOS 7, we must
     // manually add a rotation transform to account for the containerView thinking it is always in portrait
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    BOOL isOrientationPortrait = fromViewController.interfaceOrientation == UIInterfaceOrientationPortrait;
+    BOOL isOrientationPortrait = UIInterfaceOrientationIsPortrait(fromViewController.interfaceOrientation);
     
     if (![NYTOperatingSystemCompatibilityUtility isiOS8OrGreater] && !isOrientationPortrait) {
         // Correct the endingView and startingView's initial transforms
