@@ -123,6 +123,26 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
         endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     }
     
+    CGAffineTransform finalEndingViewTransform;
+
+    // The following code is a workaround for iOS7's lack of correct orientation information
+    // in the transitionContext's containerView. For non-portrait orientations on iOS 7, we must
+    // manually add a rotation transform to account for the containerView thinking it is always in portrait
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    BOOL isOrientationPortrait = fromViewController.interfaceOrientation == UIInterfaceOrientationPortrait;
+    
+    if (![NYTOperatingSystemCompatibilityUtility isiOS8OrGreater] && !isOrientationPortrait) {
+        // Correct the endingView and startingView's initial transforms
+        endingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], endingViewForAnimation.transform);
+        startingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], startingViewForAnimation.transform);
+
+        // Correct the endingView's final transform
+        finalEndingViewTransform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], self.endingView.transform);
+    }
+    else {
+        finalEndingViewTransform = self.endingView.transform;
+    }
+
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
     
@@ -166,7 +186,7 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-        endingViewForAnimation.transform = self.endingView.transform;
+        endingViewForAnimation.transform = finalEndingViewTransform;
         endingViewForAnimation.center = translatedEndingViewFinalCenter;
         
         startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewFinalTransform, startingViewFinalTransform);
