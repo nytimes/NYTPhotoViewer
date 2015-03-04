@@ -152,7 +152,7 @@ static const UIEdgeInsets NYTPhotosViewControllerDefaultLeftBarButtonImageInsets
         _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewer.bundle/NYTPhotoViewerCloseButtonX"] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewer.bundle/NYTPhotoViewerCloseButtonXLandscape"] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
         _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerDefaultLeftBarButtonImageInsets;
         _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
-
+        
         _notificationCenter = [[NSNotificationCenter alloc] init];
         
         [self setupPageViewControllerWithInitialPhoto:initialPhoto];
