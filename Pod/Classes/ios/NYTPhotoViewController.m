@@ -158,4 +158,16 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     return self.scalingImageView.imageView;
 }
 
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    scrollView.panGestureRecognizer.enabled = YES;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    // There is a bug, especially prevalent on iPhone 6 Plus, that causes zooming to render all other gesture recognizers ineffective.
+    // This bug is fixed by disabling the pan gesture recognizer of the scroll view when it is not needed.
+    if (scrollView.zoomScale == scrollView.minimumZoomScale) {
+        scrollView.panGestureRecognizer.enabled = NO;
+    }
+}
+
 @end
