@@ -53,7 +53,7 @@
         return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
     }
     else {
-        NSURL *imageURL = [bundle URLForResource:imageName withExtension:nil];
+        NSURL *imageURL = [bundle URLForResource:imageName withExtension:@"png"];
         return [UIImage imageWithContentsOfFile:imageURL.path];
     }
 }
