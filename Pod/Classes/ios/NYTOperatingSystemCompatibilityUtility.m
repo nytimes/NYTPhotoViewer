@@ -46,18 +46,6 @@
     return transitionContext.containerView.bounds;
 }
 
-+ (UIImage *)imageNamed:(NSString *)imageName {
-    NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"NYTPhotoViewer" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    if ([UIImage respondsToSelector:@selector(imageNamed:inBundle:compatibleWithTraitCollection:)]) {
-        return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
-    }
-    else {
-        NSURL *imageURL = [bundle URLForResource:imageName withExtension:@"png"];
-        return [UIImage imageWithContentsOfFile:imageURL.path];
-    }
-}
-
 + (BOOL)isiOS8OrGreater {
     static BOOL isiOS8OrGreater;
     
