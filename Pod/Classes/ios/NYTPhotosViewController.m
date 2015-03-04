@@ -15,7 +15,6 @@
 #import "NYTPhoto.h"
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
-#import "NYTOperatingSystemCompatibilityUtility.h"
 
 NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification = @"NYTPhotosViewControllerDidDisplayPhotoNotification";
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
