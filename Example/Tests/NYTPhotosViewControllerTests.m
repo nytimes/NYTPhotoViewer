@@ -3,7 +3,7 @@
 //  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/24/15.
-//  Copyright (c) 2015 Brian Capps. All rights reserved.
+//  Copyright (c) 2015 NYTimes. All rights reserved.
 //
 
 @import UIKit;
