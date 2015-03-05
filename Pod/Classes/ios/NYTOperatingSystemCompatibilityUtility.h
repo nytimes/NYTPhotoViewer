@@ -40,7 +40,6 @@
  */
 + (CGRect)finalFrameForToViewControllerWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext;
 
-
 /**
  *  Checks for iOS 8.0+. Returns `YES` if the current device is running at least iOS 8.0
  *
