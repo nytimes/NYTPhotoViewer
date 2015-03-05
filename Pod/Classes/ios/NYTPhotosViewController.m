@@ -376,8 +376,8 @@ static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 }
 
 - (void)didDisplayPhoto:(id <NYTPhoto>)photo {
-    if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:)]) {
-        [self.delegate photosViewController:self didDisplayPhoto:photo];
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:atIndex:)]) {
+        [self.delegate photosViewController:self didDisplayPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDisplayPhotoNotification object:self];

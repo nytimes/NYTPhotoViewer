@@ -101,8 +101,9 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object that was just displayed.
+ *  @param photo                The index of the photo that was just displayed.
  */
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo;
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)index;
 
 /**
  *  Called immediately before the photos view controller is about to start dismissal. This will be the beginning of the interactive panning to dismiss, if it is enabled and performed.
