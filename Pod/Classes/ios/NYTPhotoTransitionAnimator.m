@@ -121,8 +121,29 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
         endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     }
     
+    CGAffineTransform finalEndingViewTransform;
+
+    // The following code is a workaround for iOS7's lack of correct orientation information
+    // in the transitionContext's containerView. For non-portrait orientations on iOS 7, we must
+    // manually add a rotation transform to account for the containerView thinking it is always in portrait
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    BOOL isOrientationPortrait = UIInterfaceOrientationIsPortrait(fromViewController.interfaceOrientation);
+    
+    if (![NYTOperatingSystemCompatibilityUtility isiOS8OrGreater] && !isOrientationPortrait) {
+        // Correct the endingView and startingView's initial transforms
+        endingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], endingViewForAnimation.transform);
+        startingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], startingViewForAnimation.transform);
+
+        // Correct the endingView's final transform
+        finalEndingViewTransform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], self.endingView.transform);
+    }
+    else {
+        finalEndingViewTransform = self.endingView.transform;
+    }
+
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
-    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView translatedToContainerView:containerView];
+    CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
+                                                  translatedToContainerView:containerView];
     
     startingViewForAnimation.center = translatedStartingViewCenter;
     
@@ -137,25 +158,29 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     self.endingView.hidden = YES;
     self.startingView.hidden = YES;
     
+    CGFloat fadeInDuration = [self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio;
+    CGFloat fadeOutDuration = [self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio;
+    
     // Ending view / starting view replacement animation
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio
+    [UIView animateWithDuration:fadeInDuration
                           delay:0
                         options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-        endingViewForAnimation.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio
+                         endingViewForAnimation.alpha = 1.0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:fadeOutDuration
                               delay:0
                             options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
-            startingViewForAnimation.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            [startingViewForAnimation removeFromSuperview];
-        }];
-    }];
+                             startingViewForAnimation.alpha = 0.0;
+                         } completion:^(BOOL finished) {
+                             [startingViewForAnimation removeFromSuperview];
+                         }];
+                     }];
     
     CGFloat startingViewFinalTransform = 1.0 / endingViewInitialTransform;
-    CGPoint translatedEndingViewFinalCenter = [[self class] centerPointForView:self.endingView translatedToContainerView:containerView];
+    CGPoint translatedEndingViewFinalCenter = [[self class] centerPointForView:self.endingView
+                                                     translatedToContainerView:containerView];
     
     // Zoom animation
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
@@ -164,21 +189,38 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-        endingViewForAnimation.transform = self.endingView.transform;
-        endingViewForAnimation.center = translatedEndingViewFinalCenter;
+                         endingViewForAnimation.transform = finalEndingViewTransform;
+                         endingViewForAnimation.center = translatedEndingViewFinalCenter;
+                         startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewFinalTransform, startingViewFinalTransform);
+                         startingViewForAnimation.center = translatedEndingViewFinalCenter;
+                     }
+                     completion:^(BOOL finished) {
+                         [endingViewForAnimation removeFromSuperview];
+                         self.endingView.hidden = NO;
+                         self.startingView.hidden = NO;
         
-        startingViewForAnimation.transform = CGAffineTransformScale(startingViewForAnimation.transform, startingViewFinalTransform, startingViewFinalTransform);
-        startingViewForAnimation.center = translatedEndingViewFinalCenter;
-    } completion:^(BOOL finished) {
-        [endingViewForAnimation removeFromSuperview];
-        self.endingView.hidden = NO;
-        self.startingView.hidden = NO;
-        
-        [self completeTransitionWithTransitionContext:transitionContext];
-    }];
+                         [self completeTransitionWithTransitionContext:transitionContext];
+                     }];
 }
 
 #pragma mark - Convenience
+
+- (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
+    switch (orientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+            return CGAffineTransformMakeRotation(-M_PI /2.0);
+            
+        case UIInterfaceOrientationLandscapeRight:
+            return CGAffineTransformMakeRotation(M_PI /2.0);
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return CGAffineTransformMakeRotation(M_PI);
+            
+        case UIInterfaceOrientationPortrait:
+        default:
+            return CGAffineTransformMakeRotation(0);
+    }
+}
 
 - (BOOL)shouldPerformZoomingAnimation {
     return self.startingView && self.endingView;
@@ -218,20 +260,20 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
         return nil;
     }
     
-    UIView *animationView = [[UIView alloc] initWithFrame:view.frame];
+    UIView *animationView;
     
     if (view.layer.contents) {
+        animationView = [[UIView alloc] initWithFrame:view.frame];
         animationView.layer.contents = view.layer.contents;
         animationView.layer.bounds = view.layer.bounds;
+        animationView.layer.cornerRadius = view.layer.cornerRadius;
+        animationView.layer.masksToBounds = view.layer.masksToBounds;
+        animationView.contentMode = view.contentMode;
+        animationView.transform = view.transform;
     }
     else {
-        animationView = [view snapshotViewAfterScreenUpdates:NO];
+        animationView = [view snapshotViewAfterScreenUpdates:YES];
     }
-    
-    animationView.layer.cornerRadius = view.layer.cornerRadius;
-    animationView.layer.masksToBounds = view.layer.masksToBounds;
-    animationView.contentMode = view.contentMode;
-    animationView.transform = view.transform;
     
     return animationView;
 }
