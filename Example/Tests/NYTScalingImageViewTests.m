@@ -35,7 +35,7 @@
 - (void)testUpdateImageUpdatesImage {
     UIImage *image1 = [[UIImage alloc] init];
     UIImage *image2 = [[UIImage alloc] init];
-
+    
     NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image1 frame:CGRectZero];
     [scalingImageView updateImage:image2];
     

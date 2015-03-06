@@ -122,7 +122,7 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
     }
     
     CGAffineTransform finalEndingViewTransform;
-
+    
     // The following code is a workaround for iOS7's lack of correct orientation information
     // in the transitionContext's containerView. For non-portrait orientations on iOS 7, we must
     // manually add a rotation transform to account for the containerView thinking it is always in portrait
@@ -133,14 +133,14 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
         // Correct the endingView and startingView's initial transforms
         endingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], endingViewForAnimation.transform);
         startingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], startingViewForAnimation.transform);
-
+        
         // Correct the endingView's final transform
         finalEndingViewTransform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], self.endingView.transform);
     }
     else {
         finalEndingViewTransform = self.endingView.transform;
     }
-
+    
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
                                                   translatedToContainerView:containerView];
@@ -169,13 +169,13 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
                          endingViewForAnimation.alpha = 1.0;
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:fadeOutDuration
-                              delay:0
-                            options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
-                         animations:^{
-                             startingViewForAnimation.alpha = 0.0;
-                         } completion:^(BOOL finished) {
-                             [startingViewForAnimation removeFromSuperview];
-                         }];
+                                               delay:0
+                                             options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
+                                          animations:^{
+                              startingViewForAnimation.alpha = 0.0;
+                          } completion:^(BOOL finished) {
+                              [startingViewForAnimation removeFromSuperview];
+                          }];
                      }];
     
     CGFloat startingViewFinalTransform = 1.0 / endingViewInitialTransform;
@@ -208,14 +208,14 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
 - (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
     switch (orientation) {
         case UIInterfaceOrientationLandscapeLeft:
-            return CGAffineTransformMakeRotation(-M_PI /2.0);
-            
+            return CGAffineTransformMakeRotation(-M_PI / 2.0);
+        
         case UIInterfaceOrientationLandscapeRight:
-            return CGAffineTransformMakeRotation(M_PI /2.0);
-            
+            return CGAffineTransformMakeRotation(M_PI / 2.0);
+        
         case UIInterfaceOrientationPortraitUpsideDown:
             return CGAffineTransformMakeRotation(M_PI);
-            
+        
         case UIInterfaceOrientationPortrait:
         default:
             return CGAffineTransformMakeRotation(0);

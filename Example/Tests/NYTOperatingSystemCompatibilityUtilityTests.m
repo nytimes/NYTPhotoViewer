@@ -55,7 +55,7 @@
 - (void)testiOS7FinalFrameContainerViewMethodCalledOniOS7 {
     id partialMock = OCMPartialMock([UIDevice currentDevice]);
     OCMStub((NSString *)[(UIDevice *)partialMock systemVersion]).andCall(self, @selector(iOS7String));
-
+    
     id transitionContext = OCMProtocolMock(@protocol(UIViewControllerContextTransitioning));
     OCMExpect([transitionContext containerView]);
     [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
