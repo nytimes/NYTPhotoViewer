@@ -96,8 +96,6 @@
 
 #pragma mark - Centering
 
-#define floor __tg_floor //This is to address the Clang bug discussed here http://stackoverflow.com/questions/23333287/tgmath-h-doesnt-work-if-modules-are-enabled
-
 - (void)centerScrollViewContents {
     CGFloat horizontalInset = 0;
     CGFloat verticalInset = 0;
@@ -111,14 +109,12 @@
     }
     
     if (self.window.screen.scale < 2.0) {
-        horizontalInset = floor(horizontalInset);
-        verticalInset = floor(verticalInset);
+        horizontalInset = __tg_floor(horizontalInset);
+        verticalInset = __tg_floor(verticalInset);
     }
     
     // Use `contentInset` to center the contents in the scroll view. Reasoning explained here: http://petersteinberger.com/blog/2013/how-to-center-uiscrollview/
     self.contentInset = UIEdgeInsetsMake(verticalInset, horizontalInset, verticalInset, horizontalInset);
 }
-
-#undef floor
 
 @end
