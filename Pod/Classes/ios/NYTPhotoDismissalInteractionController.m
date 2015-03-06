@@ -113,6 +113,8 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }
 
+#pragma mark - Bug Fix
+
 - (void)fixCancellationStatusBarAppearanceBug {
     UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
