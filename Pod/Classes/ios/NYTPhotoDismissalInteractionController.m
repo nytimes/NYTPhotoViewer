@@ -124,7 +124,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     NSString *statusBarViewControllerSelectorPart2 = @"tusBarViewController:";
     SEL setStatusBarViewControllerSelector = NSSelectorFromString([statusBarViewControllerSelectorPart1 stringByAppendingString:statusBarViewControllerSelectorPart2]);
     
-    if ([toViewController respondsToSelector:setStatusBarViewControllerSelector]) {
+    if ([toViewController respondsToSelector:setStatusBarViewControllerSelector] && fromViewController.modalPresentationCapturesStatusBarAppearance) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [toViewController performSelector:setStatusBarViewControllerSelector withObject:fromViewController];
