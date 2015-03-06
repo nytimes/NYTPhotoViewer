@@ -89,7 +89,10 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
             }
             else {
                 [self.transitionContext cancelInteractiveTransition];
-                [self fixCancellationStatusBarAppearanceBug];
+                
+                if (![[self class] isRadar20070670Fixed]) {
+                    [self fixCancellationStatusBarAppearanceBug];
+                }
             }
             
             self.viewToHideWhenBeginningTransition.hidden = NO;
@@ -110,7 +113,6 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
 }
 
-#warning Figure out a sanctioned fix for the status bar appearance bug.
 - (void)fixCancellationStatusBarAppearanceBug {
     UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -126,6 +128,10 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
         [toViewController performSelector:setStatusBarViewControllerSelector withObject:fromViewController];
 #pragma clang diagnostic pop
     }
+}
+
++ (BOOL)isRadar20070670Fixed {
+    return NO;
 }
 
 #pragma mark - UIViewControllerInteractiveTransitioning
