@@ -29,10 +29,8 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'NYTPhotoViewer' => ['Pod/Assets/*.{png,lproj,storyboard}']
+    'NYTPhotoViewer' => ['Pod/Assets/**/*.{png,lproj,storyboard}']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'Foundation'
 end

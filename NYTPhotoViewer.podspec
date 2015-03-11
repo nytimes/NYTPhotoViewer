@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'NYTPhotoViewer' => ['Pod/Assets/*.{png,lproj,storyboard}']
+    'NYTPhotoViewer' => ['Pod/Assets/**/*.{png,lproj,storyboard}']
   }
 
   s.frameworks = 'UIKit', 'Foundation'

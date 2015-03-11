@@ -14,7 +14,7 @@ static const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
 static const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0 / 9.0;
 static const CGFloat NYTPhotoTransitionAnimatorEndingViewFadeInDurationRatio = 0.1;
 static const CGFloat NYTPhotoTransitionAnimatorStartingViewFadeOutDurationRatio = 0.05;
-static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.85;
+static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 
 @interface NYTPhotoTransitionAnimator ()
 

@@ -148,7 +148,8 @@ static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
         
         // iOS 7 has an issue with constraints that could evaluate to be negative, so we set the width to the margins' size.
         _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectMake(0, 0, NYTPhotoCaptionViewHorizontalMargin * 2.0, 0)];
-        _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped:)];
+        _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewer.bundle/NYTPhotoViewerCloseButtonX"] landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
+        _overlayView.leftBarButtonItem.imageInsets = UIEdgeInsetsMake(3, 0, -3, 0);
         _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
         
         _notificationCenter = [[NSNotificationCenter alloc] init];
@@ -181,6 +182,9 @@ static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 }
 
 - (void)addOverlayView {
+    UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
+    self.overlayView.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
+    
     [self updateOverlayInformation];
     [self.view addSubview:self.overlayView];
     
@@ -201,15 +205,6 @@ static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
     }
     
     self.overlayView.title = overlayTitle;
-    
-    UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
-    NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
-    if ([self.delegate respondsToSelector:@selector(photosViewController:overlayTitleTextAttributesForPhoto:)]) {
-        NSDictionary *delegateTitleTextAttributes = [self.delegate photosViewController:self overlayTitleTextAttributesForPhoto:self.currentlyDisplayedPhoto];
-        titleTextAttributes = delegateTitleTextAttributes ?: titleTextAttributes;
-    }
-    
-    self.overlayView.titleTextAttributes = titleTextAttributes;
     
     UIView *captionView;
     if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewForPhoto:)]) {
