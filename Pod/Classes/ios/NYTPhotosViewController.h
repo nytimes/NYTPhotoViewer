@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@class NYTPhotosOverlayView;
+
 @protocol NYTPhoto;
 @protocol NYTPhotosViewControllerDelegate;
 
@@ -37,6 +39,11 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  The object conforming to `NYTPhoto` that is currently being displayed.
  */
 @property (nonatomic, readonly) id <NYTPhoto> currentlyDisplayedPhoto;
+
+/**
+ *  The overlay view displayed over photos. Created during `viewDidLoad`.
+ */
+@property (nonatomic, readonly) NYTPhotosOverlayView *overlayView;
 
 /**
  *  The left bar button item overlaying the photo.
@@ -148,16 +155,6 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @return The view to animate out of or into for the given photo.
  */
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
-
-/**
- *  Returns the title text attributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
- *
- *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
- *  @param photo                The photo for which the `titleTextAttributes` will be set.
- *
- *  @return The title text attributes to set on the overlay title for a given photo. Return `nil` for default attribtues.
- */
-- (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo;
 
 /**
  *  Called when a photo is long pressed.
