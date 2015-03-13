@@ -91,6 +91,14 @@
         self.maximumZoomScale = 1.0;
         
         self.zoomScale = self.minimumZoomScale;
+        
+        // scrollView.panGestureRecognizer.enabled is on by default and enabled by
+        // viewWillLayoutSubviews in the container controller so disable it here
+        // to prevent an interference with the container controller's pan gesture.
+        //
+        // This is enabled in scrollViewWillBeginZooming so panning while zoomed-in
+        // is unaffected.
+        self.panGestureRecognizer.enabled = NO;
     }
 }
 
