@@ -10,16 +10,11 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
   s.version          = "0.1.0"
-  s.summary          = "A short description of NYTPhotoViewer."
+  s.summary          = "NYTPhotoViewer is a pod for viewing images. It handles one or multiple images in a slideshow format."
   s.description      = <<-DESC
-                       An optional longer description of NYTPhotoViewer
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       NYTPhotoViewer is a pod for viewing images. It handles one or multiple images in a slideshow format, and includes robust customization options through its delegate relationship. The photo viewer also handles custom UIViewController transitions, including zooming and flick-to-dismiss.
                        DESC
   s.homepage         = "https://github.com/nytm/ios-photo-viewer"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
   s.author           = { "Brian Capps" => "Brian.Capps@nytimes.com" }
   s.source           = { :git => "https://github.com/nytm/ios-photo-viewer.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/bcapps'
