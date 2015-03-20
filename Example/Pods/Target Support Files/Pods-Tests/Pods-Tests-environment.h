@@ -10,7 +10,11 @@
 #define COCOAPODS_POD_AVAILABLE_NYTPhotoViewer
 #define COCOAPODS_VERSION_MAJOR_NYTPhotoViewer 0
 #define COCOAPODS_VERSION_MINOR_NYTPhotoViewer 1
+<<<<<<< HEAD
 #define COCOAPODS_VERSION_PATCH_NYTPhotoViewer 2
+=======
+#define COCOAPODS_VERSION_PATCH_NYTPhotoViewer 1
+>>>>>>> pod install
 
 // OCMock
 #define COCOAPODS_POD_AVAILABLE_OCMock
