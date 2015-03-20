@@ -22,6 +22,12 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
+		8C4464E51ABCA3BA00BD79F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */; };
+		8C4464E71ABCA3BA00BD79F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */; };
+		8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */; };
+		8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */; };
+		8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */; };
+		8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */; };
 		955BE815A0B486203B80D541 /* libPods-NYTPhotoViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1477DE9B8584BD5335F644E1 /* libPods-NYTPhotoViewer.a */; };
 		B5B252E11A8BE10B00E9973E /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
 		B5DC9D821A9D04D300F4F81F /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D811A9D04D300F4F81F /* NYTPhotosViewControllerTests.m */; };
@@ -46,6 +52,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = "ios-photo-viewer";
+		};
+		8C4464F51ABCA3BA00BD79F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C4464DF1ABCA3BA00BD79F1;
+			remoteInfo = "NYTPhotoViewer-Swift";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,6 +88,16 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		72DCB731DCC658F46D0B619E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8C4464E01ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTPhotoViewer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4464E31ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C4464E91ABCA3BA00BD79F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8C4464EE1ABCA3BA00BD79F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYTPhotoViewer-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4464F91ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTPhotoViewerSwiftTests.swift; sourceTree = "<group>"; };
 		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
 		B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
@@ -118,6 +141,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C4464DD1ABCA3BA00BD79F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C4464F11ABCA3BA00BD79F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +164,8 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* NYTPhotoViewer */,
 				6003F5B5195388D20070C39A /* Tests */,
+				8C4464E11ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */,
+				8C4464F71ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				DC8AE5E7086B7FC6E4B5BE53 /* Pods */,
@@ -138,6 +177,8 @@
 			children = (
 				6003F58A195388D20070C39A /* NYTPhotoViewer.app */,
 				6003F5AE195388D20070C39A /* Tests.xctest */,
+				8C4464E01ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift.app */,
+				8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +261,44 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		8C4464E11ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */,
+				8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */,
+				8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */,
+				8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */,
+				8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */,
+				8C4464E21ABCA3BA00BD79F1 /* Supporting Files */,
+			);
+			path = "NYTPhotoViewer-Swift";
+			sourceTree = "<group>";
+		};
+		8C4464E21ABCA3BA00BD79F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C4464E31ABCA3BA00BD79F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C4464F71ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */,
+				8C4464F81ABCA3BA00BD79F1 /* Supporting Files */,
+			);
+			path = "NYTPhotoViewer-SwiftTests";
+			sourceTree = "<group>";
+		};
+		8C4464F81ABCA3BA00BD79F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C4464F91ABCA3BA00BD79F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B5DC9D981A9FAF6B00F4F81F /* Test Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +363,41 @@
 			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8C4464DF1ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C4465001ABCA3BA00BD79F1 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-Swift" */;
+			buildPhases = (
+				8C4464DC1ABCA3BA00BD79F1 /* Sources */,
+				8C4464DD1ABCA3BA00BD79F1 /* Frameworks */,
+				8C4464DE1ABCA3BA00BD79F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NYTPhotoViewer-Swift";
+			productName = "NYTPhotoViewer-Swift";
+			productReference = 8C4464E01ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C4464F31ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C4465011ABCA3BA00BD79F1 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-SwiftTests" */;
+			buildPhases = (
+				8C4464F01ABCA3BA00BD79F1 /* Sources */,
+				8C4464F11ABCA3BA00BD79F1 /* Frameworks */,
+				8C4464F21ABCA3BA00BD79F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C4464F61ABCA3BA00BD79F1 /* PBXTargetDependency */,
+			);
+			name = "NYTPhotoViewer-SwiftTests";
+			productName = "NYTPhotoViewer-SwiftTests";
+			productReference = 8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -296,6 +410,13 @@
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
+					};
+					8C4464DF1ABCA3BA00BD79F1 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					8C4464F31ABCA3BA00BD79F1 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 8C4464DF1ABCA3BA00BD79F1;
 					};
 				};
 			};
@@ -314,6 +435,8 @@
 			targets = (
 				6003F589195388D20070C39A /* NYTPhotoViewer */,
 				6003F5AD195388D20070C39A /* Tests */,
+				8C4464DF1ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */,
+				8C4464F31ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,6 +459,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C4464DE1ABCA3BA00BD79F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */,
+				8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */,
+				8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C4464F21ABCA3BA00BD79F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +575,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C4464DC1ABCA3BA00BD79F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4464E71ABCA3BA00BD79F1 /* ViewController.swift in Sources */,
+				8C4464E51ABCA3BA00BD79F1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C4464F01ABCA3BA00BD79F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -442,6 +599,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* NYTPhotoViewer */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		8C4464F61ABCA3BA00BD79F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C4464DF1ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */;
+			targetProxy = 8C4464F51ABCA3BA00BD79F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -476,6 +638,22 @@
 				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C4464E91ABCA3BA00BD79F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C4464EE1ABCA3BA00BD79F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -627,6 +805,91 @@
 			};
 			name = Release;
 		};
+		8C4464FC1ABCA3BA00BD79F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C4464FD1ABCA3BA00BD79F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8C4464FE1ABCA3BA00BD79F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NYTPhotoViewer-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYTPhotoViewer-Swift.app/NYTPhotoViewer-Swift";
+			};
+			name = Debug;
+		};
+		8C4464FF1ABCA3BA00BD79F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NYTPhotoViewer-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYTPhotoViewer-Swift.app/NYTPhotoViewer-Swift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -656,6 +919,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8C4465001ABCA3BA00BD79F1 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C4464FC1ABCA3BA00BD79F1 /* Debug */,
+				8C4464FD1ABCA3BA00BD79F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C4465011ABCA3BA00BD79F1 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C4464FE1ABCA3BA00BD79F1 /* Debug */,
+				8C4464FF1ABCA3BA00BD79F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
