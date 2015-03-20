@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/nytm/ios-photo-viewer"
   s.author           = { "Brian Capps" => "Brian.Capps@nytimes.com" }
-  s.source           = { :git => "https://github.com/nytm/ios-photo-viewer.git", :tag => s.version.to_s }
+  s.source           = { :git => "git@github.com:nytm/ios-photo-viewer.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
