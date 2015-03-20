@@ -35,6 +35,9 @@
                             <constraint firstItem="dUA-jQ-lJo" firstAttribute="width" secondItem="dUA-jQ-lJo" secondAttribute="height" multiplier="206:153" id="uuy-lM-U5c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageButton" destination="dUA-jQ-lJo" id="Emb-oO-PgB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -265,8 +265,8 @@
 				8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */,
 				8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */,
 				8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */,
-				8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */,
 				8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */,
+				8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */,
 				8C4464E21ABCA3BA00BD79F1 /* Supporting Files */,
 			);
 			path = "NYTPhotoViewer-Swift";
