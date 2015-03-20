@@ -28,6 +28,10 @@
 		8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */; };
 		8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */; };
 		8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */; };
+		8C4465031ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
+		8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
+		8C4465061ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
+		8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
 		955BE815A0B486203B80D541 /* libPods-NYTPhotoViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1477DE9B8584BD5335F644E1 /* libPods-NYTPhotoViewer.a */; };
 		B5B252E11A8BE10B00E9973E /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
 		B5DC9D821A9D04D300F4F81F /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D811A9D04D300F4F81F /* NYTPhotosViewControllerTests.m */; };
@@ -98,6 +102,8 @@
 		8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYTPhotoViewer-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4464F91ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTPhotoViewerSwiftTests.swift; sourceTree = "<group>"; };
+		8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
+		8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
 		B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 			children = (
 				8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */,
 				8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */,
+				8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */,
+				8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */,
 				8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */,
 				8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */,
 				8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */,
@@ -581,6 +589,8 @@
 			files = (
 				8C4464E71ABCA3BA00BD79F1 /* ViewController.swift in Sources */,
 				8C4464E51ABCA3BA00BD79F1 /* AppDelegate.swift in Sources */,
+				8C4465031ABCA95600BD79F1 /* PhotosProvider.swift in Sources */,
+				8C4465061ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +599,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */,
+				8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */,
+				8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +830,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -836,7 +848,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
