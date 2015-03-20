@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "NYTPhotoViewer is a pod for viewing images. It handles one or multiple images in a slideshow format."
   s.description      = <<-DESC
                        NYTPhotoViewer is a pod for viewing images. It handles one or multiple images in a slideshow format, and includes robust customization options through its delegate relationship. The photo viewer also handles custom UIViewController transitions, including zooming and flick-to-dismiss.
