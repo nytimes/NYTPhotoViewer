@@ -13,11 +13,7 @@ class PhotosProvider: NSObject {
     static let photos: [ExamplePhoto] = {
         
         let NumberOfPhotos = 5
-        let SummaryString = "summary", CreditString = "credit"
         let image = UIImage(named: "testImage"), placeholderImage = UIImage(named: "testImagePlaceholder")
-
-        let attributedCaptionSummary = NSAttributedString(string: SummaryString, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-        let attributedCaptionCredit = NSAttributedString(string: CreditString, attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
         
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
             let customEverythingPhotoIndex = 1, defaultLoadingSpinnerPhotoIndex = 3
@@ -31,7 +27,7 @@ class PhotosProvider: NSObject {
             let image = shouldSetImageOnIndex(photoIndex) ? image : nil
             let attributedCaptionTitle = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
 
-            let photo = ExamplePhoto(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle, attributedCaptionSummary: attributedCaptionSummary, attributedCaptionCredit: attributedCaptionCredit)
+            let photo = ExamplePhoto(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle)
         
             mutablePhotos.append(photo)
         }
