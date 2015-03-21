@@ -10,28 +10,27 @@ import UIKit
 
 class ExamplePhoto: NSObject, NYTPhoto {
 
-    @objc var image: UIImage?
+    var image: UIImage?
+    let placeholderImage: UIImage?
+    let attributedCaptionTitle: NSAttributedString
+    let attributedCaptionSummary: NSAttributedString
+    let attributedCaptionCredit: NSAttributedString
 
-    @objc let placeholderImage: UIImage?
-    @objc let attributedCaptionTitle: NSAttributedString
-    @objc let attributedCaptionSummary: NSAttributedString
-    @objc let attributedCaptionCredit: NSAttributedString
-    
-    init(image anImage: UIImage?, placeholderImage aPlaceholderImage: UIImage?, attributedCaptionTitle anAttributedCaptionTitle: NSAttributedString, attributedCaptionSummary anAttributedCaptionSummary: NSAttributedString, attributedCaptionCredit anAttributedCaptionCredit: NSAttributedString) {
+    init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString, attributedCaptionSummary: NSAttributedString, attributedCaptionCredit: NSAttributedString) {
         
-        image = anImage
-        placeholderImage = aPlaceholderImage
-        attributedCaptionTitle = anAttributedCaptionTitle
-        attributedCaptionSummary = anAttributedCaptionSummary
-        attributedCaptionCredit = anAttributedCaptionCredit
+        self.image = image
+        self.placeholderImage = placeholderImage
+        self.attributedCaptionTitle = attributedCaptionTitle
+        self.attributedCaptionSummary = attributedCaptionSummary
+        self.attributedCaptionCredit = attributedCaptionCredit
     }
 
-    convenience init(image anImage: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString) {
-
+    convenience init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString) {
+        
         let SummaryString = "summary", CreditString = "credit"
         let attributedSummary = NSAttributedString(string: SummaryString, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
         let attributedCredit = NSAttributedString(string: CreditString, attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
-
-        self.init(image: anImage, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle, attributedCaptionSummary: attributedSummary, attributedCaptionCredit: attributedCredit)
+        
+        self.init(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle, attributedCaptionSummary: attributedSummary, attributedCaptionCredit: attributedCredit)
     }
 }
