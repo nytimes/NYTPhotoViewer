@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton!
     static private let photos = PhotosProvider.photos
