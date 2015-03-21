@@ -100,7 +100,6 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		72DCB731DCC658F46D0B619E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8C3F25531ABCE816007BFF4E /* NYTPhotoViewer-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTPhotoViewer-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		8C3F25541ABCE816007BFF4E /* NYTPhotoViewer-SwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTPhotoViewer-SwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C4464E01ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTPhotoViewer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4464E31ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -317,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				8C4464F91ABCA3BA00BD79F1 /* Info.plist */,
-				8C3F25541ABCE816007BFF4E /* NYTPhotoViewer-SwiftTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -437,7 +435,7 @@
 			attributes = {
 				CLASSPREFIX = NYT;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Brian Capps";
+				ORGANIZATIONNAME = "The New York Times";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -967,7 +965,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-SwiftTests/NYTPhotoViewer-SwiftTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYTPhotoViewer-Swift.app/NYTPhotoViewer-Swift";
 			};
@@ -993,7 +991,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-SwiftTests/NYTPhotoViewer-SwiftTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYTPhotoViewer-Swift.app/NYTPhotoViewer-Swift";
 			};
 			name = Release;
