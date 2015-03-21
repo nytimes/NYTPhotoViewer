@@ -11,21 +11,20 @@ import UIKit
 class PhotosProvider: NSObject {
     
     static let CustomEverythingPhotoIndex = 1, DefaultLoadingSpinnerPhotoIndex = 3, NoReferenceViewPhotoIndex = 4
-
     static let photos: [ExamplePhoto] = {
         
+        var mutablePhotos: [ExamplePhoto] = []
+        var image = UIImage(named: "testImage")
+        let placeholderImage = UIImage(named: "testImagePlaceholder")
         let NumberOfPhotos = 5
-        let image = UIImage(named: "testImage"), placeholderImage = UIImage(named: "testImagePlaceholder")
         
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
             return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
         }
 
-        var mutablePhotos: [ExamplePhoto] = []
-
         for var photoIndex = 0; photoIndex < NumberOfPhotos; photoIndex++ {
 
-            let image = shouldSetImageOnIndex(photoIndex) ? image : nil
+            image = shouldSetImageOnIndex(photoIndex) ? image : nil
             let attributedCaptionTitle = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
 
             let photo = ExamplePhoto(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle)
