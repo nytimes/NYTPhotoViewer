@@ -22,12 +22,13 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
+		8C2AB3F31ABDF266004A2BBA /* PhotosDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AB3F21ABDF266004A2BBA /* PhotosDataSourceTests.swift */; };
+		8C2AB3F51ABDF959004A2BBA /* PhotosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AB3F41ABDF959004A2BBA /* PhotosViewControllerTests.swift */; };
 		8C4464E51ABCA3BA00BD79F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */; };
 		8C4464E71ABCA3BA00BD79F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */; };
 		8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */; };
 		8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */; };
 		8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */; };
-		8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */; };
 		8C4465031ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
 		8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
 		8C4465061ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
@@ -99,6 +100,8 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		72DCB731DCC658F46D0B619E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8C2AB3F21ABDF266004A2BBA /* PhotosDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDataSourceTests.swift; sourceTree = "<group>"; };
+		8C2AB3F41ABDF959004A2BBA /* PhotosViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerTests.swift; sourceTree = "<group>"; };
 		8C3F25531ABCE816007BFF4E /* NYTPhotoViewer-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTPhotoViewer-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C4464E01ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTPhotoViewer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4464E31ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +112,6 @@
 		8C4464EE1ABCA3BA00BD79F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYTPhotoViewer-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4464F91ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTPhotoViewerSwiftTests.swift; sourceTree = "<group>"; };
 		8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		A2B2556D53F0690AADDF6739 /* Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTPhotoViewer-SwiftTests/Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -306,7 +308,8 @@
 		8C4464F71ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C4464FA1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift */,
+				8C2AB3F41ABDF959004A2BBA /* PhotosViewControllerTests.swift */,
+				8C2AB3F21ABDF266004A2BBA /* PhotosDataSourceTests.swift */,
 				8C4464F81ABCA3BA00BD79F1 /* Supporting Files */,
 			);
 			path = "NYTPhotoViewer-SwiftTests";
@@ -679,7 +682,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4464FB1ABCA3BA00BD79F1 /* NYTPhotoViewerSwiftTests.swift in Sources */,
+				8C2AB3F31ABDF266004A2BBA /* PhotosDataSourceTests.swift in Sources */,
+				8C2AB3F51ABDF959004A2BBA /* PhotosViewControllerTests.swift in Sources */,
 				8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */,
 				8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */,
 			);
