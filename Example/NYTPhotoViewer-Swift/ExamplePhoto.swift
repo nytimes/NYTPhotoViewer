@@ -3,7 +3,7 @@
 //  NYTPhotoViewer
 //
 //  Created by Mark Keefe on 3/20/15.
-//  Copyright (c) 2015 Brian Capps. All rights reserved.
+//  Copyright (c) 2015 The New York Times. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class ExamplePhoto: NSObject, NYTPhoto {
     @objc let attributedCaptionTitle: NSAttributedString
     @objc let attributedCaptionSummary: NSAttributedString
     @objc let attributedCaptionCredit: NSAttributedString
-
+    
     init(image anImage: UIImage?, placeholderImage aPlaceholderImage: UIImage?, attributedCaptionTitle anAttributedCaptionTitle: NSAttributedString, attributedCaptionSummary anAttributedCaptionSummary: NSAttributedString, attributedCaptionCredit anAttributedCaptionCredit: NSAttributedString) {
         
         image = anImage

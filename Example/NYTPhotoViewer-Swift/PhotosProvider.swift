@@ -3,21 +3,22 @@
 //  NYTPhotoViewer
 //
 //  Created by Mark Keefe on 3/20/15.
-//  Copyright (c) 2015 Brian Capps. All rights reserved.
+//  Copyright (c) 2015 The New York Times. All rights reserved.
 //
 
 import UIKit
 
 class PhotosProvider: NSObject {
     
+    static let CustomEverythingPhotoIndex = 1, DefaultLoadingSpinnerPhotoIndex = 3, NoReferenceViewPhotoIndex = 4
+
     static let photos: [ExamplePhoto] = {
         
         let NumberOfPhotos = 5
         let image = UIImage(named: "testImage"), placeholderImage = UIImage(named: "testImagePlaceholder")
         
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
-            let customEverythingPhotoIndex = 1, defaultLoadingSpinnerPhotoIndex = 3
-            return photoIndex == customEverythingPhotoIndex || photoIndex == defaultLoadingSpinnerPhotoIndex
+            return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
         }
 
         var mutablePhotos: [ExamplePhoto] = []
