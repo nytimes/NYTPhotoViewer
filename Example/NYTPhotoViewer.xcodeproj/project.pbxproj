@@ -34,6 +34,7 @@
 		8C4465061ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
 		8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
 		8CD283DE1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283DD1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift */; };
+		8CD283E01ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */; };
 		94195E1720FF535F0D8447E6 /* libPods-NYTPhotoViewer-SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C738E753BE4DA373A7BC05 /* libPods-NYTPhotoViewer-SwiftTests.a */; };
 		955BE815A0B486203B80D541 /* libPods-NYTPhotoViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1477DE9B8584BD5335F644E1 /* libPods-NYTPhotoViewer.a */; };
 		B5B252E11A8BE10B00E9973E /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
@@ -116,6 +117,7 @@
 		8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		8CD283DD1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoViewControllerTests.swift; sourceTree = "<group>"; };
+		8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoCaptionViewTests.swift; sourceTree = "<group>"; };
 		A2B2556D53F0690AADDF6739 /* Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTPhotoViewer-SwiftTests/Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				8C2AB3F41ABDF959004A2BBA /* NYTPhotosViewControllerTests.swift */,
 				8CD283DD1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift */,
 				8C2AB3F21ABDF266004A2BBA /* NYTPhotosDataSourceTests.swift */,
+				8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */,
 				8C4464F81ABCA3BA00BD79F1 /* Supporting Files */,
 			);
 			path = "NYTPhotoViewer-SwiftTests";
@@ -689,6 +692,7 @@
 				8CD283DE1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift in Sources */,
 				8C2AB3F51ABDF959004A2BBA /* NYTPhotosViewControllerTests.swift in Sources */,
 				8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */,
+				8CD283E01ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift in Sources */,
 				8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
