@@ -10,3 +10,4 @@
 #import <NYTPhotoViewer/NYTPhotosDataSource.h>
 #import <NYTPhotoViewer/NYTScalingImageView.h>
 #import <NYTPhotoViewer/NYTPhotoCaptionView.h>
+#import <NYTPhotoViewer/NYTPhotosOverlayView.h>
