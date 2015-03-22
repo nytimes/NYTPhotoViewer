@@ -59,18 +59,20 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
             
             let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
+            
             shareActivityViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, items: [AnyObject]!, NSError) in
                 if completed {
                     self.photosViewController.delegate?.photosViewController!(self.photosViewController, actionCompletedWithActivityType: activityType)
                 }
             }
+
             if (sharePopoverController?.popoverVisible == true) {
                 sharePopoverController!.dismissPopoverAnimated(true)
-                self.sharePopoverController = nil
+                sharePopoverController = nil
             }
             else {
                 sharePopoverController = UIPopoverController(contentViewController: shareActivityViewController)
-                self.sharePopoverController!.presentPopoverFromBarButtonItem(photosViewController.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+                sharePopoverController!.presentPopoverFromBarButtonItem(photosViewController.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
             }
 
             return true
