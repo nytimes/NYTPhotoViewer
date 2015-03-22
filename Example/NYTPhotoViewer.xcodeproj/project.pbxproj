@@ -37,6 +37,7 @@
 		8CD283E01ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */; };
 		8CD283E21ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E11ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift */; };
 		8CD283E41ABE624200ADD109 /* NYTScalingImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E31ABE624200ADD109 /* NYTScalingImageViewTests.swift */; };
+		8CD283E61ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E51ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift */; };
 		94195E1720FF535F0D8447E6 /* libPods-NYTPhotoViewer-SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C738E753BE4DA373A7BC05 /* libPods-NYTPhotoViewer-SwiftTests.a */; };
 		955BE815A0B486203B80D541 /* libPods-NYTPhotoViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1477DE9B8584BD5335F644E1 /* libPods-NYTPhotoViewer.a */; };
 		B5B252E11A8BE10B00E9973E /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
@@ -122,6 +123,7 @@
 		8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoCaptionViewTests.swift; sourceTree = "<group>"; };
 		8CD283E11ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotosOverlayViewTests.swift; sourceTree = "<group>"; };
 		8CD283E31ABE624200ADD109 /* NYTScalingImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTScalingImageViewTests.swift; sourceTree = "<group>"; };
+		8CD283E51ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoTransitionAnimatorTests.swift; sourceTree = "<group>"; };
 		A2B2556D53F0690AADDF6739 /* Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTPhotoViewer-SwiftTests/Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */,
 				8CD283E11ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift */,
 				8CD283E31ABE624200ADD109 /* NYTScalingImageViewTests.swift */,
+				8CD283E51ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift */,
 				8C4464F81ABCA3BA00BD79F1 /* Supporting Files */,
 			);
 			path = "NYTPhotoViewer-SwiftTests";
@@ -695,6 +698,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD283E61ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift in Sources */,
 				8C2AB3F31ABDF266004A2BBA /* NYTPhotosDataSourceTests.swift in Sources */,
 				8CD283DE1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift in Sources */,
 				8CD283E21ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift in Sources */,
