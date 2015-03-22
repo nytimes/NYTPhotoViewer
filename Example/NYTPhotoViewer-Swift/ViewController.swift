@@ -13,7 +13,6 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     @IBOutlet weak var imageButton : UIButton!
     private let photos = PhotosProvider.photos
     private var photosViewController: NYTPhotosViewController
-    private var sharePopoverController: UIPopoverController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
@@ -66,14 +65,8 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
                 }
             }
 
-            if (sharePopoverController?.popoverVisible == true) {
-                sharePopoverController!.dismissPopoverAnimated(true)
-                sharePopoverController = nil
-            }
-            else {
-                sharePopoverController = UIPopoverController(contentViewController: shareActivityViewController)
-                sharePopoverController!.presentPopoverFromBarButtonItem(photosViewController.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-            }
+            shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
+            photosViewController.presentViewController(shareActivityViewController, animated: true, completion: nil)
 
             return true
         }
