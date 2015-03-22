@@ -11,18 +11,20 @@ import UIKit
 class ExamplePhoto: NSObject, NYTPhoto {
 
     var image: UIImage?
-    let placeholderImage: UIImage?
-    let attributedCaptionTitle: NSAttributedString
-    let attributedCaptionSummary: NSAttributedString
-    let attributedCaptionCredit: NSAttributedString
-
+    var placeholderImage: UIImage?
+    var attributedCaptionTitle: NSAttributedString
+    var attributedCaptionSummary: NSAttributedString
+    var attributedCaptionCredit: NSAttributedString
+    
     init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString, attributedCaptionSummary: NSAttributedString, attributedCaptionCredit: NSAttributedString) {
-        
+
         self.image = image
         self.placeholderImage = placeholderImage
         self.attributedCaptionTitle = attributedCaptionTitle
         self.attributedCaptionSummary = attributedCaptionSummary
         self.attributedCaptionCredit = attributedCaptionCredit
+
+        super.init()
     }
 
     convenience init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString) {
