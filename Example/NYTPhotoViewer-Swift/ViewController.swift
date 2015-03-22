@@ -12,10 +12,24 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton!
     private let photos = PhotosProvider.photos
+    private var photosViewController: NYTPhotosViewController
+    private var sharePopoverController: UIPopoverController?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
+        
+        super.init(coder: aDecoder)
+    }
+    
     
     @IBAction func buttonTapped(sender: UIButton) {
-        
-        let photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
+    
         photosViewController.delegate = self
         presentViewController(photosViewController, animated: true, completion: nil)
         
@@ -39,6 +53,31 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     // MARK: - NYTPhotosViewControllerDelegate
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, handleActionButtonTappedForPhoto photo: NYTPhoto!) -> Bool {
+
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+            
+            let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
+            shareActivityViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, items: [AnyObject]!, NSError) in
+                if completed {
+                    self.photosViewController.delegate?.photosViewController!(self.photosViewController, actionCompletedWithActivityType: activityType)
+                }
+            }
+            if (sharePopoverController?.popoverVisible == true) {
+                sharePopoverController!.dismissPopoverAnimated(true)
+                self.sharePopoverController = nil
+            }
+            else {
+                sharePopoverController = UIPopoverController(contentViewController: shareActivityViewController)
+                self.sharePopoverController!.presentPopoverFromBarButtonItem(photosViewController.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+            }
+
+            return true
+        }
+        
+        return false
+    }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, referenceViewForPhoto photo: NYTPhoto!) -> UIView! {
         if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex] {
