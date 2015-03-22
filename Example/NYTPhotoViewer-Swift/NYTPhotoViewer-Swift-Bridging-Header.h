@@ -4,4 +4,8 @@
 
 #import <NYTPhotoViewer/NYTPhoto.h>
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
+
+// For Unit Tests
+#import <NYTPhotoViewer/NYTPhotoViewController.h>
 #import <NYTPhotoViewer/NYTPhotosDataSource.h>
+#import <NYTPhotoViewer/NYTScalingImageView.h>

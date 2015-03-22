@@ -1,5 +1,5 @@
 //
-//  PhotosDataSourceTests.swift
+//  NYTPhotosDataSourceTests.swift
 //  NYTPhotoViewer
 //
 //  Created by Mark Keefe on 3/21/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PhotosDataSourceTests: XCTestCase {
+class NYTPhotosDataSourceTests: XCTestCase {
 
     let photos: [ExamplePhoto] = PhotosProvider.photos
     
