@@ -19,5 +19,5 @@ Brian Capps, Brian.Capps@nytimes.com
 
 ## License
 
-NYTPhotoViewer is a private pod developed and published by The New York Times Company.  All Rights reserved.
+NYTPhotoViewer is available under the Apache 2.0 license. See the LICENSE.md file for more information.
 
