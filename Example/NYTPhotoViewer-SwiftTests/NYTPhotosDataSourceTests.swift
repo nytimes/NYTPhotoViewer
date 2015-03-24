@@ -10,7 +10,7 @@ import XCTest
 
 class NYTPhotosDataSourceTests: XCTestCase {
 
-    let photos: [ExamplePhoto] = PhotosProvider.photos
+    let photos: [ExamplePhoto] = PhotosProvider.sharedProvider.photos
     
     func testInitializerAcceptsNil() {
         XCTAssertNotNil(NYTPhotosDataSource(photos: nil))
@@ -29,6 +29,6 @@ class NYTPhotosDataSourceTests: XCTestCase {
 
     func testValidIndexReturnsCorrectPhoto() {
         let dataSource = NYTPhotosDataSource(photos: photos)
-        XCTAssertEqual(photos[1], dataSource[1] as! ExamplePhoto)
+        XCTAssertEqual(photos[1], dataSource[1] as ExamplePhoto) // Swift 1.2: as!
     }
 }

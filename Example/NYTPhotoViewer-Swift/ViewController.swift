@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton!
-    private let photos = PhotosProvider.photos
+    private let photos = PhotosProvider.sharedProvider.photos
     private var photosViewController: NYTPhotosViewController
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -75,14 +75,20 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, referenceViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex] {
+        if photo as ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
+            /** Swift 1.2
+             *  if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex]
+             */
             return nil
         }
         return imageButton
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, loadingViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex] {
+        if photo as ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+            /** Swift 1.2
+             *  if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex]
+             */
             var label = UILabel()
             label.text = "Custom Loading..."
             label.textColor = UIColor.greenColor()
@@ -92,7 +98,10 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, captionViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex] {
+        if photo as ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+            /** Swift 1.2
+             *  if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex]
+             */
             var label = UILabel()
             label.text = "Custom Caption View"
             label.textColor = UIColor.whiteColor()
@@ -114,4 +123,3 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         println("Did dismiss Photo Viewer: \(photosViewController)")
     }
 }
-

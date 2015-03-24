@@ -8,10 +8,14 @@
 
 import UIKit
 
+/**
+*   In Swift 1.2, the following file level constants can be moved inside the class for better encapsulation
+*/
+let CustomEverythingPhotoIndex = 1, DefaultLoadingSpinnerPhotoIndex = 3, NoReferenceViewPhotoIndex = 4
+
 class PhotosProvider: NSObject {
-    
-    static let CustomEverythingPhotoIndex = 1, DefaultLoadingSpinnerPhotoIndex = 3, NoReferenceViewPhotoIndex = 4
-    static let photos: [ExamplePhoto] = {
+
+    let photos: [ExamplePhoto] = {
         
         var mutablePhotos: [ExamplePhoto] = []
         var image = UIImage(named: "testImage")
@@ -21,17 +25,31 @@ class PhotosProvider: NSObject {
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
             return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
         }
-
+        
         for var photoIndex = 0; photoIndex < NumberOfPhotos; photoIndex++ {
-
+            
             image = shouldSetImageOnIndex(photoIndex) ? image : nil
             let attributedCaptionTitle = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-
+            
             let photo = ExamplePhoto(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle)
-        
+            
             mutablePhotos.append(photo)
         }
         
         return mutablePhotos
     }()
+    
+    // MARK: - Singleton 
+    
+    /**
+    *   In Swift 1.2, the following singleton can be replaced with
+    *
+    *   static let sharedInstance = PhotoProvider()
+    */
+    class var sharedProvider: PhotosProvider {
+        struct Static {
+            static let instance = PhotosProvider()
+        }
+        return Static.instance
+    }
 }

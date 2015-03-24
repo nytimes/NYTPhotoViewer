@@ -11,7 +11,7 @@ import XCTest
 
 class NYTPhotosViewControllerTests: XCTestCase {
 
-    let photos: [ExamplePhoto] = PhotosProvider.photos
+    let photos: [ExamplePhoto] = PhotosProvider.sharedProvider.photos
     var photosViewController: NYTPhotosViewController?
     
     override func setUp() {
@@ -54,18 +54,18 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization() {
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as! ExamplePhoto)
+        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
-        XCTAssertEqual(photos.last!, photosViewController!.currentlyDisplayedPhoto as! ExamplePhoto)
+        XCTAssertEqual(photos.last!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
         photosViewController?.displayPhoto(photos.first, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as! ExamplePhoto)
+        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testLeftBarButtonItemIsPopulatedAfterInitialization() {
@@ -118,7 +118,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let invalidPhoto = ExamplePhoto(image: nil, placeholderImage: nil, attributedCaptionTitle: NSAttributedString(string: "title"))
         
         photosViewController?.displayPhoto(invalidPhoto as NYTPhoto, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as! ExamplePhoto)
+        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testDisplayPhotoMovesToCorrectPhoto() {
@@ -126,7 +126,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let photoToDisplay = photos[2]
         
         photosViewController?.displayPhoto(photoToDisplay, animated: false)
-        XCTAssertEqual(photoToDisplay, photosViewController!.currentlyDisplayedPhoto as! ExamplePhoto)
+        XCTAssertEqual(photoToDisplay, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testUpdateImageForPhotoAcceptsNil() {
@@ -135,15 +135,20 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testUpdateImageForPhotoDoesNothingWhenPassedPhotoOutsideDataSource() {
-        photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos[PhotosProvider.CustomEverythingPhotoIndex])
+        photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos[CustomEverythingPhotoIndex])
         let invalidPhoto = ExamplePhoto(image: nil, placeholderImage: nil, attributedCaptionTitle: NSAttributedString())
         invalidPhoto.image = UIImage()
         
         photosViewController!.updateImageForPhoto(invalidPhoto)
         
-        if photos.count > PhotosProvider.CustomEverythingPhotoIndex,
-            let testImage = photos[PhotosProvider.CustomEverythingPhotoIndex].image {
-            XCTAssertEqual(photosViewController!.currentlyDisplayedPhoto.image, testImage)
+        if photos.count > CustomEverythingPhotoIndex {
+            if let testImage = photos[CustomEverythingPhotoIndex].image {
+                /** Swift 1.2
+                 *  if photos.count > PhotosProvider.CustomEverythingPhotoIndex,
+                 *  let testImage = photos[PhotosProvider.CustomEverythingPhotoIndex].image
+                 */
+                XCTAssertEqual(photosViewController!.currentlyDisplayedPhoto.image, testImage)
+            }
         }
     }
     
