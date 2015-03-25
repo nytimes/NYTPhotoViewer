@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton!
-    private let photos = PhotosProvider.sharedProvider.photos
+    private let photos = PhotosProvider().photos
     private var photosViewController: NYTPhotosViewController
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {

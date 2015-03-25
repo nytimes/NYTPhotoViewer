@@ -11,7 +11,7 @@ import XCTest
 
 class NYTPhotosViewControllerTests: XCTestCase {
 
-    let photos: [ExamplePhoto] = PhotosProvider.sharedProvider.photos
+    let photos: [ExamplePhoto] = PhotosProvider().photos
     var photosViewController: NYTPhotosViewController?
     
     override func setUp() {

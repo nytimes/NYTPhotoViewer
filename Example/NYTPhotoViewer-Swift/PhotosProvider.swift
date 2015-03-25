@@ -37,19 +37,5 @@ class PhotosProvider: NSObject {
         }
         
         return mutablePhotos
-    }()
-    
-    // MARK: - Singleton 
-    
-    /**
-    *   In Swift 1.2, the following singleton can be replaced with
-    *
-    *   static let sharedInstance = PhotoProvider()
-    */
-    class var sharedProvider: PhotosProvider {
-        struct Static {
-            static let instance = PhotosProvider()
-        }
-        return Static.instance
-    }
+    }()    
 }
