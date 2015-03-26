@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
-    @IBOutlet weak var imageButton : UIButton!
+    @IBOutlet weak var imageButton : UIButton?
     private let photos = PhotosProvider().photos
     private var photosViewController: NYTPhotosViewController
     
@@ -18,18 +18,19 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+        photosViewController.delegate = self
     }
 
     required init(coder aDecoder: NSCoder) {
         photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
         
         super.init(coder: aDecoder)
-    }
-    
-    
-    @IBAction func buttonTapped(sender: UIButton) {
-    
+
         photosViewController.delegate = self
+    }
+        
+    @IBAction func buttonTapped(sender: UIButton) {
         presentViewController(photosViewController, animated: true, completion: nil)
         
         updateImagesOnPhotosViewController(photosViewController, afterDelayWithPhotos: photos)
@@ -55,7 +56,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     func photosViewController(photosViewController: NYTPhotosViewController!, handleActionButtonTappedForPhoto photo: NYTPhoto!) -> Bool {
 
-        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             
             let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
             
@@ -75,7 +76,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, referenceViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
+        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
             /** Swift 1.2
              *  if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex]
              */
