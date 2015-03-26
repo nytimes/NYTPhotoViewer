@@ -112,7 +112,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id<NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
     NSLog(@"Did Display Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
 }
 
