@@ -75,7 +75,6 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		72DCB731DCC658F46D0B619E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
 		B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
 		B5DC9D811A9D04D300F4F81F /* NYTPhotosViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewControllerTests.m; sourceTree = "<group>"; };
@@ -215,7 +214,6 @@
 			children = (
 				C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */,
 				C260A188D0E255B25171088B /* README.md */,
-				B1CF36C351772D91C5ADADDE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
