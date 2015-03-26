@@ -19,7 +19,6 @@ class PhotosProvider: NSObject {
         
         var mutablePhotos: [ExamplePhoto] = []
         var image = UIImage(named: "testImage")
-        let placeholderImage = UIImage(named: "testImagePlaceholder")
         let NumberOfPhotos = 5
         
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
@@ -31,7 +30,7 @@ class PhotosProvider: NSObject {
             image = shouldSetImageOnIndex(photoIndex) ? image : nil
             let attributedCaptionTitle = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
             
-            let photo = ExamplePhoto(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle)
+            let photo = ExamplePhoto(image: image, attributedCaptionTitle: attributedCaptionTitle)
             
             mutablePhotos.append(photo)
         }

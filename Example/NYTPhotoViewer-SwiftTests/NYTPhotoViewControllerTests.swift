@@ -14,7 +14,7 @@ class NYTPhotoViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        testPhoto = ExamplePhoto(image: nil, placeholderImage: nil, attributedCaptionTitle: NSAttributedString())
+        testPhoto = ExamplePhoto(image: nil, attributedCaptionTitle: NSAttributedString())
     }
     
     override func tearDown() {

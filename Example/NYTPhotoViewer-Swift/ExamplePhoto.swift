@@ -10,29 +10,17 @@ import UIKit
 
 class ExamplePhoto: NSObject, NYTPhoto {
 
-    var image: UIImage?
-    var placeholderImage: UIImage?
+    var image:UIImage?
     var attributedCaptionTitle: NSAttributedString
-    var attributedCaptionSummary: NSAttributedString
-    var attributedCaptionCredit: NSAttributedString
+    let placeholderImage = UIImage(named: "testImagePlaceholder")
+    let attributedCaptionSummary = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+    let attributedCaptionCredit = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
     
-    init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString, attributedCaptionSummary: NSAttributedString, attributedCaptionCredit: NSAttributedString) {
+    init(image: UIImage?, attributedCaptionTitle: NSAttributedString) {
 
         self.image = image
-        self.placeholderImage = placeholderImage
         self.attributedCaptionTitle = attributedCaptionTitle
-        self.attributedCaptionSummary = attributedCaptionSummary
-        self.attributedCaptionCredit = attributedCaptionCredit
 
         super.init()
-    }
-
-    convenience init(image: UIImage?, placeholderImage: UIImage?, attributedCaptionTitle: NSAttributedString) {
-        
-        let SummaryString = "summary", CreditString = "credit"
-        let attributedSummary = NSAttributedString(string: SummaryString, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-        let attributedCredit = NSAttributedString(string: CreditString, attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
-        
-        self.init(image: image, placeholderImage: placeholderImage, attributedCaptionTitle: attributedCaptionTitle, attributedCaptionSummary: attributedSummary, attributedCaptionCredit: attributedCredit)
     }
 }
