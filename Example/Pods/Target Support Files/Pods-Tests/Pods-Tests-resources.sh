@@ -47,7 +47,13 @@ install_resource()
       ;;
   esac
 }
-          install_resource "${BUILT_PRODUCTS_DIR}/NYTPhotoViewer.bundle"
+          install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX.png"
+                    install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@2x.png"
+                    install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@3x.png"
+                    install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape.png"
+                    install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@2x.png"
+                    install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@3x.png"
+                    install_resource "../../Pod/Assets/ios"
           
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
