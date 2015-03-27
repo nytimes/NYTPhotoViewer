@@ -2,17 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "NYTimesBuilding.jpg"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "test@2x.png"
+      "filename" : "NYTimesBuilding@2x.jpg"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "file0001110781475-1-1.png"
+      "filename" : "NYTimesBuilding@3x.jpg"
     }
   ],
   "info" : {
