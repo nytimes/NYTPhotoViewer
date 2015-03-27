@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" secondItem="zGH-LE-XPk" secondAttribute="height" multiplier="80:54" id="dgz-gP-jPm"/>
                                     <constraint firstAttribute="width" constant="150" id="sED-Db-UzQ"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="testImage">
+                                <state key="normal" title="Button" image="NYTimesBuilding">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -47,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="testImage" width="800" height="540"/>
+        <image name="NYTimesBuilding" width="800" height="540"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

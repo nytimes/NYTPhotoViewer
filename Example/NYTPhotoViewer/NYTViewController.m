@@ -40,7 +40,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
         for (NYTExamplePhoto *photo in photos) {
             if (!photo.image) {
                 // Photo credit: Nic Lehoux
-                photo.image = [UIImage imageNamed:@"testImage"];
+                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
                 [photosViewController updateImageForPhoto:photo];
             }
         }
@@ -53,13 +53,13 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     for (int i = 0; i < 5; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
         
-        photo.image = [UIImage imageNamed:@"testImage"];
+        photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
         if (i == NYTViewControllerCustomEverythingPhotoIndex || i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
             photo.image = nil;
         }
         
         if (i == NYTViewControllerCustomEverythingPhotoIndex) {
-            photo.placeholderImage = [UIImage imageNamed:@"testImagePlaceholder"];
+            photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
         }
         
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
