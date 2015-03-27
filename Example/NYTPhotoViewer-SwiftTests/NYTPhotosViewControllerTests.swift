@@ -115,7 +115,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
     func testDisplayPhotoDoesNothingWhenPassedPhotoOutsideDataSource() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.first)
         
-        let invalidPhoto = ExamplePhoto(image: nil, attributedCaptionTitle: NSAttributedString(string: "title"))
+        let invalidPhoto = ExamplePhoto(attributedCaptionTitle: NSAttributedString(string: "title"))
         
         photosViewController?.displayPhoto(invalidPhoto as NYTPhoto, animated: false)
         XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
@@ -136,7 +136,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
     
     func testUpdateImageForPhotoDoesNothingWhenPassedPhotoOutsideDataSource() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos[CustomEverythingPhotoIndex])
-        let invalidPhoto = ExamplePhoto(image: nil, attributedCaptionTitle: NSAttributedString())
+        let invalidPhoto = ExamplePhoto(attributedCaptionTitle: NSAttributedString())
         invalidPhoto.image = UIImage()
         
         photosViewController!.updateImageForPhoto(invalidPhoto)

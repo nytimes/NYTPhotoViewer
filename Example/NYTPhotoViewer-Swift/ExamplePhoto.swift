@@ -16,11 +16,13 @@ class ExamplePhoto: NSObject, NYTPhoto {
     let attributedCaptionSummary = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
     let attributedCaptionCredit = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
     
-    init(image: UIImage?, attributedCaptionTitle: NSAttributedString) {
-
-        self.image = image
+    init(attributedCaptionTitle: NSAttributedString) {
         self.attributedCaptionTitle = attributedCaptionTitle
-
         super.init()
+    }
+
+    convenience init(image: UIImage?, attributedCaptionTitle: NSAttributedString) {
+        self.init(attributedCaptionTitle: attributedCaptionTitle)
+        self.image = image
     }
 }

@@ -27,10 +27,8 @@ class PhotosProvider: NSObject {
         
         for var photoIndex = 0; photoIndex < NumberOfPhotos; photoIndex++ {
             
-            image = shouldSetImageOnIndex(photoIndex) ? image : nil
-            let attributedCaptionTitle = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-            
-            let photo = ExamplePhoto(image: image, attributedCaptionTitle: attributedCaptionTitle)
+            let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+            let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(image: image, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
             
             mutablePhotos.append(photo)
         }
