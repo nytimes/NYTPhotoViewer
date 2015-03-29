@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-jQ-lJo" userLabel="ImageButton">
-                                <rect key="frame" x="-128" y="30" width="855" height="540"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-jQ-lJo" userLabel="ImageButton">
+                                <rect key="frame" x="225" y="244.5" width="150" height="111"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dUA-jQ-lJo" secondAttribute="height" multiplier="206:153" id="nv8-mc-Fyx"/>
                                     <constraint firstAttribute="width" constant="150" id="xHG-Rw-76G"/>
