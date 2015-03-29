@@ -31,7 +31,26 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
         
     @IBAction func buttonTapped(sender: UIButton) {
+        photosViewController.delegate = self
         presentViewController(photosViewController, animated: true, completion: nil)
+        
+        updateImagesOnPhotosViewController(photosViewController, afterDelayWithPhotos: photos)
+    }
+    
+    func updateImagesOnPhotosViewController(photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
+        let updateImageDelay: Int64 = 5
+        let imageName = "NYTimesBuilding"
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            for photo in self.photos {
+                if photo.image == nil {
+                    photo.image = UIImage(named: imageName)
+                    photosViewController.updateImageForPhoto(photo)
+                }
+            }
+        }
     }
     
     // MARK: - NYTPhotosViewControllerDelegate
