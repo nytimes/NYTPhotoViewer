@@ -12,23 +12,29 @@ import UIKit
 *   In Swift 1.2, the following file level constants can be moved inside the class for better encapsulation
 */
 let CustomEverythingPhotoIndex = 1, DefaultLoadingSpinnerPhotoIndex = 3, NoReferenceViewPhotoIndex = 4
+let PrimaryImageName = "NYTimesBuilding"
+let PlaceholderImageName = "NYTimesBuildingPlaceholder"
 
 class PhotosProvider: NSObject {
 
     let photos: [ExamplePhoto] = {
         
         var mutablePhotos: [ExamplePhoto] = []
-        var image = UIImage(named: "NYTimesBuilding")
+        var image = UIImage(named: PrimaryImageName)
         let NumberOfPhotos = 5
         
-        func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
+        func shouldNotSetImageOnIndex(photoIndex: Int) -> Bool {
             return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
         }
         
         for var photoIndex = 0; photoIndex < NumberOfPhotos; photoIndex++ {
             
             let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-            let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(image: image, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
+            let photo = shouldNotSetImageOnIndex(photoIndex) ? ExamplePhoto(attributedCaptionTitle: title) : ExamplePhoto(image: image, attributedCaptionTitle: title)
+            
+            if photoIndex == CustomEverythingPhotoIndex {
+                photo.placeholderImage = UIImage(named: PlaceholderImageName)
+            }
             
             mutablePhotos.append(photo)
         }

@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" secondItem="dUA-jQ-lJo" secondAttribute="height" multiplier="206:153" id="nv8-mc-Fyx"/>
                                     <constraint firstAttribute="width" constant="150" id="xHG-Rw-76G"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="NYTimesBuilding">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -46,7 +46,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="NYTimesBuilding" width="800" height="540"/>
-    </resources>
 </document>
