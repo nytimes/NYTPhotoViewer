@@ -27,12 +27,12 @@
 		8C4464E51ABCA3BA00BD79F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */; };
 		8C4464E71ABCA3BA00BD79F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */; };
 		8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */; };
-		8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */; };
 		8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */; };
 		8C4465031ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
 		8C4465041ABCA95600BD79F1 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465021ABCA95600BD79F1 /* PhotosProvider.swift */; };
 		8C4465061ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
 		8C4465071ABCAAD100BD79F1 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */; };
+		8C838AC51AC7777D00D754D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		8CD283DE1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283DD1ABE3B6400ADD109 /* NYTPhotoViewControllerTests.swift */; };
 		8CD283E01ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283DF1ABE43DC00ADD109 /* NYTPhotoCaptionViewTests.swift */; };
 		8CD283E21ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E11ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift */; };
@@ -113,7 +113,6 @@
 		8C4464E41ABCA3BA00BD79F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4464E61ABCA3BA00BD79F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C4464E91ABCA3BA00BD79F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C4464EE1ABCA3BA00BD79F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C4464F41ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYTPhotoViewer-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4464F91ABCA3BA00BD79F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 		8CD283E31ABE624200ADD109 /* NYTScalingImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTScalingImageViewTests.swift; sourceTree = "<group>"; };
 		8CD283E51ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoTransitionAnimatorTests.swift; sourceTree = "<group>"; };
 		A2B2556D53F0690AADDF6739 /* Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTPhotoViewer-SwiftTests/Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B1CF36C351772D91C5ADADDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
 		B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
 		B5DC9D811A9D04D300F4F81F /* NYTPhotosViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewControllerTests.m; sourceTree = "<group>"; };
@@ -190,6 +188,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				8C838AC41AC7774300D754D3 /* Common Resources */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* NYTPhotoViewer */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -238,7 +237,6 @@
 				6003F5A6195388D20070C39A /* NYTViewController.m */,
 				B5B252DF1A8BE10B00E9973E /* NYTExamplePhoto.h */,
 				B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			path = NYTPhotoViewer;
@@ -300,7 +298,6 @@
 				8C4465051ABCAAD100BD79F1 /* ExamplePhoto.swift */,
 				8C4464E81ABCA3BA00BD79F1 /* Main.storyboard */,
 				8C4464ED1ABCA3BA00BD79F1 /* LaunchScreen.xib */,
-				8C4464EB1ABCA3BA00BD79F1 /* Images.xcassets */,
 				8C4464E21ABCA3BA00BD79F1 /* Supporting Files */,
 			);
 			path = "NYTPhotoViewer-Swift";
@@ -336,6 +333,14 @@
 				8C4464F91ABCA3BA00BD79F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C838AC41AC7774300D754D3 /* Common Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+			);
+			name = "Common Resources";
 			sourceTree = "<group>";
 		};
 		B5DC9D981A9FAF6B00F4F81F /* Test Objects */ = {
@@ -514,8 +519,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */,
+				8C838AC51AC7777D00D754D3 /* Images.xcassets in Resources */,
 				8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */,
-				8C4464EC1ABCA3BA00BD79F1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ class PhotosProvider: NSObject {
     let photos: [ExamplePhoto] = {
         
         var mutablePhotos: [ExamplePhoto] = []
-        var image = UIImage(named: "testImage")
+        var image = UIImage(named: "NYTimesBuilding")
         let NumberOfPhotos = 5
         
         func shouldSetImageOnIndex(photoIndex: Int) -> Bool {

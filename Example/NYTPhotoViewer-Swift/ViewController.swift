@@ -38,7 +38,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     func updateImagesOnPhotosViewController(photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
         let updateImageDelay: Int64 = 5
-        let imageName = "testImage"
+        let imageName = "NYTimesBuilding"
 
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
         
