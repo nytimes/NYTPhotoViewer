@@ -11,7 +11,7 @@ import UIKit
 class ExamplePhoto: NSObject, NYTPhoto {
 
     var image:UIImage?
-    var attributedCaptionTitle: NSAttributedString
+    let attributedCaptionTitle: NSAttributedString
     let placeholderImage = UIImage(named: "NYTimesBuildingPlaceholder")
     let attributedCaptionSummary = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
     let attributedCaptionCredit = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
