@@ -12,25 +12,9 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton?
     private let photos = PhotosProvider().photos
-    private var photosViewController: NYTPhotosViewController
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        photosViewController.delegate = self
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        photosViewController = NYTPhotosViewController(photos: photos as [AnyObject]!)
-        
-        super.init(coder: aDecoder)
-
-        photosViewController.delegate = self
-    }
-        
     @IBAction func buttonTapped(sender: UIButton) {
+        let photosViewController = NYTPhotosViewController(photos: self.photos)
         photosViewController.delegate = self
         presentViewController(photosViewController, animated: true, completion: nil)
         
@@ -67,7 +51,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
             
             shareActivityViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, items: [AnyObject]!, NSError) in
                 if completed {
-                    self.photosViewController.delegate?.photosViewController!(self.photosViewController, actionCompletedWithActivityType: activityType)
+                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType)
                 }
             }
 
