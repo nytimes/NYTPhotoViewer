@@ -38,7 +38,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let buttonImage = UIImage(named: PrimaryImageName)
-        imageButton?.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        imageButton?.setBackgroundImage(buttonImage, forState: .Normal)
     }
     
     // MARK: - NYTPhotosViewControllerDelegate
