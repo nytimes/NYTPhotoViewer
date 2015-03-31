@@ -112,8 +112,8 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo {
-    NSLog(@"Did Display Photo: %@ identifier: %@", photo, @([self.photos indexOfObject:photo]).stringValue);
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
+    NSLog(@"Did Display Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
