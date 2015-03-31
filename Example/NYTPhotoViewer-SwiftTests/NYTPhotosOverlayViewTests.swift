@@ -20,14 +20,14 @@ class NYTPhotosOverlayViewTests: XCTestCase {
         let overlayView = NYTPhotosOverlayView()
         let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: nil, action: nil)
         overlayView.leftBarButtonItem = leftBarButtonItem
-        XCTAssert(leftBarButtonItem == overlayView.navigationBar.items.first!.leftBarButtonItem)
+        XCTAssert(leftBarButtonItem == overlayView.navigationBar.items.first?.leftBarButtonItem)
     }
     
     func testRightBarButtonItemSetterAffectsNavigationBar() {
         let overlayView = NYTPhotosOverlayView()
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: nil, action: nil)
         overlayView.rightBarButtonItem = rightBarButtonItem
-        XCTAssert(rightBarButtonItem == overlayView.navigationBar.items.first!.rightBarButtonItem)
+        XCTAssert(rightBarButtonItem == overlayView.navigationBar.items.first?.rightBarButtonItem)
     }
     
     func testTitleSetterAffectsNavigationBar() {

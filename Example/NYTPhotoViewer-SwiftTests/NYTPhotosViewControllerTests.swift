@@ -25,65 +25,65 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
 
     func testPanGestureRecognizerExistsAfterInitialization() {
-        XCTAssertNotNil(photosViewController!.panGestureRecognizer)
+        XCTAssertNotNil(photosViewController?.panGestureRecognizer)
     }
     
     func testPanGestureRecognizerHasAssociatedView() {
-        XCTAssertNotNil(photosViewController!.panGestureRecognizer.view)
+        XCTAssertNotNil(photosViewController?.panGestureRecognizer.view)
     }
     
     func testSingleTapGestureRecognizerExistsAfterInitialization() {
-        XCTAssertNotNil(photosViewController!.singleTapGestureRecognizer)
+        XCTAssertNotNil(photosViewController?.singleTapGestureRecognizer)
     }
     
     func testSingleTapGestureRecognizerHasAssociatedView() {
-        XCTAssertNotNil(photosViewController!.singleTapGestureRecognizer.view)
+        XCTAssertNotNil(photosViewController?.singleTapGestureRecognizer.view)
     }
     
     func testPageViewControllerExistsAfterInitialization() {
-        XCTAssertNotNil(photosViewController!.pageViewController)
+        XCTAssertNotNil(photosViewController?.pageViewController)
     }
     
     func testPageViewControllerDoesNotHaveAssociatedSuperviewBeforeViewLoads() {
-        XCTAssertNil(photosViewController!.pageViewController.view.superview)
+        XCTAssertNil(photosViewController?.pageViewController.view.superview)
     }
     
     func testPageViewControllerHasAssociatedSuperviewAfterViewLoads() {
-        photosViewController!.view = photosViewController?.view // Referencing the view loads it.
-        XCTAssertNotNil(photosViewController!.pageViewController.view.superview)
+        photosViewController?.view = photosViewController?.view // Referencing the view loads it.
+        XCTAssertNotNil(photosViewController?.pageViewController.view.superview)
     }
     
     func testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization() {
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
-        XCTAssertEqual(photos.last!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.last!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
         photosViewController?.displayPhoto(photos.first, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testLeftBarButtonItemIsPopulatedAfterInitialization() {
-        XCTAssertNotNil(photosViewController!.leftBarButtonItem)
+        XCTAssertNotNil(photosViewController?.leftBarButtonItem)
     }
     
     func testLeftBarButtonItemIsNilAfterSettingToNil() {
-        photosViewController!.leftBarButtonItem = nil
-        XCTAssertNil(photosViewController!.leftBarButtonItem)
+        photosViewController?.leftBarButtonItem = nil
+        XCTAssertNil(photosViewController?.leftBarButtonItem)
     }
     
     func testRightBarButtonItemIsPopulatedAfterInitialization() {
-        XCTAssertNotNil(photosViewController!.rightBarButtonItem)
+        XCTAssertNotNil(photosViewController?.rightBarButtonItem)
     }
     
     func testRightBarButtonItemIsNilAfterSettingToNil() {
-        photosViewController!.rightBarButtonItem = nil
-        XCTAssertNil(photosViewController!.rightBarButtonItem)
+        photosViewController?.rightBarButtonItem = nil
+        XCTAssertNil(photosViewController?.rightBarButtonItem)
     }
 
     func testConvenienceInitializerAcceptsNil() {
@@ -118,7 +118,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let invalidPhoto = ExamplePhoto(attributedCaptionTitle: NSAttributedString(string: "title"))
         
         photosViewController?.displayPhoto(invalidPhoto as NYTPhoto, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testDisplayPhotoMovesToCorrectPhoto() {
@@ -126,7 +126,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let photoToDisplay = photos[2]
         
         photosViewController?.displayPhoto(photoToDisplay, animated: false)
-        XCTAssertEqual(photoToDisplay, photosViewController!.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photoToDisplay, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
     }
     
     func testUpdateImageForPhotoAcceptsNil() {
@@ -139,7 +139,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let invalidPhoto = ExamplePhoto(attributedCaptionTitle: NSAttributedString())
         invalidPhoto.image = UIImage()
         
-        photosViewController!.updateImageForPhoto(invalidPhoto)
+        photosViewController?.updateImageForPhoto(invalidPhoto)
         
         if photos.count > CustomEverythingPhotoIndex {
             if let testImage = photos[CustomEverythingPhotoIndex].image {
@@ -147,7 +147,9 @@ class NYTPhotosViewControllerTests: XCTestCase {
                  *  if photos.count > PhotosProvider.CustomEverythingPhotoIndex,
                  *  let testImage = photos[PhotosProvider.CustomEverythingPhotoIndex].image
                  */
-                XCTAssertEqual(photosViewController!.currentlyDisplayedPhoto.image, testImage)
+                if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
+                    XCTAssertEqual(currentlyDisplayedPhoto.image, testImage)
+                }
             }
         }
     }
@@ -155,11 +157,14 @@ class NYTPhotosViewControllerTests: XCTestCase {
     func testUpdateImageForPhotoUpdatesImage() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.first)
 
-        var photoToUpdate = photos.first
-        photoToUpdate!.image = UIImage()
-        
-        photosViewController!.updateImageForPhoto(photoToUpdate)
-        
-        XCTAssertEqual(photosViewController!.currentlyDisplayedPhoto.image, photoToUpdate!.image!)
+        if let photoToUpdate = photos.first {
+            photoToUpdate.image = UIImage()
+            
+            photosViewController?.updateImageForPhoto(photoToUpdate)
+            
+            if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
+                XCTAssertEqual(currentlyDisplayedPhoto.image, photoToUpdate.image!)
+            }
+        }
     }
 }
