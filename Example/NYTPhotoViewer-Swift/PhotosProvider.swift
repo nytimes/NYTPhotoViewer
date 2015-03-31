@@ -23,13 +23,13 @@ class PhotosProvider: NSObject {
         var image = UIImage(named: PrimaryImageName)
         let NumberOfPhotos = 5
         
-        func shouldNotSetImageOnIndex(photoIndex: Int) -> Bool {
-            return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
+        func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
+            return photoIndex != CustomEverythingPhotoIndex && photoIndex != DefaultLoadingSpinnerPhotoIndex
         }
-
+        
         for photoIndex in 0 ..< NumberOfPhotos {
             let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-            let photo = shouldNotSetImageOnIndex(photoIndex) ? ExamplePhoto(attributedCaptionTitle: title) : ExamplePhoto(image: image, attributedCaptionTitle: title)
+            let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(image: image, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
             
             if photoIndex == CustomEverythingPhotoIndex {
                 photo.placeholderImage = UIImage(named: PlaceholderImageName)
