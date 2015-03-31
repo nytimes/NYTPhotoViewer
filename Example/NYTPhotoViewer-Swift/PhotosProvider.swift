@@ -26,9 +26,8 @@ class PhotosProvider: NSObject {
         func shouldNotSetImageOnIndex(photoIndex: Int) -> Bool {
             return photoIndex == CustomEverythingPhotoIndex || photoIndex == DefaultLoadingSpinnerPhotoIndex
         }
-        
-        for var photoIndex = 0; photoIndex < NumberOfPhotos; photoIndex++ {
-            
+
+        for photoIndex in 0 ..< NumberOfPhotos {
             let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
             let photo = shouldNotSetImageOnIndex(photoIndex) ? ExamplePhoto(attributedCaptionTitle: title) : ExamplePhoto(image: image, attributedCaptionTitle: title)
             
