@@ -3,3 +3,4 @@ podfile: Example/Podfile
 
 xcode_workspace: Example/NYTPhotoViewer.xcworkspace
 xcode_scheme: NYTPhotoViewer
+xcode_sdk: iphonesimulator
