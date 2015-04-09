@@ -71,6 +71,36 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return photos;
 }
 
++ (NSArray *)moreTestPhotos {
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    for (int i = 0; i < 5; i++) {
+        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
+        
+        photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+        if (i == NYTViewControllerCustomEverythingPhotoIndex || i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
+            photo.image = nil;
+        }
+        
+        if (i == NYTViewControllerCustomEverythingPhotoIndex) {
+            photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
+        }
+        
+        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 6).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+        [photos addObject:photo];
+    }
+    
+    return photos;
+}
+
+-(void)loadMorePhotos:(NYTPhotosViewController*)photosViewController {
+    NSArray* morePhotos = [[self class] moreTestPhotos];
+    self.photos = [self.photos arrayByAddingObjectsFromArray:morePhotos];
+    [photosViewController addMorePhotosToDataSource:morePhotos];
+}
+
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
@@ -114,6 +144,10 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
     NSLog(@"Did Display Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
+    // This simulates the adding of more images into the data source
+    if ([photo isEqual:self.photos[NYTViewControllerDefaultLoadingSpinnerPhotoIndex]] && self.photos.count == 5) {
+        [self loadMorePhotos:photosViewController];
+    }
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
