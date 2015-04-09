@@ -57,4 +57,12 @@
  */
 - (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)photoIndex;
 
+/**
+ *  Add more photos to the data source array.
+ *
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol to add to the existing photos array.
+ *
+ */
+- (void)addMorePhotos:(NSArray *)photos;
+
 @end
