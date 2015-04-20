@@ -14,7 +14,7 @@
 @protocol NYTPhotosViewControllerDelegate;
 
 // All notifications will have the `NYTPhotosViewController` instance set as the object.
-extern NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification;
+extern NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification;
 extern NSString * const NYTPhotosViewControllerWillDismissNotification;
 extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
@@ -110,7 +110,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param photo                The photo object that was just displayed.
  *  @param photoIndex           The index of the photo that was just displayed.
  */
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex;
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex;
 
 /**
  *  Called immediately before the photos view controller is about to start dismissal. This will be the beginning of the interactive panning to dismiss, if it is enabled and performed.

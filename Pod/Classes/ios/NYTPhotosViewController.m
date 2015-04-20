@@ -16,7 +16,7 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 
-NSString * const NYTPhotosViewControllerDidDisplayPhotoNotification = @"NYTPhotosViewControllerDidDisplayPhotoNotification";
+NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
 NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
 
@@ -371,12 +371,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     return nil;
 }
 
-- (void)didDisplayPhoto:(id <NYTPhoto>)photo {
-    if ([self.delegate respondsToSelector:@selector(photosViewController:didDisplayPhoto:atIndex:)]) {
-        [self.delegate photosViewController:self didDisplayPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
+- (void)didNavigateToPhoto:(id <NYTPhoto>)photo {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhoto:atIndex:)]) {
+        [self.delegate photosViewController:self didNavigateToPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDisplayPhotoNotification object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidNavigateToPhotoNotification object:self];
 }
 
 - (id <NYTPhoto>)currentlyDisplayedPhoto {
@@ -439,7 +439,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         [self updateOverlayInformation];
         
         UIViewController <NYTPhotoContainer> *photoViewController = pageViewController.viewControllers.firstObject;
-        [self didDisplayPhoto:photoViewController.photo];
+        [self didNavigateToPhoto:photoViewController.photo];
     }
 }
 
