@@ -116,7 +116,7 @@
 }
 
 - (NSArray *)rightBarButtonItems {
-    return self.rightBarButtonItems;
+    return self.navigationItem.rightBarButtonItems;
 }
 
 - (void)setRightBarButtonItems:(NSArray *)rightBarButtonItems {
