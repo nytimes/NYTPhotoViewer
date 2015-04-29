@@ -87,6 +87,17 @@
     XCTAssertNil(photosViewController.leftBarButtonItem);
 }
 
+- (void)testLeftBarButtonItemsArePopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    XCTAssertNotNil(photosViewController.leftBarButtonItems);
+}
+
+- (void)testLeftBarButtonItemsAreNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    photosViewController.leftBarButtonItems = nil;
+    XCTAssertNil(photosViewController.leftBarButtonItems);
+}
+
 - (void)testRightBarButtonItemIsPopulatedAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.rightBarButtonItem);
@@ -96,6 +107,17 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     photosViewController.rightBarButtonItem = nil;
     XCTAssertNil(photosViewController.rightBarButtonItem);
+}
+
+- (void)testRightBarButtonItemsArePopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    XCTAssertNotNil(photosViewController.rightBarButtonItems);
+}
+
+- (void)testRightBarButtonItemsAreNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    photosViewController.rightBarButtonItems = nil;
+    XCTAssertNil(photosViewController.rightBarButtonItems);
 }
 
 - (void)testConvenienceInitializerAcceptsNil {
