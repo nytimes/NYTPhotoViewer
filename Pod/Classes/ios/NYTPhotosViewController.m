@@ -252,12 +252,28 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     self.overlayView.leftBarButtonItem = leftBarButtonItem;
 }
 
+- (NSArray *)leftBarButtonItems {
+    return self.overlayView.leftBarButtonItems;
+}
+
+- (void)setLeftBarButtonItems:(NSArray *)leftBarButtonItems {
+    self.overlayView.leftBarButtonItems = leftBarButtonItems;
+}
+
 - (UIBarButtonItem *)rightBarButtonItem {
     return self.overlayView.rightBarButtonItem;
 }
 
 - (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
     self.overlayView.rightBarButtonItem = rightBarButtonItem;
+}
+
+- (NSArray *)rightBarButtonItems {
+    return self.overlayView.rightBarButtonItems;
+}
+
+- (void)setRightBarButtonItems:(NSArray *)rightBarButtonItems {
+    self.overlayView.rightBarButtonItems = rightBarButtonItems;
 }
 
 - (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
