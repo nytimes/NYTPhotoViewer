@@ -112,7 +112,7 @@
 }
 
 - (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
-    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
+    [self.navigationItem setRightBarButtonItem:rightBarButtonItem animated:NO];
 }
 
 - (NSArray *)rightBarButtonItems {
