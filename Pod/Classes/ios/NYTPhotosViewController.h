@@ -53,7 +53,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 /**
  *  The left bar button items overlaying the photo.
  */
-@property (nonatomic) NSArray *leftBarButtonItems;
+@property (nonatomic, copy) NSArray *leftBarButtonItems;
 
 /**
  *  The right bar button item overlaying the photo.
@@ -63,7 +63,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 /**
  *  The right bar button items overlaying the photo.
  */
-@property (nonatomic) NSArray *rightBarButtonItems;
+@property (nonatomic, copy) NSArray *rightBarButtonItems;
 
 /**
  *  The object that acts as the delegate of the `NYTPhotosViewController`.
