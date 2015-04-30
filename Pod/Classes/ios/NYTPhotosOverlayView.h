@@ -36,7 +36,7 @@
 /**
  *  The bar button items appearing at the top left of the overlay.
  */
-@property (nonatomic) NSArray *leftBarButtonItems;
+@property (nonatomic, copy) NSArray *leftBarButtonItems;
 
 /**
  *  The bar button item appearing at the top right of the overlay.
@@ -46,7 +46,7 @@
 /**
  *  The bar button items appearing at the top right of the overlay.
  */
-@property (nonatomic) NSArray *rightBarButtonItems;
+@property (nonatomic, copy) NSArray *rightBarButtonItems;
 
 /**
  *  A view representing the caption for the photo, which will be set to full width and locked to the bottom. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
