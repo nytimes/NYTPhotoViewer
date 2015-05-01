@@ -99,12 +99,28 @@
     [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:NO];
 }
 
+- (NSArray *)leftBarButtonItems {
+    return self.navigationItem.leftBarButtonItems;
+}
+
+- (void)setLeftBarButtonItems:(NSArray *)leftBarButtonItems {
+    [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
+}
+
 - (UIBarButtonItem *)rightBarButtonItem {
     return self.navigationItem.rightBarButtonItem;
 }
 
 - (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
-    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
+    [self.navigationItem setRightBarButtonItem:rightBarButtonItem animated:NO];
+}
+
+- (NSArray *)rightBarButtonItems {
+    return self.navigationItem.rightBarButtonItems;
+}
+
+- (void)setRightBarButtonItems:(NSArray *)rightBarButtonItems {
+    [self.navigationItem setRightBarButtonItems:rightBarButtonItems animated:NO];
 }
 
 - (NSString *)title {
