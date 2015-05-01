@@ -101,8 +101,8 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, didDisplayPhoto photo: NYTPhoto!, atIndex photoIndex: UInt) {
-        println("Did Display Photo: \(photo) identifier: \(photoIndex)")
+    func photosViewController(photosViewController: NYTPhotosViewController!, didNavigateToPhoto photo: NYTPhoto!, atIndex photoIndex: UInt) {
+        println("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, actionCompletedWithActivityType activityType: String!) {
