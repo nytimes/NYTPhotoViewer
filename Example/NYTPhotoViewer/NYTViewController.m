@@ -104,6 +104,10 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
+- (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
+    return 10.0f;
+}
+
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
     if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};

@@ -45,6 +45,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
+@property (nonatomic) id <NYTPhoto> initialPhoto;
+
 @end
 
 @implementation NYTPhotosViewController
@@ -84,7 +86,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [self setupPageViewControllerWithInitialPhoto:self.initialPhoto];
+
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
@@ -154,8 +158,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
         
         _notificationCenter = [[NSNotificationCenter alloc] init];
-        
-        [self setupPageViewControllerWithInitialPhoto:initialPhoto];
+
+        _initialPhoto = initialPhoto;
     }
     
     return self;
@@ -380,7 +384,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView notificationCenter:self.notificationCenter];
         photoViewController.delegate = self;
         [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
-        
+
+        if([self.delegate respondsToSelector:@selector(photosViewController:maximumZoomScaleForPhoto:)]) {
+            CGFloat maximumZoomScale = [self.delegate photosViewController:self maximumZoomScaleForPhoto:photo];
+            photoViewController.scalingImageView.maximumZoomScale = maximumZoomScale;
+        }
+
         return photoViewController;
     }
     

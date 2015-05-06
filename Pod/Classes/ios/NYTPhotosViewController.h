@@ -167,6 +167,16 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
+*  Returns the maximum zoom scale for a given object conforming to the `NYTPhoto` protocol.
+*
+*  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+*  @param photo                The photo for which the maximum zoom scale is requested.
+*
+*  @return The maximum zoom scale for the given photo.
+*/
+- (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo;
+
+/**
  *  Called when a photo is long pressed.
  *
  *  @param photosViewController       The `NYTPhotosViewController` instance that sent the delegate message.
