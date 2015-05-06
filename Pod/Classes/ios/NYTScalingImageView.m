@@ -88,7 +88,7 @@
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;
-        self.maximumZoomScale = 1.0;
+        self.maximumZoomScale = MAX(minScale, self.maximumZoomScale);
         
         self.zoomScale = self.minimumZoomScale;
         
