@@ -13,6 +13,7 @@
 static const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
 static const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
 static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
+static const NSUInteger NYTViewControllerCustomMaxZoomScalePhotoIndex = 5;
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
@@ -50,7 +51,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 + (NSArray *)newTestPhotos {
     NSMutableArray *photos = [NSMutableArray array];
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
         
         photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
@@ -102,6 +103,14 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     }
     
     return nil;
+}
+
+- (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
+    if ([photo isEqual:self.photos[NYTViewControllerCustomMaxZoomScalePhotoIndex]]) {
+        return 10.0f;
+    }
+
+    return 1.0f;
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
