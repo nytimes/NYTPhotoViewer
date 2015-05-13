@@ -29,6 +29,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
+@property (nonatomic) UIPopoverController *activityPopoverController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) UITapGestureRecognizer *singleTapGestureRecognizer;
@@ -239,8 +240,27 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
                 [self.delegate photosViewController:self actionCompletedWithActivityType:activityType];
             }
         };
-        
-        [self presentViewController:activityViewController animated:YES completion:nil];
+
+        [self displayActivityViewController:activityViewController animated:YES];
+    }
+}
+
+- (void)displayActivityViewController:(UIActivityViewController *)controller animated:(BOOL)animated {
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:controller animated:animated completion:nil];
+    }
+    else {
+        if ([controller respondsToSelector:@selector(popoverPresentationController)]) {
+            controller.popoverPresentationController.barButtonItem = self.rightBarButtonItem;
+            [self presentViewController:controller animated:animated completion:nil];
+        }
+        else {
+            self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+            [self.activityPopoverController presentPopoverFromBarButtonItem:self.rightBarButtonItem
+                                               permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                               animated:animated];
+        }
     }
 }
 
