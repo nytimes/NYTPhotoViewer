@@ -75,10 +75,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, loadingViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            /** Swift 1.2
-             *  if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex]
-             */
+        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
             var label = UILabel()
             label.text = "Custom Loading..."
             label.textColor = UIColor.greenColor()
@@ -88,10 +85,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, captionViewForPhoto photo: NYTPhoto!) -> UIView! {
-        if photo as ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            /** Swift 1.2
-             *  if photo as! ExamplePhoto == photos[PhotosProvider.CustomEverythingPhotoIndex]
-             */
+        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
             var label = UILabel()
             label.text = "Custom Caption View"
             label.textColor = UIColor.whiteColor()

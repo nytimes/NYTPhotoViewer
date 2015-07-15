@@ -54,18 +54,18 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization() {
-        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as! ExamplePhoto)
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
-        XCTAssertEqual(photos.last!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.last!, photosViewController?.currentlyDisplayedPhoto as! ExamplePhoto)
     }
     
     func testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.last)
         photosViewController?.displayPhoto(photos.first, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as! ExamplePhoto)
     }
     
     func testLeftBarButtonItemIsPopulatedAfterInitialization() {
@@ -118,7 +118,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let invalidPhoto = ExamplePhoto(attributedCaptionTitle: NSAttributedString(string: "title"))
         
         photosViewController?.displayPhoto(invalidPhoto as NYTPhoto, animated: false)
-        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos.first!, photosViewController?.currentlyDisplayedPhoto as! ExamplePhoto)
     }
     
     func testDisplayPhotoMovesToCorrectPhoto() {
@@ -126,7 +126,7 @@ class NYTPhotosViewControllerTests: XCTestCase {
         let photoToDisplay = photos[2]
         
         photosViewController?.displayPhoto(photoToDisplay, animated: false)
-        XCTAssertEqual(photoToDisplay, photosViewController?.currentlyDisplayedPhoto as ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photoToDisplay, photosViewController?.currentlyDisplayedPhoto as! ExamplePhoto)
     }
     
     func testUpdateImageForPhotoAcceptsNil() {
