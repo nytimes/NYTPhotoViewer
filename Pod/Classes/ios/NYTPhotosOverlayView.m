@@ -59,6 +59,8 @@
     
     // Make navigation bar background fully transparent.
     self.navigationBar.backgroundColor = [UIColor clearColor];
+    self.navigationBar.barTintColor = nil;
+    self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
