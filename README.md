@@ -21,10 +21,27 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Installation
 
+### CocoaPods
+
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "NYTPhotoViewer"
+
+### Carthage
+
+NYTPhotoView is also available through [Carthage](http://github.com/carthage/carthage).
+
+You can install Carthage with [Homebrew](http://brew.sh) using the following command
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To add NYTPhotoViewer to your Xcode project using Carthage, add the following line to your `Cartfile`:
+```
+github "NYTimes/NYTPhotoViewer"
+```
 
 ## Requirements
 
