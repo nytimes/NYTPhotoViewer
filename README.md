@@ -1,6 +1,8 @@
 # NYTPhotoViewer
 
-NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more. 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
 ## Demo
 
@@ -21,10 +23,27 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Installation
 
+### CocoaPods
+
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "NYTPhotoViewer"
+
+### Carthage
+
+NYTPhotoView is also available through [Carthage](http://github.com/carthage/carthage).
+
+You can install Carthage with [Homebrew](http://brew.sh) using the following command
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To add NYTPhotoViewer to your Xcode project using Carthage, add the following line to your `Cartfile`:
+```
+github "NYTimes/NYTPhotoViewer"
+```
 
 ## Requirements
 
@@ -44,7 +63,6 @@ If you experience any interoperability difficulties, please open an issue or pul
 
 * Animate bounds changes like Tweetbot and Facebook.
 * Publicly expose the data source property.
-* [Carthage](https://github.com/Carthage/Carthage) support.
 * An additional sample project written in Swift (currently in pull request).
 
 ## License
