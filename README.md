@@ -1,6 +1,8 @@
 # NYTPhotoViewer
 
-NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more. 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
 ## Demo
 
@@ -61,7 +63,6 @@ If you experience any interoperability difficulties, please open an issue or pul
 
 * Animate bounds changes like Tweetbot and Facebook.
 * Publicly expose the data source property.
-* [Carthage](https://github.com/Carthage/Carthage) support.
 * An additional sample project written in Swift (currently in pull request).
 
 ## License
