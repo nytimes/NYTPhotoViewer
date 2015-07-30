@@ -17,6 +17,10 @@
 extern NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification;
 extern NSString * const NYTPhotosViewControllerWillDismissNotification;
 extern NSString * const NYTPhotosViewControllerDidDismissNotification;
+extern NSString * const NYTPhotosViewControllerWillHideOverlayViewNotification;
+extern NSString * const NYTPhotosViewControllerDidHideOverlayViewNotification;
+extern NSString * const NYTPhotosViewControllerWillShowOverlayViewNotification;
+extern NSString * const NYTPhotosViewControllerDidShowOverlayViewNotification;
 
 @interface NYTPhotosViewController : UIViewController
 
