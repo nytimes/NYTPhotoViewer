@@ -19,6 +19,10 @@
 NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
 NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
+NSString * const NYTPhotosViewControllerWillHideOverlayViewNotification = @"NYTPhotosViewControllerWillHideOverlayViewNotification";
+NSString * const NYTPhotosViewControllerDidHideOverlayViewNotification = @"NYTPhotosViewControllerDidHideOverlayViewNotification";
+NSString * const NYTPhotosViewControllerWillShowOverlayViewNotification = @"NYTPhotosViewControllerWillShowOverlayViewNotification";
+NSString * const NYTPhotosViewControllerDidShowOverlayViewNotification = @"NYTPhotosViewControllerDidShowOverlayViewNotification";
 
 static const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
@@ -373,6 +377,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
+    [self setOverlayViewHidden:hidden animated:animated notification:^(NSString *notification) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:notification object:nil];
+    }];
+}
+
+- (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated notification:(void(^)(NSString *notification))notification {
     if (hidden == self.overlayView.hidden) {
         return;
     }
@@ -382,15 +392,19 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         
         self.overlayView.alpha = hidden ? 1.0 : 0.0;
         
+        notification(hidden ? NYTPhotosViewControllerWillHideOverlayViewNotification : NYTPhotosViewControllerWillShowOverlayViewNotification);
         [UIView animateWithDuration:NYTPhotosViewControllerOverlayAnimationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionAllowUserInteraction animations:^{
             self.overlayView.alpha = hidden ? 0.0 : 1.0;
         } completion:^(BOOL finished) {
             self.overlayView.alpha = 1.0;
             self.overlayView.hidden = hidden;
+            notification(hidden ? NYTPhotosViewControllerDidHideOverlayViewNotification : NYTPhotosViewControllerDidShowOverlayViewNotification);
         }];
     }
     else {
+        notification(hidden ? NYTPhotosViewControllerWillHideOverlayViewNotification : NYTPhotosViewControllerWillShowOverlayViewNotification);
         self.overlayView.hidden = hidden;
+        notification(hidden ? NYTPhotosViewControllerDidHideOverlayViewNotification : NYTPhotosViewControllerDidShowOverlayViewNotification);
     }
 }
 
