@@ -45,7 +45,6 @@ If you experience any interoperability difficulties, please open an issue or pul
 * Animate bounds changes like Tweetbot and Facebook.
 * Publicly expose the data source property.
 * [Carthage](https://github.com/Carthage/Carthage) support.
-* An additional sample project written in Swift (currently in pull request).
 
 ## License
 
