@@ -1,5 +1,0 @@
-#include "Pods-Tests-NYTPhotoViewer.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_LDFLAGS = ${PODS_TESTS_NYTPHOTOVIEWER_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}

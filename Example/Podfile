@@ -1,19 +1,19 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'NYTPhotoViewer', :exclusive => true do
-  pod "NYTPhotoViewer", :path => "../"
+  pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
-  pod "NYTPhotoViewer", :path => "../"
+  pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
   pod 'OCMock', '~> 3.1'
 end
 
 target 'NYTPhotoViewer-Swift', :exclusive => true do
-    pod "NYTPhotoViewer", :path => "../"
+    pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
 end
 
 target 'NYTPhotoViewer-SwiftTests', :exclusive => true do
-    pod "NYTPhotoViewer", :path => "../"
+    pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
     pod 'OCMock', '~> 3.1'
 end

@@ -457,6 +457,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NYT;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "The New York Times";
 				TargetAttributes = {
