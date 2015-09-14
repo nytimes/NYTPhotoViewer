@@ -10,6 +10,10 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
+
 NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
 
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
@@ -72,12 +76,16 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     if (self) {
         _photo = photo;
         
-        UIImage *photoImage = photo.image ?: photo.placeholderImage;
+        NSData *photoImage = photo.imageData ? photo.imageData : UIImagePNGRepresentation((photo.image ?: photo.placeholderImage));
         
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
         _scalingImageView.delegate = self;
         
+#ifdef ANIMATED_GIF_SUPPORT
+        if (!photo.imageData && !photo.image) {
+#else
         if (!photo.image) {
+#endif
             [self setupLoadingView:loadingView];
         }
         
@@ -106,7 +114,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 }
 
 - (void)updateImage:(UIImage *)image {
-    [self.scalingImageView updateImage:image];
+    [self.scalingImageView updateImageData:UIImagePNGRepresentation(image)];
     
     if (image) {
         [self.loadingView removeFromSuperview];
