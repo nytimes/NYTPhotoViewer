@@ -55,6 +55,8 @@
 		B5DC9D9A1A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D991A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m */; };
 		C2764961179EFD3A4397B4F6 /* libPods-NYTPhotoViewer-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C25ACCAFE75703E4107C21D /* libPods-NYTPhotoViewer-Swift.a */; };
 		C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */; };
+		EC1B97111BA675DC00C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
+		EC1B97121BA675DC00C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,7 @@
 		B5DC9D991A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSourceTests.m; sourceTree = "<group>"; };
 		C260A188D0E255B25171088B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NYTPhotoViewer.podspec; path = ../NYTPhotoViewer.podspec; sourceTree = "<group>"; };
+		EC1B97101BA675DC00C9C9FD /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		FA400B174395C59C5DF305C6 /* Pods-NYTPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +232,7 @@
 		6003F593195388D20070C39A /* NYTPhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				EC1B97101BA675DC00C9C9FD /* giphy.gif */,
 				6003F59C195388D20070C39A /* NYTAppDelegate.h */,
 				6003F59D195388D20070C39A /* NYTAppDelegate.m */,
 				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
@@ -503,6 +507,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
+				EC1B97111BA675DC00C9C9FD /* giphy.gif in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +526,7 @@
 			files = (
 				8C4464EA1ABCA3BA00BD79F1 /* Main.storyboard in Resources */,
 				8C838AC51AC7777D00D754D3 /* Images.xcassets in Resources */,
+				EC1B97121BA675DC00C9C9FD /* giphy.gif in Resources */,
 				8C4464EF1ABCA3BA00BD79F1 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
