@@ -9,7 +9,13 @@
 @import UIKit;
 @import XCTest;
 
+#define kGifPath  [[NSBundle bundleForClass:self.class] pathForResource:@"giphy" ofType:@"gif"]
+
 #import <NYTPhotoViewer/NYTScalingImageView.h>
+
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
 
 @interface NYTScalingImageViewTests : XCTestCase
 
@@ -18,28 +24,37 @@
 @implementation NYTScalingImageViewTests
 
 - (void)testInitializationAcceptsNil {
-    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImage:nil frame:CGRectZero]);
+    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImageData:nil frame:CGRectZero]);
 }
 
 - (void)testImageViewExistsAfterInitialization {
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:nil frame:CGRectZero];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:nil frame:CGRectZero];
     XCTAssertNotNil(scalingImageView.imageView);
 }
 
 - (void)testInitializationSetsImage {
-    UIImage *image = [[UIImage alloc] init];
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image frame:CGRectZero];
-    XCTAssertEqualObjects(image, scalingImageView.imageView.image);
+    NSData *image = [NSData dataWithContentsOfFile:kGifPath];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:image frame:CGRectZero];
+
+#ifdef ANIMATED_GIF_SUPPORT
+    XCTAssertEqual(image, scalingImageView.imageView.animatedImage.data);
+#else
+    XCTAssertEqual(image, scalingImageView.imageView.image);
+#endif
 }
 
 - (void)testUpdateImageUpdatesImage {
-    UIImage *image1 = [[UIImage alloc] init];
-    UIImage *image2 = [[UIImage alloc] init];
+    NSData *image1 = [NSData dataWithContentsOfFile:kGifPath];
+    NSData *image2 = [NSData dataWithContentsOfFile:kGifPath];
     
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image1 frame:CGRectZero];
-    [scalingImageView updateImage:image2];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:image1 frame:CGRectZero];
+    [scalingImageView updateImageData:image2];
     
+#ifdef ANIMATED_GIF_SUPPORT
+    XCTAssertEqual(image2, scalingImageView.imageView.animatedImage.data);
+#else
     XCTAssertEqual(image2, scalingImageView.imageView.image);
+#endif
 }
 
 @end

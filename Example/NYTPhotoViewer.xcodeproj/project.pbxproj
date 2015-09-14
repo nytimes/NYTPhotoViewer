@@ -57,6 +57,8 @@
 		C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */; };
 		EC1B97111BA675DC00C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
 		EC1B97121BA675DC00C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
+		EC1B97131BA67E6700C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
+		EC1B97141BA67E6700C9C9FD /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC1B97101BA675DC00C9C9FD /* giphy.gif */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -516,6 +518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1B97131BA67E6700C9C9FD /* giphy.gif in Resources */,
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1B97141BA67E6700C9C9FD /* giphy.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
