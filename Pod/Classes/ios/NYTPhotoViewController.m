@@ -81,11 +81,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
         _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
         _scalingImageView.delegate = self;
         
-#ifdef ANIMATED_GIF_SUPPORT
-        if (!photo.imageData && !photo.image) {
-#else
-        if (!photo.image) {
-#endif
+        if (!photoImage) {
             [self setupLoadingView:loadingView];
         }
         
