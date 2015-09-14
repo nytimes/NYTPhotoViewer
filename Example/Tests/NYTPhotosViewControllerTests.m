@@ -25,6 +25,7 @@
 
 - (void)testPanGestureRecognizerHasAssociatedView {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    [photosViewController viewDidLoad];
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
@@ -35,11 +36,13 @@
 
 - (void)testSingleTapGestureRecognizerHasAssociatedView {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    [photosViewController viewDidLoad];
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
 - (void)testPageViewControllerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    [photosViewController viewDidLoad];
     XCTAssertNotNil(photosViewController.pageViewController);
 }
 
@@ -57,22 +60,25 @@
 - (void)testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
-    
+    [photosViewController viewDidLoad];
+
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
 }
 
 - (void)testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
-    
+    [photosViewController viewDidLoad];
+
     XCTAssertEqualObjects(photos.lastObject, photosViewController.currentlyDisplayedPhoto);
 }
 
 - (void)testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
+    [photosViewController viewDidLoad];
     [photosViewController displayPhoto:photos.firstObject animated:NO];
-    
+
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
 }
 
@@ -144,6 +150,8 @@
 - (void)testDisplayPhotoDoesNothingWhenPassedPhotoOutsideDataSource {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+    [photosViewController viewDidLoad];
+    
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
     
     [photosViewController displayPhoto:invalidPhoto animated:NO];
@@ -153,6 +161,8 @@
 - (void)testDisplayPhotoMovesToCorrectPhoto {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+    [photosViewController viewDidLoad];
+
     NYTExamplePhoto *photoToDisplay = photos[2];
     
     [photosViewController displayPhoto:photoToDisplay animated:NO];
@@ -178,6 +188,8 @@
 - (void)testUpdateImageForPhotoUpdatesImage {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+    [photosViewController viewDidLoad];
+
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
     photoToUpdate.image = [[UIImage alloc] init];
     
