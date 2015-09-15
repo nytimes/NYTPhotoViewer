@@ -19,9 +19,19 @@
 
 @interface NYTScalingImageViewTests : XCTestCase
 
+@property (nonatomic, strong) NSData *imageData;
+
 @end
 
 @implementation NYTScalingImageViewTests
+
+- (NSData *)imageData {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _imageData = [NSData dataWithContentsOfFile:kGifPath];
+    });
+    return _imageData;
+}
 
 - (void)testInitializationAcceptsNil {
     XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImageData:nil frame:CGRectZero]);
@@ -33,27 +43,34 @@
 }
 
 - (void)testInitializationSetsImage {
-    NSData *image = [NSData dataWithContentsOfFile:kGifPath];
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:image frame:CGRectZero];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];
 
 #ifdef ANIMATED_GIF_SUPPORT
-    XCTAssertEqual(image, scalingImageView.imageView.animatedImage.data);
+    XCTAssertEqual(self.imageData, scalingImageView.imageView.animatedImage.data);
 #else
     XCTAssertNotNil(scalingImageView.imageView.image);
 #endif
 }
 
 - (void)testUpdateImageUpdatesImage {
-    NSData *image1 = [NSData dataWithContentsOfFile:kGifPath];
     NSData *image2 = [NSData dataWithContentsOfFile:kGifPath];
     
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:image1 frame:CGRectZero];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];
     [scalingImageView updateImageData:image2];
     
 #ifdef ANIMATED_GIF_SUPPORT
     XCTAssertEqual(image2, scalingImageView.imageView.animatedImage.data);
 #else
     XCTAssertNotNil(scalingImageView.imageView.image);
+#endif
+}
+
+- (void)testImageViewIsOfCorrectKindAfterInitialization {
+    NYTScalingImageView *scalingImageViewer = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];
+#ifdef ANIMATED_GIF_SUPPORT
+    XCTAssertTrue([scalingImageViewer.imageView isKindOfClass:FLAnimatedImageView.class]);
+#else
+    XCTAssertTrue([scalingImageViewer.imageView isKindOfClass:UIImageView.class]);
 #endif
 }
 
