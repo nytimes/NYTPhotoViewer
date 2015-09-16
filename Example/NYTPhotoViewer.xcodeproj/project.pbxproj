@@ -54,7 +54,6 @@
 		B5DC9D971A9FAB4800F4F81F /* NYTTestiOS8TransitionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D961A9FAB4800F4F81F /* NYTTestiOS8TransitionContext.m */; };
 		B5DC9D9A1A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D991A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m */; };
 		C2764961179EFD3A4397B4F6 /* libPods-NYTPhotoViewer-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C25ACCAFE75703E4107C21D /* libPods-NYTPhotoViewer-Swift.a */; };
-		C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,7 +499,6 @@
 			files = (
 				6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
