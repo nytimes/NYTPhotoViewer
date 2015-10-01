@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
                        NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
                        DESC
   s.summary          = "NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, flick to dismiss, animated presentation, and more."
-  s.homepage         = "https://github.com/NYTimes/NYTPhotoViewer"
+  s.homepage         = "https://github.com/sergiog90/NYTPhotoViewer"
   s.author           = "Sergio García"
   s.license          = { :type => 'Apache 2.0' }
   s.source           = { :git => "https://github.com/sergiog90/NYTPhotoViewer.git", :tag => s.version.to_s }
