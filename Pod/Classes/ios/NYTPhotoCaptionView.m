@@ -15,9 +15,9 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic) NSAttributedString *attributedTitle;
-@property (nonatomic) NSAttributedString *attributedSummary;
-@property (nonatomic) NSAttributedString *attributedCredit;
+@property (nonatomic, readonly) NSAttributedString *attributedTitle;
+@property (nonatomic, readonly) NSAttributedString *attributedSummary;
+@property (nonatomic, readonly) NSAttributedString *attributedCredit;
 
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) CAGradientLayer *gradientLayer;
@@ -54,9 +54,9 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
     self = [super initWithFrame:CGRectZero];
     
     if (self) {
-        _attributedTitle = attributedTitle;
-        _attributedSummary = attributedSummary;
-        _attributedCredit = attributedCredit;
+        _attributedTitle = [attributedTitle copy];
+        _attributedSummary = [attributedSummary copy];
+        _attributedCredit = [attributedCredit copy];
 
         [self commonInit];
     }
