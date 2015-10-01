@@ -2,6 +2,8 @@
 
 NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more. 
 
+With LifeCycle delegation you can change your view acord to the gallery state. If you push from a UINavigationController you can hide statusBar to prevent overlap with close and share buttons.
+
 ## Demo
 
 ![Demo GIF](Images/photo_viewer.gif)
