@@ -24,12 +24,11 @@ class NYTScalingImageViewTests: XCTestCase {
         let image = UIImage()
         let scalingImageView = NYTScalingImageView(image: nil, frame: CGRectZero)
         if let scalingImage = scalingImageView.imageView.image {
-            XCTAssertEqual(image, scalingImageView.imageView.image!)
+            XCTAssertEqual(image, scalingImage)
         }
     }
     
     func testUpdateImageUpdatesImage() {
-        let image1 = UIImage()
         let image2 = UIImage()
         
         let scalingImageView = NYTScalingImageView(image: nil, frame: CGRectZero)

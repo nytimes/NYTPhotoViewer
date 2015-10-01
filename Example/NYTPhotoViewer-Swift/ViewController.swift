@@ -49,9 +49,9 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
             
             let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
             
-            shareActivityViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, items: [AnyObject]!, NSError) in
+            shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
                 if completed {
-                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType)
+                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType!)
                 }
             }
 
