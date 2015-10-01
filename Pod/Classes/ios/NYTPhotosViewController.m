@@ -26,6 +26,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
@@ -83,6 +85,16 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhotos:nil];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithPhotos:nil initialPhoto:nil];
+    }
+
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -143,27 +155,31 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
-        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
-        _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
-        
-        _transitionController = [[NYTPhotoTransitionController alloc] init];
-        self.modalPresentationStyle = UIModalPresentationCustom;
-        self.transitioningDelegate = _transitionController;
-        self.modalPresentationCapturesStatusBarAppearance = YES;
-        
-        // iOS 7 has an issue with constraints that could evaluate to be negative, so we set the width to the margins' size.
-        _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectMake(0, 0, NYTPhotoCaptionViewHorizontalMargin * 2.0, 0)];
-        _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX"] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape"] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
-        _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtinImageInsets;
-        _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
-        
-        _notificationCenter = [[NSNotificationCenter alloc] init];
-
-        _initialPhoto = initialPhoto;
+        [self commonInitWithPhotos:photos initialPhoto:initialPhoto];
     }
     
     return self;
+}
+
+- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
+    _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
+    _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
+
+    _transitionController = [[NYTPhotoTransitionController alloc] init];
+    self.modalPresentationStyle = UIModalPresentationCustom;
+    self.transitioningDelegate = _transitionController;
+    self.modalPresentationCapturesStatusBarAppearance = YES;
+
+    // iOS 7 has an issue with constraints that could evaluate to be negative, so we set the width to the margins' size.
+    _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectMake(0, 0, NYTPhotoCaptionViewHorizontalMargin * 2.0, 0)];
+    _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX"] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape"] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
+    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtinImageInsets;
+    _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+
+    _notificationCenter = [[NSNotificationCenter alloc] init];
+
+    _initialPhoto = initialPhoto;
 }
 
 - (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
