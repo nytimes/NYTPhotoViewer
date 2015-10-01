@@ -114,6 +114,20 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @optional
 
 /**
+ *  Called when viewWillAppear:animated is called.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController viewWillAppear:(BOOL)animated;
+
+/**
+ *  Called when viewWillDisappear:animated is called.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController viewWillDisappear:(BOOL)animated;
+
+/**
  *  Called when a new photo is displayed through a swipe gesture.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
