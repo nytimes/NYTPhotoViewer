@@ -1,4 +1,4 @@
-# NYTPhotoViewer
+# NYTPhotoViewer+LifeCycle
 
 NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more. 
 
@@ -24,7 +24,7 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "NYTPhotoViewer"
+    pod 'NYTPhotoViewer+LifeCycle'
 
 ## Requirements
 
