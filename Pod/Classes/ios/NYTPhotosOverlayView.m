@@ -64,7 +64,7 @@
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
-    self.navigationItem = [[UINavigationItem alloc] initWithTitle:nil];
+    self.navigationItem = [[UINavigationItem alloc] initWithTitle:@""];
     self.navigationBar.items = @[self.navigationItem];
     
     [self addSubview:self.navigationBar];

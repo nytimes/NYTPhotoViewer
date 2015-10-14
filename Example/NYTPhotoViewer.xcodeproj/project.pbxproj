@@ -54,7 +54,6 @@
 		B5DC9D971A9FAB4800F4F81F /* NYTTestiOS8TransitionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D961A9FAB4800F4F81F /* NYTTestiOS8TransitionContext.m */; };
 		B5DC9D9A1A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC9D991A9FB0C000F4F81F /* NYTPhotosDataSourceTests.m */; };
 		C2764961179EFD3A4397B4F6 /* libPods-NYTPhotoViewer-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C25ACCAFE75703E4107C21D /* libPods-NYTPhotoViewer-Swift.a */; };
-		C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C3A795E41A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,8 +190,8 @@
 				8C838AC41AC7774300D754D3 /* Common Resources */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* NYTPhotoViewer */,
-				6003F5B5195388D20070C39A /* Tests */,
 				8C4464E11ABCA3BA00BD79F1 /* NYTPhotoViewer-Swift */,
+				6003F5B5195388D20070C39A /* Tests */,
 				8C4464F71ABCA3BA00BD79F1 /* NYTPhotoViewer-SwiftTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -457,7 +456,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NYT;
-				LastUpgradeCheck = 0510;
+				LastSwiftMigration = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "The New York Times";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -500,7 +500,6 @@
 			files = (
 				6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				C3A795E51A9CE3AA00A5AF55 /* NYTPhotoViewer.podspec in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -799,6 +798,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -865,6 +865,7 @@
 				GCC_PREFIX_HEADER = "NYTPhotoViewer/NYTPhotoViewer-Prefix.pch";
 				INFOPLIST_FILE = "NYTPhotoViewer/NYTPhotoViewer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NYTPhotoViewer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -880,6 +881,7 @@
 				GCC_PREFIX_HEADER = "NYTPhotoViewer/NYTPhotoViewer-Prefix.pch";
 				INFOPLIST_FILE = "NYTPhotoViewer/NYTPhotoViewer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NYTPhotoViewer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -902,6 +904,7 @@
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -921,6 +924,7 @@
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -945,6 +949,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -966,6 +971,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 			};
@@ -993,6 +999,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1019,6 +1026,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYTPhotoViewer-Swift.app/NYTPhotoViewer-Swift";

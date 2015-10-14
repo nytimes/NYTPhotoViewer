@@ -12,6 +12,8 @@
 
 @interface NYTScalingImageView ()
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
 @property (nonatomic) UIImageView *imageView;
 
 @end
@@ -22,6 +24,16 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     return [self initWithImage:nil frame:frame];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithImage:nil];
+    }
+
+    return self;
 }
 
 - (void)didAddSubview:(UIView *)subview {
@@ -41,12 +53,16 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self setupInternalImageViewWithImage:image];
-        [self setupImageScrollView];
-        [self updateZoomScale];
+        [self commonInitWithImage:image];
     }
     
     return self;
+}
+
+- (void)commonInitWithImage:(UIImage *)image {
+    [self setupInternalImageViewWithImage:image];
+    [self setupImageScrollView];
+    [self updateZoomScale];
 }
 
 #pragma mark - Setup

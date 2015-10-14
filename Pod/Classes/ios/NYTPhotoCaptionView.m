@@ -13,9 +13,11 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
 
 @interface NYTPhotoCaptionView ()
 
-@property (nonatomic) NSAttributedString *attributedTitle;
-@property (nonatomic) NSAttributedString *attributedSummary;
-@property (nonatomic) NSAttributedString *attributedCredit;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
+@property (nonatomic, readonly) NSAttributedString *attributedTitle;
+@property (nonatomic, readonly) NSAttributedString *attributedSummary;
+@property (nonatomic, readonly) NSAttributedString *attributedCredit;
 
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) CAGradientLayer *gradientLayer;
@@ -30,6 +32,16 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
     return [self initWithAttributedTitle:nil attributedSummary:nil attributedCredit:nil];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInit];
+    }
+
+    return self;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -42,18 +54,22 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
     self = [super initWithFrame:CGRectZero];
     
     if (self) {
-        self.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        _attributedTitle = attributedTitle;
-        _attributedSummary = attributedSummary;
-        _attributedCredit = attributedCredit;
-        
-        [self setupTextLabel];
-        [self updateTextLabelAttributedText];
-        [self setupGradient];
+        _attributedTitle = [attributedTitle copy];
+        _attributedSummary = [attributedSummary copy];
+        _attributedCredit = [attributedCredit copy];
+
+        [self commonInit];
     }
     
     return self;
+}
+
+- (void)commonInit {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self setupTextLabel];
+    [self updateTextLabelAttributedText];
+    [self setupGradient];
 }
 
 - (void)setupTextLabel {

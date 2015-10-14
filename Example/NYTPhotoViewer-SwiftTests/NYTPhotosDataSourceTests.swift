@@ -29,6 +29,6 @@ class NYTPhotosDataSourceTests: XCTestCase {
 
     func testValidIndexReturnsCorrectPhoto() {
         let dataSource = NYTPhotosDataSource(photos: photos)
-        XCTAssertEqual(photos[1], dataSource[1] as! ExamplePhoto) // Swift 1.2: as!
+        XCTAssertEqual(photos[1], dataSource[1] as? ExamplePhoto)
     }
 }
