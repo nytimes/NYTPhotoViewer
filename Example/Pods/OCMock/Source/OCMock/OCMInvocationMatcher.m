@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2014 Erik Doernenburg and contributors
+ *  Copyright (c) 2014-2015 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -21,7 +21,8 @@
 #import "NSInvocation+OCMAdditions.h"
 #import "OCMInvocationMatcher.h"
 #import "OCClassMockObject.h"
-#import "OCMFunctions.h"
+#import "OCMFunctionsPrivate.h"
+#import "OCMBlockArgCaller.h"
 
 
 @interface NSObject(HCMatcherDummy)
@@ -30,6 +31,12 @@
 
 
 @implementation OCMInvocationMatcher
+
+- (void)dealloc
+{
+    [recordedInvocation release];
+    [super dealloc];
+}
 
 - (void)setInvocation:(NSInvocation *)anInvocation
 {
@@ -89,8 +96,8 @@
         return NO;
 
     NSMethodSignature *signature = [recordedInvocation methodSignature];
-    int n = (int)[signature numberOfArguments];
-    for(int i = 2; i < n; i++)
+    NSUInteger n = [signature numberOfArguments];
+    for(NSUInteger i = 2; i < n; i++)
     {
         if(ignoreNonObjectArgs && strcmp([signature getArgumentTypeAtIndex:i], @encode(id)))
         {
@@ -115,14 +122,10 @@
             if([recordedArg evaluate:passedArg] == NO)
                 return NO;
         }
-        else if([recordedArg isKindOfClass:[OCMPassByRefSetter class]])
+        else if([recordedArg isKindOfClass:[OCMArgAction class]])
         {
-            id valueToSet = [(OCMPassByRefSetter *)recordedArg value];
             // side effect but easier to do here than in handleInvocation
-            if(![valueToSet isKindOfClass:[NSValue class]])
-                *(id *)[passedArg pointerValue] = valueToSet;
-            else
-                [(NSValue *)valueToSet getValue:[passedArg pointerValue]];
+            [recordedArg handleArgument:passedArg];
         }
         else if([recordedArg conformsToProtocol:objc_getProtocol("HCMatcher")])
         {
@@ -141,4 +144,5 @@
     }
     return YES;
 }
+
 @end
