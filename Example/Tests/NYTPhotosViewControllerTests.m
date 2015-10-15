@@ -186,6 +186,13 @@
     XCTAssertEqualObjects(photosViewController.currentlyDisplayedPhoto.image, photoToUpdate.image);
 }
 
+- (void)testViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.isViewLoaded);
+}
+
 #pragma mark - Helpers
 
 - (NSArray *)newTestPhotos {
