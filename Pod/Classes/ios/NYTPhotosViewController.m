@@ -48,8 +48,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
-@property (nonatomic) id <NYTPhoto> initialPhoto;
-
 @end
 
 @implementation NYTPhotosViewController
@@ -99,8 +97,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self setupPageViewControllerWithInitialPhoto:self.initialPhoto];
 
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
@@ -179,7 +175,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
     _notificationCenter = [[NSNotificationCenter alloc] init];
 
-    _initialPhoto = initialPhoto;
+    [self setupPageViewControllerWithInitialPhoto:initialPhoto];
 }
 
 - (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
