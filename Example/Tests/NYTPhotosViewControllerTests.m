@@ -193,6 +193,13 @@
     XCTAssertFalse(photosViewController.isViewLoaded);
 }
 
+- (void)testPageViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.pageViewController.isViewLoaded);
+}
+
 #pragma mark - Helpers
 
 - (NSArray *)newTestPhotos {
