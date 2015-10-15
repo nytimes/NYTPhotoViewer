@@ -101,6 +101,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
+
+    [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
+    [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -194,9 +197,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     }
     
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
-    
-    [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
-    [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
 }
 
 - (void)addOverlayView {
