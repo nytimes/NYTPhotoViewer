@@ -23,8 +23,9 @@
     XCTAssertNotNil(photosViewController.panGestureRecognizer);
 }
 
-- (void)testPanGestureRecognizerHasAssociatedView {
+- (void)testPanGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
@@ -33,8 +34,9 @@
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer);
 }
 
-- (void)testSingleTapGestureRecognizerHasAssociatedView {
+- (void)testSingleTapGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
