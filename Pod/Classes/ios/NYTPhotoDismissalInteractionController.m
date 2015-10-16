@@ -98,7 +98,12 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
             self.viewToHideWhenBeginningTransition.hidden = NO;
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
+            
+            self.transitionContext = nil;
         }];
+    }
+    else {
+        self.transitionContext = nil;
     }
 }
 
