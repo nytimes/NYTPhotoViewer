@@ -1,6 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public/OCMock"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public/OCMock"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" -isystem "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_LDFLAGS = -ObjC -l"Pods-NYTPhotoViewer-NYTPhotoViewer" -framework "Foundation" -framework "UIKit"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_LDFLAGS = $(inherited) -ObjC -l"NYTPhotoViewer" -framework "Foundation" -framework "UIKit"
 PODS_ROOT = ${SRCROOT}/Pods
