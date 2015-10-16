@@ -1,6 +1,6 @@
 //
 //  NYTPhotoDismissalInteractionController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //

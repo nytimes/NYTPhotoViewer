@@ -1,6 +1,6 @@
 //
 //  NYTPhotoViewController.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
 //

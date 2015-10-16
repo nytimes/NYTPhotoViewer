@@ -1,6 +1,6 @@
 //
 //  NYTPhotoTransitionController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/13/15.
 //
