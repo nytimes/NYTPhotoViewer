@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resources = 'Pod/Assets/**/*'
+  s.ios.resource_bundle = { s.name => ['Pod/Assets/ios/*.png'] }
 
   s.frameworks = 'UIKit', 'Foundation'
 end
