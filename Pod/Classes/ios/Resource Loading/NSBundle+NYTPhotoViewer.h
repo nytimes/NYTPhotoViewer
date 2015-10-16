@@ -10,4 +10,6 @@
 
 @interface NSBundle (NYTPhotoViewer)
 
++ (instancetype)nyt_photoViewerResourceBundle;
+
 @end
