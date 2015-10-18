@@ -1,6 +1,6 @@
 //
 //  NYTScalingImageView.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Harrison, Andrew on 7/23/13.
 //  Copyright (c) 2015 The New York Times Company. All rights reserved.
@@ -16,6 +16,8 @@
 
 @interface NYTScalingImageView ()
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
 #ifdef ANIMATED_GIF_SUPPORT
 @property (nonatomic) FLAnimatedImageView *imageView;
 #else
@@ -29,6 +31,16 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     return [self initWithImageData:nil frame:frame];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithImage:nil];
+    }
+
+    return self;
 }
 
 - (void)didAddSubview:(UIView *)subview {
@@ -48,12 +60,16 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self setupInternalImageViewWithImageData:image];
-        [self setupImageScrollView];
-        [self updateZoomScale];
+        [self commonInitWithImage:image];
     }
     
     return self;
+}
+
+- (void)commonInitWithImage:(NSData *)image {
+    [self setupInternalImageViewWithImageData:image];
+    [self setupImageScrollView];
+    [self updateZoomScale];
 }
 
 #pragma mark - Setup

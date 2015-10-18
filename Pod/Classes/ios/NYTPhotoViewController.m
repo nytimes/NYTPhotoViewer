@@ -1,6 +1,6 @@
 //
 //  NYTPhotoViewController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
 //
@@ -19,6 +19,8 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
 
 @property (nonatomic) id <NYTPhoto> photo;
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
 @property (nonatomic) UIView *loadingView;
@@ -42,6 +44,16 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhoto:nil loadingView:nil notificationCenter:nil];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithPhoto:nil loadingView:nil notificationCenter:nil];
+    }
+
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -74,23 +86,27 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        _photo = photo;
-        
-        NSData *photoImage = photo.imageData ? photo.imageData : UIImagePNGRepresentation((photo.image ?: photo.placeholderImage));
-        
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
-        _scalingImageView.delegate = self;
-        
-        if (!photoImage) {
-            [self setupLoadingView:loadingView];
-        }
-        
-        _notificationCenter = notificationCenter;
-        
-        [self setupGestureRecognizers];
+        [self commonInitWithPhoto:photo loadingView:loadingView notificationCenter:notificationCenter];
     }
     
     return self;
+}
+
+- (void)commonInitWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
+    _photo = photo;
+
+    NSData *photoImage = photo.imageData ? photo.imageData : UIImagePNGRepresentation((photo.image ?: photo.placeholderImage));
+
+    _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
+    _scalingImageView.delegate = self;
+
+    if (!photoImage) {
+        [self setupLoadingView:loadingView];
+    }
+
+    _notificationCenter = notificationCenter;
+
+    [self setupGestureRecognizers];
 }
 
 - (void)setupLoadingView:(UIView *)loadingView {

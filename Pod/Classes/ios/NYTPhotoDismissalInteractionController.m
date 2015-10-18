@@ -1,6 +1,6 @@
 //
 //  NYTPhotoDismissalInteractionController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
@@ -98,7 +98,12 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
             self.viewToHideWhenBeginningTransition.hidden = NO;
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
+            
+            self.transitionContext = nil;
         }];
+    }
+    else {
+        self.transitionContext = nil;
     }
 }
 

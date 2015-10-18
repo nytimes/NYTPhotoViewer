@@ -49,9 +49,9 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
             
             let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
             
-            shareActivityViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, items: [AnyObject]!, NSError) in
+            shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
                 if completed {
-                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType)
+                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType!)
                 }
             }
 
@@ -76,7 +76,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     func photosViewController(photosViewController: NYTPhotosViewController!, loadingViewForPhoto photo: NYTPhoto!) -> UIView! {
         if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            var label = UILabel()
+            let label = UILabel()
             label.text = "Custom Loading..."
             label.textColor = UIColor.greenColor()
             return label
@@ -86,7 +86,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     func photosViewController(photosViewController: NYTPhotosViewController!, captionViewForPhoto photo: NYTPhoto!) -> UIView! {
         if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            var label = UILabel()
+            let label = UILabel()
             label.text = "Custom Caption View"
             label.textColor = UIColor.whiteColor()
             label.backgroundColor = UIColor.redColor()
@@ -96,14 +96,14 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, didNavigateToPhoto photo: NYTPhoto!, atIndex photoIndex: UInt) {
-        println("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
+        print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController!, actionCompletedWithActivityType activityType: String!) {
-        println("Action Completed With Activity Type: \(activityType)")
+        print("Action Completed With Activity Type: \(activityType)")
     }
 
     func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController!) {
-        println("Did dismiss Photo Viewer: \(photosViewController)")
+        print("Did dismiss Photo Viewer: \(photosViewController)")
     }
 }

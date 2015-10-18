@@ -20,27 +20,27 @@ class NYTPhotosOverlayViewTests: XCTestCase {
         let overlayView = NYTPhotosOverlayView()
         let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: nil, action: nil)
         overlayView.leftBarButtonItem = leftBarButtonItem
-        XCTAssert(leftBarButtonItem == overlayView.navigationBar.items.first?.leftBarButtonItem)
+        XCTAssert(leftBarButtonItem == overlayView.navigationBar.items?.first?.leftBarButtonItem)
     }
     
     func testRightBarButtonItemSetterAffectsNavigationBar() {
         let overlayView = NYTPhotosOverlayView()
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: nil, action: nil)
         overlayView.rightBarButtonItem = rightBarButtonItem
-        XCTAssert(rightBarButtonItem == overlayView.navigationBar.items.first?.rightBarButtonItem)
+        XCTAssert(rightBarButtonItem == overlayView.navigationBar.items?.first?.rightBarButtonItem)
     }
     
     func testTitleSetterAffectsNavigationBar() {
         let overlayView = NYTPhotosOverlayView()
         let title = "title"
         overlayView.title = title
-        XCTAssert(title == overlayView.navigationBar.items.first!.title)
+        XCTAssert(title == overlayView.navigationBar.items?.first?.title)
     }
     
     func testTitleTextAttributesSetterAffectsNavigationBar() {
         let overlayView = NYTPhotosOverlayView()
         let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         overlayView.titleTextAttributes = titleTextAttributes
-        XCTAssertEqual(titleTextAttributes, overlayView.navigationBar.titleTextAttributes as! [String: UIColor])
+        XCTAssertEqual(titleTextAttributes, overlayView.navigationBar.titleTextAttributes as? [String: UIColor])
     }
 }
