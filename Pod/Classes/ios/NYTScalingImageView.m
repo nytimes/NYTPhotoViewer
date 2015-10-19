@@ -92,12 +92,13 @@
 
     // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
+    self.imageView.image = image;
     
 #ifdef ANIMATED_GIF_SUPPORT
+    // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
     self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:imageData];
-#else
-    self.imageView.image = image;
 #endif
+    
     self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     
     self.contentSize = image.size;
