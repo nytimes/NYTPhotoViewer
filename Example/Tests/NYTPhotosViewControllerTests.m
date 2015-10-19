@@ -182,7 +182,7 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
 
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
-    photoToUpdate.image = [[UIImage alloc] init];
+    photoToUpdate.image = [UIImage imageNamed:@"NYTimesBuilding" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     
     [photosViewController updateImageForPhoto:photoToUpdate];
     
