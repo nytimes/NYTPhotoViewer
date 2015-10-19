@@ -6,7 +6,7 @@ end
 
 target 'Tests', :exclusive => true do
   pod "NYTPhotoViewer", :path => "../"
-  pod 'OCMock', '~> 3.1'
+  pod 'OCMock', '~> 3.2'
 end
 
 target 'NYTPhotoViewer-Swift', :exclusive => true do
@@ -15,5 +15,5 @@ end
 
 target 'NYTPhotoViewer-SwiftTests', :exclusive => true do
     pod "NYTPhotoViewer", :path => "../"
-    pod 'OCMock', '~> 3.1'
+    pod 'OCMock', '~> 3.2'
 end
