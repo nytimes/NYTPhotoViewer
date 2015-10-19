@@ -253,9 +253,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     
     if (!clientDidHandle && self.currentlyDisplayedPhoto.image) {
         UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.currentlyDisplayedPhoto.image] applicationActivities:nil];
-        if ([activityViewController respondsToSelector:@selector(popoverPresentationController)]) {
-            activityViewController.popoverPresentationController.barButtonItem = sender;
-        }
+        activityViewController.popoverPresentationController.barButtonItem = sender;
         activityViewController.completionWithItemsHandler = ^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
             if (completed && [self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {
                 [self.delegate photosViewController:self actionCompletedWithActivityType:activityType];
@@ -272,16 +270,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         [self presentViewController:controller animated:animated completion:nil];
     }
     else {
-        if ([controller respondsToSelector:@selector(popoverPresentationController)]) {
-            controller.popoverPresentationController.barButtonItem = self.rightBarButtonItem;
-            [self presentViewController:controller animated:animated completion:nil];
-        }
-        else {
-            self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-            [self.activityPopoverController presentPopoverFromBarButtonItem:self.rightBarButtonItem
-                                               permittedArrowDirections:UIPopoverArrowDirectionAny
-                                                               animated:animated];
-        }
+        controller.popoverPresentationController.barButtonItem = self.rightBarButtonItem;
+        [self presentViewController:controller animated:animated completion:nil];
     }
 }
 
