@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2014-2015 Erik Doernenburg and contributors
+ *  Copyright (c) 2015 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -14,35 +14,40 @@
  *  under the License.
  */
 
-#import <objc/runtime.h>
-#import "OCMVerifier.h"
-#import "OCMockObject.h"
-#import "OCMLocation.h"
-#import "OCMInvocationMatcher.h"
+#import "OCMBlockArgCaller.h"
+#import "NSInvocation+OCMAdditions.h"
 
 
-@implementation OCMVerifier
+@implementation OCMBlockArgCaller
 
-- (id)init
+- (instancetype)initWithBlockArguments:(NSArray *)someArgs
 {
-    if ((self = [super init]))
+    self = [super init];
+    if(self)
     {
-        invocationMatcher = [[OCMInvocationMatcher alloc] init];
+        arguments = [someArgs copy];
     }
-    
     return self;
-}
-
-- (void)forwardInvocation:(NSInvocation *)anInvocation
-{
-    [super forwardInvocation:anInvocation];
-    [mockObject verifyInvocation:invocationMatcher atLocation:self.location];
 }
 
 - (void)dealloc
 {
-	[_location release];
-	[super dealloc];
+    [arguments release];
+    [super dealloc];
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return [self retain];
+}
+
+- (void)handleArgument:(id)aBlock
+{
+    if(aBlock)
+    {
+        NSInvocation *inv = [NSInvocation invocationForBlock:aBlock withArguments:arguments];
+        [inv invokeWithTarget:aBlock];
+    }
 }
 
 @end

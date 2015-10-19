@@ -1,10 +1,10 @@
 PODS:
   - NYTPhotoViewer (0.1.2)
-  - OCMock (3.1.2)
+  - OCMock (3.2)
 
 DEPENDENCIES:
   - NYTPhotoViewer (from `../`)
-  - OCMock (~> 3.1)
+  - OCMock (~> 3.2)
 
 EXTERNAL SOURCES:
   NYTPhotoViewer:
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NYTPhotoViewer: d74401f7cf0b679a1763414d114eb5c81f5a1db8
-  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
 
 COCOAPODS: 0.38.2

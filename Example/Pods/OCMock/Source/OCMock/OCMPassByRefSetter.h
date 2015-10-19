@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2009-2014 Erik Doernenburg and contributors
+ *  Copyright (c) 2009-2015 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -14,15 +14,13 @@
  *  under the License.
  */
 
-#import <Foundation/Foundation.h>
+#import "OCMArgAction.h"
 
-@interface OCMPassByRefSetter : NSObject 
+@interface OCMPassByRefSetter : OCMArgAction
 {
 	id value;
 }
 
 - (id)initWithValue:(id)value;
-
-- (id)value;
 
 @end
