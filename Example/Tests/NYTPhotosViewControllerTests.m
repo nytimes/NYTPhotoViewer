@@ -180,6 +180,7 @@
 - (void)testUpdateImageForPhotoUpdatesImage {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
     photoToUpdate.image = [[UIImage alloc] init];
     
