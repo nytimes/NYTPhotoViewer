@@ -49,8 +49,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
-@property (nonatomic) id <NYTPhoto> initialPhoto;
-
 @end
 
 @implementation NYTPhotosViewController
@@ -101,11 +99,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setupPageViewControllerWithInitialPhoto:self.initialPhoto];
-
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
+
+    [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
+    [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -180,7 +179,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
     _notificationCenter = [[NSNotificationCenter alloc] init];
 
-    _initialPhoto = initialPhoto;
+    [self setupPageViewControllerWithInitialPhoto:initialPhoto];
 }
 
 - (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
@@ -199,12 +198,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     }
     
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
-    
-    [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
-    [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
 }
 
 - (void)addOverlayView {
+    NSAssert(self.overlayView != nil, @"_overlayView must be set during initialization, to provide bar button items for this %@", NSStringFromClass([self class]));
+
     UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
     self.overlayView.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
     

@@ -38,6 +38,8 @@
 		8CD283E21ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E11ABE455A00ADD109 /* NYTPhotosOverlayViewTests.swift */; };
 		8CD283E41ABE624200ADD109 /* NYTScalingImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E31ABE624200ADD109 /* NYTScalingImageViewTests.swift */; };
 		8CD283E61ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD283E51ABE6F6600ADD109 /* NYTPhotoTransitionAnimatorTests.swift */; };
+		934B3EA91BD54CE400953DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		934B3EAA1BD54CE400953DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		94195E1720FF535F0D8447E6 /* libPods-NYTPhotoViewer-SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C738E753BE4DA373A7BC05 /* libPods-NYTPhotoViewer-SwiftTests.a */; };
 		955BE815A0B486203B80D541 /* libPods-NYTPhotoViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1477DE9B8584BD5335F644E1 /* libPods-NYTPhotoViewer.a */; };
 		B5B252E11A8BE10B00E9973E /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B252E01A8BE10B00E9973E /* NYTExamplePhoto.m */; };
@@ -510,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				934B3EA91BD54CE400953DC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934B3EAA1BD54CE400953DC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,7 +817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = NYTPhotoViewer;
 				SDKROOT = iphoneos;
@@ -847,7 +851,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = NYTPhotoViewer;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -864,7 +868,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NYTPhotoViewer/NYTPhotoViewer-Prefix.pch";
 				INFOPLIST_FILE = "NYTPhotoViewer/NYTPhotoViewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NYTPhotoViewer;
 				WRAPPER_EXTENSION = app;
@@ -880,7 +883,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NYTPhotoViewer/NYTPhotoViewer-Prefix.pch";
 				INFOPLIST_FILE = "NYTPhotoViewer/NYTPhotoViewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NYTPhotoViewer;
 				WRAPPER_EXTENSION = app;
@@ -903,7 +905,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -923,7 +924,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -946,7 +946,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
@@ -968,7 +967,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "NYTPhotoViewer-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
@@ -996,7 +994,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NYTPhotoViewer-SwiftTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1023,7 +1020,6 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "NYTPhotoViewer-SwiftTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nytimes.$(PRODUCT_NAME:rfc1034identifier)";

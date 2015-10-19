@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2014 Erik Doernenburg and contributors
+ *  Copyright (c) 2014-2015 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -15,7 +15,7 @@
  */
 
 #import <objc/runtime.h>
-#import "OCMFunctions.h"
+#import "OCMFunctionsPrivate.h"
 #import "OCMLocation.h"
 #import "OCClassMockObject.h"
 #import "OCPartialMockObject.h"
@@ -65,6 +65,26 @@ const char *OCMTypeWithoutQualifiers(const char *objCType)
     return objCType;
 }
 
+CFNumberType OCMNumberTypeForObjCType(const char *objcType)
+{
+    switch (objcType[0])
+    {
+        case 'c': return kCFNumberCharType;
+        case 'C': return kCFNumberCharType;
+        case 'B': return kCFNumberCharType;
+        case 's': return kCFNumberShortType;
+        case 'S': return kCFNumberShortType;
+        case 'i': return kCFNumberIntType;
+        case 'I': return kCFNumberIntType;
+        case 'l': return kCFNumberLongType;
+        case 'L': return kCFNumberLongType;
+        case 'q': return kCFNumberLongLongType;
+        case 'Q': return kCFNumberLongLongType;
+        case 'f': return kCFNumberFloatType;
+        case 'd': return kCFNumberDoubleType;
+        default:  return 0;
+    }
+}
 
 /*
  * Sometimes an external type is an opaque struct (which will have an @encode of "{structName}"
@@ -103,7 +123,7 @@ static BOOL OCMEqualTypesAllowingOpaqueStructsInternal(const char *type1, const 
             BOOL type1Opaque = (type1Equals == NULL || (type1End < type1Equals) || type1Equals[1] == endChar);
             BOOL type2Opaque = (type2Equals == NULL || (type2End < type2Equals) || type2Equals[1] == endChar);
             const char *type1NameEnd = (type1Equals == NULL || (type1End < type1Equals)) ? type1End : type1Equals;
-            const char *type2NameEnd = (type1Equals == NULL || (type2End < type2Equals)) ? type2End : type2Equals;
+            const char *type2NameEnd = (type2Equals == NULL || (type2End < type2Equals)) ? type2End : type2Equals;
             intptr_t type1NameLen = type1NameEnd - type1;
             intptr_t type2NameLen = type2NameEnd - type2;
 
@@ -132,6 +152,9 @@ static BOOL OCMEqualTypesAllowingOpaqueStructsInternal(const char *type1, const 
             if (type2[0] != type1[0])
                 return NO;
             return OCMEqualTypesAllowingOpaqueStructs(type1 + 1, type2 + 1);
+
+        case '?':
+            return type2[0] == '?';
 
         case '\0':
             return type2[0] == '\0';
@@ -174,23 +197,10 @@ Class OCMCreateSubclass(Class class, void *ref)
 }
 
 
-#pragma mark  Directly manipulating the isa pointer (look away)
-
-void OCMSetIsa(id object, Class class)
-{
-    *((Class *)object) = class;
-}
-
-Class OCMGetIsa(id object)
-{
-    return *((Class *)object);
-}
-
-
 #pragma mark  Alias for renaming real methods
 
-NSString *OCMRealMethodAliasPrefix = @"ocmock_replaced_";
-const char *OCMRealMethodAliasPrefixCString = "ocmock_replaced_";
+static NSString *const OCMRealMethodAliasPrefix = @"ocmock_replaced_";
+static const char *const OCMRealMethodAliasPrefixCString = "ocmock_replaced_";
 
 BOOL OCMIsAliasSelector(SEL selector)
 {
@@ -217,7 +227,7 @@ SEL OCMOriginalSelectorForAlias(SEL selector)
 
 #pragma mark  Wrappers around associative references
 
-NSString *OCMClassMethodMockObjectKey = @"OCMClassMethodMockObjectKey";
+static NSString *const OCMClassMethodMockObjectKey = @"OCMClassMethodMockObjectKey";
 
 void OCMSetAssociatedMockForClass(OCClassMockObject *mock, Class aClass)
 {
@@ -238,7 +248,7 @@ OCClassMockObject *OCMGetAssociatedMockForClass(Class aClass, BOOL includeSuperc
     return mock;
 }
 
-NSString *OCMPartialMockObjectKey = @"OCMPartialMockObjectKey";
+static NSString *const OCMPartialMockObjectKey = @"OCMPartialMockObjectKey";
 
 void OCMSetAssociatedMockForObject(OCClassMockObject *mock, id anObject)
 {
