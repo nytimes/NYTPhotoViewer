@@ -53,3 +53,7 @@ If you experience any interoperability difficulties, please open an issue or pul
 ## License
 
 NYTPhotoViewer is available under the Apache 2.0 license. See the `LICENSE.md` file for more information.
+
+## Contributors
+
+[A list of contributors is available through GitHub.](https://github.com/NYTimes/NYTPhotoViewer/graphs/contributors)
