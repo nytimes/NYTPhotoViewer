@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NYTPhotoViewer: 9daf33d659ed5c4fabc3691f419a0aaf902c2c61
+  NYTPhotoViewer: d74401f7cf0b679a1763414d114eb5c81f5a1db8
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
 
 COCOAPODS: 0.38.2
