@@ -9,11 +9,6 @@
 @import UIKit;
 
 /**
- *  The left and right margin around the content.
- */
-extern const CGFloat NYTPhotoCaptionViewHorizontalMargin;
-
-/**
  *  A view used to display the caption for a photo.
  */
 @interface NYTPhotoCaptionView : UIView

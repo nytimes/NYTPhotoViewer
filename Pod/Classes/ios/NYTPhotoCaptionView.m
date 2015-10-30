@@ -8,8 +8,8 @@
 
 #import "NYTPhotoCaptionView.h"
 
-const CGFloat NYTPhotoCaptionViewHorizontalMargin = 16.0;
-static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
+static const CGFloat NYTPhotoCaptionViewHorizontalMargin = 8.0;
+static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
 
 @interface NYTPhotoCaptionView ()
 
