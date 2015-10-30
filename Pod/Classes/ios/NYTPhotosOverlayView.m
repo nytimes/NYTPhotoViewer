@@ -7,6 +7,7 @@
 //
 
 #import "NYTPhotosOverlayView.h"
+#import "NYTPhotoCaptionView.h"
 
 @interface NYTPhotosOverlayView ()
 
@@ -49,6 +50,10 @@
     }];
     
     [super layoutSubviews];
+
+    if ([self.captionView respondsToSelector:@selector(setPreferredMaxLayoutWidth:)]) {
+        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
+    }
 }
 
 #pragma mark - NYTPhotosOverlayView

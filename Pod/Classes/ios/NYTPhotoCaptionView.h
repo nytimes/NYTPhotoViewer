@@ -8,10 +8,12 @@
 
 @import UIKit;
 
+@protocol NYTPhotoCaptionViewLayoutWidthHinting;
+
 /**
  *  A view used to display the caption for a photo.
  */
-@interface NYTPhotoCaptionView : UIView
+@interface NYTPhotoCaptionView : UIView <NYTPhotoCaptionViewLayoutWidthHinting>
 
 /**
  *  Designated initializer that takes all the caption attributed strings as arguments.
@@ -23,5 +25,21 @@
  *  @return A fully initialized object.
  */
 - (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
+
+@end
+
+/**
+ *  Allows a view to opt-in to receiving a hint of its layout width. This aids in calculating an appropriate intrinsic content size.
+ */
+@protocol NYTPhotoCaptionViewLayoutWidthHinting <NSObject>
+
+/**
+ *  The preferred maximum width, in points, of this caption view.
+ *
+ *  This property works exactly as it does on `UILabel`.
+ *
+ *  This property affects the size of the view when layout constraints are applied to it. During layout, if the text extends beyond the width specified by this property, the additional text is flowed to one or more new lines, thereby increasing the height of the view.
+ */
+@property (nonatomic) CGFloat preferredMaxLayoutWidth;
 
 @end

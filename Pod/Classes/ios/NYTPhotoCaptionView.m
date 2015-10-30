@@ -26,6 +26,8 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
 
 @implementation NYTPhotoCaptionView
 
+@synthesize preferredMaxLayoutWidth = _preferredMaxLayoutWidth;
+
 #pragma mark - UIView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -49,13 +51,21 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
 }
 
 - (CGSize)intrinsicContentSize {
-    CGSize contentSize = [self.textView sizeThatFits:CGSizeMake(300, CGFLOAT_MAX)];
+    CGFloat availableContentWidth = self.preferredMaxLayoutWidth - 2.0*NYTPhotoCaptionViewHorizontalMargin;
+    CGSize contentSize = [self.textView sizeThatFits:CGSizeMake(availableContentWidth, CGFLOAT_MAX)];
     CGFloat width = (CGFloat)ceil(contentSize.width + 2.0*NYTPhotoCaptionViewHorizontalMargin);
     CGFloat height = (CGFloat)ceil(contentSize.height + 2.0*NYTPhotoCaptionViewVerticalMargin);
 
     static const CGFloat NYTPhotoCaptionViewMaxCaptionHeight = 200.0f;
     height = MIN(height, NYTPhotoCaptionViewMaxCaptionHeight);
     return CGSizeMake(width, height);
+}
+
+- (void)setPreferredMaxLayoutWidth:(CGFloat)preferredMaxLayoutWidth {
+    if (ABS(_preferredMaxLayoutWidth - preferredMaxLayoutWidth) > 0.1) {
+        _preferredMaxLayoutWidth = preferredMaxLayoutWidth;
+        [self invalidateIntrinsicContentSize];
+    }
 }
 
 #pragma mark - NYTPhotoCaptionView
