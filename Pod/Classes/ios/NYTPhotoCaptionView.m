@@ -49,13 +49,12 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
 }
 
 - (CGSize)intrinsicContentSize {
-    UITextView * const textView = self.textView;
+    CGSize contentSize = [self.textView sizeThatFits:CGSizeMake(300, CGFLOAT_MAX)];
+    CGFloat width = (CGFloat)ceil(contentSize.width + 2.0*NYTPhotoCaptionViewHorizontalMargin);
+    CGFloat height = (CGFloat)ceil(contentSize.height + 2.0*NYTPhotoCaptionViewVerticalMargin);
 
-    [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
-    CGRect textBounds = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
-    CGFloat width = (CGFloat)ceil(textBounds.size.width + textView.textContainerInset.left + textView.textContainerInset.right + 2.0*NYTPhotoCaptionViewHorizontalMargin);
-    CGFloat height = (CGFloat)ceil(textBounds.size.height + textView.textContainerInset.top + textView.textContainerInset.bottom + 2.0*NYTPhotoCaptionViewVerticalMargin);
-
+    static const CGFloat NYTPhotoCaptionViewMaxCaptionHeight = 200.0f;
+    height = MIN(height, NYTPhotoCaptionViewMaxCaptionHeight);
     return CGSizeMake(width, height);
 }
 
