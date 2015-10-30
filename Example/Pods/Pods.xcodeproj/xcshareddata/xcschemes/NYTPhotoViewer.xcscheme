@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F5189544739F148414708B0"
+               BlueprintIdentifier = "7D92D0DBD67F97B8F4EC77BB"
                BuildableName = "libNYTPhotoViewer.a"
                BlueprintName = "NYTPhotoViewer"
                ReferencedContainer = "container:Pods.xcodeproj">

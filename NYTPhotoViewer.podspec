@@ -1,10 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
   s.version          = "0.1.2"
+
   s.description      = <<-DESC
                        NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
                        DESC
   s.summary          = "NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, flick to dismiss, animated presentation, and more."
+
   s.homepage         = "https://github.com/NYTimes/NYTPhotoViewer"
   s.author           = "The New York Times"
   s.license          = { :type => 'Apache 2.0' }

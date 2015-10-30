@@ -7,314 +7,314 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		026FCBD302A620006BE889ACB1DA8AA4 /* NYTPhotoViewerCloseButtonXLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA14118C7F7CE59AA99931460DCAB5D /* NYTPhotoViewerCloseButtonXLandscape@2x.png */; };
-		05F7031B117E8EE559C7762073B36ADE /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 97EF86209FC386CA9437D4ECB0DC25A9 /* NSBundle+NYTPhotoViewer.h */; };
-		072BA79E3838532AF593F3BD905F418A /* OCMStubRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB62A4528C94D7EB86B68C4AA3CE7A0 /* OCMStubRecorder.h */; };
-		080CD002B2491D0B5D638137AE2DEF8C /* OCMExceptionReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 85295B74C68258D38CD5E11112DE1B6F /* OCMExceptionReturnValueProvider.h */; };
-		08B15B1A3C57E393861AAE1C2FBE095C /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23885055AD3ED35ACB309790B1DD8F8A /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0D7DC5A9D1A1A9F6A41A2AB24794A3CA /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B52FFFFD4821B3DE1BEFDB7AF80A3FA3 /* NYTPhotosViewController.h */; };
-		0FD79640D8D236BB2A68CD809EE53956 /* OCMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD038FF0F2620157C362654A10A3F2A /* OCMVerifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		10D750EA1310FE723AD048FB9276F50E /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C04EB53300A42818CDC9BE0DD54D9F5 /* OCMBoxedReturnValueProvider.h */; };
-		13B702036BAF545529625818D7C3BF1A /* OCMObserverRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D422C2C41CF26D28180F9A2729FC055 /* OCMObserverRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		150BCD631A695BBE3F370BB22C80CD18 /* OCMBoxedReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFAD23FB91B91D6977C4F3363679D13 /* OCMBoxedReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		150FE7DB9B397EC4CB9BA169CF0ADD35 /* OCMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7121ED261E4FB14AE309E6631682AD /* OCMRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		19D140E4DC3D348F15DA58ACDD420FC0 /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B1414AB3DAD169686746DAB20B5411F7 /* OCMLocation.h */; };
-		1A852C1B6F7145BD7486727DC1360C25 /* NSMethodSignature+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FC748310672D4EF134FD65DDAD766F7F /* NSMethodSignature+OCMAdditions.h */; };
-		1AD5F26284E0A2F563C961486EE07FA5 /* OCMFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = E2687462FBD401F795864A69287C162E /* OCMFunctions.h */; };
-		1AD97142690096576A064B079FDBF956 /* NYTOperatingSystemCompatibilityUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 3312C6893BFA4ADFAF4FFF6E15BADF9B /* NYTOperatingSystemCompatibilityUtility.h */; };
-		1C85172871A10F6724E9A11BA69274FE /* NYTPhotoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00D2B72E42C1647A6F4F3F890B05D1 /* NYTPhotoTransitionAnimator.m */; };
-		1E8E5B251D8BCD35F95B9E23C6598E83 /* NYTPhotoViewerCloseButtonXLandscape@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9850EB1AB52EF1E9526F473F488236 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */; };
-		2136165B1AF0C580DC9C65596FF26B42 /* NSInvocation+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FF9534BE06E4665F5C1891F32A73C0 /* NSInvocation+OCMAdditions.h */; };
-		219D93D0A324AD0C7A64E728CEA8BEA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		21BCD64084B85418BFDD2ADDB1AF2C1E /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 248C98D4A5D956EB0092556450ED3422 /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2424BCEE9C9B306CD6F00A89773005A4 /* OCMInvocationStub.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F87FED8CD9F71B97931717411C0F9C /* OCMInvocationStub.h */; };
-		259FD283BBDC4569C5DEE2599907FCCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		2636BAD8EE41F0CCADE0D52F9EBF20C2 /* OCMFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E1A635BE58B739EA603A867E56AB9E /* OCMFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		268B7BAB37BB20AC2C5112E4314A6CF0 /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA27A0E4705A1758D8A1B55D2E0814 /* NYTPhotosViewController.m */; };
+		0097363F29AE17D3B4D4DC9F52E3B738 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B8E5DA12B94715FF5D137B537C761 /* NYTPhotoDismissalInteractionController.m */; };
+		0295D545595E1DC09513E9E222F9D21B /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC6D996D5CAE4C37392CE3041BB476 /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		039483DB05B7C2F033BFD490628DB98F /* OCMReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD13F9C8CD7DBD60C1ED2381DBBDA8 /* OCMReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		04E6C08EFDB67FD966D85813278D6AE8 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 28E5698F8F65ADE3FB4A4647A9952FAB /* OCMReturnValueProvider.h */; };
+		067D3FC3E315F2121E710D421B8DF611 /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 708C15B7C78ED44703E851785D6C8A5B /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		069361B4E5F065EABC2C6E46795EF479 /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CC29491B767E8B7F7198EFE093605B8 /* NYTPhotoViewController.h */; };
+		0ECA57C985BDA626AD9D96D550DD85B7 /* OCMRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 826D6240C31618B96408467354241112 /* OCMRecorder.h */; };
+		0F94BD05C799D999A50E7162618FD160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		1211EB358CEEEE2C7056AE44631659B3 /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC5647E7CF47879600989BD19979BD /* NYTScalingImageView.m */; };
+		14FA19B5E1A1FDE57498BCD50169262B /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1026BA2930E06F7756BC3431BF6F0D9 /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		15293B392D48A8849FE9B361D804D997 /* NYTPhotoViewerCloseButtonXLandscape@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0774553451AF6846A941E5500ECC77C5 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */; };
+		16D388726C363D0D5DEF5E26E5A15BFE /* OCMBlockCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = F271B102328142C4F1BE6CA742A657B1 /* OCMBlockCaller.h */; };
+		1752121B926B359F0F2609BEF823F8AA /* OCMInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 79EE2874985BC19085147033EB7078DB /* OCMInvocationMatcher.h */; };
+		1E2A0D053E26DCCBDDA8F719D6749E5E /* NYTOperatingSystemCompatibilityUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DA428901844A3860A96034B34ABE349 /* NYTOperatingSystemCompatibilityUtility.h */; };
+		1F3AA9D580E293171764DEBBB1DD6E90 /* NSValue+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D289E0FCFD0CDB3D5982E80F1E172204 /* NSValue+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1FBA675A25A9D3720C8467294AC2B824 /* NSInvocation+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D688974444F30A8A60C235A758B360EC /* NSInvocation+OCMAdditions.h */; };
+		219D93D0A324AD0C7A64E728CEA8BEA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		2204A8CD8E7B1661723D2081ADA64D9E /* OCMFunctionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CB8941AD941F37C4F47B6B8A3A25C8BC /* OCMFunctionsPrivate.h */; };
+		2230DA7ABA100348A8B67151BEDBB9DE /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0ED8354795E77FE119F8D6CF525DE /* NSBundle+NYTPhotoViewer.m */; };
+		259FD283BBDC4569C5DEE2599907FCCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		25E6B288255B26E915960400F3B3C90C /* NYTPhotoContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3743AD646CCA36015C5B246D0D3B20A7 /* NYTPhotoContainer.h */; };
 		26B06AA5F984C37600CCF4A9D640AA84 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 059CED233EC6D71DFE671648A6E8F54F /* Pods-Tests-dummy.m */; };
-		27A24F739907F58D393055F6381421C7 /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F9F1B5EFF80F0C44FB41FBB87A47A0 /* NSBundle+NYTPhotoViewer.m */; };
-		28EE9C9789874507CA8EDD2B1AD0F8E1 /* OCMReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B73A8F2AD29231AA522F9F6DA860ED /* OCMReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		29953A9F14ABEFA5082C0CDD62625CE1 /* OCMArgAction.h in Headers */ = {isa = PBXBuildFile; fileRef = C692FFF7BEC89D5D791047E560A0E6E0 /* OCMArgAction.h */; };
-		2D3B23AEEE55859560F5E38A3B5D41C7 /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BDECF04C72BF16231D552380F0213F22 /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2E0BBD38264D56851ADDEA6CF39268C3 /* OCMPassByRefSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 87B12474E17FCF2237CCDA327CDFFD46 /* OCMPassByRefSetter.h */; };
-		2EE3D56C073ABFF1484C95D36202E668 /* OCMInvocationStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A74774BF08AF5F4FFB2EF7AFB9BC82BF /* OCMInvocationStub.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2EF2C23645CCD44E273D23B5C5DECCD6 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DEC8B691375B218460CD8E002A86F0 /* NYTPhotosDataSource.m */; };
-		324C529C189ED63046E090CB7C663889 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E73C3A4725866F008647AF1784A65B6 /* NYTPhotoDismissalInteractionController.m */; };
-		3960C069522E850F4849BEECA0ADAF5C /* OCMIndirectReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B8848BF28D9DD7A5ADA6DF4B3D6DD349 /* OCMIndirectReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		296556812E6152F28473D1A0C90EAB8E /* OCMConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD393902CE7731D4FB8BB0454C6B56D /* OCMConstraint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2A0D78739C38A4B3154BE44AE595A2DF /* OCMArg.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F48E6A1CEE34570695ED4E6EF7E002 /* OCMArg.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C376F5267C519CEB909635E4E00D029 /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7556BF5AFD60190713217E71EF040B1 /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2CB968143F4FD81FFBCE43558D30FD0B /* OCMRealObjectForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D4C470E59948D50FD67A0CF11A03ED /* OCMRealObjectForwarder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2E53F6E23D2586E41EA3A1952CEE26D2 /* OCMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CB485BCEF4C71B649DB87B0DD0E9676A /* OCMockObject.h */; };
+		3020571720172CE7D693BCE76184250E /* OCMStubRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 18296E7EFA0CE4AE22C2ECB68A0716E9 /* OCMStubRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		34A434D3348BCB3E68BBEC458AE35023 /* OCMInvocationStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E642A0BC69D837C32E60A58CCF4A962 /* OCMInvocationStub.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		34BC018C6C5AC113D2253E3D82102FF4 /* OCMFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C25E54420935B16BFEECC3A0AC64D9 /* OCMFunctions.h */; };
 		3AF8BBF4B28C7B7AC2DBD29B72F6DD93 /* Pods-NYTPhotoViewer-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9366AB305BD6A307EF3E2AABE1934 /* Pods-NYTPhotoViewer-Swift-dummy.m */; };
-		3F10461DF096760A62876D205C4307F3 /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E5A6429C36A6F0630ED2CA81F0DC8F /* OCMInvocationExpectation.h */; };
-		3FB684E8D0D719EA3C09A1EF13DE640E /* OCMNotificationPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = F120E0AA07B222ECF424F29CFA560FB3 /* OCMNotificationPoster.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		41CF8E298350B214253C963CB7F443E2 /* OCMBlockArgCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = DA05F47A542BC80C94928E5A6DD4A7DB /* OCMBlockArgCaller.h */; };
-		440FC6F5AE0FA79B3784FE0FF96C7808 /* OCMArg.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD388137037BA93B6132BF9DBAE85CD /* OCMArg.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		46A019C5B7EB76153D14178E3E2794D4 /* NYTPhotoContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7147D1AFF4F0FFACA0A1877539C01D /* NYTPhotoContainer.h */; };
-		4B03BD599A6BE594F28634CB6F1894CF /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 227D8D83FF1D173125988A8B7960F4B9 /* NYTPhotosOverlayView.m */; };
-		506B010D3B99DE1A149AF2CB7ADA6FAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4B60D22FB9321F825AD8E6F96B375F /* UIKit.framework */; };
-		6024C592FEA2F4998AAB34C8F8FAF5D2 /* OCMFunctionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8841EBD6D3E40834A9BD7A573C9A36C8 /* OCMFunctionsPrivate.h */; };
-		64F7A8AC4D6E8A049C80B5EE916AE41A /* NSValue+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B84A5075B838936ED01B36C99D132128 /* NSValue+OCMAdditions.h */; };
-		65A1D4C94549755399C539B120169CA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		67518D2436B733AFDF804C9AF57F2D44 /* NSNotificationCenter+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD1C7470B26AECC2498789164B33BF4 /* NSNotificationCenter+OCMAdditions.h */; };
-		697D1B92F010090F2CF1CDC471218BB6 /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD00C58058D2264113A0817CA1F82BF4 /* NYTPhotosOverlayView.h */; };
-		6A7C41DAEF50C9E3947B4D7488B32BFA /* NSObject+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA8B4B8965CFADEEAA698D53C6D4DB2 /* NSObject+OCMAdditions.h */; };
-		6EF1A1F4E1B70A9E69606DF127FEC2C2 /* NYTPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB080377369C7B57BB371AD8229AA33C /* NYTPhotoViewer-dummy.m */; };
-		6EF3C3B1E3CFC883F497906C6522C74F /* OCMBlockArgCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFBD2C92D04CE90D15E17D2B11B62CD /* OCMBlockArgCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		708204B59C8605BE55B2CB70117BD613 /* OCClassMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A4F2F21627871D4F819EBA460F1D91A /* OCClassMockObject.h */; };
-		735BF7ABF219CAE4E3C0D77DF61F9853 /* OCMMacroState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC960ABCA3B5571ADF6F49E9A0B4E7 /* OCMMacroState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		41159792D04F6AF065B2E2DB0A8D493C /* OCMIndirectReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F780AA780C46390EEC17D5E2E1896F /* OCMIndirectReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		427BC3CD55EE123B2E658C5057F805B9 /* OCMInvocationExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7899156B7227837E1C4C5CD524929677 /* OCMInvocationExpectation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		432774D78FCD74070CE1F1468B03D6F6 /* NSValue+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B0906AB338FCE8342DA510F42AB259 /* NSValue+OCMAdditions.h */; };
+		4B3A85F09B9544DE9B46F3BD179C3250 /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1121A1AD6CD7D51A83516A1A82C194 /* NYTPhotoTransitionController.m */; };
+		4B73B4E5369938F8F236DE2F3240BA8B /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FEFDD7C6EC2D5CDE6D616C0A11785DD7 /* NYTPhotosViewControllerDataSource.h */; };
+		4C2A536DB40FE2EACAAC94CE758E0B5E /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E34C15A90393EE7CDA90413566119A /* OCMLocation.h */; };
+		4E67D971135E9FAD96D0C2F9E87A94FE /* NYTPhotoViewerCloseButtonX@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64268894F94109860CEE4B9F465AB7A5 /* NYTPhotoViewerCloseButtonX@2x.png */; };
+		50E249ED8383A2139BBEE589D7C0ECDA /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFAD6FC7D4CE57D4A35C1F18D29CB72 /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5353D57A17635F88626ED228014CAC5E /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8039F4787B4AAC3AB8244EB6F34D9D07 /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5787A70B24343A7DD80B5AB558FAD192 /* OCMExceptionReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 941723800A489143122D9E61B52D19D7 /* OCMExceptionReturnValueProvider.h */; };
+		578859E50F0B6C8DEDC57952AF7BE527 /* OCMock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D087B2171844CD60462942006CF6EA0A /* OCMock-dummy.m */; };
+		5FD15AF3060C59E0B38A19C03E749CD3 /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E5E6011D64FAB9A3194A1410E57ABDF /* OCMInvocationExpectation.h */; };
+		60CD2FBC57FE79688F36E7F6057C1D38 /* OCMPassByRefSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DAAF6A494C825ED5D9874EC7965DA3E /* OCMPassByRefSetter.h */; };
+		6AE64869CC39E69D82BECEA977032E84 /* OCMInvocationStub.h in Headers */ = {isa = PBXBuildFile; fileRef = AA03986BD11CAF8BE5DE425C2308273A /* OCMInvocationStub.h */; };
+		6ECFBE688C2D0E073756546F19FC0ED4 /* OCMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 6995091D55D42DF7CAEDA4269D569BF0 /* OCMVerifier.h */; };
+		6F313CC64D333CEEF2A94FE2F36DBB68 /* OCMBlockArgCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 42095E94BAD8428FF1B2CB4834DAB146 /* OCMBlockArgCaller.h */; };
+		6FA6D6DBA3EC99911B3AE4D0C28D3B55 /* NYTOperatingSystemCompatibilityUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DD06F631B5E9F1DBE3146D8EEA142F /* NYTOperatingSystemCompatibilityUtility.m */; };
+		6FB305BFF291B4444DFFCCD6D31D80C9 /* OCMConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 51BB0CC4446F6D2A0B88A09E4954DB7C /* OCMConstraint.h */; };
+		6FC09546225AF68B4C4A3E0498B0BF16 /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE782351C40AEB49442F917F9EB50C9D /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		74EA28854BD40D1C36DBCF5ADB75D18D /* Pods-NYTPhotoViewer-SwiftTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 155987706DCDB76EE0C68FABEF9D6FD7 /* Pods-NYTPhotoViewer-SwiftTests-dummy.m */; };
-		759FEBBED51534537053D9749CBAB587 /* NYTPhotoTransitionAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 23914B0FC197C4831B010EAC48FD0D2D /* NYTPhotoTransitionAnimator.h */; };
-		790F23869F37419DDA6FB3E143813D7C /* OCMStubRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 470DFB98A0CA5219F7A10D13E901909C /* OCMStubRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D8409C4DE5E8F2A599C7712BFD6FA32 /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB554578A279BBDFA2A2070D2AFD41 /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7EAC1A4CA0013FD547B28350D19DE74D /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 72481A2386E492BBA124A486983276DF /* NYTScalingImageView.h */; };
-		7EF1585D12FADEAEB50AA1276DBE95C1 /* OCMRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2C4731BBE835A721D3C3334605F08D /* OCMRecorder.h */; };
-		7F1C6227F128657FD0C4E8C8896B764B /* OCMConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0562C7D1DD29634F47CF134671A4E9 /* OCMConstraint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7F325B9073C2C8ABB1E3C43B322B45DD /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F7D3861D54B8C001EDA1A2BF15D30 /* NYTPhotoViewController.m */; };
-		8208474272D30F248E70BF627D3A3E6F /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE6EDADAEDE1316828CEA82FFEEF15A /* NYTPhotoTransitionController.m */; };
-		8415FBD654C9FEF89EB1556C00B02D57 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F2DCE99F47852E6D626DEB22686DC7 /* NYTPhotoTransitionController.h */; };
-		8A0418F17B9A363E4222E37819296E7C /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F38EB1D535FB9C9FFB61872F84511FCD /* OCMIndirectReturnValueProvider.h */; };
-		8B58D75A39E6BF17FE6D93DACE422FC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		91D1BB7E3D7785E3272E140B95184A1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		9231F2E522E1A634E83BD8AE0524D0FB /* OCObserverMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AA20EBB5E06F62B8C9F5A999ADE93070 /* OCObserverMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		94B7EBFD53460F793E04EBCA5269C881 /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E453042F5014AD8827EBEBFA036B2C /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		95CD0B50EE8B359187362DB2FF5E550D /* OCProtocolMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E6575E3DDE6C9455CB3D8C07B3FB4F2 /* OCProtocolMockObject.h */; };
-		973E90066DBF5372ECEE9EF48FCA098C /* OCMock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CE9C094FD698C7D207B4DF1007AA9A /* OCMock-dummy.m */; };
-		97FC359187C6845C0E14484A86575731 /* OCMConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0196A3001B377D9F28D90F897FB19170 /* OCMConstraint.h */; };
-		9AF179D62DD0417C71E0CC8951C24437 /* OCClassMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2522330E4C5BDE869785A72945FBB7E /* OCClassMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9EB7A2C8F8A196B89D4EF2E36BE1A7F6 /* NYTPhotoViewerCloseButtonXLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8D813250D533AA17EB3D1557BF618 /* NYTPhotoViewerCloseButtonXLandscape.png */; };
-		9FDBC4C5A3C3EAADAD6D70F1AE785000 /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AE3566AEEDB983DDA3C978117F7CE1E /* NYTPhotosViewControllerDataSource.h */; };
-		A17AAE98CA013BFACE2715FCA78D7946 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E58D2F27A3F12605AE1DCB9A2BD54A /* NYTPhotoCaptionView.m */; };
-		A5092DC2D28196B289A3DDC4BDCD9475 /* OCMInvocationExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2286BA88E61E2F2DAF6BF19A73C9CD /* OCMInvocationExpectation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A6A39FE1C47F53C4BC3C172A52C145D3 /* OCMExpectationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = CB54A1E0564327A6C7F7BDADC94A0B7C /* OCMExpectationRecorder.h */; };
-		A9B8D45D59C9904C4B0B94C7D58AF4C7 /* OCMBlockCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 26543D6A3A8A2D9F4E8AD5EE5209057E /* OCMBlockCaller.h */; };
-		A9DD9B63007A85777ACD3145C1FE2780 /* OCMRealObjectForwarder.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F6B0DC1F3B4941C1187643CAAC8C8A /* OCMRealObjectForwarder.h */; };
-		AA1275CC95FD2A0C8E21A0CB9786F382 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D235F3118FC486AF42FA234994CD5C0 /* OCMReturnValueProvider.h */; };
-		AB06748C679ADED6233B0DF41BA8D4D9 /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F53DAF0654116AB1CCDC511BF0C51E9 /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AD9236B17C3C6D30EBAC84C54D4FAE09 /* OCMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FE3553ADBDFA8CBFA8D373C63742450B /* OCMockObject.h */; };
-		B2809D8DA532810555E660630F4831D8 /* NYTPhotoViewerCloseButtonX@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F52566A2420FD5AA68DEB0CCE1832 /* NYTPhotoViewerCloseButtonX@3x.png */; };
-		B54D8AA2DE0B039118854780E86AC7AF /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 440605DAA9ACC5748E5F58ADE8B01810 /* NYTPhotoDismissalInteractionController.h */; };
-		B6485495324621CD1C2EA9AC3C38EA6B /* NYTPhotoViewerCloseButtonX@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4445546716EDAB13E68A0769D3C4BE29 /* NYTPhotoViewerCloseButtonX@2x.png */; };
-		B8B7856867B75B57A37EFB006AB91C35 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 2809ABEED78A1EE2E46D67EA4C1B1D4A /* NYTPhoto.h */; };
-		BA9FDCDEE505BC3772CDBDE28F8A076B /* OCObserverMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E12C942BDA441C0EF2F1BCE599754978 /* OCObserverMockObject.h */; };
-		BD006A6671065530239B8B89FB9274FC /* NSObject+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4891051A45090A1AA226EB98FDEB9E29 /* NSObject+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C0C964471A435C8DDC54A39A01D65DC7 /* NSValue+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B69E26CAC6C77FEDCCFF2D78181D30F /* NSValue+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C3ADBEB2CA8866760859776E8F769D93 /* OCMPassByRefSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 052A6549A58B888A23CB83187B01C4BF /* OCMPassByRefSetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C6197AD73C357812F20CE3B0FDF51D4C /* OCMObserverRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F588AA329612D66B9456B94AED7EEFC /* OCMObserverRecorder.h */; };
-		CC4CABEEF6FF791CB21A0787C3861B0D /* OCMInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A77604A2AD3C08C6040BEB11889EA1 /* OCMInvocationMatcher.h */; };
-		D05E0CB3F0DEF96E27A7BB2117251A02 /* OCMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 7946ADD42AA0BBD02C40F828B10813BD /* OCMVerifier.h */; };
-		D08EFA482F314BEE9C91116DC4DC9470 /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F127F2282A5E1F39C41FEAE3A8116 /* NYTScalingImageView.m */; };
-		D272438F6793BA7918349984D9E9A2EF /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ED363D2D68EE097D3E130F58AF92 /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D45E3EB468A5E555175C2517E357BC9D /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9E45FA2D12AB13432DC917113153A /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D56FE0716061078CBAA725696E4C7DF6 /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D284C93BD6A0ED5D9B7BA317F5603 /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D81C2452F122D9190100CCFF9209531F /* OCMExpectationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9948BA7264B6A9BB362CF2141D4BF6 /* OCMExpectationRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D9799206A8754E242F02B1B9B952A908 /* OCMNotificationPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = ADA0A2EF6590718C5324688517256296 /* OCMNotificationPoster.h */; };
-		DD7E8DE8AD46200274A019E1F8B0CEEE /* OCPartialMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 81B872DBC12CF9A1B9A0FFB1FE5391B0 /* OCPartialMockObject.h */; };
-		E31AEE86876425A2BE75D14EF0311236 /* OCMock.h in Headers */ = {isa = PBXBuildFile; fileRef = ECEBE2A598C6E4030772ED8CD1702377 /* OCMock.h */; };
-		E5EA9B6295107BB5656428270CC1146B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */; };
-		EE9A13683BF18120F518D2F06D7F88EF /* NYTPhotoViewerCloseButtonX.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CA9B262433587536816955A9E07CB5 /* NYTPhotoViewerCloseButtonX.png */; };
+		81FE3469EB7613B1166073FCEE503B9A /* OCMMacroState.h in Headers */ = {isa = PBXBuildFile; fileRef = E5A8A370DB89C4568EF48E2C0E4815AC /* OCMMacroState.h */; };
+		837F288EB7E7BF10F9F571D37CA88378 /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC236426C96EF4AB449C9303071975 /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		844E2FBD16F16B8773086ED7D62E4575 /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6841B62633902AF7D1A487F5E0344 /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		86ED5B290C58C2A5150DD12445C91610 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A55974699E8522B518431D265EB6DB /* NYTPhoto.h */; };
+		87584589E160878B467C68A4EC57B8FD /* OCMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CDA277A169E46C08182DEFCAD0158B /* OCMRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8903596D6C2E89B249470405CF09A5E1 /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1C870679C69782D57B2EE38E8DA613B /* NYTScalingImageView.h */; };
+		8B58D75A39E6BF17FE6D93DACE422FC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		8E482DB7291C28D2DC0B13034A02A1DC /* OCMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BCAE4569D5237468326ABDE483BDC /* OCMVerifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8F2BACF72E4A4ACCC431EB9E125B840B /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = B38B68A36C97B3D62A5028D5319DA1B3 /* NYTPhotosOverlayView.h */; };
+		90760432C5439DC0DEA8EEAD989FB90A /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5568BC7598A89119857717B39AA3E4 /* OCMBoxedReturnValueProvider.h */; };
+		90EA9E754A889E9ED114AF14ED5A9E22 /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90DBBB53F66F03F0F92AA1C63FC63C2 /* NYTPhotoViewController.m */; };
+		91D1BB7E3D7785E3272E140B95184A1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		94883928D9D072B4A74D62C583D20645 /* OCMBlockArgCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C11BDDDBFC39B5D98558A1BB4F783 /* OCMBlockArgCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9542C6E45CDD1A0EF9B7D8718224B8C5 /* OCMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8919D37A051877D4481C230114825F5B /* OCMock.h */; };
+		96F6DF0AC7617AFE24291E6ACA89C0D0 /* NSNotificationCenter+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8335A651FF4CBA7CC2E57B50E47EDB9 /* NSNotificationCenter+OCMAdditions.h */; };
+		9751DB74BAD13B0B6872A6C9368E714F /* OCMExpectationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3690DF26E1A2B5F9BA267A24D506CA69 /* OCMExpectationRecorder.h */; };
+		9B21F7EF41EBB7F10367B7D6DCE5B139 /* OCMBoxedReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE156BEB93DB89F3ACF4BA02CB84EF /* OCMBoxedReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A0A2B097D9E8C44399569F6CAF71A08C /* OCObserverMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 309D72B0EE966C77670106852ED6BBC8 /* OCObserverMockObject.h */; };
+		A1AA7F6CC13EFECF6D1881C50A0094D7 /* OCPartialMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 470386F7588178E25DD8BEC8F77E3139 /* OCPartialMockObject.h */; };
+		AAE9304E54B77A0AF5A24F925FFA37FC /* NYTPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC54860AFBDD8E24E9A0B446CF73067 /* NYTPhotoViewer-dummy.m */; };
+		AE82A0ED65D5467C8A66B3996A1108C7 /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0220D860B5CBBDAF76C9E06A8B69F /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AFBF1CB22A07DD8B63FE5165B34DF676 /* NYTPhotoViewerCloseButtonXLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCBE07F3670DDACD9B567EF6446AA0D /* NYTPhotoViewerCloseButtonXLandscape.png */; };
+		B08ADEE217AFDFDACC5CAE4921A28661 /* NYTPhotoViewerCloseButtonX.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0179D51BC896BD422E73F6D3764F72 /* NYTPhotoViewerCloseButtonX.png */; };
+		B1C5148586213F9DF18DBF9FB45D1576 /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B01ABB64346CB24C48EC325CFCC7BE /* OCMIndirectReturnValueProvider.h */; };
+		B3F8B71453DBE1D30E54E98FB938C6B1 /* OCMArg.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C925062A0C0231162B7DD243EEC82E3 /* OCMArg.h */; };
+		B567CBD8316A71ECC02EB994FC623698 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = B88253EAB8C780C3FFFDC60DA0DCB9CD /* NYTPhotoTransitionController.h */; };
+		B7D4949250ECC4EA1E7EB700DA0EE9CE /* OCMNotificationPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 027824B6CFC0D681CC3E13557F9F9532 /* OCMNotificationPoster.h */; };
+		B90C619FF30DB0DF638B68D0E975E257 /* OCMExpectationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 648A96E75D609A24DA2FFF3701596E62 /* OCMExpectationRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B951468D15F227CAFE3D7C268C83EF5A /* NSMethodSignature+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 35924EE6DD215A20A9D8D7107B23DAF2 /* NSMethodSignature+OCMAdditions.h */; };
+		B99E1D47ABB6E309239EFFA0DDE4B3BF /* NYTPhotoViewerCloseButtonX@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFC53E288D3475C30F98A9DE4E5842D /* NYTPhotoViewerCloseButtonX@3x.png */; };
+		BAAA1CBA95A7469F2D82490AA1E3C4BD /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E84CCBE8ED779C7C577DA004E863B /* NYTPhotosDataSource.h */; };
+		BD687C728880C8DD339DCCECEA4056C5 /* OCMArgAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 938B478D57A0EC5A95ED8D5C80976CC2 /* OCMArgAction.h */; };
+		C254459281D78F5D630AB7018195CA0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */; };
+		C29B2568BEC7831D195E7981A4ADBB55 /* OCMMacroState.m in Sources */ = {isa = PBXBuildFile; fileRef = E285BA86C2F4124A305524D0989D36AB /* OCMMacroState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2B3D0D67AC2D575C139528ADA611E52 /* OCClassMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C96AD8CBF7F8A4C1AC484F1AA5C948 /* OCClassMockObject.h */; };
+		C33DF1AC2EF82E134260328F3BC1BE83 /* OCClassMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A264F0B4C33E766D5488F53D78E31A9 /* OCClassMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C35C4A48FD4AFD22B948BFDDE53FCEF9 /* NSObject+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823328CB135D55FFCBE21FEC1202A86 /* NSObject+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C3D30A7291D0A87C0C4DC0CA59701BE3 /* OCMObserverRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C83D5A8D0D468919CE553BDCBD531E /* OCMObserverRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C44180D22AED84E66203C5C081ACA070 /* OCObserverMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EFD5666A6629EABA4960A72FA9CA0D /* OCObserverMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C63D8CDD62ED194A0CD50D6F7E08E08E /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E7DAA126BAC10207492747868E22FCE /* NSBundle+NYTPhotoViewer.h */; };
+		C809C30C5D995DAAAE6341CBBA328A57 /* OCMStubRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 064B44D8ACD5DCE15E3DBDFFA9EB9FD0 /* OCMStubRecorder.h */; };
+		CB25AAB22DC94FA6DEBDFC05B19AC387 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 426254A4A0936268DDE3E69801D51BC8 /* NYTPhotosDataSource.m */; };
+		CD74DE2F9619212B5B76BAF3A5067B67 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F5362C79166978B947B8AA3F27412AB /* NYTPhotosViewController.h */; };
+		CE7FC2B63EB44047E1AC1F6D531738B6 /* OCMRealObjectForwarder.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1C8D47BB552667B1A7C7958C2603C8 /* OCMRealObjectForwarder.h */; };
+		CF9BD731EE1D971690FB9C73A7F616A6 /* OCMPassByRefSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC049E15936D115DC1C66A2CA48DCF9E /* OCMPassByRefSetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D446972B22973B95CF54982CCF648640 /* OCMFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65069B9CCBB44E03EC6C7698233B4971 /* OCMFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE4F64079BC5CF2763598EC281B64000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2C78F172EDB4CE9CBD351F694FAFB0 /* UIKit.framework */; };
+		E1CDD08B77ACC4D79B82EFE388D9AFF6 /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5D7CDA02DEF90DA2C28296B1346398 /* NYTPhotosOverlayView.m */; };
+		E4E9B444EA925D632605E48DE93A9511 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87FD38EC25984467A556E68DDA6FE7 /* NYTPhotoCaptionView.m */; };
+		E905E01E59E3CBCD53EEFD32BF7DC318 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49367532166D445A8B30894F816E23A1 /* NYTPhotoCaptionView.h */; };
+		EAB5A330F1F88047378F8CFCFA9C7DE3 /* NSObject+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 72172C7335924750C448D02E7872E251 /* NSObject+OCMAdditions.h */; };
+		ECA1F848FEAE7454E615911A2CC44764 /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0501DE357D5791920123126366B0FA86 /* NYTPhotosViewController.m */; };
+		EE59EC199D3313F5189183067B0C5475 /* OCMObserverRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 329A09F7D29129479464407FEC38EB7C /* OCMObserverRecorder.h */; };
 		EECE72715772551DABBFB591DE64A920 /* Pods-NYTPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C8D571F316961F31B49D5AFDD835C /* Pods-NYTPhotoViewer-dummy.m */; };
-		F0C4B08ADB89F0314C5603CB484A4741 /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C1B03EA8325334F96719DB92DA717FE /* NYTPhotoViewController.h */; };
-		F487BA8696D7680366F984FDE4C85650 /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FDB69B37CD0005A84CEB74D0B6C029 /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F5204062060D464EAF5F84E1670D1EEB /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = D68D95C886469F03034646A1D4664BE8 /* NYTPhotoCaptionView.h */; };
-		F7EBD18D377FDD308653D4957072140B /* OCMArg.h in Headers */ = {isa = PBXBuildFile; fileRef = 1155A246B9BB336A19264554E456A1F4 /* OCMArg.h */; };
-		F8EF6A40C6540F576ADE76B066ACBAC8 /* OCMRealObjectForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = C03283CBAF2CD0BB4E926A1976BD37A1 /* OCMRealObjectForwarder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F9E29F203DA023F060C562E21E7BB02C /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73719B79D2863253AD1044C65F8949B7 /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FADEBA5CB0A6AFDACA197B7163B81243 /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C1EF36C7BAC4CE6ADB7ACD6A94C0EE46 /* NYTPhotosDataSource.h */; };
-		FDA218543C16AE8D835CD5F362BF0DB9 /* NYTOperatingSystemCompatibilityUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64D7954D5F0A52F253DF36357C4798 /* NYTOperatingSystemCompatibilityUtility.m */; };
-		FFB490BD23C92B1C8881093F2F34AA11 /* OCMMacroState.h in Headers */ = {isa = PBXBuildFile; fileRef = 51E1890DA19E4AF95EC4DD529F8B8F36 /* OCMMacroState.h */; };
+		EEEF594998E9359D09CFF7B6B4CA2A45 /* OCMNotificationPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 204736A4B99EC5898E842AB5FF144B9C /* OCMNotificationPoster.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EF3663856663B1B29F5F1ABD59753D13 /* NYTPhotoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 396FE8793B18F7072E3D831832288047 /* NYTPhotoTransitionAnimator.m */; };
+		F8FEC8FC07740274E05C4E71A8A826E8 /* OCProtocolMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A306102CA3ECAB0C87FAB93EEEF200 /* OCProtocolMockObject.h */; };
+		FA2FD68FFE8F4BE1F24D33DBF8601E4A /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D7A220C2C014C0BD340880693F3C94 /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FAD1932DC5555A27D2A31A11E940C79F /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD789BB0335524DAD63DC33CD90FD28 /* NYTPhotoDismissalInteractionController.h */; };
+		FC917ABC426F4772CE1DCA69E0A30845 /* NYTPhotoTransitionAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2B33BC957EB950381E046150AD4AE5 /* NYTPhotoTransitionAnimator.h */; };
+		FE2791B7574857F9D1BBCAA758821ABF /* NYTPhotoViewerCloseButtonXLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7471E6039DAF9BD40FE28ED8446077 /* NYTPhotoViewerCloseButtonXLandscape@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		290F22733372DCAE51608D4B8B8A0811 /* PBXContainerItemProxy */ = {
+		024F35FF258AB9CC725433ABBB112C6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 60142930C50548A3A0E7F269992745D4;
+			remoteGlobalIDString = A38B829842D720B88C236DFBCB2CADD1;
 			remoteInfo = NYTPhotoViewer;
 		};
-		3B38D7DFE3BB7668970B293B0FF0ADE2 /* PBXContainerItemProxy */ = {
+		52DC975230A9362C5E55F982FEB8649B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 25895F21CA2FBA76FF06201222C7E5DB;
+			remoteGlobalIDString = D5E03CA625720A1BD0CC3E6CC7E19C1F;
 			remoteInfo = "NYTPhotoViewer-NYTPhotoViewer";
 		};
-		451AFA77B002306CE1EE851FD2FEE61C /* PBXContainerItemProxy */ = {
+		BA91511B296B3AF571B413ED66935999 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 60142930C50548A3A0E7F269992745D4;
+			remoteGlobalIDString = A38B829842D720B88C236DFBCB2CADD1;
 			remoteInfo = NYTPhotoViewer;
 		};
-		455A27646A5B74379A6286DC2667E746 /* PBXContainerItemProxy */ = {
+		C9DFF7CD1E35B8B432B78AAFDAFDEE78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 60142930C50548A3A0E7F269992745D4;
+			remoteGlobalIDString = A38B829842D720B88C236DFBCB2CADD1;
 			remoteInfo = NYTPhotoViewer;
 		};
-		47E4EF7D861A1E60A47343412AEF3B3E /* PBXContainerItemProxy */ = {
+		DC9A447A540E6E900D7760683CC9F08D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F967EDE17D183F305254185D964D9ABE;
+			remoteGlobalIDString = F29BD8CD0B795C2970505A35BEBB16DC;
 			remoteInfo = OCMock;
 		};
-		ADA700E9B3552FF4219DB312ECB02EBA /* PBXContainerItemProxy */ = {
+		F25012FB43922F5F1E2FA2E7CE43BD7D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 60142930C50548A3A0E7F269992745D4;
+			remoteGlobalIDString = A38B829842D720B88C236DFBCB2CADD1;
 			remoteInfo = NYTPhotoViewer;
 		};
-		C3CB82FD6DB0FE635A8404D9C213088E /* PBXContainerItemProxy */ = {
+		FE6D319B493321669547827B9514CE1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F967EDE17D183F305254185D964D9ABE;
+			remoteGlobalIDString = F29BD8CD0B795C2970505A35BEBB16DC;
 			remoteInfo = OCMock;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E1A635BE58B739EA603A867E56AB9E /* OCMFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMFunctions.m; path = Source/OCMock/OCMFunctions.m; sourceTree = "<group>"; };
-		0196A3001B377D9F28D90F897FB19170 /* OCMConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = Source/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
-		052A6549A58B888A23CB83187B01C4BF /* OCMPassByRefSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMPassByRefSetter.m; path = Source/OCMock/OCMPassByRefSetter.m; sourceTree = "<group>"; };
+		027824B6CFC0D681CC3E13557F9F9532 /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
+		02DC236426C96EF4AB449C9303071975 /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
+		0501DE357D5791920123126366B0FA86 /* NYTPhotosViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewController.m; sourceTree = "<group>"; };
 		059CED233EC6D71DFE671648A6E8F54F /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		090D284C93BD6A0ED5D9B7BA317F5603 /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+OCMAdditions.m"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
-		0E4B60D22FB9321F825AD8E6F96B375F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		1155A246B9BB336A19264554E456A1F4 /* OCMArg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = Source/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		064B44D8ACD5DCE15E3DBDFFA9EB9FD0 /* OCMStubRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMStubRecorder.h; path = Source/OCMock/OCMStubRecorder.h; sourceTree = "<group>"; };
+		0774553451AF6846A941E5500ECC77C5 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonXLandscape@3x.png"; sourceTree = "<group>"; };
 		152F8E626C2FC9CE94937B0DFA36B53D /* libPods-NYTPhotoViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYTPhotoViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		155987706DCDB76EE0C68FABEF9D6FD7 /* Pods-NYTPhotoViewer-SwiftTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NYTPhotoViewer-SwiftTests-dummy.m"; sourceTree = "<group>"; };
-		16FDB69B37CD0005A84CEB74D0B6C029 /* OCMBlockCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockCaller.m; path = Source/OCMock/OCMBlockCaller.m; sourceTree = "<group>"; };
-		1A4F2F21627871D4F819EBA460F1D91A /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
-		1B00D2B72E42C1647A6F4F3F890B05D1 /* NYTPhotoTransitionAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionAnimator.m; sourceTree = "<group>"; };
-		1B69E26CAC6C77FEDCCFF2D78181D30F /* NSValue+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+OCMAdditions.m"; path = "Source/OCMock/NSValue+OCMAdditions.m"; sourceTree = "<group>"; };
-		1BC9E45FA2D12AB13432DC917113153A /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
+		1823328CB135D55FFCBE21FEC1202A86 /* NSObject+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+OCMAdditions.m"; path = "Source/OCMock/NSObject+OCMAdditions.m"; sourceTree = "<group>"; };
+		18296E7EFA0CE4AE22C2ECB68A0716E9 /* OCMStubRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMStubRecorder.m; path = Source/OCMock/OCMStubRecorder.m; sourceTree = "<group>"; };
+		1CC29491B767E8B7F7198EFE093605B8 /* NYTPhotoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewController.h; sourceTree = "<group>"; };
 		1EBB89082B09EBC519249C24FFA06AD6 /* Pods-NYTPhotoViewer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTPhotoViewer-acknowledgements.plist"; sourceTree = "<group>"; };
 		1F8E86C041046BDF97B7A8A81A0D11E8 /* libPods-NYTPhotoViewer-SwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYTPhotoViewer-SwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		227D8D83FF1D173125988A8B7960F4B9 /* NYTPhotosOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayView.m; sourceTree = "<group>"; };
-		23885055AD3ED35ACB309790B1DD8F8A /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
-		23914B0FC197C4831B010EAC48FD0D2D /* NYTPhotoTransitionAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionAnimator.h; sourceTree = "<group>"; };
-		23E453042F5014AD8827EBEBFA036B2C /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationMatcher.m; path = Source/OCMock/OCMInvocationMatcher.m; sourceTree = "<group>"; };
-		23F6B0DC1F3B4941C1187643CAAC8C8A /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRealObjectForwarder.h; path = Source/OCMock/OCMRealObjectForwarder.h; sourceTree = "<group>"; };
-		248C98D4A5D956EB0092556450ED3422 /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExceptionReturnValueProvider.m; path = Source/OCMock/OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
-		26543D6A3A8A2D9F4E8AD5EE5209057E /* OCMBlockCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockCaller.h; path = Source/OCMock/OCMBlockCaller.h; sourceTree = "<group>"; };
-		2809ABEED78A1EE2E46D67EA4C1B1D4A /* NYTPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhoto.h; sourceTree = "<group>"; };
-		2B7147D1AFF4F0FFACA0A1877539C01D /* NYTPhotoContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoContainer.h; sourceTree = "<group>"; };
+		204736A4B99EC5898E842AB5FF144B9C /* OCMNotificationPoster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMNotificationPoster.m; path = Source/OCMock/OCMNotificationPoster.m; sourceTree = "<group>"; };
+		28E5698F8F65ADE3FB4A4647A9952FAB /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = Source/OCMock/OCMReturnValueProvider.h; sourceTree = "<group>"; };
 		2BF906016B9032F8FCA3478A68935D97 /* Pods-NYTPhotoViewer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NYTPhotoViewer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2C1B03EA8325334F96719DB92DA717FE /* NYTPhotoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewController.h; sourceTree = "<group>"; };
 		2D0C8D571F316961F31B49D5AFDD835C /* Pods-NYTPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NYTPhotoViewer-dummy.m"; sourceTree = "<group>"; };
-		2DD1C7470B26AECC2498789164B33BF4 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		2DDC5647E7CF47879600989BD19979BD /* NYTScalingImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTScalingImageView.m; sourceTree = "<group>"; };
+		2F6C11BDDDBFC39B5D98558A1BB4F783 /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockArgCaller.m; path = Source/OCMock/OCMBlockArgCaller.m; sourceTree = "<group>"; };
+		2FEC6D996D5CAE4C37392CE3041BB476 /* OCMBlockCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockCaller.m; path = Source/OCMock/OCMBlockCaller.m; sourceTree = "<group>"; };
+		309D72B0EE966C77670106852ED6BBC8 /* OCObserverMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = Source/OCMock/OCObserverMockObject.h; sourceTree = "<group>"; };
+		31DD06F631B5E9F1DBE3146D8EEA142F /* NYTOperatingSystemCompatibilityUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTOperatingSystemCompatibilityUtility.m; sourceTree = "<group>"; };
+		329A09F7D29129479464407FEC38EB7C /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
 		32F620CCD8398F18EF43FC562073EF47 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3312C6893BFA4ADFAF4FFF6E15BADF9B /* NYTOperatingSystemCompatibilityUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTOperatingSystemCompatibilityUtility.h; sourceTree = "<group>"; };
-		3AFAD23FB91B91D6977C4F3363679D13 /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBoxedReturnValueProvider.m; path = Source/OCMock/OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
-		3C04EB53300A42818CDC9BE0DD54D9F5 /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBoxedReturnValueProvider.h; path = Source/OCMock/OCMBoxedReturnValueProvider.h; sourceTree = "<group>"; };
-		3C64D7954D5F0A52F253DF36357C4798 /* NYTOperatingSystemCompatibilityUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTOperatingSystemCompatibilityUtility.m; sourceTree = "<group>"; };
-		440605DAA9ACC5748E5F58ADE8B01810 /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
-		4445546716EDAB13E68A0769D3C4BE29 /* NYTPhotoViewerCloseButtonX@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonX@2x.png"; sourceTree = "<group>"; };
-		46F87FED8CD9F71B97931717411C0F9C /* OCMInvocationStub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationStub.h; path = Source/OCMock/OCMInvocationStub.h; sourceTree = "<group>"; };
-		470DFB98A0CA5219F7A10D13E901909C /* OCMStubRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMStubRecorder.m; path = Source/OCMock/OCMStubRecorder.m; sourceTree = "<group>"; };
+		35924EE6DD215A20A9D8D7107B23DAF2 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
+		3690DF26E1A2B5F9BA267A24D506CA69 /* OCMExpectationRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExpectationRecorder.h; path = Source/OCMock/OCMExpectationRecorder.h; sourceTree = "<group>"; };
+		3743AD646CCA36015C5B246D0D3B20A7 /* NYTPhotoContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoContainer.h; sourceTree = "<group>"; };
+		396FE8793B18F7072E3D831832288047 /* NYTPhotoTransitionAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionAnimator.m; sourceTree = "<group>"; };
+		39D7A220C2C014C0BD340880693F3C94 /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
+		3A264F0B4C33E766D5488F53D78E31A9 /* OCClassMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCClassMockObject.m; path = Source/OCMock/OCClassMockObject.m; sourceTree = "<group>"; };
+		3A7E84CCBE8ED779C7C577DA004E863B /* NYTPhotosDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosDataSource.h; sourceTree = "<group>"; };
+		3DAAF6A494C825ED5D9874EC7965DA3E /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = Source/OCMock/OCMPassByRefSetter.h; sourceTree = "<group>"; };
+		42095E94BAD8428FF1B2CB4834DAB146 /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockArgCaller.h; path = Source/OCMock/OCMBlockArgCaller.h; sourceTree = "<group>"; };
+		426254A4A0936268DDE3E69801D51BC8 /* NYTPhotosDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSource.m; sourceTree = "<group>"; };
+		43C0BA7FAF8C616DB905C171EA6FFC6B /* libOCMock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCMock.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		470386F7588178E25DD8BEC8F77E3139 /* OCPartialMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = Source/OCMock/OCPartialMockObject.h; sourceTree = "<group>"; };
 		4836B1E7EC340F70111CE58060996E48 /* OCMock-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCMock-prefix.pch"; sourceTree = "<group>"; };
-		4891051A45090A1AA226EB98FDEB9E29 /* NSObject+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+OCMAdditions.m"; path = "Source/OCMock/NSObject+OCMAdditions.m"; sourceTree = "<group>"; };
-		4C7F127F2282A5E1F39C41FEAE3A8116 /* NYTScalingImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTScalingImageView.m; sourceTree = "<group>"; };
-		4EE8D813250D533AA17EB3D1557BF618 /* NYTPhotoViewerCloseButtonXLandscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = NYTPhotoViewerCloseButtonXLandscape.png; sourceTree = "<group>"; };
-		4F5F52566A2420FD5AA68DEB0CCE1832 /* NYTPhotoViewerCloseButtonX@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonX@3x.png"; sourceTree = "<group>"; };
-		51E1890DA19E4AF95EC4DD529F8B8F36 /* OCMMacroState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMMacroState.h; path = Source/OCMock/OCMMacroState.h; sourceTree = "<group>"; };
+		49367532166D445A8B30894F816E23A1 /* NYTPhotoCaptionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionView.h; sourceTree = "<group>"; };
+		4CD789BB0335524DAD63DC33CD90FD28 /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
+		4DFC53E288D3475C30F98A9DE4E5842D /* NYTPhotoViewerCloseButtonX@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonX@3x.png"; sourceTree = "<group>"; };
+		4EBE156BEB93DB89F3ACF4BA02CB84EF /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBoxedReturnValueProvider.m; path = Source/OCMock/OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
+		51BB0CC4446F6D2A0B88A09E4954DB7C /* OCMConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = Source/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
 		546C8C4A89C0EAC31690208711305111 /* Pods-NYTPhotoViewer-Swift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTPhotoViewer-Swift-acknowledgements.plist"; sourceTree = "<group>"; };
-		5AE3566AEEDB983DDA3C978117F7CE1E /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
-		5BB62A4528C94D7EB86B68C4AA3CE7A0 /* OCMStubRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMStubRecorder.h; path = Source/OCMock/OCMStubRecorder.h; sourceTree = "<group>"; };
-		5D9948BA7264B6A9BB362CF2141D4BF6 /* OCMExpectationRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExpectationRecorder.m; path = Source/OCMock/OCMExpectationRecorder.m; sourceTree = "<group>"; };
-		5E73C3A4725866F008647AF1784A65B6 /* NYTPhotoDismissalInteractionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoDismissalInteractionController.m; sourceTree = "<group>"; };
-		60F2DCE99F47852E6D626DEB22686DC7 /* NYTPhotoTransitionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionController.h; sourceTree = "<group>"; };
-		6F53DAF0654116AB1CCDC511BF0C51E9 /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
-		72481A2386E492BBA124A486983276DF /* NYTScalingImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTScalingImageView.h; sourceTree = "<group>"; };
-		73719B79D2863253AD1044C65F8949B7 /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
-		73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "NYTPhotoViewer-Private.xcconfig"; sourceTree = "<group>"; };
+		5AC0220D860B5CBBDAF76C9E06A8B69F /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+OCMAdditions.m"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
+		5DA428901844A3860A96034B34ABE349 /* NYTOperatingSystemCompatibilityUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTOperatingSystemCompatibilityUtility.h; sourceTree = "<group>"; };
+		5E5E6011D64FAB9A3194A1410E57ABDF /* OCMInvocationExpectation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationExpectation.h; path = Source/OCMock/OCMInvocationExpectation.h; sourceTree = "<group>"; };
+		5E7DAA126BAC10207492747868E22FCE /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
+		61F0ED8354795E77FE119F8D6CF525DE /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
+		64268894F94109860CEE4B9F465AB7A5 /* NYTPhotoViewerCloseButtonX@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonX@2x.png"; sourceTree = "<group>"; };
+		648A96E75D609A24DA2FFF3701596E62 /* OCMExpectationRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExpectationRecorder.m; path = Source/OCMock/OCMExpectationRecorder.m; sourceTree = "<group>"; };
+		65069B9CCBB44E03EC6C7698233B4971 /* OCMFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMFunctions.m; path = Source/OCMock/OCMFunctions.m; sourceTree = "<group>"; };
+		68F780AA780C46390EEC17D5E2E1896F /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMIndirectReturnValueProvider.m; path = Source/OCMock/OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
+		6995091D55D42DF7CAEDA4269D569BF0 /* OCMVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMVerifier.h; path = Source/OCMock/OCMVerifier.h; sourceTree = "<group>"; };
+		6C925062A0C0231162B7DD243EEC82E3 /* OCMArg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = Source/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		6CFE9D6C77F769F7168877924F814890 /* OCMock-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OCMock-Private.xcconfig"; sourceTree = "<group>"; };
+		6D5D7CDA02DEF90DA2C28296B1346398 /* NYTPhotosOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayView.m; sourceTree = "<group>"; };
+		6E642A0BC69D837C32E60A58CCF4A962 /* OCMInvocationStub.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationStub.m; path = Source/OCMock/OCMInvocationStub.m; sourceTree = "<group>"; };
+		6E9BCAE4569D5237468326ABDE483BDC /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
+		6EE6841B62633902AF7D1A487F5E0344 /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
+		708C15B7C78ED44703E851785D6C8A5B /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
+		72172C7335924750C448D02E7872E251 /* NSObject+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+OCMAdditions.h"; path = "Source/OCMock/NSObject+OCMAdditions.h"; sourceTree = "<group>"; };
 		74B0964476B55A9ADDB94E8D7124C746 /* Pods-NYTPhotoViewer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NYTPhotoViewer-resources.sh"; sourceTree = "<group>"; };
+		75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "NYTPhotoViewer-Private.xcconfig"; sourceTree = "<group>"; };
+		7899156B7227837E1C4C5CD524929677 /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationExpectation.m; path = Source/OCMock/OCMInvocationExpectation.m; sourceTree = "<group>"; };
 		78A0F394B151FF4880DE110157A48500 /* Pods-NYTPhotoViewer-SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer-SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		7946ADD42AA0BBD02C40F828B10813BD /* OCMVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMVerifier.h; path = Source/OCMock/OCMVerifier.h; sourceTree = "<group>"; };
-		7A2286BA88E61E2F2DAF6BF19A73C9CD /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationExpectation.m; path = Source/OCMock/OCMInvocationExpectation.m; sourceTree = "<group>"; };
-		7D235F3118FC486AF42FA234994CD5C0 /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = Source/OCMock/OCMReturnValueProvider.h; sourceTree = "<group>"; };
-		7D2C4731BBE835A721D3C3334605F08D /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
-		7E7121ED261E4FB14AE309E6631682AD /* OCMRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRecorder.m; path = Source/OCMock/OCMRecorder.m; sourceTree = "<group>"; };
-		816389B088FB625F8608D672CC30EEC7 /* libOCMock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCMock.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79EE2874985BC19085147033EB7078DB /* OCMInvocationMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationMatcher.h; path = Source/OCMock/OCMInvocationMatcher.h; sourceTree = "<group>"; };
+		7C1121A1AD6CD7D51A83516A1A82C194 /* NYTPhotoTransitionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionController.m; sourceTree = "<group>"; };
+		7DC54860AFBDD8E24E9A0B446CF73067 /* NYTPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NYTPhotoViewer-dummy.m"; sourceTree = "<group>"; };
+		8039F4787B4AAC3AB8244EB6F34D9D07 /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationMatcher.m; path = Source/OCMock/OCMInvocationMatcher.m; sourceTree = "<group>"; };
 		81A9366AB305BD6A307EF3E2AABE1934 /* Pods-NYTPhotoViewer-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NYTPhotoViewer-Swift-dummy.m"; sourceTree = "<group>"; };
-		81B872DBC12CF9A1B9A0FFB1FE5391B0 /* OCPartialMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = Source/OCMock/OCPartialMockObject.h; sourceTree = "<group>"; };
-		82FF9534BE06E4665F5C1891F32A73C0 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
+		826D6240C31618B96408467354241112 /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
 		8474799918D332818F1A1BCF81628DC2 /* Pods-NYTPhotoViewer-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		85295B74C68258D38CD5E11112DE1B6F /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = Source/OCMock/OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
-		87B12474E17FCF2237CCDA327CDFFD46 /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = Source/OCMock/OCMPassByRefSetter.h; sourceTree = "<group>"; };
-		8841EBD6D3E40834A9BD7A573C9A36C8 /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
-		898F7D3861D54B8C001EDA1A2BF15D30 /* NYTPhotoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewController.m; sourceTree = "<group>"; };
-		8CAC960ABCA3B5571ADF6F49E9A0B4E7 /* OCMMacroState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMMacroState.m; path = Source/OCMock/OCMMacroState.m; sourceTree = "<group>"; };
-		8D422C2C41CF26D28180F9A2729FC055 /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
-		8DD939F9CCD57E1E0AAE10887A54A261 /* libNYTPhotoViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNYTPhotoViewer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E6575E3DDE6C9455CB3D8C07B3FB4F2 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = Source/OCMock/OCProtocolMockObject.h; sourceTree = "<group>"; };
+		88D4C470E59948D50FD67A0CF11A03ED /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRealObjectForwarder.m; path = Source/OCMock/OCMRealObjectForwarder.m; sourceTree = "<group>"; };
+		8919D37A051877D4481C230114825F5B /* OCMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = Source/OCMock/OCMock.h; sourceTree = "<group>"; };
 		8EEE554D9C69871E17C5AB1BAC9E325B /* Pods-NYTPhotoViewer-Swift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NYTPhotoViewer-Swift-resources.sh"; sourceTree = "<group>"; };
 		8F2C0AAFC89E2D082AE5BF94E9B7A7F2 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8F588AA329612D66B9456B94AED7EEFC /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
-		90CE9C094FD698C7D207B4DF1007AA9A /* OCMock-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OCMock-dummy.m"; sourceTree = "<group>"; };
 		9140CA9B82A33579E504FEC2AD5B3D66 /* libPods-NYTPhotoViewer-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYTPhotoViewer-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		919E6FACE7F4F7EA01DDDA4C38BB63CD /* Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		93F9F1B5EFF80F0C44FB41FBB87A47A0 /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
-		97EF86209FC386CA9437D4ECB0DC25A9 /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
+		91B01ABB64346CB24C48EC325CFCC7BE /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = Source/OCMock/OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
+		938B478D57A0EC5A95ED8D5C80976CC2 /* OCMArgAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArgAction.h; path = Source/OCMock/OCMArgAction.h; sourceTree = "<group>"; };
+		941723800A489143122D9E61B52D19D7 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = Source/OCMock/OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
+		97C25E54420935B16BFEECC3A0AC64D9 /* OCMFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctions.h; path = Source/OCMock/OCMFunctions.h; sourceTree = "<group>"; };
+		99C83D5A8D0D468919CE553BDCBD531E /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
+		9C4B8E5DA12B94715FF5D137B537C761 /* NYTPhotoDismissalInteractionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoDismissalInteractionController.m; sourceTree = "<group>"; };
 		9EB1F2FE55DF45911123A959DE9D83A3 /* OCMock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OCMock.xcconfig; sourceTree = "<group>"; };
-		A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A2522330E4C5BDE869785A72945FBB7E /* OCClassMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCClassMockObject.m; path = Source/OCMock/OCClassMockObject.m; sourceTree = "<group>"; };
+		9F5362C79166978B947B8AA3F27412AB /* NYTPhotosViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewController.h; sourceTree = "<group>"; };
 		A3A37A53827C492248EB650EC095CCF3 /* Pods-NYTPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
-		A74774BF08AF5F4FFB2EF7AFB9BC82BF /* OCMInvocationStub.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationStub.m; path = Source/OCMock/OCMInvocationStub.m; sourceTree = "<group>"; };
-		AA0562C7D1DD29634F47CF134671A4E9 /* OCMConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMConstraint.m; path = Source/OCMock/OCMConstraint.m; sourceTree = "<group>"; };
-		AA20EBB5E06F62B8C9F5A999ADE93070 /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
-		AAD038FF0F2620157C362654A10A3F2A /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
-		ABA8B4B8965CFADEEAA698D53C6D4DB2 /* NSObject+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+OCMAdditions.h"; path = "Source/OCMock/NSObject+OCMAdditions.h"; sourceTree = "<group>"; };
-		ABE6EDADAEDE1316828CEA82FFEEF15A /* NYTPhotoTransitionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionController.m; sourceTree = "<group>"; };
+		A3B0906AB338FCE8342DA510F42AB259 /* NSValue+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+OCMAdditions.h"; path = "Source/OCMock/NSValue+OCMAdditions.h"; sourceTree = "<group>"; };
+		A7556BF5AFD60190713217E71EF040B1 /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
+		A9EFD5666A6629EABA4960A72FA9CA0D /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
+		AA03986BD11CAF8BE5DE425C2308273A /* OCMInvocationStub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationStub.h; path = Source/OCMock/OCMInvocationStub.h; sourceTree = "<group>"; };
+		AC049E15936D115DC1C66A2CA48DCF9E /* OCMPassByRefSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMPassByRefSetter.m; path = Source/OCMock/OCMPassByRefSetter.m; sourceTree = "<group>"; };
 		AC06F55BDCBA920A2412983D511C8E98 /* NYTPhotoViewer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NYTPhotoViewer.xcconfig; sourceTree = "<group>"; };
-		ADA0A2EF6590718C5324688517256296 /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
+		B0CDA277A169E46C08182DEFCAD0158B /* OCMRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRecorder.m; path = Source/OCMock/OCMRecorder.m; sourceTree = "<group>"; };
 		B0E5F409C062A68D2FBB2ADC47D95B18 /* Pods-NYTPhotoViewer-SwiftTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NYTPhotoViewer-SwiftTests-resources.sh"; sourceTree = "<group>"; };
 		B0F2094BFDD0FDF682BB98D8C87701E7 /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		B1414AB3DAD169686746DAB20B5411F7 /* OCMLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMLocation.h; path = Source/OCMock/OCMLocation.h; sourceTree = "<group>"; };
-		B3DEC8B691375B218460CD8E002A86F0 /* NYTPhotosDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSource.m; sourceTree = "<group>"; };
-		B52FFFFD4821B3DE1BEFDB7AF80A3FA3 /* NYTPhotosViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewController.h; sourceTree = "<group>"; };
+		B38B68A36C97B3D62A5028D5319DA1B3 /* NYTPhotosOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosOverlayView.h; sourceTree = "<group>"; };
+		B3C96AD8CBF7F8A4C1AC484F1AA5C948 /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
 		B6EF4118D76E59A687481230ACC9E241 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B84A5075B838936ED01B36C99D132128 /* NSValue+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+OCMAdditions.h"; path = "Source/OCMock/NSValue+OCMAdditions.h"; sourceTree = "<group>"; };
-		B8848BF28D9DD7A5ADA6DF4B3D6DD349 /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMIndirectReturnValueProvider.m; path = Source/OCMock/OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
+		B88253EAB8C780C3FFFDC60DA0DCB9CD /* NYTPhotoTransitionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionController.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAA0C287856E7A7E3095CE9E892307EB /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB080377369C7B57BB371AD8229AA33C /* NYTPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NYTPhotoViewer-dummy.m"; sourceTree = "<group>"; };
-		BCFB554578A279BBDFA2A2070D2AFD41 /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
-		BDECF04C72BF16231D552380F0213F22 /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+OCMAdditions.m"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
-		C03283CBAF2CD0BB4E926A1976BD37A1 /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRealObjectForwarder.m; path = Source/OCMock/OCMRealObjectForwarder.m; sourceTree = "<group>"; };
-		C1EF36C7BAC4CE6ADB7ACD6A94C0EE46 /* NYTPhotosDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosDataSource.h; sourceTree = "<group>"; };
-		C2E5A6429C36A6F0630ED2CA81F0DC8F /* OCMInvocationExpectation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationExpectation.h; path = Source/OCMock/OCMInvocationExpectation.h; sourceTree = "<group>"; };
-		C4B73A8F2AD29231AA522F9F6DA860ED /* OCMReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMReturnValueProvider.m; path = Source/OCMock/OCMReturnValueProvider.m; sourceTree = "<group>"; };
-		C692FFF7BEC89D5D791047E560A0E6E0 /* OCMArgAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArgAction.h; path = Source/OCMock/OCMArgAction.h; sourceTree = "<group>"; };
+		C1C870679C69782D57B2EE38E8DA613B /* NYTScalingImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTScalingImageView.h; sourceTree = "<group>"; };
+		C1F48E6A1CEE34570695ED4E6EF7E002 /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
 		C71BF7BFF0381D1451E73740536071CB /* Pods-NYTPhotoViewer-SwiftTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NYTPhotoViewer-SwiftTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C792841183CFAB7242C7021CD69318D3 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9C4ED363D2D68EE097D3E130F58AF92 /* OCPartialMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCPartialMockObject.m; path = Source/OCMock/OCPartialMockObject.m; sourceTree = "<group>"; };
-		CB54A1E0564327A6C7F7BDADC94A0B7C /* OCMExpectationRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExpectationRecorder.h; path = Source/OCMock/OCMExpectationRecorder.h; sourceTree = "<group>"; };
-		CB9850EB1AB52EF1E9526F473F488236 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonXLandscape@3x.png"; sourceTree = "<group>"; };
+		C9A306102CA3ECAB0C87FAB93EEEF200 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = Source/OCMock/OCProtocolMockObject.h; sourceTree = "<group>"; };
+		CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CB485BCEF4C71B649DB87B0DD0E9676A /* OCMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = Source/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		CB87FD38EC25984467A556E68DDA6FE7 /* NYTPhotoCaptionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionView.m; sourceTree = "<group>"; };
+		CB8941AD941F37C4F47B6B8A3A25C8BC /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
 		CB9FC88148B790B1A862505A1DB64C9E /* Pods-NYTPhotoViewer-Swift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NYTPhotoViewer-Swift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CBD388137037BA93B6132BF9DBAE85CD /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
-		CCA14118C7F7CE59AA99931460DCAB5D /* NYTPhotoViewerCloseButtonXLandscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonXLandscape@2x.png"; sourceTree = "<group>"; };
+		CCCD13F9C8CD7DBD60C1ED2381DBBDA8 /* OCMReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMReturnValueProvider.m; path = Source/OCMock/OCMReturnValueProvider.m; sourceTree = "<group>"; };
+		CD1C8D47BB552667B1A7C7958C2603C8 /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRealObjectForwarder.h; path = Source/OCMock/OCMRealObjectForwarder.h; sourceTree = "<group>"; };
+		CD7471E6039DAF9BD40FE28ED8446077 /* NYTPhotoViewerCloseButtonXLandscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "NYTPhotoViewerCloseButtonXLandscape@2x.png"; sourceTree = "<group>"; };
+		CE782351C40AEB49442F917F9EB50C9D /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+OCMAdditions.m"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
 		D03E03274FFE4EF7D6CCB02FC34A1BFD /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2A77604A2AD3C08C6040BEB11889EA1 /* OCMInvocationMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationMatcher.h; path = Source/OCMock/OCMInvocationMatcher.h; sourceTree = "<group>"; };
+		D087B2171844CD60462942006CF6EA0A /* OCMock-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OCMock-dummy.m"; sourceTree = "<group>"; };
+		D289E0FCFD0CDB3D5982E80F1E172204 /* NSValue+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+OCMAdditions.m"; path = "Source/OCMock/NSValue+OCMAdditions.m"; sourceTree = "<group>"; };
 		D506181D742DA4CFD1EA1F959310863D /* Pods-NYTPhotoViewer-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		D5248000BDEE5927E2469EDE06F26388 /* Pods-NYTPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
-		D5CA9B262433587536816955A9E07CB5 /* NYTPhotoViewerCloseButtonX.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = NYTPhotoViewerCloseButtonX.png; sourceTree = "<group>"; };
-		D68D95C886469F03034646A1D4664BE8 /* NYTPhotoCaptionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionView.h; sourceTree = "<group>"; };
-		DA05F47A542BC80C94928E5A6DD4A7DB /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockArgCaller.h; path = Source/OCMock/OCMBlockArgCaller.h; sourceTree = "<group>"; };
-		DBFBD2C92D04CE90D15E17D2B11B62CD /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockArgCaller.m; path = Source/OCMock/OCMBlockArgCaller.m; sourceTree = "<group>"; };
+		D688974444F30A8A60C235A758B360EC /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
+		D7A55974699E8522B518431D265EB6DB /* NYTPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhoto.h; sourceTree = "<group>"; };
+		D7E34C15A90393EE7CDA90413566119A /* OCMLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMLocation.h; path = Source/OCMock/OCMLocation.h; sourceTree = "<group>"; };
+		DD0179D51BC896BD422E73F6D3764F72 /* NYTPhotoViewerCloseButtonX.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = NYTPhotoViewerCloseButtonX.png; sourceTree = "<group>"; };
+		DD2C78F172EDB4CE9CBD351F694FAFB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DD8B7AC4A1A652925822DE6F0A8F69FE /* Pods-NYTPhotoViewer-SwiftTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTPhotoViewer-SwiftTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E12C942BDA441C0EF2F1BCE599754978 /* OCObserverMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = Source/OCMock/OCObserverMockObject.h; sourceTree = "<group>"; };
-		E2687462FBD401F795864A69287C162E /* OCMFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctions.h; path = Source/OCMock/OCMFunctions.h; sourceTree = "<group>"; };
-		E516D8FEE13373DCD72109A4B5D06C05 /* OCMock-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OCMock-Private.xcconfig"; sourceTree = "<group>"; };
-		ECEBE2A598C6E4030772ED8CD1702377 /* OCMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = Source/OCMock/OCMock.h; sourceTree = "<group>"; };
-		F120E0AA07B222ECF424F29CFA560FB3 /* OCMNotificationPoster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMNotificationPoster.m; path = Source/OCMock/OCMNotificationPoster.m; sourceTree = "<group>"; };
-		F2E58D2F27A3F12605AE1DCB9A2BD54A /* NYTPhotoCaptionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionView.m; sourceTree = "<group>"; };
+		E1026BA2930E06F7756BC3431BF6F0D9 /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExceptionReturnValueProvider.m; path = Source/OCMock/OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
+		E285BA86C2F4124A305524D0989D36AB /* OCMMacroState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMMacroState.m; path = Source/OCMock/OCMMacroState.m; sourceTree = "<group>"; };
+		E403A25F56A5C2296A4806582FD980F2 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A8A370DB89C4568EF48E2C0E4815AC /* OCMMacroState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMMacroState.h; path = Source/OCMock/OCMMacroState.h; sourceTree = "<group>"; };
+		E90DBBB53F66F03F0F92AA1C63FC63C2 /* NYTPhotoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewController.m; sourceTree = "<group>"; };
+		ECCBE07F3670DDACD9B567EF6446AA0D /* NYTPhotoViewerCloseButtonXLandscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = NYTPhotoViewerCloseButtonXLandscape.png; sourceTree = "<group>"; };
+		EDFAD6FC7D4CE57D4A35C1F18D29CB72 /* OCPartialMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCPartialMockObject.m; path = Source/OCMock/OCPartialMockObject.m; sourceTree = "<group>"; };
+		EFD393902CE7731D4FB8BB0454C6B56D /* OCMConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMConstraint.m; path = Source/OCMock/OCMConstraint.m; sourceTree = "<group>"; };
+		F271B102328142C4F1BE6CA742A657B1 /* OCMBlockCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockCaller.h; path = Source/OCMock/OCMBlockCaller.h; sourceTree = "<group>"; };
+		F31AD97EB0F1CB50A70C10750436F0A9 /* libNYTPhotoViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNYTPhotoViewer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F340535754D6AF0A224C2088808C69F6 /* NYTPhotoViewer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NYTPhotoViewer-prefix.pch"; sourceTree = "<group>"; };
-		F38EB1D535FB9C9FFB61872F84511FCD /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = Source/OCMock/OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
-		F3AA27A0E4705A1758D8A1B55D2E0814 /* NYTPhotosViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewController.m; sourceTree = "<group>"; };
-		FC748310672D4EF134FD65DDAD766F7F /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
-		FD00C58058D2264113A0817CA1F82BF4 /* NYTPhotosOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosOverlayView.h; sourceTree = "<group>"; };
-		FE3553ADBDFA8CBFA8D373C63742450B /* OCMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = Source/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		F8335A651FF4CBA7CC2E57B50E47EDB9 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		FA2B33BC957EB950381E046150AD4AE5 /* NYTPhotoTransitionAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionAnimator.h; sourceTree = "<group>"; };
+		FA5568BC7598A89119857717B39AA3E4 /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBoxedReturnValueProvider.h; path = Source/OCMock/OCMBoxedReturnValueProvider.h; sourceTree = "<group>"; };
+		FEFDD7C6EC2D5CDE6D616C0A11785DD7 /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,27 +342,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		841EE7707B06AE5D38D6A581B93B5866 /* Frameworks */ = {
+		8076D925877325BFEA7F7D72AF488A15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C254459281D78F5D630AB7018195CA0E /* Foundation.framework in Frameworks */,
+				DE4F64079BC5CF2763598EC281B64000 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A78CA0729AE7A2DAECBF6CF406E81A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F5AA029A196533A91A0AA4A4D7D7B96 /* Frameworks */ = {
+		C7DCBD7BCA0AF473F9F85BEF9F532BC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EA9B6295107BB5656428270CC1146B /* Foundation.framework in Frameworks */,
-				506B010D3B99DE1A149AF2CB7ADA6FAC /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A2924E448766D85F214CEF82DFB5EA13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65A1D4C94549755399C539B120169CA5 /* Foundation.framework in Frameworks */,
+				0F94BD05C799D999A50E7162618FD160 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,8 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				AC06F55BDCBA920A2412983D511C8E98 /* NYTPhotoViewer.xcconfig */,
-				73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */,
-				BB080377369C7B57BB371AD8229AA33C /* NYTPhotoViewer-dummy.m */,
+				75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */,
+				7DC54860AFBDD8E24E9A0B446CF73067 /* NYTPhotoViewer-dummy.m */,
 				F340535754D6AF0A224C2088808C69F6 /* NYTPhotoViewer-prefix.pch */,
 			);
 			name = "Support Files";
@@ -392,8 +392,8 @@
 		2AF3329D9DFB825A01AB8F816B88B27D /* Resource Loading */ = {
 			isa = PBXGroup;
 			children = (
-				97EF86209FC386CA9437D4ECB0DC25A9 /* NSBundle+NYTPhotoViewer.h */,
-				93F9F1B5EFF80F0C44FB41FBB87A47A0 /* NSBundle+NYTPhotoViewer.m */,
+				5E7DAA126BAC10207492747868E22FCE /* NSBundle+NYTPhotoViewer.h */,
+				61F0ED8354795E77FE119F8D6CF525DE /* NSBundle+NYTPhotoViewer.m */,
 			);
 			path = "Resource Loading";
 			sourceTree = "<group>";
@@ -465,8 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				9EB1F2FE55DF45911123A959DE9D83A3 /* OCMock.xcconfig */,
-				E516D8FEE13373DCD72109A4B5D06C05 /* OCMock-Private.xcconfig */,
-				90CE9C094FD698C7D207B4DF1007AA9A /* OCMock-dummy.m */,
+				6CFE9D6C77F769F7168877924F814890 /* OCMock-Private.xcconfig */,
+				D087B2171844CD60462942006CF6EA0A /* OCMock-dummy.m */,
 				4836B1E7EC340F70111CE58060996E48 /* OCMock-prefix.pch */,
 			);
 			name = "Support Files";
@@ -512,26 +512,26 @@
 		9D53D4B59724AEAFAC2DE9BB70330EC5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				3312C6893BFA4ADFAF4FFF6E15BADF9B /* NYTOperatingSystemCompatibilityUtility.h */,
-				3C64D7954D5F0A52F253DF36357C4798 /* NYTOperatingSystemCompatibilityUtility.m */,
-				D68D95C886469F03034646A1D4664BE8 /* NYTPhotoCaptionView.h */,
-				F2E58D2F27A3F12605AE1DCB9A2BD54A /* NYTPhotoCaptionView.m */,
-				440605DAA9ACC5748E5F58ADE8B01810 /* NYTPhotoDismissalInteractionController.h */,
-				5E73C3A4725866F008647AF1784A65B6 /* NYTPhotoDismissalInteractionController.m */,
-				23914B0FC197C4831B010EAC48FD0D2D /* NYTPhotoTransitionAnimator.h */,
-				1B00D2B72E42C1647A6F4F3F890B05D1 /* NYTPhotoTransitionAnimator.m */,
-				60F2DCE99F47852E6D626DEB22686DC7 /* NYTPhotoTransitionController.h */,
-				ABE6EDADAEDE1316828CEA82FFEEF15A /* NYTPhotoTransitionController.m */,
-				2C1B03EA8325334F96719DB92DA717FE /* NYTPhotoViewController.h */,
-				898F7D3861D54B8C001EDA1A2BF15D30 /* NYTPhotoViewController.m */,
-				C1EF36C7BAC4CE6ADB7ACD6A94C0EE46 /* NYTPhotosDataSource.h */,
-				B3DEC8B691375B218460CD8E002A86F0 /* NYTPhotosDataSource.m */,
-				FD00C58058D2264113A0817CA1F82BF4 /* NYTPhotosOverlayView.h */,
-				227D8D83FF1D173125988A8B7960F4B9 /* NYTPhotosOverlayView.m */,
-				B52FFFFD4821B3DE1BEFDB7AF80A3FA3 /* NYTPhotosViewController.h */,
-				F3AA27A0E4705A1758D8A1B55D2E0814 /* NYTPhotosViewController.m */,
-				72481A2386E492BBA124A486983276DF /* NYTScalingImageView.h */,
-				4C7F127F2282A5E1F39C41FEAE3A8116 /* NYTScalingImageView.m */,
+				5DA428901844A3860A96034B34ABE349 /* NYTOperatingSystemCompatibilityUtility.h */,
+				31DD06F631B5E9F1DBE3146D8EEA142F /* NYTOperatingSystemCompatibilityUtility.m */,
+				49367532166D445A8B30894F816E23A1 /* NYTPhotoCaptionView.h */,
+				CB87FD38EC25984467A556E68DDA6FE7 /* NYTPhotoCaptionView.m */,
+				4CD789BB0335524DAD63DC33CD90FD28 /* NYTPhotoDismissalInteractionController.h */,
+				9C4B8E5DA12B94715FF5D137B537C761 /* NYTPhotoDismissalInteractionController.m */,
+				FA2B33BC957EB950381E046150AD4AE5 /* NYTPhotoTransitionAnimator.h */,
+				396FE8793B18F7072E3D831832288047 /* NYTPhotoTransitionAnimator.m */,
+				B88253EAB8C780C3FFFDC60DA0DCB9CD /* NYTPhotoTransitionController.h */,
+				7C1121A1AD6CD7D51A83516A1A82C194 /* NYTPhotoTransitionController.m */,
+				1CC29491B767E8B7F7198EFE093605B8 /* NYTPhotoViewController.h */,
+				E90DBBB53F66F03F0F92AA1C63FC63C2 /* NYTPhotoViewController.m */,
+				3A7E84CCBE8ED779C7C577DA004E863B /* NYTPhotosDataSource.h */,
+				426254A4A0936268DDE3E69801D51BC8 /* NYTPhotosDataSource.m */,
+				B38B68A36C97B3D62A5028D5319DA1B3 /* NYTPhotosOverlayView.h */,
+				6D5D7CDA02DEF90DA2C28296B1346398 /* NYTPhotosOverlayView.m */,
+				9F5362C79166978B947B8AA3F27412AB /* NYTPhotosViewController.h */,
+				0501DE357D5791920123126366B0FA86 /* NYTPhotosViewController.m */,
+				C1C870679C69782D57B2EE38E8DA613B /* NYTScalingImageView.h */,
+				2DDC5647E7CF47879600989BD19979BD /* NYTScalingImageView.m */,
 				F9A316FA80C54DFC79A7F8136FA321DF /* Protocols */,
 				2AF3329D9DFB825A01AB8F816B88B27D /* Resource Loading */,
 			);
@@ -588,9 +588,9 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C792841183CFAB7242C7021CD69318D3 /* NYTPhotoViewer.bundle */,
-				8DD939F9CCD57E1E0AAE10887A54A261 /* libNYTPhotoViewer.a */,
-				816389B088FB625F8608D672CC30EEC7 /* libOCMock.a */,
+				E403A25F56A5C2296A4806582FD980F2 /* NYTPhotoViewer.bundle */,
+				F31AD97EB0F1CB50A70C10750436F0A9 /* libNYTPhotoViewer.a */,
+				43C0BA7FAF8C616DB905C171EA6FFC6B /* libOCMock.a */,
 				152F8E626C2FC9CE94937B0DFA36B53D /* libPods-NYTPhotoViewer.a */,
 				9140CA9B82A33579E504FEC2AD5B3D66 /* libPods-NYTPhotoViewer-Swift.a */,
 				1F8E86C041046BDF97B7A8A81A0D11E8 /* libPods-NYTPhotoViewer-SwiftTests.a */,
@@ -602,8 +602,8 @@
 		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A070986AD093C811202DEF323DCCFB69 /* Foundation.framework */,
-				0E4B60D22FB9321F825AD8E6F96B375F /* UIKit.framework */,
+				CA9375DA1B301026F08D6E2643F9EE97 /* Foundation.framework */,
+				DD2C78F172EDB4CE9CBD351F694FAFB0 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -611,74 +611,74 @@
 		E7AD254AD6B3A3231281DB3562C50DC9 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
-				82FF9534BE06E4665F5C1891F32A73C0 /* NSInvocation+OCMAdditions.h */,
-				1BC9E45FA2D12AB13432DC917113153A /* NSInvocation+OCMAdditions.m */,
-				FC748310672D4EF134FD65DDAD766F7F /* NSMethodSignature+OCMAdditions.h */,
-				BDECF04C72BF16231D552380F0213F22 /* NSMethodSignature+OCMAdditions.m */,
-				2DD1C7470B26AECC2498789164B33BF4 /* NSNotificationCenter+OCMAdditions.h */,
-				090D284C93BD6A0ED5D9B7BA317F5603 /* NSNotificationCenter+OCMAdditions.m */,
-				ABA8B4B8965CFADEEAA698D53C6D4DB2 /* NSObject+OCMAdditions.h */,
-				4891051A45090A1AA226EB98FDEB9E29 /* NSObject+OCMAdditions.m */,
-				B84A5075B838936ED01B36C99D132128 /* NSValue+OCMAdditions.h */,
-				1B69E26CAC6C77FEDCCFF2D78181D30F /* NSValue+OCMAdditions.m */,
-				1A4F2F21627871D4F819EBA460F1D91A /* OCClassMockObject.h */,
-				A2522330E4C5BDE869785A72945FBB7E /* OCClassMockObject.m */,
-				1155A246B9BB336A19264554E456A1F4 /* OCMArg.h */,
-				CBD388137037BA93B6132BF9DBAE85CD /* OCMArg.m */,
-				C692FFF7BEC89D5D791047E560A0E6E0 /* OCMArgAction.h */,
-				73719B79D2863253AD1044C65F8949B7 /* OCMArgAction.m */,
-				DA05F47A542BC80C94928E5A6DD4A7DB /* OCMBlockArgCaller.h */,
-				DBFBD2C92D04CE90D15E17D2B11B62CD /* OCMBlockArgCaller.m */,
-				26543D6A3A8A2D9F4E8AD5EE5209057E /* OCMBlockCaller.h */,
-				16FDB69B37CD0005A84CEB74D0B6C029 /* OCMBlockCaller.m */,
-				3C04EB53300A42818CDC9BE0DD54D9F5 /* OCMBoxedReturnValueProvider.h */,
-				3AFAD23FB91B91D6977C4F3363679D13 /* OCMBoxedReturnValueProvider.m */,
-				0196A3001B377D9F28D90F897FB19170 /* OCMConstraint.h */,
-				AA0562C7D1DD29634F47CF134671A4E9 /* OCMConstraint.m */,
-				85295B74C68258D38CD5E11112DE1B6F /* OCMExceptionReturnValueProvider.h */,
-				248C98D4A5D956EB0092556450ED3422 /* OCMExceptionReturnValueProvider.m */,
-				CB54A1E0564327A6C7F7BDADC94A0B7C /* OCMExpectationRecorder.h */,
-				5D9948BA7264B6A9BB362CF2141D4BF6 /* OCMExpectationRecorder.m */,
-				E2687462FBD401F795864A69287C162E /* OCMFunctions.h */,
-				00E1A635BE58B739EA603A867E56AB9E /* OCMFunctions.m */,
-				8841EBD6D3E40834A9BD7A573C9A36C8 /* OCMFunctionsPrivate.h */,
-				F38EB1D535FB9C9FFB61872F84511FCD /* OCMIndirectReturnValueProvider.h */,
-				B8848BF28D9DD7A5ADA6DF4B3D6DD349 /* OCMIndirectReturnValueProvider.m */,
-				C2E5A6429C36A6F0630ED2CA81F0DC8F /* OCMInvocationExpectation.h */,
-				7A2286BA88E61E2F2DAF6BF19A73C9CD /* OCMInvocationExpectation.m */,
-				D2A77604A2AD3C08C6040BEB11889EA1 /* OCMInvocationMatcher.h */,
-				23E453042F5014AD8827EBEBFA036B2C /* OCMInvocationMatcher.m */,
-				46F87FED8CD9F71B97931717411C0F9C /* OCMInvocationStub.h */,
-				A74774BF08AF5F4FFB2EF7AFB9BC82BF /* OCMInvocationStub.m */,
-				B1414AB3DAD169686746DAB20B5411F7 /* OCMLocation.h */,
-				23885055AD3ED35ACB309790B1DD8F8A /* OCMLocation.m */,
-				51E1890DA19E4AF95EC4DD529F8B8F36 /* OCMMacroState.h */,
-				8CAC960ABCA3B5571ADF6F49E9A0B4E7 /* OCMMacroState.m */,
-				ADA0A2EF6590718C5324688517256296 /* OCMNotificationPoster.h */,
-				F120E0AA07B222ECF424F29CFA560FB3 /* OCMNotificationPoster.m */,
-				8F588AA329612D66B9456B94AED7EEFC /* OCMObserverRecorder.h */,
-				8D422C2C41CF26D28180F9A2729FC055 /* OCMObserverRecorder.m */,
-				87B12474E17FCF2237CCDA327CDFFD46 /* OCMPassByRefSetter.h */,
-				052A6549A58B888A23CB83187B01C4BF /* OCMPassByRefSetter.m */,
-				23F6B0DC1F3B4941C1187643CAAC8C8A /* OCMRealObjectForwarder.h */,
-				C03283CBAF2CD0BB4E926A1976BD37A1 /* OCMRealObjectForwarder.m */,
-				7D2C4731BBE835A721D3C3334605F08D /* OCMRecorder.h */,
-				7E7121ED261E4FB14AE309E6631682AD /* OCMRecorder.m */,
-				7D235F3118FC486AF42FA234994CD5C0 /* OCMReturnValueProvider.h */,
-				C4B73A8F2AD29231AA522F9F6DA860ED /* OCMReturnValueProvider.m */,
-				5BB62A4528C94D7EB86B68C4AA3CE7A0 /* OCMStubRecorder.h */,
-				470DFB98A0CA5219F7A10D13E901909C /* OCMStubRecorder.m */,
-				7946ADD42AA0BBD02C40F828B10813BD /* OCMVerifier.h */,
-				AAD038FF0F2620157C362654A10A3F2A /* OCMVerifier.m */,
-				ECEBE2A598C6E4030772ED8CD1702377 /* OCMock.h */,
-				FE3553ADBDFA8CBFA8D373C63742450B /* OCMockObject.h */,
-				6F53DAF0654116AB1CCDC511BF0C51E9 /* OCMockObject.m */,
-				E12C942BDA441C0EF2F1BCE599754978 /* OCObserverMockObject.h */,
-				AA20EBB5E06F62B8C9F5A999ADE93070 /* OCObserverMockObject.m */,
-				81B872DBC12CF9A1B9A0FFB1FE5391B0 /* OCPartialMockObject.h */,
-				C9C4ED363D2D68EE097D3E130F58AF92 /* OCPartialMockObject.m */,
-				8E6575E3DDE6C9455CB3D8C07B3FB4F2 /* OCProtocolMockObject.h */,
-				BCFB554578A279BBDFA2A2070D2AFD41 /* OCProtocolMockObject.m */,
+				D688974444F30A8A60C235A758B360EC /* NSInvocation+OCMAdditions.h */,
+				02DC236426C96EF4AB449C9303071975 /* NSInvocation+OCMAdditions.m */,
+				35924EE6DD215A20A9D8D7107B23DAF2 /* NSMethodSignature+OCMAdditions.h */,
+				5AC0220D860B5CBBDAF76C9E06A8B69F /* NSMethodSignature+OCMAdditions.m */,
+				F8335A651FF4CBA7CC2E57B50E47EDB9 /* NSNotificationCenter+OCMAdditions.h */,
+				CE782351C40AEB49442F917F9EB50C9D /* NSNotificationCenter+OCMAdditions.m */,
+				72172C7335924750C448D02E7872E251 /* NSObject+OCMAdditions.h */,
+				1823328CB135D55FFCBE21FEC1202A86 /* NSObject+OCMAdditions.m */,
+				A3B0906AB338FCE8342DA510F42AB259 /* NSValue+OCMAdditions.h */,
+				D289E0FCFD0CDB3D5982E80F1E172204 /* NSValue+OCMAdditions.m */,
+				B3C96AD8CBF7F8A4C1AC484F1AA5C948 /* OCClassMockObject.h */,
+				3A264F0B4C33E766D5488F53D78E31A9 /* OCClassMockObject.m */,
+				6C925062A0C0231162B7DD243EEC82E3 /* OCMArg.h */,
+				C1F48E6A1CEE34570695ED4E6EF7E002 /* OCMArg.m */,
+				938B478D57A0EC5A95ED8D5C80976CC2 /* OCMArgAction.h */,
+				6EE6841B62633902AF7D1A487F5E0344 /* OCMArgAction.m */,
+				42095E94BAD8428FF1B2CB4834DAB146 /* OCMBlockArgCaller.h */,
+				2F6C11BDDDBFC39B5D98558A1BB4F783 /* OCMBlockArgCaller.m */,
+				F271B102328142C4F1BE6CA742A657B1 /* OCMBlockCaller.h */,
+				2FEC6D996D5CAE4C37392CE3041BB476 /* OCMBlockCaller.m */,
+				FA5568BC7598A89119857717B39AA3E4 /* OCMBoxedReturnValueProvider.h */,
+				4EBE156BEB93DB89F3ACF4BA02CB84EF /* OCMBoxedReturnValueProvider.m */,
+				51BB0CC4446F6D2A0B88A09E4954DB7C /* OCMConstraint.h */,
+				EFD393902CE7731D4FB8BB0454C6B56D /* OCMConstraint.m */,
+				941723800A489143122D9E61B52D19D7 /* OCMExceptionReturnValueProvider.h */,
+				E1026BA2930E06F7756BC3431BF6F0D9 /* OCMExceptionReturnValueProvider.m */,
+				3690DF26E1A2B5F9BA267A24D506CA69 /* OCMExpectationRecorder.h */,
+				648A96E75D609A24DA2FFF3701596E62 /* OCMExpectationRecorder.m */,
+				97C25E54420935B16BFEECC3A0AC64D9 /* OCMFunctions.h */,
+				65069B9CCBB44E03EC6C7698233B4971 /* OCMFunctions.m */,
+				CB8941AD941F37C4F47B6B8A3A25C8BC /* OCMFunctionsPrivate.h */,
+				91B01ABB64346CB24C48EC325CFCC7BE /* OCMIndirectReturnValueProvider.h */,
+				68F780AA780C46390EEC17D5E2E1896F /* OCMIndirectReturnValueProvider.m */,
+				5E5E6011D64FAB9A3194A1410E57ABDF /* OCMInvocationExpectation.h */,
+				7899156B7227837E1C4C5CD524929677 /* OCMInvocationExpectation.m */,
+				79EE2874985BC19085147033EB7078DB /* OCMInvocationMatcher.h */,
+				8039F4787B4AAC3AB8244EB6F34D9D07 /* OCMInvocationMatcher.m */,
+				AA03986BD11CAF8BE5DE425C2308273A /* OCMInvocationStub.h */,
+				6E642A0BC69D837C32E60A58CCF4A962 /* OCMInvocationStub.m */,
+				D7E34C15A90393EE7CDA90413566119A /* OCMLocation.h */,
+				39D7A220C2C014C0BD340880693F3C94 /* OCMLocation.m */,
+				E5A8A370DB89C4568EF48E2C0E4815AC /* OCMMacroState.h */,
+				E285BA86C2F4124A305524D0989D36AB /* OCMMacroState.m */,
+				027824B6CFC0D681CC3E13557F9F9532 /* OCMNotificationPoster.h */,
+				204736A4B99EC5898E842AB5FF144B9C /* OCMNotificationPoster.m */,
+				329A09F7D29129479464407FEC38EB7C /* OCMObserverRecorder.h */,
+				99C83D5A8D0D468919CE553BDCBD531E /* OCMObserverRecorder.m */,
+				3DAAF6A494C825ED5D9874EC7965DA3E /* OCMPassByRefSetter.h */,
+				AC049E15936D115DC1C66A2CA48DCF9E /* OCMPassByRefSetter.m */,
+				CD1C8D47BB552667B1A7C7958C2603C8 /* OCMRealObjectForwarder.h */,
+				88D4C470E59948D50FD67A0CF11A03ED /* OCMRealObjectForwarder.m */,
+				826D6240C31618B96408467354241112 /* OCMRecorder.h */,
+				B0CDA277A169E46C08182DEFCAD0158B /* OCMRecorder.m */,
+				28E5698F8F65ADE3FB4A4647A9952FAB /* OCMReturnValueProvider.h */,
+				CCCD13F9C8CD7DBD60C1ED2381DBBDA8 /* OCMReturnValueProvider.m */,
+				064B44D8ACD5DCE15E3DBDFFA9EB9FD0 /* OCMStubRecorder.h */,
+				18296E7EFA0CE4AE22C2ECB68A0716E9 /* OCMStubRecorder.m */,
+				6995091D55D42DF7CAEDA4269D569BF0 /* OCMVerifier.h */,
+				6E9BCAE4569D5237468326ABDE483BDC /* OCMVerifier.m */,
+				8919D37A051877D4481C230114825F5B /* OCMock.h */,
+				CB485BCEF4C71B649DB87B0DD0E9676A /* OCMockObject.h */,
+				A7556BF5AFD60190713217E71EF040B1 /* OCMockObject.m */,
+				309D72B0EE966C77670106852ED6BBC8 /* OCObserverMockObject.h */,
+				A9EFD5666A6629EABA4960A72FA9CA0D /* OCObserverMockObject.m */,
+				470386F7588178E25DD8BEC8F77E3139 /* OCPartialMockObject.h */,
+				EDFAD6FC7D4CE57D4A35C1F18D29CB72 /* OCPartialMockObject.m */,
+				C9A306102CA3ECAB0C87FAB93EEEF200 /* OCProtocolMockObject.h */,
+				708C15B7C78ED44703E851785D6C8A5B /* OCProtocolMockObject.m */,
 				8A160290960D8812C257F536DA987614 /* Support Files */,
 			);
 			path = OCMock;
@@ -695,9 +695,9 @@
 		F9A316FA80C54DFC79A7F8136FA321DF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				2809ABEED78A1EE2E46D67EA4C1B1D4A /* NYTPhoto.h */,
-				2B7147D1AFF4F0FFACA0A1877539C01D /* NYTPhotoContainer.h */,
-				5AE3566AEEDB983DDA3C978117F7CE1E /* NYTPhotosViewControllerDataSource.h */,
+				D7A55974699E8522B518431D265EB6DB /* NYTPhoto.h */,
+				3743AD646CCA36015C5B246D0D3B20A7 /* NYTPhotoContainer.h */,
+				FEFDD7C6EC2D5CDE6D616C0A11785DD7 /* NYTPhotosViewControllerDataSource.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -705,12 +705,12 @@
 		FAD8F204334FD26123A8FD598D95CCFA /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				D5CA9B262433587536816955A9E07CB5 /* NYTPhotoViewerCloseButtonX.png */,
-				4445546716EDAB13E68A0769D3C4BE29 /* NYTPhotoViewerCloseButtonX@2x.png */,
-				4F5F52566A2420FD5AA68DEB0CCE1832 /* NYTPhotoViewerCloseButtonX@3x.png */,
-				4EE8D813250D533AA17EB3D1557BF618 /* NYTPhotoViewerCloseButtonXLandscape.png */,
-				CCA14118C7F7CE59AA99931460DCAB5D /* NYTPhotoViewerCloseButtonXLandscape@2x.png */,
-				CB9850EB1AB52EF1E9526F473F488236 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */,
+				DD0179D51BC896BD422E73F6D3764F72 /* NYTPhotoViewerCloseButtonX.png */,
+				64268894F94109860CEE4B9F465AB7A5 /* NYTPhotoViewerCloseButtonX@2x.png */,
+				4DFC53E288D3475C30F98A9DE4E5842D /* NYTPhotoViewerCloseButtonX@3x.png */,
+				ECCBE07F3670DDACD9B567EF6446AA0D /* NYTPhotoViewerCloseButtonXLandscape.png */,
+				CD7471E6039DAF9BD40FE28ED8446077 /* NYTPhotoViewerCloseButtonXLandscape@2x.png */,
+				0774553451AF6846A941E5500ECC77C5 /* NYTPhotoViewerCloseButtonXLandscape@3x.png */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -718,89 +718,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		51E60736079753F2BFAEB7DF2AE3E1D3 /* Headers */ = {
+		900D040232752EB6DFCDB08CB8B64606 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F7031B117E8EE559C7762073B36ADE /* NSBundle+NYTPhotoViewer.h in Headers */,
-				1AD97142690096576A064B079FDBF956 /* NYTOperatingSystemCompatibilityUtility.h in Headers */,
-				B8B7856867B75B57A37EFB006AB91C35 /* NYTPhoto.h in Headers */,
-				F5204062060D464EAF5F84E1670D1EEB /* NYTPhotoCaptionView.h in Headers */,
-				46A019C5B7EB76153D14178E3E2794D4 /* NYTPhotoContainer.h in Headers */,
-				B54D8AA2DE0B039118854780E86AC7AF /* NYTPhotoDismissalInteractionController.h in Headers */,
-				759FEBBED51534537053D9749CBAB587 /* NYTPhotoTransitionAnimator.h in Headers */,
-				8415FBD654C9FEF89EB1556C00B02D57 /* NYTPhotoTransitionController.h in Headers */,
-				F0C4B08ADB89F0314C5603CB484A4741 /* NYTPhotoViewController.h in Headers */,
-				FADEBA5CB0A6AFDACA197B7163B81243 /* NYTPhotosDataSource.h in Headers */,
-				697D1B92F010090F2CF1CDC471218BB6 /* NYTPhotosOverlayView.h in Headers */,
-				0D7DC5A9D1A1A9F6A41A2AB24794A3CA /* NYTPhotosViewController.h in Headers */,
-				9FDBC4C5A3C3EAADAD6D70F1AE785000 /* NYTPhotosViewControllerDataSource.h in Headers */,
-				7EAC1A4CA0013FD547B28350D19DE74D /* NYTScalingImageView.h in Headers */,
+				C63D8CDD62ED194A0CD50D6F7E08E08E /* NSBundle+NYTPhotoViewer.h in Headers */,
+				1E2A0D053E26DCCBDDA8F719D6749E5E /* NYTOperatingSystemCompatibilityUtility.h in Headers */,
+				86ED5B290C58C2A5150DD12445C91610 /* NYTPhoto.h in Headers */,
+				E905E01E59E3CBCD53EEFD32BF7DC318 /* NYTPhotoCaptionView.h in Headers */,
+				25E6B288255B26E915960400F3B3C90C /* NYTPhotoContainer.h in Headers */,
+				FAD1932DC5555A27D2A31A11E940C79F /* NYTPhotoDismissalInteractionController.h in Headers */,
+				FC917ABC426F4772CE1DCA69E0A30845 /* NYTPhotoTransitionAnimator.h in Headers */,
+				B567CBD8316A71ECC02EB994FC623698 /* NYTPhotoTransitionController.h in Headers */,
+				069361B4E5F065EABC2C6E46795EF479 /* NYTPhotoViewController.h in Headers */,
+				BAAA1CBA95A7469F2D82490AA1E3C4BD /* NYTPhotosDataSource.h in Headers */,
+				8F2BACF72E4A4ACCC431EB9E125B840B /* NYTPhotosOverlayView.h in Headers */,
+				CD74DE2F9619212B5B76BAF3A5067B67 /* NYTPhotosViewController.h in Headers */,
+				4B73B4E5369938F8F236DE2F3240BA8B /* NYTPhotosViewControllerDataSource.h in Headers */,
+				8903596D6C2E89B249470405CF09A5E1 /* NYTScalingImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F943C132391B56EEBD44FC2D5E8B49A0 /* Headers */ = {
+		E77C3C1043BC2087BB401383243799BF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2136165B1AF0C580DC9C65596FF26B42 /* NSInvocation+OCMAdditions.h in Headers */,
-				1A852C1B6F7145BD7486727DC1360C25 /* NSMethodSignature+OCMAdditions.h in Headers */,
-				67518D2436B733AFDF804C9AF57F2D44 /* NSNotificationCenter+OCMAdditions.h in Headers */,
-				6A7C41DAEF50C9E3947B4D7488B32BFA /* NSObject+OCMAdditions.h in Headers */,
-				64F7A8AC4D6E8A049C80B5EE916AE41A /* NSValue+OCMAdditions.h in Headers */,
-				708204B59C8605BE55B2CB70117BD613 /* OCClassMockObject.h in Headers */,
-				F7EBD18D377FDD308653D4957072140B /* OCMArg.h in Headers */,
-				29953A9F14ABEFA5082C0CDD62625CE1 /* OCMArgAction.h in Headers */,
-				41CF8E298350B214253C963CB7F443E2 /* OCMBlockArgCaller.h in Headers */,
-				A9B8D45D59C9904C4B0B94C7D58AF4C7 /* OCMBlockCaller.h in Headers */,
-				10D750EA1310FE723AD048FB9276F50E /* OCMBoxedReturnValueProvider.h in Headers */,
-				97FC359187C6845C0E14484A86575731 /* OCMConstraint.h in Headers */,
-				080CD002B2491D0B5D638137AE2DEF8C /* OCMExceptionReturnValueProvider.h in Headers */,
-				A6A39FE1C47F53C4BC3C172A52C145D3 /* OCMExpectationRecorder.h in Headers */,
-				1AD5F26284E0A2F563C961486EE07FA5 /* OCMFunctions.h in Headers */,
-				6024C592FEA2F4998AAB34C8F8FAF5D2 /* OCMFunctionsPrivate.h in Headers */,
-				8A0418F17B9A363E4222E37819296E7C /* OCMIndirectReturnValueProvider.h in Headers */,
-				3F10461DF096760A62876D205C4307F3 /* OCMInvocationExpectation.h in Headers */,
-				CC4CABEEF6FF791CB21A0787C3861B0D /* OCMInvocationMatcher.h in Headers */,
-				2424BCEE9C9B306CD6F00A89773005A4 /* OCMInvocationStub.h in Headers */,
-				19D140E4DC3D348F15DA58ACDD420FC0 /* OCMLocation.h in Headers */,
-				FFB490BD23C92B1C8881093F2F34AA11 /* OCMMacroState.h in Headers */,
-				D9799206A8754E242F02B1B9B952A908 /* OCMNotificationPoster.h in Headers */,
-				C6197AD73C357812F20CE3B0FDF51D4C /* OCMObserverRecorder.h in Headers */,
-				2E0BBD38264D56851ADDEA6CF39268C3 /* OCMPassByRefSetter.h in Headers */,
-				A9DD9B63007A85777ACD3145C1FE2780 /* OCMRealObjectForwarder.h in Headers */,
-				7EF1585D12FADEAEB50AA1276DBE95C1 /* OCMRecorder.h in Headers */,
-				AA1275CC95FD2A0C8E21A0CB9786F382 /* OCMReturnValueProvider.h in Headers */,
-				072BA79E3838532AF593F3BD905F418A /* OCMStubRecorder.h in Headers */,
-				D05E0CB3F0DEF96E27A7BB2117251A02 /* OCMVerifier.h in Headers */,
-				E31AEE86876425A2BE75D14EF0311236 /* OCMock.h in Headers */,
-				AD9236B17C3C6D30EBAC84C54D4FAE09 /* OCMockObject.h in Headers */,
-				BA9FDCDEE505BC3772CDBDE28F8A076B /* OCObserverMockObject.h in Headers */,
-				DD7E8DE8AD46200274A019E1F8B0CEEE /* OCPartialMockObject.h in Headers */,
-				95CD0B50EE8B359187362DB2FF5E550D /* OCProtocolMockObject.h in Headers */,
+				1FBA675A25A9D3720C8467294AC2B824 /* NSInvocation+OCMAdditions.h in Headers */,
+				B951468D15F227CAFE3D7C268C83EF5A /* NSMethodSignature+OCMAdditions.h in Headers */,
+				96F6DF0AC7617AFE24291E6ACA89C0D0 /* NSNotificationCenter+OCMAdditions.h in Headers */,
+				EAB5A330F1F88047378F8CFCFA9C7DE3 /* NSObject+OCMAdditions.h in Headers */,
+				432774D78FCD74070CE1F1468B03D6F6 /* NSValue+OCMAdditions.h in Headers */,
+				C2B3D0D67AC2D575C139528ADA611E52 /* OCClassMockObject.h in Headers */,
+				B3F8B71453DBE1D30E54E98FB938C6B1 /* OCMArg.h in Headers */,
+				BD687C728880C8DD339DCCECEA4056C5 /* OCMArgAction.h in Headers */,
+				6F313CC64D333CEEF2A94FE2F36DBB68 /* OCMBlockArgCaller.h in Headers */,
+				16D388726C363D0D5DEF5E26E5A15BFE /* OCMBlockCaller.h in Headers */,
+				90760432C5439DC0DEA8EEAD989FB90A /* OCMBoxedReturnValueProvider.h in Headers */,
+				6FB305BFF291B4444DFFCCD6D31D80C9 /* OCMConstraint.h in Headers */,
+				5787A70B24343A7DD80B5AB558FAD192 /* OCMExceptionReturnValueProvider.h in Headers */,
+				9751DB74BAD13B0B6872A6C9368E714F /* OCMExpectationRecorder.h in Headers */,
+				34BC018C6C5AC113D2253E3D82102FF4 /* OCMFunctions.h in Headers */,
+				2204A8CD8E7B1661723D2081ADA64D9E /* OCMFunctionsPrivate.h in Headers */,
+				B1C5148586213F9DF18DBF9FB45D1576 /* OCMIndirectReturnValueProvider.h in Headers */,
+				5FD15AF3060C59E0B38A19C03E749CD3 /* OCMInvocationExpectation.h in Headers */,
+				1752121B926B359F0F2609BEF823F8AA /* OCMInvocationMatcher.h in Headers */,
+				6AE64869CC39E69D82BECEA977032E84 /* OCMInvocationStub.h in Headers */,
+				4C2A536DB40FE2EACAAC94CE758E0B5E /* OCMLocation.h in Headers */,
+				81FE3469EB7613B1166073FCEE503B9A /* OCMMacroState.h in Headers */,
+				B7D4949250ECC4EA1E7EB700DA0EE9CE /* OCMNotificationPoster.h in Headers */,
+				EE59EC199D3313F5189183067B0C5475 /* OCMObserverRecorder.h in Headers */,
+				60CD2FBC57FE79688F36E7F6057C1D38 /* OCMPassByRefSetter.h in Headers */,
+				CE7FC2B63EB44047E1AC1F6D531738B6 /* OCMRealObjectForwarder.h in Headers */,
+				0ECA57C985BDA626AD9D96D550DD85B7 /* OCMRecorder.h in Headers */,
+				04E6C08EFDB67FD966D85813278D6AE8 /* OCMReturnValueProvider.h in Headers */,
+				C809C30C5D995DAAAE6341CBBA328A57 /* OCMStubRecorder.h in Headers */,
+				6ECFBE688C2D0E073756546F19FC0ED4 /* OCMVerifier.h in Headers */,
+				9542C6E45CDD1A0EF9B7D8718224B8C5 /* OCMock.h in Headers */,
+				2E53F6E23D2586E41EA3A1952CEE26D2 /* OCMockObject.h in Headers */,
+				A0A2B097D9E8C44399569F6CAF71A08C /* OCObserverMockObject.h in Headers */,
+				A1AA7F6CC13EFECF6D1881C50A0094D7 /* OCPartialMockObject.h in Headers */,
+				F8FEC8FC07740274E05C4E71A8A826E8 /* OCProtocolMockObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		25895F21CA2FBA76FF06201222C7E5DB /* NYTPhotoViewer-NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BCFF53A0C99E4535364CF711F30820CB /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-NYTPhotoViewer" */;
-			buildPhases = (
-				DE2F6813FE05E5445DE23A0A98B8E7DD /* Sources */,
-				841EE7707B06AE5D38D6A581B93B5866 /* Frameworks */,
-				98D5A198A12A44A6AF0D18C1FBE09696 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "NYTPhotoViewer-NYTPhotoViewer";
-			productName = "NYTPhotoViewer-NYTPhotoViewer";
-			productReference = C792841183CFAB7242C7021CD69318D3 /* NYTPhotoViewer.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		5BD667FAA3650B2BF436C456C3028374 /* Pods-Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32DD16C808F5FC54BDD2B4BCEB0EF975 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
@@ -811,30 +794,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				91826CE219DBE2153AF044C4F663FDC6 /* PBXTargetDependency */,
-				2AD1BB659BA4CA34099B6AB95A4BB5BD /* PBXTargetDependency */,
+				092D76EC12DCBEB39C73910C135C8E32 /* PBXTargetDependency */,
+				BD490AEDD04A85D6ED54E58EF458EB46 /* PBXTargetDependency */,
 			);
 			name = "Pods-Tests";
 			productName = "Pods-Tests";
 			productReference = BAA0C287856E7A7E3095CE9E892307EB /* libPods-Tests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7AA564958D30BA48AC3A83832EB722B8 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */;
-			buildPhases = (
-				D5B2129808818860311536C53CF81679 /* Sources */,
-				8F5AA029A196533A91A0AA4A4D7D7B96 /* Frameworks */,
-				51E60736079753F2BFAEB7DF2AE3E1D3 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27B1AC8499F23F8F3B91292B93FE59ED /* PBXTargetDependency */,
-			);
-			name = NYTPhotoViewer;
-			productName = NYTPhotoViewer;
-			productReference = 8DD939F9CCD57E1E0AAE10887A54A261 /* libNYTPhotoViewer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		9C4A8DC63FCBF79C93928882AC4F9B7B /* Pods-NYTPhotoViewer-Swift */ = {
@@ -847,7 +812,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7B325C9A7DB85DDEFC96E149FC07E30D /* PBXTargetDependency */,
+				39665A7AB7B9FF0B6AB5679A3C44A558 /* PBXTargetDependency */,
 			);
 			name = "Pods-NYTPhotoViewer-Swift";
 			productName = "Pods-NYTPhotoViewer-Swift";
@@ -864,12 +829,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				A1AFBFFF34C20E153E20FA7FD7534B23 /* PBXTargetDependency */,
-				DA58C2007D4617492141E12B75EACA24 /* PBXTargetDependency */,
+				7BC073961C60E7E43F5D82F4055B6892 /* PBXTargetDependency */,
+				5E7E991E65FD5C8844F2359D1945D540 /* PBXTargetDependency */,
 			);
 			name = "Pods-NYTPhotoViewer-SwiftTests";
 			productName = "Pods-NYTPhotoViewer-SwiftTests";
 			productReference = 1F8E86C041046BDF97B7A8A81A0D11E8 /* libPods-NYTPhotoViewer-SwiftTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF716892D6C7ED6D8D871C36C59E55B0 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */;
+			buildPhases = (
+				52BBB4DDBF19EA62EE21ADB0E6107B67 /* Sources */,
+				8076D925877325BFEA7F7D72AF488A15 /* Frameworks */,
+				900D040232752EB6DFCDB08CB8B64606 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61288C8FC4E33EE93759157FFF82CE72 /* PBXTargetDependency */,
+			);
+			name = NYTPhotoViewer;
+			productName = NYTPhotoViewer;
+			productReference = F31AD97EB0F1CB50A70C10750436F0A9 /* libNYTPhotoViewer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AFA014C64E6E77A75E816705D0F3296E /* Pods-NYTPhotoViewer */ = {
@@ -882,20 +865,37 @@
 			buildRules = (
 			);
 			dependencies = (
-				7ADB1E8EFD8BC3D5505317631B53ECF7 /* PBXTargetDependency */,
+				40FCF1DCEE1482D1FA826DA469385FA9 /* PBXTargetDependency */,
 			);
 			name = "Pods-NYTPhotoViewer";
 			productName = "Pods-NYTPhotoViewer";
 			productReference = 152F8E626C2FC9CE94937B0DFA36B53D /* libPods-NYTPhotoViewer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		F967EDE17D183F305254185D964D9ABE /* OCMock */ = {
+		D5E03CA625720A1BD0CC3E6CC7E19C1F /* NYTPhotoViewer-NYTPhotoViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05C906F9461349E77A9D9CE99922E21C /* Build configuration list for PBXNativeTarget "OCMock" */;
+			buildConfigurationList = FBE29073D0A0C80767318577D1AEF61E /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-NYTPhotoViewer" */;
 			buildPhases = (
-				DE3C9C2C050538C8F6387C00541D4393 /* Sources */,
-				A2924E448766D85F214CEF82DFB5EA13 /* Frameworks */,
-				F943C132391B56EEBD44FC2D5E8B49A0 /* Headers */,
+				01EA8DEB27C2ED3644955071654F6FB7 /* Sources */,
+				8A78CA0729AE7A2DAECBF6CF406E81A5 /* Frameworks */,
+				86AAAF1648542A69EB691B89EBC276A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NYTPhotoViewer-NYTPhotoViewer";
+			productName = "NYTPhotoViewer-NYTPhotoViewer";
+			productReference = E403A25F56A5C2296A4806582FD980F2 /* NYTPhotoViewer.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		F29BD8CD0B795C2970505A35BEBB16DC /* OCMock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD6DAB1B60E79CBA78E36F71F2698E16 /* Build configuration list for PBXNativeTarget "OCMock" */;
+			buildPhases = (
+				D40E4621D91B90C6C37BB10FA765B3A5 /* Sources */,
+				C7DCBD7BCA0AF473F9F85BEF9F532BC1 /* Frameworks */,
+				E77C3C1043BC2087BB401383243799BF /* Headers */,
 			);
 			buildRules = (
 			);
@@ -903,7 +903,7 @@
 			);
 			name = OCMock;
 			productName = OCMock;
-			productReference = 816389B088FB625F8608D672CC30EEC7 /* libOCMock.a */;
+			productReference = 43C0BA7FAF8C616DB905C171EA6FFC6B /* libOCMock.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -927,9 +927,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */,
-				25895F21CA2FBA76FF06201222C7E5DB /* NYTPhotoViewer-NYTPhotoViewer */,
-				F967EDE17D183F305254185D964D9ABE /* OCMock */,
+				A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */,
+				D5E03CA625720A1BD0CC3E6CC7E19C1F /* NYTPhotoViewer-NYTPhotoViewer */,
+				F29BD8CD0B795C2970505A35BEBB16DC /* OCMock */,
 				AFA014C64E6E77A75E816705D0F3296E /* Pods-NYTPhotoViewer */,
 				9C4A8DC63FCBF79C93928882AC4F9B7B /* Pods-NYTPhotoViewer-Swift */,
 				A217B3416837B559EB1DB80C49A417AA /* Pods-NYTPhotoViewer-SwiftTests */,
@@ -939,22 +939,29 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		98D5A198A12A44A6AF0D18C1FBE09696 /* Resources */ = {
+		86AAAF1648542A69EB691B89EBC276A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9A13683BF18120F518D2F06D7F88EF /* NYTPhotoViewerCloseButtonX.png in Resources */,
-				B6485495324621CD1C2EA9AC3C38EA6B /* NYTPhotoViewerCloseButtonX@2x.png in Resources */,
-				B2809D8DA532810555E660630F4831D8 /* NYTPhotoViewerCloseButtonX@3x.png in Resources */,
-				9EB7A2C8F8A196B89D4EF2E36BE1A7F6 /* NYTPhotoViewerCloseButtonXLandscape.png in Resources */,
-				026FCBD302A620006BE889ACB1DA8AA4 /* NYTPhotoViewerCloseButtonXLandscape@2x.png in Resources */,
-				1E8E5B251D8BCD35F95B9E23C6598E83 /* NYTPhotoViewerCloseButtonXLandscape@3x.png in Resources */,
+				B08ADEE217AFDFDACC5CAE4921A28661 /* NYTPhotoViewerCloseButtonX.png in Resources */,
+				4E67D971135E9FAD96D0C2F9E87A94FE /* NYTPhotoViewerCloseButtonX@2x.png in Resources */,
+				B99E1D47ABB6E309239EFFA0DDE4B3BF /* NYTPhotoViewerCloseButtonX@3x.png in Resources */,
+				AFBF1CB22A07DD8B63FE5165B34DF676 /* NYTPhotoViewerCloseButtonXLandscape.png in Resources */,
+				FE2791B7574857F9D1BBCAA758821ABF /* NYTPhotoViewerCloseButtonXLandscape@2x.png in Resources */,
+				15293B392D48A8849FE9B361D804D997 /* NYTPhotoViewerCloseButtonXLandscape@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		01EA8DEB27C2ED3644955071654F6FB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03AA780FC32F3040D658E0F176653999 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -971,6 +978,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52BBB4DDBF19EA62EE21ADB0E6107B67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230DA7ABA100348A8B67151BEDBB9DE /* NSBundle+NYTPhotoViewer.m in Sources */,
+				6FA6D6DBA3EC99911B3AE4D0C28D3B55 /* NYTOperatingSystemCompatibilityUtility.m in Sources */,
+				E4E9B444EA925D632605E48DE93A9511 /* NYTPhotoCaptionView.m in Sources */,
+				0097363F29AE17D3B4D4DC9F52E3B738 /* NYTPhotoDismissalInteractionController.m in Sources */,
+				EF3663856663B1B29F5F1ABD59753D13 /* NYTPhotoTransitionAnimator.m in Sources */,
+				4B3A85F09B9544DE9B46F3BD179C3250 /* NYTPhotoTransitionController.m in Sources */,
+				90EA9E754A889E9ED114AF14ED5A9E22 /* NYTPhotoViewController.m in Sources */,
+				AAE9304E54B77A0AF5A24F925FFA37FC /* NYTPhotoViewer-dummy.m in Sources */,
+				CB25AAB22DC94FA6DEBDFC05B19AC387 /* NYTPhotosDataSource.m in Sources */,
+				E1CDD08B77ACC4D79B82EFE388D9AFF6 /* NYTPhotosOverlayView.m in Sources */,
+				ECA1F848FEAE7454E615911A2CC44764 /* NYTPhotosViewController.m in Sources */,
+				1211EB358CEEEE2C7056AE44631659B3 /* NYTScalingImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA84C0C970A66061A70464AFD3EEA90B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -979,70 +1005,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5B2129808818860311536C53CF81679 /* Sources */ = {
+		D40E4621D91B90C6C37BB10FA765B3A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A24F739907F58D393055F6381421C7 /* NSBundle+NYTPhotoViewer.m in Sources */,
-				FDA218543C16AE8D835CD5F362BF0DB9 /* NYTOperatingSystemCompatibilityUtility.m in Sources */,
-				A17AAE98CA013BFACE2715FCA78D7946 /* NYTPhotoCaptionView.m in Sources */,
-				324C529C189ED63046E090CB7C663889 /* NYTPhotoDismissalInteractionController.m in Sources */,
-				1C85172871A10F6724E9A11BA69274FE /* NYTPhotoTransitionAnimator.m in Sources */,
-				8208474272D30F248E70BF627D3A3E6F /* NYTPhotoTransitionController.m in Sources */,
-				7F325B9073C2C8ABB1E3C43B322B45DD /* NYTPhotoViewController.m in Sources */,
-				6EF1A1F4E1B70A9E69606DF127FEC2C2 /* NYTPhotoViewer-dummy.m in Sources */,
-				2EF2C23645CCD44E273D23B5C5DECCD6 /* NYTPhotosDataSource.m in Sources */,
-				4B03BD599A6BE594F28634CB6F1894CF /* NYTPhotosOverlayView.m in Sources */,
-				268B7BAB37BB20AC2C5112E4314A6CF0 /* NYTPhotosViewController.m in Sources */,
-				D08EFA482F314BEE9C91116DC4DC9470 /* NYTScalingImageView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE2F6813FE05E5445DE23A0A98B8E7DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE3C9C2C050538C8F6387C00541D4393 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D45E3EB468A5E555175C2517E357BC9D /* NSInvocation+OCMAdditions.m in Sources */,
-				2D3B23AEEE55859560F5E38A3B5D41C7 /* NSMethodSignature+OCMAdditions.m in Sources */,
-				D56FE0716061078CBAA725696E4C7DF6 /* NSNotificationCenter+OCMAdditions.m in Sources */,
-				BD006A6671065530239B8B89FB9274FC /* NSObject+OCMAdditions.m in Sources */,
-				C0C964471A435C8DDC54A39A01D65DC7 /* NSValue+OCMAdditions.m in Sources */,
-				9AF179D62DD0417C71E0CC8951C24437 /* OCClassMockObject.m in Sources */,
-				440FC6F5AE0FA79B3784FE0FF96C7808 /* OCMArg.m in Sources */,
-				F9E29F203DA023F060C562E21E7BB02C /* OCMArgAction.m in Sources */,
-				6EF3C3B1E3CFC883F497906C6522C74F /* OCMBlockArgCaller.m in Sources */,
-				F487BA8696D7680366F984FDE4C85650 /* OCMBlockCaller.m in Sources */,
-				150BCD631A695BBE3F370BB22C80CD18 /* OCMBoxedReturnValueProvider.m in Sources */,
-				7F1C6227F128657FD0C4E8C8896B764B /* OCMConstraint.m in Sources */,
-				21BCD64084B85418BFDD2ADDB1AF2C1E /* OCMExceptionReturnValueProvider.m in Sources */,
-				D81C2452F122D9190100CCFF9209531F /* OCMExpectationRecorder.m in Sources */,
-				2636BAD8EE41F0CCADE0D52F9EBF20C2 /* OCMFunctions.m in Sources */,
-				3960C069522E850F4849BEECA0ADAF5C /* OCMIndirectReturnValueProvider.m in Sources */,
-				A5092DC2D28196B289A3DDC4BDCD9475 /* OCMInvocationExpectation.m in Sources */,
-				94B7EBFD53460F793E04EBCA5269C881 /* OCMInvocationMatcher.m in Sources */,
-				2EE3D56C073ABFF1484C95D36202E668 /* OCMInvocationStub.m in Sources */,
-				08B15B1A3C57E393861AAE1C2FBE095C /* OCMLocation.m in Sources */,
-				735BF7ABF219CAE4E3C0D77DF61F9853 /* OCMMacroState.m in Sources */,
-				3FB684E8D0D719EA3C09A1EF13DE640E /* OCMNotificationPoster.m in Sources */,
-				13B702036BAF545529625818D7C3BF1A /* OCMObserverRecorder.m in Sources */,
-				C3ADBEB2CA8866760859776E8F769D93 /* OCMPassByRefSetter.m in Sources */,
-				F8EF6A40C6540F576ADE76B066ACBAC8 /* OCMRealObjectForwarder.m in Sources */,
-				150FE7DB9B397EC4CB9BA169CF0ADD35 /* OCMRecorder.m in Sources */,
-				28EE9C9789874507CA8EDD2B1AD0F8E1 /* OCMReturnValueProvider.m in Sources */,
-				790F23869F37419DDA6FB3E143813D7C /* OCMStubRecorder.m in Sources */,
-				0FD79640D8D236BB2A68CD809EE53956 /* OCMVerifier.m in Sources */,
-				973E90066DBF5372ECEE9EF48FCA098C /* OCMock-dummy.m in Sources */,
-				AB06748C679ADED6233B0DF41BA8D4D9 /* OCMockObject.m in Sources */,
-				9231F2E522E1A634E83BD8AE0524D0FB /* OCObserverMockObject.m in Sources */,
-				D272438F6793BA7918349984D9E9A2EF /* OCPartialMockObject.m in Sources */,
-				7D8409C4DE5E8F2A599C7712BFD6FA32 /* OCProtocolMockObject.m in Sources */,
+				837F288EB7E7BF10F9F571D37CA88378 /* NSInvocation+OCMAdditions.m in Sources */,
+				AE82A0ED65D5467C8A66B3996A1108C7 /* NSMethodSignature+OCMAdditions.m in Sources */,
+				6FC09546225AF68B4C4A3E0498B0BF16 /* NSNotificationCenter+OCMAdditions.m in Sources */,
+				C35C4A48FD4AFD22B948BFDDE53FCEF9 /* NSObject+OCMAdditions.m in Sources */,
+				1F3AA9D580E293171764DEBBB1DD6E90 /* NSValue+OCMAdditions.m in Sources */,
+				C33DF1AC2EF82E134260328F3BC1BE83 /* OCClassMockObject.m in Sources */,
+				2A0D78739C38A4B3154BE44AE595A2DF /* OCMArg.m in Sources */,
+				844E2FBD16F16B8773086ED7D62E4575 /* OCMArgAction.m in Sources */,
+				94883928D9D072B4A74D62C583D20645 /* OCMBlockArgCaller.m in Sources */,
+				0295D545595E1DC09513E9E222F9D21B /* OCMBlockCaller.m in Sources */,
+				9B21F7EF41EBB7F10367B7D6DCE5B139 /* OCMBoxedReturnValueProvider.m in Sources */,
+				296556812E6152F28473D1A0C90EAB8E /* OCMConstraint.m in Sources */,
+				14FA19B5E1A1FDE57498BCD50169262B /* OCMExceptionReturnValueProvider.m in Sources */,
+				B90C619FF30DB0DF638B68D0E975E257 /* OCMExpectationRecorder.m in Sources */,
+				D446972B22973B95CF54982CCF648640 /* OCMFunctions.m in Sources */,
+				41159792D04F6AF065B2E2DB0A8D493C /* OCMIndirectReturnValueProvider.m in Sources */,
+				427BC3CD55EE123B2E658C5057F805B9 /* OCMInvocationExpectation.m in Sources */,
+				5353D57A17635F88626ED228014CAC5E /* OCMInvocationMatcher.m in Sources */,
+				34A434D3348BCB3E68BBEC458AE35023 /* OCMInvocationStub.m in Sources */,
+				FA2FD68FFE8F4BE1F24D33DBF8601E4A /* OCMLocation.m in Sources */,
+				C29B2568BEC7831D195E7981A4ADBB55 /* OCMMacroState.m in Sources */,
+				EEEF594998E9359D09CFF7B6B4CA2A45 /* OCMNotificationPoster.m in Sources */,
+				C3D30A7291D0A87C0C4DC0CA59701BE3 /* OCMObserverRecorder.m in Sources */,
+				CF9BD731EE1D971690FB9C73A7F616A6 /* OCMPassByRefSetter.m in Sources */,
+				2CB968143F4FD81FFBCE43558D30FD0B /* OCMRealObjectForwarder.m in Sources */,
+				87584589E160878B467C68A4EC57B8FD /* OCMRecorder.m in Sources */,
+				039483DB05B7C2F033BFD490628DB98F /* OCMReturnValueProvider.m in Sources */,
+				3020571720172CE7D693BCE76184250E /* OCMStubRecorder.m in Sources */,
+				8E482DB7291C28D2DC0B13034A02A1DC /* OCMVerifier.m in Sources */,
+				578859E50F0B6C8DEDC57952AF7BE527 /* OCMock-dummy.m in Sources */,
+				2C376F5267C519CEB909635E4E00D029 /* OCMockObject.m in Sources */,
+				C44180D22AED84E66203C5C081ACA070 /* OCObserverMockObject.m in Sources */,
+				50E249ED8383A2139BBEE589D7C0ECDA /* OCPartialMockObject.m in Sources */,
+				067D3FC3E315F2121E710D421B8DF611 /* OCProtocolMockObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,54 +1057,66 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27B1AC8499F23F8F3B91292B93FE59ED /* PBXTargetDependency */ = {
+		092D76EC12DCBEB39C73910C135C8E32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NYTPhotoViewer;
+			target = A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */;
+			targetProxy = 024F35FF258AB9CC725433ABBB112C6E /* PBXContainerItemProxy */;
+		};
+		39665A7AB7B9FF0B6AB5679A3C44A558 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NYTPhotoViewer;
+			target = A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */;
+			targetProxy = BA91511B296B3AF571B413ED66935999 /* PBXContainerItemProxy */;
+		};
+		40FCF1DCEE1482D1FA826DA469385FA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NYTPhotoViewer;
+			target = A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */;
+			targetProxy = F25012FB43922F5F1E2FA2E7CE43BD7D /* PBXContainerItemProxy */;
+		};
+		5E7E991E65FD5C8844F2359D1945D540 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCMock;
+			target = F29BD8CD0B795C2970505A35BEBB16DC /* OCMock */;
+			targetProxy = FE6D319B493321669547827B9514CE1B /* PBXContainerItemProxy */;
+		};
+		61288C8FC4E33EE93759157FFF82CE72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "NYTPhotoViewer-NYTPhotoViewer";
-			target = 25895F21CA2FBA76FF06201222C7E5DB /* NYTPhotoViewer-NYTPhotoViewer */;
-			targetProxy = 3B38D7DFE3BB7668970B293B0FF0ADE2 /* PBXContainerItemProxy */;
+			target = D5E03CA625720A1BD0CC3E6CC7E19C1F /* NYTPhotoViewer-NYTPhotoViewer */;
+			targetProxy = 52DC975230A9362C5E55F982FEB8649B /* PBXContainerItemProxy */;
 		};
-		2AD1BB659BA4CA34099B6AB95A4BB5BD /* PBXTargetDependency */ = {
+		7BC073961C60E7E43F5D82F4055B6892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NYTPhotoViewer;
+			target = A38B829842D720B88C236DFBCB2CADD1 /* NYTPhotoViewer */;
+			targetProxy = C9DFF7CD1E35B8B432B78AAFDAFDEE78 /* PBXContainerItemProxy */;
+		};
+		BD490AEDD04A85D6ED54E58EF458EB46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OCMock;
-			target = F967EDE17D183F305254185D964D9ABE /* OCMock */;
-			targetProxy = 47E4EF7D861A1E60A47343412AEF3B3E /* PBXContainerItemProxy */;
-		};
-		7ADB1E8EFD8BC3D5505317631B53ECF7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */;
-			targetProxy = 290F22733372DCAE51608D4B8B8A0811 /* PBXContainerItemProxy */;
-		};
-		7B325C9A7DB85DDEFC96E149FC07E30D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */;
-			targetProxy = 451AFA77B002306CE1EE851FD2FEE61C /* PBXContainerItemProxy */;
-		};
-		91826CE219DBE2153AF044C4F663FDC6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */;
-			targetProxy = ADA700E9B3552FF4219DB312ECB02EBA /* PBXContainerItemProxy */;
-		};
-		A1AFBFFF34C20E153E20FA7FD7534B23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NYTPhotoViewer;
-			target = 60142930C50548A3A0E7F269992745D4 /* NYTPhotoViewer */;
-			targetProxy = 455A27646A5B74379A6286DC2667E746 /* PBXContainerItemProxy */;
-		};
-		DA58C2007D4617492141E12B75EACA24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OCMock;
-			target = F967EDE17D183F305254185D964D9ABE /* OCMock */;
-			targetProxy = C3CB82FD6DB0FE635A8404D9C213088E /* PBXContainerItemProxy */;
+			target = F29BD8CD0B795C2970505A35BEBB16DC /* OCMock */;
+			targetProxy = DC9A447A540E6E900D7760683CC9F08D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F2CFEAB2E814FF4E1BE9DE4C42B2078 /* Release */ = {
+		02B8F799E0B60EAC9AFA8B93D8FE26F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */;
+			baseConfigurationReference = 75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = NYTPhotoViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		08844EEFAB792FC5D547D120568E1EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/NYTPhotoViewer/NYTPhotoViewer-prefix.pch";
@@ -1150,6 +1162,22 @@
 			};
 			name = Debug;
 		};
+		6421D65AD548D38404ACF861A1DAF82E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CFE9D6C77F769F7168877924F814890 /* OCMock-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		851647D41554A0AD89BF9F49FDF5D4C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78A0F394B151FF4880DE110157A48500 /* Pods-NYTPhotoViewer-SwiftTests.release.xcconfig */;
@@ -1163,6 +1191,18 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A02E398B124407B29A784B14910B4B01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = NYTPhotoViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -1205,30 +1245,6 @@
 			};
 			name = Debug;
 		};
-		B4C028DAB9ADB6729A399DC253C0C4E5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = NYTPhotoViewer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		B6C0998B65D8C9E2E157A1EDE26C7876 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = NYTPhotoViewer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		C8CCBD577EC3F9D18831E1834A504894 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D506181D742DA4CFD1EA1F959310863D /* Pods-NYTPhotoViewer-Swift.debug.xcconfig */;
@@ -1261,12 +1277,12 @@
 			};
 			name = Debug;
 		};
-		E1DC7EC475EF1113036D41F2D805A2D9 /* Debug */ = {
+		E04CED2D23159BF11571F0105936B59C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73CA0306ECD62C20F56F7A967494AB23 /* NYTPhotoViewer-Private.xcconfig */;
+			baseConfigurationReference = 6CFE9D6C77F769F7168877924F814890 /* OCMock-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/NYTPhotoViewer/NYTPhotoViewer-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -1293,6 +1309,22 @@
 			};
 			name = Debug;
 		};
+		EC988A97876055807CBF1CACFD079C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C4371C5F6CF8BDBCAA687EEEC8098F /* NYTPhotoViewer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NYTPhotoViewer/NYTPhotoViewer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		F0A679CCE7734112B703EAB444FB228E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8474799918D332818F1A1BCF81628DC2 /* Pods-NYTPhotoViewer-Swift.release.xcconfig */;
@@ -1303,22 +1335,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F186BE7A9C56FDCCD9F28B96F8FB23E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E516D8FEE13373DCD72109A4B5D06C05 /* OCMock-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1340,22 +1356,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		F6931DA162843500E4890713B32729AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E516D8FEE13373DCD72109A4B5D06C05 /* OCMock-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1394,15 +1394,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05C906F9461349E77A9D9CE99922E21C /* Build configuration list for PBXNativeTarget "OCMock" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F6931DA162843500E4890713B32729AC /* Debug */,
-				F186BE7A9C56FDCCD9F28B96F8FB23E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1430,11 +1421,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AA564958D30BA48AC3A83832EB722B8 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */ = {
+		AD6DAB1B60E79CBA78E36F71F2698E16 /* Build configuration list for PBXNativeTarget "OCMock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1DC7EC475EF1113036D41F2D805A2D9 /* Debug */,
-				0F2CFEAB2E814FF4E1BE9DE4C42B2078 /* Release */,
+				E04CED2D23159BF11571F0105936B59C /* Debug */,
+				6421D65AD548D38404ACF861A1DAF82E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1448,20 +1439,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BCFF53A0C99E4535364CF711F30820CB /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-NYTPhotoViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B6C0998B65D8C9E2E157A1EDE26C7876 /* Debug */,
-				B4C028DAB9ADB6729A399DC253C0C4E5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C60FEABF146AD389DAB5A40E3E3E5B93 /* Build configuration list for PBXNativeTarget "Pods-NYTPhotoViewer-SwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2C457273150A8B0A2839749B8708FB4 /* Debug */,
 				851647D41554A0AD89BF9F49FDF5D4C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF716892D6C7ED6D8D871C36C59E55B0 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC988A97876055807CBF1CACFD079C14 /* Debug */,
+				08844EEFAB792FC5D547D120568E1EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBE29073D0A0C80767318577D1AEF61E /* Build configuration list for PBXNativeTarget "NYTPhotoViewer-NYTPhotoViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B8F799E0B60EAC9AFA8B93D8FE26F0 /* Debug */,
+				A02E398B124407B29A784B14910B4B01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
