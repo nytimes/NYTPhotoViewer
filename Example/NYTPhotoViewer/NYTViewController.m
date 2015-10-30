@@ -11,6 +11,7 @@
 #import "NYTExamplePhoto.h"
 
 static const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
+static const NSUInteger NYTViewControllerLongCaptionPhotoIndex = 2;
 static const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
 static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 static const NSUInteger NYTViewControllerCustomMaxZoomScalePhotoIndex = 5;
@@ -62,10 +63,28 @@ static const NSUInteger NYTViewControllerCustomMaxZoomScalePhotoIndex = 5;
         if (i == NYTViewControllerCustomEverythingPhotoIndex) {
             photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
         }
+
+        NSString *caption = @"summary";
+        if (i == NYTViewControllerCustomEverythingPhotoIndex) {
+            caption = @"photo with custom everything";
+        }
+        else if (i == NYTViewControllerLongCaptionPhotoIndex) {
+            caption = @"photo with long caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
+        }
+        else if (i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
+            caption = @"photo with loading spinner";
+        }
+        else if (i == NYTViewControllerNoReferenceViewPhotoIndex) {
+            caption = @"photo without reference view";
+        }
+        else if (i == NYTViewControllerCustomMaxZoomScalePhotoIndex) {
+            caption = @"photo with custom maximum zoom scale";
+        }
         
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
         photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+
         [photos addObject:photo];
     }
     
