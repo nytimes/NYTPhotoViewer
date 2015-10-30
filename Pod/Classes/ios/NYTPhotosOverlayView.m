@@ -7,7 +7,7 @@
 //
 
 #import "NYTPhotosOverlayView.h"
-#import "NYTPhotoCaptionView.h"
+#import "NYTPhotoCaptionViewLayoutWidthHinting.h"
 
 @interface NYTPhotosOverlayView ()
 
