@@ -48,6 +48,17 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
     self.gradientLayer.frame = self.layer.bounds;
 }
 
+- (CGSize)intrinsicContentSize {
+    UITextView * const textView = self.textView;
+
+    [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
+    CGRect textBounds = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
+    CGFloat width = (CGFloat)ceil(textBounds.size.width + textView.textContainerInset.left + textView.textContainerInset.right + 2.0*NYTPhotoCaptionViewHorizontalMargin);
+    CGFloat height = (CGFloat)ceil(textBounds.size.height + textView.textContainerInset.top + textView.textContainerInset.bottom + 2.0*NYTPhotoCaptionViewVerticalMargin);
+
+    return CGSizeMake(width, height);
+}
+
 #pragma mark - NYTPhotoCaptionView
 
 - (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit {
