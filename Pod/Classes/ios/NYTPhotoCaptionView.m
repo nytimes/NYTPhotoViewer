@@ -56,8 +56,6 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
     CGFloat width = (CGFloat)ceil(contentSize.width + 2.0*NYTPhotoCaptionViewHorizontalMargin);
     CGFloat height = (CGFloat)ceil(contentSize.height + 2.0*NYTPhotoCaptionViewVerticalMargin);
 
-    static const CGFloat NYTPhotoCaptionViewMaxCaptionHeight = 200.0f;
-    height = MIN(height, NYTPhotoCaptionViewMaxCaptionHeight);
     return CGSizeMake(width, height);
 }
 
