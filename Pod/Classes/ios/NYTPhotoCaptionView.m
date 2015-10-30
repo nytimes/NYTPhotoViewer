@@ -19,7 +19,7 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
 @property (nonatomic, readonly) NSAttributedString *attributedSummary;
 @property (nonatomic, readonly) NSAttributedString *attributedCredit;
 
-@property (nonatomic) UILabel *textLabel;
+@property (nonatomic) UITextView *textView;
 @property (nonatomic) CAGradientLayer *gradientLayer;
 
 @end
@@ -67,21 +67,23 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
 - (void)commonInit {
     self.translatesAutoresizingMaskIntoConstraints = NO;
 
-    [self setupTextLabel];
-    [self updateTextLabelAttributedText];
+    [self setupTextView];
+    [self updateTextViewAttributedText];
     [self setupGradient];
 }
 
-- (void)setupTextLabel {
-    self.textLabel = [[UILabel alloc] init];
-    self.textLabel.numberOfLines = 0;
-    self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:self.textLabel];
+- (void)setupTextView {
+    self.textView = [[UITextView alloc] initWithFrame:CGRectZero textContainer:nil];
+    self.textView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.textView.editable = NO;
+    self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.textView.backgroundColor = [UIColor clearColor];
+    [self addSubview:self.textView];
     
-    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:NYTPhotoCaptionViewVerticalMargin];
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-NYTPhotoCaptionViewVerticalMargin];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-NYTPhotoCaptionViewHorizontalMargin * 2.0];
-    NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:NYTPhotoCaptionViewVerticalMargin];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-NYTPhotoCaptionViewVerticalMargin];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-NYTPhotoCaptionViewHorizontalMargin * 2.0];
+    NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     
     [self addConstraints:@[topConstraint, bottomConstraint, widthConstraint, horizontalPositionConstraint]];
 }
@@ -93,7 +95,7 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
     [self.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
-- (void)updateTextLabelAttributedText {
+- (void)updateTextViewAttributedText {
     NSMutableAttributedString *attributedLabelText = [[NSMutableAttributedString alloc] init];
     
     if (self.attributedTitle) {
@@ -116,7 +118,7 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 12.0;
         [attributedLabelText appendAttributedString:self.attributedCredit];
     }
     
-    self.textLabel.attributedText = attributedLabelText;
+    self.textView.attributedText = attributedLabelText;
 }
 
 @end
