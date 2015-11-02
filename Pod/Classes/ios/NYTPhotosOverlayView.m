@@ -51,7 +51,7 @@
     
     [super layoutSubviews];
 
-    if ([self.captionView respondsToSelector:@selector(setPreferredMaxLayoutWidth:)]) {
+    if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
         [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
     }
 }
