@@ -9,7 +9,7 @@
 #import "NYTPhotoCaptionView.h"
 
 static const CGFloat NYTPhotoCaptionViewHorizontalMargin = 8.0;
-static const CGFloat NYTPhotoCaptionViewVerticalMargin = 0.0;
+static const CGFloat NYTPhotoCaptionViewVerticalMargin = 7.0;
 
 @interface NYTPhotoCaptionView ()
 
@@ -66,10 +66,9 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 0.0;
 }
 
 - (CGSize)intrinsicContentSize {
-    CGFloat availableContentWidth = self.preferredMaxLayoutWidth - 2.0*NYTPhotoCaptionViewHorizontalMargin;
-    CGSize contentSize = [self.textView sizeThatFits:CGSizeMake(availableContentWidth, CGFLOAT_MAX)];
-    CGFloat width = (CGFloat)ceil(contentSize.width + 2.0*NYTPhotoCaptionViewHorizontalMargin);
-    CGFloat height = (CGFloat)ceil(contentSize.height + 2.0*NYTPhotoCaptionViewVerticalMargin);
+    CGSize contentSize = [self.textView sizeThatFits:CGSizeMake(self.preferredMaxLayoutWidth, CGFLOAT_MAX)];
+    CGFloat width = (CGFloat)self.preferredMaxLayoutWidth;
+    CGFloat height = (CGFloat)ceil(contentSize.height);
 
     return CGSizeMake(width, height);
 }
@@ -113,11 +112,13 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 0.0;
     self.textView.editable = NO;
     self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
     self.textView.backgroundColor = [UIColor clearColor];
+    self.textView.textContainerInset = UIEdgeInsetsMake(NYTPhotoCaptionViewVerticalMargin, NYTPhotoCaptionViewHorizontalMargin, NYTPhotoCaptionViewVerticalMargin, NYTPhotoCaptionViewHorizontalMargin);
+
     [self addSubview:self.textView];
     
-    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:NYTPhotoCaptionViewVerticalMargin];
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-NYTPhotoCaptionViewVerticalMargin];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:-NYTPhotoCaptionViewHorizontalMargin * 2.0];
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
     NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     
     [self addConstraints:@[topConstraint, bottomConstraint, widthConstraint, horizontalPositionConstraint]];
