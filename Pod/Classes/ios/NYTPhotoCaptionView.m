@@ -44,6 +44,10 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 6.0;
     return self;
 }
 
++ (BOOL)requiresConstraintBasedLayout {
+    return YES;
+}
+
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
 
