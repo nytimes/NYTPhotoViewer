@@ -17,7 +17,13 @@
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resources": "Pod/Assets/**/*",
+  "ios": {
+    "resource_bundles": {
+      "NYTPhotoViewer": [
+        "Pod/Assets/ios/*.png"
+      ]
+    }
+  },
   "frameworks": [
     "UIKit",
     "Foundation"

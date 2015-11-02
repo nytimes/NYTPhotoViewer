@@ -58,22 +58,10 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@2x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@3x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@2x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@3x.png"
-  install_resource "../../Pod/Assets/ios"
+  install_resource "${BUILT_PRODUCTS_DIR}/NYTPhotoViewer.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@2x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonX@3x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@2x.png"
-  install_resource "../../Pod/Assets/ios/NYTPhotoViewerCloseButtonXLandscape@3x.png"
-  install_resource "../../Pod/Assets/ios"
+  install_resource "${BUILT_PRODUCTS_DIR}/NYTPhotoViewer.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
