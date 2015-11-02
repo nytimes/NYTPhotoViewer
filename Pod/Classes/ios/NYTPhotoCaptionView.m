@@ -75,6 +75,8 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 0.0;
 }
 
 - (void)setPreferredMaxLayoutWidth:(CGFloat)preferredMaxLayoutWidth {
+    preferredMaxLayoutWidth = (CGFloat)ceil(preferredMaxLayoutWidth);
+
     if (ABS(_preferredMaxLayoutWidth - preferredMaxLayoutWidth) > 0.1) {
         _preferredMaxLayoutWidth = preferredMaxLayoutWidth;
         [self invalidateIntrinsicContentSize];
