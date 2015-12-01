@@ -13,15 +13,20 @@
     "tag": "0.1.2"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "requires_arc": true,
-  "default_subspecs": "Core",
+  "ios": {
+    "resource_bundles": {
+      "NYTPhotoViewer": [
+        "Pod/Assets/ios/*.png"
+      ]
+    }
+  },
   "subspecs": [
     {
       "name": "Core",
       "source_files": "Pod/Classes/**/*",
-      "resources": "Pod/Assets/**/*",
       "frameworks": [
         "UIKit",
         "Foundation"

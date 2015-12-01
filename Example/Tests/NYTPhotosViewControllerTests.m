@@ -23,9 +23,9 @@
     XCTAssertNotNil(photosViewController.panGestureRecognizer);
 }
 
-- (void)testPanGestureRecognizerHasAssociatedView {
+- (void)testPanGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
-    [photosViewController viewDidLoad];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
@@ -34,9 +34,9 @@
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer);
 }
 
-- (void)testSingleTapGestureRecognizerHasAssociatedView {
+- (void)testSingleTapGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
-    [photosViewController viewDidLoad];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
@@ -188,14 +188,27 @@
 - (void)testUpdateImageForPhotoUpdatesImage {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
-    [photosViewController viewDidLoad];
 
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
-    photoToUpdate.image = [[UIImage alloc] init];
+    photoToUpdate.image = [UIImage imageNamed:@"NYTimesBuilding" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     
     [photosViewController updateImageForPhoto:photoToUpdate];
     
     XCTAssertEqualObjects(photosViewController.currentlyDisplayedPhoto.image, photoToUpdate.image);
+}
+
+- (void)testViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.isViewLoaded);
+}
+
+- (void)testPageViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.pageViewController.isViewLoaded);
 }
 
 #pragma mark - Helpers

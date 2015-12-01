@@ -16,7 +16,7 @@
 /**
  *  The image to display.
  */
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly, nullable) UIImage *image;
 
 /**
  * The image data to display. This will be preferred over the `image` property.
@@ -27,21 +27,21 @@
 /**
  *  A placeholder image for display while the image is loading.
  */
-@property (nonatomic, readonly) UIImage *placeholderImage;
+@property (nonatomic, readonly, nullable) UIImage *placeholderImage;
 
 /**
  *  An attributed string for display as the title of the caption.
  */
-@property (nonatomic, readonly) NSAttributedString *attributedCaptionTitle;
+@property (nonatomic, readonly, nullable) NSAttributedString *attributedCaptionTitle;
 
 /**
  *  An attributed string for display as the summary of the caption.
  */
-@property (nonatomic, readonly) NSAttributedString *attributedCaptionSummary;
+@property (nonatomic, readonly, nullable) NSAttributedString *attributedCaptionSummary;
 
 /**
  *  An attributed string for display as the credit of the caption.
  */
-@property (nonatomic, readonly) NSAttributedString *attributedCaptionCredit;
+@property (nonatomic, readonly, nullable) NSAttributedString *attributedCaptionCredit;
 
 @end

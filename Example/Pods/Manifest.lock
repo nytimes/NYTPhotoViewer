@@ -4,19 +4,19 @@ PODS:
     - FLAnimatedImage
     - NYTPhotoViewer/Core
   - NYTPhotoViewer/Core (0.1.2)
-  - OCMock (3.1.2)
+  - OCMock (3.2)
 
 DEPENDENCIES:
   - NYTPhotoViewer/AnimatedGifSupport (from `../`)
-  - OCMock (~> 3.1)
+  - OCMock (~> 3.2)
 
 EXTERNAL SOURCES:
   NYTPhotoViewer:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
-  NYTPhotoViewer: 6666b938c938df732bdfbe9bff3148fb3689a8c4
-  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  NYTPhotoViewer: c8cdb47350ae4dacd248771a6dbe6ba67c65c3a1
+  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

@@ -50,8 +50,8 @@
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-    [self centerScrollViewContents];
     [self updateZoomScale];
+    [self centerScrollViewContents];
 }
 
 #pragma mark - NYTScalingImageView
