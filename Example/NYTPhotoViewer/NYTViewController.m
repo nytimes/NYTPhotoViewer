@@ -39,7 +39,7 @@ static const NSUInteger NYTViewControllerCustomMaxZoomScalePhotoIndex = 5;
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
-            if (!photo.image) {
+            if (!photo.image && !photo.imageData) {
                 // Photo credit: Nic Lehoux
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
                 [photosViewController updateImageForPhoto:photo];
@@ -51,10 +51,15 @@ static const NSUInteger NYTViewControllerCustomMaxZoomScalePhotoIndex = 5;
 + (NSArray *)newTestPhotos {
     NSMutableArray *photos = [NSMutableArray array];
     
-    for (int i = 0; i < 6; i++) {
+    int limit = 7;
+    for (int i = 0; i < limit; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
         
-        photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+        if (i == limit - 1) {
+            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
+        } else {
+            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+        }
         if (i == NYTViewControllerCustomEverythingPhotoIndex || i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
             photo.image = nil;
         }

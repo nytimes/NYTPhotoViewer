@@ -16,7 +16,6 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
   "ios": {
     "resource_bundles": {
       "NYTPhotoViewer": [
@@ -24,8 +23,28 @@
       ]
     }
   },
-  "frameworks": [
-    "UIKit",
-    "Foundation"
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Pod/Classes/**/*",
+      "frameworks": [
+        "UIKit",
+        "Foundation"
+      ]
+    },
+    {
+      "name": "AnimatedGifSupport",
+      "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ANIMATED_GIF_SUPPORT=1"
+      },
+      "dependencies": {
+        "NYTPhotoViewer/Core": [
+
+        ],
+        "FLAnimatedImage": [
+
+        ]
+      }
+    }
   ]
 }

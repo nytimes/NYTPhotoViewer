@@ -10,6 +10,10 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
+
 NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
 
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
@@ -91,12 +95,12 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)commonInitWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
     _photo = photo;
 
-    UIImage *photoImage = photo.image ?: photo.placeholderImage;
+    NSData *photoImage = photo.imageData ? photo.imageData : UIImagePNGRepresentation((photo.image ?: photo.placeholderImage));
 
-    _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
+    _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
     _scalingImageView.delegate = self;
 
-    if (!photo.image) {
+    if (!photoImage) {
         [self setupLoadingView:loadingView];
     }
 
@@ -117,14 +121,17 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
     id <NYTPhoto> photo = notification.object;
     if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
-        [self updateImage:photo.image];
+        if (photo.imageData) {
+            return [self updateImageData:photo.imageData];
+        }
+        [self updateImageData:UIImagePNGRepresentation(photo.image)];
     }
 }
 
-- (void)updateImage:(UIImage *)image {
-    [self.scalingImageView updateImage:image];
+- (void)updateImageData:(NSData *)imageData {
+    [self.scalingImageView updateImageData:imageData];
     
-    if (image) {
+    if (imageData) {
         [self.loadingView removeFromSuperview];
         self.loadingView = nil;
     }
