@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  The left and right margin around the content.
  */
@@ -27,6 +29,8 @@ extern const CGFloat NYTPhotoCaptionViewHorizontalMargin;
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithAttributedTitle:(nullable NSAttributedString *)attributedTitle attributedSummary:(nullable NSAttributedString *)attributedSummary attributedCredit:(nullable NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

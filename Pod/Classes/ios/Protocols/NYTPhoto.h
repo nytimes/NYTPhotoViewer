@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  The model for photos displayed in an `NYTPhotosViewController`.
  */
@@ -45,3 +47,5 @@
 @property (nonatomic, readonly, nullable) NSAttributedString *attributedCaptionCredit;
 
 @end
+
+NS_ASSUME_NONNULL_END

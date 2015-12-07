@@ -10,6 +10,8 @@
 
 #import "NYTPhotosViewControllerDataSource.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  A concrete implementation of the `NYTPhotosViewControllerDataSource`.
  */
@@ -22,6 +24,8 @@
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhotos:(NSArray *)photos NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhotos:(nullable NSArray *)photos NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END
