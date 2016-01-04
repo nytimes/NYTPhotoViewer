@@ -92,6 +92,9 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
             case NYTViewControllerPhotoIndexGif:
                 caption = @"animated GIF";
                 break;
+            case NYTViewControllerPhotoCount:
+                // this case statement intentionally left blank.
+                break;
         }
         
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
