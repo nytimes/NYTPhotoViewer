@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * The image data to display. This will be preferred over the `image` property.
  * In case this is empty `image` will be used. The main advantage of using this is animated gif support.
  */
-@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic, readonly, nullable) NSData *imageData;
 
 /**
  *  A placeholder image for display while the image is loading.
