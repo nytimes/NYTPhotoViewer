@@ -187,23 +187,6 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 
 #pragma mark - Convenience
 
-- (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
-    switch (orientation) {
-        case UIInterfaceOrientationLandscapeLeft:
-            return CGAffineTransformMakeRotation(-M_PI / 2.0);
-        
-        case UIInterfaceOrientationLandscapeRight:
-            return CGAffineTransformMakeRotation(M_PI / 2.0);
-        
-        case UIInterfaceOrientationPortraitUpsideDown:
-            return CGAffineTransformMakeRotation(M_PI);
-        
-        case UIInterfaceOrientationPortrait:
-        default:
-            return CGAffineTransformMakeRotation(0);
-    }
-}
-
 - (BOOL)shouldPerformZoomingAnimation {
     return self.startingView && self.endingView;
 }
