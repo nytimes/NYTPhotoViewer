@@ -207,6 +207,11 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString * _Nullable)activityType;
 
+/**
+ *  Dismisses `NYTPhotosViewController`. Should only be used in cases where user interaction of a button in the captionView requires a different viewController to be modal.
+ */
+- (void)forceDismiss;
+
 @end
 
 NS_ASSUME_NONNULL_END

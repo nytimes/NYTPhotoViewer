@@ -244,9 +244,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.transitionController.forcesNonInteractiveDismissal = YES;
-    [self setOverlayViewHidden:YES animated:NO];
-    [self dismissAnimated:YES];
+    [self forceDismiss];
 }
 
 - (void)actionButtonTapped:(id)sender {
@@ -345,6 +343,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     else {
         [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
+}
+
+- (void)forceDismiss {
+    self.transitionController.forcesNonInteractiveDismissal = YES;
+    [self setOverlayViewHidden:YES animated:NO];
+    [self dismissAnimated:YES];
 }
 
 - (void)dismissAnimated:(BOOL)animated {
