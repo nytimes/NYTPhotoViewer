@@ -15,8 +15,18 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
   s.ios.resource_bundle = { s.name => ['Pod/Assets/ios/*.png'] }
 
-  s.frameworks = 'UIKit', 'Foundation'
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'Pod/Classes/**/*'
+    ss.frameworks = 'UIKit', 'Foundation'
+  end
+
+  s.subspec 'AnimatedGifSupport' do |ss|
+    ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1'}
+
+    ss.dependency 'NYTPhotoViewer/Core'
+    ss.dependency 'FLAnimatedImage'
+  end
+
 end

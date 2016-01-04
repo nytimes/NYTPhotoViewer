@@ -9,6 +9,8 @@
 @import UIKit;
 #import "NYTPhotoCaptionViewLayoutWidthHinting.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  A view used to display the caption for a photo.
  */
@@ -23,6 +25,8 @@
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithAttributedTitle:(nullable NSAttributedString *)attributedTitle attributedSummary:(nullable NSAttributedString *)attributedSummary attributedCredit:(nullable NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -16,6 +16,8 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
     NYTViewControllerPhotoIndexNoReferenceView = 4,
     NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
+    NYTViewControllerPhotoIndexGif = 6,
+    NYTViewControllerPhotoCount,
 };
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
-            if (!photo.image) {
+            if (!photo.image && !photo.imageData) {
                 // Photo credit: Nic Lehoux
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
                 [photosViewController updateImageForPhoto:photo];
@@ -54,12 +56,16 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 + (NSArray *)newTestPhotos {
     NSMutableArray *photos = [NSMutableArray array];
     
-    for (int i = 0; i < 6; i++) {
+    for (NSUInteger i = 0; i < NYTViewControllerPhotoCount; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
         
-        photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-        if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
+        if (i == NYTViewControllerPhotoIndexGif) {
+            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
+        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
+            // no-op, left here for clarity:
             photo.image = nil;
+        } else {
+            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
         }
         
         if (i == NYTViewControllerPhotoIndexCustomEverything) {
@@ -82,6 +88,9 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
                 break;
             case NYTViewControllerPhotoIndexCustomMaxZoomScale:
                 caption = @"photo with custom maximum zoom scale";
+                break;
+            case NYTViewControllerPhotoIndexGif:
+                caption = @"animated GIF";
                 break;
         }
         
