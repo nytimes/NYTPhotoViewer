@@ -12,6 +12,8 @@
 @class FLAnimatedImageView;
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NYTScalingImageView : UIScrollView
 
 /**
@@ -31,7 +33,7 @@
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithImageData:(NSData *)image frame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithImageData:(nullable NSData *)image frame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Updates the image in the image view and centers and zooms the new image.
@@ -46,3 +48,5 @@
 - (void)centerScrollViewContents;
 
 @end
+
+NS_ASSUME_NONNULL_END
