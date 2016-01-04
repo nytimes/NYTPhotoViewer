@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1'}
 
     ss.dependency 'NYTPhotoViewer/Core'
-    ss.dependency 'FLAnimatedImage'
+    ss.dependency 'FLAnimatedImage', '~> 1.0.8'
   end
 
 end
