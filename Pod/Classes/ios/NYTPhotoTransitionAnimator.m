@@ -137,8 +137,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     [transitionContext.containerView addSubview:endingViewForAnimation];
     
     // Hide the original ending view and starting view until the completion of the animation.
-    self.endingView.hidden = YES;
-    self.startingView.hidden = YES;
+    self.endingView.alpha = 0.0;
+    self.startingView.alpha = 0.0;
     
     CGFloat fadeInDuration = [self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio;
     CGFloat fadeOutDuration = [self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio;
@@ -178,8 +178,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
                      }
                      completion:^(BOOL finished) {
                          [endingViewForAnimation removeFromSuperview];
-                         self.endingView.hidden = NO;
-                         self.startingView.hidden = NO;
+                         self.endingView.alpha = 1.0;
+                         self.startingView.alpha = 1.0;
         
                          [self completeTransitionWithTransitionContext:transitionContext];
                      }];

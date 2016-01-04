@@ -94,7 +94,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
                 }
             }
             
-            self.viewToHideWhenBeginningTransition.hidden = NO;
+            self.viewToHideWhenBeginningTransition.alpha = 1.0;
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
             
@@ -142,7 +142,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
 #pragma mark - UIViewControllerInteractiveTransitioning
 
 - (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    self.viewToHideWhenBeginningTransition.hidden = YES;
+    self.viewToHideWhenBeginningTransition.alpha = 0.0;
     
     self.transitionContext = transitionContext;
 }
