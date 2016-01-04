@@ -43,6 +43,7 @@
 - (void)testPageViewControllerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     [photosViewController viewDidLoad];
+    
     XCTAssertNotNil(photosViewController.pageViewController);
 }
 

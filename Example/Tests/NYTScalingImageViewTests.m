@@ -9,8 +9,6 @@
 @import UIKit;
 @import XCTest;
 
-#define kGifPath  [[NSBundle bundleForClass:self.class] pathForResource:@"giphy" ofType:@"gif"]
-
 #import <NYTPhotoViewer/NYTScalingImageView.h>
 
 #ifdef ANIMATED_GIF_SUPPORT
@@ -20,15 +18,25 @@
 @interface NYTScalingImageViewTests : XCTestCase
 
 @property (nonatomic, strong) NSData *imageData;
+@property (nonatomic, strong) NSString *gifPath;
 
 @end
 
 @implementation NYTScalingImageViewTests
 
+#pragma mark - Accessors
+- (NSString *)gifPath {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _gifPath = [[NSBundle bundleForClass:self.class] pathForResource:@"giphy" ofType:@"gif"];
+    });
+    return _gifPath;
+}
+
 - (NSData *)imageData {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _imageData = [NSData dataWithContentsOfFile:kGifPath];
+        _imageData = [NSData dataWithContentsOfFile:self.gifPath];
     });
     return _imageData;
 }
@@ -53,7 +61,7 @@
 }
 
 - (void)testUpdateImageUpdatesImage {
-    NSData *image2 = [NSData dataWithContentsOfFile:kGifPath];
+    NSData *image2 = [NSData dataWithContentsOfFile:self.gifPath];
     
     NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];
     [scalingImageView updateImageData:image2];
