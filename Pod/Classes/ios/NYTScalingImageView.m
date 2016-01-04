@@ -30,7 +30,7 @@
 #pragma mark - UIView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithImageData:nil frame:frame];
+    return [self initWithImage:[UIImage new] frame:frame];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

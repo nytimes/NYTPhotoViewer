@@ -12,6 +12,8 @@
 @class FLAnimatedImageView;
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NYTScalingImageView : UIScrollView
 
 /**
@@ -63,3 +65,5 @@
 - (void)centerScrollViewContents;
 
 @end
+
+NS_ASSUME_NONNULL_END

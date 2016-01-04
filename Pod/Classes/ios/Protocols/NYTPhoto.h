@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  The model for photos displayed in an `NYTPhotosViewController`.
  */
@@ -22,7 +24,7 @@
  * The image data to display. This will be preferred over the `image` property.
  * In case this is empty `image` will be used. The main advantage of using this is animated gif support.
  */
-@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic, readonly, nullable) NSData *imageData;
 
 /**
  *  A placeholder image for display while the image is loading.
@@ -45,3 +47,5 @@
 @property (nonatomic, readonly, nullable) NSAttributedString *attributedCaptionCredit;
 
 @end
+
+NS_ASSUME_NONNULL_END
