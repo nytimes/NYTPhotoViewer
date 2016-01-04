@@ -323,6 +323,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     
     NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
     [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
+    [self updateOverlayInformation];
 }
 
 - (void)updateImageForPhoto:(id <NYTPhoto>)photo {
