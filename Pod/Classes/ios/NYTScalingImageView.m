@@ -14,6 +14,12 @@
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 
+#define INTERACTIVE_RELOAD // (awyeah)
+
+#ifdef INTERACTIVE_RELOAD
+#define IsValidZoomScale(zoomScale) (zoomScale != 0 && zoomScale != 1)
+#endif
+
 @interface NYTScalingImageView ()
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
@@ -23,6 +29,10 @@
 #else
 @property (nonatomic) UIImageView *imageView;
 #endif
+
+@property (nonatomic) CGFloat baseZoomScale;
+@property (nonatomic) CGSize baseSize;
+
 @end
 
 @implementation NYTScalingImageView
@@ -109,7 +119,9 @@
     UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
     // Remove any transform currently applied by the scroll view zooming.
+#ifndef INTERACTIVE_RELOAD
     self.imageView.transform = CGAffineTransformIdentity;
+#endif
     self.imageView.image = imageToUse;
     
 #ifdef ANIMATED_GIF_SUPPORT
@@ -117,12 +129,23 @@
     self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:imageData];
 #endif
     
+#ifndef INTERACTIVE_RELOAD
     self.imageView.frame = CGRectMake(0, 0, imageToUse.size.width, imageToUse.size.height);
+#endif
     
     self.contentSize = imageToUse.size;
     
+#ifdef INTERACTIVE_RELOAD
+    self.baseZoomScale = self.zoomScale;
+    if (CGSizeEqualToSize(self.baseSize, CGSizeZero)) {
+        self.baseSize = image.size;
+    }
+#endif
     [self updateZoomScale];
+    
+#ifndef INTERACTIVE_RELOAD
     [self centerScrollViewContents];
+#endif
 }
 
 - (void)setupImageScrollView {
@@ -141,22 +164,37 @@
 #endif
         CGRect scrollViewFrame = self.bounds;
         
+#ifdef INTERACTIVE_RELOAD
+        CGFloat scaleWidth = scrollViewFrame.size.width / self.baseSize.width;
+        CGFloat scaleHeight = scrollViewFrame.size.height / self.baseSize.height;
+#else
         CGFloat scaleWidth = scrollViewFrame.size.width / self.imageView.image.size.width;
         CGFloat scaleHeight = scrollViewFrame.size.height / self.imageView.image.size.height;
+#endif
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;
         self.maximumZoomScale = MAX(minScale, self.maximumZoomScale);
         
+#ifdef INTERACTIVE_RELOAD
+        if (IsValidZoomScale(self.baseZoomScale)) {
+            self.zoomScale = self.baseZoomScale;
+        } else {
+            self.zoomScale = self.minimumZoomScale;
+        }
+        self.baseZoomScale = self.zoomScale;
+#else
         self.zoomScale = self.minimumZoomScale;
-        
+#endif
         // scrollView.panGestureRecognizer.enabled is on by default and enabled by
         // viewWillLayoutSubviews in the container controller so disable it here
         // to prevent an interference with the container controller's pan gesture.
         //
         // This is enabled in scrollViewWillBeginZooming so panning while zoomed-in
         // is unaffected.
+#ifndef INTERACTIVE_RELOAD
         self.panGestureRecognizer.enabled = NO;
+#endif
     }
 }
 
@@ -167,11 +205,19 @@
     CGFloat verticalInset = 0;
     
     if (self.contentSize.width < CGRectGetWidth(self.bounds)) {
+#ifdef INTERACTIVE_RELOAD
+        horizontalInset = (CGRectGetWidth(self.bounds) - self.baseSize.width) * 0.5;
+#else
         horizontalInset = (CGRectGetWidth(self.bounds) - self.contentSize.width) * 0.5;
+#endif
     }
     
     if (self.contentSize.height < CGRectGetHeight(self.bounds)) {
+#ifdef INTERACTIVE_RELOAD
+        verticalInset = (CGRectGetHeight(self.bounds) - self.baseSize.height) * 0.5;
+#else
         verticalInset = (CGRectGetHeight(self.bounds) - self.contentSize.height) * 0.5;
+#endif
     }
     
     if (self.window.screen.scale < 2.0) {
