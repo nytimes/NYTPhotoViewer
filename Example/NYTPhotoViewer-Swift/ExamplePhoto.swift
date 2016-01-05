@@ -13,9 +13,9 @@ class ExamplePhoto: NSObject, NYTPhoto {
     var image: UIImage?
     var imageData: NSData?
     var placeholderImage: UIImage?
-    let attributedCaptionTitle: NSAttributedString
-    let attributedCaptionSummary = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-    let attributedCaptionCredit = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+    let attributedCaptionTitle: NSAttributedString?
+    let attributedCaptionSummary: NSAttributedString? = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+    let attributedCaptionCredit: NSAttributedString? = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
 
     init(imageData: NSData?, attributedCaptionTitle: NSAttributedString) {
         self.imageData = imageData
