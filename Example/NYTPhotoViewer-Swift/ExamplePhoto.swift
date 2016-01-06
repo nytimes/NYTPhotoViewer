@@ -24,8 +24,4 @@ class ExamplePhoto: NSObject, NYTPhoto {
         super.init()
     }
 
-    convenience init(attributedCaptionTitle: NSAttributedString) {
-        self.init(imageData: nil, attributedCaptionTitle: attributedCaptionTitle)
-    }
-
 }
