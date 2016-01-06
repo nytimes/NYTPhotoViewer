@@ -17,7 +17,8 @@ class ExamplePhoto: NSObject, NYTPhoto {
     let attributedCaptionSummary: NSAttributedString? = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
     let attributedCaptionCredit: NSAttributedString? = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
 
-    init(imageData: NSData?, attributedCaptionTitle: NSAttributedString) {
+    init(image: UIImage? = nil, imageData: NSData? = nil, attributedCaptionTitle: NSAttributedString) {
+        self.image = image
         self.imageData = imageData
         self.attributedCaptionTitle = attributedCaptionTitle
         super.init()

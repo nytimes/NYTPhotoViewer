@@ -30,14 +30,7 @@ class PhotosProvider: NSObject {
         for photoIndex in 0 ..< NumberOfPhotos {
             let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
             
-            let imageData: NSData? = {
-                if let image = image {
-                    return UIImagePNGRepresentation(image)
-                }
-                return nil
-            }()
-            
-            let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(imageData: imageData, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
+            let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(image: image, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
             
             if photoIndex == CustomEverythingPhotoIndex {
                 photo.placeholderImage = UIImage(named: PlaceholderImageName)
