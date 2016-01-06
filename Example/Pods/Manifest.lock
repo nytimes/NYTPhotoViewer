@@ -1,7 +1,7 @@
 PODS:
   - FLAnimatedImage (1.0.8)
   - NYTPhotoViewer/AnimatedGifSupport (0.1.2):
-    - FLAnimatedImage
+    - FLAnimatedImage (= 1.0.8)
     - NYTPhotoViewer/Core
   - NYTPhotoViewer/Core (0.1.2)
   - OCMock (3.2)
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
-  NYTPhotoViewer: c8cdb47350ae4dacd248771a6dbe6ba67c65c3a1
+  NYTPhotoViewer: e348bfa437398deb67a88b7928e85168ac38b5df
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
 
 COCOAPODS: 0.39.0

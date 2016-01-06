@@ -15,9 +15,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.ios.resource_bundle = { s.name => ['Pod/Assets/ios/*.png'] }
-
   s.subspec 'Core' do |ss|
+    ss.ios.resource_bundle = { s.name => ['Pod/Assets/ios/*.png'] }
     ss.source_files = 'Pod/Classes/**/*'
     ss.frameworks = 'UIKit', 'Foundation'
   end
