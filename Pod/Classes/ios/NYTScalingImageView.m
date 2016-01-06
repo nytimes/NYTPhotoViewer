@@ -230,7 +230,9 @@
     
 #ifdef INTERACTIVE_RELOAD
     // Fixes image jumping issue when loading full size image
-    [self.delegate scrollViewDidScroll:self];
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        [self.delegate scrollViewDidScroll:self];
+    }
 #endif
 }
 
