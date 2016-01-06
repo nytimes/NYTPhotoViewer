@@ -227,6 +227,11 @@
     
     // Use `contentInset` to center the contents in the scroll view. Reasoning explained here: http://petersteinberger.com/blog/2013/how-to-center-uiscrollview/
     self.contentInset = UIEdgeInsetsMake(verticalInset, horizontalInset, verticalInset, horizontalInset);
+    
+#ifdef INTERACTIVE_RELOAD
+    // Fixes image jumping issue when loading full size image
+    [self.delegate scrollViewDidScroll:self];
+#endif
 }
 
 @end
