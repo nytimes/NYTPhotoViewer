@@ -16,16 +16,16 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "ios": {
-    "resource_bundles": {
-      "NYTPhotoViewer": [
-        "Pod/Assets/ios/*.png"
-      ]
-    }
-  },
   "subspecs": [
     {
       "name": "Core",
+      "ios": {
+        "resource_bundles": {
+          "NYTPhotoViewer": [
+            "Pod/Assets/ios/*.png"
+          ]
+        }
+      },
       "source_files": "Pod/Classes/**/*",
       "frameworks": [
         "UIKit",
@@ -42,7 +42,7 @@
 
         ],
         "FLAnimatedImage": [
-
+          "~> 1.0.8"
         ]
       }
     }

@@ -24,7 +24,8 @@
 
 @implementation NYTScalingImageViewTests
 
-#pragma mark - Accessors
+#pragma mark - Helpers
+
 - (NSString *)gifPath {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -41,16 +42,32 @@
     return _imageData;
 }
 
-- (void)testInitializationAcceptsNil {
-    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImageData:nil frame:CGRectZero]);
+#pragma mark - Tests
+
+- (void)testImageInitializationAcceptsEmptyData {
+    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImage:[UIImage new] frame:CGRectZero]);
 }
 
-- (void)testImageViewExistsAfterInitialization {
-    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:nil frame:CGRectZero];
+- (void)testDataInitializationAcceptsEmptyData {
+    XCTAssertNoThrow([[NYTScalingImageView alloc] initWithImageData:[NSData new] frame:CGRectZero]);
+}
+
+- (void)testImageViewExistsAfterImageInitialization {
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:[UIImage new] frame:CGRectZero];
     XCTAssertNotNil(scalingImageView.imageView);
 }
 
-- (void)testInitializationSetsImage {
+- (void)testImageViewExistsAfterDataInitialization {
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:[NSData new] frame:CGRectZero];
+    XCTAssertNotNil(scalingImageView.imageView);
+}
+
+- (void)testImageInitializationSetsImage {
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:[UIImage new] frame:CGRectZero];
+    XCTAssertNotNil(scalingImageView.imageView.image);
+}
+
+- (void)testDataInitializationSetsImage {
     NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];
 
 #ifdef ANIMATED_GIF_SUPPORT
@@ -61,6 +78,14 @@
 }
 
 - (void)testUpdateImageUpdatesImage {
+    UIImage *image = [UIImage new];
+    NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImage:image frame:CGRectZero];
+    [scalingImageView updateImage:image];
+    
+    XCTAssertEqual(scalingImageView.imageView.image, image);
+}
+
+- (void)testUpdateImageDataUpdatesImage {
     NSData *image2 = [NSData dataWithContentsOfFile:self.gifPath];
     
     NYTScalingImageView *scalingImageView = [[NYTScalingImageView alloc] initWithImageData:self.imageData frame:CGRectZero];

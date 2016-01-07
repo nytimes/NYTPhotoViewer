@@ -30,14 +30,14 @@
 #pragma mark - UIView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithImageData:nil frame:frame];
+    return [self initWithImage:[UIImage new] frame:frame];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithImage:nil];
+        [self commonInitWithImage:nil imageData:nil];
     }
 
     return self;
@@ -56,52 +56,70 @@
 
 #pragma mark - NYTScalingImageView
 
-- (id)initWithImageData:(NSData *)image frame:(CGRect)frame {
+- (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
+
     if (self) {
-        [self commonInitWithImage:image];
+        [self commonInitWithImage:image imageData:nil];
     }
     
     return self;
 }
 
-- (void)commonInitWithImage:(NSData *)image {
-    [self setupInternalImageViewWithImageData:image];
+- (instancetype)initWithImageData:(NSData *)imageData frame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self commonInitWithImage:nil imageData:imageData];
+    }
+    
+    return self;
+}
+
+- (void)commonInitWithImage:(UIImage *)image imageData:(NSData *)imageData {
+    [self setupInternalImageViewWithImage:image imageData:imageData];
     [self setupImageScrollView];
     [self updateZoomScale];
 }
 
 #pragma mark - Setup
 
-- (void)setupInternalImageViewWithImageData:(NSData *)imageData {
-    UIImage *image = [UIImage imageWithData:imageData];
+- (void)setupInternalImageViewWithImage:(UIImage *)image imageData:(NSData *)imageData {
+    UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
 #ifdef ANIMATED_GIF_SUPPORT
-    self.imageView = [[FLAnimatedImageView alloc] initWithImage:image];
+    self.imageView = [[FLAnimatedImageView alloc] initWithImage:imageToUse];
 #else
-    self.imageView = [[UIImageView alloc] initWithImage:image];
+    self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
 #endif
-    [self updateImageData:imageData];
+    [self updateImage:imageToUse imageData:imageData];
     
     [self addSubview:self.imageView];
 }
 
+- (void)updateImage:(UIImage *)image {
+    [self updateImage:image imageData:nil];
+}
+
 - (void)updateImageData:(NSData *)imageData {
-    UIImage *image = [UIImage imageWithData:imageData];
+    [self updateImage:nil imageData:imageData];
+}
+
+- (void)updateImage:(UIImage *)image imageData:(NSData *)imageData {
+    UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
     // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
-    self.imageView.image = image;
+    self.imageView.image = imageToUse;
     
 #ifdef ANIMATED_GIF_SUPPORT
     // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
     self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:imageData];
 #endif
     
-    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    self.imageView.frame = CGRectMake(0, 0, imageToUse.size.width, imageToUse.size.height);
     
-    self.contentSize = image.size;
+    self.contentSize = imageToUse.size;
     
     [self updateZoomScale];
     [self centerScrollViewContents];
