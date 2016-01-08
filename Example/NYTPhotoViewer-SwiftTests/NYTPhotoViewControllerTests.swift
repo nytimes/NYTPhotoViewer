@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import NYTPhotoViewer
+
 class NYTPhotoViewControllerTests: XCTestCase {
     
     var testPhoto: ExamplePhoto?

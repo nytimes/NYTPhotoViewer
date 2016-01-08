@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import NYTPhotoViewer
+
 class NYTPhotosDataSourceTests: XCTestCase {
 
     let photos: [ExamplePhoto] = PhotosProvider().photos
