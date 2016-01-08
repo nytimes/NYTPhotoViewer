@@ -1,6 +1,6 @@
 //
 //  NYTPhotosViewControllerDataSource.h
-//  NYTNewsReader
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/10/15.
 //  Copyright (c) 2015 NYTimes. All rights reserved.
