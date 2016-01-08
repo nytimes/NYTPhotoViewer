@@ -94,15 +94,20 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 - (void)commonInitWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
     _photo = photo;
-
-    NSData *photoImage = photo.imageData ? photo.imageData : UIImagePNGRepresentation((photo.image ?: photo.placeholderImage));
-
-    _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photoImage frame:CGRectZero];
-    _scalingImageView.delegate = self;
-
-    if (!photoImage) {
-        [self setupLoadingView:loadingView];
+    
+    if (photo.imageData) {
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photo.imageData frame:CGRectZero];
     }
+    else {
+        UIImage *photoImage = photo.image ?: photo.placeholderImage;
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
+        
+        if (!photoImage) {
+            [self setupLoadingView:loadingView];
+        }
+    }
+    
+    _scalingImageView.delegate = self;
 
     _notificationCenter = notificationCenter;
 
@@ -121,17 +126,19 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
     id <NYTPhoto> photo = notification.object;
     if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
-        if (photo.imageData) {
-            return [self updateImageData:photo.imageData];
-        }
-        [self updateImageData:UIImagePNGRepresentation(photo.image)];
+        [self updateImage:photo.image imageData:photo.imageData];
     }
 }
 
-- (void)updateImageData:(NSData *)imageData {
-    [self.scalingImageView updateImageData:imageData];
-    
+- (void)updateImage:(UIImage *)image imageData:(NSData *)imageData {
     if (imageData) {
+        [self.scalingImageView updateImageData:imageData];
+    }
+    else {
+        [self.scalingImageView updateImage:image];
+    }
+    
+    if (imageData || image) {
         [self.loadingView removeFromSuperview];
         self.loadingView = nil;
     }
