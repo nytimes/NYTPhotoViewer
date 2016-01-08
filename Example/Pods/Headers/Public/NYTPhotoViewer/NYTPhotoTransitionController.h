@@ -1,1 +1,0 @@
-../../../../../Pod/Classes/ios/NYTPhotoTransitionController.h

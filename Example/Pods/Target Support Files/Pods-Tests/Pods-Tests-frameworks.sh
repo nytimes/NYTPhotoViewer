@@ -82,3 +82,14 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Tests/FLAnimatedImage.framework"
+  install_framework "Pods-Tests/NYTPhotoViewer.framework"
+  install_framework "Pods-Tests/OCMock.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Tests/FLAnimatedImage.framework"
+  install_framework "Pods-Tests/NYTPhotoViewer.framework"
+  install_framework "Pods-Tests/OCMock.framework"
+fi

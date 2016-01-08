@@ -1,0 +1,6 @@
+framework module Pods_NYTPhotoViewer_Swift {
+  umbrella header "Pods-NYTPhotoViewer-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
