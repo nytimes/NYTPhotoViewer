@@ -8,6 +8,8 @@
 
 import UIKit
 
+import NYTPhotoViewer
+
 class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
 
     @IBOutlet weak var imageButton : UIButton?
