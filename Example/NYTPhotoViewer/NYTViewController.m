@@ -140,6 +140,19 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     return nil;
 }
 
+-(UIView *)photosViewController:(NYTPhotosViewController *)photosViewController topCaptionViewForPhoto:(id<NYTPhoto>)photo
+{
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"Custom Top Caption View";
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor greenColor];
+        return label;
+    }
+    
+    return nil;
+}
+
 - (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
     if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
         return 10.0f;

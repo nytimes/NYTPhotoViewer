@@ -94,6 +94,17 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
+    func photosViewController(photosViewController: NYTPhotosViewController, topCaptionViewForPhoto photo: NYTPhoto) -> UIView? {
+        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+            let label = UILabel()
+            label.text = "Custom Top Caption View"
+            label.textColor = UIColor.whiteColor()
+            label.backgroundColor = UIColor.greenColor()
+            return label
+        }
+        return nil
+    }
+    
     func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
         print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }

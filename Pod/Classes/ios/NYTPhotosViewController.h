@@ -149,6 +149,16 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
+ *  Returns a view to display over a photo, full width, locked to the top, under navigation bar, representing the top caption for the photo. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object over which to display the caption view.
+ *
+ *  @return A view to display as the top caption for the photo. Return `nil` to show nothing.
+ */
+- (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController topCaptionViewForPhoto:(id<NYTPhoto>)photo;
+
+/**
  *  Returns a view to display while a photo is loading. Can be any `UIView` object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image is loaded.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
