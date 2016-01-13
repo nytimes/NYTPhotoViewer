@@ -1,12 +1,14 @@
 //
 //  NYTPhotoTransitionAnimator.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
 //
 
 @import UIKit;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  An object that controls the animated transition of photo presentation and dismissal.
@@ -26,12 +28,12 @@
 /**
  *  The view that is used for animating the starting view. If no view is set, the starting view is screenshotted and the relevant properties are copied to the new view.
  */
-@property (nonatomic) UIView *startingViewForAnimation;
+@property (nonatomic, nullable) UIView *startingViewForAnimation;
 
 /**
  *  The view that is used for animating the ending view. If no view is set, the ending view is screenshotted and relevant properties copied to the new view.
  */
-@property (nonatomic) UIView *endingViewForAnimation;
+@property (nonatomic, nullable) UIView *endingViewForAnimation;
 
 /**
  *  Whether this transition is a dismissal. If `NO`, presentation is assumed.
@@ -75,6 +77,8 @@
  *
  *  @return A new view identical in appearance to the passed-in view, with relevant properties transferred. Not a member of any view hierarchy. Return `nil` if the passed-in view is `nil`.
  */
-+ (UIView *)newAnimationViewFromView:(UIView *)view;
++ (nullable UIView *)newAnimationViewFromView:(nullable UIView *)view;
 
 @end
+
+NS_ASSUME_NONNULL_END

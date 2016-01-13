@@ -1,22 +1,20 @@
 //
 //  NYTPhotoCaptionView.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/18/15.
 //
 //
 
 @import UIKit;
+#import "NYTPhotoCaptionViewLayoutWidthHinting.h"
 
-/**
- *  The left and right margin around the content.
- */
-extern const CGFloat NYTPhotoCaptionViewHorizontalMargin;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  A view used to display the caption for a photo.
  */
-@interface NYTPhotoCaptionView : UIView
+@interface NYTPhotoCaptionView : UIView <NYTPhotoCaptionViewLayoutWidthHinting>
 
 /**
  *  Designated initializer that takes all the caption attributed strings as arguments.
@@ -27,6 +25,8 @@ extern const CGFloat NYTPhotoCaptionViewHorizontalMargin;
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithAttributedTitle:(NSAttributedString *)attributedTitle attributedSummary:(NSAttributedString *)attributedSummary attributedCredit:(NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithAttributedTitle:(nullable NSAttributedString *)attributedTitle attributedSummary:(nullable NSAttributedString *)attributedSummary attributedCredit:(nullable NSAttributedString *)attributedCredit NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

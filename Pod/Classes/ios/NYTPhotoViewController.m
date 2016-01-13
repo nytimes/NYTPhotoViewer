@@ -1,6 +1,6 @@
 //
 //  NYTPhotoViewController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
 //
@@ -10,11 +10,17 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
+
 NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
 
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
 
 @property (nonatomic) id <NYTPhoto> photo;
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic) NYTScalingImageView *scalingImageView;
 @property (nonatomic) UIView *loadingView;
@@ -38,6 +44,16 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithPhoto:nil loadingView:nil notificationCenter:nil];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithPhoto:nil loadingView:nil notificationCenter:nil];
+    }
+
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -70,23 +86,32 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        _photo = photo;
-        
-        UIImage *photoImage = photo.image ?: photo.placeholderImage;
-        
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
-        _scalingImageView.delegate = self;
-        
-        if (!photo.image) {
-            [self setupLoadingView:loadingView];
-        }
-        
-        _notificationCenter = notificationCenter;
-        
-        [self setupGestureRecognizers];
+        [self commonInitWithPhoto:photo loadingView:loadingView notificationCenter:notificationCenter];
     }
     
     return self;
+}
+
+- (void)commonInitWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
+    _photo = photo;
+    
+    if (photo.imageData) {
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photo.imageData frame:CGRectZero];
+    }
+    else {
+        UIImage *photoImage = photo.image ?: photo.placeholderImage;
+        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
+        
+        if (!photoImage) {
+            [self setupLoadingView:loadingView];
+        }
+    }
+    
+    _scalingImageView.delegate = self;
+
+    _notificationCenter = notificationCenter;
+
+    [self setupGestureRecognizers];
 }
 
 - (void)setupLoadingView:(UIView *)loadingView {
@@ -101,14 +126,19 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
     id <NYTPhoto> photo = notification.object;
     if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
-        [self updateImage:photo.image];
+        [self updateImage:photo.image imageData:photo.imageData];
     }
 }
 
-- (void)updateImage:(UIImage *)image {
-    [self.scalingImageView updateImage:image];
+- (void)updateImage:(UIImage *)image imageData:(NSData *)imageData {
+    if (imageData) {
+        [self.scalingImageView updateImageData:imageData];
+    }
+    else {
+        [self.scalingImageView updateImage:image];
+    }
     
-    if (image) {
+    if (imageData || image) {
         [self.loadingView removeFromSuperview];
         self.loadingView = nil;
     }

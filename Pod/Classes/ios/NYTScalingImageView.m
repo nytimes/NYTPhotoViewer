@@ -1,6 +1,6 @@
 //
 //  NYTScalingImageView.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Harrison, Andrew on 7/23/13.
 //  Copyright (c) 2015 The New York Times Company. All rights reserved.
@@ -10,10 +10,19 @@
 
 #import "tgmath.h"
 
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
+
 @interface NYTScalingImageView ()
 
-@property (nonatomic) UIImageView *imageView;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
+#ifdef ANIMATED_GIF_SUPPORT
+@property (nonatomic) FLAnimatedImageView *imageView;
+#else
+@property (nonatomic) UIImageView *imageView;
+#endif
 @end
 
 @implementation NYTScalingImageView
@@ -21,7 +30,17 @@
 #pragma mark - UIView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithImage:nil frame:frame];
+    return [self initWithImage:[UIImage new] frame:frame];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self commonInitWithImage:nil imageData:nil];
+    }
+
+    return self;
 }
 
 - (void)didAddSubview:(UIView *)subview {
@@ -31,41 +50,76 @@
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-    [self centerScrollViewContents];
     [self updateZoomScale];
+    [self centerScrollViewContents];
 }
 
 #pragma mark - NYTScalingImageView
 
-- (id)initWithImage:(UIImage *)image frame:(CGRect)frame {
+- (instancetype)initWithImage:(UIImage *)image frame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
+
     if (self) {
-        [self setupInternalImageViewWithImage:image];
-        [self setupImageScrollView];
-        [self updateZoomScale];
+        [self commonInitWithImage:image imageData:nil];
     }
     
     return self;
 }
 
+- (instancetype)initWithImageData:(NSData *)imageData frame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self commonInitWithImage:nil imageData:imageData];
+    }
+    
+    return self;
+}
+
+- (void)commonInitWithImage:(UIImage *)image imageData:(NSData *)imageData {
+    [self setupInternalImageViewWithImage:image imageData:imageData];
+    [self setupImageScrollView];
+    [self updateZoomScale];
+}
+
 #pragma mark - Setup
 
-- (void)setupInternalImageViewWithImage:(UIImage *)image {
-    self.imageView = [[UIImageView alloc] initWithImage:image];
-    [self updateImage:image];
+- (void)setupInternalImageViewWithImage:(UIImage *)image imageData:(NSData *)imageData {
+    UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
+
+#ifdef ANIMATED_GIF_SUPPORT
+    self.imageView = [[FLAnimatedImageView alloc] initWithImage:imageToUse];
+#else
+    self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
+#endif
+    [self updateImage:imageToUse imageData:imageData];
     
     [self addSubview:self.imageView];
 }
 
 - (void)updateImage:(UIImage *)image {
+    [self updateImage:image imageData:nil];
+}
+
+- (void)updateImageData:(NSData *)imageData {
+    [self updateImage:nil imageData:imageData];
+}
+
+- (void)updateImage:(UIImage *)image imageData:(NSData *)imageData {
+    UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
+
     // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
+    self.imageView.image = imageToUse;
     
-    self.imageView.image = image;
-    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+#ifdef ANIMATED_GIF_SUPPORT
+    // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
+    self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:imageData];
+#endif
     
-    self.contentSize = image.size;
+    self.imageView.frame = CGRectMake(0, 0, imageToUse.size.width, imageToUse.size.height);
+    
+    self.contentSize = imageToUse.size;
     
     [self updateZoomScale];
     [self centerScrollViewContents];
@@ -80,7 +134,11 @@
 }
 
 - (void)updateZoomScale {
+#ifdef ANIMATED_GIF_SUPPORT
+    if (self.imageView.animatedImage || self.imageView.image) {
+#else
     if (self.imageView.image) {
+#endif
         CGRect scrollViewFrame = self.bounds;
         
         CGFloat scaleWidth = scrollViewFrame.size.width / self.imageView.image.size.width;
@@ -88,7 +146,7 @@
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;
-        self.maximumZoomScale = 1.0;
+        self.maximumZoomScale = MAX(minScale, self.maximumZoomScale);
         
         self.zoomScale = self.minimumZoomScale;
         

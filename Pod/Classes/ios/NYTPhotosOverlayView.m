@@ -1,12 +1,13 @@
 //
 //  NYTPhotosOverlayView.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
 //
 
 #import "NYTPhotosOverlayView.h"
+#import "NYTPhotoCaptionViewLayoutWidthHinting.h"
 
 @interface NYTPhotosOverlayView ()
 
@@ -49,6 +50,10 @@
     }];
     
     [super layoutSubviews];
+
+    if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
+        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
+    }
 }
 
 #pragma mark - NYTPhotosOverlayView
@@ -59,10 +64,12 @@
     
     // Make navigation bar background fully transparent.
     self.navigationBar.backgroundColor = [UIColor clearColor];
+    self.navigationBar.barTintColor = nil;
+    self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
-    self.navigationItem = [[UINavigationItem alloc] initWithTitle:nil];
+    self.navigationItem = [[UINavigationItem alloc] initWithTitle:@""];
     self.navigationBar.items = @[self.navigationItem];
     
     [self addSubview:self.navigationBar];
@@ -99,12 +106,28 @@
     [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:NO];
 }
 
+- (NSArray *)leftBarButtonItems {
+    return self.navigationItem.leftBarButtonItems;
+}
+
+- (void)setLeftBarButtonItems:(NSArray *)leftBarButtonItems {
+    [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
+}
+
 - (UIBarButtonItem *)rightBarButtonItem {
     return self.navigationItem.rightBarButtonItem;
 }
 
 - (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
-    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
+    [self.navigationItem setRightBarButtonItem:rightBarButtonItem animated:NO];
+}
+
+- (NSArray *)rightBarButtonItems {
+    return self.navigationItem.rightBarButtonItems;
+}
+
+- (void)setRightBarButtonItems:(NSArray *)rightBarButtonItems {
+    [self.navigationItem setRightBarButtonItems:rightBarButtonItems animated:NO];
 }
 
 - (NSString *)title {

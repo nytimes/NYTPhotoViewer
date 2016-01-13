@@ -1,12 +1,14 @@
 //
 //  NYTPhotoDismissalInteractionController.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
 //
 
 @import UIKit;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  An object that controls an interactive photo dismissal transition.
@@ -21,7 +23,7 @@
 /**
  *  If set, this view will be hidden as soon as the interactive transition starts, and shown after it ends.
  */
-@property (nonatomic) UIView *viewToHideWhenBeginningTransition;
+@property (nonatomic, nullable) UIView *viewToHideWhenBeginningTransition;
 
 /**
  *  A `BOOL` determining whether, after reaching a certain panning threshold that constitutes a dismissal, the animator object should be used to finish the transition.
@@ -38,3 +40,5 @@
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 
 @end
+
+NS_ASSUME_NONNULL_END

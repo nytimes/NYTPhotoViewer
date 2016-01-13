@@ -1,6 +1,6 @@
 //
 //  NYTPhotoViewController.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
 //
@@ -13,6 +13,8 @@
 
 @protocol NYTPhoto;
 @protocol NYTPhotoViewControllerDelegate;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  `NYTPhotoViewController` observes this notification. It expects an `id <NYTPhoto>` object as the object of the notification.
@@ -32,7 +34,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 /**
  *  The internal activity view shown while the image is loading. Set from the initializer.
  */
-@property (nonatomic, readonly) UIView *loadingView;
+@property (nonatomic, readonly, nullable) UIView *loadingView;
 
 /**
  *  The gesture recognizer used to detect the double tap gesture used for zooming on photos.
@@ -42,7 +44,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 /**
  *  The object that acts as the photo view controller's delegate.
  */
-@property (nonatomic, weak) id <NYTPhotoViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id <NYTPhotoViewControllerDelegate> delegate;
 
 /**
  *  The designated initializer that takes the photo and activity view.
@@ -53,7 +55,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhoto:(nullable id <NYTPhoto>)photo loadingView:(nullable UIView *)loadingView notificationCenter:(nullable NSNotificationCenter *)notificationCenter NS_DESIGNATED_INITIALIZER;
 
 @end
 
@@ -70,3 +72,5 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 - (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
 @end
+
+NS_ASSUME_NONNULL_END

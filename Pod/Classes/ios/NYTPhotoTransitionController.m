@@ -1,6 +1,6 @@
 //
 //  NYTPhotoTransitionController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/13/15.
 //
@@ -27,6 +27,7 @@
     if (self) {
         _animator = [[NYTPhotoTransitionAnimator alloc] init];
         _interactionController = [[NYTPhotoDismissalInteractionController alloc] init];
+        _forcesNonInteractiveDismissal = YES;
     }
     
     return self;

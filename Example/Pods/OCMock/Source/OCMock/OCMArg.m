@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2009-2014 Erik Doernenburg and contributors
+ *  Copyright (c) 2009-2015 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -18,6 +18,7 @@
 #import <OCMock/OCMArg.h>
 #import <OCMock/OCMConstraint.h>
 #import "OCMPassByRefSetter.h"
+#import "OCMBlockArgCaller.h"
 
 @implementation OCMArg
 
@@ -90,6 +91,37 @@
 	return (id *)[[[OCMPassByRefSetter alloc] initWithValue:value] autorelease];
 }
 
++ (id)invokeBlock
+{
+    return [[[OCMBlockArgCaller alloc] init] autorelease];
+}
+
++ (id)invokeBlockWithArgs:(id)first,... NS_REQUIRES_NIL_TERMINATION
+{
+    
+    NSMutableArray *params = [NSMutableArray array];
+    va_list args;
+    if(first)
+    {
+        [params addObject:first];
+        va_start(args, first);
+        id obj;
+        while((obj = va_arg(args, id)))
+        {
+            [params addObject:obj];
+        }
+        va_end(args);
+    }
+    return [[[OCMBlockArgCaller alloc] initWithBlockArguments:params] autorelease];
+    
+}
+
++ (id)defaultValue
+{
+    return [NSNull null];
+}
+
+
 + (id)resolveSpecialValues:(NSValue *)value
 {
 	const char *type = [value objCType];
@@ -110,6 +142,5 @@
     }
 	return value;
 }
-
 
 @end

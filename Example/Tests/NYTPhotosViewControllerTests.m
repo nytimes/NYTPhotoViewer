@@ -23,8 +23,9 @@
     XCTAssertNotNil(photosViewController.panGestureRecognizer);
 }
 
-- (void)testPanGestureRecognizerHasAssociatedView {
+- (void)testPanGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.panGestureRecognizer.view);
 }
 
@@ -33,13 +34,16 @@
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer);
 }
 
-- (void)testSingleTapGestureRecognizerHasAssociatedView {
+- (void)testSingleTapGestureRecognizerHasAssociatedViewAfterViewDidLoad {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    __unused id view = photosViewController.view;
     XCTAssertNotNil(photosViewController.singleTapGestureRecognizer.view);
 }
 
 - (void)testPageViewControllerExistsAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    [photosViewController viewDidLoad];
+    
     XCTAssertNotNil(photosViewController.pageViewController);
 }
 
@@ -57,22 +61,25 @@
 - (void)testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
-    
+    [photosViewController viewDidLoad];
+
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
 }
 
 - (void)testCurrentlyDisplayedPhotoIsAccurateAfterSettingInitialPhoto {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
-    
+    [photosViewController viewDidLoad];
+
     XCTAssertEqualObjects(photos.lastObject, photosViewController.currentlyDisplayedPhoto);
 }
 
 - (void)testCurrentlyDisplayedPhotoIsAccurateAfterDisplayPhotoCall {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.lastObject];
+    [photosViewController viewDidLoad];
     [photosViewController displayPhoto:photos.firstObject animated:NO];
-    
+
     XCTAssertEqualObjects(photos.firstObject, photosViewController.currentlyDisplayedPhoto);
 }
 
@@ -87,6 +94,17 @@
     XCTAssertNil(photosViewController.leftBarButtonItem);
 }
 
+- (void)testLeftBarButtonItemsArePopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    XCTAssertNotNil(photosViewController.leftBarButtonItems);
+}
+
+- (void)testLeftBarButtonItemsAreNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    photosViewController.leftBarButtonItems = nil;
+    XCTAssertNil(photosViewController.leftBarButtonItems);
+}
+
 - (void)testRightBarButtonItemIsPopulatedAfterInitialization {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(photosViewController.rightBarButtonItem);
@@ -96,6 +114,17 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
     photosViewController.rightBarButtonItem = nil;
     XCTAssertNil(photosViewController.rightBarButtonItem);
+}
+
+- (void)testRightBarButtonItemsArePopulatedAfterInitialization {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    XCTAssertNotNil(photosViewController.rightBarButtonItems);
+}
+
+- (void)testRightBarButtonItemsAreNilAfterSettingToNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos]];
+    photosViewController.rightBarButtonItems = nil;
+    XCTAssertNil(photosViewController.rightBarButtonItems);
 }
 
 - (void)testConvenienceInitializerAcceptsNil {
@@ -122,6 +151,8 @@
 - (void)testDisplayPhotoDoesNothingWhenPassedPhotoOutsideDataSource {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+    [photosViewController viewDidLoad];
+    
     NYTExamplePhoto *invalidPhoto = [[NYTExamplePhoto alloc] init];
     
     [photosViewController displayPhoto:invalidPhoto animated:NO];
@@ -131,6 +162,8 @@
 - (void)testDisplayPhotoMovesToCorrectPhoto {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+    [photosViewController viewDidLoad];
+
     NYTExamplePhoto *photoToDisplay = photos[2];
     
     [photosViewController displayPhoto:photoToDisplay animated:NO];
@@ -156,12 +189,27 @@
 - (void)testUpdateImageForPhotoUpdatesImage {
     NSArray *photos = [self newTestPhotos];
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:photos.firstObject];
+
     NYTExamplePhoto *photoToUpdate = photos.firstObject;
-    photoToUpdate.image = [[UIImage alloc] init];
+    photoToUpdate.image = [UIImage imageNamed:@"NYTimesBuilding" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     
     [photosViewController updateImageForPhoto:photoToUpdate];
     
     XCTAssertEqualObjects(photosViewController.currentlyDisplayedPhoto.image, photoToUpdate.image);
+}
+
+- (void)testViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.isViewLoaded);
+}
+
+- (void)testPageViewIsntLoadedAfterInit {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    XCTAssertFalse(photosViewController.pageViewController.isViewLoaded);
 }
 
 #pragma mark - Helpers

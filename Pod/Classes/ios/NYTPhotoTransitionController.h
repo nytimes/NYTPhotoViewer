@@ -1,12 +1,14 @@
 //
 //  NYTPhotoTransitionController.h
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/13/15.
 //
 //
 
 @import UIKit;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  An object that manages both animated transitions and interactive transitions, acting as the transitioning delegate and internally coordinating multiple objects that do the animating and interactivity work.
@@ -38,3 +40,5 @@
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint;
 
 @end
+
+NS_ASSUME_NONNULL_END

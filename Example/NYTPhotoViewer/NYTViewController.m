@@ -10,9 +10,15 @@
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
-static const NSUInteger NYTViewControllerCustomEverythingPhotoIndex = 1;
-static const NSUInteger NYTViewControllerDefaultLoadingSpinnerPhotoIndex = 3;
-static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
+typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
+    NYTViewControllerPhotoIndexCustomEverything = 1,
+    NYTViewControllerPhotoIndexLongCaption = 2,
+    NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
+    NYTViewControllerPhotoIndexNoReferenceView = 4,
+    NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
+    NYTViewControllerPhotoIndexGif = 6,
+    NYTViewControllerPhotoCount,
+};
 
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
@@ -38,7 +44,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
-            if (!photo.image) {
+            if (!photo.image && !photo.imageData) {
                 // Photo credit: Nic Lehoux
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
                 [photosViewController updateImageForPhoto:photo];
@@ -50,21 +56,51 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 + (NSArray *)newTestPhotos {
     NSMutableArray *photos = [NSMutableArray array];
     
-    for (int i = 0; i < 5; i++) {
+    for (NSUInteger i = 0; i < NYTViewControllerPhotoCount; i++) {
         NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
         
-        photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-        if (i == NYTViewControllerCustomEverythingPhotoIndex || i == NYTViewControllerDefaultLoadingSpinnerPhotoIndex) {
+        if (i == NYTViewControllerPhotoIndexGif) {
+            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
+        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
+            // no-op, left here for clarity:
             photo.image = nil;
+        } else {
+            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
         }
         
-        if (i == NYTViewControllerCustomEverythingPhotoIndex) {
+        if (i == NYTViewControllerPhotoIndexCustomEverything) {
             photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
         }
+
+        NSString *caption = @"summary";
+        switch ((NYTViewControllerPhotoIndex)i) {
+            case NYTViewControllerPhotoIndexCustomEverything:
+                caption = @"photo with custom everything";
+                break;
+            case NYTViewControllerPhotoIndexLongCaption:
+                caption = @"photo with long caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
+                break;
+            case NYTViewControllerPhotoIndexDefaultLoadingSpinner:
+                caption = @"photo with loading spinner";
+                break;
+            case NYTViewControllerPhotoIndexNoReferenceView:
+                caption = @"photo without reference view";
+                break;
+            case NYTViewControllerPhotoIndexCustomMaxZoomScale:
+                caption = @"photo with custom maximum zoom scale";
+                break;
+            case NYTViewControllerPhotoIndexGif:
+                caption = @"animated GIF";
+                break;
+            case NYTViewControllerPhotoCount:
+                // this case statement intentionally left blank.
+                break;
+        }
         
-        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"summary" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
-        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
+
         [photos addObject:photo];
     }
     
@@ -74,7 +110,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerNoReferenceViewPhotoIndex]]) {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexNoReferenceView]]) {
         return nil;
     }
     
@@ -82,7 +118,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor greenColor];
@@ -93,7 +129,7 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
         label.textColor = [UIColor whiteColor];
@@ -104,16 +140,24 @@ static const NSUInteger NYTViewControllerNoReferenceViewPhotoIndex = 4;
     return nil;
 }
 
+- (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
+        return 10.0f;
+    }
+
+    return 1.0f;
+}
+
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerCustomEverythingPhotoIndex]]) {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
     
     return nil;
 }
 
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController didDisplayPhoto:(id <NYTPhoto>)photo {
-    NSLog(@"Did Display Photo: %@ identifier: %@", photo, @([self.photos indexOfObject:photo]).stringValue);
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
+    NSLog(@"Did Navigate To Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType {
