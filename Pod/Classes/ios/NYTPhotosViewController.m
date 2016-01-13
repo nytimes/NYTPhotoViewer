@@ -346,8 +346,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
 }
     
--(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
-{
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
