@@ -165,21 +165,4 @@ class NYTPhotosViewControllerTests: XCTestCase {
             }
         }
     }
-    
-    func testUpdateImageForPhotoUpdatesImage() {
-        photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.first)
-
-        let photoToUpdate = photos[1]
-        let existingPhoto = photos[2]
-        
-        // Set the current image to a non-nil, existing image
-        photoToUpdate.image = existingPhoto.image
-        
-        photosViewController?.updateImageForPhoto(photoToUpdate)
-        
-        if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
-            XCTAssertEqual(currentlyDisplayedPhoto.image, photoToUpdate.image!)
-        }
-        
-    }
 }
