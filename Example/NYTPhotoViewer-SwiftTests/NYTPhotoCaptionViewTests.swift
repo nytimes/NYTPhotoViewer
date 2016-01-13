@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import NYTPhotoViewer
+
 class NYTPhotoCaptionViewTests: XCTestCase {
 
     func testDesignatedInitializerAcceptsNilForTitle() {

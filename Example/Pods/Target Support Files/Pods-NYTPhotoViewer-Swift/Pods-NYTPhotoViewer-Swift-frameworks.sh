@@ -82,3 +82,12 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-NYTPhotoViewer-Swift/FLAnimatedImage.framework"
+  install_framework "Pods-NYTPhotoViewer-Swift/NYTPhotoViewer.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-NYTPhotoViewer-Swift/FLAnimatedImage.framework"
+  install_framework "Pods-NYTPhotoViewer-Swift/NYTPhotoViewer.framework"
+fi

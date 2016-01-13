@@ -82,3 +82,14 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/FLAnimatedImage.framework"
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/NYTPhotoViewer.framework"
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/OCMock.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/FLAnimatedImage.framework"
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/NYTPhotoViewer.framework"
+  install_framework "Pods-NYTPhotoViewer-SwiftTests/OCMock.framework"
+fi

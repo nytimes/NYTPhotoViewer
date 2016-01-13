@@ -9,6 +9,8 @@
 import XCTest
 import UIKit
 
+@testable import NYTPhotoViewer
+
 class NYTPhotosOverlayViewTests: XCTestCase {
 
     func testNavigationBarExistsAfterInitialization() {
@@ -41,6 +43,6 @@ class NYTPhotosOverlayViewTests: XCTestCase {
         let overlayView = NYTPhotosOverlayView()
         let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         overlayView.titleTextAttributes = titleTextAttributes
-        XCTAssertEqual(titleTextAttributes, overlayView.navigationBar.titleTextAttributes as? [String: UIColor])
+        XCTAssertEqual(titleTextAttributes, overlayView.navigationBar.titleTextAttributes as! [String: UIColor])
     }
 }
