@@ -336,8 +336,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.transitionController.forcesNonInteractiveDismissal = NO;
-        self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
-        [self setOverlayViewHidden:YES animated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
@@ -346,8 +344,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
 }
     
--(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
-{
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -355,14 +352,21 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     self.transitionController.startingView = startingView;
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
+
+    self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
+    [self setOverlayViewHidden:YES animated:animated];
+
+    // Cocoa convention is not to call delegate methods when you do something directly in code,
+    // so we'll not call delegate methods if this is a programmatic, noninteractive dismissal:
+    BOOL shouldSendDelegateMessages = self.transitionController.forcesNonInteractiveDismissal;
     
-    if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
+    if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillDismissNotification object:self];
     
-    [super dismissViewControllerAnimated:flag completion:^{
+    [super dismissViewControllerAnimated:animated completion:^{
         BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
@@ -370,11 +374,15 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         }
         
         if (!isStillOnscreen) {
-            if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+            if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
                 [self.delegate photosViewControllerDidDismiss:self];
             }
             
             [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDismissNotification object:self];
+        }
+
+        if (completion) {
+            completion();
         }
     }];
 }
