@@ -346,7 +346,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
 }
     
-- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -361,7 +361,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillDismissNotification object:self];
     
-    [super dismissViewControllerAnimated:flag completion:^{
+    [super dismissViewControllerAnimated:animated completion:^{
         BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
