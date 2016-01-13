@@ -1,5 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANIMATED_GIF_SUPPORT=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FLAnimatedImage" "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FLAnimatedImage" -isystem "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" -isystem "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FLAnimatedImage" -l"NYTPhotoViewer" -l"OCMock" -framework "CoreGraphics" -framework "Foundation" -framework "ImageIO" -framework "MobileCoreServices" -framework "QuartzCore" -framework "UIKit"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/FLAnimatedImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/NYTPhotoViewer.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/OCMock.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "FLAnimatedImage" -framework "NYTPhotoViewer" -framework "OCMock"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-NYTPhotoViewer-SwiftTests
 PODS_ROOT = ${SRCROOT}/Pods
