@@ -243,9 +243,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.transitionController.forcesNonInteractiveDismissal = YES;
-    [self setOverlayViewHidden:YES animated:NO];
-    [self dismissAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)actionButtonTapped:(id)sender {
@@ -337,16 +335,19 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.transitionController.forcesNonInteractiveDismissal = NO;
         self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
         [self setOverlayViewHidden:YES animated:YES];
-        [self dismissAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
+        self.transitionController.forcesNonInteractiveDismissal = YES;
         [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
 }
-
-- (void)dismissAnimated:(BOOL)animated {
+    
+-(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
+{
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -361,7 +362,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillDismissNotification object:self];
     
-    [self dismissViewControllerAnimated:animated completion:^{
+    [super dismissViewControllerAnimated:flag completion:^{
         BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {

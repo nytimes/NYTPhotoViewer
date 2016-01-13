@@ -27,6 +27,7 @@
     if (self) {
         _animator = [[NYTPhotoTransitionAnimator alloc] init];
         _interactionController = [[NYTPhotoDismissalInteractionController alloc] init];
+        _forcesNonInteractiveDismissal = YES;
     }
     
     return self;
