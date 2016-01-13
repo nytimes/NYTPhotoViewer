@@ -31,6 +31,11 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testPanGestureRecognizerHasAssociatedView() {
+        guard let _ = photosViewController?.view else {
+            XCTFail("PhotosViewController Has No View")
+            return
+        }
+        
         XCTAssertNotNil(photosViewController?.panGestureRecognizer.view)
     }
     
@@ -39,6 +44,11 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testSingleTapGestureRecognizerHasAssociatedView() {
+        guard let _ = photosViewController?.view else {
+            XCTFail("PhotosViewController Has No View")
+            return
+        }
+        
         XCTAssertNotNil(photosViewController?.singleTapGestureRecognizer.view)
     }
     
@@ -159,14 +169,17 @@ class NYTPhotosViewControllerTests: XCTestCase {
     func testUpdateImageForPhotoUpdatesImage() {
         photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.first)
 
-        if let photoToUpdate = photos.first {
-            photoToUpdate.image = UIImage()
-            
-            photosViewController?.updateImageForPhoto(photoToUpdate)
-            
-            if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
-                XCTAssertEqual(currentlyDisplayedPhoto.image, photoToUpdate.image!)
-            }
+        let photoToUpdate = photos[1]
+        let existingPhoto = photos[2]
+        
+        // Set the current image to a non-nil, existing image
+        photoToUpdate.image = existingPhoto.image
+        
+        photosViewController?.updateImageForPhoto(photoToUpdate)
+        
+        if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
+            XCTAssertEqual(currentlyDisplayedPhoto.image, photoToUpdate.image!)
         }
+        
     }
 }
