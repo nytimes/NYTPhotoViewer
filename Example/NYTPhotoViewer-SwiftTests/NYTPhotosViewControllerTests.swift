@@ -9,6 +9,8 @@
 import UIKit
 import XCTest
 
+@testable import NYTPhotoViewer
+
 class NYTPhotosViewControllerTests: XCTestCase {
 
     let photos: [ExamplePhoto] = PhotosProvider().photos
@@ -29,6 +31,11 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testPanGestureRecognizerHasAssociatedView() {
+        guard let _ = photosViewController?.view else {
+            XCTFail("PhotosViewController Has No View")
+            return
+        }
+        
         XCTAssertNotNil(photosViewController?.panGestureRecognizer.view)
     }
     
@@ -37,6 +44,11 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testSingleTapGestureRecognizerHasAssociatedView() {
+        guard let _ = photosViewController?.view else {
+            XCTFail("PhotosViewController Has No View")
+            return
+        }
+        
         XCTAssertNotNil(photosViewController?.singleTapGestureRecognizer.view)
     }
     
@@ -45,12 +57,12 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testPageViewControllerDoesNotHaveAssociatedSuperviewBeforeViewLoads() {
-        XCTAssertNil(photosViewController?.pageViewController.view.superview)
+        XCTAssertNil(photosViewController?.pageViewController!.view.superview)
     }
     
     func testPageViewControllerHasAssociatedSuperviewAfterViewLoads() {
         photosViewController?.view = photosViewController?.view // Referencing the view loads it.
-        XCTAssertNotNil(photosViewController?.pageViewController.view.superview)
+        XCTAssertNotNil(photosViewController?.pageViewController!.view.superview)
     }
     
     func testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization() {
@@ -150,20 +162,6 @@ class NYTPhotosViewControllerTests: XCTestCase {
                 if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
                     XCTAssertEqual(currentlyDisplayedPhoto.image, testImage)
                 }
-            }
-        }
-    }
-    
-    func testUpdateImageForPhotoUpdatesImage() {
-        photosViewController = NYTPhotosViewController(photos: photos, initialPhoto: photos.first)
-
-        if let photoToUpdate = photos.first {
-            photoToUpdate.image = UIImage()
-            
-            photosViewController?.updateImageForPhoto(photoToUpdate)
-            
-            if let currentlyDisplayedPhoto = photosViewController?.currentlyDisplayedPhoto {
-                XCTAssertEqual(currentlyDisplayedPhoto.image, photoToUpdate.image!)
             }
         }
     }
