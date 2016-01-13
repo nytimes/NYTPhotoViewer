@@ -354,8 +354,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     self.transitionController.startingView = startingView;
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
+
+    // Cocoa convention is not to call delegate methods when you do something directly in code,
+    // so we'll not call delegate methods if this is a programmatic, noninteractive dismissal:
+    BOOL shouldSendDelegateMessages = self.transitionController.forcesNonInteractiveDismissal;
     
-    if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
+    if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
     
@@ -369,7 +373,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         }
         
         if (!isStillOnscreen) {
-            if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+            if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
                 [self.delegate photosViewControllerDidDismiss:self];
             }
             
