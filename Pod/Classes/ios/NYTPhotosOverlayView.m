@@ -12,6 +12,7 @@
 
 @property (nonatomic) UINavigationItem *navigationItem;
 @property (nonatomic) UINavigationBar *navigationBar;
+@property (nonatomic) CAGradientLayer *gradientLayer;
 
 @end
 
@@ -49,6 +50,7 @@
     }];
     
     [super layoutSubviews];
+    self.gradientLayer.frame = self.navigationBar.bounds;
 }
 
 #pragma mark - NYTPhotosOverlayView
@@ -73,6 +75,14 @@
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
     NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
+    [self setupGradient];
+}
+
+- (void)setupGradient {
+    self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer.frame = self.navigationBar.layer.bounds;
+    self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor blackColor] colorWithAlphaComponent:0.85].CGColor, (id)[UIColor clearColor].CGColor, nil];
+    [self.navigationBar.layer insertSublayer:self.gradientLayer atIndex:1];
 }
 
 - (void)setCaptionView:(UIView *)captionView {
