@@ -358,7 +358,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     // Cocoa convention is not to call delegate methods when you do something directly in code,
     // so we'll not call delegate methods if this is a programmatic, noninteractive dismissal:
-    BOOL shouldSendDelegateMessages = self.transitionController.forcesNonInteractiveDismissal;
+    BOOL shouldSendDelegateMessages = !self.transitionController.forcesNonInteractiveDismissal;
     
     if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
