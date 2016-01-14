@@ -4,7 +4,7 @@ Changes for users of the library in 1.0.0:
 
 - **The library now supports iOS 8.0 and newer.** ([#82](https://github.com/NYTimes/NYTPhotoViewer/pull/82), [#84](https://github.com/NYTimes/NYTPhotoViewer/pull/84), [#107](https://github.com/NYTimes/NYTPhotoViewer/pull/107))
 - Support programmatic view controller dismissal via `dismissViewControllerAnimated:completion:` ([#121](https://github.com/NYTimes/NYTPhotoViewer/pull/121), [#122](https://github.com/NYTimes/NYTPhotoViewer/pull/122))
-- Use scrolling UITextView for captions ([#88](https://github.com/NYTimes/NYTPhotoViewer/pull/88))
+- Use scrolling `UITextView` for captions ([#88](https://github.com/NYTimes/NYTPhotoViewer/pull/88))
 - Fix a bug when presenting NYTPhotoViewer from a subview of `UIStackView` ([#104](https://github.com/NYTimes/NYTPhotoViewer/pull/104))
 - Update overlay information after `displayPhoto:` call ([#100](https://github.com/NYTimes/NYTPhotoViewer/pull/100))
 - Implements animated GIF support ([#71](https://github.com/NYTimes/NYTPhotoViewer/pull/71), [#94](https://github.com/NYTimes/NYTPhotoViewer/pull/94), [#106](https://github.com/NYTimes/NYTPhotoViewer/pull/106), [#111](https://github.com/NYTimes/NYTPhotoViewer/pull/111))
