@@ -119,6 +119,8 @@
 		E8CDCEDCDC0ADE51EBAFCC09F44EFF12 /* OCMBlockArgCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4B5E15B42999732406D11FF27399E /* OCMBlockArgCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E99CE64289F5FDD09B7E1188379AED41 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0302D606627AFF213D39DE2877B4638D /* FLAnimatedImage.m */; };
 		EA2A970253EA9B298F0BB63864AA18D1 /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9528FC984AA1AC37E0C37A193A06E /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ECBF82651C487D1000A5EC94 /* NYTLoadingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBF82631C487D1000A5EC94 /* NYTLoadingIndicatorView.h */; };
+		ECBF82661C487D1000A5EC94 /* NYTLoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBF82641C487D1000A5EC94 /* NYTLoadingIndicatorView.m */; };
 		ED61A6F91BC025BD57D6BD2A504E1DA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBC85ECBD828DF92AC9EEB8B18DA6F1 /* Foundation.framework */; };
 		EEBEC3C68DD8C679511876B4610D582A /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A8A71E9B0A1271A4EDDE402221428C /* OCMBoxedReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F0E9BE1709D8B3501A9E791E8D36FBED /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D5801E0E8C2C07D2E34E8AED0B8D3 /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -362,6 +364,8 @@
 		E9218905F90589519D5C9E501403FD5F /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+OCMAdditions.m"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
 		E93CEF5802DA5A4170AC4E23CDEBE484 /* Pods-NYTPhotoViewer-SwiftTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NYTPhotoViewer-SwiftTests-frameworks.sh"; sourceTree = "<group>"; };
 		EA8E1E7CEE735DA4896915A276D1BC40 /* OCMMacroState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMMacroState.h; path = Source/OCMock/OCMMacroState.h; sourceTree = "<group>"; };
+		ECBF82631C487D1000A5EC94 /* NYTLoadingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTLoadingIndicatorView.h; sourceTree = "<group>"; };
+		ECBF82641C487D1000A5EC94 /* NYTLoadingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTLoadingIndicatorView.m; sourceTree = "<group>"; };
 		EE9C5F374B788B38F7577CBACD6374D1 /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
 		F170EA151A6B5BB3B1185891240455B8 /* OCMVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMVerifier.h; path = Source/OCMock/OCMVerifier.h; sourceTree = "<group>"; };
 		F272208CEBC0979AF3E0744A2F82FDC8 /* NYTPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NYTPhoto.h; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 		0FCAFE0FDC5B4823AAF5C70FC8BA1EE6 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				ECBF82631C487D1000A5EC94 /* NYTLoadingIndicatorView.h */,
+				ECBF82641C487D1000A5EC94 /* NYTLoadingIndicatorView.m */,
 				1781D669D30BF31E3D30458C11401EC4 /* NYTPhotoCaptionView.h */,
 				52A46719EDEA6919CB7CE89CEA7D170B /* NYTPhotoCaptionView.m */,
 				8E251763ABC4628F9FD370376C62339C /* NYTPhotoDismissalInteractionController.h */,
@@ -893,6 +899,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB423EE72C2A6D0ED5DEFBEE9BE80A98 /* FLAnimatedImage.h in Headers */,
+				ECBF82651C487D1000A5EC94 /* NYTLoadingIndicatorView.h in Headers */,
 				7AE83DFAD9756ED1FB1CB5E36F9CF6EB /* FLAnimatedImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1171,6 +1178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D258E9A843C52C991E5E9455CB8DB51 /* FLAnimatedImage-dummy.m in Sources */,
+				ECBF82661C487D1000A5EC94 /* NYTLoadingIndicatorView.m in Sources */,
 				E99CE64289F5FDD09B7E1188379AED41 /* FLAnimatedImage.m in Sources */,
 				B3AA789E74DBAB167DAD0FDCA19690C7 /* FLAnimatedImageView.m in Sources */,
 			);

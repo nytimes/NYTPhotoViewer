@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@class NYTLoadingIndicatorView;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -54,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  A view representing the caption for the photo, which will be set to full width and locked to the bottom. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
  */
 @property (nonatomic, nullable) UIView *captionView;
+
+/**
+ *  Loading indicator shown at the top
+ */
+@property (nonatomic, nullable) NYTLoadingIndicatorView *loadingIndicatorView;
 
 @end
 

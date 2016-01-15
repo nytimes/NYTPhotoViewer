@@ -8,6 +8,7 @@
 
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionViewLayoutWidthHinting.h"
+#import "NYTLoadingIndicatorView.h"
 
 @interface NYTPhotosOverlayView ()
 
@@ -25,8 +26,9 @@
     
     if (self) {
         [self setupNavigationBar];
+        [self setupLoadingIndicator];
     }
-    
+        
     return self;
 }
 
@@ -50,13 +52,17 @@
     }];
     
     [super layoutSubviews];
-
+    self.loadingIndicatorView.frame = (CGRect){0, 0, self.bounds.size.width, 2};
     if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
         [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
     }
 }
 
 #pragma mark - NYTPhotosOverlayView
+- (void)setupLoadingIndicator {
+    self.loadingIndicatorView = [[NYTLoadingIndicatorView alloc] init];
+    [self addSubview:self.loadingIndicatorView];
+}
 
 - (void)setupNavigationBar {
     self.navigationBar = [[UINavigationBar alloc] init];
