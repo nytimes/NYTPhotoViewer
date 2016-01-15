@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@class NYTLoadingIndicatorView;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -59,6 +60,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  Enables or disables gradient behind UINavigaitonBar
  */
 @property (nonatomic, assign, getter=hasNavigationBarGradient) BOOL navigationBarGradient;
+
+/**
+ *  Loading indicator shown at the top
+ */
+@property (nonatomic, nullable) NYTLoadingIndicatorView *loadingIndicatorView;
 
 @end
 
