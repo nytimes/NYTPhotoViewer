@@ -43,11 +43,13 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     // MARK: - NYTPhotosViewControllerDelegate
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, handleActionButtonTappedForPhoto photo: NYTPhoto!) -> Bool {
+    func photosViewController(photosViewController: NYTPhotosViewController, handleActionButtonTappedForPhoto photo: NYTPhoto) -> Bool {
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             
-            let shareActivityViewController = UIActivityViewController(activityItems: [photo.image], applicationActivities: nil)
+            guard let photoImage = photo.image else { return false }
+            
+            let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
             
             shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
                 if completed {
@@ -64,17 +66,14 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return false
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, referenceViewForPhoto photo: NYTPhoto!) -> UIView! {
+    func photosViewController(photosViewController: NYTPhotosViewController, referenceViewForPhoto photo: NYTPhoto) -> UIView? {
         if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
-            /** Swift 1.2
-             *  if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex]
-             */
             return nil
         }
         return imageButton
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, loadingViewForPhoto photo: NYTPhoto!) -> UIView! {
+    func photosViewController(photosViewController: NYTPhotosViewController, loadingViewForPhoto photo: NYTPhoto) -> UIView? {
         if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
             let label = UILabel()
             label.text = "Custom Loading..."
@@ -84,7 +83,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, captionViewForPhoto photo: NYTPhoto!) -> UIView! {
+    func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView? {
         if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
             let label = UILabel()
             label.text = "Custom Caption View"
@@ -95,15 +94,15 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, didNavigateToPhoto photo: NYTPhoto!, atIndex photoIndex: UInt) {
+    func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
         print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController!, actionCompletedWithActivityType activityType: String!) {
+    func photosViewController(photosViewController: NYTPhotosViewController, actionCompletedWithActivityType activityType: String?) {
         print("Action Completed With Activity Type: \(activityType)")
     }
 
-    func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController!) {
+    func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController) {
         print("Did dismiss Photo Viewer: \(photosViewController)")
     }
 }

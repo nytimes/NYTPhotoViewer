@@ -1,6 +1,6 @@
 //
 //  NYTPhotosViewController.m
-//  NYTNewsReader
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/10/15.
 //  Copyright (c) 2015 NYTimes. All rights reserved.
@@ -27,7 +27,7 @@ NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosView
 
 static const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
-static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0, -3, 0};
+static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0, -3, 0};
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
@@ -175,10 +175,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     self.transitioningDelegate = _transitionController;
     self.modalPresentationCapturesStatusBarAppearance = YES;
 
-    // iOS 7 has an issue with constraints that could evaluate to be negative, so we set the width to the margins' size.
-    _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectMake(0, 0, NYTPhotoCaptionViewHorizontalMargin * 2.0, 0)];
+    _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
     _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
-    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtinImageInsets;
+    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
     _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
 
     _notificationCenter = [[NSNotificationCenter alloc] init];
@@ -244,9 +243,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.transitionController.forcesNonInteractiveDismissal = YES;
-    [self setOverlayViewHidden:YES animated:NO];
-    [self dismissAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)actionButtonTapped:(id)sender {
@@ -338,16 +335,16 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
-        [self setOverlayViewHidden:YES animated:YES];
-        [self dismissAnimated:YES];
+        self.transitionController.forcesNonInteractiveDismissal = NO;
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
+        self.transitionController.forcesNonInteractiveDismissal = YES;
         [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
 }
-
-- (void)dismissAnimated:(BOOL)animated {
+    
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -355,14 +352,21 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
     
     self.transitionController.startingView = startingView;
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
+
+    self.overlayWasHiddenBeforeTransition = self.overlayView.hidden;
+    [self setOverlayViewHidden:YES animated:animated];
+
+    // Cocoa convention is not to call delegate methods when you do something directly in code,
+    // so we'll not call delegate methods if this is a programmatic, noninteractive dismissal:
+    BOOL shouldSendDelegateMessages = !self.transitionController.forcesNonInteractiveDismissal;
     
-    if ([self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
+    if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillDismissNotification object:self];
     
-    [self dismissViewControllerAnimated:animated completion:^{
+    [super dismissViewControllerAnimated:animated completion:^{
         BOOL isStillOnscreen = self.view.window != nil; // Happens when the dismissal is canceled.
         
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
@@ -370,11 +374,15 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtinImageInsets = {3, 0,
         }
         
         if (!isStillOnscreen) {
-            if ([self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
+            if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
                 [self.delegate photosViewControllerDidDismiss:self];
             }
             
             [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidDismissNotification object:self];
+        }
+
+        if (completion) {
+            completion();
         }
     }];
 }
