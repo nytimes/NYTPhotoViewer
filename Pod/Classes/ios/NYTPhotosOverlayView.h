@@ -55,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, nullable) UIView *captionView;
 
+/**
+ *  Enables or disables gradient behind UINavigaitonBar
+ */
+@property (nonatomic, assign, getter=hasNavigationBarGradient) BOOL navigationBarGradient;
+
 @end
 
 NS_ASSUME_NONNULL_END
