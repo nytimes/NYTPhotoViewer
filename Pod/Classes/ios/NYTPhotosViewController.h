@@ -17,7 +17,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 // All notifications will have the `NYTPhotosViewController` instance set as the object.
 extern NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification;
+
+/**
+ *  Notification name issued when this `NYTPhotosViewController` is about to be dismissed.
+ *
+ *  Includes the `NYTPhotosViewController` instance, as the notification's object.
+ */
 extern NSString * const NYTPhotosViewControllerWillDismissNotification;
+
+/**
+ *  Notification name issued when this `NYTPhotosViewController` has been dismissed.
+ *
+ *  Includes the `NYTPhotosViewController` instance, as the notification's object.
+ */
 extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 @interface NYTPhotosViewController : UIViewController
@@ -125,14 +137,15 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex;
 
 /**
- *  Called immediately before the photos view controller is about to start dismissal. This will be the beginning of the interactive panning to dismiss, if it is enabled and performed.
+ *  Called immediately before the `NYTPhotosViewController` is about to start a user-initiated dismissal.
+ *  This will be the beginning of the interactive panning to dismiss, if it is enabled and performed.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  */
 - (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController;
 
 /**
- *  Called immediately after the photos view controller has dismissed.
+ *  Called immediately after the photos view controller has been dismissed by the user.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  */
