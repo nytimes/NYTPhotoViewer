@@ -15,7 +15,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// All notifications will have the `NYTPhotosViewController` instance set as the object.
+/**
+ *  Notification name issued when this `NYTPhotosViewController` navigates to a different photo.
+ *
+ *  Includes the `NYTPhotosViewController` instance, as the notification's object.
+ */
 extern NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification;
 
 /**
