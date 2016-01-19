@@ -1,3 +1,11 @@
+## `develop`
+
+Changes for users of the library currently on `develop`:
+
+- Fixes for incorrect logic determining whether to send delegate messages about `PhotosViewController` dismissal ([#130](https://github.com/NYTimes/NYTPhotoViewer/pull/130), TKTK)
+- Avoid applying a hacky iOS status bar bugfix on iOS 8.3+ (it appears to have been fixed then) ([#131](https://github.com/NYTimes/NYTPhotoViewer/issues/131))
+- Removed redundant Swift unit tests ([#128](https://github.com/NYTimes/NYTPhotoViewer/pull/128))
+
 ## [1.0.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.0)
 
 Changes for users of the library in 1.0.0:
