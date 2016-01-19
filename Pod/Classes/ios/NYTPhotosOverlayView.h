@@ -51,9 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSArray <UIBarButtonItem *> *rightBarButtonItems;
 
 /**
+ *  A view representing the top caption for the photo, which will be set to full width and locked to the top, under navigation bar. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
+ */
+@property (nonatomic, nullable) UIView *topCaptionView;
+
+/**
  *  A view representing the caption for the photo, which will be set to full width and locked to the bottom. Can be any `UIView` object, but is expected to respond to `intrinsicContentSize` appropriately to calculate height.
  */
-@property (nonatomic, nullable) UIView *captionView;
+@property (nonatomic, nonnull) UIView *captionView;
 
 @end
 

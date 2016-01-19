@@ -234,11 +234,16 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewForPhoto:)]) {
         captionView = [self.delegate photosViewController:self captionViewForPhoto:self.currentlyDisplayedPhoto];
     }
+    UIView * topCaptionView;
+    if ([self.delegate respondsToSelector:@selector(photosViewController:topCaptionViewForPhoto:)]) {
+        topCaptionView = [self.delegate photosViewController:self topCaptionViewForPhoto:self.currentlyDisplayedPhoto];
+    }
     
     if (!captionView) {
         captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:self.currentlyDisplayedPhoto.attributedCaptionTitle attributedSummary:self.currentlyDisplayedPhoto.attributedCaptionSummary attributedCredit:self.currentlyDisplayedPhoto.attributedCaptionCredit];
     }
     
+    self.overlayView.topCaptionView = topCaptionView;
     self.overlayView.captionView = captionView;
 }
 

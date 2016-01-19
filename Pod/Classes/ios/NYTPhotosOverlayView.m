@@ -80,13 +80,33 @@
     [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
 }
 
+- (void)setTopCaptionView:(UIView *)topCaptionView {
+    if (self.topCaptionView == topCaptionView) {
+        return;
+    }
+    
+    [self.topCaptionView removeFromSuperview];
+    _topCaptionView = topCaptionView;
+    
+    if (self.topCaptionView == nil) {
+        return;
+    }
+    
+    self.topCaptionView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.topCaptionView];
+    
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.topCaptionView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.topCaptionView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.topCaptionView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
+    [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
+}
+
 - (void)setCaptionView:(UIView *)captionView {
     if (self.captionView == captionView) {
         return;
     }
     
     [self.captionView removeFromSuperview];
-    
     _captionView = captionView;
     
     self.captionView.translatesAutoresizingMaskIntoConstraints = NO;
