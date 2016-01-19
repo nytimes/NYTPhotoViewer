@@ -354,6 +354,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
 }
+
+#pragma mark - View Controller Dismissal
     
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
     UIView *startingView;
