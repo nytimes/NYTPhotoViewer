@@ -10,7 +10,7 @@
 
 @interface NYTPhotosDataSource ()
 
-@property (nonatomic, copy) NSArray *photos;
+@property (nonatomic, copy) NSMutableArray *photos;
 
 @end
 
@@ -28,7 +28,7 @@
     self = [super init];
     
     if (self) {
-        _photos = photos;
+        _photos = photos.mutableCopy;
     }
     
     return self;
@@ -64,6 +64,12 @@
 
 - (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)photoIndex {
     return [self photoAtIndex:photoIndex];
+}
+
+- (void)removePhotoAtIndex:(NSUInteger)photoIndex {
+    if (photoIndex < self.numberOfPhotos) {
+        [self.photos removeObjectAtIndex:photoIndex];
+    }
 }
 
 @end
