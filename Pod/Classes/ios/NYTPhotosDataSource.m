@@ -66,4 +66,8 @@
     return [self photoAtIndex:photoIndex];
 }
 
+- (void)appendPhotos:(NSArray<id<NYTPhoto>> *)photos {
+    self.photos = [self.photos arrayByAddingObjectsFromArray:photos] ?: photos;
+}
+
 @end
