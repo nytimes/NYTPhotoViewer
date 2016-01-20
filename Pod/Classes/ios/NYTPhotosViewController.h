@@ -109,7 +109,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 /**
  *  Adds more photos to the end of the list.
  *
- *  @param photos The new photos to add to the end of the array of photos.
+ *  @param photos The new photos to add to the end of the array of current photos.
  */
 - (void)appendImages:(NSArray <id <NYTPhoto>> *)photos;
 
