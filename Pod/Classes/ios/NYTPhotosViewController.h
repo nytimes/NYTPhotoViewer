@@ -16,6 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // All notifications will have the `NYTPhotosViewController` instance set as the object.
+extern NSString * const NYTPhotosViewControllerWillNavigateToPhotoNotification;
 extern NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification;
 extern NSString * const NYTPhotosViewControllerWillDismissNotification;
 extern NSString * const NYTPhotosViewControllerDidDismissNotification;
@@ -114,6 +115,15 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @protocol NYTPhotosViewControllerDelegate <NSObject>
 
 @optional
+
+/**
+ *  Called when a new photo may be displayed through a swipe gesture.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object that may be displayed.
+ *  @param photoIndex           The index of the photo that may be displayed.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController willNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex;
 
 /**
  *  Called when a new photo is displayed through a swipe gesture.

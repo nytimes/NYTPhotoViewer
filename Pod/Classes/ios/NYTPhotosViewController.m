@@ -21,6 +21,7 @@
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 
+NSString * const NYTPhotosViewControllerWillNavigateToPhotoNotification = @"NYTPhotosViewControllerWillNavigateToPhotoNotification";
 NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
 NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
@@ -448,6 +449,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidNavigateToPhotoNotification object:self];
 }
+    
+- (void)willNavigateToPhoto:(id <NYTPhoto>)photo {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:willNavigateToPhoto:atIndex:)]) {
+        [self.delegate photosViewController:self willNavigateToPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerWillNavigateToPhotoNotification object:self];
+}
 
 - (id <NYTPhoto>)currentlyDisplayedPhoto {
     return self.currentPhotoViewController.photo;
@@ -503,6 +512,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 #pragma mark - UIPageViewControllerDelegate
+    
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
+    UIViewController <NYTPhotoContainer> *photoViewController = (UIViewController <NYTPhotoContainer> *)pendingViewControllers.firstObject;
+    [self willNavigateToPhoto:photoViewController.photo];
+}
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {

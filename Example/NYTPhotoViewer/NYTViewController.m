@@ -156,6 +156,10 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     return nil;
 }
 
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController willNavigateToPhoto:(id<NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
+    NSLog(@"Will Navigate To Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
+}
+
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
     NSLog(@"Did Navigate To Photo: %@ identifier: %lu", photo, (unsigned long)photoIndex);
 }
