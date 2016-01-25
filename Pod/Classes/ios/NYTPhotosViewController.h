@@ -107,6 +107,13 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)updateImageForPhoto:(id <NYTPhoto> _Nullable)photo;
 
+/**
+ *  Update the loading view displayed for the given photo object.
+ *
+ *  @param photo The photo for which to display the new loading view.
+ */
+- (void)updateLoadingViewForPhoto:(id <NYTPhoto> _Nullable)photo;
+
 @end
 
 /**
