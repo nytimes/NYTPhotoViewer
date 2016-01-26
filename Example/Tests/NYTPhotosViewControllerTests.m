@@ -226,11 +226,10 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg isNil]]);
 
     [photosViewController doneButtonTapped:nil];
 
-    OCMVerifyAll(photosVCMock);
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg any]]);
 }
 
 - (void)testGestureBasedDismissalUserInitiatedFlagIsTrue {
@@ -238,14 +237,13 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg isNil]]);
 
     id gestureRecognizerMock = OCMClassMock([UIPanGestureRecognizer class]);
     OCMStub([gestureRecognizerMock state]).andReturn(UIGestureRecognizerStateBegan);
 
     [photosViewController didPanWithGestureRecognizer:gestureRecognizerMock];
 
-    OCMVerifyAll(photosVCMock);
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg any]]);
 }
 
 - (void)testProgrammaticDismissalUserInitiatedFlagIsFalse {
@@ -253,11 +251,10 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg isNil]]);
 
     [photosViewController dismissViewControllerAnimated:YES completion:nil];
 
-    OCMVerifyAll(photosVCMock);
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg any]]);
 }
 
 #pragma mark - Helpers
