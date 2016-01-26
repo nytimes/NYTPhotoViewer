@@ -1,10 +1,12 @@
 ## `develop`
 
+Changes for users of the library currently on `develop`:
+
 _This space intentionally left blank._
 
 ## [1.0.1](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.1)
 
-Changes for users of the library currently on `develop`:
+Changes for users of the library in 1.0.1:
 
 - Fixes for incorrect logic determining whether to send delegate messages about `PhotosViewController` dismissal ([#130](https://github.com/NYTimes/NYTPhotoViewer/pull/130), [#137](https://github.com/NYTimes/NYTPhotoViewer/pull/137))
 - Avoid testing floats for equality in PhotoViewController ([#135](https://github.com/NYTimes/NYTPhotoViewer/pull/135))
