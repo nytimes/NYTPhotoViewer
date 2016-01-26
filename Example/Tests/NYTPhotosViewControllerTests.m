@@ -226,12 +226,11 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:[OCMArg isEqual:OCMOCK_VALUE(YES)] userInitiated:[OCMArg isEqual:OCMOCK_VALUE(YES)] completion:[OCMArg isNil]]);
+    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg isNil]]);
 
     [photosViewController doneButtonTapped:nil];
 
     OCMVerifyAll(photosVCMock);
-    [photosVCMock stopMocking];
 }
 
 - (void)testGestureBasedDismissalUserInitiatedFlagIsTrue {
@@ -239,7 +238,7 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:[OCMArg isEqual:OCMOCK_VALUE(YES)] userInitiated:[OCMArg isEqual:OCMOCK_VALUE(YES)] completion:[OCMArg isNil]]);
+    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg isNil]]);
 
     id gestureRecognizerMock = OCMClassMock([UIPanGestureRecognizer class]);
     OCMStub([gestureRecognizerMock state]).andReturn(UIGestureRecognizerStateBegan);
@@ -247,7 +246,6 @@
     [photosViewController didPanWithGestureRecognizer:gestureRecognizerMock];
 
     OCMVerifyAll(photosVCMock);
-    [photosVCMock stopMocking];
 }
 
 - (void)testProgrammaticDismissalUserInitiatedFlagIsFalse {
@@ -255,12 +253,11 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     id photosVCMock = OCMPartialMock(photosViewController);
-    OCMExpect([photosVCMock dismissViewControllerAnimated:[OCMArg isEqual:OCMOCK_VALUE(YES)] userInitiated:[OCMArg isEqual:OCMOCK_VALUE(NO)] completion:[OCMArg isNil]]);
+    OCMExpect([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg isNil]]);
 
     [photosViewController dismissViewControllerAnimated:YES completion:nil];
 
     OCMVerifyAll(photosVCMock);
-    [photosVCMock stopMocking];
 }
 
 #pragma mark - Helpers
