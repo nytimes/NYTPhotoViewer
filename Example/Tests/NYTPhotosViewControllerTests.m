@@ -13,7 +13,6 @@
 #import "NYTExamplePhoto.h"
 
 @interface NYTPhotosViewControllerTests : XCTestCase
-
 @end
 
 @implementation NYTPhotosViewControllerTests
