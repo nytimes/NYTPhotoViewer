@@ -9,10 +9,19 @@
 @import UIKit;
 @import XCTest;
 
+#import <OCMock/OCMock.h>
+
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import "NYTExamplePhoto.h"
 
 @interface NYTPhotosViewControllerTests : XCTestCase
+@end
+
+@interface NYTPhotosViewController (Testing)
+
+- (void)dismissViewControllerAnimated:(BOOL)animated userInitiated:(BOOL)isUserInitiated completion:(void (^)(void))completion;
+- (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (void)doneButtonTapped:(id)sender;
 
 @end
 
@@ -210,6 +219,42 @@
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 
     XCTAssertFalse(photosViewController.pageViewController.isViewLoaded);
+}
+
+- (void)testDoneButtonDismissalUserInitiatedFlagIsTrue {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    id photosVCMock = OCMPartialMock(photosViewController);
+
+    [photosViewController doneButtonTapped:nil];
+
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg any]]);
+}
+
+- (void)testGestureBasedDismissalUserInitiatedFlagIsTrue {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    id photosVCMock = OCMPartialMock(photosViewController);
+
+    id gestureRecognizerMock = OCMClassMock([UIPanGestureRecognizer class]);
+    OCMStub([gestureRecognizerMock state]).andReturn(UIGestureRecognizerStateBegan);
+
+    [photosViewController didPanWithGestureRecognizer:gestureRecognizerMock];
+
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:YES completion:[OCMArg any]]);
+}
+
+- (void)testProgrammaticDismissalUserInitiatedFlagIsFalse {
+    NSArray *photos = [self newTestPhotos];
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
+
+    id photosVCMock = OCMPartialMock(photosViewController);
+
+    [photosViewController dismissViewControllerAnimated:YES completion:nil];
+
+    OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg any]]);
 }
 
 #pragma mark - Helpers

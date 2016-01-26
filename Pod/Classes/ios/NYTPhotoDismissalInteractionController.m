@@ -136,7 +136,23 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
 }
 
 + (BOOL)isRadar20070670Fixed {
-    return NO;
+    // per @bcapps, this was fixed in iOS 8.3 but not marked as such on bugreport.apple.com
+    // https://github.com/NYTimes/NYTPhotoViewer/issues/131#issue-126923817
+
+    static BOOL isRadar20070670Fixed;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSOperatingSystemVersion const iOSVersion8Point3 = (NSOperatingSystemVersion) {
+            .majorVersion = 8,
+            .minorVersion = 3,
+            .patchVersion = 0
+        };
+
+        isRadar20070670Fixed = [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOSVersion8Point3];
+    });
+
+    return isRadar20070670Fixed;
 }
 
 #pragma mark - UIViewControllerInteractiveTransitioning
