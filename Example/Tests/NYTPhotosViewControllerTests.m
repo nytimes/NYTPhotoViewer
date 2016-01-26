@@ -231,6 +231,7 @@
     [photosViewController doneButtonTapped:nil];
 
     OCMVerifyAll(photosVCMock);
+    [photosVCMock stopMocking];
 }
 
 - (void)testGestureBasedDismissalUserInitiatedFlagIsTrue {
@@ -246,6 +247,7 @@
     [photosViewController didPanWithGestureRecognizer:gestureRecognizerMock];
 
     OCMVerifyAll(photosVCMock);
+    [photosVCMock stopMocking];
 }
 
 - (void)testProgrammaticDismissalUserInitiatedFlagIsFalse {
@@ -258,6 +260,7 @@
     [photosViewController dismissViewControllerAnimated:YES completion:nil];
 
     OCMVerifyAll(photosVCMock);
+    [photosVCMock stopMocking];
 }
 
 #pragma mark - Helpers
