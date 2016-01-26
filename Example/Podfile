@@ -12,8 +12,3 @@ end
 target 'NYTPhotoViewer-Swift', :exclusive => true do
     pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
 end
-
-target 'NYTPhotoViewer-SwiftTests', :exclusive => true do
-    pod "NYTPhotoViewer/AnimatedGifSupport", :path => "../"
-    pod 'OCMock', '~> 3.2'
-end
