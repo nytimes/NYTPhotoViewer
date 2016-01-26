@@ -224,30 +224,30 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     if (!view) {
         return nil;
     }
-    
-    UIView *animationView;
-    
-	if (view.layer.contents) {
-		if ([view isKindOfClass:[UIImageView class]]) {
-			// The case of UIImageView is handled separately since the mere layer's contents (i.e. CGImage in this case) doesn't
-			// seem to contain proper informations about the image orientation for portrait images taken directly on the device.
-			animationView = [(UIImageView *)[[view class] alloc] initWithImage:((UIImageView *)view).image];
-			animationView.bounds = view.bounds;
-		}
-		else {
-			animationView = [[UIView alloc] initWithFrame:view.frame];
-			animationView.layer.contents = view.layer.contents;
-			animationView.layer.bounds = view.layer.bounds;
-		}
 
-		animationView.layer.cornerRadius = view.layer.cornerRadius;
-		animationView.layer.masksToBounds = view.layer.masksToBounds;
-		animationView.contentMode = view.contentMode;
-		animationView.transform = view.transform;
-	}
-	else {
-		animationView = [view snapshotViewAfterScreenUpdates:YES];
-	}
+    UIView *animationView;
+    if (view.layer.contents) {
+        if ([view isKindOfClass:[UIImageView class]]) {
+            // The case of UIImageView is handled separately since the mere layer's contents (i.e. CGImage in this case) doesn't
+            // seem to contain proper informations about the image orientation for portrait images taken directly on the device.
+            // See https://github.com/NYTimes/NYTPhotoViewer/issues/115
+            animationView = [(UIImageView *)[[view class] alloc] initWithImage:((UIImageView *)view).image];
+            animationView.bounds = view.bounds;
+        }
+        else {
+            animationView = [[UIView alloc] initWithFrame:view.frame];
+            animationView.layer.contents = view.layer.contents;
+            animationView.layer.bounds = view.layer.bounds;
+        }
+
+        animationView.layer.cornerRadius = view.layer.cornerRadius;
+        animationView.layer.masksToBounds = view.layer.masksToBounds;
+        animationView.contentMode = view.contentMode;
+        animationView.transform = view.transform;
+    }
+    else {
+        animationView = [view snapshotViewAfterScreenUpdates:YES];
+    }
 
     return animationView;
 }
