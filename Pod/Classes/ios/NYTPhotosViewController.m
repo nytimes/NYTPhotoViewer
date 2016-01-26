@@ -53,13 +53,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
-/**
- *  Tracks whether the current dismissal of this view controller is due to user interaction
- *  (an interactive pan or a tap on the Close button).
- *  Reset to `NO` when an interactive dismissal is not in progress.
- */
-@property (nonatomic, getter=isCurrentDismissalUserTriggered) BOOL currentDismissalUserTriggered;
-
 @end
 
 @implementation NYTPhotosViewController
@@ -139,8 +132,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     if (!self.overlayWasHiddenBeforeTransition) {
         [self setOverlayViewHidden:NO animated:YES];
     }
-
-    self.currentDismissalUserTriggered = NO;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -156,6 +147,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationFade;
+}
+
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
+    [self dismissViewControllerAnimated:animated userInitiated:NO completion:completion];
 }
 
 #pragma mark - NYTPhotosViewController
@@ -252,8 +247,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.currentDismissalUserTriggered = YES;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
 }
 
 - (void)actionButtonTapped:(id)sender {
@@ -345,9 +339,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        self.currentDismissalUserTriggered = YES;
         self.transitionController.forcesNonInteractiveDismissal = NO;
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
     }
     else {
         self.transitionController.forcesNonInteractiveDismissal = YES;
@@ -357,7 +350,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - View Controller Dismissal
     
-- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
+- (void)dismissViewControllerAnimated:(BOOL)animated userInitiated:(BOOL)isUserInitiated completion:(void (^)(void))completion {
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -371,7 +364,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     // Cocoa convention is not to call delegate methods when you do something directly in code,
     // so we'll not call delegate methods if this is a programmatic dismissal:
-    BOOL const shouldSendDelegateMessages = self.isCurrentDismissalUserTriggered;
+    BOOL const shouldSendDelegateMessages = isUserInitiated;
     
     if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];
@@ -385,8 +378,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         if (isStillOnscreen && !self.overlayWasHiddenBeforeTransition) {
             [self setOverlayViewHidden:NO animated:YES];
         }
-
-        self.currentDismissalUserTriggered = NO;
         
         if (!isStillOnscreen) {
             if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerDidDismiss:)]) {
