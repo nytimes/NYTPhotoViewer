@@ -229,15 +229,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         overlayTitle = [self.delegate photosViewController:self titleForPhoto:self.currentlyDisplayedPhoto atIndex:photoIndex totalPhotoCount:self.dataSource.numberOfPhotos];
     }
     
-    if (!overlayTitle) {
+    if (!overlayTitle && self.dataSource.numberOfPhotos > 1) {
         NSUInteger displayIndex = 1;
         
         if (photoIndex < self.dataSource.numberOfPhotos) {
             displayIndex = photoIndex + 1;
         }
-        if (self.dataSource.numberOfPhotos > 1) {
-            overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
-        }
+
+        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
     }
     
     self.overlayView.title = overlayTitle;
