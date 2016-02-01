@@ -168,12 +168,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 /**
  *  Returns a string to display as the title in the navigation-bar area for a photo.
  *
- *  This small area of the screen is not intended to display a caption or similar information about the photo itself. (NYTPhotoViewer is designed to provide this information in the capton view, and as such the `NYTPhoto` protocol provides properties for the title, summary, and credit for each photo.) Instead, consider using this delegate method to customize how your app displays the user's progress through a set of photos.
+ *  This small area of the screen is not intended to display a caption or similar information about the photo itself. (NYTPhotoViewer is designed to provide this information in the caption view, and as such the `NYTPhoto` protocol provides properties for the title, summary, and credit for each photo.) Instead, consider using this delegate method to customize how your app displays the user's progress through a set of photos.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object for which to display the title.
  *  @param photoIndex           The index of the photo.
- *  @param totalPhotoCount      The number of photos beign displayed by the photo viewer.
+ *  @param totalPhotoCount      The number of photos being displayed by the photo viewer.
  *
  *  @return The text to display as the navigation-item title for the given photo. Return `nil` to show a default title like "1 of 4" indicating progress in a slideshow, or an empty string to hide this text entirely.
  */
