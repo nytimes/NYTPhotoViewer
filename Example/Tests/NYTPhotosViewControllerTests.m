@@ -136,20 +136,46 @@
     XCTAssertNil(photosViewController.rightBarButtonItems);
 }
 
-- (void)testConvenienceInitializerAcceptsNil {
+- (void)testOneArgConvenienceInitializerAcceptsNil {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil]);
 }
 
-- (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
+- (void)testTwoArgConvenienceInitializerAcceptsNilForPhotosParameter {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:[[NYTExamplePhoto alloc] init]]);
 }
 
-- (void)testDesignatedInitializerAcceptsNilForInitialPhotoParameter {
+- (void)testTwoArgConvenienceInitializerAcceptsNilForInitialPhotoParameter {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos] initialPhoto:nil]);
 }
 
-- (void)testDesignatedInitializerAcceptsNilForBothParameters {
+- (void)testTwoArgConvenienceInitializerAcceptsNilForBothParameters {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:nil]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
+    id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:[NYTExamplePhoto new] delegate:delegateMock]);
+
+}
+
+- (void)testDesignatedInitializerAcceptsNilForInitialPhotoParameter {
+    id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos] initialPhoto:nil delegate:delegateMock]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForDelegateParameter {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos] initialPhoto:[NYTExamplePhoto new] delegate:nil]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForAllParameters {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:nil delegate:nil]);
+}
+
+- (void)testDesignatedInitializerSetsDelegate {
+    id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
+    NYTPhotosViewController *sut = [[NYTPhotosViewController alloc] initWithPhotos:[self newTestPhotos] initialPhoto:nil delegate:delegateMock];
+
+    XCTAssertEqual(sut.delegate, delegateMock);
 }
 
 - (void)testDisplayPhotoAcceptsNil {
