@@ -155,7 +155,6 @@
 - (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
     id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithPhotos:nil initialPhoto:[NYTExamplePhoto new] delegate:delegateMock]);
-
 }
 
 - (void)testDesignatedInitializerAcceptsNilForInitialPhotoParameter {
