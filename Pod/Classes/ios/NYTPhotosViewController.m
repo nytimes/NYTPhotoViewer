@@ -94,7 +94,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithPhotos:nil initialPhoto:nil];
+        [self commonInitWithPhotos:nil initialPhoto:nil delegate:nil];
     }
 
     return self;
@@ -156,21 +156,27 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 #pragma mark - NYTPhotosViewController
 
 - (instancetype)initWithPhotos:(NSArray *)photos {
-    return [self initWithPhotos:photos initialPhoto:photos.firstObject];
+    return [self initWithPhotos:photos initialPhoto:photos.firstObject delegate:nil];
 }
 
 - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
+    return [self initWithPhotos:photos initialPhoto:initialPhoto delegate:nil];
+}
+
+- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        [self commonInitWithPhotos:photos initialPhoto:initialPhoto];
+        [self commonInitWithPhotos:photos initialPhoto:initialPhoto delegate:delegate];
     }
     
     return self;
 }
 
-- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
+- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
     _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+    _delegate = delegate;
+
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
     _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
 
