@@ -89,7 +89,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, weak, nullable) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
- *  A convenience initializer that calls `initWithPhotos:initialPhoto:`, passing the first photo as the `initialPhoto` argument.
+ *  A convenience initializer that calls `initWithPhotos:initialPhoto:delegate:`, passing the first photo as the `initialPhoto` argument, and `nil` as the `delegate` argument.
  *
  *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *
@@ -98,14 +98,25 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos;
 
 /**
- *  The designated initializer that stores the array of objects conforming to the `NYTPhoto` protocol for display, along with specifying an initial photo for display.
+ *  A convenience initializer that calls `initWithPhotos:initialPhoto:delegate:`, passing `nil` as the `delegate` argument.
  *
  *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If `nil` or not within the `photos` array, the first photo within the `photos` array will be displayed.
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto;
+
+/**
+ *  The designated initializer that stores the array of objects conforming to the `NYTPhoto` protocol for display, along with specifying an initial photo for display.
+ *
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
+ *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If `nil` or not within the `photos` array, the first photo within the `photos` array will be displayed.
+ *  @param delegate The delegate for this `NYTPhotosViewController`.
+ *
+ *  @return A fully initialized object.
+ */
+- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Displays the specified photo. Can be called before the view controller is displayed. Calling with a photo not contained within the data source has no effect.
