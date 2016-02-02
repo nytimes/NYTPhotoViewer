@@ -106,6 +106,14 @@
 }
 
 - (void)updateImage:(UIImage *)image imageData:(NSData *)imageData {
+#ifdef DEBUG
+#ifndef ANIMATED_GIF_SUPPORT
+    if (imageData != nil) {
+        NSLog(@"[NYTPhotoViewer] Warning! You're providing imageData for a photo, but NYTPhotoViewer was compiled without animated GIF support. You should use native UIImages for non-animated photos. See the NYTPhoto protocol documentation for discussion.");
+    }
+#endif // ANIMATED_GIF_SUPPORT
+#endif // DEBUG
+
     UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
     // Remove any transform currently applied by the scroll view zooming.
