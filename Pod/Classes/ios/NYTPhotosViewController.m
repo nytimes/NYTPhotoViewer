@@ -37,7 +37,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 @property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
-@property (nonatomic) UIPopoverController *activityPopoverController;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) UITapGestureRecognizer *singleTapGestureRecognizer;
