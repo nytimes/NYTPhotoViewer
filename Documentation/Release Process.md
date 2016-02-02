@@ -9,8 +9,9 @@ _While tagging a new version of a library and pushing it to CocoaPods is concept
 	- When reviewing the commit history, searching for “Merge pull request” helps find changes which should appear in [the `CHANGELOG`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHANGELOG.md).
 - Update any other documentation which still needs to be updated, given those changes.
 - Create a pull request merging [`develop` into `master`](https://github.com/NYTimes/NYTPhotoViewer/compare/master...develop). Merge it yourself, immediately.
-- Create a Github release, using the new version number (eg. `1.0.0`) as the tag, and the merge commit into `master` as the target. Copy [the `CHANGELOG`](https://raw.githubusercontent.com/NYTimes/NYTPhotoViewer/develop/CHANGELOG.md)’s Markdown content for this release into the Github release.
+- Create a [Github release](https://github.com/NYTimes/NYTPhotoViewer/releases), using the new version number (eg. `1.0.0`) as the tag, and the merge commit into `master` as the target. Copy [the `CHANGELOG`](https://raw.githubusercontent.com/NYTimes/NYTPhotoViewer/develop/CHANGELOG.md)’s Markdown content for this release into the Github release.
 - Push the new Podspec to Cocoapods Trunk: `pod trunk push NYTPhotoViewer.podspec`
+	- Ensure your local clone is up-to-date before this push.
 
 ## CocoaPods Trunk Setup
 

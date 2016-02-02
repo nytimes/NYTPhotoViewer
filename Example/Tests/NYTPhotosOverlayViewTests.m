@@ -12,7 +12,6 @@
 #import <NYTPhotoViewer/NYTPhotosOverlayView.h>
 
 @interface NYTPhotosOverlayViewTests : XCTestCase
-
 @end
 
 @implementation NYTPhotosOverlayViewTests

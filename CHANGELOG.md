@@ -2,7 +2,15 @@
 
 Changes for users of the library currently on `develop`:
 
-- Fixes for incorrect logic determining whether to send delegate messages about `PhotosViewController` dismissal ([#130](https://github.com/NYTimes/NYTPhotoViewer/pull/130), TKTK)
+_This space intentionally left blank._
+
+## [1.0.1](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.1)
+
+Changes for users of the library in 1.0.1:
+
+- Fixes for incorrect logic determining whether to send delegate messages about `PhotosViewController` dismissal ([#130](https://github.com/NYTimes/NYTPhotoViewer/pull/130), [#137](https://github.com/NYTimes/NYTPhotoViewer/pull/137))
+- Avoid testing floats for equality in PhotoViewController ([#135](https://github.com/NYTimes/NYTPhotoViewer/pull/135))
+- Fix orientation issue with reference view of type UIImageView ([#116](https://github.com/NYTimes/NYTPhotoViewer/pull/116), [#145](https://github.com/NYTimes/NYTPhotoViewer/pull/145))
 - Avoid applying a hacky iOS status bar bugfix on iOS 8.3+ (it appears to have been fixed then) ([#131](https://github.com/NYTimes/NYTPhotoViewer/issues/131))
 - Removed redundant Swift unit tests ([#128](https://github.com/NYTimes/NYTPhotoViewer/pull/128))
 
