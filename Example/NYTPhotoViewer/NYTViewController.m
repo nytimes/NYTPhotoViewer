@@ -45,7 +45,6 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in photos) {
             if (!photo.image && !photo.imageData) {
-                // Photo credit: Nic Lehoux
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
                 [photosViewController updateImageForPhoto:photo];
             }
@@ -99,7 +98,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
         
         photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
         photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
-        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"credit" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
+        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"NYT Building Photo Credit: Nic Lehoux" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
 
         [photos addObject:photo];
     }
@@ -153,6 +152,14 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
     
+    return nil;
+}
+
+- (NSString *)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id<NYTPhoto>)photo atIndex:(NSUInteger)photoIndex totalPhotoCount:(NSUInteger)totalPhotoCount {
+    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+        return [NSString stringWithFormat:@"%lu/%lu", (unsigned long)photoIndex+1, (unsigned long)totalPhotoCount];
+    }
+
     return nil;
 }
 

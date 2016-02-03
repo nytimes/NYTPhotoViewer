@@ -89,7 +89,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, weak, nullable) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
- *  A convenience initializer that calls `initWithPhotos:initialPhoto:`, passing the first photo as the `initialPhoto` argument.
+ *  A convenience initializer that calls `initWithPhotos:initialPhoto:delegate:`, passing the first photo as the `initialPhoto` argument, and `nil` as the `delegate` argument.
  *
  *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *
@@ -98,14 +98,25 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos;
 
 /**
- *  The designated initializer that stores the array of objects conforming to the `NYTPhoto` protocol for display, along with specifying an initial photo for display.
+ *  A convenience initializer that calls `initWithPhotos:initialPhoto:delegate:`, passing `nil` as the `delegate` argument.
  *
  *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If `nil` or not within the `photos` array, the first photo within the `photos` array will be displayed.
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto;
+
+/**
+ *  The designated initializer that stores the array of objects conforming to the `NYTPhoto` protocol for display, along with specifying an initial photo for display.
+ *
+ *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
+ *  @param initialPhoto The photo to display initially. Must be contained within the `photos` array. If `nil` or not within the `photos` array, the first photo within the `photos` array will be displayed.
+ *  @param delegate The delegate for this `NYTPhotosViewController`.
+ *
+ *  @return A fully initialized object.
+ */
+- (instancetype)initWithPhotos:(NSArray <id <NYTPhoto>> * _Nullable)photos initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Displays the specified photo. Can be called before the view controller is displayed. Calling with a photo not contained within the data source has no effect.
@@ -164,6 +175,20 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @return A view to display as the caption for the photo. Return `nil` to show a default view generated from the caption properties on the photo object.
  */
 - (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
+
+/**
+ *  Returns a string to display as the title in the navigation-bar area for a photo.
+ *
+ *  This small area of the screen is not intended to display a caption or similar information about the photo itself. (NYTPhotoViewer is designed to provide this information in the caption view, and as such the `NYTPhoto` protocol provides properties for the title, summary, and credit for each photo.) Instead, consider using this delegate method to customize how your app displays the user's progress through a set of photos.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object for which to display the title.
+ *  @param photoIndex           The index of the photo.
+ *  @param totalPhotoCount      The number of photos being displayed by the photo viewer.
+ *
+ *  @return The text to display as the navigation-item title for the given photo. Return `nil` to show a default title like "1 of 4" indicating progress in a slideshow, or an empty string to hide this text entirely.
+ */
+- (NSString * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex totalPhotoCount:(NSUInteger)totalPhotoCount;
 
 /**
  *  Returns a view to display while a photo is loading. Can be any `UIView` object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image is loaded.
