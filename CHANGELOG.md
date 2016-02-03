@@ -1,8 +1,11 @@
-## `develop`
+## `develop` (will be 1.1.0)
 
 Changes for users of the library currently on `develop`:
 
-_This space intentionally left blank._
+- Add a delegate method to allow customizing navigation bar title text ([#142](https://github.com/NYTimes/NYTPhotoViewer/pull/142), [#151](https://github.com/NYTimes/NYTPhotoViewer/pull/151), [#154](https://github.com/NYTimes/NYTPhotoViewer/pull/154))
+- Add documentation clarifying `NYTPhoto.image` vs `.imageData` properties; add a warning if you’re doing something wrong ([#153](https://github.com/NYTimes/NYTPhotoViewer/pull/152))
+- Add `delegate` to the designated initializer ([#155](https://github.com/NYTimes/NYTPhotoViewer/pull/155))
+- Fix overlay view animating out and back when a view controller presented atop `NYTPhotosViewController` is dismissed ([#156](https://github.com/NYTimes/NYTPhotoViewer/pull/156))
 
 ## [1.0.1](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.1)
 
