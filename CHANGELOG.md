@@ -1,6 +1,12 @@
-## `develop` (will be 1.1.0)
+## `develop`
 
 Changes for users of the library currently on `develop`:
+
+_This space intentionally left blank._
+
+## [1.1.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.1.0)
+
+Changes for users of the library in 1.1.0:
 
 - Add a delegate method to allow customizing navigation bar title text ([#142](https://github.com/NYTimes/NYTPhotoViewer/pull/142), [#151](https://github.com/NYTimes/NYTPhotoViewer/pull/151), [#154](https://github.com/NYTimes/NYTPhotoViewer/pull/154))
 - Add documentation clarifying `NYTPhoto.image` vs `.imageData` properties; add a warning if you’re doing something wrong ([#153](https://github.com/NYTimes/NYTPhotoViewer/pull/152))
