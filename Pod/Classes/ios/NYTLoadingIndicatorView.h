@@ -11,7 +11,7 @@
 @interface NYTLoadingIndicatorView : UIView
 
 /**
- *  The progress to be shown, raning 0.0 to 1.0
+ *  The progress to be shown, ranging 0.0 to 1.0
  */
 @property (nonatomic, assign) CGFloat progress;
 
