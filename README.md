@@ -21,7 +21,7 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```
-pod 'NYTPhotoViewer', '~> 1.0.0'
+pod 'NYTPhotoViewer', '~> 1.1.0'
 ```
 
 ## Requirements

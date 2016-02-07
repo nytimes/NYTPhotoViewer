@@ -94,7 +94,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithPhotos:nil initialPhoto:nil];
+        [self commonInitWithPhotos:nil initialPhoto:nil delegate:nil];
     }
 
     return self;
@@ -149,24 +149,34 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return UIStatusBarAnimationFade;
 }
 
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
+    [self dismissViewControllerAnimated:animated userInitiated:NO completion:completion];
+}
+
 #pragma mark - NYTPhotosViewController
 
 - (instancetype)initWithPhotos:(NSArray *)photos {
-    return [self initWithPhotos:photos initialPhoto:photos.firstObject];
+    return [self initWithPhotos:photos initialPhoto:photos.firstObject delegate:nil];
 }
 
 - (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
+    return [self initWithPhotos:photos initialPhoto:initialPhoto delegate:nil];
+}
+
+- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        [self commonInitWithPhotos:photos initialPhoto:initialPhoto];
+        [self commonInitWithPhotos:photos initialPhoto:initialPhoto delegate:delegate];
     }
     
     return self;
 }
 
-- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
+- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
     _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+    _delegate = delegate;
+
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
     _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
 
@@ -215,16 +225,23 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [self setOverlayViewHidden:YES animated:NO];
 }
 
+
 - (void)updateOverlayInformation {
-    NSUInteger displayIndex = 1;
+    NSString *overlayTitle;
     
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
-    if (photoIndex < self.dataSource.numberOfPhotos) {
-        displayIndex = photoIndex + 1;
+    
+    if ([self.delegate respondsToSelector:@selector(photosViewController:titleForPhoto:atIndex:totalPhotoCount:)]) {
+        overlayTitle = [self.delegate photosViewController:self titleForPhoto:self.currentlyDisplayedPhoto atIndex:photoIndex totalPhotoCount:self.dataSource.numberOfPhotos];
     }
     
-    NSString *overlayTitle;
-    if (self.dataSource.numberOfPhotos > 1) {
+    if (!overlayTitle && self.dataSource.numberOfPhotos > 1) {
+        NSUInteger displayIndex = 1;
+        
+        if (photoIndex < self.dataSource.numberOfPhotos) {
+            displayIndex = photoIndex + 1;
+        }
+
         overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
     }
     
@@ -243,7 +260,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
 }
 
 - (void)actionButtonTapped:(id)sender {
@@ -252,11 +269,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     if ([self.delegate respondsToSelector:@selector(photosViewController:handleActionButtonTappedForPhoto:)]) {
         clientDidHandle = [self.delegate photosViewController:self handleActionButtonTappedForPhoto:self.currentlyDisplayedPhoto];
     }
-#ifdef ANIMATED_GIF_SUPPORT
+    
     if (!clientDidHandle && (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData)) {
-#else
-    if (!clientDidHandle && self.currentlyDisplayedPhoto.image) {
-#endif
         UIImage *image = self.currentlyDisplayedPhoto.image ? self.currentlyDisplayedPhoto.image : [UIImage imageWithData:self.currentlyDisplayedPhoto.imageData];
         UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
         activityViewController.popoverPresentationController.barButtonItem = sender;
@@ -336,15 +350,22 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.transitionController.forcesNonInteractiveDismissal = NO;
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
     }
     else {
         self.transitionController.forcesNonInteractiveDismissal = YES;
         [self.transitionController didPanWithPanGestureRecognizer:panGestureRecognizer viewToPan:self.pageViewController.view anchorPoint:self.boundsCenterPoint];
     }
 }
+
+#pragma mark - View Controller Dismissal
     
-- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
+- (void)dismissViewControllerAnimated:(BOOL)animated userInitiated:(BOOL)isUserInitiated completion:(void (^)(void))completion {
+    if (self.presentedViewController) {
+        [super dismissViewControllerAnimated:animated completion:completion];
+        return;
+    }
+    
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
@@ -357,8 +378,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [self setOverlayViewHidden:YES animated:animated];
 
     // Cocoa convention is not to call delegate methods when you do something directly in code,
-    // so we'll not call delegate methods if this is a programmatic, noninteractive dismissal:
-    BOOL shouldSendDelegateMessages = !self.transitionController.forcesNonInteractiveDismissal;
+    // so we'll not call delegate methods if this is a programmatic dismissal:
+    BOOL const shouldSendDelegateMessages = isUserInitiated;
     
     if (shouldSendDelegateMessages && [self.delegate respondsToSelector:@selector(photosViewControllerWillDismiss:)]) {
         [self.delegate photosViewControllerWillDismiss:self];

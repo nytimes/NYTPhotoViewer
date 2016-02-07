@@ -1,3 +1,28 @@
+## `develop`
+
+Changes for users of the library currently on `develop`:
+
+_This space intentionally left blank._
+
+## [1.1.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.1.0)
+
+Changes for users of the library in 1.1.0:
+
+- Add a delegate method to allow customizing navigation bar title text ([#142](https://github.com/NYTimes/NYTPhotoViewer/pull/142), [#151](https://github.com/NYTimes/NYTPhotoViewer/pull/151), [#154](https://github.com/NYTimes/NYTPhotoViewer/pull/154))
+- Add documentation clarifying `NYTPhoto.image` vs `.imageData` properties; add a warning if you’re doing something wrong ([#153](https://github.com/NYTimes/NYTPhotoViewer/pull/152))
+- Add `delegate` to the designated initializer ([#155](https://github.com/NYTimes/NYTPhotoViewer/pull/155))
+- Fix overlay view animating out and back when a view controller presented atop `NYTPhotosViewController` is dismissed ([#156](https://github.com/NYTimes/NYTPhotoViewer/pull/156))
+
+## [1.0.1](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.1)
+
+Changes for users of the library in 1.0.1:
+
+- Fixes for incorrect logic determining whether to send delegate messages about `PhotosViewController` dismissal ([#130](https://github.com/NYTimes/NYTPhotoViewer/pull/130), [#137](https://github.com/NYTimes/NYTPhotoViewer/pull/137))
+- Avoid testing floats for equality in PhotoViewController ([#135](https://github.com/NYTimes/NYTPhotoViewer/pull/135))
+- Fix orientation issue with reference view of type UIImageView ([#116](https://github.com/NYTimes/NYTPhotoViewer/pull/116), [#145](https://github.com/NYTimes/NYTPhotoViewer/pull/145))
+- Avoid applying a hacky iOS status bar bugfix on iOS 8.3+ (it appears to have been fixed then) ([#131](https://github.com/NYTimes/NYTPhotoViewer/issues/131))
+- Removed redundant Swift unit tests ([#128](https://github.com/NYTimes/NYTPhotoViewer/pull/128))
+
 ## [1.0.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.0.0)
 
 Changes for users of the library in 1.0.0:
