@@ -14,7 +14,7 @@
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 
-#define INTERACTIVE_RELOAD // (awyeah)
+#define INTERACTIVE_RELOAD
 
 #ifdef INTERACTIVE_RELOAD
 #define IsValidZoomScale(zoomScale) (zoomScale != 0 && zoomScale != 1)

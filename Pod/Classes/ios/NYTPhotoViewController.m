@@ -10,7 +10,7 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
-#define INTERACTIVE_RELOAD // (awyeah)
+#define INTERACTIVE_RELOAD
 
 #ifdef ANIMATED_GIF_SUPPORT
 #import <FLAnimatedImage/FLAnimatedImage.h>
