@@ -48,12 +48,6 @@ NYTPhotoViewer has a straightforward implementation using standard UIKit compone
 
 It is intended to be used without the need for subclassing, and as such it accepts model objects conforming to a `NYTPhoto` protocol and provides ample opportunity for customization via the `NYTPhotosViewControllerDelegate`. Since standard APIs are used, the client has full control over the transitions and customization of the `NYTPhotosViewController`.
 
-## Todo
-
-- [Carthage](https://github.com/Carthage/Carthage) support (see [#61](https://github.com/NYTimes/NYTPhotoViewer/issues/61)).
-- Animate bounds changes like Tweetbot and Facebook.
-- Publicly expose the data source property.
-
 ## License
 
 NYTPhotoViewer is available under the Apache 2.0 license. See [`LICENSE.md`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/LICENSE.md) for more information.
