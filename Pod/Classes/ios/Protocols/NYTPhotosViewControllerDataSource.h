@@ -57,4 +57,11 @@
  */
 - (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)photoIndex;
 
+/**
+ *  Adds more photos to the end of the list.
+ *
+ *  @param photos The new photos to add to the end of the array of current photos.
+ */
+- (void)appendPhotos:(NSArray<id <NYTPhoto>> *)photos;
+
 @end
