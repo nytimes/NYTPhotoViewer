@@ -133,6 +133,13 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)updateImageForPhoto:(id <NYTPhoto> _Nullable)photo;
 
+/**
+ *  Delete the photo object.
+ *
+ *  @param photo The photo for deletion
+ */
+- (void)deletePhoto:(id <NYTPhoto> _Nullable)photo;
+
 @end
 
 /**
