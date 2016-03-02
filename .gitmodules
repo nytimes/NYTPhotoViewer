@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/FLAnimatedImage"]
+	path = Carthage/Checkouts/FLAnimatedImage
+	url = https://github.com/Flipboard/FLAnimatedImage.git
+[submodule "Carthage/Checkouts/ocmock"]
+	path = Carthage/Checkouts/ocmock
+	url = https://github.com/erikdoe/ocmock.git
