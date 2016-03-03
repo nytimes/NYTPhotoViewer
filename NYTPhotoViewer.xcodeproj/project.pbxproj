@@ -52,12 +52,9 @@
 		1110848C1C876CC900699670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1110848E1C876CC900699670 /* Main.storyboard */; };
 		111084911C876CE000699670 /* NYTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084901C876CE000699670 /* NYTAppDelegate.m */; };
 		111084941C876D1900699670 /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084931C876D1900699670 /* NYTViewController.m */; };
-		111084961C876D8800699670 /* NYTPhotoViewer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */; };
 		111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDA7A1C87714600018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
-		11FBDA7C1C87746600018169 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FBDA7B1C87746600018169 /* FLAnimatedImage.framework */; };
-		11FBDA7D1C87746600018169 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11FBDA7B1C87746600018169 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDA8C1C87753200018169 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
 		11FBDA8E1C87753200018169 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,12 +86,15 @@
 		11FBDAE41C877BD600018169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAE21C877BD600018169 /* Main.storyboard */; };
 		11FBDAEF1C877C5D00018169 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAEE1C877C5D00018169 /* ExamplePhoto.swift */; };
 		11FBDAF11C877C8B00018169 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAF01C877C8B00018169 /* PhotosProvider.swift */; };
-		11FBDAF41C877CCE00018169 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11FBDA7B1C87746600018169 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDAFD1C877D9A00018169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */; };
 		11FBDAFE1C877F5500018169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		11FBDAFF1C877F8000018169 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
+		11FBDB091C88CD3100018169 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084201C87642800699670 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		11FBDB0B1C88CD3B00018169 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084201C87642800699670 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		11FBDB0C1C88CD4000018169 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084201C87642800699670 /* FLAnimatedImage.framework */; };
+		11FBDB0D1C88CD4300018169 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084201C87642800699670 /* FLAnimatedImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +129,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */,
-				11FBDA7D1C87746600018169 /* FLAnimatedImage.framework in Embed Frameworks */,
+				11FBDB091C88CD3100018169 /* FLAnimatedImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +140,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				11FBDAF41C877CCE00018169 /* FLAnimatedImage.framework in Embed Frameworks */,
 				11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */,
+				11FBDB0B1C88CD3B00018169 /* FLAnimatedImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +201,6 @@
 		111084931C876D1900699670 /* NYTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTViewController.m; sourceTree = "<group>"; };
 		111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NYTPhotoViewer-Info.plist"; sourceTree = "<group>"; };
 		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NYTPhotoViewer.bundle; path = ../NYTPhotoViewer.bundle; sourceTree = "<group>"; };
-		11FBDA7B1C87746600018169 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "/Users/davbeck/Library/Developer/Xcode/DerivedData/NYTPhotoViewer-cyvibeoaqesupbclsxbljcxwjqzw/Build/Products/Debug-iphoneos/FLAnimatedImage.framework"; sourceTree = "<absolute>"; };
 		11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBDAA51C87768700018169 /* NYTPhotoViewerCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerCore.h; sourceTree = "<group>"; };
 		11FBDADC1C877BD600018169 /* Example-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */,
-				11FBDA7C1C87746600018169 /* FLAnimatedImage.framework in Frameworks */,
+				11FBDB0D1C88CD4300018169 /* FLAnimatedImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */,
+				11FBDB0C1C88CD4000018169 /* FLAnimatedImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				111084231C87646C00699670 /* OCMock.framework */,
-				11FBDA7B1C87746600018169 /* FLAnimatedImage.framework */,
 				111084201C87642800699670 /* FLAnimatedImage.framework */,
 			);
 			name = Frameworks;
@@ -614,7 +613,6 @@
 			files = (
 				1110847C1C876A2B00699670 /* LaunchScreen.storyboard in Resources */,
 				1110848C1C876CC900699670 /* Main.storyboard in Resources */,
-				111084961C876D8800699670 /* NYTPhotoViewer-Info.plist in Resources */,
 				111084791C876A2B00699670 /* Assets.xcassets in Resources */,
 				111084871C876B0400699670 /* giphy.gif in Resources */,
 			);
@@ -921,6 +919,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -932,6 +934,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -977,6 +983,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
@@ -989,6 +999,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
@@ -1051,6 +1065,7 @@
 				11FBDAEC1C877BD600018169 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
