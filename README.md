@@ -18,7 +18,21 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Installation
 
-NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+### Carthage
+
+NYTPhotoViewer may be installed via [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your `Cartfile`:
+
+```
+github "NYTimes/NYTPhotoViewer"
+```
+
+Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `FLAnimatedImage` frameworks into your project.
+
+If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
+
+### Cocoapods
+
+NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```
 pod 'NYTPhotoViewer', '~> 1.1.0'
