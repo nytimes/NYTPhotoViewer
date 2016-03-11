@@ -54,8 +54,7 @@
     if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
         CGFloat prefMaxWidth = self.bounds.size.width;
         if ([self respondsToSelector:@selector(readableContentGuide)]) {
-            UILayoutGuide *guide = self.readableContentGuide;
-            prefMaxWidth = CGRectGetWidth(guide.layoutFrame);
+            prefMaxWidth = CGRectGetWidth(self.readableContentGuide.layoutFrame);
         }
         
         [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:prefMaxWidth];
