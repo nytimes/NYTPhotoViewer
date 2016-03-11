@@ -52,7 +52,13 @@
     [super layoutSubviews];
 
     if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
-        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
+        CGFloat prefMaxWidth = self.bounds.size.width;
+        if ([self respondsToSelector:@selector(readableContentGuide)]) {
+            UILayoutGuide *guide = self.readableContentGuide;
+            prefMaxWidth = CGRectGetWidth(guide.layoutFrame);
+        }
+        
+        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:prefMaxWidth];
     }
 }
 
