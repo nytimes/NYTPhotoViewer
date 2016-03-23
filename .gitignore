@@ -47,3 +47,6 @@ ocunit.xml
 Vendor/bundle/
 .bundle/
 bin/
+
+# Carthage
+Carthage/Build

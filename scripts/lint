@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+if ! command -v carthage > /dev/null; then
+  printf 'Carthage is not installed.\n'
+  printf 'See https://github.com/Carthage/Carthage for install instructions.\n'
+  exit 1
+fi
+
+
+carthage build --platform iOS --no-use-binaries --use-submodules --no-skip-current
+
+pod lib lint
