@@ -126,10 +126,16 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
         finalEndingViewTransform = CGAffineTransformConcat(finalEndingViewTransform, transformedView.transform);
     }
 
+    CGAffineTransform startingViewTransform = self.startingView.transform;
+    for (UIView *transformedView = self.startingView.superview; transformedView != nil; transformedView = transformedView.superview) {
+        startingViewTransform = CGAffineTransformConcat(startingViewTransform, transformedView.transform);
+    }
+    startingViewForAnimation.transform = startingViewTransform;
+
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
                                                   translatedToContainerView:containerView];
-    
+
     startingViewForAnimation.center = translatedStartingViewCenter;
     
     endingViewForAnimation.transform = CGAffineTransformScale(endingViewForAnimation.transform, endingViewInitialTransform, endingViewInitialTransform);
