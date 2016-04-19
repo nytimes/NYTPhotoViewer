@@ -103,10 +103,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.tintColor = [UIColor whiteColor];
-    self.view.backgroundColor = [UIColor blackColor];
-    self.pageViewController.view.backgroundColor = [UIColor clearColor];
-
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
     [self.pageViewController.view addGestureRecognizer:self.singleTapGestureRecognizer];
     
@@ -124,6 +120,13 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
     
     self.transitionController.endingView = endingView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.view.tintColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.pageViewController.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
