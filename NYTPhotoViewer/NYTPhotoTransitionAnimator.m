@@ -123,7 +123,15 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     
     CGAffineTransform finalEndingViewTransform = self.endingView.transform;
 
-    CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
+    CGFloat endingViewInitialTransform = 1;
+    switch (self.startingView.contentMode) {
+        case UIViewContentModeScaleAspectFill:
+        case UIViewContentModeScaleToFill:
+            endingViewInitialTransform = CGRectGetWidth(startingViewForAnimation.frame) / CGRectGetWidth(endingViewForAnimation.frame);
+            break;
+        default:
+            endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
+    }
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
                                                   translatedToContainerView:containerView];
     
