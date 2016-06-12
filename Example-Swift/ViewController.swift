@@ -76,15 +76,11 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController, maximumZoomScaleForPhoto photo: NYTPhoto) -> CGFloat {
-//        if photo as! ExamplePhoto == photos[Custom] {
-//            let label = UILabel()
-//            label.text = "Custom Loading..."
-//            label.textColor = UIColor.greenColor()
-//            return label
-//        }
+        if photo as! ExamplePhoto == photos[ViewControllerPhotoIndex.CustomMaxZoomScale.rawValue] {
+            return 10
+        }
         return 1.0
     }
-    
     
     func photosViewController(photosViewController: NYTPhotosViewController, loadingViewForPhoto photo: NYTPhoto) -> UIView? {
         if photo as! ExamplePhoto == photos[ViewControllerPhotoIndex.CustomEverything.rawValue] {
@@ -107,6 +103,14 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
+    func photosViewController(photosViewController: NYTPhotosViewController, titleForPhoto photo: NYTPhoto, atIndex photoIndex: UInt, totalPhotoCount: UInt) -> String? {
+        if photo as! ExamplePhoto == photos[ViewControllerPhotoIndex.CustomEverything.rawValue] {
+            return "\(photoIndex+1)/\(totalPhotoCount)"
+        }
+        return nil
+    }
+    
+    
     func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
         print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }
@@ -118,4 +122,8 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController) {
         print("Did dismiss Photo Viewer: \(photosViewController)")
     }
+    
+    
+    
+
 }

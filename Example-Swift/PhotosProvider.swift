@@ -10,7 +10,7 @@ import UIKit
 import NYTPhotoViewer
 
 /**
- *   Struct for constants
+ *   Struct for Global constants
  */
 struct Constants {
     static let PrimaryImageName = "NYTimesBuilding"
