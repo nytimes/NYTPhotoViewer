@@ -30,7 +30,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             for photo in self.photos {
                 if photo.image == nil {
-                    photo.image = UIImage(named: PrimaryImageName)
+                    photo.image = UIImage(named: Constants.PrimaryImageName)
                     photosViewController.updateImageForPhoto(photo)
                 }
             }
@@ -39,7 +39,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buttonImage = UIImage(named: PrimaryImageName)
+        let buttonImage = UIImage(named: Constants.PrimaryImageName)
         imageButton?.setBackgroundImage(buttonImage, forState: .Normal)
     }
     
@@ -69,14 +69,25 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController, referenceViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
+        if photo as? ExamplePhoto == photos[ViewControllerPhotoIndex.NoReferenceView.rawValue] {
             return nil
         }
         return imageButton
     }
     
+    func photosViewController(photosViewController: NYTPhotosViewController, maximumZoomScaleForPhoto photo: NYTPhoto) -> CGFloat {
+//        if photo as! ExamplePhoto == photos[Custom] {
+//            let label = UILabel()
+//            label.text = "Custom Loading..."
+//            label.textColor = UIColor.greenColor()
+//            return label
+//        }
+        return 1.0
+    }
+    
+    
     func photosViewController(photosViewController: NYTPhotosViewController, loadingViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+        if photo as! ExamplePhoto == photos[ViewControllerPhotoIndex.CustomEverything.rawValue] {
             let label = UILabel()
             label.text = "Custom Loading..."
             label.textColor = UIColor.greenColor()
@@ -86,7 +97,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+        if photo as! ExamplePhoto == photos[ViewControllerPhotoIndex.CustomEverything.rawValue] {
             let label = UILabel()
             label.text = "Custom Caption View"
             label.textColor = UIColor.whiteColor()
