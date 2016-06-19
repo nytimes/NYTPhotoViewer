@@ -248,9 +248,18 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     else {
         __block UIView *_animationView;
 
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        void (^snapshotBlock)() = ^void() {
             _animationView = [view snapshotViewAfterScreenUpdates:YES];
-        });
+        };
+
+        if ([NSThread isMainThread]) {
+            snapshotBlock();
+        }
+        else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                snapshotBlock();
+            });
+        }
 
         animationView = _animationView;
     }
