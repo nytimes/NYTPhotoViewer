@@ -2,7 +2,8 @@
 
 Changes for users of the library currently on `develop`:
 
-_This space intentionally left blank._
+- Add Carthage support ([#164](https://github.com/NYTimes/NYTPhotoViewer/pull/164), [#167](https://github.com/NYTimes/NYTPhotoViewer/pull/167))
+- Fix gradient flickering of caption view on iOS 9 ([#166](https://github.com/NYTimes/NYTPhotoViewer/pull/166))
 
 ## [1.1.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.1.0)
 
