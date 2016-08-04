@@ -64,6 +64,11 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, readonly, nullable) NYTPhotosOverlayView *overlayView;
 
 /**
+ *  Set custom title attributes of overlayView.
+ */
+@property (nonatomic, copy, nullable)NSDictionary <NSString *, id> *titleTextAttributes;
+
+/**
  *  The left bar button item overlaying the photo.
  */
 @property (nonatomic, nullable) UIBarButtonItem *leftBarButtonItem;

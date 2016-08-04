@@ -217,7 +217,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     NSAssert(self.overlayView != nil, @"_overlayView must be set during initialization, to provide bar button items for this %@", NSStringFromClass([self class]));
 
     UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
-    self.overlayView.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
+
+    self.overlayView.titleTextAttributes = (self.titleTextAttributes)?self.titleTextAttributes:@{NSForegroundColorAttributeName: textColor};
     
     [self updateOverlayInformation];
     [self.view addSubview:self.overlayView];
@@ -293,6 +294,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         controller.popoverPresentationController.barButtonItem = self.rightBarButtonItem;
         [self presentViewController:controller animated:animated completion:nil];
     }
+}
+
+-(void)setTitleTextAttributes:(NSDictionary<NSString *,id> *)titleTextAttributes{
+    _titleTextAttributes = titleTextAttributes;
 }
 
 - (UIBarButtonItem *)leftBarButtonItem {
