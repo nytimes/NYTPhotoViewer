@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos];
     photosViewController.delegate = self;
+    photosViewController.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName : [UIFont fontWithName:@"Arial" size:20.0]};
     [self presentViewController:photosViewController animated:YES completion:nil];
     
     [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
