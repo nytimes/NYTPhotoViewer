@@ -104,7 +104,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [super viewDidLoad];
 
     self.view.tintColor = [UIColor whiteColor];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = self.backgroundColor?self.backgroundColor:[UIColor blackColor];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
 
     [self.pageViewController.view addGestureRecognizer:self.panGestureRecognizer];
