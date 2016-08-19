@@ -48,9 +48,7 @@ See [`CHANGELOG.md`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHAN
 
 ## Swift
 
-NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. You’ll need to include an [Objective-C bridging header](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) like [this one from the sample Swift project](Example/NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h).
-
-If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
+NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
 
 ## Inspiration
 
