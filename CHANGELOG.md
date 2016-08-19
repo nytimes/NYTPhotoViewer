@@ -4,6 +4,15 @@ Changes for users of the library currently on `develop`:
 
 _This space intentionally left blank._
 
+## [1.2.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.2.0)
+
+Changes for users of the library in 1.2.0:
+
+- Add Carthage support ([#164](https://github.com/NYTimes/NYTPhotoViewer/pull/164), [#167](https://github.com/NYTimes/NYTPhotoViewer/pull/167)), ([#171](https://github.com/NYTimes/NYTPhotoViewer/pull/171))
+- Fix gradient flickering of caption view on iOS 9 ([#166](https://github.com/NYTimes/NYTPhotoViewer/pull/166))
+- Readd loading view when photo source is set back to nil ([#187](https://github.com/NYTimes/NYTPhotoViewer/pull/187))
+- Include all files in the bundle, not just PNGs, in Cocoapods resource bundle ([#170](https://github.com/NYTimes/NYTPhotoViewer/pull/170))
+
 ## [1.1.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.1.0)
 
 Changes for users of the library in 1.1.0:
