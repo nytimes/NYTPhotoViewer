@@ -32,8 +32,8 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 - (IBAction)imageButtonTapped:(id)sender {
     self.photos = [[self class] newTestPhotos];
     
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos];
-    photosViewController.delegate = self;
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
+
     [self presentViewController:photosViewController animated:YES completion:nil];
     
     [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
