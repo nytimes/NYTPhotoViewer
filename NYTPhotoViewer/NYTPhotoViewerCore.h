@@ -30,5 +30,3 @@ FOUNDATION_EXPORT const unsigned char NYTPhotoViewerCoreVersionString[];
 #import <NYTPhotoViewer/NYTPhotoCaptionViewLayoutWidthHinting.h>
 #import <NYTPhotoViewer/NYTPhotoContainer.h>
 #import <NYTPhotoViewer/NYTPhotosViewControllerDataSource.h>
-
-#import <NYTPhotoViewer/NSBundle+NYTPhotoViewer.h>

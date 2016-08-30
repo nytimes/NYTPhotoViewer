@@ -15,7 +15,7 @@
 #import "NYTPhoto.h"
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
-#import "NSBundle+NYTPhotoViewer.h"
+#import "NYTCloseButton.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
 #import <FLAnimatedImage/FLAnimatedImage.h>
@@ -27,7 +27,7 @@ NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosView
 
 static const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
-static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0, -3, 0};
+static const CGFloat NYTPhotosViewControllerCloseButtonCompactSize = 15.0;
 
 @interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
@@ -186,8 +186,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self.modalPresentationCapturesStatusBarAppearance = YES;
 
     _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
-    _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
-    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
+  
+    NYTCloseButton *closeButton = [[NYTCloseButton alloc] initWithFrame: CGRectMake(0.0, 0.0, NYTPhotosViewControllerCloseButtonCompactSize, NYTPhotosViewControllerCloseButtonCompactSize)];
+    [closeButton addTarget: self action: @selector(doneButtonTapped:) forControlEvents: UIControlEventTouchUpInside];
+    UIBarButtonItem *closeButtonBarItem = [[UIBarButtonItem alloc] initWithCustomView: closeButton];
+    _overlayView.leftBarButtonItem = closeButtonBarItem;
+  
     _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
 
     _notificationCenter = [[NSNotificationCenter alloc] init];
