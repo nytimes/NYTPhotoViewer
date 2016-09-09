@@ -13,6 +13,7 @@
 
 @protocol NYTPhoto;
 @protocol NYTPhotoViewControllerDelegate;
+@protocol NYTCustomPhotoView;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +30,12 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 /**
  *  The internal scaling image view used to display the photo.
  */
-@property (nonatomic, readonly) NYTScalingImageView *scalingImageView;
+@property (nonatomic, readonly, nullable) NYTScalingImageView *scalingImageView;
+
+/**
+ *  The internal custom view used to display the photo.
+ */
+@property (nonatomic, readonly, nullable) UIView <NYTCustomPhotoView> *customView;
 
 /**
  *  The internal activity view shown while the image is loading. Set from the initializer.
@@ -55,7 +61,7 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhoto:(nullable id <NYTPhoto>)photo loadingView:(nullable UIView *)loadingView notificationCenter:(nullable NSNotificationCenter *)notificationCenter NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhoto:(nullable id <NYTPhoto>)photo customView:(nullable UIView <NYTCustomPhotoView> *)customView loadingView:(nullable UIView *)loadingView notificationCenter:(nullable NSNotificationCenter *)notificationCenter NS_DESIGNATED_INITIALIZER;
 
 @end
 

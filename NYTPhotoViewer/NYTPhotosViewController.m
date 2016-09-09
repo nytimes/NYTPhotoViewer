@@ -447,15 +447,21 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
             loadingView = [self.delegate photosViewController:self loadingViewForPhoto:photo];
         }
         
-        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView notificationCenter:self.notificationCenter];
-        photoViewController.delegate = self;
-        [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
-
-        if([self.delegate respondsToSelector:@selector(photosViewController:maximumZoomScaleForPhoto:)]) {
-            CGFloat maximumZoomScale = [self.delegate photosViewController:self maximumZoomScaleForPhoto:photo];
-            photoViewController.scalingImageView.maximumZoomScale = maximumZoomScale;
+        UIView <NYTCustomPhotoView> *customView;
+        if ([self.delegate respondsToSelector:@selector(photosViewController:customViewForPhoto:)]) {
+            customView = [self.delegate photosViewController:self customViewForPhoto:photo];
         }
-
+        
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo customView:customView loadingView:loadingView notificationCenter:self.notificationCenter];
+        photoViewController.delegate = self;
+        if (!customView) {
+            [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
+            
+            if([self.delegate respondsToSelector:@selector(photosViewController:maximumZoomScaleForPhoto:)]) {
+                CGFloat maximumZoomScale = [self.delegate photosViewController:self maximumZoomScaleForPhoto:photo];
+                photoViewController.scalingImageView.maximumZoomScale = maximumZoomScale;
+            }
+        }
         return photoViewController;
     }
     
