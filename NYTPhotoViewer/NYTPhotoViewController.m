@@ -8,6 +8,7 @@
 
 #import "NYTPhotoViewController.h"
 #import "NYTPhoto.h"
+#import "NYTCustomPhotoView.h"
 #import "NYTScalingImageView.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
@@ -43,14 +44,14 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhoto:nil loadingView:nil notificationCenter:nil];
+    return [self initWithPhoto:nil customView:nil loadingView:nil notificationCenter:nil];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithPhoto:nil loadingView:nil notificationCenter:nil];
+        [self commonInitWithPhoto:nil customView:nil loadingView:nil notificationCenter:nil];
     }
 
     return self;
@@ -61,20 +62,29 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     
     [self.notificationCenter addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
     
-    self.scalingImageView.frame = self.view.bounds;
-    [self.view addSubview:self.scalingImageView];
+    if (self.customView) {
+        self.customView.frame = self.view.bounds;
+        [self.view addSubview:self.customView];
+    } else {
+        self.scalingImageView.frame = self.view.bounds;
+        [self.view addSubview:self.scalingImageView];
+        
+        [self.view addGestureRecognizer:self.doubleTapGestureRecognizer];
+        [self.view addGestureRecognizer:self.longPressGestureRecognizer];
+    }
     
     [self.view addSubview:self.loadingView];
     [self.loadingView sizeToFit];
-    
-    [self.view addGestureRecognizer:self.doubleTapGestureRecognizer];
-    [self.view addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.scalingImageView.frame = self.view.bounds;
+    if (self.customView) {
+        self.customView.frame = self.view.bounds;
+    } else {
+        self.scalingImageView.frame = self.view.bounds;
+    }
     
     [self.loadingView sizeToFit];
     self.loadingView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
@@ -82,36 +92,41 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 #pragma mark - NYTPhotoViewController
 
-- (instancetype)initWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
+- (instancetype)initWithPhoto:(id <NYTPhoto>)photo customView:(nullable UIView <NYTCustomPhotoView> *)customView loadingView:(nullable UIView *)loadingView notificationCenter:(nullable NSNotificationCenter *)notificationCenter {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        [self commonInitWithPhoto:photo loadingView:loadingView notificationCenter:notificationCenter];
+        [self commonInitWithPhoto:photo customView:customView loadingView:loadingView notificationCenter:notificationCenter];
     }
     
     return self;
 }
 
-- (void)commonInitWithPhoto:(id <NYTPhoto>)photo loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
+- (void)commonInitWithPhoto:(id <NYTPhoto>)photo customView:(UIView <NYTCustomPhotoView> *)customView loadingView:(UIView *)loadingView notificationCenter:(NSNotificationCenter *)notificationCenter {
     _photo = photo;
     
-    if (photo.imageData) {
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photo.imageData frame:CGRectZero];
-    }
-    else {
-        UIImage *photoImage = photo.image ?: photo.placeholderImage;
-        _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
-        
-        if (!photoImage) {
-            [self setupLoadingView:loadingView];
+    if (customView) {
+        _customView = customView;
+        [_customView updatePhoto:photo];
+    } else {
+        if (photo.imageData) {
+            _scalingImageView = [[NYTScalingImageView alloc] initWithImageData:photo.imageData frame:CGRectZero];
         }
+        else {
+            UIImage *photoImage = photo.image ?: photo.placeholderImage;
+            _scalingImageView = [[NYTScalingImageView alloc] initWithImage:photoImage frame:CGRectZero];
+            
+            if (!photoImage) {
+                [self setupLoadingView:loadingView];
+            }
+        }
+        
+        _scalingImageView.delegate = self;
+        
+        [self setupGestureRecognizers];
     }
     
-    _scalingImageView.delegate = self;
-
     _notificationCenter = notificationCenter;
-
-    [self setupGestureRecognizers];
 }
 
 - (void)setupLoadingView:(UIView *)loadingView {
@@ -126,7 +141,11 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 - (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
     id <NYTPhoto> photo = notification.object;
     if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
-        [self updateImage:photo.image imageData:photo.imageData];
+        if (self.customView) {
+            [_customView updatePhoto:photo];
+        } else {
+            [self updateImage:photo.image imageData:photo.imageData];
+        }
     }
 }
 
