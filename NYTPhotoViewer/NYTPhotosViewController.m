@@ -62,6 +62,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)dealloc {
     _pageViewController.dataSource = nil;
     _pageViewController.delegate = nil;
+
+    [_notificationCenter removeObserver:self];
 }
 
 #pragma mark - NSObject(UIResponderStandardEditActions)
@@ -124,6 +126,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
     
     self.transitionController.endingView = endingView;
+
+    [self.notificationCenter addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -339,6 +343,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)updateImageForPhoto:(id <NYTPhoto>)photo {
     [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
+}
+
+- (void)photoImageUpdatedWithNotification:(NSNotification *)notification {
+    [self updateOverlayInformation];
 }
 
 #pragma mark - Gesture Recognizers
