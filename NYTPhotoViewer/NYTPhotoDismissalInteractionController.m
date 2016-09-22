@@ -94,6 +94,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
                 }
             }
             
+            fromView.backgroundColor = [fromView.backgroundColor colorWithAlphaComponent:1.0];
             self.viewToHideWhenBeginningTransition.alpha = 1.0;
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
