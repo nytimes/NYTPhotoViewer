@@ -1,5 +1,0 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANIMATED_GIF_SUPPORT=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FLAnimatedImage" "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FLAnimatedImage" -isystem "${PODS_ROOT}/Headers/Public/NYTPhotoViewer" -isystem "${PODS_ROOT}/Headers/Public/OCMock"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FLAnimatedImage" -l"NYTPhotoViewer" -framework "CoreGraphics" -framework "Foundation" -framework "ImageIO" -framework "MobileCoreServices" -framework "QuartzCore" -framework "UIKit"
-PODS_ROOT = ${SRCROOT}/Pods

@@ -1,7 +1,8 @@
 # NYTPhotoViewer
 
-[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
-[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
@@ -18,10 +19,24 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Installation
 
-NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+### Carthage
+
+NYTPhotoViewer may be installed via [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your `Cartfile`:
 
 ```
-pod 'NYTPhotoViewer', '~> 1.0.0'
+github "NYTimes/NYTPhotoViewer"
+```
+
+Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `FLAnimatedImage` frameworks into your project.
+
+If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
+
+### Cocoapods
+
+NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
+
+```
+pod 'NYTPhotoViewer', '~> 1.1.0'
 ```
 
 ## Requirements
@@ -34,9 +49,7 @@ See [`CHANGELOG.md`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHAN
 
 ## Swift
 
-NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. You’ll need to include an [Objective-C bridging header](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) like [this one from the sample Swift project](Example/NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h).
-
-If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
+NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
 
 ## Inspiration
 
@@ -47,12 +60,6 @@ NYTPhotoViewer draws feature inspiration from Facebook and Tweetbot’s image vi
 NYTPhotoViewer has a straightforward implementation using standard UIKit components. The viewer is a `UIViewController` and uses `UIViewController` transitioning APIs for the animated and interactive transitions, a `UIPageViewController` for horizontal swiping between images, and `UIScrollView` for image zooming.
 
 It is intended to be used without the need for subclassing, and as such it accepts model objects conforming to a `NYTPhoto` protocol and provides ample opportunity for customization via the `NYTPhotosViewControllerDelegate`. Since standard APIs are used, the client has full control over the transitions and customization of the `NYTPhotosViewController`.
-
-## Todo
-
-- [Carthage](https://github.com/Carthage/Carthage) support (see [#61](https://github.com/NYTimes/NYTPhotoViewer/issues/61)).
-- Animate bounds changes like Tweetbot and Facebook.
-- Publicly expose the data source property.
 
 ## License
 

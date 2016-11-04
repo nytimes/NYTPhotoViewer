@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
-  s.version          = "1.0.0"
+  s.version          = "1.2.0"
 
   s.description      = <<-DESC
                        NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'Core' do |ss|
-    ss.ios.resource_bundle = { s.name => ['Pod/Assets/ios/*.png'] }
-    ss.source_files = 'Pod/Classes/**/*'
+    ss.ios.resource_bundle = { s.name => ['NYTPhotoViewer/NYTPhotoViewer.bundle/*'] }
+    ss.source_files = 'NYTPhotoViewer/**/*.{h,m,swift}'
     ss.frameworks = 'UIKit', 'Foundation'
   end
 
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1'}
 
     ss.dependency 'NYTPhotoViewer/Core'
-    ss.dependency 'FLAnimatedImage', '~> 1.0.8'
+    ss.dependency 'FLAnimatedImage', '~> 1.0.12'
   end
 
 end
