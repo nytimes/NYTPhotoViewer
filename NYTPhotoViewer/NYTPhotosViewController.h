@@ -76,6 +76,11 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, readonly, nullable) NYTPhotosOverlayView *overlayView;
 
 /**
+ *  Shows all content under status bar frame. Default NO.
+ */
+@property (nonatomic) BOOL underStatusBar;
+    
+/**
  *  The left bar button item overlaying the photo.
  */
 @property (nonatomic, nullable) UIBarButtonItem *leftBarButtonItem;
