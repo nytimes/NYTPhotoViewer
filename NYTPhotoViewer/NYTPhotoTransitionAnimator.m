@@ -18,6 +18,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 @interface NYTPhotoTransitionAnimator ()
 
 @property (nonatomic, readonly) BOOL shouldPerformZoomingAnimation;
+@property (nonatomic, weak) UIViewController *toViewController;
+@property (nonatomic, weak) UIViewController *fromViewController;
 
 @end
 
@@ -46,8 +48,12 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
 
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    toView.frame = [transitionContext finalFrameForViewController:toViewController];
+    self.toViewController =  [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    self.fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    toView.frame = [transitionContext finalFrameForViewController:self.toViewController];
+    [self.toViewController beginAppearanceTransition:YES animated:YES];
+    [self.fromViewController beginAppearanceTransition:NO animated:YES];
     
     if (![toView isDescendantOfView:transitionContext.containerView]) {
         [transitionContext.containerView addSubview:toView];
@@ -253,6 +259,10 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 }
 
 #pragma mark - UIViewControllerAnimatedTransitioning
+- (void)animationEnded:(BOOL)transitionCompleted {
+    [self.toViewController endAppearanceTransition];
+    [self.fromViewController endAppearanceTransition];
+}
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
     if (self.shouldPerformZoomingAnimation) {
