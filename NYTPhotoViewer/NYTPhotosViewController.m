@@ -7,7 +7,7 @@
 //
 
 #import "NYTPhotosViewController.h"
-#import "NYTPhotosViewControllerDataSource.h"
+#import "NYTPhotoViewerDataSource.h"
 #import "NYTPhotoViewerArrayDataSource.h"
 #import "NYTPhotoViewController.h"
 #import "NYTPhotoTransitionController.h"
@@ -33,7 +33,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
+@property (nonatomic) id <NYTPhotoViewerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
 @property (nonatomic) UIPopoverController *activityPopoverController;
