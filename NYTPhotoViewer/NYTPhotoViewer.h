@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char NYTPhotoViewerVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NYTPhotoViewer/PublicHeader.h>
 #import <NYTPhotoViewer/NYTPhotoCaptionView.h>
 #import <NYTPhotoViewer/NYTPhotoDismissalInteractionController.h>
-#import <NYTPhotoViewer/NYTPhotosDataSource.h>
+#import <NYTPhotoViewer/NYTPhotoViewerArrayDataSource.h>
 #import <NYTPhotoViewer/NYTPhotosOverlayView.h>
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import <NYTPhotoViewer/NYTPhotoTransitionAnimator.h>

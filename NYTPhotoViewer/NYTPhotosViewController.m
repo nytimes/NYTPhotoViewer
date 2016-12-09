@@ -8,7 +8,7 @@
 
 #import "NYTPhotosViewController.h"
 #import "NYTPhotosViewControllerDataSource.h"
-#import "NYTPhotosDataSource.h"
+#import "NYTPhotoViewerArrayDataSource.h"
 #import "NYTPhotoViewController.h"
 #import "NYTPhotoTransitionController.h"
 #import "NYTScalingImageView.h"
@@ -174,7 +174,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
-    _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+    _dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:photos];
     _delegate = delegate;
 
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];

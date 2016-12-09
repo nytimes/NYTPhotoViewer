@@ -1,5 +1,5 @@
 //
-//  NYTPhotosDataSource.h
+//  NYTPhotoViewerArrayDataSource.h
 //  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
@@ -13,9 +13,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  A concrete implementation of the `NYTPhotosViewControllerDataSource`.
+ *  A simple concrete implementation of `NYTPhotoViewerDataSource`, for use with an array of images.
  */
-@interface NYTPhotosDataSource : NSObject <NYTPhotosViewControllerDataSource>
+@interface NYTPhotoViewerArrayDataSource : NSObject <NYTPhotosViewControllerDataSource>
 
 /**
  *  The designated initializer that takes and stores an array of photos.

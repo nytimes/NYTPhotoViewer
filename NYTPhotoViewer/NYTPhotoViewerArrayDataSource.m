@@ -1,20 +1,20 @@
 //
-//  NYTPhotosDataSource.m
+//  NYTPhotoViewerArrayDataSource.m
 //  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
 //
 //
 
-#import "NYTPhotosDataSource.h"
+#import "NYTPhotoViewerArrayDataSource.h"
 
-@interface NYTPhotosDataSource ()
+@interface NYTPhotoViewerArrayDataSource ()
 
-@property (nonatomic, copy) NSArray *photos;
+@property (nonatomic, readonly) NSArray *photos;
 
 @end
 
-@implementation NYTPhotosDataSource
+@implementation NYTPhotoViewerArrayDataSource
 
 #pragma mark - NSObject
 
@@ -28,7 +28,7 @@
     self = [super init];
     
     if (self) {
-        _photos = photos;
+        _photos = [photos copy];
     }
     
     return self;
