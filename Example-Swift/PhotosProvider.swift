@@ -24,12 +24,12 @@ class PhotosProvider: NSObject {
         var image = UIImage(named: PrimaryImageName)
         let NumberOfPhotos = 5
         
-        func shouldSetImageOnIndex(photoIndex: Int) -> Bool {
+        func shouldSetImageOnIndex(_ photoIndex: Int) -> Bool {
             return photoIndex != CustomEverythingPhotoIndex && photoIndex != DefaultLoadingSpinnerPhotoIndex
         }
         
         for photoIndex in 0 ..< NumberOfPhotos {
-            let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+            let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.white])
             
             let photo = shouldSetImageOnIndex(photoIndex) ? ExamplePhoto(image: image, attributedCaptionTitle: title) : ExamplePhoto(attributedCaptionTitle: title)
             
