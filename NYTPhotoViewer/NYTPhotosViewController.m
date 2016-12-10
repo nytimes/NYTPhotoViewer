@@ -203,7 +203,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     NYTPhotoViewController *initialPhotoViewController;
     
-    if ([self.dataSource containsPhoto:initialPhoto]) {
+    if ([self.dataSource indexOfPhoto:initialPhoto] != NSNotFound) {
         initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
     }
     else {
@@ -228,21 +228,19 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)updateOverlayInformation {
     NSString *overlayTitle;
-    
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
+    NSInteger displayIndex = photoIndex + 1;
     
     if ([self.delegate respondsToSelector:@selector(photosViewController:titleForPhoto:atIndex:totalPhotoCount:)]) {
         overlayTitle = [self.delegate photosViewController:self titleForPhoto:self.currentlyDisplayedPhoto atIndex:photoIndex totalPhotoCount:self.dataSource.numberOfPhotos];
     }
-    
-    if (!overlayTitle && self.dataSource.numberOfPhotos > 1) {
-        NSUInteger displayIndex = 1;
-        
-        if (photoIndex < self.dataSource.numberOfPhotos) {
-            displayIndex = photoIndex + 1;
-        }
 
-        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
+    if (!overlayTitle && self.dataSource.numberOfPhotos == nil) {
+        overlayTitle = [NSString localizedStringWithFormat:@"%lu", (unsigned long)displayIndex];
+    }
+    
+    if (!overlayTitle && self.dataSource.numberOfPhotos.integerValue > 1) {
+        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos.integerValue];
     }
     
     self.overlayView.title = overlayTitle;
@@ -328,7 +326,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
-    if (![self.dataSource containsPhoto:photo]) {
+    if ([self.dataSource indexOfPhoto:photo] == NSNotFound) {
         return;
     }
     

@@ -194,7 +194,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return The text to display as the navigation-item title for the given photo. Return `nil` to show a default title like "1 of 4" indicating progress in a slideshow, or an empty string to hide this text entirely.
  */
-- (NSString * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id <NYTPhoto>)photo atIndex:(NSInteger)photoIndex totalPhotoCount:(NSNumber *)totalPhotoCount;
+- (NSString * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id <NYTPhoto>)photo atIndex:(NSInteger)photoIndex totalPhotoCount:(nullable NSNumber *)totalPhotoCount;
 
 /**
  *  Returns a view to display while a photo is loading. Can be any `UIView` object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image or its placeholder is loaded.

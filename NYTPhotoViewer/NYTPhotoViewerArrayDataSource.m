@@ -42,11 +42,11 @@
 
 #pragma mark - NYTPhotosViewControllerDataSource
 
-- (NSUInteger)numberOfPhotos {
-    return self.photos.count;
+- (NSNumber *)numberOfPhotos {
+    return @(self.photos.count);
 }
 
-- (id <NYTPhoto>)photoAtIndex:(NSUInteger)photoIndex {
+- (id <NYTPhoto>)photoAtIndex:(NSInteger)photoIndex {
     if (photoIndex < self.photos.count) {
         return self.photos[photoIndex];
     }
@@ -54,7 +54,7 @@
     return nil;
 }
 
-- (NSUInteger)indexOfPhoto:(id <NYTPhoto>)photo {
+- (NSInteger)indexOfPhoto:(id <NYTPhoto>)photo {
     return [self.photos indexOfObject:photo];
 }
 
