@@ -1,7 +1,8 @@
 # NYTPhotoViewer
 
-[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
-[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
@@ -48,9 +49,7 @@ See [`CHANGELOG.md`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHAN
 
 ## Swift
 
-NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. You’ll need to include an [Objective-C bridging header](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) like [this one from the sample Swift project](Example/NYTPhotoViewer-Swift/NYTPhotoViewer-Swift-Bridging-Header.h).
-
-If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
+NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
 
 ## Inspiration
 
