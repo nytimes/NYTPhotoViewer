@@ -20,8 +20,9 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 [self presentViewController:photosViewController animated:YES completion:nil];
 ```
 
-Sample object that adheres to the protocol: [NYTExamplePhoto.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/NYTPhotoViewer/Protocols/NYTPhoto.h)
-Sample code of creating the array of objects [NYTViewController.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/Example/NYTViewController.m#L58)
+Sample object that adheres to the protocol: [NYTExamplePhoto.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/Example/NYTExamplePhoto.h)
+
+Sample code of creating the array of objects and displaying the ViewController: [NYTViewController.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/Example/NYTViewController.m#L58)
 
 
 ## Installation
