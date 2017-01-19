@@ -10,12 +10,19 @@ NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom,
 
 ## Usage
 
-Usage is simple, with the option for more complicated customization when needed through a delegate relationship. In the most basic implementation, just initialize the view controller with an array of photo objects and present it as normal:
+Usage is simple, with the option for more complicated customization when needed through a delegate relationship. In the most basic implementation, just initialize the view controller with an array of custom objects that implement the [NYTPhoto.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/NYTPhotoViewer/Protocols/NYTPhoto.h) protocol and present it as normal. 
+
 
 ```objc
+#import "NYTPhotosViewController.h"
+
 NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 [self presentViewController:photosViewController animated:YES completion:nil];
 ```
+
+Sample object that adheres to the protocol: [NYTExamplePhoto.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/NYTPhotoViewer/Protocols/NYTPhoto.h)
+Sample code of creating the array of objects [NYTViewController.h](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/Example/NYTViewController.m#L58)
+
 
 ## Installation
 
