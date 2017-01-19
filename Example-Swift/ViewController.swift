@@ -25,7 +25,7 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     
     func updateImagesOnPhotosViewController(_ photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
         
-        let delayTime = DispatchTime.now() + Double(5 * Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
+        let delayTime = DispatchTime.now() + 5.0
         
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
             for photo in self.photos {
