@@ -333,9 +333,27 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [self updateOverlayInformation];
 }
 
-//- (void)updateImageForPhoto:(id <NYTPhoto>)photo {
-//    [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
-//}
+- (void)updatePhotoAtIndex:(NSInteger)photoIndex {
+    id<NYTPhoto> photo = [self.dataSource photoAtIndex:photoIndex];
+    if (!photo) {
+        return;
+    }
+
+    [self updatePhoto:photo];
+}
+
+- (void)updatePhoto:(id<NYTPhoto>)photo {
+    if ([self.dataSource indexOfPhoto:photo] == NSNotFound) {
+        return;
+    }
+
+    [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
+
+    id<NYTPhotoContainer> currentViewController = self.pageViewController.viewControllers.firstObject;
+    if (currentViewController.photo == photo) {
+        [self updateOverlayInformation];
+    }
+}
 
 #pragma mark - Gesture Recognizers
 

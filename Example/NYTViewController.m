@@ -47,7 +47,8 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
         for (NYTExamplePhoto *photo in dataSource.photos) {
             if (!photo.image && !photo.imageData) {
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-//                [photosViewController updateImageForPhoto:photo];
+                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"photo which previously had a loading spinner (reopen the photo viewer and scroll to here to see it)" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+                [photosViewController updatePhoto:photo];
             }
         }
     });

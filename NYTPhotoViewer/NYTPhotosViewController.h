@@ -128,6 +128,22 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)displayPhoto:(id <NYTPhoto> _Nullable)photo animated:(BOOL)animated;
 
+/**
+ *  Informs the photo viewer that the photo in the data source at this index has changed.
+ *
+ *  In response, the photo viewer will retrieve and update the overlay information and the photo itself.
+ */
+- (void)updatePhotoAtIndex:(NSInteger)photoIndex;
+
+/**
+ *  Informs the photo viewer that the given photo in the data source has changed.
+ *
+ *  In response, the photo viewer will retrieve and update the overlay information and the photo itself.
+ *
+ *  This method has no effect if the photo doesn't exist in the data source.
+ */
+- (void)updatePhoto:(id<NYTPhoto>)photo;
+
 @end
 
 /**
