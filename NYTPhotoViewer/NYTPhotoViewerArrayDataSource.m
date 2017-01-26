@@ -8,12 +8,6 @@
 
 #import "NYTPhotoViewerArrayDataSource.h"
 
-@interface NYTPhotoViewerArrayDataSource ()
-
-@property (nonatomic, readonly) NSArray *photos;
-
-@end
-
 @implementation NYTPhotoViewerArrayDataSource
 
 #pragma mark - NSObject
@@ -24,7 +18,7 @@
 
 #pragma mark - NYTPhotosDataSource
 
-- (instancetype)initWithPhotos:(NSArray *)photos {
+- (instancetype)initWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos {
     self = [super init];
     
     if (self) {
@@ -46,7 +40,7 @@
     return @(self.photos.count);
 }
 
-- (id <NYTPhoto>)photoAtIndex:(NSInteger)photoIndex {
+- (nullable id <NYTPhoto>)photoAtIndex:(NSInteger)photoIndex {
     if (photoIndex < self.photos.count) {
         return self.photos[photoIndex];
     }
@@ -58,12 +52,10 @@
     return [self.photos indexOfObject:photo];
 }
 
-- (BOOL)containsPhoto:(id <NYTPhoto>)photo {
-    return [self.photos containsObject:photo];
-}
+#pragma mark - Subscripting
 
-- (id <NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)photoIndex {
-    return [self photoAtIndex:photoIndex];
+- (id<NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx {
+    return self.photos[idx];
 }
 
 @end

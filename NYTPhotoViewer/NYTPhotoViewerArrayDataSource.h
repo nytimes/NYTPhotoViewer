@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  A simple concrete implementation of `NYTPhotoViewerDataSource`, for use with an array of images.
  */
-@interface NYTPhotoViewerArrayDataSource : NSObject <NYTPhotoViewerDataSource>
+@interface NYTPhotoViewerArrayDataSource : NSObject <NYTPhotoViewerDataSource, NSFastEnumeration>
+
+@property (nonatomic, readonly) NSArray<id<NYTPhoto>> *photos;
 
 /**
  *  The designated initializer that takes and stores an array of photos.
@@ -24,7 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return A fully initialized object.
  */
-- (instancetype)initWithPhotos:(nullable NSArray *)photos NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos NS_DESIGNATED_INITIALIZER;
+
+- (id<NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @end
 
