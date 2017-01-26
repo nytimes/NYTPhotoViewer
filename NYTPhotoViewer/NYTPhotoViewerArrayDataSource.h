@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos NS_DESIGNATED_INITIALIZER;
 
++ (instancetype)dataSourceWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos;
+
 - (id<NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @end

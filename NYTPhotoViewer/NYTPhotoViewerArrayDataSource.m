@@ -28,6 +28,10 @@
     return self;
 }
 
++ (instancetype)dataSourceWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos {
+    return [[self alloc] initWithPhotos:photos];
+}
+
 #pragma mark - NSFastEnumeration
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)length {
