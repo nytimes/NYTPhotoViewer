@@ -33,7 +33,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic) id <NYTPhotoViewerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
 @property (nonatomic) UIPopoverController *activityPopoverController;
@@ -87,14 +86,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhotos:nil];
+    return [self initWithDataSource:[NYTPhotoViewerArrayDataSource dataSourceWithPhotos:@[]] initialPhoto:nil delegate:nil];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithPhotos:nil initialPhoto:nil delegate:nil];
+        [self commonInitWithDataSource:[NYTPhotoViewerArrayDataSource dataSourceWithPhotos:@[]] initialPhoto:nil delegate:nil];
     }
 
     return self;
@@ -155,26 +154,25 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - NYTPhotosViewController
 
-- (instancetype)initWithPhotos:(NSArray *)photos {
-    return [self initWithPhotos:photos initialPhoto:photos.firstObject delegate:nil];
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhotoIndex:(NSInteger)initialPhotoIndex delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+    id <NYTPhoto> initialPhoto = [dataSource photoAtIndex:initialPhotoIndex];
+
+    self = [self initWithDataSource:dataSource initialPhoto:initialPhoto delegate:delegate];
+    return self;
 }
 
-- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
-    return [self initWithPhotos:photos initialPhoto:initialPhoto delegate:nil];
-}
-
-- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        [self commonInitWithPhotos:photos initialPhoto:initialPhoto delegate:delegate];
+        [self commonInitWithDataSource:dataSource initialPhoto:initialPhoto delegate:delegate];
     }
     
     return self;
 }
 
-- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
-    _dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:photos];
+- (void)commonInitWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+    _dataSource = dataSource;
     _delegate = delegate;
 
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
@@ -207,7 +205,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
     }
     else {
-        initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.dataSource[0]];
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:0]];
     }
     
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
@@ -335,9 +333,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [self updateOverlayInformation];
 }
 
-- (void)updateImageForPhoto:(id <NYTPhoto>)photo {
-    [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
-}
+//- (void)updateImageForPhoto:(id <NYTPhoto>)photo {
+//    [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
+//}
 
 #pragma mark - Gesture Recognizers
 
@@ -513,12 +511,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
-    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex - 1]];
+    return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(photoIndex - 1)]];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
-    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex + 1]];
+    return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(photoIndex + 1)]];
 }
 
 #pragma mark - UIPageViewControllerDelegate

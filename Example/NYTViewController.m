@@ -8,6 +8,7 @@
 
 #import "NYTViewController.h"
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
+#import <NYTPhotoViewer/NYTPhotoViewerArrayDataSource.h>
 #import "NYTExamplePhoto.h"
 
 typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
@@ -23,30 +24,30 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 @interface NYTViewController () <NYTPhotosViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
-@property (nonatomic) NSArray *photos;
+@property (nonatomic) NYTPhotoViewerArrayDataSource *dataSource;
 
 @end
 
 @implementation NYTViewController
 
 - (IBAction)imageButtonTapped:(id)sender {
-    self.photos = [[self class] newTestPhotos];
-    
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
+    self.dataSource = [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:[self.class newTestPhotos]];
+
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:nil delegate:self];
 
     [self presentViewController:photosViewController animated:YES completion:nil];
     
-    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
+    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
 }
 
 // This method simulates previously blank photos loading their images after some time.
-- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
+- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        for (NYTExamplePhoto *photo in photos) {
+        for (NYTExamplePhoto *photo in dataSource.photos) {
             if (!photo.image && !photo.imageData) {
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-                [photosViewController updateImageForPhoto:photo];
+//                [photosViewController updateImageForPhoto:photo];
             }
         }
     });
@@ -109,7 +110,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexNoReferenceView]]) {
+    if ([photo isEqual:self.dataSource[NYTViewControllerPhotoIndexNoReferenceView]]) {
         return nil;
     }
     
@@ -117,7 +118,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+    if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.text = @"Custom Loading...";
         loadingLabel.textColor = [UIColor greenColor];
@@ -128,7 +129,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+    if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"Custom Caption View";
         label.textColor = [UIColor whiteColor];
@@ -140,7 +141,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
+    if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
         return 10.0f;
     }
 
@@ -148,7 +149,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+    if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
     }
     
@@ -156,7 +157,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (NSString *)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id<NYTPhoto>)photo atIndex:(NSInteger)photoIndex totalPhotoCount:(nullable NSNumber *)totalPhotoCount {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+    if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         return [NSString stringWithFormat:@"%lu/%lu", (unsigned long)photoIndex+1, (unsigned long)totalPhotoCount.integerValue];
     }
 
