@@ -22,7 +22,11 @@
     self = [super init];
     
     if (self) {
-        _photos = [photos copy];
+        if (photos == nil) {
+            _photos = @[];
+        } else {
+            _photos = [photos copy];
+        }
     }
     
     return self;
