@@ -183,12 +183,15 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self.transitioningDelegate = _transitionController;
     self.modalPresentationCapturesStatusBarAppearance = YES;
 
-    _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
-    _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
-    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
-    _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+    _overlayView = ({
+        NYTPhotosOverlayView *v = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
+        v.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
+        v.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
+        v.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+        v;
+    });
 
-    _notificationCenter = [[NSNotificationCenter alloc] init];
+    _notificationCenter = [NSNotificationCenter new];
 
     [self setupPageViewControllerWithInitialPhoto:initialPhoto];
 }
