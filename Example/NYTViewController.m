@@ -31,81 +31,46 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 @implementation NYTViewController
 
 - (IBAction)imageButtonTapped:(id)sender {
-    self.dataSource = [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:[self.class newTestPhotos]];
+    self.dataSource = [self.class newTimesBuildingDataSource];
 
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:nil delegate:self];
 
     [self presentViewController:photosViewController animated:YES completion:nil];
     
     [self updateImagesOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
+//    [self switchDataSourceOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
 }
 
 // This method simulates previously blank photos loading their images after some time.
 - (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
+    if (dataSource!= self.dataSource) {
+        return;
+    }
+
     CGFloat updateImageDelay = 5.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (NYTExamplePhoto *photo in dataSource.photos) {
             if (!photo.image && !photo.imageData) {
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"photo which previously had a loading spinner (reopen the photo viewer and scroll to here to see it)" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"Photo which previously had a loading spinner (reopen the photo viewer and scroll to here to see it)" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
                 [photosViewController updatePhoto:photo];
             }
         }
     });
 }
 
-+ (NSArray *)newTestPhotos {
-    NSMutableArray *photos = [NSMutableArray array];
-    
-    for (NSUInteger i = 0; i < NYTViewControllerPhotoCount; i++) {
-        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
-        
-        if (i == NYTViewControllerPhotoIndexGif) {
-            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
-        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
-            // no-op, left here for clarity:
-            photo.image = nil;
-        } else {
-            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-        }
-        
-        if (i == NYTViewControllerPhotoIndexCustomEverything) {
-            photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
-        }
-
-        NSString *caption = @"summary";
-        switch ((NYTViewControllerPhotoIndex)i) {
-            case NYTViewControllerPhotoIndexCustomEverything:
-                caption = @"photo with custom everything";
-                break;
-            case NYTViewControllerPhotoIndexLongCaption:
-                caption = @"photo with long caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
-                break;
-            case NYTViewControllerPhotoIndexDefaultLoadingSpinner:
-                caption = @"photo with loading spinner";
-                break;
-            case NYTViewControllerPhotoIndexNoReferenceView:
-                caption = @"photo without reference view";
-                break;
-            case NYTViewControllerPhotoIndexCustomMaxZoomScale:
-                caption = @"photo with custom maximum zoom scale";
-                break;
-            case NYTViewControllerPhotoIndexGif:
-                caption = @"animated GIF";
-                break;
-            case NYTViewControllerPhotoCount:
-                // this case statement intentionally left blank.
-                break;
-        }
-        
-        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
-        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
-        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"NYT Building Photo Credit: Nic Lehoux" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
-
-        [photos addObject:photo];
+- (void)switchDataSourceOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
+    if (dataSource!= self.dataSource) {
+        return;
     }
-    
-    return photos;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NYTExamplePhoto *photoWithLongCaption = (NYTExamplePhoto *)dataSource[NYTViewControllerPhotoIndexLongCaption];
+        photosViewController.delegate = nil; // delegate methods in this VC are intended for use with the TimesBuildingDataSource
+        self.dataSource = [self.class newVariedDataSourceIncludingPhoto:photoWithLongCaption];
+        photosViewController.dataSource = self.dataSource;
+        [photosViewController reloadPhotosAnimated:YES];
+    });
 }
 
 #pragma mark - NYTPhotosViewControllerDelegate
@@ -175,6 +140,99 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController {
     NSLog(@"Did Dismiss Photo Viewer: %@", photosViewController);
+}
+
+#pragma mark - Sample Data Sources
+
++ (NYTPhotoViewerArrayDataSource *)newTimesBuildingDataSource {
+    NSMutableArray *photos = [NSMutableArray array];
+
+    for (NSUInteger i = 0; i < NYTViewControllerPhotoCount; i++) {
+        NYTExamplePhoto *photo = [NYTExamplePhoto new];
+
+        if (i == NYTViewControllerPhotoIndexGif) {
+            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
+        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
+            // no-op, left here for clarity:
+            photo.image = nil;
+        } else {
+            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+        }
+
+        if (i == NYTViewControllerPhotoIndexCustomEverything) {
+            photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
+        }
+
+        NSString *caption = @"<photo summary>";
+        switch ((NYTViewControllerPhotoIndex)i) {
+            case NYTViewControllerPhotoIndexCustomEverything:
+                caption = @"Photo with custom everything";
+                break;
+            case NYTViewControllerPhotoIndexLongCaption:
+                caption = @"Photo with long caption.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
+                break;
+            case NYTViewControllerPhotoIndexDefaultLoadingSpinner:
+                caption = @"Photo with loading spinner";
+                break;
+            case NYTViewControllerPhotoIndexNoReferenceView:
+                caption = @"Photo without reference view";
+                break;
+            case NYTViewControllerPhotoIndexCustomMaxZoomScale:
+                caption = @"Photo with custom maximum zoom scale";
+                break;
+            case NYTViewControllerPhotoIndexGif:
+                caption = @"Animated GIF";
+                break;
+            case NYTViewControllerPhotoCount:
+                // this case statement intentionally left blank.
+                break;
+        }
+
+        photo.attributedCaptionTitle = [self attributedTitleFromString:@(i + 1).stringValue];
+        photo.attributedCaptionSummary = [self attributedSummaryFromString:caption];
+
+        if (i != NYTViewControllerPhotoIndexGif) {
+            photo.attributedCaptionCredit = [self attributedCreditFromString:@"Photo: Nic Lehoux"];
+        }
+
+        [photos addObject:photo];
+    }
+
+    return [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:photos];
+}
+
+/// A second set of test photos, to demonstrate reloading the entire data source.
++ (NYTPhotoViewerArrayDataSource *)newVariedDataSourceIncludingPhoto:(NYTExamplePhoto *)photo {
+    NSMutableArray *photos = [NSMutableArray array];
+
+    [photos addObject:({
+        NYTExamplePhoto *p = [NYTExamplePhoto new];
+        p.image = [UIImage imageNamed:@"Chess"];
+        p.attributedCaptionTitle = [self attributedTitleFromString:@"Chess"];
+        p.attributedCaptionCredit = [self attributedCreditFromString:@"Photo: Chris Dzombak"];
+        p;
+    })];
+
+    [photos addObject:({
+        NYTExamplePhoto *p = photo;
+        photo.attributedCaptionTitle = nil;
+        p.attributedCaptionSummary = [self attributedSummaryFromString:@"This photo’s caption has changed in the data source."];
+        p;
+    })];
+    
+    return [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:photos];
+}
+
++ (NSAttributedString *)attributedTitleFromString:(NSString *)caption {
+    return [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+}
+
++ (NSAttributedString *)attributedSummaryFromString:(NSString *)summary {
+    return [[NSAttributedString alloc] initWithString:summary attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+}
+
++ (NSAttributedString *)attributedCreditFromString:(NSString *)credit {
+    return [[NSAttributedString alloc] initWithString:credit attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
 }
 
 @end
