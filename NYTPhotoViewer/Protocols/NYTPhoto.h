@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  The model for photos displayed in an `NYTPhotosViewController`.
+ *
+ *  Your models (or boxes, if working with Swift value types) should override `isEqual:` to provide a concept of identity for the PhotoViewer to work with. 
  */
 @protocol NYTPhoto <NSObject>
 
