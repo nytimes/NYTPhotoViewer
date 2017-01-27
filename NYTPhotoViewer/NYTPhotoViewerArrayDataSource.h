@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param photos An array of objects conforming to the `NYTPhoto` protocol.
  *
- *  @return A fully initialized object.
+ *  @return A fully initialized data source.
  */
 - (instancetype)initWithPhotos:(nullable NSArray<id<NYTPhoto>> *)photos NS_DESIGNATED_INITIALIZER;
 
