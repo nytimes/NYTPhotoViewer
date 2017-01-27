@@ -52,6 +52,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
 
+@property (nonatomic, nullable) id<NYTPhoto> initialPhoto;
+
 @end
 
 @implementation NYTPhotosViewController
@@ -101,6 +103,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self configurePageViewControllerWithInitialPhoto];
 
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];
@@ -174,6 +178,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)commonInitWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     _dataSource = dataSource;
     _delegate = delegate;
+    _initialPhoto = initialPhoto;
 
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
     _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
@@ -193,24 +198,22 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     _notificationCenter = [NSNotificationCenter new];
 
-    [self setupPageViewControllerWithInitialPhoto:initialPhoto];
-}
-
-- (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(NYTPhotosViewControllerInterPhotoSpacing)}];
-    
+
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
-    
+}
+
+- (void)configurePageViewControllerWithInitialPhoto {
     NYTPhotoViewController *initialPhotoViewController;
-    
-    if ([self.dataSource indexOfPhoto:initialPhoto] != NSNotFound) {
-        initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
+
+    if (self.initialPhoto != nil && [self.dataSource indexOfPhoto:self.initialPhoto] != NSNotFound) {
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.initialPhoto];
     }
     else {
         initialPhotoViewController = [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:0]];
     }
-    
+
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
 }
 
