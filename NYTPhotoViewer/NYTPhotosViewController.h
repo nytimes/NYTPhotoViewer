@@ -132,6 +132,8 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  Informs the photo viewer that the photo in the data source at this index has changed.
  *
  *  In response, the photo viewer will retrieve and update the overlay information and the photo itself.
+ *
+ *  This method has no effect if the given index is out of bounds in the data source.
  */
 - (void)updatePhotoAtIndex:(NSInteger)photoIndex;
 
