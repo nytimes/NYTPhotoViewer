@@ -443,8 +443,16 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     if (!viewController) {
         return;
     }
+
+    if (viewController.photo == self.currentlyDisplayedPhoto) {
+        animated = NO;
+    }
+
+    NSInteger currentIdx = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
+    NSInteger newIdx = [self.dataSource indexOfPhoto:viewController.photo];
+    UIPageViewControllerNavigationDirection direction = (newIdx < currentIdx) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward;
     
-    [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
+    [self.pageViewController setViewControllers:@[viewController] direction:direction animated:animated completion:nil];
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
