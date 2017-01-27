@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 
 // This method simulates previously blank photos loading their images after some time.
 - (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
-    if (dataSource!= self.dataSource) {
+    if (dataSource != self.dataSource) {
         return;
     }
 
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 - (void)switchDataSourceOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
-    if (dataSource!= self.dataSource) {
+    if (dataSource != self.dataSource) {
         return;
     }
 
