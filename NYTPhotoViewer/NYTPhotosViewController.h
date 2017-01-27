@@ -56,8 +56,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 /**
  *  The data source underlying this PhotosViewController.
+ *
+ *  After setting a new data source, you must call `-reloadPhotosAnimated:`.
+ *
+ *  The data source is retained (unlike UITableView's data source).
  */
-@property (nonatomic, readonly) id <NYTPhotoViewerDataSource> dataSource;
+@property (nonatomic) id <NYTPhotoViewerDataSource> dataSource;
 
 /**
  *  The object conforming to `NYTPhoto` that is currently being displayed by the `pageViewController`.
