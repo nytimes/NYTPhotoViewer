@@ -349,8 +349,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
 
-    id<NYTPhotoContainer> currentViewController = self.pageViewController.viewControllers.firstObject;
-    if (currentViewController.photo == photo) {
+    if (self.currentlyDisplayedPhoto == photo) {
         [self updateOverlayInformation];
     }
 }
