@@ -134,6 +134,8 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  In response, the photo viewer will retrieve and update the overlay information and the photo itself.
  *
  *  This method has no effect if the given index is out of bounds in the data source.
+ *
+ *  @param photo The index of the photo which changed in the data source.
  */
 - (void)updatePhotoAtIndex:(NSInteger)photoIndex;
 
@@ -143,6 +145,8 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  In response, the photo viewer will retrieve and update the overlay information and the photo itself.
  *
  *  This method has no effect if the photo doesn't exist in the data source.
+ *
+ *  @param photo The photo which changed in the data source.
  */
 - (void)updatePhoto:(id<NYTPhoto>)photo;
 
