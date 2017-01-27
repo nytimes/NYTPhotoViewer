@@ -154,6 +154,13 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)updatePhoto:(id<NYTPhoto>)photo;
 
+/**
+ *  Tells the photo viewer to reload all data from its data source.
+ *
+ *  @param animated Whether any resulting transitions should be animated.
+ */
+- (void)reloadPhotosAnimated:(BOOL)animated;
+
 @end
 
 /**

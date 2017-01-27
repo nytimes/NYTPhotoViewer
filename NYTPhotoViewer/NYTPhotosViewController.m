@@ -354,6 +354,22 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
 }
 
+- (void)reloadPhotosAnimated:(BOOL)animated {
+    id<NYTPhoto> newCurrentPhoto;
+
+    if ([self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto] != NSNotFound) {
+        newCurrentPhoto = self.currentlyDisplayedPhoto;
+    } else {
+        newCurrentPhoto = [self.dataSource photoAtIndex:0];
+    }
+
+    [self displayPhoto:newCurrentPhoto animated:animated];
+
+    if (self.overlayView.hidden) {
+        [self setOverlayViewHidden:NO animated:animated];
+    }
+}
+
 #pragma mark - Gesture Recognizers
 
 - (void)didSingleTapWithGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer {
