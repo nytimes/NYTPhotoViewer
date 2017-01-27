@@ -158,6 +158,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - NYTPhotosViewController
 
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource {
+    return [self initWithDataSource:dataSource initialPhoto:nil delegate:nil];
+}
+
 - (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhotoIndex:(NSInteger)initialPhotoIndex delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     id <NYTPhoto> initialPhoto = [dataSource photoAtIndex:initialPhotoIndex];
 

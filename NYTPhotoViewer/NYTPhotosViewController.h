@@ -101,13 +101,22 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, weak, nullable) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
+ *  Initializes a `PhotosViewController` with the given data source, initially displaying the first photo in the data source.
+ *
+ *  @param dataSource The data source underlying this photo viewer.
+ *
+ *  @return A fully initialized `PhotosViewController` instance.
+ */
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource;
+
+/**
  *  Initializes a `PhotosViewController` with the given data source and delegate, initially displaying the photo at the given index in the data source.
  *
  *  @param dataSource        The data source underlying this photo viewer.
  *  @param initialPhotoIndex The photo to display initially. If outside the bounds of the data source, the first photo from the data source will be displayed.
  *  @param delegate          The delegate for this `NYTPhotosViewController`.
  *
- *  @return A fully initialized object.
+ *  @return A fully initialized `PhotosViewController` instance.
  */
 - (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhotoIndex:(NSInteger)initialPhotoIndex delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate;
 
@@ -118,7 +127,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param initialPhoto The photo to display initially. Must be a member of the data source. If `nil` or not a member of the data source, the first photo from the data source will be displayed.
  *  @param delegate     The delegate for this `NYTPhotosViewController`.
  *
- *  @return A fully initialized object.
+ *  @return A fully initialized `PhotosViewController` instance.
  */
 - (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
