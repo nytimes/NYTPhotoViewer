@@ -3,7 +3,7 @@
 //  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/11/15.
-//
+//  Copyright (c) 2017 The New York Times Company. All rights reserved.
 //
 
 @import Foundation;
