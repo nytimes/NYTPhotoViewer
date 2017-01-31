@@ -36,12 +36,15 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:nil delegate:self];
 
     [self presentViewController:photosViewController animated:YES completion:nil];
-    
+
     [self updateImagesOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
-//    [self switchDataSourceOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
+    BOOL demonstrateDataSourceSwitchAfterTenSeconds = NO;
+    if (demonstrateDataSourceSwitchAfterTenSeconds) {
+        [self switchDataSourceOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
+    }
 }
 
-// This method simulates previously blank photos loading their images after some time.
+// This method simulates a previously blank photo loading its images after 5 seconds.
 - (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
     if (dataSource != self.dataSource) {
         return;
@@ -59,12 +62,13 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     });
 }
 
+// This method simulates completely swapping out the data source, after 10 seconds.
 - (void)switchDataSourceOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
     if (dataSource != self.dataSource) {
         return;
     }
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NYTExamplePhoto *photoWithLongCaption = (NYTExamplePhoto *)dataSource[NYTViewControllerPhotoIndexLongCaption];
         photosViewController.delegate = nil; // delegate methods in this VC are intended for use with the TimesBuildingDataSource
         self.dataSource = [self.class newVariedDataSourceIncludingPhoto:photoWithLongCaption];
