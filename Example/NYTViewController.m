@@ -108,7 +108,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 
 - (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
     if ([photo isEqual:self.dataSource.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
-        return 10.0f;
+        return 0.5f;
     }
 
     return 1.0f;
