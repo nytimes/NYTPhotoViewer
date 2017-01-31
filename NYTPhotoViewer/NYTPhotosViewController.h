@@ -129,7 +129,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return A fully initialized `PhotosViewController` instance.
  */
-- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(nullable id <NYTPhoto>)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Displays the specified photo. Can be called before the view controller is displayed. Calling with a photo not contained within the data source has no effect.
@@ -137,7 +137,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param photo    The photo to make the currently displayed photo.
  *  @param animated Whether to animate the transition to the new photo.
  */
-- (void)displayPhoto:(id <NYTPhoto> _Nullable)photo animated:(BOOL)animated;
+- (void)displayPhoto:(nullable id <NYTPhoto>)photo animated:(BOOL)animated;
 
 /**
  *  Informs the photo viewer that the photo in the data source at this index has changed.
