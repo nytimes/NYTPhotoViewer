@@ -9,50 +9,43 @@
 import UIKit
 import NYTPhotoViewer
 
+// The Swift demo project doesn't aim to exactly replicate the ObjC demo, which comprehensively demonstrates the photo viewer.
+// Rather, the Swift demo aims to show how to interact with the photo viewer in Swift, and how an application might coordinate the photo viewer with a more complex data layer.
 
-class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
+final class ViewController: UIViewController {
+
+    let ReferencePhotoName = "NYTimesBuilding"
+
+    var photoViewerCoordinator: PhotoViewerCoordinator?
 
     @IBOutlet weak var imageButton : UIButton?
-    fileprivate let photos = PhotosProvider().photos
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        let photosViewController = NYTPhotosViewController(photos: self.photos)
+        let coordinator = PhotoViewerCoordinator(provider: PhotosProvider())
+        photoViewerCoordinator = coordinator
+
+        let photosViewController = coordinator.photoViewer
         photosViewController.delegate = self
         present(photosViewController, animated: true, completion: nil)
-        
-        updateImagesOnPhotosViewController(photosViewController, afterDelayWithPhotos: photos)
     }
-    
-    func updateImagesOnPhotosViewController(_ photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
-        
-        let delayTime = DispatchTime.now() + 5.0
-        
-        DispatchQueue.main.asyncAfter(deadline: delayTime) {
-            for photo in self.photos {
-                if photo.image == nil {
-                    photo.image = UIImage(named: PrimaryImageName)
-                    photosViewController.updateImage(for: photo)
-                }
-            }
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buttonImage = UIImage(named: PrimaryImageName)
+
+        let buttonImage = UIImage(named: ReferencePhotoName)
         imageButton?.setBackgroundImage(buttonImage, for: UIControlState())
     }
-    
-    // MARK: - NYTPhotosViewControllerDelegate
+}
+
+// MARK: NYTPhotosViewControllerDelegate
+
+extension ViewController: NYTPhotosViewControllerDelegate {
     
     func photosViewController(_ photosViewController: NYTPhotosViewController, handleActionButtonTappedFor photo: NYTPhoto) -> Bool {
-
         if UIDevice.current.userInterfaceIdiom == .pad {
-            
             guard let photoImage = photo.image else { return false }
             
             let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
-            
             shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, items: [Any]?, error: Error?) in
                 if completed {
                     photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType?.rawValue)
@@ -69,42 +62,16 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
     }
     
     func photosViewController(_ photosViewController: NYTPhotosViewController, referenceViewFor photo: NYTPhoto) -> UIView? {
-        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
-            return nil
+        guard let box = photo as? NYTPhotoBox else { return nil }
+
+        if box.value.name == ReferencePhotoName {
+            return imageButton
         }
-        return imageButton
-    }
-    
-    func photosViewController(_ photosViewController: NYTPhotosViewController, loadingViewFor photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            let label = UILabel()
-            label.text = "Custom Loading..."
-            label.textColor = UIColor.green
-            return label
-        }
+
         return nil
-    }
-    
-    func photosViewController(_ photosViewController: NYTPhotosViewController, captionViewFor photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            let label = UILabel()
-            label.text = "Custom Caption View"
-            label.textColor = UIColor.white
-            label.backgroundColor = UIColor.red
-            return label
-        }
-        return nil
-    }
-    
-    func photosViewController(_ photosViewController: NYTPhotosViewController, didNavigateTo photo: NYTPhoto, at photoIndex: UInt) {
-        print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
-    }
-    
-    func photosViewController(_ photosViewController: NYTPhotosViewController, actionCompletedWithActivityType activityType: String?) {
-        print("Action Completed With Activity Type: \(activityType)")
     }
 
     func photosViewControllerDidDismiss(_ photosViewController: NYTPhotosViewController) {
-        print("Did dismiss Photo Viewer: \(photosViewController)")
+        photoViewerCoordinator = nil
     }
 }
