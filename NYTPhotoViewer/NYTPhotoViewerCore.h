@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char NYTPhotoViewerCoreVersionString[];
 #import <NYTPhotoViewer/NYTPhotoCaptionView.h>
 #import <NYTPhotoViewer/NYTPhotoDismissalInteractionController.h>
 #import <NYTPhotoViewer/NYTPhotoViewerArrayDataSource.h>
+#import <NYTPhotoViewer/NYTPhotoViewerSinglePhotoDataSource.h>
 #import <NYTPhotoViewer/NYTPhotosOverlayView.h>
 #import <NYTPhotoViewer/NYTPhotosViewController.h>
 #import <NYTPhotoViewer/NYTPhotoTransitionAnimator.h>
