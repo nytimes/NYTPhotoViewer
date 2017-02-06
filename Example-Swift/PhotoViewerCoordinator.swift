@@ -48,9 +48,6 @@ final class PhotoViewerCoordinator: NYTPhotoViewerDataSource {
     @objc
     func photo(at index: Int) -> NYTPhoto? {
         guard index < slideshow.count else { return nil }
-        guard index >= 0 else {
-            fatalError()
-        }
         return slideshow[index]
     }
 }
