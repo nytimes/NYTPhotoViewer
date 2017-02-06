@@ -561,11 +561,19 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
+    if (photoIndex == 0 || photoIndex == NSNotFound) {
+        return nil;
+    }
+
     return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(photoIndex - 1)]];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
+    if (photoIndex == NSNotFound) {
+        return nil;
+    }
+
     return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(photoIndex + 1)]];
 }
 
