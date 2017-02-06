@@ -42,33 +42,27 @@ final class ViewController: UIViewController {
 extension ViewController: NYTPhotosViewControllerDelegate {
     
     func photosViewController(_ photosViewController: NYTPhotosViewController, handleActionButtonTappedFor photo: NYTPhoto) -> Bool {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            guard let photoImage = photo.image else { return false }
-            
-            let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
-            shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, items: [Any]?, error: Error?) in
-                if completed {
-                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType?.rawValue)
-                }
-            }
-
-            shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
-            photosViewController.present(shareActivityViewController, animated: true, completion: nil)
-
-            return true
+        guard UIDevice.current.userInterfaceIdiom == .pad, let photoImage = photo.image else {
+            return false
         }
         
-        return false
+        let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
+        shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, items: [Any]?, error: Error?) in
+            if completed {
+                photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType?.rawValue)
+            }
+        }
+
+        shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
+        photosViewController.present(shareActivityViewController, animated: true, completion: nil)
+
+        return true
     }
     
     func photosViewController(_ photosViewController: NYTPhotosViewController, referenceViewFor photo: NYTPhoto) -> UIView? {
         guard let box = photo as? NYTPhotoBox else { return nil }
 
-        if box.value.name == ReferencePhotoName {
-            return imageButton
-        }
-
-        return nil
+        return box.value.name == ReferencePhotoName ? imageButton : nil
     }
 
     func photosViewControllerDidDismiss(_ photosViewController: NYTPhotosViewController) {

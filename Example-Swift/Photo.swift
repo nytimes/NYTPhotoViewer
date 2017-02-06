@@ -10,9 +10,8 @@ import UIKit
 
 /// A photo may often be represented in a Swift application as a value type.
 struct Photo {
-    // Ths would usually be a URL, but for this demo we load images from the bundle.
+    // This would usually be a URL, but for this demo we load images from the bundle.
     let name: String
-
     let summary: String
     let credit: String
 
