@@ -14,7 +14,7 @@ final class PhotosProvider {
 
     /// Simulate a synchronous fetch of a slideshow, perhaps from a local database.
     func fetchDemoSlideshow() -> Slideshow {
-        return Array(0...4).map { demoPhoto(identifier: $0) }
+        return (0...4).map { demoPhoto(identifier: $0) }
     }
 
     /// Simulate fetching a photo from the network.
