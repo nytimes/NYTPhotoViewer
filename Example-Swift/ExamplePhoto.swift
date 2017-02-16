@@ -14,14 +14,19 @@ class ExamplePhoto: NSObject, NYTPhoto {
     var image: UIImage?
     var imageData: NSData?
     var placeholderImage: UIImage?
-    let attributedCaptionTitle: NSAttributedString?
-    let attributedCaptionSummary: NSAttributedString? = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-    let attributedCaptionCredit: NSAttributedString? = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+    var attributedCaptionTitle: NSAttributedString?
+    var attributedCaptionSummary: NSAttributedString? = NSAttributedString(string: "summary string", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+    var attributedCaptionCredit: NSAttributedString? = NSAttributedString(string: "credit", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
 
     init(image: UIImage? = nil, imageData: NSData? = nil, attributedCaptionTitle: NSAttributedString) {
         self.image = image
         self.imageData = imageData
         self.attributedCaptionTitle = attributedCaptionTitle
+        super.init()
+    }
+    
+    override init() {
+         self.attributedCaptionTitle = nil
         super.init()
     }
 
