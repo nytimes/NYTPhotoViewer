@@ -46,6 +46,10 @@ This library requires a deployment target of iOS 8.0 or greater.
 
 See [`CHANGELOG.md`](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHANGELOG.md).
 
+## Contributing
+
+Please **open pull requests against the `develop` branch**, and add a relevant note to the [`develop` section of the CHANGELOG](https://github.com/NYTimes/NYTPhotoViewer/blob/develop/CHANGELOG.md#develop) as part of your pull request.
+
 ## Swift
 
 NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
