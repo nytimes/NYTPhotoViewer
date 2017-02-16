@@ -14,7 +14,9 @@
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 
+NSString * const NYTPhotoViewControllerLoadingViewKey = @"NYTPhotoViewControllerLoadingViewKey";
 NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
+NSString * const NYTPhotoViewControllerPhotoLoadingViewUpdatedNotification = @"NYTPhotoViewControllerPhotoLoadingViewUpdatedNotification";
 
 @interface NYTPhotoViewController () <UIScrollViewDelegate>
 
@@ -60,6 +62,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     [super viewDidLoad];
     
     [self.notificationCenter addObserver:self selector:@selector(photoImageUpdatedWithNotification:) name:NYTPhotoViewControllerPhotoImageUpdatedNotification object:nil];
+    [self.notificationCenter addObserver:self selector:@selector(photoLoadingViewUpdateWithNotification:) name:NYTPhotoViewControllerPhotoLoadingViewUpdatedNotification object:nil];
     
     self.scalingImageView.frame = self.view.bounds;
     [self.view addSubview:self.scalingImageView];
@@ -114,6 +117,22 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     [self setupGestureRecognizers];
 }
 
+- (void)setLoadingView:(UIView *)loadingView {
+    if ([loadingView isEqual:_loadingView]) {
+        return;
+    }
+    
+    if (_loadingView.superview) {
+        [_loadingView removeFromSuperview];
+    }
+    
+    _loadingView = loadingView;
+    
+    if (_loadingView && self.isViewLoaded) {
+        [self.view addSubview:_loadingView];
+    }
+}
+
 - (void)setupLoadingView:(UIView *)loadingView {
     self.loadingView = loadingView;
     if (!loadingView) {
@@ -127,6 +146,14 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     id <NYTPhoto> photo = notification.object;
     if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
         [self updateImage:photo.image imageData:photo.imageData];
+    }
+}
+
+- (void)photoLoadingViewUpdateWithNotification:(NSNotification *)notification {
+    id <NYTPhoto> photo = notification.object;
+    if ([photo conformsToProtocol:@protocol(NYTPhoto)] && [photo isEqual:self.photo]) {
+        UIView *loadingView = notification.userInfo[NYTPhotoViewControllerLoadingViewKey];
+        [self setupLoadingView:loadingView];
     }
 }
 

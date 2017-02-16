@@ -96,6 +96,10 @@ class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
         return nil
     }
     
+    func photosViewController(photosViewController: NYTPhotosViewController, willNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
+        print("Will Navigate To Photo: \(photo) identifier: \(photoIndex)")
+    }
+    
     func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
         print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
     }

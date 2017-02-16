@@ -17,6 +17,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ *  Notification name issued when this `NYTPhotosViewController` will navigate to a different photo.
+ *
+ *  Includes the `NYTPhotosViewController` instance, as the notification's object.
+ */
+extern NSString * const NYTPhotosViewControllerWillNavigateToPhotoNotification;
+
+/**
  *  Notification name issued when this `NYTPhotosViewController` navigates to a different photo.
  *
  *  Includes the `NYTPhotosViewController` instance, as the notification's object.
@@ -166,6 +173,13 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  */
 - (void)reloadPhotosAnimated:(BOOL)animated;
 
+/**
+ *  Update the loading view displayed for the given photo object.
+ *
+ *  @param photo The photo for which to display the new loading view.
+ */
+- (void)updateLoadingViewForPhoto:(id <NYTPhoto> _Nullable)photo;
+
 @end
 
 /**
@@ -174,6 +188,15 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @protocol NYTPhotosViewControllerDelegate <NSObject>
 
 @optional
+
+/**
+ *  Called when a new photo may be displayed through a swipe gesture.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object that may be displayed.
+ *  @param photoIndex           The index of the photo that may be displayed.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController willNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex;
 
 /**
  *  Called when a new photo is displayed through a swipe gesture.
