@@ -1,7 +1,8 @@
 # NYTPhotoViewer
 
-[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
-[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer) 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 

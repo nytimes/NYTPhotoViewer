@@ -12,6 +12,7 @@
 
 @protocol NYTPhoto;
 @protocol NYTPhotosViewControllerDelegate;
+@protocol NYTPhotosViewControllerDataSource;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,11 @@ extern NSString * const NYTPhotosViewControllerWillDismissNotification;
 extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 @interface NYTPhotosViewController : UIViewController
+
+/**
+ *  An object conforming to `NYTPhotosViewControllerDataSource` that will act as the data source for the `NYTPhotosViewController`
+ */
+@property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 
 /**
  *  The pan gesture recognizer used for panning to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
