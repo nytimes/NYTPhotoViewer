@@ -8,11 +8,13 @@
 
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionViewLayoutWidthHinting.h"
+#import "NYTLoadingIndicatorView.h"
 
 @interface NYTPhotosOverlayView ()
 
 @property (nonatomic) UINavigationItem *navigationItem;
 @property (nonatomic) UINavigationBar *navigationBar;
+@property (nonatomic) CAGradientLayer *gradientLayer;
 
 @end
 
@@ -25,8 +27,9 @@
     
     if (self) {
         [self setupNavigationBar];
+        [self setupLoadingIndicator];
     }
-    
+        
     return self;
 }
 
@@ -50,13 +53,19 @@
     }];
     
     [super layoutSubviews];
+    [self layoutNavbarGradient];
 
+    self.loadingIndicatorView.frame = (CGRect){0, 0, self.bounds.size.width, 2};
     if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
         [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
     }
 }
 
 #pragma mark - NYTPhotosOverlayView
+- (void)setupLoadingIndicator {
+    self.loadingIndicatorView = [[NYTLoadingIndicatorView alloc] init];
+    [self addSubview:self.loadingIndicatorView];
+}
 
 - (void)setupNavigationBar {
     self.navigationBar = [[UINavigationBar alloc] init];
@@ -78,6 +87,19 @@
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
     NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
+}
+
+- (void)setupGradient {
+    self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer.frame = self.navigationBar.layer.bounds;
+    self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor blackColor] colorWithAlphaComponent:0.85].CGColor, (id)[UIColor clearColor].CGColor, nil];
+    [self.navigationBar.layer insertSublayer:self.gradientLayer atIndex:1];
+}
+
+- (void)layoutNavbarGradient {
+    if (self.gradientLayer) {
+        self.gradientLayer.frame = self.navigationBar.bounds;
+    }
 }
 
 - (void)setCaptionView:(UIView *)captionView {
@@ -144,6 +166,16 @@
 
 - (void)setTitleTextAttributes:(NSDictionary *)titleTextAttributes {
     self.navigationBar.titleTextAttributes = titleTextAttributes;
+}
+
+- (void)setNavigationBarGradient:(BOOL)navigationBarGradient {
+    if (_navigationBarGradient) {
+        [self.gradientLayer removeFromSuperlayer];
+    }
+    if (navigationBarGradient) {
+        [self setupGradient];
+    }
+    _navigationBarGradient = navigationBarGradient;
 }
 
 @end

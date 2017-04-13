@@ -10,6 +10,8 @@
 #import "NYTPhoto.h"
 #import "NYTScalingImageView.h"
 
+#define INTERACTIVE_RELOAD
+
 #ifdef ANIMATED_GIF_SUPPORT
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
@@ -202,4 +204,28 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
     }
 }
 
+#ifdef INTERACTIVE_RELOAD
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NYTScalingImageView *scalingImageView = self.scalingImageView;
+    UIImageView *imageView = scalingImageView.imageView;
+    
+    CGFloat imageHeight = CGRectGetWidth(imageView.frame) * CGRectGetHeight(imageView.frame) / CGRectGetWidth(imageView.frame);
+    CGFloat imageWidth = CGRectGetHeight(imageView.frame) * CGRectGetWidth(imageView.frame) / CGRectGetHeight(imageView.frame);
+    
+    BOOL imageHeightSmallerThanContent = (imageHeight < scalingImageView.frame.size.height) ? YES : NO;
+    BOOL imageWidthSmallerThanContent = (imageWidth < scalingImageView.frame.size.width) ? YES : NO;
+    
+    CGFloat topOffset = (imageView.frame.size.height - imageHeight) / 2;
+    CGFloat leftOffset = (imageView.frame.size.width - imageWidth) / 2;
+    
+    if (imageHeightSmallerThanContent) {
+        topOffset = topOffset - ((scalingImageView.frame.size.height - imageHeight)/2);
+    }
+    
+    if (imageWidthSmallerThanContent) {
+        leftOffset = leftOffset - ((scalingImageView.frame.size.width - imageWidth)/2);
+    }
+    scalingImageView.contentInset = UIEdgeInsetsMake(topOffset * -1, leftOffset * -1, topOffset * -1, leftOffset * -1);
+}
+#endif
 @end
