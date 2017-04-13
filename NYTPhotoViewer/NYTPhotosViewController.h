@@ -45,6 +45,15 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
 
 /**
+ *  If set to NO, starting a vertical pan gesture will immediately dismiss the view controller with animation. The default value is YES.
+ *
+ *  Cancelling an interactive dismissal does not work in some presentation styles, e.g., form sheets. This property allows you to disable interactive dismissals without disabling the pan gesture entirely.
+ *
+ *  @sa panGestureRecognizer
+ */
+@property (nonatomic) BOOL allowInteractiveDismissal;
+
+/**
  *  The tap gesture recognizer used to hide the overlay, including the caption, left and right bar button items, and title, all at once. Disable to always show the overlay.
  */
 @property (nonatomic, readonly) UITapGestureRecognizer *singleTapGestureRecognizer;

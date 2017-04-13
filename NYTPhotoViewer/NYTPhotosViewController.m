@@ -184,6 +184,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     _initialPhoto = initialPhoto;
 
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
+    _allowInteractiveDismissal = YES;
     _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
 
     _transitionController = [[NYTPhotoTransitionController alloc] init];
@@ -387,7 +388,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)didPanWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        self.transitionController.forcesNonInteractiveDismissal = NO;
+        self.transitionController.forcesNonInteractiveDismissal = !self.allowInteractiveDismissal;
         [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
     }
     else {
