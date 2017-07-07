@@ -11,7 +11,6 @@
 #import "NYTPhotoViewerArrayDataSource.h"
 #import "NYTPhotoViewController.h"
 #import "NYTPhotoTransitionController.h"
-#import "NYTScalingImageView.h"
 #import "NYTPhoto.h"
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
@@ -123,7 +122,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     UIView *endingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage) {
-        endingView = self.currentPhotoViewController.scalingImageView.imageView;
+        endingView = self.currentPhotoViewController.transitionView;
     }
     
     self.transitionController.endingView = endingView;
@@ -406,7 +405,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     UIView *startingView;
     if (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.placeholderImage || self.currentlyDisplayedPhoto.imageData) {
-        startingView = self.currentPhotoViewController.scalingImageView.imageView;
+        startingView = self.currentPhotoViewController.transitionView;
     }
     
     self.transitionController.startingView = startingView;
@@ -499,7 +498,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
         if([self.delegate respondsToSelector:@selector(photosViewController:maximumZoomScaleForPhoto:)]) {
             CGFloat maximumZoomScale = [self.delegate photosViewController:self maximumZoomScaleForPhoto:photo];
-            photoViewController.scalingImageView.maximumZoomScale = maximumZoomScale;
+            photoViewController.maximumZoomScale = maximumZoomScale;
         }
 
         return photoViewController;
