@@ -126,6 +126,20 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self.transitionController.endingView = endingView;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([_delegate respondsToSelector:@selector(photosViewController:viewWillAppear:)]) {
+        [_delegate photosViewController:self viewWillAppear:animated];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([_delegate respondsToSelector:@selector(photosViewController:viewWillDisappear:)]) {
+        [_delegate photosViewController:self viewWillDisappear:animated];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
