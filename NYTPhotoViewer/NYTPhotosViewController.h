@@ -216,6 +216,8 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 /**
  *  Returns whether the caption view should respect the safe area.
  *
+ * @note If this method is not implemented it will default to `YES`.
+ *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param photo                The photo object over which to display the caption view.
  *
