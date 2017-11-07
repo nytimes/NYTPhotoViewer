@@ -214,6 +214,16 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 - (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
+ *  Returns whether the caption view should respect the safe area.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo object over which to display the caption view.
+ *
+ *  @return A `BOOL` indicating whether the caption view should respect the safe area for the given photo or not.
+ */
+- (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController captionViewRespectsSafeAreaForPhoto:(id <NYTPhoto>)photo;
+
+/**
  *  Returns a string to display as the title in the navigation-bar area for a photo.
  *
  *  This small area of the screen is not intended to display a caption or similar information about the photo itself. (NYTPhotoViewer is designed to provide this information in the caption view, and as such the `NYTPhoto` protocol provides properties for a title, summary, and credit for each photo.) Instead, consider using this delegate method to customize how your app displays the user's progress through a set of photos.
