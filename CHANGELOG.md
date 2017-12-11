@@ -2,7 +2,10 @@
 
 Changes for users of the library currently on `develop`:
 
-_This space intentionally left blank._
+- Expose a data-source-oriented API for PhotosViewController ([#226](https://github.com/NYTimes/NYTPhotoViewer/pull/226))
+    - A data source no longer has to handle out-of-bounds indexes ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
+    - The data source is not retained ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
+- Respect safe areas for iOS 11 support
 
 ## [1.2.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.2.0)
 

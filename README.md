@@ -2,6 +2,7 @@
 
 [![Platform](http://cocoapod-badges.herokuapp.com/p/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
 [![Version](http://cocoapod-badges.herokuapp.com/v/NYTPhotoViewer/badge.png)](http://cocoadocs.org/docsets/NYTPhotoViewer)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
@@ -15,6 +16,12 @@ Usage is simple, with the option for more complicated customization when needed 
 NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
 [self presentViewController:photosViewController animated:YES completion:nil];
 ```
+
+## Running the Example
+
+The Example project uses [Carthage](https://github.com/Carthage/Carthage) to integrate its dependencies. If you don’t have Carthge installed, you can install it via [Homebrew](http://brew.sh) with `brew install carthage`.
+
+Then, in your checkout of the `NYTPhotoViewer` repo, run `carthage checkout --use-submodules`.
 
 ## Installation
 
@@ -35,7 +42,7 @@ If you don't want support for animated GIFs, you may instead link against only t
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```
-pod 'NYTPhotoViewer', '~> 1.1.0'
+pod 'NYTPhotoViewer'
 ```
 
 ## Requirements
@@ -52,7 +59,7 @@ Please **open pull requests against the `develop` branch**, and add a relevant n
 
 ## Swift
 
-NYTPhotoViewer is written in Objective-C but is intended to be fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
+NYTPhotoViewer is written in Objective-C but is fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
 
 ## Inspiration
 

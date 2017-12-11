@@ -19,8 +19,8 @@
 		1110844D1C87682300699670 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
 		1110844E1C87682300699670 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1110844F1C87682300699670 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */; };
-		111084501C87682300699670 /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotosDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084511C87682300699670 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotosDataSource.m */; };
+		111084501C87682300699670 /* NYTPhotoViewerArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		111084511C87682300699670 /* NYTPhotoViewerArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */; };
 		111084521C87682300699670 /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084391C87682300699670 /* NYTPhotosOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		111084531C87682300699670 /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843A1C87682300699670 /* NYTPhotosOverlayView.m */; };
 		111084541C87682300699670 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843B1C87682300699670 /* NYTPhotosViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,7 +36,7 @@
 		1110845E1C87682300699670 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084461C87682300699670 /* NYTPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1110845F1C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		111084601C87682300699670 /* NYTPhotoContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084481C87682300699670 /* NYTPhotoContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084611C87682300699670 /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotosViewControllerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		111084611C87682300699670 /* NYTPhotoViewerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotoViewerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		111084621C87682300699670 /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		111084631C87682300699670 /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */; };
 		111084651C87684D00699670 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,8 +63,8 @@
 		11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
 		11FBDA8E1C87753200018169 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA8F1C87753200018169 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */; };
-		11FBDA901C87753200018169 /* NYTPhotosDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotosDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA911C87753200018169 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotosDataSource.m */; };
+		11FBDA901C87753200018169 /* NYTPhotoViewerArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11FBDA911C87753200018169 /* NYTPhotoViewerArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */; };
 		11FBDA921C87753200018169 /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084391C87682300699670 /* NYTPhotosOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA931C87753200018169 /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843A1C87682300699670 /* NYTPhotosOverlayView.m */; };
 		11FBDA941C87753200018169 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843B1C87682300699670 /* NYTPhotosViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,7 +80,7 @@
 		11FBDA9E1C87753200018169 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084461C87682300699670 /* NYTPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA9F1C87753200018169 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDAA01C87753200018169 /* NYTPhotoContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084481C87682300699670 /* NYTPhotoContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDAA11C87753200018169 /* NYTPhotosViewControllerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotosViewControllerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11FBDAA11C87753200018169 /* NYTPhotoViewerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotoViewerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDAA21C87753200018169 /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDAA31C87753200018169 /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */; };
 		11FBDAA41C87754A00018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
@@ -88,13 +88,19 @@
 		11FBDADF1C877BD600018169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDADE1C877BD600018169 /* AppDelegate.swift */; };
 		11FBDAE11C877BD600018169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAE01C877BD600018169 /* ViewController.swift */; };
 		11FBDAE41C877BD600018169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAE21C877BD600018169 /* Main.storyboard */; };
-		11FBDAEF1C877C5D00018169 /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAEE1C877C5D00018169 /* ExamplePhoto.swift */; };
 		11FBDAF11C877C8B00018169 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAF01C877C8B00018169 /* PhotosProvider.swift */; };
 		11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDAFD1C877D9A00018169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */; };
 		11FBDAFE1C877F5500018169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		11FBDAFF1C877F8000018169 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
+		9371A73C1E438B9C00A8F2EF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A73B1E438B9C00A8F2EF /* Photo.swift */; };
+		9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7431E438BCE00A8F2EF /* PhotoBox.swift */; };
+		9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */; };
+		93F45B181E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
+		93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,8 +247,8 @@
 		111084341C87682300699670 /* NYTPhotoCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionView.m; sourceTree = "<group>"; };
 		111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
 		111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoDismissalInteractionController.m; sourceTree = "<group>"; };
-		111084371C87682300699670 /* NYTPhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosDataSource.h; sourceTree = "<group>"; };
-		111084381C87682300699670 /* NYTPhotosDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSource.m; sourceTree = "<group>"; };
+		111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerArrayDataSource.h; sourceTree = "<group>"; };
+		111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerArrayDataSource.m; sourceTree = "<group>"; };
 		111084391C87682300699670 /* NYTPhotosOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosOverlayView.h; sourceTree = "<group>"; };
 		1110843A1C87682300699670 /* NYTPhotosOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayView.m; sourceTree = "<group>"; };
 		1110843B1C87682300699670 /* NYTPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewController.h; sourceTree = "<group>"; };
@@ -258,7 +264,7 @@
 		111084461C87682300699670 /* NYTPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhoto.h; sourceTree = "<group>"; };
 		111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionViewLayoutWidthHinting.h; sourceTree = "<group>"; };
 		111084481C87682300699670 /* NYTPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoContainer.h; sourceTree = "<group>"; };
-		111084491C87682300699670 /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
+		111084491C87682300699670 /* NYTPhotoViewerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerDataSource.h; sourceTree = "<group>"; };
 		1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
 		1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
 		111084641C87684D00699670 /* NYTPhotoCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionView.h; sourceTree = "<group>"; };
@@ -285,9 +291,13 @@
 		11FBDAE01C877BD600018169 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11FBDAE31C877BD600018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11FBDAEA1C877BD600018169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11FBDAEE1C877C5D00018169 /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		11FBDAF01C877C8B00018169 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		11FBDAFC1C877D9A00018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9371A73B1E438B9C00A8F2EF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9371A7431E438BCE00A8F2EF /* PhotoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBox.swift; sourceTree = "<group>"; };
+		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
+		93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerSinglePhotoDataSource.h; sourceTree = "<group>"; };
+		93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,8 +379,6 @@
 				111084341C87682300699670 /* NYTPhotoCaptionView.m */,
 				111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */,
 				111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */,
-				111084371C87682300699670 /* NYTPhotosDataSource.h */,
-				111084381C87682300699670 /* NYTPhotosDataSource.m */,
 				111084391C87682300699670 /* NYTPhotosOverlayView.h */,
 				1110843A1C87682300699670 /* NYTPhotosOverlayView.m */,
 				1110843B1C87682300699670 /* NYTPhotosViewController.h */,
@@ -381,6 +389,10 @@
 				111084401C87682300699670 /* NYTPhotoTransitionController.m */,
 				111084411C87682300699670 /* NYTPhotoViewController.h */,
 				111084421C87682300699670 /* NYTPhotoViewController.m */,
+				111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */,
+				111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */,
+				93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */,
+				93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */,
 				111084431C87682300699670 /* NYTScalingImageView.h */,
 				111084441C87682300699670 /* NYTScalingImageView.m */,
 				111084451C87682300699670 /* Protocols */,
@@ -411,7 +423,7 @@
 				111084461C87682300699670 /* NYTPhoto.h */,
 				111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */,
 				111084481C87682300699670 /* NYTPhotoContainer.h */,
-				111084491C87682300699670 /* NYTPhotosViewControllerDataSource.h */,
+				111084491C87682300699670 /* NYTPhotoViewerDataSource.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -488,8 +500,10 @@
 			children = (
 				11FBDADE1C877BD600018169 /* AppDelegate.swift */,
 				11FBDAE01C877BD600018169 /* ViewController.swift */,
-				11FBDAEE1C877C5D00018169 /* ExamplePhoto.swift */,
+				9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */,
 				11FBDAF01C877C8B00018169 /* PhotosProvider.swift */,
+				9371A7431E438BCE00A8F2EF /* PhotoBox.swift */,
+				9371A73B1E438B9C00A8F2EF /* Photo.swift */,
 				11FBDAE21C877BD600018169 /* Main.storyboard */,
 				11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */,
 				11FBDAEA1C877BD600018169 /* Info.plist */,
@@ -508,15 +522,16 @@
 				111084541C87682300699670 /* NYTPhotosViewController.h in Headers */,
 				111084601C87682300699670 /* NYTPhotoContainer.h in Headers */,
 				1110844E1C87682300699670 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				111084611C87682300699670 /* NYTPhotosViewControllerDataSource.h in Headers */,
+				111084611C87682300699670 /* NYTPhotoViewerDataSource.h in Headers */,
 				1110845A1C87682300699670 /* NYTPhotoViewController.h in Headers */,
 				1110845C1C87682300699670 /* NYTScalingImageView.h in Headers */,
 				111084521C87682300699670 /* NYTPhotosOverlayView.h in Headers */,
 				111084561C87682300699670 /* NYTPhotoTransitionAnimator.h in Headers */,
+				93F45B181E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
 				111084581C87682300699670 /* NYTPhotoTransitionController.h in Headers */,
 				1110845F1C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
 				1110845E1C87682300699670 /* NYTPhoto.h in Headers */,
-				111084501C87682300699670 /* NYTPhotosDataSource.h in Headers */,
+				111084501C87682300699670 /* NYTPhotoViewerArrayDataSource.h in Headers */,
 				1110840A1C875B5000699670 /* NYTPhotoViewer.h in Headers */,
 				111084651C87684D00699670 /* NYTPhotoCaptionView.h in Headers */,
 			);
@@ -531,10 +546,11 @@
 				11FBDA9C1C87753200018169 /* NYTScalingImageView.h in Headers */,
 				11FBDA921C87753200018169 /* NYTPhotosOverlayView.h in Headers */,
 				11FBDA8E1C87753200018169 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				11FBDAA11C87753200018169 /* NYTPhotosViewControllerDataSource.h in Headers */,
-				11FBDA901C87753200018169 /* NYTPhotosDataSource.h in Headers */,
+				11FBDAA11C87753200018169 /* NYTPhotoViewerDataSource.h in Headers */,
+				11FBDA901C87753200018169 /* NYTPhotoViewerArrayDataSource.h in Headers */,
 				11FBDA9F1C87753200018169 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
 				11FBDA941C87753200018169 /* NYTPhotosViewController.h in Headers */,
+				93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
 				11FBDAA61C87768B00018169 /* NYTPhotoViewerCore.h in Headers */,
 				11FBDA9E1C87753200018169 /* NYTPhoto.h in Headers */,
 				11FBDAA21C87753200018169 /* NSBundle+NYTPhotoViewer.h in Headers */,
@@ -650,7 +666,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = NYTimes;
 				TargetAttributes = {
 					111084051C875B5000699670 = {
@@ -667,6 +683,7 @@
 					};
 					11FBDADB1C877BD600018169 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -811,9 +828,10 @@
 				111084591C87682300699670 /* NYTPhotoTransitionController.m in Sources */,
 				111084631C87682300699670 /* NSBundle+NYTPhotoViewer.m in Sources */,
 				111084551C87682300699670 /* NYTPhotosViewController.m in Sources */,
+				93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */,
 				1110844D1C87682300699670 /* NYTPhotoCaptionView.m in Sources */,
 				1110845D1C87682300699670 /* NYTScalingImageView.m in Sources */,
-				111084511C87682300699670 /* NYTPhotosDataSource.m in Sources */,
+				111084511C87682300699670 /* NYTPhotoViewerArrayDataSource.m in Sources */,
 				111084531C87682300699670 /* NYTPhotosOverlayView.m in Sources */,
 				111084571C87682300699670 /* NYTPhotoTransitionAnimator.m in Sources */,
 				1110844F1C87682300699670 /* NYTPhotoDismissalInteractionController.m in Sources */,
@@ -854,9 +872,10 @@
 				11FBDA991C87753200018169 /* NYTPhotoTransitionController.m in Sources */,
 				11FBDAA31C87753200018169 /* NSBundle+NYTPhotoViewer.m in Sources */,
 				11FBDA951C87753200018169 /* NYTPhotosViewController.m in Sources */,
+				93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */,
 				11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */,
 				11FBDA9D1C87753200018169 /* NYTScalingImageView.m in Sources */,
-				11FBDA911C87753200018169 /* NYTPhotosDataSource.m in Sources */,
+				11FBDA911C87753200018169 /* NYTPhotoViewerArrayDataSource.m in Sources */,
 				11FBDA931C87753200018169 /* NYTPhotosOverlayView.m in Sources */,
 				11FBDA971C87753200018169 /* NYTPhotoTransitionAnimator.m in Sources */,
 				11FBDA8F1C87753200018169 /* NYTPhotoDismissalInteractionController.m in Sources */,
@@ -868,10 +887,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */,
 				11FBDAE11C877BD600018169 /* ViewController.swift in Sources */,
-				11FBDAEF1C877C5D00018169 /* ExamplePhoto.swift in Sources */,
 				11FBDADF1C877BD600018169 /* AppDelegate.swift in Sources */,
+				9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */,
 				11FBDAF11C877C8B00018169 /* PhotosProvider.swift in Sources */,
+				9371A73C1E438B9C00A8F2EF /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,8 +985,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1011,8 +1034,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1032,6 +1057,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1042,6 +1068,7 @@
 		1110841B1C875B5000699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1064,6 +1091,7 @@
 		1110841C1C875B5000699670 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1124,6 +1152,7 @@
 		11FBDA891C8774AD00018169 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1141,6 +1170,7 @@
 		11FBDA8A1C8774AD00018169 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1168,6 +1198,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1183,6 +1214,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
