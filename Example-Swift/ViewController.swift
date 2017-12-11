@@ -9,102 +9,63 @@
 import UIKit
 import NYTPhotoViewer
 
+// The Swift demo project doesn't aim to exactly replicate the ObjC demo, which comprehensively demonstrates the photo viewer.
+// Rather, the Swift demo aims to show how to interact with the photo viewer in Swift, and how an application might coordinate the photo viewer with a more complex data layer.
 
-class ViewController: UIViewController, NYTPhotosViewControllerDelegate {
+final class ViewController: UIViewController {
+
+    let ReferencePhotoName = "NYTimesBuilding"
+
+    var photoViewerCoordinator: PhotoViewerCoordinator?
 
     @IBOutlet weak var imageButton : UIButton?
-    private let photos = PhotosProvider().photos
     
-    @IBAction func buttonTapped(sender: UIButton) {
-        let photosViewController = NYTPhotosViewController(photos: self.photos)
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let coordinator = PhotoViewerCoordinator(provider: PhotosProvider())
+        photoViewerCoordinator = coordinator
+
+        let photosViewController = coordinator.photoViewer
         photosViewController.delegate = self
-        presentViewController(photosViewController, animated: true, completion: nil)
-        
-        updateImagesOnPhotosViewController(photosViewController, afterDelayWithPhotos: photos)
+        present(photosViewController, animated: true, completion: nil)
     }
-    
-    func updateImagesOnPhotosViewController(photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
-        
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, 5 * Int64(NSEC_PER_SEC))
-        
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            for photo in self.photos {
-                if photo.image == nil {
-                    photo.image = UIImage(named: PrimaryImageName)
-                    photosViewController.updateImageForPhoto(photo)
-                }
-            }
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buttonImage = UIImage(named: PrimaryImageName)
-        imageButton?.setBackgroundImage(buttonImage, forState: .Normal)
+
+        let buttonImage = UIImage(named: ReferencePhotoName)
+        imageButton?.setBackgroundImage(buttonImage, for: UIControlState())
     }
+}
+
+// MARK: NYTPhotosViewControllerDelegate
+
+extension ViewController: NYTPhotosViewControllerDelegate {
     
-    // MARK: - NYTPhotosViewControllerDelegate
-    
-    func photosViewController(photosViewController: NYTPhotosViewController, handleActionButtonTappedForPhoto photo: NYTPhoto) -> Bool {
-
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            
-            guard let photoImage = photo.image else { return false }
-            
-            let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
-            
-            shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
-                if completed {
-                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType!)
-                }
-            }
-
-            shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
-            photosViewController.presentViewController(shareActivityViewController, animated: true, completion: nil)
-
-            return true
+    func photosViewController(_ photosViewController: NYTPhotosViewController, handleActionButtonTappedFor photo: NYTPhoto) -> Bool {
+        guard UIDevice.current.userInterfaceIdiom == .pad, let photoImage = photo.image else {
+            return false
         }
         
-        return false
-    }
-    
-    func photosViewController(photosViewController: NYTPhotosViewController, referenceViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
-            return nil
+        let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
+        shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, items: [Any]?, error: Error?) in
+            if completed {
+                photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType?.rawValue)
+            }
         }
-        return imageButton
+
+        shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
+        photosViewController.present(shareActivityViewController, animated: true, completion: nil)
+
+        return true
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController, loadingViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            let label = UILabel()
-            label.text = "Custom Loading..."
-            label.textColor = UIColor.greenColor()
-            return label
-        }
-        return nil
-    }
-    
-    func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView? {
-        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-            let label = UILabel()
-            label.text = "Custom Caption View"
-            label.textColor = UIColor.whiteColor()
-            label.backgroundColor = UIColor.redColor()
-            return label
-        }
-        return nil
-    }
-    
-    func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
-        print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
-    }
-    
-    func photosViewController(photosViewController: NYTPhotosViewController, actionCompletedWithActivityType activityType: String?) {
-        print("Action Completed With Activity Type: \(activityType)")
+    func photosViewController(_ photosViewController: NYTPhotosViewController, referenceViewFor photo: NYTPhoto) -> UIView? {
+        guard let box = photo as? NYTPhotoBox else { return nil }
+
+        return box.value.name == ReferencePhotoName ? imageButton : nil
     }
 
-    func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController) {
-        print("Did dismiss Photo Viewer: \(photosViewController)")
+    func photosViewControllerDidDismiss(_ photosViewController: NYTPhotosViewController) {
+        photoViewerCoordinator = nil
     }
 }
