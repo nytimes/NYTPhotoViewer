@@ -10,7 +10,6 @@
 		1110840A1C875B5000699670 /* NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084091C875B5000699670 /* NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		111084111C875B5000699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */; };
-		1110842E1C8767BA00699670 /* NYTPhotosDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotosDataSourceTests.m */; };
 		1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */; };
 		111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */; };
 		111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */; };
@@ -94,6 +93,8 @@
 		11FBDAFD1C877D9A00018169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */; };
 		11FBDAFE1C877F5500018169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		11FBDAFF1C877F8000018169 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
+		1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
+		1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
 		9371A73C1E438B9C00A8F2EF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A73B1E438B9C00A8F2EF /* Photo.swift */; };
 		9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7431E438BCE00A8F2EF /* PhotoBox.swift */; };
 		9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */; };
@@ -238,7 +239,7 @@
 		111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084171C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionViewTests.m; sourceTree = "<group>"; };
-		111084271C8767BA00699670 /* NYTPhotosDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSourceTests.m; sourceTree = "<group>"; };
+		111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerArrayDataSourceTests.m; sourceTree = "<group>"; };
 		111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayViewTests.m; sourceTree = "<group>"; };
 		111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewControllerTests.m; sourceTree = "<group>"; };
 		1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionAnimatorTests.m; sourceTree = "<group>"; };
@@ -293,6 +294,7 @@
 		11FBDAEA1C877BD600018169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FBDAF01C877C8B00018169 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		11FBDAFC1C877D9A00018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSourceTests.m; sourceTree = "<group>"; };
 		9371A73B1E438B9C00A8F2EF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9371A7431E438BCE00A8F2EF /* PhotoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBox.swift; sourceTree = "<group>"; };
 		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
@@ -406,7 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */,
-				111084271C8767BA00699670 /* NYTPhotosDataSourceTests.m */,
+				111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */,
+				1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */,
 				111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */,
 				111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */,
 				1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */,
@@ -843,14 +846,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */,
 				1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */,
 				1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */,
-				1110842E1C8767BA00699670 /* NYTPhotosDataSourceTests.m in Sources */,
 				111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */,
 				111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */,
 				111084841C876AAD00699670 /* NYTExamplePhoto.m in Sources */,
 				111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */,
 				111084321C8767BA00699670 /* NYTPhotoViewControllerTests.m in Sources */,
+				1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
