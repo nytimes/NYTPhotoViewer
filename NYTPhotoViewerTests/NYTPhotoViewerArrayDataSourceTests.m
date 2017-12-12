@@ -9,37 +9,37 @@
 @import UIKit;
 @import XCTest;
 
-#import <NYTPhotoViewer/NYTPhotosDataSource.h>
 #import "NYTExamplePhoto.h"
+#import "NYTPhotoViewerArrayDataSource.h"
 
-@interface NYTPhotosDataSourceTests : XCTestCase
+@interface NYTPhotoViewerArrayDataSourceTests : XCTestCase
 
 @end
 
-@implementation NYTPhotosDataSourceTests
+@implementation NYTPhotoViewerArrayDataSourceTests
 
 - (void)testInitializerAcceptsNil {
-    XCTAssertNoThrow([[NYTPhotosDataSource alloc] initWithPhotos:nil]);
+    XCTAssertNoThrow([[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:nil]);
 }
 
 - (void)testOutOfBoundsDoesNotCrash {
-    NYTPhotosDataSource *dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:nil];
+    NYTPhotoViewerArrayDataSource *dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:nil];
     XCTAssertNoThrow(dataSource[1]);
 }
 
 - (void)testOutOfBoundsReturnsNil {
-    NYTPhotosDataSource *dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:nil];
+    NYTPhotoViewerArrayDataSource *dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:nil];
     XCTAssertNil(dataSource[1]);
 }
 
 - (void)testValidIndexReturnsPhoto {
-    NYTPhotosDataSource *dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:[self newTestPhotos]];
+    NYTPhotoViewerArrayDataSource *dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:[self newTestPhotos]];
     XCTAssertNotNil(dataSource[1]);
 }
 
 - (void)testValidIndexReturnsCorrectPhoto {
     NSArray *photos = [self newTestPhotos];
-    NYTPhotosDataSource *dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+    NYTPhotoViewerArrayDataSource *dataSource = [[NYTPhotoViewerArrayDataSource alloc] initWithPhotos:photos];
     XCTAssertEqualObjects(photos.firstObject, dataSource[0]);
 }
 
