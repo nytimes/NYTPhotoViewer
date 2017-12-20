@@ -572,6 +572,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContainer> *)viewController {
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
     if (photoIndex == 0 || photoIndex == NSNotFound) {
+        
+        if (self.canLoop && self.dataSource.numberOfPhotos.integerValue > 1)  {
+            return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(self.dataSource.numberOfPhotos.integerValue - 1)]];
+        }
+        
         return nil;
     }
 
@@ -582,6 +587,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
     if (photoIndex == NSNotFound) {
         return nil;
+    }
+    
+    if (self.canLoop && photoIndex + 1 == self.dataSource.numberOfPhotos.integerValue) {
+        return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:0]];
     }
 
     return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:(photoIndex + 1)]];
