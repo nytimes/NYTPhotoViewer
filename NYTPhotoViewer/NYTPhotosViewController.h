@@ -99,6 +99,11 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, weak, nullable) id <NYTPhotosViewControllerDelegate> delegate;
 
 /**
+ *  Enable a loop navigation between last photo and first photo
+ */
+@property (nonatomic) BOOL canLoop;
+
+/**
  *  Initializes a `PhotosViewController` with the given data source, initially displaying the first photo in the data source.
  *
  *  @param dataSource The data source underlying this photo viewer.
