@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  A simple concrete implementation of `NYTPhotoViewerDataSource`, for use with an array of images.
+ *  Does not support interstitial views.
  */
 @interface NYTPhotoViewerArrayDataSource : NSObject <NYTPhotoViewerDataSource, NSFastEnumeration>
 

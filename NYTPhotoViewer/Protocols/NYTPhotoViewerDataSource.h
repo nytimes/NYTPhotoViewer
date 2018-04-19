@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  Alternatively, `NYTPhotoViewerArrayDataSource` and `NYTPhotoViewerSinglePhotoDataSource` are concrete classes which conveniently handle the most common use cases for NYTPhotoViewer.
  */
-@protocol NYTPhotoViewerDataSource
+@protocol NYTPhotoViewerDataSource <NSObject>
 
 /**
  *  The total number of photos in the data source, or `nil` if the number is not known.
@@ -45,6 +45,31 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return The photo object at a specified index, or `nil` if one does not exist at that index.
  */
 - (nullable id <NYTPhoto>)photoAtIndex:(NSInteger)photoIndex;
+
+@optional
+
+/**
+ *  The total number of interstitial views in the data source.
+ *
+ *  The number returned should package an `NSInteger` value.
+ *
+ *  @return The number of interstitial views or `nil` if the number is not known.
+ */
+- (NSNumber *)numberOfInterstitialViews;
+
+/**
+ *  Indicates if the item at the specified index is a photo.
+ *
+ *  @return `true` if the item at the specified index is a photo, `false` otherwise.
+ */
+- (BOOL)isPhotoAtIndex:(NSInteger)idx;
+
+/**
+ *  Indicates if the item at the specified index is an interstitial view.
+ *
+ *  @return `true` if the item at the specified index is an interstitial view, `false` otherwise.
+ */
+- (BOOL)isInterstitialViewAtIndex:(NSInteger)idx;
 
 @end
 
