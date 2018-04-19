@@ -63,7 +63,7 @@
 #pragma mark - Subscripting
 
 - (id<NYTPhoto>)objectAtIndexedSubscript:(NSUInteger)idx {
-    return self.photos[idx];
+    return [self photoAtIndex:idx];
 }
 
 @end
