@@ -9,7 +9,7 @@
 import NYTPhotoViewer
 
 /// Coordinates interaction between the application's data layer and the photo viewer component.
-final class PhotoViewerCoordinator: NYTPhotoViewerDataSource {
+final class PhotoViewerCoordinator: NSObject, NYTPhotoViewerDataSource {
     let slideshow: [NYTPhotoBox]
     let provider: PhotosProvider
 
@@ -20,6 +20,7 @@ final class PhotoViewerCoordinator: NYTPhotoViewerDataSource {
     init(provider: PhotosProvider) {
         self.provider = provider
         self.slideshow = provider.fetchDemoSlideshow().map { NYTPhotoBox($0) }
+        super.init()
         self.fetchPhotos()
     }
 
