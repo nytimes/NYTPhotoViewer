@@ -6,6 +6,7 @@ Changes for users of the library currently on `develop`:
     - A data source no longer has to handle out-of-bounds indexes ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
     - The data source is not retained ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
 - Respect safe areas for iOS 11 support
+- Fixed gradientLayer (which is inside NYTPhotoCaptionView) position for views that respects safe area (Can be related to [#257](https://github.com/NYTimes/NYTPhotoViewer/issues/257))
 
 ## [1.2.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.2.0)
 
