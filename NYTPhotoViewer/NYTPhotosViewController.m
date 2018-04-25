@@ -16,6 +16,7 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 #import "NSBundle+NYTPhotoViewer.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #ifdef ANIMATED_GIF_SUPPORT
 #import <FLAnimatedImage/FLAnimatedImage.h>
@@ -68,7 +69,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 #pragma mark - NSObject(UIResponderStandardEditActions)
 
 - (void)copy:(id)sender {
-    [[UIPasteboard generalPasteboard] setImage:self.currentlyDisplayedPhoto.image];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (self.currentlyDisplayedPhoto.image) {
+        [pasteboard setImage:self.currentlyDisplayedPhoto.image];
+    } else {
+        [pasteboard setData:self.currentlyDisplayedPhoto.imageData forPasteboardType:(NSString *) kUTTypeGIF];
+    }
 }
 
 #pragma mark - UIResponder
@@ -78,7 +84,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (self.shouldHandleLongPress && action == @selector(copy:) && self.currentlyDisplayedPhoto.image) {
+    BOOL containsImage = self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData;
+
+    if (self.shouldHandleLongPress && action == @selector(copy:) && containsImage) {
         return YES;
     }
     

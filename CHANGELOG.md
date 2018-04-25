@@ -9,6 +9,7 @@ Changes for users of the library currently on `develop`:
 - Fixed some tests, added tests for NYTPhotoViewerSinglePhotoDataSource
 - Fixed a strict warning and a subscripting bug in NYTPhotoViewerArrayDataSource.m
 - Share GIF with UIActivityViewController
+- Copy GIF with UIMenuController
 
 ## [1.2.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.2.0)
 
