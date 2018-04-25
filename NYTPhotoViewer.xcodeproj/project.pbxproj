@@ -94,6 +94,8 @@
 		11FBDAFD1C877D9A00018169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */; };
 		11FBDAFE1C877F5500018169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		11FBDAFF1C877F8000018169 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
+		370F9D1920909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 370F9D1220909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		370F9D1A20909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 370F9D1220909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9371A73C1E438B9C00A8F2EF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A73B1E438B9C00A8F2EF /* Photo.swift */; };
 		9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7431E438BCE00A8F2EF /* PhotoBox.swift */; };
 		9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */; };
@@ -293,6 +295,7 @@
 		11FBDAEA1C877BD600018169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FBDAF01C877C8B00018169 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		11FBDAFC1C877D9A00018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		370F9D1220909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionViewRespectsSafeArea.h; sourceTree = "<group>"; };
 		9371A73B1E438B9C00A8F2EF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9371A7431E438BCE00A8F2EF /* PhotoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBox.swift; sourceTree = "<group>"; };
 		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 			children = (
 				111084461C87682300699670 /* NYTPhoto.h */,
 				111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */,
+				370F9D1220909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h */,
 				111084481C87682300699670 /* NYTPhotoContainer.h */,
 				111084491C87682300699670 /* NYTPhotoViewerDataSource.h */,
 			);
@@ -527,6 +531,7 @@
 				1110845C1C87682300699670 /* NYTScalingImageView.h in Headers */,
 				111084521C87682300699670 /* NYTPhotosOverlayView.h in Headers */,
 				111084561C87682300699670 /* NYTPhotoTransitionAnimator.h in Headers */,
+				370F9D1920909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h in Headers */,
 				93F45B181E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
 				111084581C87682300699670 /* NYTPhotoTransitionController.h in Headers */,
 				1110845F1C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
@@ -550,6 +555,7 @@
 				11FBDA901C87753200018169 /* NYTPhotoViewerArrayDataSource.h in Headers */,
 				11FBDA9F1C87753200018169 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
 				11FBDA941C87753200018169 /* NYTPhotosViewController.h in Headers */,
+				370F9D1A20909E1D00E1F090 /* NYTPhotoCaptionViewRespectsSafeArea.h in Headers */,
 				93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
 				11FBDAA61C87768B00018169 /* NYTPhotoViewerCore.h in Headers */,
 				11FBDA9E1C87753200018169 /* NYTPhoto.h in Headers */,
