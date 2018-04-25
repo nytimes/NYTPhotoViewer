@@ -8,6 +8,7 @@
 
 @import UIKit;
 #import "NYTPhotoCaptionViewLayoutWidthHinting.h"
+#import "NYTPhotoCaptionViewRespectsSafeArea.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  This is used by default when no custom caption view is provided.
  */
-@interface NYTPhotoCaptionView : UIView <NYTPhotoCaptionViewLayoutWidthHinting>
+@interface NYTPhotoCaptionView : UIView <NYTPhotoCaptionViewLayoutWidthHinting, NYTPhotoCaptionViewRespectsSafeArea>
+
+@property (nonatomic) BOOL respectsSafeArea;
 
 /**
  *  Designated initializer that takes all the caption attributed strings as arguments.

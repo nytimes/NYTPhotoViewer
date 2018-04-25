@@ -59,7 +59,7 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 7.0;
     [super layoutSubviews];
 
     void (^updateGradientFrame)() = ^{
-        self.gradientLayer.frame = self.layer.bounds;
+        [self updateGradientLayerFrame];
     };
 
     updateGradientFrame();
@@ -130,9 +130,23 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 7.0;
 
 - (void)setupGradient {
     self.gradientLayer = [CAGradientLayer layer];
-    self.gradientLayer.frame = self.layer.bounds;
+    [self updateGradientLayerFrame];
     self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor clearColor].CGColor, (id)[[UIColor blackColor] colorWithAlphaComponent:0.85].CGColor, nil];
+
     [self.layer insertSublayer:self.gradientLayer atIndex:0];
+}
+
+- (void)updateGradientLayerFrame {
+    if (self.respectsSafeArea) {
+        UIEdgeInsets safeAreaInsets = [[UIApplication sharedApplication] keyWindow].safeAreaInsets;
+        CGRect selfBounds = self.layer.bounds;
+        self.gradientLayer.frame = CGRectMake(selfBounds.origin.x - safeAreaInsets.left,
+                                              selfBounds.origin.y + safeAreaInsets.bottom,
+                                              selfBounds.size.width + safeAreaInsets.left + safeAreaInsets.right,
+                                              selfBounds.size.height + safeAreaInsets.bottom);
+    } else {
+        self.gradientLayer.frame = self.layer.bounds;
+    }
 }
 
 - (void)updateTextViewAttributedText {

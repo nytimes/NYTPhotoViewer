@@ -8,6 +8,7 @@
 
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionViewLayoutWidthHinting.h"
+#import "NYTPhotoCaptionViewRespectsSafeArea.h"
 
 @interface UIView (NYTSafeArea)
 
@@ -104,6 +105,10 @@
     
     self.captionView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.captionView];
+    
+    if ([captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewRespectsSafeArea)]) {
+        [(id<NYTPhotoCaptionViewRespectsSafeArea>)captionView setRespectsSafeArea:self.captionViewRespectsSafeArea];
+    }
 
     if ([self respondsToSelector:@selector(safeAreaLayoutGuide)] && self.captionViewRespectsSafeArea) {
         NSLayoutConstraint *bottomConstraint = [self.captionView.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor];
