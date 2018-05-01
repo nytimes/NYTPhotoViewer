@@ -19,34 +19,34 @@
 @implementation NYTPhotoViewControllerTests
 
 - (void)testScalingImageViewExistsAferInitialization {
-    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] loadingView:nil notificationCenter:nil];
+    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] itemIndex:0 loadingView:nil notificationCenter:nil];
     XCTAssertNotNil(photoViewController.scalingImageView);
 }
 
 - (void)testDoubleTapGestureRecognizerExistsAferInitialization {
-    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] loadingView:nil notificationCenter:nil];
+    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] itemIndex:0 loadingView:nil notificationCenter:nil];
     XCTAssertNotNil(photoViewController.doubleTapGestureRecognizer);
 }
 
 - (void)testLoadingViewExistsAferNilInitialization {
-    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] loadingView:nil notificationCenter:nil];
+    NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] itemIndex:0 loadingView:nil notificationCenter:nil];
     XCTAssertNotNil(photoViewController.loadingView);
 }
 
 - (void)testDesignatedInitializerAcceptsNilForPhotoArgument {
-    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:nil loadingView:[[UIView alloc] init] notificationCenter:[NSNotificationCenter defaultCenter]]);
+    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:nil itemIndex:0 loadingView:[[UIView alloc] init] notificationCenter:[NSNotificationCenter defaultCenter]]);
 }
 
 - (void)testDesignatedInitializerAcceptsNilForLoadingViewArgument {
-    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] loadingView:nil notificationCenter:[NSNotificationCenter defaultCenter]]);
+    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] itemIndex:0 loadingView:nil notificationCenter:[NSNotificationCenter defaultCenter]]);
 }
 
 - (void)testDesignatedInitializerAcceptsNilForNotificationCenterArgument {
-    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] loadingView:[[UIView alloc] init] notificationCenter:nil]);
+    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:[self newTestPhoto] itemIndex:0 loadingView:[[UIView alloc] init] notificationCenter:nil]);
 }
 
 - (void)testDesignatedInitializerAcceptsNilForAllArguments {
-    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:nil loadingView:nil notificationCenter:nil]);
+    XCTAssertNoThrow([[NYTPhotoViewController alloc] initWithPhoto:nil itemIndex:0 loadingView:nil notificationCenter:nil]);
 }
 
 - (NYTExamplePhoto *)newTestPhoto {

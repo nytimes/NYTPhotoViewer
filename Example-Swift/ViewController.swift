@@ -68,4 +68,15 @@ extension ViewController: NYTPhotosViewControllerDelegate {
     func photosViewControllerDidDismiss(_ photosViewController: NYTPhotosViewController) {
         photoViewerCoordinator = nil
     }
+
+    func photosViewController(_ photosViewController: NYTPhotosViewController, interstitialViewAt index: UInt) -> UIView {
+        let redView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: photosViewController.view.frame.width, height: 200)))
+        redView.backgroundColor = .red
+        redView.autoresizingMask = [.flexibleWidth]
+        return redView
+    }
+
+    func photosViewController(_ photosViewController: NYTPhotosViewController, didNavigateToInterstialView view: UIView, at index: UInt) {
+        view.backgroundColor = .blue
+    }
 }

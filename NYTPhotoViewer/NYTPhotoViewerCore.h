@@ -29,7 +29,7 @@ FOUNDATION_EXPORT const unsigned char NYTPhotoViewerCoreVersionString[];
 // Protocols
 #import <NYTPhotoViewer/NYTPhoto.h>
 #import <NYTPhotoViewer/NYTPhotoCaptionViewLayoutWidthHinting.h>
-#import <NYTPhotoViewer/NYTPhotoContainer.h>
+#import <NYTPhotoViewer/NYTPhotoViewerContainer.h>
 #import <NYTPhotoViewer/NYTPhotoViewerDataSource.h>
 
 // Support
