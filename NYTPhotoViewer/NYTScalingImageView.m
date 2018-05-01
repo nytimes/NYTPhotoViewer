@@ -119,7 +119,7 @@
     // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
 
-    [UIView transitionWithView:self.imageView duration:0.15f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:self /* .imageView */ duration:0.15f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         self.imageView.image = imageToUse;
     } completion:nil];
 
