@@ -7,9 +7,10 @@
 //
 
 #import "NYTPhotosViewController.h"
-#import "NYTPhotosViewControllerDataSource.h"
-#import "NYTPhotosDataSource.h"
+#import "NYTPhotoViewerDataSource.h"
+#import "NYTPhotoViewerArrayDataSource.h"
 #import "NYTPhotoViewController.h"
+#import "NYTInterstitialViewController.h"
 #import "NYTPhotoTransitionController.h"
 #import "NYTScalingImageView.h"
 #import "NYTPhoto.h"
@@ -22,6 +23,7 @@
 #endif
 
 NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
+NSString * const NYTPhotosViewControllerDidNavigateToInterstitialViewNotification = @"NYTPhotosViewControllerDidNavigateToInterstitialViewNotification";
 NSString * const NYTPhotosViewControllerWillDismissNotification = @"NYTPhotosViewControllerWillDismissNotification";
 NSString * const NYTPhotosViewControllerDidDismissNotification = @"NYTPhotosViewControllerDidDismissNotification";
 
@@ -33,7 +35,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic) id <NYTPhotosViewControllerDataSource> dataSource;
 @property (nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NYTPhotoTransitionController *transitionController;
 @property (nonatomic) UIPopoverController *activityPopoverController;
@@ -52,6 +53,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 @property (nonatomic, readonly) NYTPhotoViewController *currentPhotoViewController;
 @property (nonatomic, readonly) UIView *referenceViewForCurrentPhoto;
 @property (nonatomic, readonly) CGPoint boundsCenterPoint;
+
+@property (nonatomic, nullable) id<NYTPhoto> initialPhoto;
 
 @end
 
@@ -87,14 +90,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 #pragma mark - UIViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    return [self initWithPhotos:nil];
+    return [self initWithDataSource:[NYTPhotoViewerArrayDataSource dataSourceWithPhotos:@[]] initialPhoto:nil delegate:nil];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        [self commonInitWithPhotos:nil initialPhoto:nil delegate:nil];
+        [self commonInitWithDataSource:[NYTPhotoViewerArrayDataSource dataSourceWithPhotos:@[]] initialPhoto:nil delegate:nil];
     }
 
     return self;
@@ -102,6 +105,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self configurePageViewControllerWithInitialPhoto];
 
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = self.backgroundColor?self.backgroundColor:[UIColor blackColor];
@@ -145,6 +150,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return YES;
 }
 
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return YES;
+}
+
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationFade;
 }
@@ -155,27 +164,30 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - NYTPhotosViewController
 
-- (instancetype)initWithPhotos:(NSArray *)photos {
-    return [self initWithPhotos:photos initialPhoto:photos.firstObject delegate:nil];
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource {
+    return [self initWithDataSource:dataSource initialPhoto:nil delegate:nil];
 }
 
-- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto {
-    return [self initWithPhotos:photos initialPhoto:initialPhoto delegate:nil];
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhotoIndex:(NSInteger)initialPhotoIndex delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+    id <NYTPhoto> initialPhoto = [dataSource photoAtIndex:initialPhotoIndex];
+
+    return [self initWithDataSource:dataSource initialPhoto:initialPhoto delegate:delegate];
 }
 
-- (instancetype)initWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        [self commonInitWithPhotos:photos initialPhoto:initialPhoto delegate:delegate];
+        [self commonInitWithDataSource:dataSource initialPhoto:initialPhoto delegate:delegate];
     }
     
     return self;
 }
 
-- (void)commonInitWithPhotos:(NSArray *)photos initialPhoto:(id <NYTPhoto>)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate>)delegate {
-    _dataSource = [[NYTPhotosDataSource alloc] initWithPhotos:photos];
+- (void)commonInitWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+    _dataSource = dataSource;
     _delegate = delegate;
+    _initialPhoto = initialPhoto;
 
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanWithGestureRecognizer:)];
     _singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTapWithGestureRecognizer:)];
@@ -185,31 +197,33 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self.transitioningDelegate = _transitionController;
     self.modalPresentationCapturesStatusBarAppearance = YES;
 
-    _overlayView = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
-    _overlayView.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
-    _overlayView.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
-    _overlayView.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+    _overlayView = ({
+        NYTPhotosOverlayView *v = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
+        v.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
+        v.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
+        v.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+        v;
+    });
 
-    _notificationCenter = [[NSNotificationCenter alloc] init];
+    _notificationCenter = [NSNotificationCenter new];
 
-    [self setupPageViewControllerWithInitialPhoto:initialPhoto];
-}
-
-- (void)setupPageViewControllerWithInitialPhoto:(id <NYTPhoto>)initialPhoto {
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(NYTPhotosViewControllerInterPhotoSpacing)}];
-    
+
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
-    
+}
+
+- (void)configurePageViewControllerWithInitialPhoto {
     NYTPhotoViewController *initialPhotoViewController;
-    
-    if ([self.dataSource containsPhoto:initialPhoto]) {
-        initialPhotoViewController = [self newPhotoViewControllerForPhoto:initialPhoto];
+
+    NSInteger initialPhotoIndex = [self.dataSource indexOfPhoto:self.initialPhoto];
+    if (self.initialPhoto != nil && initialPhotoIndex != NSNotFound) {
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.initialPhoto atIndex:initialPhotoIndex];
     }
     else {
-        initialPhotoViewController = [self newPhotoViewControllerForPhoto:self.dataSource[0]];
+        initialPhotoViewController = [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:0] atIndex:0];
     }
-    
+
     [self setCurrentlyDisplayedViewController:initialPhotoViewController animated:NO];
 }
 
@@ -231,21 +245,20 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)updateOverlayInformation {
     NSString *overlayTitle;
-    
-    NSUInteger photoIndex = [self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto];
+    NSUInteger photoIndex = self.currentPhotoViewController.photoViewItemIndex;
+    NSInteger displayIndex = photoIndex + 1;
     
     if ([self.delegate respondsToSelector:@selector(photosViewController:titleForPhoto:atIndex:totalPhotoCount:)]) {
         overlayTitle = [self.delegate photosViewController:self titleForPhoto:self.currentlyDisplayedPhoto atIndex:photoIndex totalPhotoCount:self.dataSource.numberOfPhotos];
     }
-    
-    if (!overlayTitle && self.dataSource.numberOfPhotos > 1) {
-        NSUInteger displayIndex = 1;
-        
-        if (photoIndex < self.dataSource.numberOfPhotos) {
-            displayIndex = photoIndex + 1;
-        }
 
-        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)self.dataSource.numberOfPhotos];
+    if (!overlayTitle && self.dataSource.numberOfPhotos == nil) {
+        overlayTitle = [NSString localizedStringWithFormat:@"%lu", (unsigned long)displayIndex];
+    }
+
+    NSInteger totalItems = [self totalItemCount];
+    if (!overlayTitle && totalItems > 1) {
+        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)totalItems];
     }
     
     self.overlayView.title = overlayTitle;
@@ -258,7 +271,13 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     if (!captionView) {
         captionView = [[NYTPhotoCaptionView alloc] initWithAttributedTitle:self.currentlyDisplayedPhoto.attributedCaptionTitle attributedSummary:self.currentlyDisplayedPhoto.attributedCaptionSummary attributedCredit:self.currentlyDisplayedPhoto.attributedCaptionCredit];
     }
-    
+
+    BOOL captionViewRespectsSafeArea = YES;
+    if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewRespectsSafeAreaForPhoto:)]) {
+        captionViewRespectsSafeArea = [self.delegate photosViewController:self captionViewRespectsSafeAreaForPhoto:self.currentlyDisplayedPhoto];
+    }
+
+    self.overlayView.captionViewRespectsSafeArea = captionViewRespectsSafeArea;
     self.overlayView.captionView = captionView;
 }
 
@@ -339,17 +358,51 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)displayPhoto:(id <NYTPhoto>)photo animated:(BOOL)animated {
-    if (![self.dataSource containsPhoto:photo]) {
+    NSInteger indexOfPhoto = [self.dataSource indexOfPhoto:photo];
+    if (indexOfPhoto == NSNotFound) {
         return;
     }
     
-    NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo];
+    NYTPhotoViewController *photoViewController = [self newPhotoViewControllerForPhoto:photo atIndex:indexOfPhoto];
     [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
     [self updateOverlayInformation];
 }
 
-- (void)updateImageForPhoto:(id <NYTPhoto>)photo {
+- (void)updatePhotoAtIndex:(NSInteger)photoIndex {
+    id<NYTPhoto> photo = [self.dataSource photoAtIndex:photoIndex];
+    if (!photo) {
+        return;
+    }
+
+    [self updatePhoto:photo];
+}
+
+- (void)updatePhoto:(id<NYTPhoto>)photo {
+    if ([self.dataSource indexOfPhoto:photo] == NSNotFound) {
+        return;
+    }
+
     [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
+
+    if ([self.currentlyDisplayedPhoto isEqual:photo]) {
+        [self updateOverlayInformation];
+    }
+}
+
+- (void)reloadPhotosAnimated:(BOOL)animated {
+    id<NYTPhoto> newCurrentPhoto;
+
+    if ([self.dataSource indexOfPhoto:self.currentlyDisplayedPhoto] != NSNotFound) {
+        newCurrentPhoto = self.currentlyDisplayedPhoto;
+    } else {
+        newCurrentPhoto = [self.dataSource photoAtIndex:0];
+    }
+
+    [self displayPhoto:newCurrentPhoto animated:animated];
+
+    if (self.overlayView.hidden) {
+        [self setOverlayViewHidden:NO animated:animated];
+    }
 }
 
 #pragma mark - Gesture Recognizers
@@ -421,12 +474,20 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - Convenience
 
-- (void)setCurrentlyDisplayedViewController:(UIViewController <NYTPhotoContainer> *)viewController animated:(BOOL)animated {
+- (void)setCurrentlyDisplayedViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController animated:(BOOL)animated {
     if (!viewController) {
         return;
     }
+
+    if ([viewController.photo isEqual:self.currentlyDisplayedPhoto]) {
+        animated = NO;
+    }
+
+    NSInteger currentIdx = self.currentPhotoViewController.photoViewItemIndex;
+    NSInteger newIdx = viewController.photoViewItemIndex;
+    UIPageViewControllerNavigationDirection direction = (newIdx < currentIdx) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward;
     
-    [self.pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
+    [self.pageViewController setViewControllers:@[viewController] direction:direction animated:animated completion:nil];
 }
 
 - (void)setOverlayViewHidden:(BOOL)hidden animated:(BOOL)animated {
@@ -451,14 +512,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
 }
 
-- (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo {
+- (NYTPhotoViewController *)newPhotoViewControllerForPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)index {
     if (photo) {
         UIView *loadingView;
         if ([self.delegate respondsToSelector:@selector(photosViewController:loadingViewForPhoto:)]) {
             loadingView = [self.delegate photosViewController:self loadingViewForPhoto:photo];
         }
         
-        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo loadingView:loadingView notificationCenter:self.notificationCenter];
+        NYTPhotoViewController *photoViewController = [[NYTPhotoViewController alloc] initWithPhoto:photo itemIndex:index loadingView:loadingView notificationCenter:self.notificationCenter];
         photoViewController.delegate = self;
         [self.singleTapGestureRecognizer requireGestureRecognizerToFail:photoViewController.doubleTapGestureRecognizer];
 
@@ -473,12 +534,32 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return nil;
 }
 
-- (void)didNavigateToPhoto:(id <NYTPhoto>)photo {
+- (UIViewController *)newViewControllerAtIndex:(NSUInteger)index {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:interstitialViewAtIndex:)]) {
+        UIView *view = [self.delegate photosViewController:self interstitialViewAtIndex:index];
+
+        NYTInterstitialViewController *interstitialViewController = [[NYTInterstitialViewController alloc] initWithView:view itemIndex:index];
+
+        return interstitialViewController;
+    }
+
+    return nil;
+}
+
+- (void)didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)index {
     if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhoto:atIndex:)]) {
-        [self.delegate photosViewController:self didNavigateToPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
+        [self.delegate photosViewController:self didNavigateToPhoto:photo atIndex:index];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidNavigateToPhotoNotification object:self];
+}
+
+- (void)didNavigateToInterstitialView:(UIView *)view atIndex:(NSUInteger)index {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToInterstialView:atIndex:)]) {
+        [self.delegate photosViewController:self didNavigateToInterstialView:view atIndex:index];
+    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:NYTPhotosViewControllerDidNavigateToInterstitialViewNotification object:self];
 }
 
 - (id <NYTPhoto>)currentlyDisplayedPhoto {
@@ -499,6 +580,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (CGPoint)boundsCenterPoint {
     return CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+}
+
+- (NSInteger)totalItemCount {
+    NSInteger numberOfInterstitialViews = 0;
+    if ([self.dataSource respondsToSelector:@selector(numberOfInterstitialViews)]) {
+        numberOfInterstitialViews = self.dataSource.numberOfInterstitialViews.integerValue;
+    }
+    return self.dataSource.numberOfPhotos.integerValue + numberOfInterstitialViews;
 }
 
 #pragma mark - NYTPhotoViewControllerDelegate
@@ -524,14 +613,40 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 #pragma mark - UIPageViewControllerDataSource
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoContainer> *)viewController {
-    NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
-    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex - 1]];
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
+    NSUInteger itemIndex = viewController.photoViewItemIndex;
+    if (itemIndex == 0) {
+        return nil;
+    }
+
+    NSUInteger beforeIndex = itemIndex - 1;
+    BOOL isPhotoAvailableAtIndex = true;
+    if ([self.dataSource respondsToSelector:@selector(isPhotoAtIndex:)]) {
+        isPhotoAvailableAtIndex = [self.dataSource isPhotoAtIndex:beforeIndex];
+    }
+    if (isPhotoAvailableAtIndex) {
+        return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:beforeIndex] atIndex:beforeIndex];
+    } else {
+        return [self newViewControllerAtIndex:beforeIndex];
+    }
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoContainer> *)viewController {
-    NSUInteger photoIndex = [self.dataSource indexOfPhoto:viewController.photo];
-    return [self newPhotoViewControllerForPhoto:self.dataSource[photoIndex + 1]];
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
+    NSUInteger itemIndex = viewController.photoViewItemIndex;
+    NSUInteger afterIndex = itemIndex + 1;
+    if (afterIndex >= [self totalItemCount]) {
+        return nil;
+    }
+
+    BOOL isPhotoAvailableAtIndex = true;
+    if ([self.dataSource respondsToSelector:@selector(isPhotoAtIndex:)]) {
+        isPhotoAvailableAtIndex = [self.dataSource isPhotoAtIndex:afterIndex];
+    }
+    if (isPhotoAvailableAtIndex) {
+        return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:afterIndex] atIndex:afterIndex];
+    } else {
+        return [self newViewControllerAtIndex:afterIndex];
+    }
 }
 
 #pragma mark - UIPageViewControllerDelegate
@@ -539,9 +654,13 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
         [self updateOverlayInformation];
-        
-        UIViewController <NYTPhotoContainer> *photoViewController = pageViewController.viewControllers.firstObject;
-        [self didNavigateToPhoto:photoViewController.photo];
+
+        UIViewController <NYTPhotoViewerContainer> *viewController = pageViewController.viewControllers.firstObject;
+        if (viewController.photo == nil) {
+            [self didNavigateToInterstitialView:viewController.interstitialView atIndex:viewController.photoViewItemIndex];
+        } else {
+            [self didNavigateToPhoto:viewController.photo atIndex:viewController.photoViewItemIndex];
+        }
     }
 }
 

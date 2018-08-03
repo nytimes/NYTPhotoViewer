@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
-  s.version          = "1.2.0"
+  s.version          = "2.0.0"
 
   s.description      = <<-DESC
                        NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
