@@ -32,6 +32,10 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 11.0, *) {
+            imageButton?.accessibilityIgnoresInvertColors = true
+        }
+
         let buttonImage = UIImage(named: ReferencePhotoName)
         imageButton?.setBackgroundImage(buttonImage, for: UIControlState())
     }

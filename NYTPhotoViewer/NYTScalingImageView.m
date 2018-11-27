@@ -92,6 +92,9 @@
 #else
     self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
 #endif
+    if (@available(iOS 11.0, *)) {
+        self.imageView.accessibilityIgnoresInvertColors = YES;
+    }
     [self updateImage:imageToUse imageData:imageData];
     
     [self addSubview:self.imageView];
