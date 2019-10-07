@@ -5,6 +5,7 @@ Changes for users of the library currently on `develop`:
 - Fixed some tests, added tests for NYTPhotoViewerSinglePhotoDataSource
 - Fixed a strict warning and a subscripting bug in NYTPhotoViewerArrayDataSource.m
 - Added support for interstitial views
+- Fix NYTPhotoTransitionAnimator translation animation, when the target photo is gif and FLAnimatedImageView is used.
 
 ## [2.0.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/2.0.0)
 

@@ -8,6 +8,11 @@
 
 #import "NYTPhotoTransitionAnimator.h"
 
+#ifdef ANIMATED_GIF_SUPPORT
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#endif
+
+
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithZooming = 0.5;
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
 static const CGFloat NYTPhotoTransitionAnimatorBackgroundFadeDurationRatio = 4.0 / 9.0;
@@ -245,12 +250,34 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
         animationView.contentMode = view.contentMode;
         animationView.transform = view.transform;
     }
+#ifdef ANIMATED_GIF_SUPPORT
+    else if ([view isKindOfClass:[FLAnimatedImageView class]]) {
+        animationView = [self snapshotViewForFLAnimatedView:(FLAnimatedImageView *)view];
+    }
+#endif
     else {
         animationView = [view snapshotViewAfterScreenUpdates:YES];
     }
 
     return animationView;
 }
+
+#ifdef ANIMATED_GIF_SUPPORT
++ (UIView *)snapshotViewForFLAnimatedView:(FLAnimatedImageView *)imageView {
+    UIView *tarImageView = nil;
+    if (imageView.image) {
+        tarImageView = [[UIImageView  alloc] initWithImage:imageView.image];
+    } else if (imageView.animatedImage) {
+        tarImageView = [[UIImageView  alloc] initWithImage:imageView.currentFrame];
+    } else {
+        tarImageView = [imageView snapshotViewAfterScreenUpdates:YES];
+        return tarImageView;
+    }
+    
+    tarImageView.bounds = imageView.bounds;
+    return tarImageView;
+}
+#endif
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 
