@@ -10,11 +10,11 @@ import UIKit
 
 /// A component of your data layer, which might load photos from the cache or network.
 final class PhotosProvider {
-    typealias Slideshow = [Photo]
+    typealias Slideshow = [PhotoItem]
 
     /// Simulate a synchronous fetch of a slideshow, perhaps from a local database.
     func fetchDemoSlideshow() -> Slideshow {
-        return (0...4).map { demoPhoto(identifier: $0) }
+        return (0...7).map { [2,5].contains($0) ? demoView(identifier: $0) : demoPhoto(identifier: $0) }
     }
 
     /// Simulate fetching a photo from the network.
@@ -29,7 +29,7 @@ final class PhotosProvider {
 }
 
 extension PhotosProvider {
-    fileprivate func demoPhoto(identifier: Int) -> Photo {
+    fileprivate func demoPhoto(identifier: Int) -> PhotoItem {
         let photoName: String
         let photoSummary: String
         let photoCredit: String
@@ -44,6 +44,10 @@ extension PhotosProvider {
             photoCredit = "Photo: Nic Lehoux"
         }
 
-        return Photo(name: photoName, summary: photoSummary, credit: photoCredit, identifier: identifier)
+        return PhotoItem(name: photoName, summary: photoSummary, credit: photoCredit, itemType: .image, identifier: identifier)
+    }
+
+    fileprivate func demoView(identifier: Int) -> PhotoItem {
+        return PhotoItem(itemType: .view, identifier: identifier)
     }
 }
