@@ -120,6 +120,11 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     if (!endingViewForAnimation) {
         endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     }
+
+    if (@available(iOS 11.0, *)) {
+        startingViewForAnimation.accessibilityIgnoresInvertColors = YES;
+        endingViewForAnimation.accessibilityIgnoresInvertColors = YES;
+    }
     
     CGAffineTransform finalEndingViewTransform = self.endingView.transform;
 

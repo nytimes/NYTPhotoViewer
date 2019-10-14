@@ -30,6 +30,14 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 
 @implementation NYTViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    if (@available(iOS 11.0, *)) {
+        self.imageButton.accessibilityIgnoresInvertColors = YES;
+    }
+}
+
 - (IBAction)imageButtonTapped:(id)sender {
     self.dataSource = [self.class newTimesBuildingDataSource];
 
