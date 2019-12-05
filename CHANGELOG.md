@@ -2,10 +2,20 @@
 
 Changes for users of the library currently on `develop`:
 
-- Fixed some tests, added tests for NYTPhotoViewerSinglePhotoDataSource
+## [3.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/3.0.1)
+
+Changes for users of the library in 3.0.1:
+
 - Fixed a strict warning and a subscripting bug in NYTPhotoViewerArrayDataSource.m
-- Added support for interstitial views
-- Fix issue with beginAppearanceTransition being called on non-child VCs
+- Fixed issue with beginAppearanceTransition being called on VCs with no parent VC
+
+## [3.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/3.0.0)
+
+Changes for users of the library in 3.0.0:
+
+- Unit test improvements
+- Interstitial view support + Swift sample
+- NSObject conformance for example app
 
 ## [2.0.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/2.0.0)
 
