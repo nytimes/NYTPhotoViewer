@@ -47,7 +47,7 @@ pod 'NYTPhotoViewer'
 
 ## Requirements
 
-This library requires a deployment target of iOS 8.0 or greater.
+This library requires a deployment target of iOS 9.0 or greater.
 
 ## Changelog
 
