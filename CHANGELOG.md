@@ -4,6 +4,7 @@ Changes for users of the library currently on `develop`:
 
 - Update deployment target to 9.0 from 8.0
 - Remove property `UIPopoverController *activityPopoverController` from `NYTPhotosViewController`
+- Fix animation on iPad in split screen
 
 ## [3.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/3.0.1)
 
