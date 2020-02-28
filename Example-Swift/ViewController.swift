@@ -33,7 +33,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
 
         let buttonImage = UIImage(named: ReferencePhotoName)
-        imageButton?.setBackgroundImage(buttonImage, for: UIControlState())
+        imageButton?.setBackgroundImage(buttonImage, for: UIControl.State())
     }
 }
 
@@ -47,7 +47,7 @@ extension ViewController: NYTPhotosViewControllerDelegate {
         }
         
         let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
-        shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, items: [Any]?, error: Error?) in
+        shareActivityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, items: [Any]?, error: Error?) in
             if completed {
                 photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType?.rawValue)
             }
