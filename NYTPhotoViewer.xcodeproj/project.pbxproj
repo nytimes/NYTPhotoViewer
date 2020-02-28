@@ -51,12 +51,7 @@
 		111084941C876D1900699670 /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084931C876D1900699670 /* NYTViewController.m */; };
 		111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		11BA4AF01C89128C0007EC46 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */; };
-		11BA4AF11C8912980007EC46 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */; };
-		11BA4AF21C8912980007EC46 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11BA4B0A1C8913220007EC46 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4B071C8912F20007EC46 /* OCMock.framework */; };
-		11BA4B0C1C8913590007EC46 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */; };
-		11BA4B0D1C8913590007EC46 /* FLAnimatedImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDA7A1C87714600018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
 		11FBDA8C1C87753200018169 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
@@ -103,6 +98,11 @@
 		93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
 		93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
+		CD3F77C72409223C005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
+		CD3F77CA2409224E005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
+		CD3F77CB2409224E005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD3F77CC2409225F005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
+		CD3F77CD2409225F005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,34 +119,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
-		};
-		11BA4AEA1C8911A00007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 92C9BC0C1B199DC500D79B06;
-			remoteInfo = FLAnimatedImage;
-		};
-		11BA4AEC1C8912530007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 92C9BC0B1B199DC500D79B06;
-			remoteInfo = FLAnimatedImage;
-		};
-		11BA4AEE1C8912600007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 92C9BC0B1B199DC500D79B06;
-			remoteInfo = FLAnimatedImage;
-		};
-		11BA4AF31C8912980007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 92C9BC0B1B199DC500D79B06;
-			remoteInfo = FLAnimatedImage;
 		};
 		11BA4AFE1C8912F20007EC46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -190,19 +162,54 @@
 			remoteGlobalIDString = 817EB1621BD765130047E85A;
 			remoteInfo = "OCMock tvOS";
 		};
-		11BA4B0E1C8913590007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 92C9BC0B1B199DC500D79B06;
-			remoteInfo = FLAnimatedImage;
-		};
 		11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
+		};
+		CD3F77C52409223C005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE97CA022B43EE60098C63F;
+			remoteInfo = "OCMock watchOS";
+		};
+		CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1B918D11BCF239200710963;
+			remoteInfo = PINRemoteImage;
+		};
+		CD3F77D92409229B005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 68A0FC191E523434000B552D;
+			remoteInfo = PINRemoteImageTests;
+		};
+		CD3F77DB2409229B005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D3A5A1F67284400F82935;
+			remoteInfo = "PINRemoteImage-tvOS";
+		};
+		CD3F77DD2409229B005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D3A621F67284400F82935;
+			remoteInfo = "PINRemoteImage-tvOSTests";
+		};
+		CD3F77DF240922A3005F08E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F1B918D01BCF239200710963;
+			remoteInfo = PINRemoteImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -213,8 +220,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD3F77CB2409224E005F08E8 /* PINRemoteImage.framework in Embed Frameworks */,
 				111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */,
-				11BA4AF21C8912980007EC46 /* FLAnimatedImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,8 +232,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD3F77CD2409225F005F08E8 /* PINRemoteImage.framework in Embed Frameworks */,
 				11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */,
-				11BA4B0D1C8913590007EC46 /* FLAnimatedImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +290,6 @@
 		111084921C876D1900699670 /* NYTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTViewController.h; sourceTree = "<group>"; };
 		111084931C876D1900699670 /* NYTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTViewController.m; sourceTree = "<group>"; };
 		111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NYTPhotoViewer-Info.plist"; sourceTree = "<group>"; };
-		11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FLAnimatedImage.xcodeproj; path = Carthage/Checkouts/FLAnimatedImage/FLAnimatedImage.xcodeproj; sourceTree = "<group>"; };
 		11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = Carthage/Checkouts/ocmock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NYTPhotoViewer.bundle; path = ../NYTPhotoViewer.bundle; sourceTree = "<group>"; };
 		11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +309,8 @@
 		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
 		93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerSinglePhotoDataSource.h; sourceTree = "<group>"; };
 		93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSource.m; sourceTree = "<group>"; };
+		CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
+		CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PINRemoteImage.xcodeproj; path = Carthage/Checkouts/PINRemoteImage/PINRemoteImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,7 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BA4AF01C89128C0007EC46 /* FLAnimatedImage.framework in Frameworks */,
+				CD3F77C72409223C005F08E8 /* PINRemoteImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +335,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3F77CA2409224E005F08E8 /* PINRemoteImage.framework in Frameworks */,
 				111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */,
-				11BA4AF11C8912980007EC46 /* FLAnimatedImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +351,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3F77CC2409225F005F08E8 /* PINRemoteImage.framework in Frameworks */,
 				11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */,
-				11BA4B0C1C8913590007EC46 /* FLAnimatedImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,14 +481,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		11BA4AE71C8911A00007EC46 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		11BA4AF61C8912F20007EC46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +490,7 @@
 				11BA4B051C8912F20007EC46 /* OCMockLibTests.xctest */,
 				11BA4B071C8912F20007EC46 /* OCMock.framework */,
 				11BA4B091C8912F20007EC46 /* OCMock.framework */,
+				CD3F77C62409223C005F08E8 /* OCMock.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -497,8 +498,9 @@
 		11BA4B0B1C8913330007EC46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */,
+				CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */,
 				11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */,
-				11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -517,6 +519,17 @@
 				11FBDAEA1C877BD600018169 /* Info.plist */,
 			);
 			path = "Example-Swift";
+			sourceTree = "<group>";
+		};
+		CD3F77CF2409229B005F08E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */,
+				CD3F77DA2409229B005F08E8 /* PINRemoteImageTests.xctest */,
+				CD3F77DC2409229B005F08E8 /* PINRemoteImage.framework */,
+				CD3F77DE2409229B005F08E8 /* PINRemoteImage-tvOSTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,7 +596,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				11BA4AED1C8912530007EC46 /* PBXTargetDependency */,
 			);
 			name = NYTPhotoViewer;
 			productName = NYTPhotoViewer;
@@ -620,9 +632,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				11BA4AEF1C8912600007EC46 /* PBXTargetDependency */,
+				CD3F77E0240922A3005F08E8 /* PBXTargetDependency */,
 				1110849B1C876DDE00699670 /* PBXTargetDependency */,
-				11BA4AF41C8912980007EC46 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -660,7 +671,6 @@
 			);
 			dependencies = (
 				11FBDAFA1C877CEF00018169 /* PBXTargetDependency */,
-				11BA4B0F1C8913590007EC46 /* PBXTargetDependency */,
 			);
 			name = "Example-Swift";
 			productName = "Example-Swift";
@@ -709,12 +719,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 11BA4AE71C8911A00007EC46 /* Products */;
-					ProjectRef = 11BA4AE61C8911A00007EC46 /* FLAnimatedImage.xcodeproj */;
-				},
-				{
 					ProductGroup = 11BA4AF61C8912F20007EC46 /* Products */;
 					ProjectRef = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
+				},
+				{
+					ProductGroup = CD3F77CF2409229B005F08E8 /* Products */;
+					ProjectRef = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -729,13 +739,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		11BA4AEB1C8911A00007EC46 /* FLAnimatedImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FLAnimatedImage.framework;
-			remoteRef = 11BA4AEA1C8911A00007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		11BA4AFF1C8912F20007EC46 /* OCMock.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -776,6 +779,41 @@
 			fileType = wrapper.framework;
 			path = OCMock.framework;
 			remoteRef = 11BA4B081C8912F20007EC46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD3F77C62409223C005F08E8 /* OCMock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCMock.framework;
+			remoteRef = CD3F77C52409223C005F08E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PINRemoteImage.framework;
+			remoteRef = CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD3F77DA2409229B005F08E8 /* PINRemoteImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PINRemoteImageTests.xctest;
+			remoteRef = CD3F77D92409229B005F08E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD3F77DC2409229B005F08E8 /* PINRemoteImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PINRemoteImage.framework;
+			remoteRef = CD3F77DB2409229B005F08E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD3F77DE2409229B005F08E8 /* PINRemoteImage-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PINRemoteImage-tvOSTests.xctest";
+			remoteRef = CD3F77DD2409229B005F08E8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -920,30 +958,15 @@
 			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
 			targetProxy = 1110849A1C876DDE00699670 /* PBXContainerItemProxy */;
 		};
-		11BA4AED1C8912530007EC46 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FLAnimatedImage;
-			targetProxy = 11BA4AEC1C8912530007EC46 /* PBXContainerItemProxy */;
-		};
-		11BA4AEF1C8912600007EC46 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FLAnimatedImage;
-			targetProxy = 11BA4AEE1C8912600007EC46 /* PBXContainerItemProxy */;
-		};
-		11BA4AF41C8912980007EC46 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FLAnimatedImage;
-			targetProxy = 11BA4AF31C8912980007EC46 /* PBXContainerItemProxy */;
-		};
-		11BA4B0F1C8913590007EC46 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FLAnimatedImage;
-			targetProxy = 11BA4B0E1C8913590007EC46 /* PBXContainerItemProxy */;
-		};
 		11FBDAFA1C877CEF00018169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
 			targetProxy = 11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */;
+		};
+		CD3F77E0240922A3005F08E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PINRemoteImage;
+			targetProxy = CD3F77DF240922A3005F08E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1084,6 +1107,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1107,6 +1134,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "ANIMATED_GIF_SUPPORT=1";
 				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1142,6 +1173,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -1153,6 +1188,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -1203,6 +1242,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1220,6 +1260,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

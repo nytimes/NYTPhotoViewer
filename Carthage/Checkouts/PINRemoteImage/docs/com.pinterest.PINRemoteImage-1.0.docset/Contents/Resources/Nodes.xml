@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>PINRemoteImage</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+                
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+                <Node>
+                    <Name>Blocks</Name>
+                    <Path>index.html</Path>
+                    <Subnodes>
+                        <NodeRef refid="14"/>
+                        <NodeRef refid="15"/>
+                        <NodeRef refid="16"/>
+                        <NodeRef refid="17"/>
+                        
+                    </Subnodes>
+                </Node>
+                
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1" type="file" documentType="reference">
+            <Name>PINAnimatedImage</Name>
+            <Path>Classes/PINAnimatedImage.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PINAnimatedImage.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PINAnimatedImage.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PINAnimatedImage.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PINAnimatedImage.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="2" type="file" documentType="reference">
+            <Name>PINProgressiveImage</Name>
+            <Path>Classes/PINProgressiveImage.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PINProgressiveImage.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PINProgressiveImage.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PINProgressiveImage.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>PINRemoteImageCategoryManager</Name>
+            <Path>Classes/PINRemoteImageCategoryManager.html</Path>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
+            <Name>PINRemoteImageManager</Name>
+            <Path>Classes/PINRemoteImageManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PINRemoteImageManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PINRemoteImageManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PINRemoteImageManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PINRemoteImageManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+		
+        <Node id="5" type="file" documentType="reference">
+            <Name>PINRemoteImageCategory</Name>
+            <Path>Protocols/PINRemoteImageCategory.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageCategory.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageCategory.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageCategory.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageCategory.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>PINRemoteImageManagerAlternateRepresentationProvider</Name>
+            <Path>Protocols/PINRemoteImageManagerAlternateRepresentationProvider.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageManagerAlternateRepresentationProvider.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageManagerAlternateRepresentationProvider.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/PINRemoteImageManagerAlternateRepresentationProvider.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="7" type="file" documentType="reference">
+            <Name>PINAnimatedImageError</Name>
+            <Path>Constants/PINAnimatedImageError.html</Path>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>PINAnimatedImageStatus</Name>
+            <Path>Constants/PINAnimatedImageStatus.html</Path>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>PINRemoteImageManagerDownloadOptions</Name>
+            <Path>Constants/PINRemoteImageManagerDownloadOptions.html</Path>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>PINRemoteImageManagerError</Name>
+            <Path>Constants/PINRemoteImageManagerError.html</Path>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>PINRemoteImageManagerPriority</Name>
+            <Path>Constants/PINRemoteImageManagerPriority.html</Path>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>PINRemoteImageResultType</Name>
+            <Path>Constants/PINRemoteImageResultType.html</Path>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>PINRemoteLockType</Name>
+            <Path>Constants/PINRemoteLockType.html</Path>
+            
+        </Node>
+		
+        <Node id="14" type="file" documentType="reference">
+            <Name>PINAnimatedImageDecodedPath</Name>
+            <Path>Blocks/PINAnimatedImageDecodedPath.html</Path>
+            
+        </Node>
+        <Node id="15" type="file" documentType="reference">
+            <Name>PINAnimatedImageInfoReady</Name>
+            <Path>Blocks/PINAnimatedImageInfoReady.html</Path>
+            
+        </Node>
+        <Node id="16" type="file" documentType="reference">
+            <Name>PINAnimatedImageSharedReady</Name>
+            <Path>Blocks/PINAnimatedImageSharedReady.html</Path>
+            
+        </Node>
+        <Node id="17" type="file" documentType="reference">
+            <Name>PINRemoteImageManagerImageCompletion</Name>
+            <Path>Blocks/PINRemoteImageManagerImageCompletion.html</Path>
+            
+        </Node>
+        
+	</Library>
+</DocSetNodes>
