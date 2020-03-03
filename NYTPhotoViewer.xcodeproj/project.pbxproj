@@ -103,6 +103,7 @@
 		CD3F77CB2409224E005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD3F77CC2409225F005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
 		CD3F77CD2409225F005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDA5DA08240EB5B400A796D3 /* NYTInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,13 +169,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
-		};
-		CD3F77C52409223C005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DE97CA022B43EE60098C63F;
-			remoteInfo = "OCMock watchOS";
 		};
 		CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -490,7 +484,6 @@
 				11BA4B051C8912F20007EC46 /* OCMockLibTests.xctest */,
 				11BA4B071C8912F20007EC46 /* OCMock.framework */,
 				11BA4B091C8912F20007EC46 /* OCMock.framework */,
-				CD3F77C62409223C005F08E8 /* OCMock.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -781,13 +774,6 @@
 			remoteRef = 11BA4B081C8912F20007EC46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CD3F77C62409223C005F08E8 /* OCMock.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCMock.framework;
-			remoteRef = CD3F77C52409223C005F08E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -918,6 +904,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA5DA08240EB5B400A796D3 /* NYTInterstitialViewController.m in Sources */,
 				11FBDA991C87753200018169 /* NYTPhotoTransitionController.m in Sources */,
 				11FBDAA31C87753200018169 /* NSBundle+NYTPhotoViewer.m in Sources */,
 				11FBDA951C87753200018169 /* NYTPhotosViewController.m in Sources */,
