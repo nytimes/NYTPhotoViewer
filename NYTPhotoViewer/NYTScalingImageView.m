@@ -11,7 +11,7 @@
 #import "tgmath.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
-#import <FLAnimatedImage/FLAnimatedImage.h>
+#import <PINRemoteImage/PINRemoteImage.h>
 #endif
 
 @interface NYTScalingImageView ()
@@ -19,7 +19,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 #ifdef ANIMATED_GIF_SUPPORT
-@property (nonatomic) FLAnimatedImageView *imageView;
+@property (nonatomic) PINAnimatedImageView *imageView;
 #else
 @property (nonatomic) UIImageView *imageView;
 #endif
@@ -88,7 +88,7 @@
     UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
 #ifdef ANIMATED_GIF_SUPPORT
-    self.imageView = [[FLAnimatedImageView alloc] initWithImage:imageToUse];
+    self.imageView = [[PINAnimatedImageView alloc] initWithAnimatedImage:[[PINCachedAnimatedImage alloc] initWithAnimatedImageData:imageData]];
 #else
     self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
 #endif
@@ -122,7 +122,7 @@
     
 #ifdef ANIMATED_GIF_SUPPORT
     // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
-    self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:imageData];
+    self.imageView.animatedImage = [[PINCachedAnimatedImage alloc] initWithAnimatedImageData:imageData];
 #endif
     
     self.imageView.frame = CGRectMake(0, 0, imageToUse.size.width, imageToUse.size.height);

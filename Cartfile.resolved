@@ -1,2 +1,4 @@
-github "Flipboard/FLAnimatedImage" "1.0.12"
-github "erikdoe/ocmock" "v3.2.2"
+github "erikdoe/ocmock" "v3.6"
+github "pinterest/PINCache" "3.0.1-beta.8"
+github "pinterest/PINOperation" "1.1.2"
+github "pinterest/PINRemoteImage" "3.0.0"

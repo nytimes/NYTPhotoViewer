@@ -33,7 +33,7 @@ NYTPhotoViewer may be installed via [Carthage](https://github.com/Carthage/Carth
 github "NYTimes/NYTPhotoViewer"
 ```
 
-Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `FLAnimatedImage` frameworks into your project.
+Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `PINRemoteImage` frameworks into your project.
 
 If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
 
@@ -47,7 +47,7 @@ pod 'NYTPhotoViewer'
 
 ## Requirements
 
-This library requires a deployment target of iOS 8.0 or greater.
+This library requires a deployment target of iOS 9.0 or greater.
 
 ## Changelog
 
