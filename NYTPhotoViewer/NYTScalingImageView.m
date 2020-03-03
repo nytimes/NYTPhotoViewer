@@ -12,6 +12,7 @@
 
 #ifdef ANIMATED_GIF_SUPPORT
 #import <PINRemoteImage/PINRemoteImage.h>
+#import <PINRemoteImage/PINAnimatedImageView.h>
 #endif
 
 @interface NYTScalingImageView ()

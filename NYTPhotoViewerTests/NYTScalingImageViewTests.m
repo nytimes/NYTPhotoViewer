@@ -11,6 +11,7 @@
 
 #import <NYTPhotoViewer/NYTScalingImageView.h>
 #import <PINRemoteImage/PINRemoteImage.h>
+#import <PINRemoteImage/PINAnimatedImageView.h>
 
 @interface NYTScalingImageViewTests : XCTestCase
 
