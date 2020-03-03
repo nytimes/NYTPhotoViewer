@@ -1,9 +1,12 @@
 ## `develop`
 
+## [4.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.0)
+
 Changes for users of the library currently on `develop`:
 
 - Update deployment target to 9.0 from 8.0
 - Remove property `UIPopoverController *activityPopoverController` from `NYTPhotosViewController`
+- Replace use of `FLAnimatedImage` with `PINRemoteImage` (https://github.com/pinterest/PINRemoteImage) because `FLAnimatedImage` is no longer maintained and contains deprecated code.
 
 ## [3.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/3.0.1)
 

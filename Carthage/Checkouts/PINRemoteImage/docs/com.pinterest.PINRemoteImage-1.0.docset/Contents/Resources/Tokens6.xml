@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PINRemoteImageManagerAlternateRepresentationProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PINRemoteImageManagerAlternateRepresentationProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PINAlternateRepresentationProvider.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PINRemoteImageManagerAlternateRepresentationProvider/alternateRepresentationWithData:options:</TokenIdentifier>
+			<Abstract type="html">This method will be called with data off the wire or stored in the cache. Return an object to have it returned as the alternativeRepresentation object in the PINRemoteImageManagerResult. @warning this method can be called on the main thread, be careful of doing expensive work.</Abstract>
+			<DeclaredIn>PINAlternateRepresentationProvider.h</DeclaredIn>
+			
+			<Declaration>- (id)alternateRepresentationWithData:(NSData *)data options:(PINRemoteImageManagerDownloadOptions)options</Declaration>
+			
+			
+			<Anchor>//api/name/alternateRepresentationWithData:options:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
