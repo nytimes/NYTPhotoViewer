@@ -1,8 +1,12 @@
 ## `develop`
 
+Changes for users of the library currently on `develop`:
+
+- Removed `FLAnimatedImage` from .gitmodules.
+
 ## [4.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.0)
 
-Changes for users of the library currently on `develop`:
+Changes for users of the library in 4.0.0:
 
 - Update deployment target to 9.0 from 8.0
 - Remove property `UIPopoverController *activityPopoverController` from `NYTPhotosViewController`
