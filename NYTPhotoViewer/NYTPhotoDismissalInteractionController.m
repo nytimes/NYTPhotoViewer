@@ -27,6 +27,16 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:fromView];
     CGPoint newCenterPoint = CGPointMake(anchorPoint.x, anchorPoint.y + translatedPanGesturePoint.y);
     
+    UIView *toView = [self.transitionContext viewForKey:UITransitionContextToViewKey];
+    if (!toView.superview) {
+        UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        toView.frame = [self.transitionContext finalFrameForViewController:toViewController];
+        if (![toView isDescendantOfView:self.transitionContext.containerView]) {
+            [self.transitionContext.containerView addSubview:toView];
+        }
+        [self.transitionContext.containerView bringSubviewToFront:fromView];
+    }
+
     // Pan the view on pace with the pan gesture.
     viewToPan.center = newCenterPoint;
     
