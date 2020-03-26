@@ -3,6 +3,7 @@
 Changes for users of the library currently on `develop`:
 
 - Removed `FLAnimatedImage` from .gitmodules.
+- Change `NYTPhotosViewController` to use fullscreen presentation by default, so it causes the presenting view to disappear behind it, i.e. to get `-viewWillDisappear:` and `-viewDidDisappear` called on it.
 
 ## [4.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.0)
 
