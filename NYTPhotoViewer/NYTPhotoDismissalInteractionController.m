@@ -26,7 +26,10 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     UIView *fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:fromView];
     CGPoint newCenterPoint = CGPointMake(anchorPoint.x, anchorPoint.y + translatedPanGesturePoint.y);
-    
+
+    // If we are presenting fullscreen, the presenting view controller's view will have been removed from the view
+    // hierarchy when the presentation animation finished. We need to put it back in the view hierarchy in order for
+    // it to appear behind the interactive dismissal animation.
     UIView *toView = [self.transitionContext viewForKey:UITransitionContextToViewKey];
     if (!toView.superview) {
         UIViewController *toViewController = [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
