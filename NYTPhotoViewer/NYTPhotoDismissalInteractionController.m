@@ -89,6 +89,14 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
             finalBackgroundAlpha = 0.0;
         }
     }
+    else {
+        // Interactive transition was canceled (i.e. the user changed their mind and decided not to finish the
+        // dismissal), so if we are presenting fullscreen, remove the presenting view controller's view.
+        if (self.transitionContext.presentationStyle == UIModalPresentationFullScreen) {
+            UIView *toView = [self.transitionContext viewForKey:UITransitionContextToViewKey];
+            [toView removeFromSuperview];
+        }
+    }
     
     if (!didAnimateUsingAnimator) {
         [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
