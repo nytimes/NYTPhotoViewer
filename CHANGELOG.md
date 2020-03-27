@@ -3,6 +3,7 @@
 Changes for users of the library currently on `develop`:
 
 - Removed `FLAnimatedImage` from .gitmodules.
+- Fix unbalanced calls to begin/end appearance transitions.
 
 ## [4.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.0)
 
