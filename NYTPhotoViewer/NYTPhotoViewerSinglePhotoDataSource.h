@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The designated initializer that takes and stores a single photo.
  *
- *  @param photos An object conforming to the `NYTPhoto` protocol.
+ *  @param photo An object conforming to the `NYTPhoto` protocol.
  *
  *  @return A fully initialized data source.
  */
