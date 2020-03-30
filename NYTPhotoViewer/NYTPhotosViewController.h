@@ -146,7 +146,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  This method has no effect if the given index is out of bounds in the data source.
  *
- *  @param photo The index of the photo which changed in the data source.
+ *  @param photoIndex The index of the photo which changed in the data source.
  */
 - (void)updatePhotoAtIndex:(NSInteger)photoIndex;
 

@@ -1,8 +1,19 @@
 ## `develop`
 
+Changes for users of the library currently on `develop`:
+
+## [4.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.1)
+
+Changes for users of the library in 4.0.1:
+
+- Removed `FLAnimatedImage` from .gitmodules.
+- Change `NYTPhotosViewController` to use fullscreen presentation by default, so it causes the presenting view to disappear behind it, i.e. to get `-viewWillDisappear:` and `-viewDidDisappear` called on it.
+- Fix unbalanced calls to begin/end appearance transitions.
+- Modified comment parameter in `NYTPhotosViewController` and `NYTPhotoViewerSinglePhotoDataSource` to match parameter in signature. Removes compilation warning.
+
 ## [4.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.0)
 
-Changes for users of the library currently on `develop`:
+Changes for users of the library in 4.0.0:
 
 - Update deployment target to 9.0 from 8.0
 - Remove property `UIPopoverController *activityPopoverController` from `NYTPhotosViewController`
