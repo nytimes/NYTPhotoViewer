@@ -207,7 +207,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     _notificationCenter = [NSNotificationCenter new];
 
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(NYTPhotosViewControllerInterPhotoSpacing)}];
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@(NYTPhotosViewControllerInterPhotoSpacing)}];
 
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
@@ -604,11 +604,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
-    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta: -1 stopBeforeIndex: -1];
+    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta:-1 stopBeforeIndex:-1];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
-    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta: 1 stopBeforeIndex: self.totalItemCount];
+    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta:1 stopBeforeIndex:self.totalItemCount];
 }
 
 #pragma mark - UIPageViewControllerDelegate
