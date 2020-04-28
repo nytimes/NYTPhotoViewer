@@ -222,7 +222,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return A view to display as the caption for the photo. Return `nil` to show a default view generated from the caption properties on the photo object.
  */
-- (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
+- (nullable UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
  *  Returns whether the caption view should respect the safe area.
@@ -248,7 +248,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return The text to display as the navigation-item title for the given photo. Return `nil` to show a default title like "1 of 4" indicating progress in a slideshow, or an empty string to hide this text entirely.
  */
-- (NSString * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id <NYTPhoto>)photo atIndex:(NSInteger)photoIndex totalPhotoCount:(nullable NSNumber *)totalPhotoCount;
+- (nullable NSString *)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id <NYTPhoto>)photo atIndex:(NSInteger)photoIndex totalPhotoCount:(nullable NSNumber *)totalPhotoCount;
 
 /**
  *  Returns a view to display while a photo is loading. Can be any `UIView` object, but is expected to respond to `sizeToFit` appropriately. This view will be sized and centered in the blank area, and hidden when the photo image or its placeholder is loaded.
@@ -258,7 +258,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return A view to display while the photo is loading. Return `nil` to show a default white `UIActivityIndicatorView`.
  */
-- (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo;
+- (nullable UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
  *  Returns the view from which to animate for a given object conforming to the `NYTPhoto` protocol.
@@ -268,7 +268,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return The view to animate out of or into for the given photo.
  */
-- (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
+- (nullable UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo;
 
 /**
 *  Returns the maximum zoom scale for a given object conforming to the `NYTPhoto` protocol.
@@ -307,7 +307,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
  *  @param activityType         The activity type that was successfully shared.
  */
-- (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(NSString * _Nullable)activityType;
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController actionCompletedWithActivityType:(nullable NSString *)activityType;
 
 /**
  *  called when an `NYTInterstitialViewController` is created but before it is displayed. Returns the view to display as an interstitial view.
@@ -317,7 +317,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return A `UIView`.
  */
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController interstitialViewAtIndex:(NSUInteger)index;
+- (nullable UIView *)photosViewController:(NYTPhotosViewController *)photosViewController interstitialViewAtIndex:(NSUInteger)index;
 
 @end
 

@@ -21,7 +21,7 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 The Example project uses [Carthage](https://github.com/Carthage/Carthage) to integrate its dependencies. If you don’t have Carthage installed, you can install it via [Homebrew](http://brew.sh) with `brew install carthage`.
 
-Then, in your checkout of the `NYTPhotoViewer` repo, run `carthage checkout --use-submodules`.
+Then, in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`.
 
 ## Installation
 

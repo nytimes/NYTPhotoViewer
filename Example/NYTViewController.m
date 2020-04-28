@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
         for (NYTExamplePhoto *photo in dataSource.photos) {
             if (!photo.image && !photo.imageData) {
                 photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"Photo which previously had a loading spinner (to see the spinner, reopen the photo viewer and scroll to this photo)" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"Photo which previously had a loading spinner (to see the spinner, reopen the photo viewer and scroll to this photo)" attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
                 [photosViewController updatePhoto:photo];
             }
         }
@@ -228,15 +228,15 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 }
 
 + (NSAttributedString *)attributedTitleFromString:(NSString *)caption {
-    return [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+    return [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
 }
 
 + (NSAttributedString *)attributedSummaryFromString:(NSString *)summary {
-    return [[NSAttributedString alloc] initWithString:summary attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+    return [[NSAttributedString alloc] initWithString:summary attributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor], NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
 }
 
 + (NSAttributedString *)attributedCreditFromString:(NSString *)credit {
-    return [[NSAttributedString alloc] initWithString:credit attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
+    return [[NSAttributedString alloc] initWithString:credit attributes:@{NSForegroundColorAttributeName:[UIColor grayColor], NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
 }
 
 @end
