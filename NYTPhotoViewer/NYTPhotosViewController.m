@@ -174,7 +174,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return [self initWithDataSource:dataSource initialPhoto:initialPhoto delegate:delegate];
 }
 
-- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+- (instancetype)initWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(nullable id <NYTPhoto>)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
@@ -184,7 +184,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return self;
 }
 
-- (void)commonInitWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(id <NYTPhoto> _Nullable)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
+- (void)commonInitWithDataSource:(id <NYTPhotoViewerDataSource>)dataSource initialPhoto:(nullable id <NYTPhoto>)initialPhoto delegate:(nullable id <NYTPhotosViewControllerDelegate>)delegate {
     _dataSource = dataSource;
     _delegate = delegate;
     _initialPhoto = initialPhoto;
