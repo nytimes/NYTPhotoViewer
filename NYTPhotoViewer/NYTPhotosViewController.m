@@ -526,12 +526,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (UIViewController *)newViewControllerAtIndex:(NSUInteger)index {
     if ([self.delegate respondsToSelector:@selector(photosViewController:interstitialViewAtIndex:)]) {
         UIView *view = [self.delegate photosViewController:self interstitialViewAtIndex:index];
-
-        NYTInterstitialViewController *interstitialViewController = [[NYTInterstitialViewController alloc] initWithView:view itemIndex:index];
-
-        return interstitialViewController;
+        if (view != nil) {
+            NYTInterstitialViewController *interstitialViewController = [[NYTInterstitialViewController alloc] initWithView:view itemIndex:index];
+            return interstitialViewController;
+        }
     }
-
     return nil;
 }
 
