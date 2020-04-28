@@ -7,6 +7,6 @@ if ! command -v carthage > /dev/null; then
 fi
 
 
-carthage build --platform iOS --no-use-binaries --use-submodules --no-skip-current
+carthage build --platform iOS --no-use-binaries --no-skip-current
 
 pod lib lint
