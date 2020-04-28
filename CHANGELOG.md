@@ -2,6 +2,12 @@
 
 Changes for users of the library currently on `develop`:
 
+## [5.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.0)
+
+Changes for users of the library in 5.0.0:
+
+- Changed `NYTPhotosViewControllerDelegate` protocol  so that `- photosViewController:interstitialViewAtIndex:` can return nil.  If it does, that index is skipped and the following (or preceding) photo or interstitial view is displayed.
+
 ## [4.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/4.0.1)
 
 Changes for users of the library in 4.0.1:

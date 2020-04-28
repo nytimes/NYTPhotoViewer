@@ -69,7 +69,7 @@ extension ViewController: NYTPhotosViewControllerDelegate {
         photoViewerCoordinator = nil
     }
 
-    func photosViewController(_ photosViewController: NYTPhotosViewController, interstitialViewAt index: UInt) -> UIView {
+    func photosViewController(_ photosViewController: NYTPhotosViewController, interstitialViewAt index: UInt) -> UIView? {
         let redView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: photosViewController.view.frame.width, height: 200)))
         redView.backgroundColor = .red
         redView.autoresizingMask = [.flexibleWidth]

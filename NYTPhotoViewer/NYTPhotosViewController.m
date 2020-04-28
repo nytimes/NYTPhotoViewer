@@ -579,63 +579,36 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return self.dataSource.numberOfPhotos.integerValue + numberOfInterstitialViews;
 }
 
-#pragma mark - NYTPhotoViewControllerDelegate
+#pragma mark - UIPageViewControllerDelegate
 
-- (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
-    self.shouldHandleLongPress = NO;
-    
-    BOOL clientDidHandle = NO;
-    if ([self.delegate respondsToSelector:@selector(photosViewController:handleLongPressForPhoto:withGestureRecognizer:)]) {
-        clientDidHandle = [self.delegate photosViewController:self handleLongPressForPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
+/// internal helper method for the following two delegate methods
+
+- (UIViewController *)nextViewControllerFromIndex:(NSInteger)startingIndex delta:(NSInteger)delta stopBeforeIndex:(NSInteger)stopBeforeIndex {
+    NSInteger itemIndex = startingIndex;
+    while (itemIndex + delta != stopBeforeIndex) {
+        itemIndex += delta;
+
+        BOOL isPhotoAvailableAtIndex = true;
+        if ([self.dataSource respondsToSelector:@selector(isPhotoAtIndex:)]) {
+            isPhotoAvailableAtIndex = [self.dataSource isPhotoAtIndex:itemIndex];
+        }
+        if (isPhotoAvailableAtIndex) {
+            return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:itemIndex] atIndex:itemIndex];
+        }
+        UIViewController *possibleVC = [self newViewControllerAtIndex:itemIndex];
+        if (possibleVC != nil) {
+            return possibleVC;
+        }
     }
-    
-    self.shouldHandleLongPress = !clientDidHandle;
-    
-    if (self.shouldHandleLongPress) {
-        UIMenuController *menuController = [UIMenuController sharedMenuController];
-        CGRect targetRect = CGRectZero;
-        targetRect.origin = [longPressGestureRecognizer locationInView:longPressGestureRecognizer.view];
-        [menuController setTargetRect:targetRect inView:longPressGestureRecognizer.view];
-        [menuController setMenuVisible:YES animated:YES];
-    }
+    return nil;
 }
 
-#pragma mark - UIPageViewControllerDataSource
-
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
-    NSUInteger itemIndex = viewController.photoViewItemIndex;
-    if (itemIndex == 0) {
-        return nil;
-    }
-
-    NSUInteger beforeIndex = itemIndex - 1;
-    BOOL isPhotoAvailableAtIndex = true;
-    if ([self.dataSource respondsToSelector:@selector(isPhotoAtIndex:)]) {
-        isPhotoAvailableAtIndex = [self.dataSource isPhotoAtIndex:beforeIndex];
-    }
-    if (isPhotoAvailableAtIndex) {
-        return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:beforeIndex] atIndex:beforeIndex];
-    } else {
-        return [self newViewControllerAtIndex:beforeIndex];
-    }
+    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta: -1 stopBeforeIndex: -1];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController <NYTPhotoViewerContainer> *)viewController {
-    NSUInteger itemIndex = viewController.photoViewItemIndex;
-    NSUInteger afterIndex = itemIndex + 1;
-    if (afterIndex >= [self totalItemCount]) {
-        return nil;
-    }
-
-    BOOL isPhotoAvailableAtIndex = true;
-    if ([self.dataSource respondsToSelector:@selector(isPhotoAtIndex:)]) {
-        isPhotoAvailableAtIndex = [self.dataSource isPhotoAtIndex:afterIndex];
-    }
-    if (isPhotoAvailableAtIndex) {
-        return [self newPhotoViewControllerForPhoto:[self.dataSource photoAtIndex:afterIndex] atIndex:afterIndex];
-    } else {
-        return [self newViewControllerAtIndex:afterIndex];
-    }
+    return [self nextViewControllerFromIndex:viewController.photoViewItemIndex delta: 1 stopBeforeIndex: self.totalItemCount];
 }
 
 #pragma mark - UIPageViewControllerDelegate

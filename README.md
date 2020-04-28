@@ -23,6 +23,8 @@ The Example project uses [Carthage](https://github.com/Carthage/Carthage) to int
 
 Then, in your checkout of the `NYTPhotoViewer` repo, run `carthage checkout --use-submodules`.
 
+Then run `scripts/bootstrap`.
+
 ## Installation
 
 ### Carthage

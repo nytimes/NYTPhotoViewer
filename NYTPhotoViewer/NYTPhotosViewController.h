@@ -317,7 +317,7 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *
  *  @return A `UIView`.
  */
-- (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController interstitialViewAtIndex:(NSUInteger)index;
+- (UIView * _Nullable)photosViewController:(NYTPhotosViewController *)photosViewController interstitialViewAtIndex:(NSUInteger)index;
 
 @end
 
