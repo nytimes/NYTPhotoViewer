@@ -579,7 +579,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return self.dataSource.numberOfPhotos.integerValue + numberOfInterstitialViews;
 }
 
-#pragma mark - UIPageViewControllerDelegate
+#pragma mark - UIPageViewControllerDataSource
 
 /// internal helper method for the following two delegate methods
 
