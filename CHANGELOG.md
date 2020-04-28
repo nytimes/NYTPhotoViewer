@@ -2,6 +2,12 @@
 
 Changes for users of the library currently on `develop`:
 
+## [5.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.0)
+
+Changes for users of the library in 5.0.1:
+
+- bugfix: we weren't treating a nil interstitial correctly.
+
 ## [5.0.0](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.0)
 
 Changes for users of the library in 5.0.0:
