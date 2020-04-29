@@ -2,7 +2,7 @@
 
 Changes for users of the library currently on `develop`:
 
-## [5.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.0)
+## [5.0.1](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.1)
 
 Changes for users of the library in 5.0.1:
 
