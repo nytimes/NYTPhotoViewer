@@ -578,6 +578,27 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     return self.dataSource.numberOfPhotos.integerValue + numberOfInterstitialViews;
 }
 
+#pragma mark - NYPhotoViewControllerDelegate
+
+- (void)photoViewController:(NYTPhotoViewController *)photoViewController didLongPressWithGestureRecognizer:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
+    self.shouldHandleLongPress = NO;
+    
+    BOOL clientDidHandle = NO;
+    if ([self.delegate respondsToSelector:@selector(photosViewController:handleLongPressForPhoto:withGestureRecognizer:)]) {
+        clientDidHandle = [self.delegate photosViewController:self handleLongPressForPhoto:photoViewController.photo withGestureRecognizer:longPressGestureRecognizer];
+    }
+    
+    self.shouldHandleLongPress = !clientDidHandle;
+    
+    if (self.shouldHandleLongPress) {
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        CGRect targetRect = CGRectZero;
+        targetRect.origin = [longPressGestureRecognizer locationInView:longPressGestureRecognizer.view];
+        [menuController setTargetRect:targetRect inView:longPressGestureRecognizer.view];
+        [menuController setMenuVisible:YES animated:YES];
+    }
+}
+
 #pragma mark - UIPageViewControllerDataSource
 
 /// internal helper method for the following two delegate methods
