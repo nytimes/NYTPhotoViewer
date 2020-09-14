@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, PINDiskCacheError) {
 /**
  A callback block which provides the cache, key and object as arguments
  */
-typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <NSCoding>  _Nullable object);
+typedef void (^PINDiskCacheObjectBlock)(id<PINCaching> cache, NSString *key, id _Nullable object);
 
 /**
  A callback block which provides the key and fileURL of the object
@@ -134,24 +134,6 @@ PIN_SUBCLASSING_RESTRICTED
  <synchronouslyLockFileAccessWhileExecutingBlock:>.
  */
 @property (readonly) NSURL *cacheURL;
-
-/**
- The total number of bytes used on disk, as reported by `NSURLTotalFileAllocatedSizeKey`.
- 
- @warning This property should only be read from a call to <synchronouslyLockFileAccessWhileExecutingBlock:> or
- its asynchronous equivalent <lockFileAccessWhileExecutingBlock:>
- 
- For example:
- 
-    // some background thread
-
-    __block NSUInteger byteCount = 0;
- 
-    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(PINDiskCache *diskCache) {
-        byteCount = diskCache.byteCount;
-    }];
- */
-@property (readonly) NSUInteger byteCount;
 
 /**
  The maximum number of bytes allowed on disk. This value is checked every time an object is set, if the written
@@ -572,7 +554,7 @@ PIN_SUBCLASSING_RESTRICTED
 /**
  A callback block which provides only the cache as an argument
  */
-typedef void (^PINDiskCacheBlock)(PINDiskCache *cache);
+typedef void (^PINDiskCacheBlock)(id<PINCaching>  _Nonnull cache);
 
 @interface PINDiskCache (Deprecated)
 - (void)lockFileAccessWhileExecutingBlock:(nullable PINCacheBlock)block __attribute__((deprecated));

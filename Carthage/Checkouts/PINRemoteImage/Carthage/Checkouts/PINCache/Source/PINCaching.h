@@ -44,6 +44,24 @@ typedef void (^PINCacheObjectContainmentBlock)(BOOL containsObject);
  */
 @property (readonly) NSString *name;
 
+/**
+ The total number of bytes used on disk, as reported by `NSURLTotalFileAllocatedSizeKey`.
+ 
+ @warning This property should only be read from a call to <synchronouslyLockFileAccessWhileExecutingBlock:> or
+ its asynchronous equivalent <lockFileAccessWhileExecutingBlock:>
+ 
+ For example:
+ 
+    // some background thread
+
+    __block NSUInteger byteCount = 0;
+ 
+    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(PINDiskCache *diskCache) {
+        byteCount = diskCache.byteCount;
+    }];
+ */
+@property (readonly) NSUInteger byteCount;
+
 #pragma mark - Asynchronous Methods
 
 /// @name Asynchronous Methods

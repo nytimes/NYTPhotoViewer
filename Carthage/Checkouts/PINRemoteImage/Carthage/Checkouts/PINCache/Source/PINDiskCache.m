@@ -64,6 +64,9 @@ const char * PINDiskCacheFileSystemRepresentation(NSURL *url)
 @property (nonatomic, strong) NSNumber *size;
 // Age limit is used in conjuction with ttl
 @property (nonatomic) NSTimeInterval ageLimit;
+
+//The total number of bytes used on disk, as reported by `NSURLTotalFileAllocatedSizeKey`.
+@property (readonly) NSUInteger byteCount;
 @end
 
 @interface PINDiskCache () {
