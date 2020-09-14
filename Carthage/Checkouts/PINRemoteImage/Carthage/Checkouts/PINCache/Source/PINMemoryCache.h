@@ -224,8 +224,8 @@ PIN_SUBCLASSING_RESTRICTED
 
 #pragma mark - Deprecated
 
-typedef void (^PINMemoryCacheBlock)(PINMemoryCache *cache);
-typedef void (^PINMemoryCacheObjectBlock)(PINMemoryCache *cache, NSString *key, id _Nullable object);
+typedef void (^PINMemoryCacheBlock)(id<PINCaching>  _Nonnull cache);
+typedef void (^PINMemoryCacheObjectBlock)(id<PINCaching>  _Nonnull cache, NSString * _Nonnull key, id  _Nullable object);
 typedef void (^PINMemoryCacheContainmentBlock)(BOOL containsObject);
 
 @interface PINMemoryCache (Deprecated)

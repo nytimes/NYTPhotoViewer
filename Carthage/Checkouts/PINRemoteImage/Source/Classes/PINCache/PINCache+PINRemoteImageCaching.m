@@ -44,7 +44,7 @@
 - (void)objectFromDiskForKey:(NSString *)key completion:(PINRemoteImageCachingObjectBlock)completion
 {
     __weak typeof(self) weakSelf = self;
-    [self.diskCache objectForKeyAsync:key completion:^(PINDiskCache * _Nonnull cache, NSString * _Nonnull key, id<NSCoding>  _Nullable object) {
+    [self.diskCache objectForKeyAsync:key completion:^(id<PINCaching>  _Nonnull cache, NSString * _Nonnull key, id  _Nullable object) {
         if(completion) {
             typeof(self) strongSelf = weakSelf;
             completion(strongSelf, key, object);
@@ -74,7 +74,7 @@
 {
   if (completion) {
     __weak typeof(self) weakSelf = self;
-    [self removeObjectForKeyAsync:key completion:^(PINCache * _Nonnull cache, NSString * _Nonnull key, id  _Nullable object) {
+    [self removeObjectForKeyAsync:key completion:^(id<PINCaching>  _Nonnull cache, NSString * _Nonnull key, id  _Nullable object) {
         typeof(self) strongSelf = weakSelf;
         completion(strongSelf, key, object);
     }];
