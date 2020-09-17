@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>PINRemoteImageCategory Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">PINRemoteImage </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Pinterest</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/pin_updateWithProgress">pin_updateWithProgress</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/pin_cancelImageDownload">- pin_cancelImageDownload</option>
+		
+		<option value="//api/name/pin_downloadImageOperationUUID">- pin_downloadImageOperationUUID</option>
+		
+		<option value="//api/name/pin_setDownloadImageOperationUUID:">- pin_setDownloadImageOperationUUID:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:">- pin_setImageFromURL:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:completion:">- pin_setImageFromURL:completion:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:placeholderImage:">- pin_setImageFromURL:placeholderImage:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:placeholderImage:completion:">- pin_setImageFromURL:placeholderImage:completion:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:">- pin_setImageFromURL:placeholderImage:processorKey:processor:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:completion:">- pin_setImageFromURL:placeholderImage:processorKey:processor:completion:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:processorKey:processor:">- pin_setImageFromURL:processorKey:processor:</option>
+		
+		<option value="//api/name/pin_setImageFromURL:processorKey:processor:completion:">- pin_setImageFromURL:processorKey:processor:completion:</option>
+		
+		<option value="//api/name/pin_setImageFromURLs:">- pin_setImageFromURLs:</option>
+		
+		<option value="//api/name/pin_setImageFromURLs:placeholderImage:">- pin_setImageFromURLs:placeholderImage:</option>
+		
+		<option value="//api/name/pin_setImageFromURLs:placeholderImage:completion:">- pin_setImageFromURLs:placeholderImage:completion:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">PINRemoteImageCategory Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PINRemoteImageCategoryManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Protocol to implement on UIView subclasses to support PINRemoteImage</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:" title="pin_setImageFromURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:">&ndash;&nbsp;pin_setImageFromURL:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the image from the given URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:placeholderImage:" title="pin_setImageFromURL:placeholderImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:placeholderImage:">&ndash;&nbsp;pin_setImageFromURL:placeholderImage:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the image from the given URL and set placeholder image while image at URL is being retrieved.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:completion:" title="pin_setImageFromURL:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:completion:">&ndash;&nbsp;pin_setImageFromURL:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the image from the given URL and call completion when finished.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> completion:(nullable PINRemoteImageManagerImageCompletion)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when url has been retrieved and set on view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:placeholderImage:completion:" title="pin_setImageFromURL:placeholderImage:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:placeholderImage:completion:">&ndash;&nbsp;pin_setImageFromURL:placeholderImage:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the image from the given URL, set placeholder while image at url is being retrieved and call completion when finished.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em> completion:(nullable PINRemoteImageManagerImageCompletion)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when url has been retrieved and set on view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:processorKey:processor:" title="pin_setImageFromURL:processorKey:processor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:processorKey:processor:">&ndash;&nbsp;pin_setImageFromURL:processorKey:processor:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve the image from the given URL, process it using the passed in processor block and set result on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> processorKey:(nullable NSString *)<em>processorKey</em> processor:(nullable PINRemoteImageManagerImageProcessor)<em>processor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processorKey</code></th>
+						<td><p>NSString key to uniquely identify processor. Used in caching.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processor</code></th>
+						<td><p>PINRemoteImageManagerImageProcessor processor block which should return the processed image.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:" title="pin_setImageFromURL:placeholderImage:processorKey:processor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:">&ndash;&nbsp;pin_setImageFromURL:placeholderImage:processorKey:processor:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set placeholder on view and retrieve the image from the given URL, process it using the passed in processor block and set result on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em> processorKey:(nullable NSString *)<em>processorKey</em> processor:(nullable PINRemoteImageManagerImageProcessor)<em>processor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processorKey</code></th>
+						<td><p>NSString key to uniquely identify processor. Used in caching.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processor</code></th>
+						<td><p>PINRemoteImageManagerImageProcessor processor block which should return the processed image.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:processorKey:processor:completion:" title="pin_setImageFromURL:processorKey:processor:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:processorKey:processor:completion:">&ndash;&nbsp;pin_setImageFromURL:processorKey:processor:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve the image from the given URL, process it using the passed in processor block and set result on view. Call completion after image has been fetched, processed and set on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> processorKey:(nullable NSString *)<em>processorKey</em> processor:(nullable PINRemoteImageManagerImageProcessor)<em>processor</em> completion:(nullable PINRemoteImageManagerImageCompletion)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processorKey</code></th>
+						<td><p>NSString key to uniquely identify processor. Used in caching.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processor</code></th>
+						<td><p>PINRemoteImageManagerImageProcessor processor block which should return the processed image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when url has been retrieved and set on view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:completion:" title="pin_setImageFromURL:placeholderImage:processorKey:processor:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURL:placeholderImage:processorKey:processor:completion:">&ndash;&nbsp;pin_setImageFromURL:placeholderImage:processorKey:processor:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set placeholder on view and retrieve the image from the given URL, process it using the passed in processor block and set result on view. Call completion after image has been fetched, processed and set on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURL:(nullable NSURL *)<em>url</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em> processorKey:(nullable NSString *)<em>processorKey</em> processor:(nullable PINRemoteImageManagerImageProcessor)<em>processor</em> completion:(nullable PINRemoteImageManagerImageCompletion)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>NSURL to fetch from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processorKey</code></th>
+						<td><p>NSString key to uniquely identify processor. Used in caching.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>processor</code></th>
+						<td><p>PINRemoteImageManagerImageProcessor processor block which should return the processed image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when url has been retrieved and set on view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURLs:" title="pin_setImageFromURLs:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURLs:">&ndash;&nbsp;pin_setImageFromURLs:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve one of the images at the passed in URLs depending on previous network performance and set result on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURLs:(nullable NSArray&lt;NSURL*&gt; *)<em>urls</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>urls</code></th>
+						<td><p>NSArray of NSURLs sorted in increasing quality</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURLs:placeholderImage:" title="pin_setImageFromURLs:placeholderImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURLs:placeholderImage:">&ndash;&nbsp;pin_setImageFromURLs:placeholderImage:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set placeholder on view and retrieve one of the images at the passed in URLs depending on previous network performance and set result on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURLs:(nullable NSArray&lt;NSURL*&gt; *)<em>urls</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>urls</code></th>
+						<td><p>NSArray of NSURLs sorted in increasing quality</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setImageFromURLs:placeholderImage:completion:" title="pin_setImageFromURLs:placeholderImage:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setImageFromURLs:placeholderImage:completion:">&ndash;&nbsp;pin_setImageFromURLs:placeholderImage:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set placeholder on view and retrieve one of the images at the passed in URLs depending on previous network performance and set result on view. Call completion after image has been fetched and set on view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setImageFromURLs:(nullable NSArray&lt;NSURL*&gt; *)<em>urls</em> placeholderImage:(nullable PINImage *)<em>placeholderImage</em> completion:(nullable PINRemoteImageManagerImageCompletion)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>urls</code></th>
+						<td><p>NSArray of NSURLs sorted in increasing quality</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeholderImage</code></th>
+						<td><p>PINImage to set on the view while the image at URL is being retrieved.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when url has been retrieved and set on view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_cancelImageDownload" title="pin_cancelImageDownload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_cancelImageDownload">&ndash;&nbsp;pin_cancelImageDownload</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancels the image download. Guarantees that previous setImage calls will <em>not</em> have their results set on the image view after calling this (as opposed to PINRemoteImageManager which does not guarantee cancellation).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_cancelImageDownload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_downloadImageOperationUUID" title="pin_downloadImageOperationUUID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_downloadImageOperationUUID">&ndash;&nbsp;pin_downloadImageOperationUUID</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the NSUUID associated with any PINRemoteImage task currently running on the view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSUUID *)pin_downloadImageOperationUUID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSUUID associated with any PINRemoteImage task currently running on the view.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_setDownloadImageOperationUUID:" title="pin_setDownloadImageOperationUUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_setDownloadImageOperationUUID:">&ndash;&nbsp;pin_setDownloadImageOperationUUID:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the current NSUUID associated with a PINRemoteImage task running on the view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pin_setDownloadImageOperationUUID:(nullable NSUUID *)<em>downloadImageOperationUUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>downloadImageOperationUUID</code></th>
+						<td><p>NSUUID associated with a PINRemoteImage task.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pin_updateWithProgress" title="pin_updateWithProgress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pin_updateWithProgress">&nbsp;&nbsp;pin_updateWithProgress</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether the view should update with progress images (such as those provided by progressive JPEG images).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL pin_updateWithProgress</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL value indicating whether the view should update with progress images</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PINRemoteImageCategoryManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Pinterest. All rights reserved. Updated: 2016-04-08</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
