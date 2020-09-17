@@ -2,6 +2,18 @@
 
 Changes for users of the library currently on `develop`:
 
+## [5.0.4](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.4)
+
+Changes for users of the library in 5.0.4:
+
+- updated to PINRemoteImage 3.0.1 to provide Xcode 12 compatibility
+
+## [5.0.3](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.3)
+
+Changes for users of the library in 5.0.3:
+
+- Podspec: Reduce dependency on PINRemoteImage from the entire thing to just the iOS and PINCache subspecs.
+
 ## [5.0.2](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.2)
 
 Changes for users of the library in 5.0.2:
