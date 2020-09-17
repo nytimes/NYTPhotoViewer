@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96CA99C70A7062B001115E2FBC02AA234D3396B2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "96CA99C70A7062B001115E2FBC02AA234D3396B2" : 0,
+    "44B36422A7A7C3AD3DE414BC27AA89E3C0009BBA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0282EA0E-74DA-443C-A83E-288EF9732BB4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "96CA99C70A7062B001115E2FBC02AA234D3396B2" : "PINOperation\/",
+    "44B36422A7A7C3AD3DE414BC27AA89E3C0009BBA" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PINOperation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PINOperation.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pinterest\/PINCache",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "44B36422A7A7C3AD3DE414BC27AA89E3C0009BBA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pinterest\/PINOperation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96CA99C70A7062B001115E2FBC02AA234D3396B2"
+    }
+  ]
+}

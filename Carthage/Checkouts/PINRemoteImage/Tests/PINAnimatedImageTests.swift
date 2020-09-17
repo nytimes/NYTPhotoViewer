@@ -189,4 +189,44 @@ class PINAnimatedImageTests: XCTestCase, PINRemoteImageManagerAlternateRepresent
         let webpAnimatedImage = PINWebPAnimatedImage(animatedImageData: data)
         XCTAssert(webpAnimatedImage == nil)
     }
+
+    func testRetainCycle() {
+        weak var weakCachedAnimatedImage : PINCachedAnimatedImage?
+        autoreleasepool {
+            let animatedImage = TestAnimatedImage.init()
+            let cachedAnimatedImage = PINCachedAnimatedImage.init(animatedImage: animatedImage)
+            weakCachedAnimatedImage = cachedAnimatedImage
+        }
+        
+        // PINCachedAnimatedImage kicks off a block on init which grabs a strong
+        // reference to itself. Wait for the work to complete. This test would be
+        // more reliable if we made a separate API for testing to *not* kick off
+        // the work, but then it wouldn't *really* be testing what we want it to
+        // test.
+        sleep(1);
+        
+        let cachedAnimatedImage : PINCachedAnimatedImage? = weakCachedAnimatedImage
+        XCTAssertNil(cachedAnimatedImage)
+    }
+  
+    func testFrameIndex() {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "fireworks", ofType: "gif")!
+        let gifData = NSData(contentsOfFile: path)
+        let cachedAnimatedImage = PINCachedAnimatedImage(animatedImageData: gifData! as Data)!
+        
+        let gifAnimatedImageView = PINAnimatedImageView(animatedImage: cachedAnimatedImage)
+        
+        // Test left bounds
+        var index = gifAnimatedImageView.frameIndex(atPlayHeadPosition: 0.1)
+        XCTAssert(index == 0)
+        
+        // Test right bounds
+        index = gifAnimatedImageView.frameIndex(atPlayHeadPosition: 1.1)
+        XCTAssert(index == 9)
+        
+        // Test random index
+        index = gifAnimatedImageView.frameIndex(atPlayHeadPosition: 0.41)
+        XCTAssert(index == 4)
+    }
 }

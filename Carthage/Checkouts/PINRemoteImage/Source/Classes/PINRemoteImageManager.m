@@ -93,9 +93,29 @@ BOOL PINRemoteImageManagerSubclassOverridesSelector(Class subclass, SEL selector
 }
 
 NSErrorDomain const PINRemoteImageManagerErrorDomain = @"PINRemoteImageManagerErrorDomain";
-NSString * const PINRemoteImageCacheKey = @"cacheKey";
+NSString * const PINRemoteImageWeakTaskKey = @"PINRemoteImageWeakTaskKey";
 NSString * const PINRemoteImageCacheKeyResumePrefix = @"R-";
 typedef void (^PINRemoteImageManagerDataCompletion)(NSData *data, NSURLResponse *response, NSError *error);
+
+@interface PINRemoteImageWeakTask : NSObject
+
+@property (nonatomic, readonly, weak) PINRemoteImageTask *task;
+
+- (instancetype)initWithTask:(PINRemoteImageTask *)task;
+
+@end
+
+@implementation PINRemoteImageWeakTask
+
+- (instancetype)initWithTask:(PINRemoteImageTask *)task
+{
+    if (self = [super init]) {
+        _task = task;
+    }
+    return self;
+}
+
+@end
 
 @interface PINRemoteImageManager () <PINURLSessionManagerDelegate>
 {
@@ -104,7 +124,7 @@ typedef void (^PINRemoteImageManagerDataCompletion)(NSData *data, NSURLResponse 
   PINOperationQueue *_concurrentOperationQueue;
   PINRemoteImageDownloadQueue *_urlSessionTaskQueue;
   
-  // Necesarry to have a strong reference to _defaultAlternateRepresentationProvider because _alternateRepProvider is __weak
+  // Necessary to have a strong reference to _defaultAlternateRepresentationProvider because _alternateRepProvider is __weak
   PINAlternateRepresentationProvider *_defaultAlternateRepresentationProvider;
   __weak PINAlternateRepresentationProvider *_alternateRepProvider;
   NSURLSessionConfiguration *_sessionConfiguration;
@@ -115,7 +135,7 @@ typedef void (^PINRemoteImageManagerDataCompletion)(NSData *data, NSURLResponse 
 @property (nonatomic, strong) PINURLSessionManager *sessionManager;
 @property (nonatomic, strong) NSMutableDictionary <NSString *, __kindof PINRemoteImageTask *> *tasks;
 @property (nonatomic, strong) NSHashTable <NSUUID *> *canceledTasks;
-@property (nonatomic, strong) NSHashTable <NSUUID *> *UUIDs;
+@property (nonatomic, strong) NSMapTable <NSUUID *, PINRemoteImageTask *> *UUIDToTask;
 @property (nonatomic, strong) NSArray <NSNumber *> *progressThresholds;
 @property (nonatomic, assign) BOOL shouldBlurProgressive;
 @property (nonatomic, assign) CGSize maxProgressiveRenderSize;
@@ -220,8 +240,8 @@ static dispatch_once_t sharedDispatchToken;
             _sessionConfiguration.timeoutIntervalForRequest = PINRemoteImageManagerDefaultTimeout;
             _sessionConfiguration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
             _sessionConfiguration.URLCache = nil;
+            _sessionConfiguration.HTTPMaximumConnectionsPerHost = PINRemoteImageHTTPMaximumConnectionsPerHost;
         }
-        _sessionConfiguration.HTTPMaximumConnectionsPerHost = PINRemoteImageHTTPMaximumConnectionsPerHost;
         
         _callbackQueue = dispatch_queue_create("PINRemoteImageManagerCallbackQueue", DISPATCH_QUEUE_CONCURRENT);
         _lock = [[PINRemoteLock alloc] initWithName:@"PINRemoteImageManager"];
@@ -241,7 +261,7 @@ static dispatch_once_t sharedDispatchToken;
         _maxProgressiveRenderSize = configuration.maxProgressiveRenderSize;
         self.tasks = [[NSMutableDictionary alloc] init];
         self.canceledTasks = [[NSHashTable alloc] initWithOptions:NSHashTableWeakMemory capacity:5];
-        self.UUIDs = [NSHashTable weakObjectsHashTable];
+        self.UUIDToTask = [NSMapTable weakToWeakObjectsMapTable];
         
         if (alternateRepProvider == nil) {
             _defaultAlternateRepresentationProvider = [[PINAlternateRepresentationProvider alloc] init];
@@ -688,9 +708,7 @@ static dispatch_once_t sharedDispatchToken;
             if (task == nil) {
                 task = [[taskClass alloc] initWithManager:self];
                 PINLog(@"Task does not exist creating with key: %@, URL: %@, UUID: %@, task: %p", key, url, UUID, task);
-    #if PINRemoteImageLogging
                 task.key = key;
-    #endif
             } else {
                 taskExisted = YES;
                 PINLog(@"Task exists, attaching with key: %@, URL: %@, UUID: %@, task: %@", key, url, UUID, task);
@@ -698,7 +716,7 @@ static dispatch_once_t sharedDispatchToken;
             [task addCallbacksWithCompletionBlock:completion progressImageBlock:progressImage progressDownloadBlock:progressDownload withUUID:UUID];
             [self.tasks setObject:task forKey:key];
             // Relax :), task retain the UUID for us, it's ok to have a weak reference to UUID here.
-            [self.UUIDs addObject:UUID];
+            [self.UUIDToTask setObject:task forKey:UUID];
         
             NSAssert(taskClass == [task class], @"Task class should be the same!");
         [self unlock];
@@ -846,7 +864,7 @@ static dispatch_once_t sharedDispatchToken;
         PINRemoteImageDownloadTask *task = [self.tasks objectForKey:key];
     [self unlock];
     
-    [task scheduleDownloadWithRequest:[self requestWithURL:url key:key]
+    [task scheduleDownloadWithRequest:[self requestWithURL:url task:task]
                                resume:resume
                             skipRetry:(options & PINRemoteImageManagerDownloadOptionsSkipRetry)
                              priority:priority
@@ -941,7 +959,7 @@ static dispatch_once_t sharedDispatchToken;
     return NO;
 }
 
-- (NSURLRequest *)requestWithURL:(NSURL *)url key:(NSString *)key
+- (NSURLRequest *)requestWithURL:(NSURL *)url task:(PINRemoteImageTask *)task
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
@@ -955,7 +973,8 @@ static dispatch_once_t sharedDispatchToken;
         request = [_requestConfigurationHandler(request) mutableCopy];
     }
     
-    [NSURLProtocol setProperty:key forKey:PINRemoteImageCacheKey inRequest:request];
+    PINRemoteImageWeakTask *weakTask = [[PINRemoteImageWeakTask alloc] initWithTask:task];
+    [NSURLProtocol setProperty:weakTask forKey:PINRemoteImageWeakTaskKey inRequest:request];
     
     return request;
 }
@@ -1024,7 +1043,7 @@ static dispatch_once_t sharedDispatchToken;
                             inputUUID:nil];
 }
 
-#pragma mark - Cancelation & Priority
+#pragma mark - Cancellation & Priority
 
 - (void)cancelTaskWithUUID:(NSUUID *)UUID
 {
@@ -1040,9 +1059,7 @@ static dispatch_once_t sharedDispatchToken;
     [_concurrentOperationQueue scheduleOperation:^{
         PINResume *resume = nil;
         [self lock];
-            NSString *taskKey = nil;
-            PINRemoteImageTask *taskToEvaluate = [self _locked_taskForUUID:UUID key:&taskKey];
-            
+            PINRemoteImageTask *taskToEvaluate = [self.UUIDToTask objectForKey:UUID];
             if (taskToEvaluate == nil) {
                 //maybe task hasn't been added to task list yet, add it to canceled tasks.
                 //there's no need to ever remove a UUID from canceledTasks because it is weak.
@@ -1050,7 +1067,7 @@ static dispatch_once_t sharedDispatchToken;
             }
             
             if ([taskToEvaluate cancelWithUUID:UUID resume:storeResumeData ? &resume : NULL]) {
-                [self.tasks removeObjectForKey:taskKey];
+                [self.tasks removeObjectForKey:taskToEvaluate.key];
             }
         [self unlock];
         
@@ -1070,8 +1087,9 @@ static dispatch_once_t sharedDispatchToken;
 {
     [_concurrentOperationQueue scheduleOperation:^{
         [self lock];
-            NSArray<NSUUID *> *uuidToTask = [self.UUIDs allObjects];
+            NSMapTable<NSUUID *, PINRemoteImageTask *> *uuidToTask = [self.UUIDToTask copy];
         [self unlock];
+
         for (NSUUID *uuid in uuidToTask) {
             [self cancelTaskWithUUID:uuid storeResumeData:storeResumeData];
         }
@@ -1086,7 +1104,7 @@ static dispatch_once_t sharedDispatchToken;
     PINLog(@"Setting priority of UUID: %@ priority: %lu", UUID, (unsigned long)priority);
     [_concurrentOperationQueue scheduleOperation:^{
         [self lock];
-            PINRemoteImageTask *task = [self _locked_taskForUUID:UUID key:NULL];
+            PINRemoteImageTask *task = [self.UUIDToTask objectForKey:UUID];
             [task setPriority:priority];
         [self unlock];
     } withPriority:PINOperationQueuePriorityHigh];
@@ -1101,7 +1119,7 @@ static dispatch_once_t sharedDispatchToken;
     PINLog(@"setting progress block of UUID: %@ progressBlock: %@", UUID, progressImageCallback);
     [_concurrentOperationQueue scheduleOperation:^{
         [self lock];
-            PINRemoteImageTask *task = [self _locked_taskForUUID:UUID key:NULL];
+            PINRemoteImageTask *task = [self.UUIDToTask objectForKey:UUID];
             if ([task isKindOfClass:[PINRemoteImageDownloadTask class]]) {
                 PINRemoteImageCallbacks *callbacks = task.callbackBlocks[UUID];
                 callbacks.progressImageBlock = progressImageCallback;
@@ -1234,8 +1252,8 @@ static dispatch_once_t sharedDispatchToken;
 - (void)didReceiveResponse:(nonnull NSURLResponse *)response forTask:(nonnull NSURLSessionTask *)dataTask
 {
     [self lock];
-        NSString *cacheKey = [NSURLProtocol propertyForKey:PINRemoteImageCacheKey inRequest:dataTask.originalRequest];
-        PINRemoteImageDownloadTask *task = [self.tasks objectForKey:cacheKey];
+        PINRemoteImageWeakTask *weakTask = [NSURLProtocol propertyForKey:PINRemoteImageWeakTaskKey inRequest:dataTask.originalRequest];
+        PINRemoteImageDownloadTask *task = (PINRemoteImageDownloadTask *)weakTask.task;
     [self unlock];
     [task didReceiveResponse:response];
 }
@@ -1243,8 +1261,8 @@ static dispatch_once_t sharedDispatchToken;
 - (void)didReceiveData:(NSData *)data forTask:(NSURLSessionTask *)dataTask
 {
     [self lock];
-        NSString *cacheKey = [NSURLProtocol propertyForKey:PINRemoteImageCacheKey inRequest:dataTask.originalRequest];
-        PINRemoteImageDownloadTask *task = [self.tasks objectForKey:cacheKey];
+        PINRemoteImageWeakTask *weakTask = [NSURLProtocol propertyForKey:PINRemoteImageWeakTaskKey inRequest:dataTask.originalRequest];
+        PINRemoteImageDownloadTask *task = (PINRemoteImageDownloadTask *)weakTask.task;
     [self unlock];
     [task didReceiveData:data];
 }
@@ -1612,30 +1630,6 @@ static dispatch_once_t sharedDispatchToken;
 {
     NSString *resumeKey = [self resumeCacheKeyForURL:URL];
     [self.cache setObjectOnDisk:resume forKey:resumeKey];
-}
-
-/// Attempt to find the task with the callbacks for the given uuid
-- (nullable PINRemoteImageTask *)_locked_taskForUUID:(NSUUID *)uuid key:(NSString * __strong *)outKey
-{
-    __block PINRemoteImageTask *result = nil;
-    __block NSString *strongKey = nil;
-
-    [self.tasks enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, __kindof PINRemoteImageTask * _Nonnull task, BOOL * _Nonnull stop) {
-        // If this isn't our task, just return.
-        if (task.callbackBlocks[uuid] == nil) {
-            return;
-        }
-
-        // Found it! Save our results and end enumeration
-        result = task;
-        strongKey = key;
-        *stop = YES;
-    }];
-    
-    if (outKey != nil) {
-        *outKey = strongKey;
-    }
-    return result;
 }
 
 #if DEBUG
