@@ -50,3 +50,4 @@ bin/
 
 # Carthage
 Carthage/Build
+Carthage/Checkouts
