@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/PINAnimatedImageError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/PINAnimatedImageError</TokenIdentifier>
+			<Abstract type="html">PINAnimatedImage decoding and processing errors.</Abstract>
+			<DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PINAnimatedImageErrorNoError</TokenIdentifier>
+            <Abstract type="html">No error, yay!</Abstract>
+            <Declaration>PINAnimatedImageErrorNoError</Declaration>
+            
+            <DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PINAnimatedImageErrorFileCreationError</TokenIdentifier>
+            <Abstract type="html">Could not create a necessary file.</Abstract>
+            <Declaration>PINAnimatedImageErrorFileCreationError</Declaration>
+            
+            <DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PINAnimatedImageErrorFileHandleError</TokenIdentifier>
+            <Abstract type="html">Could not get a file handle to the necessary file.</Abstract>
+            <Declaration>PINAnimatedImageErrorFileHandleError</Declaration>
+            
+            <DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PINAnimatedImageErrorImageFrameError</TokenIdentifier>
+            <Abstract type="html">Could not decode the image.</Abstract>
+            <Declaration>PINAnimatedImageErrorImageFrameError</Declaration>
+            
+            <DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PINAnimatedImageErrorMappingError</TokenIdentifier>
+            <Abstract type="html">Could not memory map the file.</Abstract>
+            <Declaration>PINAnimatedImageErrorMappingError</Declaration>
+            
+            <DeclaredIn>PINAnimatedImage.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>
