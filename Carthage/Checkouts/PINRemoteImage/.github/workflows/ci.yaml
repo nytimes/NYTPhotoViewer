@@ -1,0 +1,47 @@
+---
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - 'releases/*'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        platform: ['iOS Simulator,name=iPhone 8']
+    steps:
+      - uses: actions/checkout@v1
+      - name: Analyze
+        run: make analyze
+  test:
+    name: Test
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        platform: ['iOS Simulator,name=iPhone 8']
+    steps:
+      - uses: actions/checkout@v1
+      - name: Test
+        run: make test
+  cocoapods:
+    name: CocoaPods
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: CocoaPods
+        run: make cocoapods
+  carthage:
+    name: Carthage
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Carthage
+        run: make carthage

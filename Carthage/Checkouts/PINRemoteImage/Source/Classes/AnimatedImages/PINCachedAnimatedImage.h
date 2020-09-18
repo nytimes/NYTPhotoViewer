@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PINRemoteImageMacros.h"
 #import "PINAnimatedImage.h"
 
 @interface PINCachedAnimatedImage : NSObject
@@ -58,7 +59,7 @@
  */
 @property (nonatomic, readonly) BOOL playbackReady;
 /**
- @abstract Return any error that has occured. Playback will be paused if this returns non-nil.
+ @abstract Return any error that has occurred. Playback will be paused if this returns non-nil.
  */
 @property (nonatomic, readonly) NSError *error;
 /**
