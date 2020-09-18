@@ -50,3 +50,7 @@ bin/
 
 # Carthage
 Carthage/Build
+### warning!
+### do not ignore Carthage/Checkouts. see https://github.com/Carthage/Carthage/issues/1153
+###Carthage/Checkouts  
+###
