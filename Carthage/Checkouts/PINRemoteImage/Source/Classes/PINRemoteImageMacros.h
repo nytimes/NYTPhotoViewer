@@ -3,7 +3,7 @@
 //  PINRemoteImage
 //
 
-#import <TargetConditionals.h>
+#import <Foundation/Foundation.h>
 
 #ifndef PINRemoteImageMacros_h
 #define PINRemoteImageMacros_h
@@ -27,7 +27,7 @@
 #endif
 
 #ifndef PIN_WEBP
-    #if __has_include("webp/decode.h")
+    #if __has_include(<WebPDecoder/decode.h>)
     #define PIN_WEBP    1
     #else
     #define PIN_WEBP    0

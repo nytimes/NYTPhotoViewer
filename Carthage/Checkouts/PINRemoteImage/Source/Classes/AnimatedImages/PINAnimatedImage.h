@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PINRemoteImageMacros.h"
 
 #if PIN_TARGET_IOS
 #import <UIKit/UIKit.h>
 #elif PIN_TARGET_MAC
 #import <Cocoa/Cocoa.h>
 #endif
-
-#import "PINRemoteImageMacros.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -147,7 +146,7 @@ typedef void(^PINAnimatedImageInfoReady)(PINImage * _Nonnull coverImage);
  */
 @property (nonatomic, readonly) size_t frameCount;
 /**
- @abstract Return any error that has occured. Playback will be paused if this returns non-nil.
+ @abstract Return any error that has occurred. Playback will be paused if this returns non-nil.
  */
 @property (nonatomic, readonly, nullable) NSError *error;
 
