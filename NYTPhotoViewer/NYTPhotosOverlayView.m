@@ -68,8 +68,6 @@
     self.navigationBar = [[UINavigationBar alloc] init];
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
     
-    // Make navigation bar background fully transparent.
-    self.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationBar.barTintColor = nil;
     self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [[UIImage alloc] init];
@@ -91,6 +89,10 @@
         NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.navigationBar attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
         [self addConstraints:@[topConstraint, widthConstraint, horizontalPositionConstraint]];
     }
+}
+
+-(void)setBackgroundColor:(UIColor *)backgroundColor{
+    self.navigationBar.backgroundColor = backgroundColor;
 }
 
 - (void)setCaptionView:(UIView *)captionView {

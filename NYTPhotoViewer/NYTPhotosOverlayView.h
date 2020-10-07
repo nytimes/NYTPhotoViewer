@@ -26,6 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *title;
 
 /**
+ *  The overlay title background color
+ */
+@property (nonatomic) UIColor * backgroundColor;
+
+/**
  *  The attributes of the overlay's title.
  */
 @property(nonatomic, copy, nullable) NSDictionary <NSString *, id> *titleTextAttributes;
