@@ -1,0 +1,1 @@
+../NYTPhotoViewerCore.h
