@@ -2,6 +2,8 @@
 
 Changes for users of the library currently on `develop`:
 
+- Add a SwiftPM package manifest.
+
 ## [5.0.4](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.4)
 
 Changes for users of the library in 5.0.4:
