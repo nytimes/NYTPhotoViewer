@@ -1,1 +1,0 @@
-../NYTPhotoTransitionController.h

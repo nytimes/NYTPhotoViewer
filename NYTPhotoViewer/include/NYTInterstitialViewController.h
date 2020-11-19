@@ -1,1 +1,0 @@
-../NYTInterstitialViewController.h

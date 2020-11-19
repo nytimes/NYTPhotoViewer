@@ -1,1 +1,0 @@
-../NYTPhotosViewController.h

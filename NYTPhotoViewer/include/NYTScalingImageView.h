@@ -1,1 +1,0 @@
-../NYTScalingImageView.h

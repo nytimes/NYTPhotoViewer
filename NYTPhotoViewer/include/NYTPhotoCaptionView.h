@@ -1,1 +1,0 @@
-../NYTPhotoCaptionView.h
