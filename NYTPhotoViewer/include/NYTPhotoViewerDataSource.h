@@ -1,0 +1,1 @@
+../Protocols/NYTPhotoViewerDataSource.h
