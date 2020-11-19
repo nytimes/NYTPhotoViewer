@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -19,6 +19,14 @@ let package = Package(
             name: "NYTPhotoViewer",
             dependencies: ["PINRemoteImage"],
             path: "NYTPhotoViewer",
+            resources: [
+                .copy("Resources/NYTPhotoViewerCloseButtonX.png"),
+                .copy("Resources/NYTPhotoViewerCloseButtonX@2x.png"),
+                .copy("Resources/NYTPhotoViewerCloseButtonX@3x.png"),
+                .copy("Resources/NYTPhotoViewerCloseButtonXLandscape.png"),
+                .copy("Resources/NYTPhotoViewerCloseButtonXLandscape@2x.png"),
+                .copy("Resources/NYTPhotoViewerCloseButtonXLandscape@3x.png"),
+            ],
             cSettings: [
                 .headerSearchPath("./"),
                 .headerSearchPath("./Protocols"),
