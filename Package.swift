@@ -18,7 +18,8 @@ let package = Package(
         .target(
             name: "NYTPhotoViewer",
             dependencies: ["PINRemoteImage"],
-            path: "NYTPhotoViewer"),
+            path: "NYTPhotoViewer",
+            publicHeadersPath: "NYTPhotoViewer/Protocols"),
         .testTarget(
             name: "NYTPhotoViewerTests",
             dependencies: ["NYTPhotoViewer"],
