@@ -19,6 +19,10 @@ let package = Package(
             name: "NYTPhotoViewer",
             dependencies: ["PINRemoteImage"],
             path: "NYTPhotoViewer",
+            exclude: [
+                "NYTPhotoViewer.bundle",
+                "Info.plist"
+            ],
             resources: [
                 .copy("Resources/NYTPhotoViewerCloseButtonX.png"),
                 .copy("Resources/NYTPhotoViewerCloseButtonX@2x.png"),
@@ -35,6 +39,9 @@ let package = Package(
         .testTarget(
             name: "NYTPhotoViewerTests",
             dependencies: ["NYTPhotoViewer"],
-            path: "NYTPhotoViewerTests"),
+            path: "NYTPhotoViewerTests",
+            exclude: [
+                "Info.plist"
+            ])
     ]
 )
