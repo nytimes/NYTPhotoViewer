@@ -51,7 +51,6 @@
 		111084941C876D1900699670 /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084931C876D1900699670 /* NYTViewController.m */; };
 		111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
 		111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		11BA4B0A1C8913220007EC46 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA4B071C8912F20007EC46 /* OCMock.framework */; };
 		11FBDA7A1C87714600018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
 		11FBDA8C1C87753200018169 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
@@ -91,6 +90,8 @@
 		1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
 		1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
 		2A4D6135208683990092ED17 /* NYTInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */; };
+		64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */; };
+		7CEA65B5D282758F34C71F03 /* Pods_NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */; };
 		9371A73C1E438B9C00A8F2EF /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A73B1E438B9C00A8F2EF /* PhotoItem.swift */; };
 		9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7431E438BCE00A8F2EF /* PhotoBox.swift */; };
 		9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */; };
@@ -98,11 +99,9 @@
 		93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
 		93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
-		CD3F77C72409223C005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
-		CD3F77CA2409224E005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
-		CD3F77CB2409224E005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CD3F77CC2409225F005F08E8 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; };
-		CD3F77CD2409225F005F08E8 /* PINRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E71623C0EA77D48108CC0DE /* Pods_NYTPhotoViewerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */; };
+		B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */; };
+		C8135F34A35776D2BFB462D2 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */; };
 		CDA5DA08240EB5B400A796D3 /* NYTInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -121,89 +120,12 @@
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
 		};
-		11BA4AFE1C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 030EF0A814632FD000B04273;
-			remoteInfo = OCMock;
-		};
-		11BA4B001C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03565A3118F0566E003AE91E;
-			remoteInfo = OCMockTests;
-		};
-		11BA4B021C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 030EF0DC14632FF700B04273;
-			remoteInfo = OCMockLib;
-		};
-		11BA4B041C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D31108AD1828DB8700737925;
-			remoteInfo = OCMockLibTests;
-		};
-		11BA4B061C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F0B950F11B0080BE00942C38;
-			remoteInfo = "OCMock iOS";
-		};
-		11BA4B081C8912F20007EC46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 817EB1621BD765130047E85A;
-			remoteInfo = "OCMock tvOS";
-		};
 		11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
-		};
-		CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F1B918D11BCF239200710963;
-			remoteInfo = PINRemoteImage;
-		};
-		CD3F77D92409229B005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 68A0FC191E523434000B552D;
-			remoteInfo = PINRemoteImageTests;
-		};
-		CD3F77DB2409229B005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 139D3A5A1F67284400F82935;
-			remoteInfo = "PINRemoteImage-tvOS";
-		};
-		CD3F77DD2409229B005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 139D3A621F67284400F82935;
-			remoteInfo = "PINRemoteImage-tvOSTests";
-		};
-		CD3F77DF240922A3005F08E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F1B918D01BCF239200710963;
-			remoteInfo = PINRemoteImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -214,7 +136,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD3F77CB2409224E005F08E8 /* PINRemoteImage.framework in Embed Frameworks */,
 				111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -226,7 +147,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD3F77CD2409225F005F08E8 /* PINRemoteImage.framework in Embed Frameworks */,
 				11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -235,6 +155,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.release.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		111084061C875B5000699670 /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084091C875B5000699670 /* NYTPhotoViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewer.h; sourceTree = "<group>"; };
 		1110840B1C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -284,7 +205,6 @@
 		111084921C876D1900699670 /* NYTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTViewController.h; sourceTree = "<group>"; };
 		111084931C876D1900699670 /* NYTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTViewController.m; sourceTree = "<group>"; };
 		111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NYTPhotoViewer-Info.plist"; sourceTree = "<group>"; };
-		11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = Carthage/Checkouts/ocmock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NYTPhotoViewer.bundle; path = ../NYTPhotoViewer.bundle; sourceTree = "<group>"; };
 		11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBDAA51C87768700018169 /* NYTPhotoViewerCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerCore.h; sourceTree = "<group>"; };
@@ -295,16 +215,28 @@
 		11FBDAEA1C877BD600018169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FBDAF01C877C8B00018169 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		11FBDAFC1C877D9A00018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSourceTests.m; sourceTree = "<group>"; };
+		201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.release.xcconfig"; sourceTree = "<group>"; };
+		23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYTInterstitialViewController.m; sourceTree = "<group>"; };
 		2A4D613C208683B80092ED17 /* NYTInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTInterstitialViewController.h; sourceTree = "<group>"; };
+		2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.debug.xcconfig"; sourceTree = "<group>"; };
+		827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9371A73B1E438B9C00A8F2EF /* PhotoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		9371A7431E438BCE00A8F2EF /* PhotoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBox.swift; sourceTree = "<group>"; };
 		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
 		93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerSinglePhotoDataSource.h; sourceTree = "<group>"; };
 		93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSource.m; sourceTree = "<group>"; };
-		CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
-		CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PINRemoteImage.xcodeproj; path = Carthage/Checkouts/PINRemoteImage/PINRemoteImage.xcodeproj; sourceTree = "<group>"; };
+		CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.debug.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,7 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3F77C72409223C005F08E8 /* PINRemoteImage.framework in Frameworks */,
+				7CEA65B5D282758F34C71F03 /* Pods_NYTPhotoViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,8 +252,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BA4B0A1C8913220007EC46 /* OCMock.framework in Frameworks */,
 				111084111C875B5000699670 /* NYTPhotoViewer.framework in Frameworks */,
+				C8135F34A35776D2BFB462D2 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +261,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3F77CA2409224E005F08E8 /* PINRemoteImage.framework in Frameworks */,
 				111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */,
+				64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E71623C0EA77D48108CC0DE /* Pods_NYTPhotoViewerCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +278,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3F77CC2409225F005F08E8 /* PINRemoteImage.framework in Frameworks */,
 				11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */,
+				B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +295,7 @@
 				111084141C875B5000699670 /* NYTPhotoViewerTests */,
 				111084071C875B5000699670 /* Products */,
 				11BA4B0B1C8913330007EC46 /* Frameworks */,
+				9EBFA0C5928F2148DEB75556 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -475,25 +409,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		11BA4AF61C8912F20007EC46 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				11BA4AFF1C8912F20007EC46 /* OCMock.framework */,
-				11BA4B011C8912F20007EC46 /* OCMockTests.xctest */,
-				11BA4B031C8912F20007EC46 /* libOCMock.a */,
-				11BA4B051C8912F20007EC46 /* OCMockLibTests.xctest */,
-				11BA4B071C8912F20007EC46 /* OCMock.framework */,
-				11BA4B091C8912F20007EC46 /* OCMock.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		11BA4B0B1C8913330007EC46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */,
-				CD3F77BD2409223C005F08E8 /* PINRemoteImage.framework */,
-				11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */,
+				1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */,
+				EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */,
+				450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */,
+				827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */,
+				4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -514,15 +437,21 @@
 			path = "Example-Swift";
 			sourceTree = "<group>";
 		};
-		CD3F77CF2409229B005F08E8 /* Products */ = {
+		9EBFA0C5928F2148DEB75556 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */,
-				CD3F77DA2409229B005F08E8 /* PINRemoteImageTests.xctest */,
-				CD3F77DC2409229B005F08E8 /* PINRemoteImage.framework */,
-				CD3F77DE2409229B005F08E8 /* PINRemoteImage-tvOSTests.xctest */,
+				54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */,
+				CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */,
+				D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */,
+				0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */,
+				2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */,
+				FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */,
+				E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */,
+				23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */,
+				5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */,
+				201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */,
 			);
-			name = Products;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +510,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110841A1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */;
 			buildPhases = (
+				BFBE4431624690E5B3FFBB1B /* [CP] Check Pods Manifest.lock */,
 				111084011C875B5000699670 /* Sources */,
 				111084021C875B5000699670 /* Frameworks */,
 				111084031C875B5000699670 /* Headers */,
@@ -599,9 +529,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */;
 			buildPhases = (
+				F28AC4F82301F4E273DC0482 /* [CP] Check Pods Manifest.lock */,
 				1110840C1C875B5000699670 /* Sources */,
 				1110840D1C875B5000699670 /* Frameworks */,
 				1110840E1C875B5000699670 /* Resources */,
+				A3932C2031B784C9EDC7B609 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -617,15 +549,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110847E1C876A2B00699670 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				7FE59FBB4EB16602FD6099B9 /* [CP] Check Pods Manifest.lock */,
 				111084661C876A2B00699670 /* Sources */,
 				111084671C876A2B00699670 /* Frameworks */,
 				111084681C876A2B00699670 /* Resources */,
 				1110849C1C876DDE00699670 /* Embed Frameworks */,
+				3FBBF040E99C6DE028FFF66C /* [CP] Embed Pods Frameworks */,
+				4A15DA107A779E29B436BD7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD3F77E0240922A3005F08E8 /* PBXTargetDependency */,
 				1110849B1C876DDE00699670 /* PBXTargetDependency */,
 			);
 			name = Example;
@@ -637,6 +571,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11FBDA881C8774AD00018169 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerCore" */;
 			buildPhases = (
+				2577D6F0C5CA1C86857A1173 /* [CP] Check Pods Manifest.lock */,
 				11FBDA7E1C8774AC00018169 /* Sources */,
 				11FBDA7F1C8774AC00018169 /* Frameworks */,
 				11FBDA801C8774AC00018169 /* Headers */,
@@ -655,10 +590,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11FBDAED1C877BD600018169 /* Build configuration list for PBXNativeTarget "Example-Swift" */;
 			buildPhases = (
+				6382B2BAC3CF57965A422721 /* [CP] Check Pods Manifest.lock */,
 				11FBDAD81C877BD600018169 /* Sources */,
 				11FBDAD91C877BD600018169 /* Frameworks */,
 				11FBDADA1C877BD600018169 /* Resources */,
 				11FBDAF51C877CCE00018169 /* Embed Frameworks */,
+				A4782E2EAF8F50A525FC076A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -677,7 +614,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = NYTimes;
 				TargetAttributes = {
 					111084051C875B5000699670 = {
@@ -694,6 +631,7 @@
 					};
 					11FBDADB1C877BD600018169 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 6P29U2X5BH;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -710,16 +648,6 @@
 			mainGroup = 111083FC1C875B4F00699670;
 			productRefGroup = 111084071C875B5000699670 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 11BA4AF61C8912F20007EC46 /* Products */;
-					ProjectRef = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
-				},
-				{
-					ProductGroup = CD3F77CF2409229B005F08E8 /* Products */;
-					ProjectRef = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				111084051C875B5000699670 /* NYTPhotoViewer */,
@@ -730,79 +658,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		11BA4AFF1C8912F20007EC46 /* OCMock.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCMock.framework;
-			remoteRef = 11BA4AFE1C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		11BA4B011C8912F20007EC46 /* OCMockTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OCMockTests.xctest;
-			remoteRef = 11BA4B001C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		11BA4B031C8912F20007EC46 /* libOCMock.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOCMock.a;
-			remoteRef = 11BA4B021C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		11BA4B051C8912F20007EC46 /* OCMockLibTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OCMockLibTests.xctest;
-			remoteRef = 11BA4B041C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		11BA4B071C8912F20007EC46 /* OCMock.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCMock.framework;
-			remoteRef = 11BA4B061C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		11BA4B091C8912F20007EC46 /* OCMock.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCMock.framework;
-			remoteRef = 11BA4B081C8912F20007EC46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PINRemoteImage.framework;
-			remoteRef = CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD3F77DA2409229B005F08E8 /* PINRemoteImageTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PINRemoteImageTests.xctest;
-			remoteRef = CD3F77D92409229B005F08E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD3F77DC2409229B005F08E8 /* PINRemoteImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PINRemoteImage.framework;
-			remoteRef = CD3F77DB2409229B005F08E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD3F77DE2409229B005F08E8 /* PINRemoteImage-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PINRemoteImage-tvOSTests.xctest";
-			remoteRef = CD3F77DD2409229B005F08E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		111084041C875B5000699670 /* Resources */ = {
@@ -852,6 +707,205 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2577D6F0C5CA1C86857A1173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewerCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FBBF040E99C6DE028FFF66C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A15DA107A779E29B436BD7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/NYTPhotoViewer/NYTPhotoViewer.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NYTPhotoViewer.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6382B2BAC3CF57965A422721 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FE59FBB4EB16602FD6099B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3932C2031B784C9EDC7B609 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4782E2EAF8F50A525FC076A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBE4431624690E5B3FFBB1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28AC4F82301F4E273DC0482 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewer-NYTPhotoViewerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		111084011C875B5000699670 /* Sources */ = {
@@ -950,11 +1004,6 @@
 			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
 			targetProxy = 11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */;
 		};
-		CD3F77E0240922A3005F08E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PINRemoteImage;
-			targetProxy = CD3F77DF240922A3005F08E8 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -997,18 +1046,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1046,18 +1104,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1088,20 +1155,17 @@
 		};
 		1110841B1C875B5000699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
 					"ANIMATED_GIF_SUPPORT=1",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1115,17 +1179,17 @@
 		};
 		1110841C1C875B5000699670 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANIMATED_GIF_SUPPORT=1",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = "ANIMATED_GIF_SUPPORT=1";
 				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1138,6 +1202,7 @@
 		};
 		1110841E1C875B5000699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1148,6 +1213,7 @@
 		};
 		1110841F1C875B5000699670 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1158,12 +1224,10 @@
 		};
 		1110847F1C876A2B00699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -1173,12 +1237,10 @@
 		};
 		111084801C876A2B00699670 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
@@ -1188,6 +1250,7 @@
 		};
 		11FBDA891C8774AD00018169 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -1206,6 +1269,7 @@
 		};
 		11FBDA8A1C8774AD00018169 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -1224,16 +1288,14 @@
 		};
 		11FBDAEB1C877BD600018169 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = 6P29U2X5BH;
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1242,16 +1304,14 @@
 		};
 		11FBDAEC1C877BD600018169 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/FLAnimatedImage/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = 6P29U2X5BH;
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NYTimes.Example-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
