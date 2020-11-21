@@ -18,6 +18,10 @@
 
 @implementation NYTPhotoViewerSinglePhotoDataSourceTests
 
+// The next 3 tests _deliberately_ pass nil, we don't need to be warned about it.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+
 - (void)testInitializerAcceptsNil {
     XCTAssertNoThrow([[NYTPhotoViewerSinglePhotoDataSource alloc] initWithPhoto:nil]);
 }
@@ -31,6 +35,7 @@
     NYTPhotoViewerSinglePhotoDataSource *dataSource = [[NYTPhotoViewerSinglePhotoDataSource alloc] initWithPhoto:nil];
     XCTAssertNil([dataSource photoAtIndex:1]);
 }
+#pragma clang diagnostic pop
 
 - (void)testValidIndexReturnsPhotoAtIndex {
     NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];

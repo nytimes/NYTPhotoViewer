@@ -146,25 +146,9 @@
     XCTAssertNil(photosViewController.rightBarButtonItems);
 }
 
-- (void)testOneArgConvenienceInitializerAcceptsNil {
-    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil]);
-}
-
-- (void)testTwoArgConvenienceInitializerAcceptsNilForPhotosParameter {
-    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:[[NYTExamplePhoto alloc] init] delegate:nil]);
-}
 
 - (void)testTwoArgConvenienceInitializerAcceptsNilForInitialPhotoParameter {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:[self newTestPhotosDataSource] initialPhoto:nil delegate:nil]);
-}
-
-- (void)testTwoArgConvenienceInitializerAcceptsNilForBothParameters {
-    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:nil delegate:nil]);
-}
-
-- (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
-    id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
-    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:[NYTExamplePhoto new] delegate:delegateMock]);
 }
 
 - (void)testDesignatedInitializerAcceptsNilForInitialPhotoParameter {
@@ -174,10 +158,6 @@
 
 - (void)testDesignatedInitializerAcceptsNilForDelegateParameter {
     XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:[self newTestPhotosDataSource] initialPhoto:[NYTExamplePhoto new] delegate:nil]);
-}
-
-- (void)testDesignatedInitializerAcceptsNilForAllParameters {
-    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:nil delegate:nil]);
 }
 
 - (void)testDesignatedInitializerSetsDelegate {
@@ -214,11 +194,6 @@
 
     [photosViewController displayPhoto:photoToDisplay animated:NO];
     XCTAssertEqualObjects(photoToDisplay, photosViewController.currentlyDisplayedPhoto);
-}
-
-- (void)testUpdateImageForPhotoAcceptsNil {
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:[self newTestPhotosDataSource]];
-    XCTAssertNoThrow([photosViewController updatePhoto:nil]);
 }
 
 - (void)testUpdateImageForPhotoDoesNothingWhenPassedPhotoOutsideDataSource {
@@ -288,6 +263,38 @@
 
     OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg any]]);
 }
+
+#pragma mark - Tests which deliberately pass nil, and don't need to be warned about it
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+
+- (void)testOneArgConvenienceInitializerAcceptsNil {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil]);
+}
+
+- (void)testTwoArgConvenienceInitializerAcceptsNilForPhotosParameter {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:[[NYTExamplePhoto alloc] init] delegate:nil]);
+}
+
+- (void)testTwoArgConvenienceInitializerAcceptsNilForBothParameters {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:nil delegate:nil]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForPhotosParameter {
+    id delegateMock = OCMProtocolMock(@protocol(NYTPhotosViewControllerDelegate));
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:[NYTExamplePhoto new] delegate:delegateMock]);
+}
+
+- (void)testDesignatedInitializerAcceptsNilForAllParameters {
+    XCTAssertNoThrow([[NYTPhotosViewController alloc] initWithDataSource:nil initialPhoto:nil delegate:nil]);
+}
+
+- (void)testUpdateImageForPhotoAcceptsNil {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:[self newTestPhotosDataSource]];
+    XCTAssertNoThrow([photosViewController updatePhoto:nil]);
+}
+
+#pragma clang diagnostic pop
 
 #pragma mark - Helpers
 
