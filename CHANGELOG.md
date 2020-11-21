@@ -1,6 +1,7 @@
 ## `develop`
 
 Changes for users of the library currently on `develop`:
+-  fixed a Nan when setting zoomScale in NYTScalingImageView when ANIMATED_GIF_SUPPORT=1
 
 ## [5.0.4](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.4)
 
