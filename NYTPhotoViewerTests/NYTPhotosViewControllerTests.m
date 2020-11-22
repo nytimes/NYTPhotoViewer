@@ -264,6 +264,13 @@
     OCMVerify([photosVCMock dismissViewControllerAnimated:YES userInitiated:NO completion:[OCMArg any]]);
 }
 
+- (void)testViewControllerIsDeallocated {
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:[self newTestPhotosDataSource]];
+
+    photosViewController = nil;
+    NSLog(@"test done");
+}
+
 #pragma mark - Tests which deliberately pass nil, and don't need to be warned about it
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"

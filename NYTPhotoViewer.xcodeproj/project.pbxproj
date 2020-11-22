@@ -3,163 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1110840A1C875B5000699670 /* NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084091C875B5000699670 /* NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084111C875B5000699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
-		1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */; };
-		1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */; };
-		111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */; };
-		111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */; };
-		111084321C8767BA00699670 /* NYTPhotoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842B1C8767BA00699670 /* NYTPhotoViewControllerTests.m */; };
-		111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842C1C8767BA00699670 /* NYTScalingImageViewTests.m */; };
-		1110844D1C87682300699670 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
-		1110844E1C87682300699670 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1110844F1C87682300699670 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */; };
-		111084501C87682300699670 /* NYTPhotoViewerArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084511C87682300699670 /* NYTPhotoViewerArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */; };
-		111084521C87682300699670 /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084391C87682300699670 /* NYTPhotosOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084531C87682300699670 /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843A1C87682300699670 /* NYTPhotosOverlayView.m */; };
-		111084541C87682300699670 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843B1C87682300699670 /* NYTPhotosViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084551C87682300699670 /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843C1C87682300699670 /* NYTPhotosViewController.m */; };
-		111084561C87682300699670 /* NYTPhotoTransitionAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843D1C87682300699670 /* NYTPhotoTransitionAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084571C87682300699670 /* NYTPhotoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843E1C87682300699670 /* NYTPhotoTransitionAnimator.m */; };
-		111084581C87682300699670 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843F1C87682300699670 /* NYTPhotoTransitionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084591C87682300699670 /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084401C87682300699670 /* NYTPhotoTransitionController.m */; };
-		1110845A1C87682300699670 /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084411C87682300699670 /* NYTPhotoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1110845B1C87682300699670 /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084421C87682300699670 /* NYTPhotoViewController.m */; };
-		1110845C1C87682300699670 /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084431C87682300699670 /* NYTScalingImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1110845D1C87682300699670 /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084441C87682300699670 /* NYTScalingImageView.m */; };
-		1110845E1C87682300699670 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084461C87682300699670 /* NYTPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1110845F1C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084601C87682300699670 /* NYTPhotoViewerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084481C87682300699670 /* NYTPhotoViewerContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084611C87682300699670 /* NYTPhotoViewerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotoViewerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084621C87682300699670 /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		111084631C87682300699670 /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */; };
-		111084651C87684D00699670 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1110846E1C876A2B00699670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110846D1C876A2B00699670 /* main.m */; };
 		111084791C876A2B00699670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		1110847C1C876A2B00699670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1110847A1C876A2B00699670 /* LaunchScreen.storyboard */; };
 		111084831C876AA500699670 /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084821C876AA500699670 /* NYTExamplePhoto.m */; };
-		111084841C876AAD00699670 /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084821C876AA500699670 /* NYTExamplePhoto.m */; };
-		111084861C876B0400699670 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
 		111084871C876B0400699670 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
 		1110848C1C876CC900699670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1110848E1C876CC900699670 /* Main.storyboard */; };
 		111084911C876CE000699670 /* NYTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084901C876CE000699670 /* NYTAppDelegate.m */; };
 		111084941C876D1900699670 /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084931C876D1900699670 /* NYTViewController.m */; };
-		111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
-		111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		11FBDA7A1C87714600018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
-		11FBDA8C1C87753200018169 /* NYTPhotoCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084641C87684D00699670 /* NYTPhotoCaptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084341C87682300699670 /* NYTPhotoCaptionView.m */; };
-		11FBDA8E1C87753200018169 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084351C87682300699670 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA8F1C87753200018169 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084361C87682300699670 /* NYTPhotoDismissalInteractionController.m */; };
-		11FBDA901C87753200018169 /* NYTPhotoViewerArrayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084371C87682300699670 /* NYTPhotoViewerArrayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA911C87753200018169 /* NYTPhotoViewerArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084381C87682300699670 /* NYTPhotoViewerArrayDataSource.m */; };
-		11FBDA921C87753200018169 /* NYTPhotosOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084391C87682300699670 /* NYTPhotosOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA931C87753200018169 /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843A1C87682300699670 /* NYTPhotosOverlayView.m */; };
-		11FBDA941C87753200018169 /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843B1C87682300699670 /* NYTPhotosViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA951C87753200018169 /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843C1C87682300699670 /* NYTPhotosViewController.m */; };
-		11FBDA961C87753200018169 /* NYTPhotoTransitionAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843D1C87682300699670 /* NYTPhotoTransitionAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA971C87753200018169 /* NYTPhotoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110843E1C87682300699670 /* NYTPhotoTransitionAnimator.m */; };
-		11FBDA981C87753200018169 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110843F1C87682300699670 /* NYTPhotoTransitionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA991C87753200018169 /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084401C87682300699670 /* NYTPhotoTransitionController.m */; };
-		11FBDA9A1C87753200018169 /* NYTPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084411C87682300699670 /* NYTPhotoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA9B1C87753200018169 /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084421C87682300699670 /* NYTPhotoViewController.m */; };
-		11FBDA9C1C87753200018169 /* NYTScalingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084431C87682300699670 /* NYTScalingImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA9D1C87753200018169 /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084441C87682300699670 /* NYTScalingImageView.m */; };
-		11FBDA9E1C87753200018169 /* NYTPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084461C87682300699670 /* NYTPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDA9F1C87753200018169 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDAA01C87753200018169 /* NYTPhotoViewerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084481C87682300699670 /* NYTPhotoViewerContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDAA11C87753200018169 /* NYTPhotoViewerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 111084491C87682300699670 /* NYTPhotoViewerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDAA21C87753200018169 /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11FBDAA31C87753200018169 /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */; };
-		11FBDAA41C87754A00018169 /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */; };
-		11FBDAA61C87768B00018169 /* NYTPhotoViewerCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 11FBDAA51C87768700018169 /* NYTPhotoViewerCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FBDADF1C877BD600018169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDADE1C877BD600018169 /* AppDelegate.swift */; };
 		11FBDAE11C877BD600018169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAE01C877BD600018169 /* ViewController.swift */; };
 		11FBDAE41C877BD600018169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAE21C877BD600018169 /* Main.storyboard */; };
 		11FBDAF11C877C8B00018169 /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBDAF01C877C8B00018169 /* PhotosProvider.swift */; };
-		11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; };
-		11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 111084061C875B5000699670 /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11FBDAFD1C877D9A00018169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FBDAFB1C877D9A00018169 /* LaunchScreen.xib */; };
 		11FBDAFE1C877F5500018169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111084781C876A2B00699670 /* Assets.xcassets */; };
 		11FBDAFF1C877F8000018169 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 111084851C876B0400699670 /* giphy.gif */; };
-		1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
-		1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
-		2A4D6135208683990092ED17 /* NYTInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */; };
-		64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */; };
-		7CEA65B5D282758F34C71F03 /* Pods_NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */; };
 		9371A73C1E438B9C00A8F2EF /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A73B1E438B9C00A8F2EF /* PhotoItem.swift */; };
 		9371A7441E438BCE00A8F2EF /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7431E438BCE00A8F2EF /* PhotoBox.swift */; };
 		9371A7461E43D61E00A8F2EF /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */; };
-		93F45B181E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F45B161E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
-		93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */; };
-		9E71623C0EA77D48108CC0DE /* Pods_NYTPhotoViewerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */; };
-		B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */; };
-		C8135F34A35776D2BFB462D2 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */; };
-		CDA5DA08240EB5B400A796D3 /* NYTInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */; };
+		A9245B446781B954C1B25E5B /* Pods_Example_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4173A507E3494142535DDAB8 /* Pods_Example_Swift.framework */; };
+		F97599E1D01FE814B6D92832 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2802F6DAD4D0107F24EB3E /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		111084121C875B5000699670 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 111084051C875B5000699670;
-			remoteInfo = NYTPhotoViewer;
-		};
-		1110849A1C876DDE00699670 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 111084051C875B5000699670;
-			remoteInfo = NYTPhotoViewer;
-		};
-		11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 111084051C875B5000699670;
-			remoteInfo = NYTPhotoViewer;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1110849C1C876DDE00699670 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				111084991C876DDE00699670 /* NYTPhotoViewer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11FBDAF51C877CCE00018169 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				11FBDAF81C877CEF00018169 /* NYTPhotoViewer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.release.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		111084061C875B5000699670 /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084091C875B5000699670 /* NYTPhotoViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewer.h; sourceTree = "<group>"; };
 		1110840B1C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084171C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionViewTests.m; sourceTree = "<group>"; };
 		111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerArrayDataSourceTests.m; sourceTree = "<group>"; };
@@ -206,7 +79,6 @@
 		111084931C876D1900699670 /* NYTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTViewController.m; sourceTree = "<group>"; };
 		111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NYTPhotoViewer-Info.plist"; sourceTree = "<group>"; };
 		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NYTPhotoViewer.bundle; path = ../NYTPhotoViewer.bundle; sourceTree = "<group>"; };
-		11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBDAA51C87768700018169 /* NYTPhotoViewerCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerCore.h; sourceTree = "<group>"; };
 		11FBDADC1C877BD600018169 /* Example-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBDADE1C877BD600018169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,18 +87,11 @@
 		11FBDAEA1C877BD600018169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FBDAF01C877C8B00018169 /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		11FBDAFC1C877D9A00018169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSourceTests.m; sourceTree = "<group>"; };
-		201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.release.xcconfig"; sourceTree = "<group>"; };
-		23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A4D6134208683990092ED17 /* NYTInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYTInterstitialViewController.m; sourceTree = "<group>"; };
 		2A4D613C208683B80092ED17 /* NYTInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTInterstitialViewController.h; sourceTree = "<group>"; };
-		2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
-		450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4173A507E3494142535DDAB8 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.debug.xcconfig"; sourceTree = "<group>"; };
-		827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9371A73B1E438B9C00A8F2EF /* PhotoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		9371A7431E438BCE00A8F2EF /* PhotoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBox.swift; sourceTree = "<group>"; };
 		9371A7451E43D61E00A8F2EF /* PhotoViewerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerCoordinator.swift; sourceTree = "<group>"; };
@@ -234,43 +99,15 @@
 		93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSource.m; sourceTree = "<group>"; };
 		CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.debug.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
+		DD2802F6DAD4D0107F24EB3E /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		111084021C875B5000699670 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7CEA65B5D282758F34C71F03 /* Pods_NYTPhotoViewer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1110840D1C875B5000699670 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				111084111C875B5000699670 /* NYTPhotoViewer.framework in Frameworks */,
-				C8135F34A35776D2BFB462D2 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		111084671C876A2B00699670 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				111084971C876DD300699670 /* NYTPhotoViewer.framework in Frameworks */,
-				64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11FBDA7F1C8774AC00018169 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E71623C0EA77D48108CC0DE /* Pods_NYTPhotoViewerCore.framework in Frameworks */,
+				F97599E1D01FE814B6D92832 /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11FBDAF71C877CEF00018169 /* NYTPhotoViewer.framework in Frameworks */,
-				B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */,
+				A9245B446781B954C1B25E5B /* Pods_Example_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,18 +130,15 @@
 				111084081C875B5000699670 /* NYTPhotoViewer */,
 				111084141C875B5000699670 /* NYTPhotoViewerTests */,
 				111084071C875B5000699670 /* Products */,
-				11BA4B0B1C8913330007EC46 /* Frameworks */,
 				9EBFA0C5928F2148DEB75556 /* Pods */,
+				B3A657200680C0890A77B285 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		111084071C875B5000699670 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				111084061C875B5000699670 /* NYTPhotoViewer.framework */,
-				111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */,
 				1110846A1C876A2B00699670 /* Example.app */,
-				11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */,
 				11FBDADC1C877BD600018169 /* Example-Swift.app */,
 			);
 			name = Products;
@@ -409,18 +242,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		11BA4B0B1C8913330007EC46 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */,
-				EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */,
-				450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */,
-				827E2EE491925DE1700CA4A9 /* Pods_NYTPhotoViewer_NYTPhotoViewerTests.framework */,
-				4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		11FBDADD1C877BD600018169 /* Example-Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,107 +265,22 @@
 				CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */,
 				D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */,
 				0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */,
-				2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */,
-				FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */,
-				E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */,
-				23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */,
-				5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */,
-				201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B3A657200680C0890A77B285 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD2802F6DAD4D0107F24EB3E /* Pods_Example.framework */,
+				4173A507E3494142535DDAB8 /* Pods_Example_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		111084031C875B5000699670 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				111084621C87682300699670 /* NSBundle+NYTPhotoViewer.h in Headers */,
-				111084541C87682300699670 /* NYTPhotosViewController.h in Headers */,
-				111084601C87682300699670 /* NYTPhotoViewerContainer.h in Headers */,
-				1110844E1C87682300699670 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				111084611C87682300699670 /* NYTPhotoViewerDataSource.h in Headers */,
-				1110845A1C87682300699670 /* NYTPhotoViewController.h in Headers */,
-				1110845C1C87682300699670 /* NYTScalingImageView.h in Headers */,
-				111084521C87682300699670 /* NYTPhotosOverlayView.h in Headers */,
-				111084561C87682300699670 /* NYTPhotoTransitionAnimator.h in Headers */,
-				93F45B181E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
-				111084581C87682300699670 /* NYTPhotoTransitionController.h in Headers */,
-				1110845F1C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
-				1110845E1C87682300699670 /* NYTPhoto.h in Headers */,
-				111084501C87682300699670 /* NYTPhotoViewerArrayDataSource.h in Headers */,
-				1110840A1C875B5000699670 /* NYTPhotoViewer.h in Headers */,
-				111084651C87684D00699670 /* NYTPhotoCaptionView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11FBDA801C8774AC00018169 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11FBDA981C87753200018169 /* NYTPhotoTransitionController.h in Headers */,
-				11FBDAA01C87753200018169 /* NYTPhotoViewerContainer.h in Headers */,
-				11FBDA9C1C87753200018169 /* NYTScalingImageView.h in Headers */,
-				11FBDA921C87753200018169 /* NYTPhotosOverlayView.h in Headers */,
-				11FBDA8E1C87753200018169 /* NYTPhotoDismissalInteractionController.h in Headers */,
-				11FBDAA11C87753200018169 /* NYTPhotoViewerDataSource.h in Headers */,
-				11FBDA901C87753200018169 /* NYTPhotoViewerArrayDataSource.h in Headers */,
-				11FBDA9F1C87753200018169 /* NYTPhotoCaptionViewLayoutWidthHinting.h in Headers */,
-				11FBDA941C87753200018169 /* NYTPhotosViewController.h in Headers */,
-				93F45B191E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */,
-				11FBDAA61C87768B00018169 /* NYTPhotoViewerCore.h in Headers */,
-				11FBDA9E1C87753200018169 /* NYTPhoto.h in Headers */,
-				11FBDAA21C87753200018169 /* NSBundle+NYTPhotoViewer.h in Headers */,
-				11FBDA961C87753200018169 /* NYTPhotoTransitionAnimator.h in Headers */,
-				11FBDA9A1C87753200018169 /* NYTPhotoViewController.h in Headers */,
-				11FBDA8C1C87753200018169 /* NYTPhotoCaptionView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		111084051C875B5000699670 /* NYTPhotoViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1110841A1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */;
-			buildPhases = (
-				BFBE4431624690E5B3FFBB1B /* [CP] Check Pods Manifest.lock */,
-				111084011C875B5000699670 /* Sources */,
-				111084021C875B5000699670 /* Frameworks */,
-				111084031C875B5000699670 /* Headers */,
-				111084041C875B5000699670 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NYTPhotoViewer;
-			productName = NYTPhotoViewer;
-			productReference = 111084061C875B5000699670 /* NYTPhotoViewer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		1110840F1C875B5000699670 /* NYTPhotoViewerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */;
-			buildPhases = (
-				F28AC4F82301F4E273DC0482 /* [CP] Check Pods Manifest.lock */,
-				1110840C1C875B5000699670 /* Sources */,
-				1110840D1C875B5000699670 /* Frameworks */,
-				1110840E1C875B5000699670 /* Resources */,
-				A3932C2031B784C9EDC7B609 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				111084131C875B5000699670 /* PBXTargetDependency */,
-			);
-			name = NYTPhotoViewerTests;
-			productName = NYTPhotoViewerTests;
-			productReference = 111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		111084691C876A2B00699670 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110847E1C876A2B00699670 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -553,38 +289,16 @@
 				111084661C876A2B00699670 /* Sources */,
 				111084671C876A2B00699670 /* Frameworks */,
 				111084681C876A2B00699670 /* Resources */,
-				1110849C1C876DDE00699670 /* Embed Frameworks */,
-				3FBBF040E99C6DE028FFF66C /* [CP] Embed Pods Frameworks */,
 				4A15DA107A779E29B436BD7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1110849B1C876DDE00699670 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
 			productReference = 1110846A1C876A2B00699670 /* Example.app */;
 			productType = "com.apple.product-type.application";
-		};
-		11FBDA821C8774AC00018169 /* NYTPhotoViewerCore */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11FBDA881C8774AD00018169 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerCore" */;
-			buildPhases = (
-				2577D6F0C5CA1C86857A1173 /* [CP] Check Pods Manifest.lock */,
-				11FBDA7E1C8774AC00018169 /* Sources */,
-				11FBDA7F1C8774AC00018169 /* Frameworks */,
-				11FBDA801C8774AC00018169 /* Headers */,
-				11FBDA811C8774AC00018169 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NYTPhotoViewerCore;
-			productName = NYTPhotoViewerCore;
-			productReference = 11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		11FBDADB1C877BD600018169 /* Example-Swift */ = {
 			isa = PBXNativeTarget;
@@ -594,13 +308,11 @@
 				11FBDAD81C877BD600018169 /* Sources */,
 				11FBDAD91C877BD600018169 /* Frameworks */,
 				11FBDADA1C877BD600018169 /* Resources */,
-				11FBDAF51C877CCE00018169 /* Embed Frameworks */,
-				A4782E2EAF8F50A525FC076A /* [CP] Embed Pods Frameworks */,
+				91EDD84119562BBCF196F542 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				11FBDAFA1C877CEF00018169 /* PBXTargetDependency */,
 			);
 			name = "Example-Swift";
 			productName = "Example-Swift";
@@ -617,16 +329,7 @@
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = NYTimes;
 				TargetAttributes = {
-					111084051C875B5000699670 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					1110840F1C875B5000699670 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
 					111084691C876A2B00699670 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					11FBDA821C8774AC00018169 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					11FBDADB1C877BD600018169 = {
@@ -650,9 +353,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				111084051C875B5000699670 /* NYTPhotoViewer */,
-				11FBDA821C8774AC00018169 /* NYTPhotoViewerCore */,
-				1110840F1C875B5000699670 /* NYTPhotoViewerTests */,
 				111084691C876A2B00699670 /* Example */,
 				11FBDADB1C877BD600018169 /* Example-Swift */,
 			);
@@ -660,22 +360,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		111084041C875B5000699670 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11FBDA7A1C87714600018169 /* NYTPhotoViewer.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1110840E1C875B5000699670 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				111084861C876B0400699670 /* giphy.gif in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		111084681C876A2B00699670 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,14 +368,6 @@
 				1110848C1C876CC900699670 /* Main.storyboard in Resources */,
 				111084791C876A2B00699670 /* Assets.xcassets in Resources */,
 				111084871C876B0400699670 /* giphy.gif in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11FBDA811C8774AC00018169 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11FBDAA41C87754A00018169 /* NYTPhotoViewer.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,50 +385,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2577D6F0C5CA1C86857A1173 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewerCore-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3FBBF040E99C6DE028FFF66C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4A15DA107A779E29B436BD7D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -815,134 +447,27 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3932C2031B784C9EDC7B609 /* [CP] Embed Pods Frameworks */ = {
+		91EDD84119562BBCF196F542 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/NYTPhotoViewer/NYTPhotoViewer.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NYTPhotoViewer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4782E2EAF8F50A525FC076A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BFBE4431624690E5B3FFBB1B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F28AC4F82301F4E273DC0482 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NYTPhotoViewer-NYTPhotoViewerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example-Swift/Pods-Example-Swift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		111084011C875B5000699670 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A4D6135208683990092ED17 /* NYTInterstitialViewController.m in Sources */,
-				111084591C87682300699670 /* NYTPhotoTransitionController.m in Sources */,
-				111084631C87682300699670 /* NSBundle+NYTPhotoViewer.m in Sources */,
-				111084551C87682300699670 /* NYTPhotosViewController.m in Sources */,
-				93F45B1A1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */,
-				1110844D1C87682300699670 /* NYTPhotoCaptionView.m in Sources */,
-				1110845D1C87682300699670 /* NYTScalingImageView.m in Sources */,
-				111084511C87682300699670 /* NYTPhotoViewerArrayDataSource.m in Sources */,
-				111084531C87682300699670 /* NYTPhotosOverlayView.m in Sources */,
-				111084571C87682300699670 /* NYTPhotoTransitionAnimator.m in Sources */,
-				1110844F1C87682300699670 /* NYTPhotoDismissalInteractionController.m in Sources */,
-				1110845B1C87682300699670 /* NYTPhotoViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1110840C1C875B5000699670 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */,
-				1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */,
-				1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */,
-				111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */,
-				111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */,
-				111084841C876AAD00699670 /* NYTExamplePhoto.m in Sources */,
-				111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */,
-				111084321C8767BA00699670 /* NYTPhotoViewControllerTests.m in Sources */,
-				1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		111084661C876A2B00699670 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -951,25 +476,6 @@
 				111084911C876CE000699670 /* NYTAppDelegate.m in Sources */,
 				111084831C876AA500699670 /* NYTExamplePhoto.m in Sources */,
 				1110846E1C876A2B00699670 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11FBDA7E1C8774AC00018169 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA5DA08240EB5B400A796D3 /* NYTInterstitialViewController.m in Sources */,
-				11FBDA991C87753200018169 /* NYTPhotoTransitionController.m in Sources */,
-				11FBDAA31C87753200018169 /* NSBundle+NYTPhotoViewer.m in Sources */,
-				11FBDA951C87753200018169 /* NYTPhotosViewController.m in Sources */,
-				93F45B1B1E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m in Sources */,
-				11FBDA8D1C87753200018169 /* NYTPhotoCaptionView.m in Sources */,
-				11FBDA9D1C87753200018169 /* NYTScalingImageView.m in Sources */,
-				11FBDA911C87753200018169 /* NYTPhotoViewerArrayDataSource.m in Sources */,
-				11FBDA931C87753200018169 /* NYTPhotosOverlayView.m in Sources */,
-				11FBDA971C87753200018169 /* NYTPhotoTransitionAnimator.m in Sources */,
-				11FBDA8F1C87753200018169 /* NYTPhotoDismissalInteractionController.m in Sources */,
-				11FBDA9B1C87753200018169 /* NYTPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,24 +493,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		111084131C875B5000699670 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
-			targetProxy = 111084121C875B5000699670 /* PBXContainerItemProxy */;
-		};
-		1110849B1C876DDE00699670 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
-			targetProxy = 1110849A1C876DDE00699670 /* PBXContainerItemProxy */;
-		};
-		11FBDAFA1C877CEF00018169 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 111084051C875B5000699670 /* NYTPhotoViewer */;
-			targetProxy = 11FBDAF91C877CEF00018169 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1110847A1C876A2B00699670 /* LaunchScreen.storyboard */ = {
@@ -1147,97 +635,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1110841B1C875B5000699670 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"ANIMATED_GIF_SUPPORT=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		1110841C1C875B5000699670 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF29D7E46E96A5A3774A556E /* Pods-NYTPhotoViewer.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"ANIMATED_GIF_SUPPORT=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		1110841E1C875B5000699670 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		1110841F1C875B5000699670 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1248,10 +650,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1264,58 +663,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Example/NYTPhotoViewer-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		11FBDA891C8774AD00018169 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerCore;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		11FBDA8A1C8774AD00018169 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NYTPhotoViewer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerCore;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1327,10 +677,7 @@
 				DEVELOPMENT_TEAM = 6P29U2X5BH;
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1346,10 +693,7 @@
 				DEVELOPMENT_TEAM = 6P29U2X5BH;
 				INFOPLIST_FILE = "Example-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1368,38 +712,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1110841A1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1110841B1C875B5000699670 /* Debug */,
-				1110841C1C875B5000699670 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1110841E1C875B5000699670 /* Debug */,
-				1110841F1C875B5000699670 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1110847E1C876A2B00699670 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1110847F1C876A2B00699670 /* Debug */,
 				111084801C876A2B00699670 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11FBDA881C8774AD00018169 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerCore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11FBDA891C8774AD00018169 /* Debug */,
-				11FBDA8A1C8774AD00018169 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
