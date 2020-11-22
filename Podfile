@@ -2,7 +2,7 @@ platform :ios, '12.0'
 use_frameworks!
 
 target 'Example' do
-	pod 'NYTPhotoViewer', :path => './NYTPhotoViewer'
+	pod 'NYTPhotoViewer', :path => '.'
 end
 
 target 'Example-Swift' do
