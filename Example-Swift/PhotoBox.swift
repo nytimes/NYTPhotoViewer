@@ -23,6 +23,11 @@ final class NYTPhotoBox: NSObject, NYTPhoto {
     var image: UIImage?
     var imageData: Data?
     var placeholderImage: UIImage?
+    {
+        get {
+            return UIImage(named:"placeholder")
+        }
+    }
 
     var isPhoto: Bool {
         return value.itemType == .image

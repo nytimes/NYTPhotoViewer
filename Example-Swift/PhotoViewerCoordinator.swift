@@ -28,7 +28,8 @@ final class PhotoViewerCoordinator: NSObject, NYTPhotoViewerDataSource {
         for box in slideshow {
             if box.isPhoto {
                 provider.fetchPhoto(named: box.value.name, then: { [weak self] (result) in
-                    box.image = result
+                    // simulate issue #309
+                    // box.image = result
                     self?.photoViewer.update(box)
                 })
             }
