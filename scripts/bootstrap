@@ -1,9 +1,16 @@
 #!/usr/bin/env sh
 
-if ! command -v carthage > /dev/null; then
-  printf 'Carthage is not installed.\n'
-  printf 'See https://github.com/Carthage/Carthage for install instructions.\n'
+set -eu
+
+if ! command -v bundle > /dev/null; then
+  printf 'bundler is not installed.\n'
+  printf 'install with $ gem install bundler\n'
   exit 1
 fi
 
-carthage bootstrap --platform iOS --no-use-binaries --use-submodules
+cd "$(dirname "$0")/../Examples"
+
+bundle config set path 'vendor/bundle'
+bundle install 
+
+pod install

@@ -6,7 +6,7 @@
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
-![Demo GIF](Images/photo_viewer.gif)
+![Demo GIF](Documentation/photo_viewer.gif)
 
 ## Usage
 
@@ -19,9 +19,7 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Running the Example
 
-The Example project uses [Carthage](https://github.com/Carthage/Carthage) to integrate its dependencies. If you don’t have Carthage installed, you can install it via [Homebrew](http://brew.sh) with `brew install carthage`.
-
-Then, in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`.
+Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see targets for a Swift and ObjectiveC app.
 
 ## Installation
 

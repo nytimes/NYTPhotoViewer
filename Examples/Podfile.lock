@@ -25,10 +25,8 @@ PODS:
     - PINRemoteImage/Core
 
 DEPENDENCIES:
-  - NYTPhotoViewer (from `./NYTPhotoViewer`)
+  - NYTPhotoViewer (from `..`)
   - OCMock
-  - PINRemoteImage/iOS (~> 3.0.1)
-  - PINRemoteImage/PINCache
 
 SPEC REPOS:
   trunk:
@@ -39,7 +37,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   NYTPhotoViewer:
-    :path: "./NYTPhotoViewer"
+    :path: ".."
 
 SPEC CHECKSUMS:
   NYTPhotoViewer: df89f12e0e110eb46a8052572575a8cd1216b256
@@ -48,6 +46,6 @@ SPEC CHECKSUMS:
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
 
-PODFILE CHECKSUM: 11eb8b0d0dc6eac487d76f934acbf777c31931a7
+PODFILE CHECKSUM: 90e0fe358da8b616e7684512de180a5e313e490a
 
 COCOAPODS: 1.10.0

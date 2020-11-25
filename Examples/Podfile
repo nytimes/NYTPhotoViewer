@@ -1,26 +1,17 @@
 platform :ios, '12.0'
-use_frameworks!
-
+use_frameworks! :linkage => :static
+supports_swift_versions '>= 5.0'
+  
 target 'Example' do
-	pod 'NYTPhotoViewer', :path => '.'
+	pod 'NYTPhotoViewer', :path => '..'
 end
 
 target 'Example-Swift' do
+	pod 'NYTPhotoViewer', :path => '..'
 end
 
-target 'NYTPhotoViewer' do
-  pod 'PINRemoteImage/iOS', '~> 3.0.1'
-  pod 'PINRemoteImage/PINCache'
-
-  target 'NYTPhotoViewerTests' do
-	pod 'OCMock'
-  end
-
-end
-
-target 'NYTPhotoViewerCore' do
-  # Pods for NYTPhotoViewerCore
-
+target 'NYTPhotoViewerTests' do
+  pod 'OCMock'
 end
 
 post_install do |installer|
