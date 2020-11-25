@@ -43,10 +43,6 @@ ocunit.xml
 *.xcbkptlist
 *.xcsettings
 
-# bootstrap script
 Examples/vendor/bundle/
 .bundle/
-bin/
-
-
 Pods/
