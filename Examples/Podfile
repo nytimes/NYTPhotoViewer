@@ -4,15 +4,18 @@ supports_swift_versions '>= 5.0'
   
 target 'Example' do
 	pod 'NYTPhotoViewer', :path => '..'
+
+#   target 'FooTests' do
+#     inherit! :search_paths
+#     use_frameworks! :linkage => :static
+#     pod 'OCMock'
+#   end
 end
 
 target 'Example-Swift' do
 	pod 'NYTPhotoViewer', :path => '..'
 end
 
-target 'NYTPhotoViewerTests' do
-  pod 'OCMock'
-end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
