@@ -3,9 +3,9 @@ use_frameworks! :linkage => :static
 supports_swift_versions '>= 5.0'
   
 target 'Example' do
-	pod 'NYTPhotoViewer', :path => '..'
+  pod 'NYTPhotoViewer', :path => '..'
 
-#   target 'FooTests' do
+#   target 'ExampleTests' do
 #     inherit! :search_paths
 #     use_frameworks! :linkage => :static
 #     pod 'OCMock'
@@ -13,7 +13,7 @@ target 'Example' do
 end
 
 target 'Example-Swift' do
-	pod 'NYTPhotoViewer', :path => '..'
+  pod 'NYTPhotoViewer', :path => '..'
 end
 
 

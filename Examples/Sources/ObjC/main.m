@@ -10,7 +10,7 @@
 #import "NYTAppDelegate.h"
 
 int main(int argc, char * argv[]) {
-	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([NYTAppDelegate class]));
-	}
+  @autoreleasepool {
+      return UIApplicationMain(argc, argv, nil, NSStringFromClass([NYTAppDelegate class]));
+  }
 }
