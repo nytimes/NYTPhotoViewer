@@ -22,10 +22,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'AnimatedGifSupport' do |ss|
-    ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1'}
-
+    ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1' }
     ss.dependency 'NYTPhotoViewer/Core'
-    ss.dependency 'PINRemoteImage/iOS',
+    ss.dependency 'PINRemoteImage/iOS'
     ss.dependency 'PINRemoteImage/PINCache'
   end
 

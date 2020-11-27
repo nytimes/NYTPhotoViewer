@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 set -eu
+set -o pipefail
 
 if ! command -v bundle > /dev/null; then
   printf 'bundler is not installed.\n'
@@ -12,5 +13,4 @@ cd "$(dirname "$0")/../Examples"
 
 bundle config set path 'vendor/bundle'
 bundle install 
-
-pod install
+bundle exec pod install
