@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074D1D7A25718D9F0057105A /* NYTPhotoCaptionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */; };
+		074D1D7F25718DC60057105A /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
+		074D1D8025718DC60057105A /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
+		074D1D8125718DC60057105A /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */; };
+		074D1D8225718DC60057105A /* NYTPhotoTransitionAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */; };
+		074D1D8325718DC60057105A /* NYTScalingImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842C1C8767BA00699670 /* NYTScalingImageViewTests.m */; };
+		074D1D8425718DC60057105A /* NYTPhotoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842B1C8767BA00699670 /* NYTPhotoViewControllerTests.m */; };
+		074D1D8525718DC60057105A /* NYTPhotosOverlayViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */; };
+		074D1D8825718E160057105A /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C5533256DE02900D8CA75 /* NYTExamplePhoto.m */; };
 		076C5535256DE02900D8CA75 /* NYTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C552E256DE02900D8CA75 /* NYTViewController.m */; };
 		076C5536256DE02900D8CA75 /* NYTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C552F256DE02900D8CA75 /* NYTAppDelegate.m */; };
 		076C5537256DE02900D8CA75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C5531256DE02900D8CA75 /* main.m */; };
@@ -37,6 +46,7 @@
 		111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842C1C8767BA00699670 /* NYTScalingImageViewTests.m */; };
 		1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
 		1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
+		3E9DE675A7E40076394CCB88 /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887B54E2F5A2B29979C1750B /* Pods_UnitTest.framework */; };
 		64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */; };
 		B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +106,8 @@
 		076C5584256DE68600D8CA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		076C558A256DE6A000D8CA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		076C558C256DE6A000D8CA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		07B3E74E257189ED00387CDF /* UnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D4B65DD93482E62FA8A32D0 /* Pods-UnitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.release.xcconfig"; path = "Target Support Files/Pods-UnitTest/Pods-UnitTest.release.xcconfig"; sourceTree = "<group>"; };
 		0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.release.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084171C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,11 +124,15 @@
 		1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerSinglePhotoDataSourceTests.m; sourceTree = "<group>"; };
 		201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.release.xcconfig"; sourceTree = "<group>"; };
 		23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
+		27DCB5B006C2124393100C4B /* Pods-Test1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test1.release.xcconfig"; path = "Target Support Files/Pods-Test1/Pods-Test1.release.xcconfig"; sourceTree = "<group>"; };
 		2F254884E30D7F66912DEC4D /* Pods-NYTPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer/Pods-NYTPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewerCore.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewerCore/Pods-NYTPhotoViewerCore.debug.xcconfig"; sourceTree = "<group>"; };
+		5CF82EC06EA14A76921C747B /* Pods-Test1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test1.debug.xcconfig"; path = "Target Support Files/Pods-Test1/Pods-Test1.debug.xcconfig"; sourceTree = "<group>"; };
+		79EE98D2AFED2473F0D152EA /* Pods-UnitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.debug.xcconfig"; path = "Target Support Files/Pods-UnitTest/Pods-UnitTest.debug.xcconfig"; sourceTree = "<group>"; };
+		887B54E2F5A2B29979C1750B /* Pods_UnitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0E881D90E20E65A43C6398 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		D7D5ED9071C683B8C95D634A /* Pods-Example-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.debug.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		E95307A1443F61BFE500D1A3 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; path = "Target Support Files/Pods-NYTPhotoViewer-NYTPhotoViewerTests/Pods-NYTPhotoViewer-NYTPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +141,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		07B3E74B257189ED00387CDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9DE675A7E40076394CCB88 /* Pods_UnitTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1110840D1C875B5000699670 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,7 +241,7 @@
 				076C553A256DE0B500D8CA75 /* Swift */,
 				076C552D256DE02900D8CA75 /* ObjC */,
 				076C5562256DE33800D8CA75 /* Resources */,
-				111084141C875B5000699670 /* NYTPhotoViewerTests */,
+				111084141C875B5000699670 /* UnitTests */,
 				111084071C875B5000699670 /* Products */,
 				11BA4B0B1C8913330007EC46 /* Frameworks */,
 				9EBFA0C5928F2148DEB75556 /* Pods */,
@@ -230,11 +254,12 @@
 				111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */,
 				1110846A1C876A2B00699670 /* Example.app */,
 				11FBDADC1C877BD600018169 /* Example-Swift.app */,
+				07B3E74E257189ED00387CDF /* UnitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		111084141C875B5000699670 /* NYTPhotoViewerTests */ = {
+		111084141C875B5000699670 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */,
@@ -247,8 +272,8 @@
 				1110842C1C8767BA00699670 /* NYTScalingImageViewTests.m */,
 				111084171C875B5000699670 /* Info.plist */,
 			);
-			name = NYTPhotoViewerTests;
-			path = ../NYTPhotoViewerTests;
+			name = UnitTests;
+			path = ../UnitTests;
 			sourceTree = "<group>";
 		};
 		11BA4B0B1C8913330007EC46 /* Frameworks */ = {
@@ -258,6 +283,7 @@
 				EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */,
 				450471655D8BF1D99A756EEC /* Pods_NYTPhotoViewer.framework */,
 				4C44DB22C9C84667B2DF2E01 /* Pods_NYTPhotoViewerCore.framework */,
+				887B54E2F5A2B29979C1750B /* Pods_UnitTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,6 +301,10 @@
 				23C5E8A78D476C4BCB3F3AA8 /* Pods-NYTPhotoViewer-NYTPhotoViewerTests.release.xcconfig */,
 				5B17B0B47082173CD37D7087 /* Pods-NYTPhotoViewerCore.debug.xcconfig */,
 				201BF2BF68388BE5A1B5EEBF /* Pods-NYTPhotoViewerCore.release.xcconfig */,
+				5CF82EC06EA14A76921C747B /* Pods-Test1.debug.xcconfig */,
+				27DCB5B006C2124393100C4B /* Pods-Test1.release.xcconfig */,
+				79EE98D2AFED2473F0D152EA /* Pods-UnitTest.debug.xcconfig */,
+				0D4B65DD93482E62FA8A32D0 /* Pods-UnitTest.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -282,6 +312,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		07B3E74D257189ED00387CDF /* UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07B3E755257189EE00387CDF /* Build configuration list for PBXNativeTarget "UnitTest" */;
+			buildPhases = (
+				C7B7269984607C4C6DDA3AC9 /* [CP] Check Pods Manifest.lock */,
+				07B3E74A257189ED00387CDF /* Sources */,
+				07B3E74B257189ED00387CDF /* Frameworks */,
+				07B3E74C257189ED00387CDF /* Resources */,
+				AE969A309C96F059B3B9272D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTest;
+			productName = Test1;
+			productReference = 07B3E74E257189ED00387CDF /* UnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1110840F1C875B5000699670 /* NYTPhotoViewerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */;
@@ -350,6 +399,11 @@
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = NYTimes;
 				TargetAttributes = {
+					07B3E74D257189ED00387CDF = {
+						CreatedOnToolsVersion = 12.2;
+						DevelopmentTeam = 9HE4ZM4NVA;
+						ProvisioningStyle = Automatic;
+					};
 					1110840F1C875B5000699670 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 111084691C876A2B00699670;
@@ -381,11 +435,19 @@
 				1110840F1C875B5000699670 /* NYTPhotoViewerTests */,
 				111084691C876A2B00699670 /* Example */,
 				11FBDADB1C877BD600018169 /* Example-Swift */,
+				07B3E74D257189ED00387CDF /* UnitTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		07B3E74C257189ED00387CDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1110840E1C875B5000699670 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,6 +546,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE969A309C96F059B3B9272D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnitTest/Pods-UnitTest-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/NYTPhotoViewer/NYTPhotoViewer.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NYTPhotoViewer.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnitTest/Pods-UnitTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B7269984607C4C6DDA3AC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnitTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EB8C768EE4BE29D3E8A8364D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,6 +607,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		07B3E74A257189ED00387CDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				074D1D7A25718D9F0057105A /* NYTPhotoCaptionViewTests.m in Sources */,
+				074D1D8525718DC60057105A /* NYTPhotosOverlayViewTests.m in Sources */,
+				074D1D7F25718DC60057105A /* NYTPhotoViewerArrayDataSourceTests.m in Sources */,
+				074D1D8125718DC60057105A /* NYTPhotosViewControllerTests.m in Sources */,
+				074D1D8025718DC60057105A /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */,
+				074D1D8825718E160057105A /* NYTExamplePhoto.m in Sources */,
+				074D1D8225718DC60057105A /* NYTPhotoTransitionAnimatorTests.m in Sources */,
+				074D1D8325718DC60057105A /* NYTScalingImageViewTests.m in Sources */,
+				074D1D8425718DC60057105A /* NYTPhotoViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1110840C1C875B5000699670 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +724,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		07B3E753257189EE00387CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79EE98D2AFED2473F0D152EA /* Pods-UnitTest.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HE4ZM4NVA;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ../UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07B3E754257189EE00387CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4B65DD93482E62FA8A32D0 /* Pods-UnitTest.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HE4ZM4NVA;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ../UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		111084181C875B5000699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -803,6 +968,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		07B3E755257189EE00387CDF /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07B3E753257189EE00387CDF /* Debug */,
+				07B3E754257189EE00387CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		111084001C875B4F00699670 /* Build configuration list for PBXProject "NYTPhotoViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

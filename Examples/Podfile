@@ -12,6 +12,11 @@ target 'Example' do
 #   end
 end
 
+target 'UnitTest' do
+  pod 'NYTPhotoViewer', :path => '..'
+  pod 'OCMock'
+end
+
 target 'Example-Swift' do
   pod 'NYTPhotoViewer', :path => '..'
 end
