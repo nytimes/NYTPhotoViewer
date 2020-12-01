@@ -28,38 +28,18 @@
 		076C554B256DE0B500D8CA75 /* PhotoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C5542256DE0B500D8CA75 /* PhotoBox.swift */; };
 		076C554C256DE0B500D8CA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C5543256DE0B500D8CA75 /* AppDelegate.swift */; };
 		076C554D256DE0B500D8CA75 /* PhotoViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076C5544256DE0B500D8CA75 /* PhotoViewerCoordinator.swift */; };
-		076C556D256DE33800D8CA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076C5564256DE33800D8CA75 /* Assets.xcassets */; };
 		076C556E256DE33800D8CA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076C5564256DE33800D8CA75 /* Assets.xcassets */; };
 		076C556F256DE33800D8CA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076C5564256DE33800D8CA75 /* Assets.xcassets */; };
-		076C5570256DE33800D8CA75 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 076C5565256DE33800D8CA75 /* giphy.gif */; };
 		076C5571256DE33800D8CA75 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 076C5565256DE33800D8CA75 /* giphy.gif */; };
 		076C5572256DE33800D8CA75 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 076C5565256DE33800D8CA75 /* giphy.gif */; };
 		076C5585256DE68600D8CA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076C5581256DE68600D8CA75 /* LaunchScreen.storyboard */; };
 		076C5586256DE68600D8CA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076C5583256DE68600D8CA75 /* Main.storyboard */; };
 		076C558D256DE6A000D8CA75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076C5589256DE6A000D8CA75 /* LaunchScreen.xib */; };
 		076C558E256DE6A000D8CA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076C558B256DE6A000D8CA75 /* Main.storyboard */; };
-		1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */; };
-		1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084281C8767BA00699670 /* NYTPhotosOverlayViewTests.m */; };
-		111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084291C8767BA00699670 /* NYTPhotosViewControllerTests.m */; };
-		111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842A1C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m */; };
-		111084321C8767BA00699670 /* NYTPhotoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842B1C8767BA00699670 /* NYTPhotoViewControllerTests.m */; };
-		111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1110842C1C8767BA00699670 /* NYTScalingImageViewTests.m */; };
-		1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */; };
-		1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4D311FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
 		3E9DE675A7E40076394CCB88 /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887B54E2F5A2B29979C1750B /* Pods_UnitTest.framework */; };
 		64432F823B739EDE07194B43 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB2A8221AD0A76EF91690C1 /* Pods_Example.framework */; };
 		B83AA5759C9746B24AB06B68 /* Pods_Example_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3AE0BFDE41DA38639FC422 /* Pods_Example_Swift.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		07C76C21256EE0F5003482F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 111084691C876A2B00699670;
-			remoteInfo = Example;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1110849C1C876DDE00699670 /* Embed Frameworks */ = {
@@ -109,7 +89,6 @@
 		07B3E74E257189ED00387CDF /* UnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4B65DD93482E62FA8A32D0 /* Pods-UnitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.release.xcconfig"; path = "Target Support Files/Pods-UnitTest/Pods-UnitTest.release.xcconfig"; sourceTree = "<group>"; };
 		0EAFCA0D14C64E7A15FFE321 /* Pods-Example-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Swift.release.xcconfig"; path = "Target Support Files/Pods-Example-Swift/Pods-Example-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTPhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111084171C875B5000699670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		111084261C8767BA00699670 /* NYTPhotoCaptionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionViewTests.m; sourceTree = "<group>"; };
 		111084271C8767BA00699670 /* NYTPhotoViewerArrayDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerArrayDataSourceTests.m; sourceTree = "<group>"; };
@@ -146,13 +125,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9DE675A7E40076394CCB88 /* Pods_UnitTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1110840D1C875B5000699670 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +223,6 @@
 		111084071C875B5000699670 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */,
 				1110846A1C876A2B00699670 /* Example.app */,
 				11FBDADC1C877BD600018169 /* Example-Swift.app */,
 				07B3E74E257189ED00387CDF /* UnitTest.xctest */,
@@ -331,24 +302,6 @@
 			productReference = 07B3E74E257189ED00387CDF /* UnitTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1110840F1C875B5000699670 /* NYTPhotoViewerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */;
-			buildPhases = (
-				1110840C1C875B5000699670 /* Sources */,
-				1110840D1C875B5000699670 /* Frameworks */,
-				1110840E1C875B5000699670 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07C76C22256EE0F5003482F3 /* PBXTargetDependency */,
-			);
-			name = NYTPhotoViewerTests;
-			productName = NYTPhotoViewerTests;
-			productReference = 111084101C875B5000699670 /* NYTPhotoViewerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		111084691C876A2B00699670 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1110847E1C876A2B00699670 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -404,10 +357,6 @@
 						DevelopmentTeam = 9HE4ZM4NVA;
 						ProvisioningStyle = Automatic;
 					};
-					1110840F1C875B5000699670 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 111084691C876A2B00699670;
-					};
 					111084691C876A2B00699670 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -432,7 +381,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1110840F1C875B5000699670 /* NYTPhotoViewerTests */,
 				111084691C876A2B00699670 /* Example */,
 				11FBDADB1C877BD600018169 /* Example-Swift */,
 				07B3E74D257189ED00387CDF /* UnitTest */,
@@ -445,15 +393,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1110840E1C875B5000699670 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				076C556D256DE33800D8CA75 /* Assets.xcassets in Resources */,
-				076C5570256DE33800D8CA75 /* giphy.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,21 +562,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1110840C1C875B5000699670 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AFC4D301FE01B9000FDF949 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */,
-				1110842D1C8767BA00699670 /* NYTPhotoCaptionViewTests.m in Sources */,
-				1110842F1C8767BA00699670 /* NYTPhotosOverlayViewTests.m in Sources */,
-				111084311C8767BA00699670 /* NYTPhotoTransitionAnimatorTests.m in Sources */,
-				111084301C8767BA00699670 /* NYTPhotosViewControllerTests.m in Sources */,
-				111084331C8767BA00699670 /* NYTScalingImageViewTests.m in Sources */,
-				111084321C8767BA00699670 /* NYTPhotoViewControllerTests.m in Sources */,
-				1AFC4D321FE01EFA00FDF949 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		111084661C876A2B00699670 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,14 +587,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		07C76C22256EE0F5003482F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 111084691C876A2B00699670 /* Example */;
-			targetProxy = 07C76C21256EE0F5003482F3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		076C553D256DE0B500D8CA75 /* LaunchScreen.xib */ = {
@@ -884,30 +800,6 @@
 			};
 			name = Release;
 		};
-		1110841E1C875B5000699670 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-			};
-			name = Debug;
-		};
-		1110841F1C875B5000699670 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NYTPhotoViewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NYTimes.NYTPhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-			};
-			name = Release;
-		};
 		1110847F1C876A2B00699670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54C29C2860B777AA3F96E298 /* Pods-Example.debug.xcconfig */;
@@ -982,15 +874,6 @@
 			buildConfigurations = (
 				111084181C875B5000699670 /* Debug */,
 				111084191C875B5000699670 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1110841D1C875B5000699670 /* Build configuration list for PBXNativeTarget "NYTPhotoViewerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1110841E1C875B5000699670 /* Debug */,
-				1110841F1C875B5000699670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
