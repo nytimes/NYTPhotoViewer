@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NYTPhotoViewer"
-  s.version          = "5.0.4"
+  s.version          = "5.0.5"
 
   s.description      = <<-DESC
                        NYTPhotoViewer is a slideshow and image viewer that includes double tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
@@ -22,10 +22,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'AnimatedGifSupport' do |ss|
-    ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1'}
-
+    ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ANIMATED_GIF_SUPPORT=1' }
     ss.dependency 'NYTPhotoViewer/Core'
-    ss.dependency 'PINRemoteImage/iOS', '~> 3.0.1'
+    ss.dependency 'PINRemoteImage/iOS'
     ss.dependency 'PINRemoteImage/PINCache'
   end
 
