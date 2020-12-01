@@ -19,7 +19,7 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Running the Example
 
-Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see targets for a Swift and ObjectiveC app.
+Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see targets for a Swift and Objective-C app.
 
 ## Installation
 
