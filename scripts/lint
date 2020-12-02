@@ -1,12 +1,26 @@
 #!/usr/bin/env sh
 
+set -eu
+set -o pipefail
+
+printf 'linting CocoaPods\n'
+
+if ! command -v bundle > /dev/null; then
+  printf 'bundler is not installed.\n'
+  printf 'install with $ gem install bundler\n'
+  exit 1
+fi
+
+bundle config set path 'vendor/bundle'
+bundle install 
+bundle exec pod lib lint
+
+printf 'linting Carthage\n'
+
 if ! command -v carthage > /dev/null; then
   printf 'Carthage is not installed.\n'
   printf 'See https://github.com/Carthage/Carthage for install instructions.\n'
   exit 1
 fi
 
-
 carthage build --platform iOS --no-use-binaries --no-skip-current
-
-pod lib lint

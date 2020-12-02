@@ -43,6 +43,6 @@ ocunit.xml
 *.xcbkptlist
 *.xcsettings
 
-Examples/vendor/bundle/
+vendor/bundle/
 .bundle/
 Pods/
