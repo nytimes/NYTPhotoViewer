@@ -11,8 +11,6 @@ if ! command -v bundle > /dev/null; then
   exit 1
 fi
 
-bundle config set path 'vendor/bundle'
-bundle install 
 bundle exec pod lib lint
 
 printf 'linting Carthage\n'
