@@ -9,8 +9,9 @@ if ! command -v bundle > /dev/null; then
   exit 1
 fi
 
-cd "$(dirname "$0")/../Examples"
-
 bundle config set path 'vendor/bundle'
-bundle install 
+bundle install
+
+cd "Examples"
+
 bundle exec pod install
