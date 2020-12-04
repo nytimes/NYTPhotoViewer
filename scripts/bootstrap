@@ -9,7 +9,7 @@ if ! command -v bundle > /dev/null; then
   exit 1
 fi
 
-bundle config set path 'vendor/bundle'
+bundle config set path --local 'vendor/bundle'
 bundle install
 
 cd "Examples"
