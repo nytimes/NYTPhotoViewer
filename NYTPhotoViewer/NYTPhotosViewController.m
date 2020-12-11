@@ -158,7 +158,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     CGRect frame = self.view.bounds;
     if (self.underStatusBar) {
-        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;;
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         frame.origin.y = statusBarHeight;
         frame.size.height -= statusBarHeight;
     }
