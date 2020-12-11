@@ -32,6 +32,16 @@ extern NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification;
 @property (nonatomic, readonly) NYTScalingImageView *scalingImageView;
 
 /**
+ *  Starting/ending view for animation transitions on opening/closing images.
+ */
+@property (nonatomic, readonly) UIView *transitionView;
+
+/**
+ *  Maximum zoom scale for internal scaling image view.
+ */
+@property(nonatomic) CGFloat maximumZoomScale;
+
+/**
  *  The internal activity view shown while the image is loading. Set from the initializer.
  */
 @property (nonatomic, readonly, nullable) UIView *loadingView;
