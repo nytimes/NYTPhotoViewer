@@ -35,13 +35,6 @@ let package = Package(
                 .headerSearchPath("./"),
                 .headerSearchPath("./Protocols"),
                 .headerSearchPath("./Resource Loading")
-            ]),
-        .testTarget(
-            name: "NYTPhotoViewerTests",
-            dependencies: ["NYTPhotoViewer"],
-            path: "NYTPhotoViewerTests",
-            exclude: [
-                "Info.plist"
             ])
     ]
 )
