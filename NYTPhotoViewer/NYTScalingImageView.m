@@ -145,18 +145,19 @@
 - (void)updateZoomScale {
 #ifdef ANIMATED_GIF_SUPPORT
     if (self.imageView.animatedImage || self.imageView.image) {
+        CGSize imageSize = self.imageView.animatedImage ? self.imageView.animatedImage.size : self.imageView.image.size;
 #else
     if (self.imageView.image) {
+        CGSize imageSize = self.imageView.image.size;
 #endif
         CGRect scrollViewFrame = self.bounds;
         
-        CGFloat scaleWidth = scrollViewFrame.size.width / self.imageView.image.size.width;
-        CGFloat scaleHeight = scrollViewFrame.size.height / self.imageView.image.size.height;
+        CGFloat scaleWidth = scrollViewFrame.size.width / imageSize.width;
+        CGFloat scaleHeight = scrollViewFrame.size.height / imageSize.height;
         CGFloat minScale = MIN(scaleWidth, scaleHeight);
         
         self.minimumZoomScale = minScale;
         self.maximumZoomScale = MAX(minScale, self.maximumZoomScale);
-        
         self.zoomScale = self.minimumZoomScale;
         
         // scrollView.panGestureRecognizer.enabled is on by default and enabled by

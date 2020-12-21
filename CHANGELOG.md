@@ -1,13 +1,19 @@
 ## `develop`
 
 Changes for users of the library currently on `develop`:
-
+- fixed a NaN when setting `zoomScale` in `NYTScalingImageView` when `ANIMATED_GIF_SUPPORT=1`
 - Add a SwiftPM package manifest.
 
-## [5.0.4](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.4)
+## [5.0.5](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.5)
 
-Changes for users of the library in 5.0.4:
+Changes for users of the library in 5.0.5:
 
+- Update PINRemoteImage to 3.0.1 for Xcode 12
+- Restored the ability to pull down via Carthage
+
+## [5.0.4 (broken)](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.4)
+
+- Broke the ability to pull down via Carthage or build this repo in Xcode!
 - Update PINRemoteImage to 3.0.1 for Xcode 12
 
 ## [5.0.3](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.3)
