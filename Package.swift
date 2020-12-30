@@ -23,7 +23,12 @@ let package = Package(
                 "Info.plist"
             ],
             resources: [
-                .copy("Resources"),
+                .process("Resources/NYTPhotoViewerCloseButtonX.png"),
+                .process("Resources/NYTPhotoViewerCloseButtonX@2x.png"),
+                .process("Resources/NYTPhotoViewerCloseButtonX@3x.png"),
+                .process("Resources/NYTPhotoViewerCloseButtonXLandscape.png"),
+                .process("Resources/NYTPhotoViewerCloseButtonXLandscape@2x.png"),
+                .process("Resources/NYTPhotoViewerCloseButtonXLandscape@3x.png"),             
             ],
             cSettings: [
                 .headerSearchPath("./include"),
