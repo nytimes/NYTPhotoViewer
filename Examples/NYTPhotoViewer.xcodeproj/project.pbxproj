@@ -39,6 +39,16 @@
 		CD7B24632576A7DE00290A00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7B24422576A56A00290A00 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D623A69F259D4D3E00FA047F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 111083FD1C875B4F00699670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 111084691C876A2B00699670;
+			remoteInfo = Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1110849C1C876DDE00699670 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -272,6 +282,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D623A6A0259D4D3E00FA047F /* PBXTargetDependency */,
 			);
 			name = UnitTest;
 			productName = Test1;
@@ -332,6 +343,7 @@
 						CreatedOnToolsVersion = 12.2;
 						DevelopmentTeam = 9HE4ZM4NVA;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 111084691C876A2B00699670;
 					};
 					111084691C876A2B00699670 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -561,6 +573,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D623A6A0259D4D3E00FA047F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 111084691C876A2B00699670 /* Example */;
+			targetProxy = D623A69F259D4D3E00FA047F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		07B3E753257189EE00387CDF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -575,6 +595,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HE4ZM4NVA;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					Examples/Sources/ObjC,
+				);
 				INFOPLIST_FILE = ../UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -583,6 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
@@ -606,6 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.photoviewer.example.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
