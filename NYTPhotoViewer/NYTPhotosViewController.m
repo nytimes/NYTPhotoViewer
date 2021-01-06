@@ -157,7 +157,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [super viewWillLayoutSubviews];
     
     CGRect frame = self.view.bounds;
-    if (self.underStatusBar) {
+    if (!self.prefersStatusBarHidden) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         frame.origin.y = statusBarHeight;
         frame.size.height -= statusBarHeight;
@@ -167,7 +167,19 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return !self.underStatusBar;
+    BOOL result;
+    switch (self.underStatusBar) {
+        case TristateBoolDefault:
+            result = self.view.safeAreaInsets.top == 0;
+            break;
+        case TristateBoolFalse:
+            result = true;
+            break;
+        case TristateBoolTrue:
+            result = false;
+            break;
+    }
+    return result;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

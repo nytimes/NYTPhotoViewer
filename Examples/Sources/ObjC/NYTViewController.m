@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
 
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:nil delegate:self];
 
-    photosViewController.underStatusBar = YES;
+    photosViewController.underStatusBar = TristateBoolTrue;
     
     [self presentViewController:photosViewController animated:YES completion:nil];
 

@@ -41,6 +41,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 @interface NYTPhotosViewController : UIViewController
 
+typedef NS_ENUM(NSUInteger, TristateBool) {
+    TristateBoolDefault,
+    TristateBoolFalse,
+    TristateBoolTrue
+};
+
 /**
  *  The pan gesture recognizer used for panning to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
  */
@@ -76,10 +82,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @property (nonatomic, readonly, nullable) NYTPhotosOverlayView *overlayView;
 
 /**
- *  Shows all content under status bar frame. Default NO.
+ *  Shows all content under status bar frame. Defaults TristateBoolDefault.
+ *  If 'TristateBoolTrue' or 'TristateBoolFalse', prefersStatusBarHidden returns the inverse.
+ *  If 'TristateBoolDefault', prefersStatusBarHidden returns view.safeArea.top == 0.
  */
-@property (nonatomic) BOOL underStatusBar;
-    
+@property (nonatomic) TristateBool underStatusBar;
+
 /**
  *  The left bar button item overlaying the photo.
  */
@@ -186,7 +194,6 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  Called when the view is about to made visible.
  *
  *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
- *  @param animated
  */
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController viewWillAppear:(BOOL)animated;
 
