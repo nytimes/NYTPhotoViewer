@@ -22,24 +22,8 @@ let package = Package(
             exclude: [
                 "Info.plist"
             ],
-//            resources: [
-//              .process("assets.xcassets"),
-////                .process("Resources/NYTPhotoViewerCloseButtonX.png"),
-////                .process("Resources/NYTPhotoViewerCloseButtonX@2x.png"),
-////                .process("Resources/NYTPhotoViewerCloseButtonX@3x.png"),
-////                .process("Resources/NYTPhotoViewerCloseButtonXLandscape.png"),
-////                .process("Resources/NYTPhotoViewerCloseButtonXLandscape@2x.png"),
-////                .process("Resources/NYTPhotoViewerCloseButtonXLandscape@3x.png"),             
-//            ],
             cSettings: [
                 .headerSearchPath("./include"),
             ]),
-//        .testTarget(
-//            name: "NYTPhotoViewerTests",
-//            dependencies: ["NYTPhotoViewer"],
-//            path: "NYTPhotoViewerTests",
-//            exclude: [
-//                "Info.plist"
-//            ])
     ]
 )

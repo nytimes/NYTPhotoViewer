@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'Core' do |ss|
-    ss.ios.resource_bundle = { s.name => ['NYTPhotoViewer/assets.xcassets/*'] }
+    ss.ios.resource_bundle = { s.name => ['NYTPhotoViewer/Media.xcassets/*'] }
     ss.source_files = 'NYTPhotoViewer/**/*.{h,m,swift}'
     ss.frameworks = 'UIKit', 'Foundation'
   end
