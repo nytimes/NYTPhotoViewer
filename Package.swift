@@ -23,7 +23,7 @@ let package = Package(
                 "Info.plist"
             ],
             resources: [
-              .process("assets.xcassets"),
+              .process("assetsxcassets"),
 //                .process("Resources/NYTPhotoViewerCloseButtonX.png"),
 //                .process("Resources/NYTPhotoViewerCloseButtonX@2x.png"),
 //                .process("Resources/NYTPhotoViewerCloseButtonX@3x.png"),
