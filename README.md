@@ -31,7 +31,7 @@ NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL and.. (m
 
 NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
-```
+```ruby
 pod 'NYTPhotoViewer'
 ```
 
