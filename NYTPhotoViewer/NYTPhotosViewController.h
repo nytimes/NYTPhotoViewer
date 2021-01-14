@@ -41,10 +41,10 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 @interface NYTPhotosViewController : UIViewController
 
-typedef NS_ENUM(NSUInteger, TristateBool) {
-    TristateBoolDefault,
-    TristateBoolFalse,
-    TristateBoolTrue
+typedef NS_ENUM(NSUInteger, NYTPhotoViewerStatusBarMode) {
+    NYTPhotoViewerStatusBarModeDynamic, /* hide statusbar when view.safeArea.top == 0 */
+    NYTPhotoViewerStatusBarModeHidden,
+    NYTPhotoViewerStatusBarModeShown
 };
 
 /**
@@ -82,11 +82,10 @@ typedef NS_ENUM(NSUInteger, TristateBool) {
 @property (nonatomic, readonly, nullable) NYTPhotosOverlayView *overlayView;
 
 /**
- *  Shows all content under status bar frame. Defaults TristateBoolDefault.
- *  If 'TristateBoolTrue' or 'TristateBoolFalse', prefersStatusBarHidden returns the inverse.
- *  If 'TristateBoolDefault', prefersStatusBarHidden returns view.safeArea.top == 0.
+ *  This determines whether we display the status bar or not
+ *  Defaults to NYTPhotoViewerStatusBarModeDynamic.
  */
-@property (nonatomic) TristateBool underStatusBar;
+@property (nonatomic) NYTPhotoViewerStatusBarMode statusBarMode;
 
 /**
  *  The left bar button item overlaying the photo.

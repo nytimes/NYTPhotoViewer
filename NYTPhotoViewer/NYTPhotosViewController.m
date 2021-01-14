@@ -168,18 +168,25 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (BOOL)prefersStatusBarHidden {
     BOOL result;
-    switch (self.underStatusBar) {
-        case TristateBoolDefault:
+    switch (self.statusBarMode) {
+        case NYTPhotoViewerStatusBarModeDynamic:
             result = self.view.safeAreaInsets.top == 0;
             break;
-        case TristateBoolFalse:
+        case NYTPhotoViewerStatusBarModeHidden:
             result = true;
             break;
-        case TristateBoolTrue:
+        case NYTPhotoViewerStatusBarModeShown:
             result = false;
             break;
     }
     return result;
+}
+
+- (void)viewSafeAreaInsetsDidChange {
+    if (self.statusBarMode == NYTPhotoViewerStatusBarModeDynamic) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    [super viewSafeAreaInsetsDidChange];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
