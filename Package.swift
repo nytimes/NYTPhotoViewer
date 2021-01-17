@@ -18,12 +18,6 @@ let package = Package(
         .target(
             name: "NYTPhotoViewer",
             dependencies: ["PINRemoteImage"],
-            path: "NYTPhotoViewer",
-            exclude: [
-                "Info.plist"
-            ],
-            cSettings: [
-                .headerSearchPath("./include"),
-            ]),
+            path: "NYTPhotoViewer"),
     ]
 )
