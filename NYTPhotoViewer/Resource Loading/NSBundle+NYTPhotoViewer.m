@@ -12,6 +12,9 @@
 @implementation NSBundle (NYTPhotoViewer)
 
 + (instancetype)nyt_photoViewerResourceBundle {
+    #if SWIFT_PACKAGE
+    return SWIFTPM_MODULE_BUNDLE;
+    #endif
     static NSBundle *resourceBundle = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

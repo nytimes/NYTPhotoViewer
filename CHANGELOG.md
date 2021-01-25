@@ -1,7 +1,8 @@
 ## `develop`
 
 Changes for users of the library currently on `develop`:
--  fixed a NaN when setting `zoomScale` in `NYTScalingImageView` when `ANIMATED_GIF_SUPPORT=1`
+- support Swift Package Manager (thanks @mattpolzin!)
+- fixed a NaN when setting `zoomScale` in `NYTScalingImageView` when `ANIMATED_GIF_SUPPORT=1`
 
 ## [5.0.5](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.5)
 

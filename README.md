@@ -23,6 +23,18 @@ Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, r
 
 ## Installation
 
+### Swift Package Manager
+
+NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL and.. (more TK)
+
+### Cocoapods
+
+NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
+
+```ruby
+pod 'NYTPhotoViewer'
+```
+
 ### Carthage
 
 NYTPhotoViewer may be installed via [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your `Cartfile`:
@@ -34,14 +46,6 @@ github "NYTimes/NYTPhotoViewer"
 Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `PINRemoteImage` frameworks into your project.
 
 If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
-
-### Cocoapods
-
-NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
-
-```
-pod 'NYTPhotoViewer'
-```
 
 ## Requirements
 
