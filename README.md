@@ -25,7 +25,7 @@ Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, r
 
 ### Swift Package Manager
 
-NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL and.. (more TK)
+NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL.
 
 ### Cocoapods
 
