@@ -9,15 +9,20 @@ let package = Package(
     products: [
         .library(
             name: "NYTPhotoViewer",
-            targets: ["NYTPhotoViewer"]),
+            targets: ["NYTPhotoViewerGIF"]),
     ],
     dependencies: [
         .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.1")
     ],
     targets: [
         .target(
-            name: "NYTPhotoViewer",
+            name: "NYTPhotoViewerGIF",
             dependencies: ["PINRemoteImage"],
+            cSettings: [ "-DANIMATED_GIF_SUPPORT"],
             path: "NYTPhotoViewer"),
+        .target(
+            name: "NYTPhotoViewer",
+            path: "NYTPhotoViewer"),
+        )
     ]
 )
