@@ -18,8 +18,9 @@ let package = Package(
         .target(
             name: "NYTPhotoViewerGIF",
             dependencies: ["PINRemoteImage"],
-            path: "NYTPhotoViewer"),
-            cSettings: [ "-DANIMATED_GIF_SUPPORT"],
+            path: "NYTPhotoViewer",
+            cSettings: [ "-DANIMATED_GIF_SUPPORT" ],
+        )
         .target(
             name: "NYTPhotoViewer",
             path: "NYTPhotoViewer"),
