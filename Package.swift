@@ -9,16 +9,21 @@ let package = Package(
     products: [
         .library(
             name: "NYTPhotoViewer",
-            targets: ["NYTPhotoViewerGIF"]),
+            targets: ["NYTPhotoViewer", "NYTPhotoViewerGIF"]
+            ),
     ],
     dependencies: [
         .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.1")
     ],
     targets: [
         .target(
+            name: "NYTPhotoViewer",
+            path: "NYTPhotoViewer"
+        ),
+        .target(
             name: "NYTPhotoViewerGIF",
             dependencies: ["PINRemoteImage"],
-            path: "NYTPhotoViewer",
+            path: "SourceSymLink",
             cSettings: [
               .define("ANIMATED_GIF_SUPPORT", to: "1")
             ]

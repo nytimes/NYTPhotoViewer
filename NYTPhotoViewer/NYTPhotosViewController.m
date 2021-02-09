@@ -19,8 +19,13 @@
 #import "NSBundle+NYTPhotoViewer.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
-#import <PINRemoteImage/PINRemoteImage.h>
-#import <PINRemoteImage/PINAnimatedImageView.h>
+#if SWIFT_PACKAGE
+  #import "PINRemoteImage.h"
+  #import "PINAnimatedImageView.h"
+#else
+  #import <PINRemoteImage/PINRemoteImage.h>
+  #import <PINRemoteImage/PINAnimatedImageView.h>
+#endif
 #endif
 
 NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
