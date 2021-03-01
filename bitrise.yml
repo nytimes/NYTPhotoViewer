@@ -5,6 +5,7 @@ app:
   envs:
   - BITRISE_PROJECT_PATH: Examples/NYTPhotoViewer.xcworkspace
   - BITRISE_SCHEME: Example
+  - BITRISE_SCHEME2: Example-Swift
   - BITRISE_EXPORT_METHOD: development
 trigger_map:
 - push_branch: '*'
@@ -26,6 +27,10 @@ workflows:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
         - scheme: $BITRISE_SCHEME
+    - xcode-test@2.4.1:
+        inputs:
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME2
     - xcode-archive@2.7.0:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
@@ -47,5 +52,9 @@ workflows:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
         - scheme: $BITRISE_SCHEME
+    - xcode-test@2.4.1:
+        inputs:
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME2
     - deploy-to-bitrise-io@1.9.2: {}
     - cache-push@2.2.1: {}
