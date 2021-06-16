@@ -12,11 +12,11 @@
 
 #ifdef ANIMATED_GIF_SUPPORT
 #if SWIFT_PACKAGE
-#warning foo
+#error foo
   #import "PINRemoteImage.h"
   #import "PINAnimatedImageView.h"
 #else
-#warning bar
+#error bar
   #import <PINRemoteImage/PINRemoteImage.h>
   #import <PINRemoteImage/PINAnimatedImageView.h>
 #endif
