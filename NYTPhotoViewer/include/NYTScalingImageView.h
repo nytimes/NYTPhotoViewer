@@ -9,7 +9,11 @@
 @import UIKit;
 
 #ifdef ANIMATED_GIF_SUPPORT
-@class PINAnimatedImageView;
+#if SWIFT_PACKAGE
+  #import "PINAnimatedImageView.h"
+#else
+  #import <PINRemoteImage/PINAnimatedImageView.h>
+#endif
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
