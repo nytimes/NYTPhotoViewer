@@ -23,7 +23,7 @@ let package = Package(
         .target(
             name: "NYTPhotoViewerGIF",
             dependencies: ["PINRemoteImage"],
-            path: "SourceSymLink",
+            path: "NYTPhotoViewerGIF",
             cSettings: [
               .define("ANIMATED_GIF_SUPPORT", to: "1")
             ]
