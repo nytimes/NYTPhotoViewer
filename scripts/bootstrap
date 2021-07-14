@@ -11,6 +11,8 @@ fi
 
 cd "$(dirname "$0")/../Examples"
 
-bundle config set path 'vendor/bundle'
+# uncomment the following if you get errors about not having access to the system's install
+# bundle config --local path 'vendor/bundle'
+
 bundle install 
 bundle exec pod install
