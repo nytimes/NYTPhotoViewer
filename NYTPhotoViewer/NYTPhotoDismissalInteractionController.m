@@ -48,7 +48,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     CGFloat backgroundAlpha = [self backgroundAlphaForPanningWithVerticalDelta:verticalDelta];
     fromView.backgroundColor = [fromView.backgroundColor colorWithAlphaComponent:backgroundAlpha];
     
-    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded || panGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
         [self finishPanWithPanGestureRecognizer:panGestureRecognizer verticalDelta:verticalDelta viewToPan:viewToPan anchorPoint:anchorPoint];
     }
 }
