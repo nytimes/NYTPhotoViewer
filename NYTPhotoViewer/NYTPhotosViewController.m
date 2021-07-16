@@ -17,6 +17,7 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 #import "NSBundle+NYTPhotoViewer.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #ifdef ANIMATED_GIF_SUPPORT
 #if SWIFT_PACKAGE
@@ -75,7 +76,12 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 #pragma mark - NSObject(UIResponderStandardEditActions)
 
 - (void)copy:(id)sender {
-    [[UIPasteboard generalPasteboard] setImage:self.currentlyDisplayedPhoto.image];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (self.currentlyDisplayedPhoto.image) {
+        [pasteboard setImage:self.currentlyDisplayedPhoto.image];
+    } else {
+        [pasteboard setData:self.currentlyDisplayedPhoto.imageData forPasteboardType:(NSString *) kUTTypeGIF];
+    }
 }
 
 #pragma mark - UIResponder
@@ -85,7 +91,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (self.shouldHandleLongPress && action == @selector(copy:) && self.currentlyDisplayedPhoto.image) {
+    BOOL containsImage = self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData;
+
+    if (self.shouldHandleLongPress && action == @selector(copy:) && containsImage) {
         return YES;
     }
     
@@ -295,7 +303,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
     
     if (!clientDidHandle && (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData)) {
-        UIImage *image = self.currentlyDisplayedPhoto.image ? self.currentlyDisplayedPhoto.image : [UIImage imageWithData:self.currentlyDisplayedPhoto.imageData];
+        NSData *image = self.currentlyDisplayedPhoto.image ? UIImagePNGRepresentation(self.currentlyDisplayedPhoto.image) : self.currentlyDisplayedPhoto.imageData;
         UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
         activityViewController.popoverPresentationController.barButtonItem = sender;
         activityViewController.completionWithItemsHandler = ^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {

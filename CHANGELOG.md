@@ -80,6 +80,10 @@ Changes for users of the library in 2.0.0:
     - A data source no longer has to handle out-of-bounds indexes ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
     - The data source is not retained ([#227](https://github.com/NYTimes/NYTPhotoViewer/pull/227))
 - Respect safe areas for iOS 11 support
+- Fixed some tests, added tests for NYTPhotoViewerSinglePhotoDataSource
+- Fixed a strict warning and a subscripting bug in NYTPhotoViewerArrayDataSource.m
+- Share GIF with UIActivityViewController
+- Copy GIF with UIMenuController
 
 ## [1.2.0](https://github.com/NYTimes/NYTPhotoViewer/releases/tag/1.2.0)
 
