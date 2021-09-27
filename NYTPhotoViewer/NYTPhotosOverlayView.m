@@ -106,7 +106,7 @@
     [self addSubview:self.captionView];
 
     if ([self respondsToSelector:@selector(safeAreaLayoutGuide)] && self.captionViewRespectsSafeArea) {
-        NSLayoutConstraint *bottomConstraint = [self.captionView.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor];
+        NSLayoutConstraint *bottomConstraint = [self.captionView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor];
         NSLayoutConstraint *leftConstraint = [self.captionView.leftAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.leftAnchor];
         NSLayoutConstraint *rightConstraint = [self.captionView.rightAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.rightAnchor];
         [self addConstraints:@[bottomConstraint, leftConstraint, rightConstraint]];
