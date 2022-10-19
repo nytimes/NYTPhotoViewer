@@ -1,6 +1,14 @@
 ## `develop`
 
 Changes for users of the library currently on `develop`:
+- fixed caption overlay placement
+- fixed overlay view buttons tint color
+- added summary to share
+
+## [5.0.6](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.6)
+
+Changes for users of the library in 5.0.6:
+
 - support Swift Package Manager (thanks @mattpolzin!)
 - fixed a NaN when setting `zoomScale` in `NYTScalingImageView` when `ANIMATED_GIF_SUPPORT=1`
 
