@@ -17,10 +17,12 @@ workflows:
     steps:
     - activate-ssh-key@4.0.3:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - authenticate-with-github-oauth@0:
+        inputs:
+        - access_token: $GITHUB_PAT
+        - username: $GITHUB_USERNAME
     - git-clone@4.0.17: {}
     - cache-pull@2.1.1: {}
-    - script@1.1.5:
-        title: Do anything with Script step
     - certificate-and-profile-installer@1.10.1: {}
     - cocoapods-install@1.9.1: {}
     - xcode-test@2.4.1:
@@ -42,10 +44,12 @@ workflows:
     steps:
     - activate-ssh-key@4.0.3:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - authenticate-with-github-oauth@0:
+        inputs:
+        - access_token: $GITHUB_PAT
+        - username: $GITHUB_USERNAME
     - git-clone@4.0.17: {}
     - cache-pull@2.1.1: {}
-    - script@1.1.5:
-        title: Do anything with Script step
     - certificate-and-profile-installer@1.10.1: {}
     - cocoapods-install@1.9.1: {}
     - xcode-test@2.4.1:
