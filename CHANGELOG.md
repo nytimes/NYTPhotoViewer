@@ -1,6 +1,6 @@
-## `develop`
+## [5.0.7](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.7)
 
-Changes for users of the library currently on `develop`:
+Changes for users of the library currently on `5.0.7`:
 - fixed caption overlay placement
 - fixed overlay view buttons tint color
 - added summary to share

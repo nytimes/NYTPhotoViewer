@@ -1,12 +1,12 @@
 PODS:
-  - NYTPhotoViewer (5.0.5):
-    - NYTPhotoViewer/AnimatedGifSupport (= 5.0.5)
-    - NYTPhotoViewer/Core (= 5.0.5)
-  - NYTPhotoViewer/AnimatedGifSupport (5.0.5):
+  - NYTPhotoViewer (5.0.7):
+    - NYTPhotoViewer/AnimatedGifSupport (= 5.0.7)
+    - NYTPhotoViewer/Core (= 5.0.7)
+  - NYTPhotoViewer/AnimatedGifSupport (5.0.7):
     - NYTPhotoViewer/Core
     - PINRemoteImage/iOS
     - PINRemoteImage/PINCache
-  - NYTPhotoViewer/Core (5.0.5)
+  - NYTPhotoViewer/Core (5.0.7)
   - OCMock (3.7.1)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
@@ -40,7 +40,7 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  NYTPhotoViewer: 79c65472f55cefb58bb3437621c935cb07abdc54
+  NYTPhotoViewer: 64f9c45438a0e6a8f6fa67fd924bd090dea54ad4
   OCMock: 75fbeaa46a9b11f8c182bbb1d1f7e9a35ccc9955
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
