@@ -19,8 +19,13 @@
 #import "NSBundle+NYTPhotoViewer.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
-#import <PINRemoteImage/PINRemoteImage.h>
-#import <PINRemoteImage/PINAnimatedImageView.h>
+#if SWIFT_PACKAGE
+  #import "PINRemoteImage.h"
+  #import "PINAnimatedImageView.h"
+#else
+  #import <PINRemoteImage/PINRemoteImage.h>
+  #import <PINRemoteImage/PINAnimatedImageView.h>
+#endif
 #endif
 
 NSString * const NYTPhotosViewControllerDidNavigateToPhotoNotification = @"NYTPhotosViewControllerDidNavigateToPhotoNotification";
@@ -201,7 +206,9 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         NYTPhotosOverlayView *v = [[NYTPhotosOverlayView alloc] initWithFrame:CGRectZero];
         v.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonX" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] landscapeImagePhone:[UIImage imageNamed:@"NYTPhotoViewerCloseButtonXLandscape" inBundle:[NSBundle nyt_photoViewerResourceBundle] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonTapped:)];
         v.leftBarButtonItem.imageInsets = NYTPhotosViewControllerCloseButtonImageInsets;
+        v.leftBarButtonItem.tintColor = [UIColor whiteColor];
         v.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonTapped:)];
+        v.rightBarButtonItem.tintColor = [UIColor whiteColor];
         v;
     });
 
@@ -291,7 +298,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     if (!clientDidHandle && (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData)) {
         UIImage *image = self.currentlyDisplayedPhoto.image ? self.currentlyDisplayedPhoto.image : [UIImage imageWithData:self.currentlyDisplayedPhoto.imageData];
-        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
+        NSString *summary = self.currentlyDisplayedPhoto.attributedCaptionSummary.string;
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[summary, image] applicationActivities:nil];
         activityViewController.popoverPresentationController.barButtonItem = sender;
         activityViewController.completionWithItemsHandler = ^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
             if (completed && [self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {

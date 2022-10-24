@@ -1,0 +1,31 @@
+platform :ios, '12.0'
+use_frameworks! :linkage => :static
+supports_swift_versions '>= 5.0'
+  
+target 'Example' do
+  pod 'NYTPhotoViewer', :path => '..'
+
+#   target 'ExampleTests' do
+#     inherit! :search_paths
+#     use_frameworks! :linkage => :static
+#     pod 'OCMock'
+#   end
+end
+
+target 'UnitTest' do
+  pod 'NYTPhotoViewer', :path => '..'
+  pod 'OCMock'
+end
+
+target 'Example-Swift' do
+  pod 'NYTPhotoViewer', :path => '..'
+end
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+    end
+  end
+end

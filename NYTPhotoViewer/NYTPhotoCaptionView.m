@@ -59,7 +59,18 @@ static const CGFloat NYTPhotoCaptionViewVerticalMargin = 7.0;
     [super layoutSubviews];
 
     void (^updateGradientFrame)(void) = ^{
-        self.gradientLayer.frame = self.layer.bounds;
+        if (@available(iOS 11.0, *)) {
+            UIEdgeInsets safeAreaInsets = [[UIApplication sharedApplication] keyWindow].safeAreaInsets;
+            CGRect selfBounds = self.layer.bounds;
+            self.gradientLayer.frame = CGRectMake(
+                                                  selfBounds.origin.x - safeAreaInsets.left,
+                                                  selfBounds.origin.y + safeAreaInsets.bottom,
+                                                  selfBounds.size.width + safeAreaInsets.left + safeAreaInsets.right,
+                                                  selfBounds.size.height + safeAreaInsets.bottom
+                                                  );
+        } else {
+            self.gradientLayer.frame = self.layer.bounds;
+        }
     };
 
     updateGradientFrame();

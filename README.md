@@ -6,7 +6,7 @@
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
-![Demo GIF](Images/photo_viewer.gif)
+![Demo GIF](Documentation/photo_viewer.gif)
 
 ## Usage
 
@@ -19,11 +19,21 @@ NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc]
 
 ## Running the Example
 
-The Example project uses [Carthage](https://github.com/Carthage/Carthage) to integrate its dependencies. If you don’t have Carthage installed, you can install it via [Homebrew](http://brew.sh) with `brew install carthage`.
-
-Then, in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`.
+Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see targets for a Swift and Objective-C app.
 
 ## Installation
+
+### Swift Package Manager
+
+NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL.
+
+### Cocoapods
+
+NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
+
+```ruby
+pod 'NYTPhotoViewer'
+```
 
 ### Carthage
 
@@ -36,14 +46,6 @@ github "NYTimes/NYTPhotoViewer"
 Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `PINRemoteImage` frameworks into your project.
 
 If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
-
-### Cocoapods
-
-NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
-
-```
-pod 'NYTPhotoViewer'
-```
 
 ## Requirements
 

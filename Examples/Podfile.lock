@@ -1,0 +1,51 @@
+PODS:
+  - NYTPhotoViewer (5.0.7):
+    - NYTPhotoViewer/AnimatedGifSupport (= 5.0.7)
+    - NYTPhotoViewer/Core (= 5.0.7)
+  - NYTPhotoViewer/AnimatedGifSupport (5.0.7):
+    - NYTPhotoViewer/Core
+    - PINRemoteImage/iOS
+    - PINRemoteImage/PINCache
+  - NYTPhotoViewer/Core (5.0.7)
+  - OCMock (3.7.1)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.3):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
+
+DEPENDENCIES:
+  - NYTPhotoViewer (from `..`)
+  - OCMock
+
+SPEC REPOS:
+  trunk:
+    - OCMock
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+
+EXTERNAL SOURCES:
+  NYTPhotoViewer:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  NYTPhotoViewer: 64f9c45438a0e6a8f6fa67fd924bd090dea54ad4
+  OCMock: 75fbeaa46a9b11f8c182bbb1d1f7e9a35ccc9955
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
+
+PODFILE CHECKSUM: 2d91d58ac59e8440027da7c7b8b5f2e362fb3857
+
+COCOAPODS: 1.10.0
