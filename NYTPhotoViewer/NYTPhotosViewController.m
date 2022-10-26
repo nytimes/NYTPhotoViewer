@@ -17,6 +17,7 @@
 #import "NYTPhotosOverlayView.h"
 #import "NYTPhotoCaptionView.h"
 #import "NSBundle+NYTPhotoViewer.h"
+#import <LinkPresentation/LPLinkMetadata.h>
 
 #ifdef ANIMATED_GIF_SUPPORT
 #if SWIFT_PACKAGE
@@ -37,7 +38,7 @@ static const CGFloat NYTPhotosViewControllerOverlayAnimationDuration = 0.2;
 static const CGFloat NYTPhotosViewControllerInterPhotoSpacing = 16.0;
 static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0, -3, 0};
 
-@interface NYTPhotosViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
+@interface NYTPhotosViewController () <UIActivityItemSource, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NYTPhotoViewControllerDelegate>
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
@@ -298,8 +299,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     
     if (!clientDidHandle && (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData)) {
         UIImage *image = self.currentlyDisplayedPhoto.image ? self.currentlyDisplayedPhoto.image : [UIImage imageWithData:self.currentlyDisplayedPhoto.imageData];
-        NSString *summary = self.currentlyDisplayedPhoto.attributedCaptionSummary.string;
-        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[summary, image] applicationActivities:nil];
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self, image] applicationActivities:nil];
         activityViewController.popoverPresentationController.barButtonItem = sender;
         activityViewController.completionWithItemsHandler = ^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
             if (completed && [self.delegate respondsToSelector:@selector(photosViewController:actionCompletedWithActivityType:)]) {
@@ -652,6 +652,31 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
             [self didNavigateToPhoto:viewController.photo atIndex:viewController.photoViewItemIndex];
         }
     }
+}
+
+#pragma mark UIActivityItemSource protocol procedures to support sharesheet
+
+/// called to fetch data after an activity is selected. you can return nil.
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+{
+    return nil;
+}
+
+/// called to determine data type. only the class of the return type is consulted. it should match what -itemForActivityType: returns later
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
+{
+    return nil;
+}
+
+/// called to fetch LinkPresentation metadata for the activity item. iOS 13.0
+- (LPLinkMetadata *)activityViewControllerLinkMetadata:(UIActivityViewController *)activityViewController API_AVAILABLE(ios(13.0))
+{
+    UIImage * icon = [UIImage imageNamed: @"AppIcon"];
+    NSItemProvider * iconProvider = [[NSItemProvider alloc] initWithObject:icon];
+    LPLinkMetadata * metaData = [[LPLinkMetadata alloc] init];
+    metaData.title = self.currentlyDisplayedPhoto.attributedCaptionSummary.string;
+    metaData.iconProvider = iconProvider;
+    return metaData;
 }
 
 @end
