@@ -671,11 +671,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 /// called to fetch LinkPresentation metadata for the activity item. iOS 13.0
 - (LPLinkMetadata *)activityViewControllerLinkMetadata:(UIActivityViewController *)activityViewController API_AVAILABLE(ios(13.0))
 {
-    UIImage * icon = [UIImage imageNamed: @"AppIcon"];
-    NSItemProvider * iconProvider = [[NSItemProvider alloc] initWithObject:icon];
     LPLinkMetadata * metaData = [[LPLinkMetadata alloc] init];
     metaData.title = self.currentlyDisplayedPhoto.attributedCaptionSummary.string;
-    metaData.iconProvider = iconProvider;
     return metaData;
 }
 
