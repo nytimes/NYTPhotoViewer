@@ -1,3 +1,6 @@
+Changes for users of the library currently on `5.0.8`:
+- using metadata to add summary to share activity
+
 ## [5.0.7](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.7)
 
 Changes for users of the library currently on `5.0.7`:
