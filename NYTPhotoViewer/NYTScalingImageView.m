@@ -12,11 +12,10 @@
 
 #ifdef ANIMATED_GIF_SUPPORT
 #if SWIFT_PACKAGE
-  #import "PINRemoteImage.h"
-  #import "PINAnimatedImageView.h"
+  #import "FLAnimatedImageView.h"
 #else
-  #import <PINRemoteImage/PINRemoteImage.h>
-  #import <PINRemoteImage/PINAnimatedImageView.h>
+  #import <FLAnimatedImage/FLAnimatedImageView.h>
+  #import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 #endif
 
@@ -25,7 +24,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 #ifdef ANIMATED_GIF_SUPPORT
-@property (nonatomic) PINAnimatedImageView *imageView;
+@property (nonatomic) FLAnimatedImageView *imageView;
 #else
 @property (nonatomic) UIImageView *imageView;
 #endif
@@ -94,7 +93,8 @@
     UIImage *imageToUse = image ?: [UIImage imageWithData:imageData];
 
 #ifdef ANIMATED_GIF_SUPPORT
-    self.imageView = [[PINAnimatedImageView alloc] initWithAnimatedImage:[[PINCachedAnimatedImage alloc] initWithAnimatedImageData:imageData]];
+    self.imageView = FLAnimatedImageView.new;
+    self.imageView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:imageData];
 #else
     self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
 #endif
@@ -127,8 +127,8 @@
     self.imageView.image = imageToUse;
     
 #ifdef ANIMATED_GIF_SUPPORT
-    // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
-    self.imageView.animatedImage = [[PINCachedAnimatedImage alloc] initWithAnimatedImageData:imageData];
+    // It's necessary to first assign the UIImage so calculations for layout go right (see above)
+    self.imageView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:imageData];
 #endif
     
     self.imageView.frame = CGRectMake(0, 0, imageToUse.size.width, imageToUse.size.height);

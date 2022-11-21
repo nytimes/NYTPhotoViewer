@@ -2,39 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "libwebp",
-        "repositoryURL": "https://github.com/SDWebImage/libwebp-Xcode",
+        "package": "FLAnimatedImage",
+        "repositoryURL": "https://github.com/Flipboard/FLAnimatedImage.git",
         "state": {
           "branch": null,
-          "revision": "86c1b5d567ed548da861486b54e1f8f068a3cef7",
-          "version": "1.1.0"
-        }
-      },
-      {
-        "package": "PINCache",
-        "repositoryURL": "https://github.com/pinterest/PINCache.git",
-        "state": {
-          "branch": null,
-          "revision": "875c654984fb52b47ca65ae70d24852b0003ccd9",
-          "version": "3.0.3"
-        }
-      },
-      {
-        "package": "PINOperation",
-        "repositoryURL": "https://github.com/pinterest/PINOperation.git",
-        "state": {
-          "branch": null,
-          "revision": "44d8ca154a4e75a028a5548c31ff3a53b90cef15",
-          "version": "1.2.1"
-        }
-      },
-      {
-        "package": "PINRemoteImage",
-        "repositoryURL": "https://github.com/pinterest/PINRemoteImage.git",
-        "state": {
-          "branch": null,
-          "revision": "611d8ab1c6937bcdfd9d59a967716b0370a332be",
-          "version": "3.0.3"
+          "revision": "d4f07b6f164d53c1212c3e54d6460738b1981e9f",
+          "version": "1.0.17"
         }
       }
     ]

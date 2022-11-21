@@ -1,3 +1,6 @@
+## develop
+- fixed SPM problem by switching from PINRemoteImage to FLAnimatedImage
+
 ## [5.0.8](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.8)
 
 Changes for users of the library currently on `5.0.8`:
