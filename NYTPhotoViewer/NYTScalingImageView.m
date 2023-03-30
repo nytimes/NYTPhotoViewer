@@ -124,8 +124,11 @@
 
     // Remove any transform currently applied by the scroll view zooming.
     self.imageView.transform = CGAffineTransformIdentity;
-    self.imageView.image = imageToUse;
-    
+
+    [UIView transitionWithView:self /* .imageView */ duration:0.15f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.imageView.image = imageToUse;
+    } completion:nil];
+
 #ifdef ANIMATED_GIF_SUPPORT
     // It's necessarry to first assign the UIImage so calulations for layout go right (see above)
     self.imageView.animatedImage = [[PINCachedAnimatedImage alloc] initWithAnimatedImageData:imageData];
