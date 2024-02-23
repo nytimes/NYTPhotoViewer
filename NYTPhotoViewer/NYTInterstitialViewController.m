@@ -14,6 +14,7 @@
 @property (nonatomic, nullable) id <NYTPhoto> photo;
 @property (nonatomic, nullable) UIView *interstitialView;
 @property (nonatomic) NSUInteger photoViewItemIndex;
+@property (nonatomic, nullable) NSArray<NSLayoutConstraint *> *constraints;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
@@ -37,17 +38,28 @@
     return self;
 }
 
+- (void)prepareLayout {
+    if (self.interstitialView.translatesAutoresizingMaskIntoConstraints) {
+        self.interstitialView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    } else if (self.constraints == NULL) {
+        self.constraints = @[
+          [self.interstitialView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+          [self.interstitialView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+        ];
+        [NSLayoutConstraint activateConstraints:self.constraints];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self.view addSubview:self.interstitialView];
-    self.interstitialView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    [self prepareLayout];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-
-    self.interstitialView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    [self prepareLayout];
 }
 
 - (BOOL)prefersHomeIndicatorAutoHidden {
