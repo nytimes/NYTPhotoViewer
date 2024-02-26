@@ -41,6 +41,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 
 @interface NYTPhotosViewController : UIViewController
 
+typedef NS_ENUM(NSUInteger, NYTPhotoViewerStatusBarMode) {
+    NYTPhotoViewerStatusBarModeDynamic, /* hide statusbar when view.safeArea.top == 0 */
+    NYTPhotoViewerStatusBarModeHidden,
+    NYTPhotoViewerStatusBarModeShown
+};
+
 /**
  *  The pan gesture recognizer used for panning to dismiss the photo. Disable to stop the pan-to-dismiss behavior.
  */
@@ -74,6 +80,12 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
  *  The overlay view displayed over photos. Created during `viewDidLoad`.
  */
 @property (nonatomic, readonly, nullable) NYTPhotosOverlayView *overlayView;
+
+/**
+ *  This determines whether we display the status bar or not
+ *  Defaults to NYTPhotoViewerStatusBarModeDynamic.
+ */
+@property (nonatomic) NYTPhotoViewerStatusBarMode statusBarMode;
 
 /**
  *  The left bar button item overlaying the photo.
@@ -176,6 +188,20 @@ extern NSString * const NYTPhotosViewControllerDidDismissNotification;
 @protocol NYTPhotosViewControllerDelegate <NSObject>
 
 @optional
+
+/**
+ *  Called when the view is about to made visible.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController viewWillAppear:(BOOL)animated;
+
+/**
+ *  Called when the view is dismissed, covered or otherwise hidden.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ */
+- (void)photosViewController:(NYTPhotosViewController *)photosViewController viewWillDisappear:(BOOL)animated;
 
 /**
  *  Called when a new photo is displayed through a swipe gesture.

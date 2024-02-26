@@ -137,6 +137,20 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     self.transitionController.endingView = endingView;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([_delegate respondsToSelector:@selector(photosViewController:viewWillAppear:)]) {
+        [_delegate photosViewController:self viewWillAppear:animated];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([_delegate respondsToSelector:@selector(photosViewController:viewWillDisappear:)]) {
+        [_delegate photosViewController:self viewWillDisappear:animated];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -148,12 +162,41 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.pageViewController.view.frame = self.view.bounds;
-    self.overlayView.frame = self.view.bounds;
+    CGRect frame = self.view.bounds;
+    if (!self.prefersStatusBarHidden) {
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        frame.origin.y = statusBarHeight;
+        frame.size.height -= statusBarHeight;
+    }
+    self.pageViewController.view.frame = frame;
+    self.overlayView.frame = frame;
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    BOOL result;
+    switch (self.statusBarMode) {
+        case NYTPhotoViewerStatusBarModeDynamic:
+            result = self.view.safeAreaInsets.top == 0;
+            break;
+        case NYTPhotoViewerStatusBarModeHidden:
+            result = true;
+            break;
+        case NYTPhotoViewerStatusBarModeShown:
+            result = false;
+            break;
+    }
+    return result;
+}
+
+- (void)viewSafeAreaInsetsDidChange {
+    if (self.statusBarMode == NYTPhotoViewerStatusBarModeDynamic) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    [super viewSafeAreaInsetsDidChange];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)prefersHomeIndicatorAutoHidden {
