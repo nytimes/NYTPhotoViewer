@@ -9,24 +9,16 @@ let package = Package(
     products: [
         .library(
             name: "NYTPhotoViewer",
-            targets: ["NYTPhotoViewer", "NYTPhotoViewerGIF"]
+            targets: ["NYTPhotoViewer"]
             ),
     ],
     dependencies: [
-        .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.1")
+        .package(url: "https://github.com/Flipboard/FLAnimatedImage.git", .upToNextMajor(from: "1.0.17"))
     ],
     targets: [
         .target(
             name: "NYTPhotoViewer",
             path: "NYTPhotoViewer"
         ),
-        .target(
-            name: "NYTPhotoViewerGIF",
-            dependencies: ["PINRemoteImage"],
-            path: "SourceSymLink",
-            cSettings: [
-              .define("ANIMATED_GIF_SUPPORT", to: "1")
-            ]
-        )
     ]
 )
