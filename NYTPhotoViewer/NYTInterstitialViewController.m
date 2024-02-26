@@ -14,7 +14,7 @@
 @property (nonatomic, nullable) id <NYTPhoto> photo;
 @property (nonatomic, nullable) UIView *interstitialView;
 @property (nonatomic) NSUInteger photoViewItemIndex;
-@property (nonatomic, nullable) NSArray<NSLayoutConstraint *> *constraints;
+@property (copy, nullable) NSArray<NSLayoutConstraint *> *constraints;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
@@ -41,7 +41,7 @@
 - (void)prepareLayout {
     if (self.interstitialView.translatesAutoresizingMaskIntoConstraints) {
         self.interstitialView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
-    } else if (self.constraints == NULL) {
+    } else if (self.constraints == nil) {
         self.constraints = @[
           [self.interstitialView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
           [self.interstitialView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
