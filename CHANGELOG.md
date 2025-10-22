@@ -1,3 +1,32 @@
+## [6.0.0] - Swift 6 Migration
+
+**BREAKING CHANGES:**
+
+This is a major version update that converts the entire library from Objective-C to Swift 6.
+
+### Changes
+- **Complete Swift 6 rewrite**: All Objective-C code has been converted to modern Swift 6
+- **Strict concurrency support**: Full support for Swift 6's strict concurrency checking with `@MainActor` annotations
+- **Modern Swift features**: Utilizes Swift 6 language features including `Sendable` protocols and existential types
+- **Removed CocoaPods support**: The library now only supports Swift Package Manager
+- **Minimum requirements updated**:
+  - iOS 13.0+ (previously iOS 9.0+)
+  - Swift 6.0+
+  - Xcode 16.0+
+- **API changes**: 
+  - Protocols now use Swift naming conventions
+  - `NYTPhoto` protocol uses `var` instead of `@property`
+  - Delegate methods use Swift-style parameter names
+  - Data source methods renamed (e.g., `photoAtIndex:` → `photo(at:)`)
+- **Removed animated GIF support**: Simplified to focus on core functionality without external dependencies
+
+### Migration Guide
+- Update your Swift version to 6.0
+- Remove CocoaPods and switch to Swift Package Manager
+- Update protocol conformances to use Swift syntax
+- Update method calls to use Swift-style naming
+- Ensure your `NYTPhoto` conforming types are marked with `Sendable` where appropriate
+
 ## [5.0.8](https://github.com/nytimes/NYTPhotoViewer/releases/tag/5.0.8)
 
 Changes for users of the library currently on `5.0.8`:

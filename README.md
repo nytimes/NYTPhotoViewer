@@ -1,6 +1,7 @@
 # NYTPhotoViewer
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift 6](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://www.apple.com/ios/)
 
 NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom, captions, support for multiple images, interactive flick to dismiss, animated zooming presentation, and more.
 
@@ -8,16 +9,17 @@ NYTPhotoViewer is a slideshow and image viewer that includes double-tap to zoom,
 
 ## Usage
 
-Usage is simple, with the option for more complicated customization when needed through a delegate relationship. In the most basic implementation, just initialize the view controller with an array of photo objects and present it as normal:
+Usage is simple, with the option for more complicated customization when needed through a delegate relationship. In the most basic implementation, just initialize the view controller with a data source and present it as normal:
 
-```objc
-NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos];
-[self presentViewController:photosViewController animated:YES completion:nil];
+```swift
+let dataSource = NYTPhotoViewerArrayDataSource(photos: photos)
+let photosViewController = NYTPhotosViewController(dataSource: dataSource)
+present(photosViewController, animated: true)
 ```
 
 ## Running the Example
 
-Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see targets for a Swift and Objective-C app.
+Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, run `./scripts/bootstrap`, then open Examples/NYTPhotoViewer.xcworkspace. You'll see a Swift example app demonstrating the library's features.
 
 ## Installation
 
@@ -25,29 +27,13 @@ Clone this locally, then in your local workspace of the `NYTPhotoViewer` repo, r
 
 NYTPhotoViewer may be installed via SPM, by pointing at this repo's URL.
 
-### Cocoapods
-
-NYTPhotoViewer is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
-
-```ruby
-pod 'NYTPhotoViewer'
-```
-
-### Carthage
-
-NYTPhotoViewer may be installed via [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your `Cartfile`:
-
-```
-github "NYTimes/NYTPhotoViewer"
-```
-
-Then, following the instructions for [integrating Carthage frameworks into your app](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), link the `NYTPhotoViewer` and `PINRemoteImage` frameworks into your project.
-
-If you don't want support for animated GIFs, you may instead link against only the `NYTPhotoViewerCore` framework.
+**Note:** NYTPhotoViewer now requires Swift 6 and is Swift-only. CocoaPods support has been removed.
 
 ## Requirements
 
-This library requires a deployment target of iOS 9.0 or greater.
+- iOS 13.0 or greater
+- Swift 6.0 or greater
+- Xcode 16.0 or greater
 
 ## Changelog
 
@@ -59,7 +45,7 @@ Please **open pull requests against the `develop` branch**, and add a relevant n
 
 ## Swift
 
-NYTPhotoViewer is written in Objective-C but is fully interoperable with Swift. If you experience any interoperability difficulties, please open an issue or pull request and we will work to resolve it.
+NYTPhotoViewer is now written in Swift 6 with full support for strict concurrency and modern Swift features.
 
 ## Inspiration
 

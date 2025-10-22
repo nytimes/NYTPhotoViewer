@@ -1,32 +1,30 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.0
 import PackageDescription
 
 let package = Package(
     name: "NYTPhotoViewer",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v13)
     ],
     products: [
         .library(
             name: "NYTPhotoViewer",
-            targets: ["NYTPhotoViewer", "NYTPhotoViewerGIF"]
-            ),
+            targets: ["NYTPhotoViewer"]
+        ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.1")
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "NYTPhotoViewer",
-            path: "NYTPhotoViewer"
-        ),
-        .target(
-            name: "NYTPhotoViewerGIF",
-            dependencies: ["PINRemoteImage"],
-            path: "SourceSymLink",
-            cSettings: [
-              .define("ANIMATED_GIF_SUPPORT", to: "1")
+            dependencies: [],
+            path: "Sources/NYTPhotoViewer",
+            resources: [
+                .process("../Resources")
+            ],
+            swiftSettings: [
+                .enableUpcomingFeature("StrictConcurrency")
             ]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v6]
 )
