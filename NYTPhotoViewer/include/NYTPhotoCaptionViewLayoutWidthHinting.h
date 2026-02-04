@@ -6,8 +6,8 @@
 //
 //
 
-@import Foundation;
-@import UIKit;
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  *  Allows a view to opt-in to receiving a hint of its layout width. This aids in calculating an appropriate intrinsic content size.

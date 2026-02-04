@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 The New York Times Company. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 #ifdef ANIMATED_GIF_SUPPORT
 @class PINAnimatedImageView;

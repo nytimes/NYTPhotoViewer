@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 NYTimes. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @protocol NYTPhoto;
 
