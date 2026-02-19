@@ -135,6 +135,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     }
     
     self.transitionController.endingView = endingView;
+
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *navBarAppearance = [[UINavigationBarAppearance alloc] init];
+        [navBarAppearance configureWithTransparentBackground];
+        navBarAppearance.backgroundColor = [UIColor colorWithRed: 0.0/255.0 green: 0.0/255.0 blue: 0.0/255.0 alpha:0.3];
+        [[UINavigationBar appearance] setStandardAppearance:navBarAppearance];
+        [[UINavigationBar appearance] setScrollEdgeAppearance:navBarAppearance];
+   }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
