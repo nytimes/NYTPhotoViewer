@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
     ss.ios.resource_bundle = { s.name => ['NYTPhotoViewer/Media.xcassets'] }
     ss.source_files = 'NYTPhotoViewer/**/*.{h,m,swift}'
     ss.frameworks = 'UIKit', 'Foundation'
+    ss.weak_framework = 'LinkPresentation'
   end
 
   s.subspec 'AnimatedGifSupport' do |ss|
