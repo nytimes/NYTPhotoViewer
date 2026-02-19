@@ -42,9 +42,7 @@ NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhot
 
 #pragma mark - NSObject
 
-- (void)dealloc {
-    _scalingImageView.delegate = nil;
-    
+- (void)dealloc {    
     [_notificationCenter removeObserver:self];
 }
 

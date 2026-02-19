@@ -66,12 +66,6 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 @implementation NYTPhotosViewController
 
-#pragma mark - NSObject
-
-- (void)dealloc {
-    _pageViewController.dataSource = nil;
-    _pageViewController.delegate = nil;
-}
 
 #pragma mark - NSObject(UIResponderStandardEditActions)
 
@@ -313,13 +307,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)displayActivityViewController:(UIActivityViewController *)controller animated:(BOOL)animated {
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self presentViewController:controller animated:animated completion:nil];
-    }
-    else {
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone) {
         controller.popoverPresentationController.barButtonItem = self.rightBarButtonItem;
-        [self presentViewController:controller animated:animated completion:nil];
     }
+    
+    [self presentViewController:controller animated:animated completion:nil];
 }
 
 - (UIBarButtonItem *)leftBarButtonItem {
